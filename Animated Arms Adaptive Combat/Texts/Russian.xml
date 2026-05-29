@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Russian" nowhitespace="false" translatedname="Русский">
+  <Override>
+    <entityname.AK-74>АК-74 «Водолаз»</entityname.AK-74>
+    <entitydescription.AK-74>Модифицированная версия легендарного АК-74. Применяет ‖color:gui.green‖патроны 5.45x39мм‖end‖. ‖color:gui.blue‖Может стрелять под водой с пониженной эффективностью‖end‖.</entitydescription.AK-74>
+    <entityname.akbigmagazine>Барабанный магазин 5.45x39мм</entityname.akbigmagazine>
+    <entitydescription.akbigmagazine>Вмещает 60 патронов.</entitydescription.akbigmagazine>
+    <entityname.akbigapmagazine>Барабанный бронебойный магазин 5.45x39мм</entityname.akbigapmagazine>
+    <entitydescription.akbigapmagazine>Вмещает 60 бронебойных патронов 5.45x39мм.</entitydescription.akbigapmagazine>
+    <entityname.akbigfmjmagazine>Барабанный экспансивный магазин 5.45x39мм</entityname.akbigfmjmagazine>
+    <entitydescription.akbigfmjmagazine>‖color:gui.green‖60 экспансивных патронов 5.45x39мм‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖. Совместим с АК-74 и АК-12.</entitydescription.akbigfmjmagazine>
+    <entityname.akapmagazine>Бронебойный магазин 5.45x39мм</entityname.akapmagazine>
+    <entitydescription.akapmagazine>Вмещает 30 патронов.</entitydescription.akapmagazine>
+    <entityname.akmagazine>Магазин 5.45x39мм</entityname.akmagazine>
+    <entitydescription.akmagazine>Вмещает 30 патронов.</entitydescription.akmagazine>
+    <entityname.akfmjmagazine>Экспансивный магазин 5.45x39мм</entityname.akfmjmagazine>
+    <entitydescription.akfmjmagazine>‖color:gui.green‖30 экспансивных патронов 5.45x39мм‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖. Совместим с АК-74 и АК-12.</entitydescription.akfmjmagazine>
+    <entityname.Beretta-92>Беретта «92»</entityname.Beretta-92>
+    <entitydescription.Beretta-92>Это классический пистолет, надёжный и широко распространённый в Европе, особенно среди частных военных компаний и членов Коалиции. Он использует патроны ‖color:gui.green‖9x19mm‖end‖. Его можно удерживать одной рукой, ‖color:gui.blue‖но под водой он малоэффективен‖end‖.</entitydescription.Beretta-92>
+    <entityname.Berettaammo>Магазин 9x19мм</entityname.Berettaammo>
+    <entitydescription.Berettaammo>Вмещает 20 патронов.</entitydescription.Berettaammo>
+    <entityname.Big-Iron>‖color:gui.yellow‖Револьвер «Big-Iron»‖end‖</entityname.Big-Iron>
+    <entitydescription.Big-Iron>Этот легендарный револьвер, известный своей непомерной скорострельность и отличительной надписью ‖color:gui.yellow‖Big-Iron‖end‖, использует патроны ‖color:gui.green‖.45 Colt‖end‖ и был создан в единственном экземпляре для одного из забытых героев Старой Земли. Несмотря на свою внушительность, ‖color:gui.red‖требующую двух рук для обращения‖end‖, и ‖color:gui.blue‖полную бесполезность под водой‖end‖, он является бесценной реликвией, чья история утеряна в глубинах времени.</entitydescription.Big-Iron>
+    <entityname.Big-Ironammo>Патрон .45 Colt</entityname.Big-Ironammo>
+    <entitydescription.Big-Ironammo>Патроны для револьвера Big-Iron.</entitydescription.Big-Ironammo>
+    <entityname.HK416-anim>Штурмовая винтовка «Европа-Р7»</entityname.HK416-anim>
+    <entitydescription.HK416-anim>Штурмовая винтовка, полностью спроектированная и собранная на Европе с использованием местных материалов. Используется охранниками на аванпостах Коалиции. Она использует ‖color:gui.green‖стандартные патроны 5.56x45мм‖end‖. ‖color:gui.blue‖Малоэффективна под водой‖end‖.</entitydescription.HK416-anim>
+    <entityname.HK416apmagazine-anim>Бронебойный магазин 5.56x45мм</entityname.HK416apmagazine-anim>
+    <entitydescription.HK416apmagazine-anim>Вмещает 30 бронебойных патронов.</entitydescription.HK416apmagazine-anim>
+    <entityname.HK416magazine-anim>Магазин 5.56x45мм</entityname.HK416magazine-anim>
+    <entitydescription.HK416magazine-anim>Вмещает 30 патронов.</entitydescription.HK416magazine-anim>
+    <entityname.HK416fmjmagazine-anim>Экспансивный магазин 5.56x45мм</entityname.HK416fmjmagazine-anim>
+    <entitydescription.HK416fmjmagazine-anim>‖color:gui.green‖30 экспансивных патронов 5.56x45мм‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.HK416fmjmagazine-anim>
+    <entityname.colt-1911>Кольт «M1911 Гидра»</entityname.colt-1911>
+    <entitydescription.colt-1911>Модифицированный и водонепроницаемый M1911 "Гидра" под патроны ‖color:gui.green‖.45 ACP‖end‖ — это надёжный одноручный пистолет, способный ‖color:gui.blue‖стрелять под водой но с пониженной эффективностью‖end‖.</entitydescription.colt-1911>
+    <entityname.1911ammo>Магазин .45 ACP</entityname.1911ammo>
+    <entitydescription.1911ammo>Вмещает 7 патронов.</entitydescription.1911ammo>
+    <entityname.Model29>Револьвер «Model-29»</entityname.Model29>
+    <entitydescription.Model29>Мощный револьвер, часто встречающийся в руках наёмников и охотников на просторах Европы, использующий патроны ‖color:gui.green‖.44 Magnum‖end‖. Его можно держать одной рукой,‖color:gui.blue‖ но под водой он почти бесполезен‖end‖</entitydescription.Model29>
+    <entityname.Model29ammoap>Бронебойный патрон .44 Magnum</entityname.Model29ammoap>
+    <entitydescription.Model29ammoap>Бронебойный патрон калибра .44 Magnum для револьвера Model-29.</entitydescription.Model29ammoap>
+    <entityname.Model29ammo>Патрон .44 Magnum</entityname.Model29ammo>
+    <entitydescription.Model29ammo>Патрон калибра .44 Magnum для револьвера Model-29.</entitydescription.Model29ammo>
+    <entityname.mosin>Винтовка «Мосина»</entityname.mosin>
+    <entitydescription.mosin>Эта винтовка конца XIX века не нуждается в представлении. Использует ‖color:gui.green‖мощные патроны 7.62x54R‖end‖. ‖color:gui.yellow‖Оснащена боковым кронштейном для оптики‖end‖. ‖color:gui.blue‖Эффективна под водой благодаря высокой скорости пули‖end‖.</entitydescription.mosin>
+    <entityname.mosinammo>Патрон 7.62x54R</entityname.mosinammo>
+    <entitydescription.mosinammo>Патрон калибра 7.62x54R для винтовки Мосина.</entitydescription.mosinammo>
+    <entityname.P90-anim>ПП P90 «Волнорез»</entityname.P90-anim>
+    <entitydescription.P90-anim>Компактный пистолет-пулемёт с ‖color:gui.purple‖режимом стрельбы очередями по 3 патрона‖end‖. Использует ‖color:gui.green‖стандартные патроны 5.7x28мм‖end‖. P90 ‖color:gui.blue‖малоэффективен под водой‖end‖, а его ‖color:gui.red‖скорострельность уменьшена в связи с необходимостью водоизоляции механизмов‖end‖.</entitydescription.P90-anim>
+    <entityname.P90magazine-anim>Магазин 5.7x28мм</entityname.P90magazine-anim>
+    <entitydescription.P90magazine-anim>Вмещает 50 патронов. Подходит только для P90 Волнорез.</entitydescription.P90magazine-anim>
+    <entityname.spas-13>Дробовик SPAS-13 «Тихоход»</entityname.spas-13>
+    <entitydescription.spas-13>Эта модификация SPAS-12 переработана для надёжности во влажных условиях Европы. ‖color:gui.red‖Для оптимальной работы удалена система самозарядного действия, поэтому после каждого выстрела требуется ручное передёргивание затвора.‖end‖ Использует ‖color:gui.green‖стандартные боеприпасы для дробовика (вмещает 8 патронов)‖end‖. Данная модификация ‖color:gui.blue‖не может стрелять под водой‖end‖.</entitydescription.spas-13>
+    <entityname.maple>Винтовка «Клён»</entityname.maple>
+    <entitydescription.maple>Это надёжная штурмовая винтовка, разработанная для использования в суровых условиях Европы, особенно ценимая среди членов Коалиции. Она использует специально разработанные патроны ‖color:gui.green‖6.8x48мм «Клён»‖end‖, оптимизированные для ‖color:gui.blue‖эффективной стрельбы в водной среде без потери убойной силы также сама винтовка обладает нейтральной плавучестью‖end‖.</entitydescription.maple>
+    <entityname.maplemagazine>Магазин 6.8x48мм «Клён»</entityname.maplemagazine>
+    <entitydescription.maplemagazine>Вмещает 20 патронов для винтовки Клён.</entitydescription.maplemagazine>
+    <entityname.mapleapmagazine>Бронебойный магазин 6.8x48мм «Клён»</entityname.mapleapmagazine>
+    <entitydescription.mapleapmagazine>Вмещает 20 бронебойных патронов для винтовки Клён.</entitydescription.mapleapmagazine>
+    <entityname.spp-1>Пистолет «СПП-1»</entityname.spp-1>
+    <entitydescription.spp-1>Этот советский подводный пистолет, несмотря на возраст, остаётся эффективным оружием под водой. Он использует специальные ‖color:gui.green‖стреловидные патроны‖end‖. Ключевая особенность: ‖color:gui.red‖наносит рваные раны вместо огнестрельных‖end‖. ‖color:gui.blue‖Эффективен только под водой, на поверхности его точность и урон значительно снижены‖end‖.</entitydescription.spp-1>
+    <entityname.spp-1round>Стреловидный патрон СПП-1</entityname.spp-1round>
+    <entitydescription.spp-1round>Специальный стреловидный патрон для подводного пистолета SPP-1. ‖color:gui.red‖Наносит рваные раны‖end‖.</entitydescription.spp-1round>
+    <entityname.spp-1apround>СПП-1 Бронебойный дротик</entityname.spp-1apround>
+    <entitydescription.spp-1apround>Бронебойный дротик для подводного пистолета СПП-1. ‖color:gui.blue‖Пробивает лёгкую броню‖end‖. ‖color:gui.red‖Наносит резаные раны‖end‖.</entitydescription.spp-1apround>
+    <entityname.spp-1fmjround>СПП-1 Экспансивный дротик</entityname.spp-1fmjround>
+    <entitydescription.spp-1fmjround>Экспансивный дротик для подводного пистолета СПП-1. ‖color:gui.yellow‖Высокоэффективен против незащищённых целей, вызывает сильное кровотечение‖end‖. ‖color:gui.red‖Наносит резаные раны‖end‖.</entitydescription.spp-1fmjround>
+    <entityname.pu_scope>Прицел ПУ</entityname.pu_scope>
+    <entitydescription.pu_scope>‖color:gui.green‖Способ установки:‖end‖
+- Боковой кронштейн
+‖color:gui.blue‖Средне увеличивает дальность обзора‖end‖. Классический советский оптический прицел.</entitydescription.pu_scope>
+    <entityname.mosinammoap>Бронебойный патрон 7.62x54R</entityname.mosinammoap>
+    <entitydescription.mosinammoap>Специальный ‖color:gui.green‖бронебойный боеприпас‖end‖ для винтовки Мосина. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖. Использует стальной сердечник вместо свинцового.</entitydescription.mosinammoap>
+    <entityname.mosinammofmj>Экспансивный патрон 7.62x54R</entityname.mosinammofmj>
+    <entitydescription.mosinammofmj>‖color:gui.green‖Экспансивный боеприпас‖end‖ для винтовки Мосина. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.mosinammofmj>
+    <entityname.ks-23>‖color:gui.yellow‖Дробовик КС-23 «Комбат»‖end‖</entityname.ks-23>
+    <entitydescription.ks-23>Советский ‖color:gui.green‖23мм карабинный дробовик‖end‖ на базе авиационной пушки. ‖color:gui.yellow‖Чрезвычайно эффективен против незащищённых целей‖end‖, но ‖color:gui.blue‖полностью бесполезен под водой‖end‖. ‖color:gui.red‖Требует перезарядки после каждого выстрела. Плохо пробивает броню‖end‖ из-за особенностей конструкции снаряда. ‖color:gui.green‖Использует специализированные 23мм патроны "Барракуда" с тяжёлой дробью‖end‖.</entitydescription.ks-23>
+    <entityname.ks-23shell>23мм спецпатрон Барракуда</entityname.ks-23shell>
+    <entitydescription.ks-23shell>Тяжёлый дробовой заряд с поражающими элементами вольфрамового сплава. ‖color:gui.yellow‖Эффективен против мягких целей‖end‖, но ‖color:gui.red‖имеет низкую бронепробиваемость‖end‖ и сильную отдачу.</entitydescription.ks-23shell>
+    <entityname.ks-23apshell>23мм Спецпатрон Барракуда-БП</entityname.ks-23apshell>
+    <entitydescription.ks-23apshell>‖color:gui.green‖Бронебойный‖end‖ вариант для КС-23. ‖color:gui.blue‖Пробивает лёгкую броню и переборки подлодок‖end‖ благодаря ‖color:gui.green‖вольфрамовому сердечнику‖end‖. ‖color:gui.red‖Меньший разброс‖end‖, но ‖color:gui.red‖требует точного попадания‖end‖. ‖color:gui.yellow‖Эффективен против укреплённых конструкций‖end‖.</entitydescription.ks-23apshell>
+    <entityname.APS>Подводный автомат АПС «Морской Щит»</entityname.APS>
+    <entitydescription.APS>Советская винтовка спецназначения. Использует ‖color:gui.green‖26-зарядные магазины "Игла-М"‖end‖. ‖color:gui.blue‖Эффективна только под водой, значительно слабее на суше‖end‖. ‖color:gui.red‖Наносит рваные раны вместо огнестрельных‖end‖.</entitydescription.APS>
+    <entityname.apsmagazine>Магазин Игла-М</entityname.apsmagazine>
+    <entitydescription.apsmagazine>‖color:gui.green‖26 стреловидных патронов МПС‖end‖. ‖color:gui.blue‖Эффективен против существ Европы‖end‖. ‖color:gui.red‖Менее эффективен на суше‖end‖.</entitydescription.apsmagazine>
+    <entityname.apsapmagazine>Бронебойный магазин Игла-БП</entityname.apsapmagazine>
+    <entitydescription.apsapmagazine>‖color:gui.green‖26 бронебойных патронов МПС‖end‖. ‖color:gui.blue‖Пробивает броню существ Европы‖end‖. ‖color:gui.red‖Слабее против незащищённых целей‖end‖.</entitydescription.apsapmagazine>
+    <entityname.apsfmjmagazine>Экспансивный магазин Игла-М</entityname.apsfmjmagazine>
+    <entitydescription.apsfmjmagazine>‖color:gui.green‖26 стреловидных патронов‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.apsfmjmagazine>
+    <entityname.ks-23zvshell>23мм патрон Звёздочка</entityname.ks-23zvshell>
+    <entitydescription.ks-23zvshell>‖color:gui.green‖Светошумовой боеприпас‖end‖ для КС-23. ‖color:gui.blue‖Наносит лёгкие ожоги и временно оглушает цели‖end‖. ‖color:gui.yellow‖Эффективен против незащищённых противников‖end‖. ‖color:gui.red‖Не работает под водой‖end‖.</entitydescription.ks-23zvshell>
+    <afflictionname.KS-23zvezdocha>Звёздочка</afflictionname.KS-23zvezdocha>
+    <afflictiondescription.KS-23zvezdocha>Вы поражены светошумовым боеприпасом. В глазах темнеет, а в ушах звенит.</afflictiondescription.KS-23zvezdocha>
+    <entityname.heavybodyarmor>Тяжёлый бронежилет</entityname.heavybodyarmor>
+    <entitydescription.heavybodyarmor>‖color:gui.yellow‖Имеет крепление для основного оружия на спине‖end‖ и ‖color:gui.green‖усиленную защиту от пуль‖end‖. ‖color:gui.red‖Заметно снижает скорость передвижения‖end‖. ‖color:gui.red‖Нет места для обычных предметов‖end‖. ‖color:gui.yellow‖Рекомендован для штурмовых операций‖end‖.</entitydescription.heavybodyarmor>
+    <entityname.bodyarmor>Бронежилет</entityname.bodyarmor>
+    <entitydescription.bodyarmor>Хотя бронежилет и не способен защитить от большинства обитателей океана, он будет более чем полезен, если на борту подлодки окажется предатель.</entitydescription.bodyarmor>
+    <entityname.AK-12>АК-12 «Сепаратист»</entityname.AK-12>
+    <entitydescription.AK-12>Пятое поколение автомата Калашникова. ‖color:gui.green‖Использует патроны 5.45x39мм с улучшенной баллистикой‖end‖. ‖color:gui.yellow‖Оснащён боковым кронштейном для оптики‖end‖. ‖color:gui.yellow‖Комплектуется подствольным гранатомётом‖end‖. ‖color:gui.blue‖Совершенно неэффективен под водой‖end‖.</entitydescription.AK-12>
+    <entityname.Deagle>‖color:gui.yellow‖Desert Eagle «Подводный Клык»‖end‖</entityname.Deagle>
+    <entitydescription.Deagle>Тяжёлый пистолет под патрон ‖color:gui.green‖.50‖end‖. ‖color:gui.blue‖Обладает средней эффективностью при стрельбе под водой‖end‖. ‖color:gui.red‖Мощная отдача требует двуручного хвата‖end‖. Используется элитными подразделениями Коалиции.</entitydescription.Deagle>
+    <entityname.Deagleammo>Магазин .50</entityname.Deagleammo>
+    <entitydescription.Deagleammo>‖color:gui.green‖7 специализированных патронов‖end‖. ‖color:gui.red‖Ограниченная ёмкость‖end‖ компенсируется ‖color:gui.green‖исключительной пробивной силой‖end‖.</entitydescription.Deagleammo>
+    <entityname.laser>‖color:gui.orange‖Тактический лазер‖end‖</entityname.laser>
+    <entitydescription.laser>Если установлен на оружие: ‖color:gui.red‖создаёт красный луч для лучшей видимости‖end‖ и позволяет перемещаться без замедления при прицеливании.</entitydescription.laser>
+    <entityname.colim_scope>Коллиматорный прицел «Walther»</entityname.colim_scope>
+    <entitydescription.colim_scope>‖color:gui.green‖Способ установки:‖end‖
+- Планка Пикатинни
+‖color:gui.red‖Добавляет красную прицельную метку‖end‖. ‖color:gui.blue‖Улучшает угол обзора при прицеливании‖end‖. Современный тактический коллиматорный прицел.</entitydescription.colim_scope>
+    <entityname.PB>ПБ «Глушитель»</entityname.PB>
+    <entitydescription.PB>Бесшумный пистолет под ‖color:gui.green‖патрон 9x18мм‖end‖. ‖color:gui.red‖Не привлекает внимание существ при стрельбе‖end‖. Дешёвые в производстве боеприпасы. ‖color:gui.blue‖Полностью бесполезен под водой‖end‖. Основное оружие сепаратистов и диверсионных групп.</entitydescription.PB>
+    <entityname.PBammo>Магазин 9x18мм</entityname.PBammo>
+    <entitydescription.PBammo>‖color:gui.green‖10 дозвуковых патронов 9x18мм‖end‖.</entitydescription.PBammo>
+    <entityname.M249>‖color:gui.yellow‖Пулемёт M249 «Компактный Ураган»‖end‖</entityname.M249>
+    <entitydescription.M249>Специальная укороченная модификация пулемёта для операций в тесных отсеках. ‖color:gui.green‖Использует 5.56x45мм боеприпасы с ленточным питанием на 150 патронов‖end‖, обеспечивая плотный огонь. ‖color:gui.blue‖Конструктивные особенности полностью исключают стрельбу под водой‖end‖. ‖color:gui.red‖Для эффективной перезарядки требуется навык "Оружие" 65 уровня‖end‖. Редкий образец вооружения на Европе.</entitydescription.M249>
+    <entityname.M249magazine>Ленточный магазин 5.56x45мм</entityname.M249magazine>
+    <entitydescription.M249magazine>‖color:gui.green‖150 патронов 5.56x45мм в стальной коробке‖end‖. ‖color:gui.red‖Существенно увеличивает вес оружия‖end‖, но обеспечивает ‖color:gui.green‖продолжительную огневую мощь‖end‖.</entitydescription.M249magazine>
+    <entityname.laserflashlight>‖color:gui.orange‖Тактический Фонарик + Лазер‖end‖</entityname.laserflashlight>
+    <entitydescription.laserflashlight>‖color:gui.yellow‖Встроенный мощный фонарик‖end‖. При установке: ‖color:gui.red‖добавляет красный прицел‖end‖ и убирает замедление при прицеливании. ‖color:gui.red‖Значительно увеличивает энергопотребление‖end‖.</entitydescription.laserflashlight>
+    <entityname.acog_scope>Тактический прицел ACOG</entityname.acog_scope>
+    <entitydescription.acog_scope>‖color:gui.green‖Способ установки:‖end‖
+- Планка Пикатинни
+‖color:gui.blue‖Средне-малое увеличение обзора‖end‖. Современный тактический оптический прицел.</entitydescription.acog_scope>
+    <entityname.thermal_scope>Тепловизионный прицел</entityname.thermal_scope>
+    <entitydescription.thermal_scope>‖color:gui.green‖Способ установки:‖end‖
+- Планка Пикатинни
+‖color:gui.blue‖Средне-малое увеличение обзора‖end‖. ‖color:gui.yellow‖Белая термальная индикация‖end‖ для обнаружения целей в плохих условиях видимости.</entitydescription.thermal_scope>
+    <entityname.SCAR>SCAR «Водный Шквал»</entityname.SCAR>
+    <entitydescription.SCAR>Мощная штурмовая винтовка под ‖color:gui.green‖патроны 7.62x51мм‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖. ‖color:gui.yellow‖Оснащена планкой Пикатинни‖end‖.</entitydescription.SCAR>
+    <entityname.SCARmagazine>Магазин 7.62x51мм</entityname.SCARmagazine>
+    <entitydescription.SCARmagazine>‖color:gui.green‖20 патронов 7.62x51мм‖end‖. Стандартные боеприпасы.</entitydescription.SCARmagazine>
+    <entityname.SCARapmagazine>Бронебойный магазин 7.62x51мм</entityname.SCARapmagazine>
+    <entitydescription.SCARapmagazine>‖color:gui.green‖20 бронебойных патронов 7.62x51мм‖end‖.</entitydescription.SCARapmagazine>
+    <entityname.SCARfmjmagazine>Экспансивный магазин 7.62x51мм</entityname.SCARfmjmagazine>
+    <entitydescription.SCARfmjmagazine>‖color:gui.green‖20 экспансивных патронов 7.62x51мм‖end‖. ‖color:gui.yellow‖Высокая эффективность против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.SCARfmjmagazine>
+    <entityname.Reck>Револьвер «Вольт»</entityname.Reck>
+    <entitydescription.Reck>Компактный револьвер Reck Cobra под патроны ‖color:gui.green‖.38‖end‖. Лёгкий и удобный для скрытого ношения. ‖color:gui.blue‖Бесполезен под водой‖end‖.</entitydescription.Reck>
+    <entityname.reck.38>Патрон .38</entityname.reck.38>
+    <entitydescription.reck.38>Стандартный патрон калибра .38. ‖color:gui.green‖Подходит для большинства револьверов этого калибра‖end‖.</entitydescription.reck.38>
+    <entityname..38ap>Патрон .38 БП</entityname..38ap>
+    <entitydescription..38ap>Бронебойный патрон калибра .38. ‖color:gui.blue‖Повышенная пробиваемость‖end‖ за счёт ‖color:gui.red‖небольшого снижения урона‖end‖.</entitydescription..38ap>
+    <entityname.Model870>Дробовик «Remington 870»</entityname.Model870>
+    <entitydescription.Model870>Старый помповый дробовик Remington 870. Довольно низкое качество сборки и ненадёжный механизм. Часто используется бандитами и сепаратистами. ‖color:gui.green‖Стандартные боеприпасы для дробовика (вмещает 4 патрона)‖end‖. ‖color:gui.blue‖Не может стрелять под водой‖end‖.</entitydescription.Model870>
+    <entityname.SAIGA>‖color:gui.yellow‖Дробовик «Сайга-12»‖end‖</entityname.SAIGA>
+    <entitydescription.SAIGA>Полуавтоматический дробовик на базе АК. Использует ‖color:gui.green‖стандартные патроны для дробовика‖end‖. ‖color:gui.blue‖Модифицирован для подводной стрельбы‖end‖. ‖color:gui.yellow‖Оптика устанавливается на боковой кронштейн‖end‖.</entitydescription.SAIGA>
+    <entityname.shotgunshellap>Бронебойный патрон для дробовика</entityname.shotgunshellap>
+    <entitydescription.shotgunshellap>‖color:gui.green‖Бронебойные дробовые патроны‖end‖. ‖color:gui.blue‖Высокая эффективность под водой‖end‖. Предназначены для ‖color:gui.green‖пробивания лёгкой брони‖end‖.</entitydescription.shotgunshellap>
+    <entityname.shotgunshellfmj>Экспансивный патрон для дробовика</entityname.shotgunshellfmj>
+    <entitydescription.shotgunshellfmj>‖color:gui.green‖Патроны с цельнометаллической оболочкой‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖. ‖color:gui.yellow‖Чрезвычайно эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.shotgunshellfmj>
+    <entityname.SAIGAmagazine>Магазин Сайга-12 / ТОЗ-104</entityname.SAIGAmagazine>
+    <entitydescription.SAIGAmagazine>‖color:gui.green‖10 стандартных патронов для дробовика‖end‖. Совместим с Сайга-12 и ТОЗ-104.</entitydescription.SAIGAmagazine>
+    <entityname.SAIGAapmagazine>Бронебойный магазин Сайга-12 / ТОЗ-104</entityname.SAIGAapmagazine>
+    <entitydescription.SAIGAapmagazine>‖color:gui.green‖5 бронебойных патронов для дробовика‖end‖. Совместим с Сайга-12 и ТОЗ-104.</entitydescription.SAIGAapmagazine>
+    <entityname.SAIGAfmjmagazine>Экспансивный магазин Сайга-12 / ТОЗ-104</entityname.SAIGAfmjmagazine>
+    <entitydescription.SAIGAfmjmagazine>‖color:gui.green‖5 экспансивных патронов для дробовика‖end‖. Совместим с Сайга-12 и ТОЗ-104.</entitydescription.SAIGAfmjmagazine>
+    <entityname.scout>Винтовка «Aqua Scout»</entityname.scout>
+    <entitydescription.scout>Лёгкая тактическая винтовка. Использует ‖color:gui.green‖патроны 5.56x45mm‖end‖. ‖color:gui.blue‖Обладает средней эффективностью под водой‖end‖. ‖color:gui.yellow‖Оснащена планкой Пикатинни‖end‖. Идеальна для разведки и точной стрельбы.</entitydescription.scout>
+    <entityname.scoutmagazine>Магазин Scout 5.56x45мм</entityname.scoutmagazine>
+    <entitydescription.scoutmagazine>‖color:gui.green‖10 стандартных патронов 5.56x45mm‖end‖. Совместим только с винтовкой Scout.</entitydescription.scoutmagazine>
+    <entityname.scoutapmagazine>Магазин Scout 5.56x45мм AP</entityname.scoutapmagazine>
+    <entitydescription.scoutapmagazine>‖color:gui.green‖10 бронебойных патронов 5.56x45mm‖end‖. ‖color:gui.blue‖Хорошая эффективность под водой‖end‖. Совместим только с винтовкой Scout.</entitydescription.scoutapmagazine>
+    <entityname.scoutfmjmagazine>Экспансивный магазин Scout 5.56x45мм</entityname.scoutfmjmagazine>
+    <entitydescription.scoutfmjmagazine>‖color:gui.green‖10 экспансивных патронов 5.56x45mm‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖. Совместим только с винтовкой Scout.</entitydescription.scoutfmjmagazine>
+    <entityname.Model29ammofmj>Патрон .44 Magnum Экспансивный</entityname.Model29ammofmj>
+    <entitydescription.Model29ammofmj>‖color:gui.green‖Патроны с экспансивным наконечником‖end‖. ‖color:gui.yellow‖Чрезвычайно эффективны против незащищённых целей, вызывают массивное кровотечение‖end‖.</entitydescription.Model29ammofmj>
+    <entityname..38fmj>Патрон .38 Экспансивный</entityname..38fmj>
+    <entitydescription..38fmj>‖color:gui.green‖Патроны с цельнометаллической оболочкой‖end‖. ‖color:gui.yellow‖Наносят тяжёлые рваные раны с интенсивным кровотечением‖end‖.</entitydescription..38fmj>
+    <entityname.R8>Револьвер «Тактик»</entityname.R8>
+    <entitydescription.R8>Современный револьвер с ‖color:gui.yellow‖верхней планкой Пикатинни‖end‖. Использует патроны ‖color:gui.green‖.38‖end‖. ‖color:gui.blue‖Малоэффективен под водой‖end‖. ‖color:gui.yellow‖Поддерживает оптические и коллиматорные прицелы‖end‖. Низкая отдача, высокая точность.</entitydescription.R8>
+    <entityname.RPG>‖color:gui.yellow‖РПГ «Гидроудар»‖end‖</entityname.RPG>
+    <entitydescription.RPG>Модифицированный гранатомёт с ‖color:gui.yellow‖планкой Пикатинни для тактических прицелов‖end‖. ‖color:gui.blue‖Специальная гидросистема позволяет вести огонь под водой‖end‖. ‖color:gui.red‖Замедляет движение владельца‖end‖. Использует ‖color:gui.green‖снаряды РПГ‖end‖.</entitydescription.RPG>
+    <entityname.RPGround>Фугасный снаряд РПГ</entityname.RPGround>
+    <entitydescription.RPGround>‖color:gui.green‖Фугасный заряд‖end‖. ‖color:gui.yellow‖Эффективен против корпуса субмарин и скоплений врагов‖end‖.</entitydescription.RPGround>
+    <entityname.RPGroundap>Кинетический снаряд РПГ</entityname.RPGroundap>
+    <entitydescription.RPGroundap>‖color:gui.green‖Кинетический проникающий снаряд‖end‖. ‖color:gui.blue‖Пробивает несколько преград‖end‖. ‖color:gui.yellow‖Не взрывается, может быть восстановлен после выстрела‖end‖.</entitydescription.RPGroundap>
+    <entityname.RPGroundkm1>Кумулятивный снаряд РПГ</entityname.RPGroundkm1>
+    <entitydescription.RPGroundkm1>‖color:gui.green‖Бронепробивающий заряд‖end‖. ‖color:gui.blue‖Пробивает стены до 2м‖end‖. ‖color:gui.red‖Склонен к рикошетам‖end‖. ‖color:gui.yellow‖Создаёт небольшой взрыв‖end‖.</entitydescription.RPGroundkm1>
+    <entityname.RPGroundkm2>Тандемный снаряд РПГ</entityname.RPGroundkm2>
+    <entitydescription.RPGroundkm2>‖color:gui.green‖Двухфазный кумулятивный заряд‖end‖. ‖color:gui.blue‖Пробивает стены до 4м‖end‖. ‖color:gui.green‖Устойчив к рикошетам‖end‖. ‖color:gui.yellow‖Мощность взрыва сопоставима с фугасным снарядом‖end‖.</entitydescription.RPGroundkm2>
+    <entityname.MP5-anim>ПП MP5 «Служебный»</entityname.MP5-anim>
+    <entitydescription.MP5-anim>Пистолет-пулемёт с ‖color:gui.purple‖режимом стрельбы очередями по 3 патрона‖end‖. Использует ‖color:gui.green‖9x19 патроны‖end‖. ‖color:gui.blue‖Низкая эффективность под водой‖end‖. ‖color:gui.yellow‖Оснащён планкой Пикатинни для тактических аксессуаров‖end‖.</entitydescription.MP5-anim>
+    <entityname.MP5magazine-anim>Магазин MP5 9x19</entityname.MP5magazine-anim>
+    <entitydescription.MP5magazine-anim>‖color:gui.green‖30 стандартных патронов 9x19‖end‖.</entitydescription.MP5magazine-anim>
+    <entityname.MP5bigmagazine-anim>Барабанный магазин MP5 9x19</entityname.MP5bigmagazine-anim>
+    <entitydescription.MP5bigmagazine-anim>‖color:gui.green‖50 патронов 9x19‖end‖.</entitydescription.MP5bigmagazine-anim>
+    <entityname.MP5bigfmjmagazine-anim>Барабанный экспансивный магазин MP5 9x19</entityname.MP5bigfmjmagazine-anim>
+    <entitydescription.MP5bigfmjmagazine-anim>‖color:gui.green‖50 экспансивных патронов 9x19‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.MP5bigfmjmagazine-anim>
+    <entityname.MP5fmjmagazine-anim>Экспансивный магазин MP5 9x19</entityname.MP5fmjmagazine-anim>
+    <entitydescription.MP5fmjmagazine-anim>‖color:gui.green‖30 экспансивных патронов 9x19‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.MP5fmjmagazine-anim>
+    <entityname.SKS>Самозарядный карабин СКС «Прибой»</entityname.SKS>
+    <entitydescription.SKS>Модифицированная версия СКС. Использует ‖color:gui.green‖патроны 7.62x39мм‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖. ‖color:gui.yellow‖Оснащён боковым креплением для оптики‖end‖.</entitydescription.SKS>
+    <entityname.SKSammos>Патрон 7.62x39мм</entityname.SKSammos>
+    <entitydescription.SKSammos>‖color:gui.green‖Стандартные патроны для СКС‖end‖.</entitydescription.SKSammos>
+    <entityname.SKSammoap>Бронебойный патрон 7.62x39мм</entityname.SKSammoap>
+    <entitydescription.SKSammoap>‖color:gui.green‖Бронебойные патроны для СКС‖end‖. ‖color:gui.blue‖Хорошая эффективность под водой‖end‖. ‖color:gui.red‖Слегка сниженный урон‖end‖.</entitydescription.SKSammoap>
+    <entityname.SKSammofmj>Экспансивный патрон 7.62x39мм</entityname.SKSammofmj>
+    <entitydescription.SKSammofmj>‖color:gui.green‖Экспансивные патроны с цельнометаллической оболочкой‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.SKSammofmj>
+    <entityname.Lightbodyarmor>Лёгкий бронежилет</entityname.Lightbodyarmor>
+    <entitydescription.Lightbodyarmor>Облегчённая версия с ‖color:gui.green‖увеличенным местом для патронов и гранат‖end‖. ‖color:gui.red‖Защита слабее стандартной‖end‖, но ‖color:gui.yellow‖лучше защищает от осколков‖end‖. ‖color:gui.blue‖Полностью сохраняет подвижность‖end‖.</entitydescription.Lightbodyarmor>
+    <entityname.AK-47>Автомат АК-47 «Глубина»</entityname.AK-47>
+    <entitydescription.AK-47>Легендарный автомат Калашникова, модифицированный для подводных условий. Используется сепаратистами. ‖color:gui.green‖Патроны 7.62x39мм‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖.</entitydescription.AK-47>
+    <entityname.ak47magazine-anim>Магазин 7.62x39мм</entityname.ak47magazine-anim>
+    <entitydescription.ak47magazine-anim>30 стандартных патронов 7.62x39мм.</entitydescription.ak47magazine-anim>
+    <entityname.ak47apmagazine-anim>Бронебойный магазин 7.62x39мм</entityname.ak47apmagazine-anim>
+    <entitydescription.ak47apmagazine-anim>30 бронебойных патронов 7.62x39мм. ‖color:gui.blue‖Хорошая эффективность под водой‖end‖.</entitydescription.ak47apmagazine-anim>
+    <entityname.ak47fmjmagazine-anim>Экспансивный магазин 7.62x39мм</entityname.ak47fmjmagazine-anim>
+    <entitydescription.ak47fmjmagazine-anim>30 экспансивных патронов 7.62x39мм. ‖color:gui.red‖Вызывает сильное кровотечение‖end‖.</entitydescription.ak47fmjmagazine-anim>
+    <entityname.p-11>Пистолет P-11 «Нерей»</entityname.p-11>
+    <entitydescription.p-11>Немецкий аналог СПП-1. Использует ‖color:gui.green‖специальные подводные патроны‖end‖. ‖color:gui.blue‖Высокоэффективен под водой‖end‖. ‖color:gui.red‖Маломощен на суше‖end‖. ‖color:gui.yellow‖Может комплектоваться травматическим магазином‖end‖.</entitydescription.p-11>
+    <entityname.P-11magazine>Магазин P-11</entityname.P-11magazine>
+    <entitydescription.P-11magazine>‖color:gui.green‖6 подводных патронов‖end‖. Стандартные боеприпасы.</entitydescription.P-11magazine>
+    <entityname.P-11apmagazine>Бронебойный магазин P-11</entityname.P-11apmagazine>
+    <entitydescription.P-11apmagazine>‖color:gui.green‖6 бронебойных подводных патронов‖end‖. ‖color:gui.blue‖Пробивает лёгкую броню‖end‖.</entitydescription.P-11apmagazine>
+    <entityname.P-11blankmagazine>Травматический магазин P-11</entityname.P-11blankmagazine>
+    <entitydescription.P-11blankmagazine>‖color:gui.green‖6 травматических патронов‖end‖. ‖color:gui.yellow‖Не наносит смертельных повреждений‖end‖. ‖color:gui.red‖Эффективен только на суше‖end‖.</entitydescription.P-11blankmagazine>
+    <entityname.railgunshellkm1>Кумулятивный снаряд рельсотрона</entityname.railgunshellkm1>
+    <entitydescription.railgunshellkm1>‖color:gui.blue‖Пробивает броню до 3 метров‖end‖. ‖color:gui.yellow‖Особо эффективен против подлодок‖end‖ - ‖color:gui.red‖легко проникает через корпус, уничтожая экипаж и оборудование‖end‖.</entitydescription.railgunshellkm1>
+    <entityname.railgunshellkm2>Тандемный кумулятивный снаряд рельсотрона</entityname.railgunshellkm2>
+    <entitydescription.railgunshellkm2>‖color:gui.blue‖Пробивает до 6 метров брони‖end‖. ‖color:gui.yellow‖Особо эффективен против подлодок‖end‖ - ‖color:gui.red‖легко проникает через корпус, уничтожая экипаж и оборудование‖end‖.</entitydescription.railgunshellkm2>
+    <entityname.suppressor_shotgun>Глушитель для дробовика</entityname.suppressor_shotgun>
+    <entitydescription.suppressor_shotgun>Снижает шум выстрела. Подходит для большинства видов этого вооружения.</entitydescription.suppressor_shotgun>
+    <entityname.suppressor_pistol>Глушитель для пистолета</entityname.suppressor_pistol>
+    <entitydescription.suppressor_pistol>Снижает шум выстрела. Подходит для большинства видов этого вооружения.</entitydescription.suppressor_pistol>
+    <entityname.suppressor_rifle>Глушитель для винтовки</entityname.suppressor_rifle>
+    <entitydescription.suppressor_rifle>Снижает шум выстрела. Подходит для большинства видов этого вооружения.</entitydescription.suppressor_rifle>
+    <entityname.suppressor_sniper>Глушитель для снайперской винтовки</entityname.suppressor_sniper>
+    <entitydescription.suppressor_sniper>Снижает шум выстрела. Подходит для большинства видов этого вооружения.</entitydescription.suppressor_sniper>
+    <entityname.headset_noise>Активные наушники</entityname.headset_noise>
+    <entitydescription.headset_noise>Защищает от оглушения и повреждений, вызванных громкими выстрелами. Работают за счёт встроенных микрофонов, которые улавливают громкие звуки и создают противоположную звуковую волну, нейтрализующую их.</entitydescription.headset_noise>
+    <afflictionname.tinnitus_shot>Оглушение после выстрела</afflictionname.tinnitus_shot>
+    <afflictiondescription.tinnitus_shot>Кратковременная потеря слуха и оглушение после громкого выстрела</afflictiondescription.tinnitus_shot>
+    <entityname.ASM-DT>Автомат АСМ-ДТ «Дуэт»</entityname.ASM-DT>
+    <entitydescription.ASM-DT>Гибридный подводный автомат. Использует ‖color:gui.green‖5.45x39мм и стреловидные патроны‖end‖. ‖color:gui.blue‖Эффективен в обеих средах‖end‖. ‖color:gui.yellow‖Боковая планка для оптики‖end‖.</entitydescription.ASM-DT>
+    <entityname.compensator_rifle>Компенсатор вертикальной отдачи для винтовок</entityname.compensator_rifle>
+    <entitydescription.compensator_rifle>‖color:gui.green‖Уменьшает вертикальную отдачу‖end‖. ‖color:gui.blue‖Позволяет контролировать оружие при стрельбе длинными очередями‖end‖. ‖color:gui.yellow‖Совместим с винтовками‖end‖.</entitydescription.compensator_rifle>
+    <entityname.colim_scope-1>Коллиматорный прицел «ОКП-7»</entityname.colim_scope-1>
+    <entitydescription.colim_scope-1>‖color:gui.green‖Способ установки:‖end‖
+- Боковой кронштейн
+‖color:gui.red‖Добавляет красную прицельную метку‖end‖. ‖color:gui.blue‖Улучшает угол обзора при прицеливании‖end‖. Специализированный прицел для оружия с боковым креплением.</entitydescription.colim_scope-1>
+    <entityname.SVU>Снайперская винтовка СВУ «Волна»</entityname.SVU>
+    <entitydescription.SVU>Короткая буллпап винтовка. ‖color:gui.green‖Идеальна для замкнутых пространств‖end‖. Использует ‖color:gui.green‖патроны 7.62x54мм R‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖. ‖color:gui.yellow‖Боковое крепление для прицелов‖end‖.</entitydescription.SVU>
+    <entityname.SVUmagazine>Магазин СВУ 7.62мм</entityname.SVUmagazine>
+    <entitydescription.SVUmagazine>‖color:gui.green‖10 стандартных патронов 7.62x54мм R‖end‖.</entitydescription.SVUmagazine>
+    <entityname.SVUapmagazine>Бронебойный магазин СВУ</entityname.SVUapmagazine>
+    <entitydescription.SVUapmagazine>‖color:gui.green‖10 бронебойных патронов 7.62x54мм R‖end‖. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖.</entitydescription.SVUapmagazine>
+    <entityname.SVUfmjmagazine>Экспансивный магазин СВУ</entityname.SVUfmjmagazine>
+    <entitydescription.SVUfmjmagazine>‖color:gui.green‖10 экспансивных патронов 7.62x54мм R‖end‖. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.SVUfmjmagazine>
+    <entityname.pso_scope>Оптический прицел ПСО-1</entityname.pso_scope>
+    <entitydescription.pso_scope>‖color:gui.green‖Способ установки:‖end‖
+- Боковой кронштейн
+‖color:gui.red‖Сильно увеличивает дальность обзора‖end‖. ‖color:gui.yellow‖Совместим с оружием, имеющим боковое крепление‖end‖.</entitydescription.pso_scope>
+    <entityname.BFG-50>Снайперская винтовка BFG-50 «Громовержец»</entityname.BFG-50>
+    <entitydescription.BFG-50>Мощная снайперская система. Использует ‖color:gui.green‖патроны 12.7x99мм‖end‖. ‖color:gui.red‖Клинит при попытке стрельбы под водой‖end‖. ‖color:gui.yellow‖Планка Пикатинни для прицелов‖end‖.</entitydescription.BFG-50>
+    <entityname.BFG-50ammo>Патрон 12.7x99мм</entityname.BFG-50ammo>
+    <entitydescription.BFG-50ammo>‖color:gui.green‖Стандартные патроны для BFG-50‖end‖.</entitydescription.BFG-50ammo>
+    <entityname.BFG-50ammoap>Бронебойный патрон 12.7x99мм</entityname.BFG-50ammoap>
+    <entitydescription.BFG-50ammoap>‖color:gui.green‖Бронебойные патроны для BFG-50‖end‖. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖.</entitydescription.BFG-50ammoap>
+    <entityname.BFG-50ammoexp>Взрывной патрон 12.7x99мм</entityname.BFG-50ammoexp>
+    <entitydescription.BFG-50ammoexp>‖color:gui.green‖Взрывные патроны для BFG-50‖end‖. ‖color:gui.yellow‖Эффективен против групп целей и укреплённых структур‖end‖.</entitydescription.BFG-50ammoexp>
+    <entityname.brite_scope>Оптический прицел «Brite»</entityname.brite_scope>
+    <entitydescription.brite_scope>‖color:gui.green‖Способ установки:‖end‖
+- Планка Пикатинни
+‖color:gui.red‖Сильно увеличивает дальность обзора‖end‖. ‖color:gui.yellow‖Совместим с оружием, имеющим планку Пикатинни‖end‖.</entitydescription.brite_scope>
+    <entityname.nvg-anim>Прибор ночного видения «Сова»</entityname.nvg-anim>
+    <entitydescription.nvg-anim>‖color:gui.green‖ПНВ с обычными наушниками‖end‖. ‖color:gui.blue‖Обеспечивает видимость в полной темноте‖end‖. ‖color:gui.yellow‖Питается от аккумуляторов‖end‖. ‖color:gui.red‖Не защищает от громких звуков‖end‖.</entitydescription.nvg-anim>
+    <entityname.hider_rifle>Компенсатор горизонтальной отдачи для винтовок</entityname.hider_rifle>
+    <entitydescription.hider_rifle>‖color:gui.green‖Уменьшает горизонтальную отдачу‖end‖. ‖color:gui.blue‖Позволяет контролировать оружие при стрельбе длинными очередями‖end‖. ‖color:gui.yellow‖Совместим с винтовками‖end‖.</entitydescription.hider_rifle>
+    <entityname.RSH-12>Револьвер РШ-12 «Ледокол»</entityname.RSH-12>
+    <entitydescription.RSH-12>Крупнокалиберный револьвер. Использует ‖color:gui.green‖патроны 12.7x55мм‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖. ‖color:gui.yellow‖Мощная остановочная способность‖end‖. ‖color:gui.red‖Требует двух рук для стрельбы‖end‖.</entitydescription.RSH-12>
+    <entityname.RSH-12ammos>Патрон 12.7x55мм</entityname.RSH-12ammos>
+    <entitydescription.RSH-12ammos>‖color:gui.green‖Стандартные патроны для РШ-12‖end‖.</entitydescription.RSH-12ammos>
+    <entityname.RSH-12ammoap>Бронебойный патрон 12.7x55мм</entityname.RSH-12ammoap>
+    <entitydescription.RSH-12ammoap>‖color:gui.green‖Бронебойные патроны для РШ-12‖end‖. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖.</entitydescription.RSH-12ammoap>
+    <entityname.RSH-12ammofmj>Экспансивный патрон 12.7x55мм</entityname.RSH-12ammofmj>
+    <entitydescription.RSH-12ammofmj>‖color:gui.green‖Экспансивные патроны для РШ-12‖end‖. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.RSH-12ammofmj>
+    <entityname.PKP>‖color:gui.yellow‖Пулемёт Печенег-Буллпап «Торнадо»‖end‖</entityname.PKP>
+    <entitydescription.PKP>Пулемёт схемы bullpup. Использует ‖color:gui.green‖патроны 7.62x54мм R с ленточным питанием на 100 патронов‖end‖. ‖color:gui.blue‖Не может стрелять под водой‖end‖ в виду системы подачи патронов. ‖color:gui.red‖Для эффективной перезарядки нужен навык оружия 75‖end‖. ‖color:gui.blue‖Очень редкий образец оружия на Европе‖end‖.</entitydescription.PKP>
+    <entityname.PKPmagazine>Ленточный магазин ПКП 7.62x54мм R</entityname.PKPmagazine>
+    <entitydescription.PKPmagazine>‖color:gui.green‖100 патронов 7.62x54мм R‖end‖.</entitydescription.PKPmagazine>
+    <entityname.cassetteplayer>Кассетный магнитофон</entityname.cassetteplayer>
+    <entitydescription.cassetteplayer>‖color:gui.yellow‖Старый кассетный плеер‖end‖. ‖color:gui.green‖Может воспроизводить музыку‖end‖. ‖color:gui.blue‖Работает от батареек‖end‖.</entitydescription.cassetteplayer>
+    <entityname..38>Патрон .38 калибра</entityname..38>
+    <entitydescription..38>‖color:gui.green‖Стандартный револьверный патрон‖end‖. ‖color:gui.yellow‖Совместим с большинством револьверов этого калибра‖end‖.</entitydescription..38>
+    <entityname.repair>Индикатор состояния оружия</entityname.repair>
+    <entitydescription.repair>‖color:gui.green‖Зелёный - оружие почти новое‖end‖
+‖color:gui.yellow‖Жёлтый - потрёпанное состояние‖end‖
+‖color:gui.red‖Красный - сильно изношенное‖end‖
+‖color:gui.grey‖Чёрный - состояние стремится к нулю‖end‖</entitydescription.repair>
+    <entityname.repair-very-broken>Индикатор состояния оружия</entityname.repair-very-broken>
+    <entitydescription.repair-very-broken>‖color:gui.green‖Зелёный - оружие почти новое‖end‖
+‖color:gui.yellow‖Жёлтый - потрёпанное состояние‖end‖
+‖color:gui.red‖Красный - сильно изношенное‖end‖
+‖color:gui.grey‖Чёрный - состояние стремится к нулю‖end‖</entitydescription.repair-very-broken>
+    <entityname.repair-broken>Индикатор состояния оружия</entityname.repair-broken>
+    <entitydescription.repair-broken>‖color:gui.green‖Зелёный - оружие почти новое‖end‖
+‖color:gui.yellow‖Жёлтый - потрёпанное состояние‖end‖
+‖color:gui.red‖Красный - сильно изношенное‖end‖
+‖color:gui.grey‖Чёрный - состояние стремится к нулю‖end‖</entitydescription.repair-broken>
+    <entityname.aa_repair>Оружейный фабрикатор</entityname.aa_repair>
+    <entitydescription.aa_repair>Ремонтирует, создаёт оружие, патроны и снаряжение. Профессиональное оборудование для оружейных работ.</entitydescription.aa_repair>
+    <itemmsgdetachcrowbar>[[use]] Отсоединить при помощи лома</itemmsgdetachcrowbar>
+    <displayname.repairweapon>[itemname] (ремонт)</displayname.repairweapon>
+    <entityname.TOZ-34>Дробовик ТОЗ-34 «Компакт»</entityname.TOZ-34>
+    <entitydescription.TOZ-34>Использует ‖color:gui.green‖стандартные патроны дробовика (вмещает 2 патрона)‖end‖. ‖color:gui.blue‖Может стрелять под водой‖end‖. ‖color:gui.green‖Не занимает много места‖end‖.</entitydescription.TOZ-34>
+    <entityname.IJ-17>Дробовик ИЖ-17 «Убой»</entityname.IJ-17>
+    <entitydescription.IJ-17>Использует ‖color:gui.green‖стандартные патроны дробовика (вмещает 1 патрон)‖end‖. ‖color:gui.blue‖Может стрелять под водой‖end‖. ‖color:gui.red‖Наносит более сильный урон относительно других дробовиков‖end‖.</entitydescription.IJ-17>
+    <entityname.compensator_pistol>Компенсатор вертикальной отдачи для пистолетов и ПП</entityname.compensator_pistol>
+    <entitydescription.compensator_pistol>‖color:gui.green‖Уменьшает вертикальную отдачу‖end‖. ‖color:gui.blue‖Позволяет контролировать оружие при стрельбе‖end‖. ‖color:gui.yellow‖Совместим с пистолетами и ПП‖end‖.</entitydescription.compensator_pistol>
+    <entityname.hider_pistol>Компенсатор горизонтальной отдачи для пистолетов и ПП</entityname.hider_pistol>
+    <entitydescription.hider_pistol>‖color:gui.green‖Уменьшает горизонтальную отдачу‖end‖. ‖color:gui.blue‖Позволяет контролировать оружие при стрельбе‖end‖. ‖color:gui.yellow‖Совместим с пистолетами и ПП‖end‖.</entitydescription.hider_pistol>
+    <entityname.AK-74M>Автомат АК-74М «Морпех»</entityname.AK-74M>
+    <entitydescription.AK-74M>Модифицированная версия АК-74. Улучшены все параметры. Повышенная надёжность и точность. ‖color:gui.yellow‖Имеет планки для установки прицела на боковой кронштейн‖end‖. ‖color:gui.blue‖Может стрелять под водой с пониженной эффективностью‖end‖. ‖color:gui.green‖Использует патроны 5.45x39мм‖end‖.</entitydescription.AK-74M>
+    <entityname.earplugs>Беруши</entityname.earplugs>
+    <entitydescription.earplugs>‖color:gui.green‖Защищают от громких звуков выстрелов‖end‖. ‖color:gui.blue‖Можно носить отдельно или вставлять в наушники‖end‖. ‖color:gui.red‖Заглушают все окружающие звуки‖end‖.</entitydescription.earplugs>
+    <entityname.kevlar-plate>Кевларовая пластина для бронежилета</entityname.kevlar-plate>
+    <entitydescription.kevlar-plate>‖color:gui.green‖Современный композитный материал‖end‖. ‖color:gui.yellow‖Самый лёгкий вариант‖end‖ с ‖color:gui.yellow‖высокой устойчивостью к повреждениям‖end‖. ‖color:gui.red‖Обеспечивает базовую защиту от осколков и пистолетных пуль‖end‖.</entitydescription.kevlar-plate>
+    <entityname.steel-plate>Стальная пластина для бронежилета</entityname.steel-plate>
+    <entitydescription.steel-plate>‖color:gui.green‖Классическая броневая сталь‖end‖. ‖color:gui.red‖Наиболее тяжёлый вариант‖end‖ с ‖color:gui.yellow‖средней устойчивостью к повреждениям‖end‖. ‖color:gui.yellow‖Обеспечивает надёжную защиту от винтовочных пуль‖end‖.</entitydescription.steel-plate>
+    <entityname.ceramic-plate>Керамическая пластина для бронежилета</entityname.ceramic-plate>
+    <entitydescription.ceramic-plate>‖color:gui.green‖Высокотехнологичная керамика‖end‖. ‖color:gui.yellow‖Средний вес‖end‖, но ‖color:gui.red‖низкая устойчивость к многократным попаданиям‖end‖. ‖color:gui.yellow‖Обеспечивает максимальную защиту от бронебойных пуль‖end‖.</entitydescription.ceramic-plate>
+    <afflictionname.armored_kevlar>Кевларовая броня</afflictionname.armored_kevlar>
+    <afflictiondescription.armored_kevlar>На мне кевларовая броня. Я чувствую лёгкость и подвижность, но понимаю, что защита от серьёзных угроз ограничена.</afflictiondescription.armored_kevlar>
+    <entityname.ASH-12apmagazine>Бронебойный магазин 12.7x55мм</entityname.ASH-12apmagazine>
+    <entitydescription.ASH-12apmagazine>Вмещает 20 бронебойных патронов 12.7x55мм. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖.</entitydescription.ASH-12apmagazine>
+    <entityname.ASH-12fmjmagazine>Экспансивный магазин 12.7x55мм</entityname.ASH-12fmjmagazine>
+    <entitydescription.ASH-12fmjmagazine>Вмещает 20 экспансивных патронов 12.7x55мм. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.ASH-12fmjmagazine>
+    <entityname.ASH-12>Винтовка АШ-12 «Гроза»</entityname.ASH-12>
+    <entitydescription.ASH-12>Мощный автомат под патроны ‖color:gui.green‖12.7x55мм‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖. ‖color:gui.yellow‖Оснащён планкой Пикатинни‖end‖. ‖color:gui.yellow‖Использует глушитель от снайперской винтовки‖end‖.</entitydescription.ASH-12>
+    <entityname.Ruger>Револьвер Ruger «Ампер»</entityname.Ruger>
+    <entitydescription.Ruger>Револьвер под патроны ‖color:gui.green‖9x19мм с барабаном на 7 патронов‖end‖. ‖color:gui.yellow‖Слабая отдача и высокая скорострельность‖end‖. ‖color:gui.blue‖Малоэффективен под водой‖end‖.</entitydescription.Ruger>
+    <entityname.med-scan>Подвесной медицинский сканер</entityname.med-scan>
+    <entitydescription.med-scan>При установке на оружие: ‖color:gui.green‖отображает медицинское состояние игроков только при прицеливании‖end‖. ‖color:gui.yellow‖Устанавливается в слот для фонарика‖end‖.</entitydescription.med-scan>
+    <entityname.maplefmjround>Патрон 6.8x48мм «Клён» Экспансивный</entityname.maplefmjround>
+    <entitydescription.maplefmjround>Экспансивный патрон 6.8x48мм. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.maplefmjround>
+    <entityname.maplefmjmagazine>Экспансивный магазин 6.8x48мм «Клён»</entityname.maplefmjmagazine>
+    <entitydescription.maplefmjmagazine>Вмещает 20 экспансивных патронов 6.8x48мм. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.maplefmjmagazine>
+    <entityname.assaultriflemagazine>Магазин 6.8x48мм «Абиссальный Кнут»</entityname.assaultriflemagazine>
+    <entitydescription.assaultriflemagazine>Вмещает 30 патронов 6.8x48мм.</entitydescription.assaultriflemagazine>
+    <entityname.assaultrifleapmagazine>Бронебойный магазин 6.8x48мм «Абиссальный Кнут»</entityname.assaultrifleapmagazine>
+    <entitydescription.assaultrifleapmagazine>Вмещает 30 бронебойных патронов 6.8x48мм. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖.</entitydescription.assaultrifleapmagazine>
+    <entityname.assaultriflefmjmagazine>Экспансивный магазин 6.8x48мм «Абиссальный Кнут»</entityname.assaultriflefmjmagazine>
+    <entitydescription.assaultriflefmjmagazine>Вмещает 30 экспансивных патронов 6.8x48мм. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.assaultriflefmjmagazine>
+    <entityname.assaultrifle>Штурмовая винтовка «Абиссальный Кнут»</entityname.assaultrifle>
+    <entitydescription.assaultrifle>Штурмовая винтовка под патроны ‖color:gui.green‖6.8x48мм‖end‖. ‖color:gui.yellow‖Оснащена планкой Пикатинни‖end‖. ‖color:gui.white‖Режим стрельбы по 2 патрона‖end‖. ‖color:gui.blue‖Хорошая эффективность под водой‖end‖. Разработана Коалицией на Европе для штурма аванпостов.</entitydescription.assaultrifle>
+    <afflictionname.pepper>Бич раптора на слизистой оболочке</afflictionname.pepper>
+    <afflictiondescription.pepper>Мои глаза горят от бича раптора! Нужно немедленно промыть их водой.</afflictiondescription.pepper>
+    <afflictionname.pepper-big>Бич раптора на слизистой оболочке</afflictionname.pepper-big>
+    <afflictiondescription.pepper-big>Мои глаза горят от бича раптора! Нужно немедленно промыть их водой.</afflictiondescription.pepper-big>
+    <entityname.pepperspray>Аэрозольно-струйный баллончик с бичом раптора</entityname.pepperspray>
+    <entitydescription.pepperspray>Средство самообороны с аэрозольно-струйной подачей концентрированного сока бича раптора. ‖color:gui.yellow‖Эффективен на близкой дистанции‖end‖. ‖color:gui.blue‖Можно смыть водой‖end‖.</entitydescription.pepperspray>
+    <entityname.40mmnuke>Ядерный мини-снаряд 40 мм</entityname.40mmnuke>
+    <entitydescription.40mmnuke>Небольшой ядерный снаряд для гранатомета. ‖color:gui.red‖Не создаёт осколки при взрыве‖end‖.</entitydescription.40mmnuke>
+    <entityname.40mmpeppergrenade>40мм граната с бичом раптора</entityname.40mmpeppergrenade>
+    <entitydescription.40mmpeppergrenade>40мм граната с концентрированным соком бича раптора для гранатомёта. ‖color:gui.yellow‖Вызывает сильное раздражение глаз‖end‖. ‖color:gui.blue‖Можно смыть водой‖end‖.</entitydescription.40mmpeppergrenade>
+    <entityname.peppergrenade>Граната с бичом раптора</entityname.peppergrenade>
+    <entitydescription.peppergrenade>Граната с концентрированным соком бича раптора. ‖color:gui.yellow‖Вызывает сильное раздражение глаз‖end‖. ‖color:gui.blue‖Можно смыть водой‖end‖.</entitydescription.peppergrenade>
+    <entityname.ballistichelmet6>Клоунский шлем</entityname.ballistichelmet6>
+    <entitydescription.ballistichelmet6>‖color:gui.green‖Имеет встроенные наушники‖end‖. ‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Съёмное забрало-маска клоуна со странным флагом‖end‖. ‖color:gui.yellow‖Встроенный динамик для воспроизведения музыки‖end‖.</entitydescription.ballistichelmet6>
+    <entityname.ballistichelmet6-open>Клоунский шлем с открытым забралом</entityname.ballistichelmet6-open>
+    <entitydescription.ballistichelmet6-open>‖color:gui.green‖Имеет встроенные наушники‖end‖. ‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Съёмное забрало-маска клоуна со странным флагом‖end‖. ‖color:gui.yellow‖Встроенный динамик для воспроизведения музыки‖end‖.</entitydescription.ballistichelmet6-open>
+    <entityname.gasmask>Противогаз «Эгида»</entityname.gasmask>
+    <entitydescription.gasmask>‖color:gui.blue‖Защищает от перцового газа и нейропаралитического газа‖end‖. ‖color:gui.green‖Имеет встроенные наушники‖end‖.</entitydescription.gasmask>
+    <entityname.ballistichelmet1>Пуленепробиваемый шлем</entityname.ballistichelmet1>
+    <entitydescription.ballistichelmet1>‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Хотя шлем и не способен защитить от большинства обитателей океана, он будет более чем полезен, если на борту подлодки окажется предатель.</entitydescription.ballistichelmet1>
+    <entityname.ballistichelmet2>Шлем стрелка</entityname.ballistichelmet2>
+    <entitydescription.ballistichelmet2>‖color:gui.green‖Не затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Этот шлем полегче, чем пуленепробиваемый вариант. Он не мешает владельцу использовать перископ.</entitydescription.ballistichelmet2>
+    <entityname.piratehelmet>Шлем сепаратистов</entityname.piratehelmet>
+    <entitydescription.piratehelmet>‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Модифицированный пуленепробиваемый шлем «Алтын». Несмотря на кустарные улучшения, шлем выглядит на удивление крепким.</entitydescription.piratehelmet>
+    <entityname.piratehelmet2>Укреплённый шлем сепаратистов</entityname.piratehelmet2>
+    <entitydescription.piratehelmet2>‖color:gui.red‖Сильно затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Укреплённый шлем «Алтын» с забралом в три полосы. Повышенная защита от огнестрельных ранений. По какой-то причине этот узор кажется вам знакомым.</entitydescription.piratehelmet2>
+    <entityname.ballistichelmet3>Шлем для подавления беспорядков</entityname.ballistichelmet3>
+    <entitydescription.ballistichelmet3>‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Шлем для усмирения массовых беспорядков, но подходит и для борьбы с инопланетными захватчиками.</entitydescription.ballistichelmet3>
+    <entityname.piratehelmet3>Лёгкий шлем сепаратистов</entityname.piratehelmet3>
+    <entitydescription.piratehelmet3>‖color:gui.green‖Не затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Модифицированный пуленепробиваемый шлем. Облегчённая версия с сохранением защиты. Несмотря на кустарные улучшения, шлем выглядит на удивление крепким.</entitydescription.piratehelmet3>
+    <entityname.ballistichelmet5>Тактический шлем «Страйк»</entityname.ballistichelmet5>
+    <entitydescription.ballistichelmet5>‖color:gui.yellow‖Имеет активные наушники‖end‖. ‖color:gui.red‖Средне ограничивает обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Облегчённая версия штурмового шлема Коалиции. Защита практически не изменилась, но отсутствует ПНВ и кислородная маска.</entitydescription.ballistichelmet5>
+    <!-- Шлемы с открытым забралом -->
+    <entityname.ballistichelmet1-open>Пуленепробиваемый шлем с открытым забралом</entityname.ballistichelmet1-open>
+    <entitydescription.ballistichelmet1-open>‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Хотя шлем и не способен защитить от большинства обитателей океана, он будет более чем полезен, если на борту подлодки окажется предатель.</entitydescription.ballistichelmet1-open>
+    <entityname.ballistichelmet2-open>Шлем стрелка с открытым забралом</entityname.ballistichelmet2-open>
+    <entitydescription.ballistichelmet2-open>‖color:gui.green‖Не затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Этот шлем полегче, чем пуленепробиваемый вариант. Он не мешает владельцу использовать перископ.</entitydescription.ballistichelmet2-open>
+    <entityname.piratehelmet1-open>Шлем сепаратистов с открытым забралом</entityname.piratehelmet1-open>
+    <entitydescription.piratehelmet1-open>‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Модифицированный пуленепробиваемый шлем «Алтын». Несмотря на кустарные улучшения, шлем выглядит на удивление крепким.</entitydescription.piratehelmet1-open>
+    <entityname.piratehelmet2-open>Укреплённый шлем сепаратистов с открытым забралом</entityname.piratehelmet2-open>
+    <entitydescription.piratehelmet2-open>‖color:gui.red‖Сильно затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Укреплённый шлем «Алтын» с забралом в три полосы. Повышенная защита от огнестрельных ранений. По какой-то причине этот узор кажется вам знакомым.</entitydescription.piratehelmet2-open>
+    <entityname.ballistichelmet3-open>Шлем для подавления беспорядков с открытым забралом</entityname.ballistichelmet3-open>
+    <entitydescription.ballistichelmet3-open>‖color:gui.red‖Слабо затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Шлем для усмирения массовых беспорядков, но подходит и для борьбы с инопланетными захватчиками.</entitydescription.ballistichelmet3-open>
+    <entityname.piratehelmet3-open>Лёгкий шлем сепаратистов с открытым забралом</entityname.piratehelmet3-open>
+    <entitydescription.piratehelmet3-open>‖color:gui.green‖Не затрудняет обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Модифицированный пуленепробиваемый шлем. Облегчённая версия с сохранением защиты. Несмотря на кустарные улучшения, шлем выглядит на удивление крепким.</entitydescription.piratehelmet3-open>
+    <entityname.ballistichelmet5-open>Тактический шлем «Страйк» с открытым забралом</entityname.ballistichelmet5-open>
+    <entitydescription.ballistichelmet5-open>‖color:gui.yellow‖Имеет активные наушники‖end‖. ‖color:gui.red‖Средне ограничивает обзор‖end‖. ‖color:gui.white‖Имеет откидной визор‖end‖. Облегчённая версия штурмового шлема Коалиции. Защита практически не изменилась, но отсутствует ПНВ и кислородная маска.</entitydescription.ballistichelmet5-open>
+    <!-- Шлем helmet4 без изменений -->
+    <entityname.ballistichelmet4>Штурмовой шлем «Посейдон»</entityname.ballistichelmet4>
+    <entitydescription.ballistichelmet4>‖color:gui.yellow‖Имеет активные наушники‖end‖. ‖color:gui.red‖Сильно ограничивает обзор‖end‖. Используемый Коалицией для захвата аванпостов. Самый прочный шлем на данный момент, имеет встроенную кислородную маску, ‖color:gui.blue‖встроенный противогаз от токсичных газов‖end‖ и оснащён встроенным ПНВ с местом для аккумулятора. Не предназначен для разведки.</entitydescription.ballistichelmet4>
+    <AA.camera>Приближение камеры</AA.camera>
+    <AA.camera.description>Насколько сильно должно приближать камеру игрока.\nУстановите на 0 для отключения.</AA.camera.description>
+    <AA.periscope>Смещение перископа</AA.periscope>
+    <AA.periscope.description>Насколько сильно должно отдалять изображение при управлении через перископ.\nВлияет на турели, прожекторы, камеры и т.д.\nУстановите на 0 для отключения.</AA.periscope.description>
+    <AA.aiming>Смещение при прицеливании</AA.aiming>
+    <AA.aiming.description>Насколько сильно смещается камера при прицеливании.\nВлияет на ручное оружие, стрелковое оружие и гранаты.\nУстановите на 0 для отключения.</AA.aiming.description>
+    <AA.sync>Синхронизация с другими игроками</AA.sync>
+    <AA.sync.description>Если отмечено, подключенные игроки будут использовать ту же конфигурацию приближения.\nСнимите галочку, чтобы другие игроки могли использовать свои настройки.</AA.sync.description>
+    <AA.sync.enabled>Нельзя изменить - синхронизировано с сервером</AA.sync.enabled>
+    <AA.incompatibility.nteyes>Нельзя изменить - несовместимо с NT Eyes.</AA.incompatibility.nteyes>
+    <EnhancedImmersion.ModName>Управление камерой</EnhancedImmersion.ModName>
+    <entityname.Atropini>Атропин</entityname.Atropini>
+    <entitydescription.Atropini>Антидот против нервно-паралитических веществ. Вызывает помутнение зрения и лёгкую химическую зависимость при длительном применении.</entitydescription.Atropini>
+    <entityname.neurospray>Аэрозольный баллончик с нейропаралитическим газом</entityname.neurospray>
+    <entitydescription.neurospray>Аэрозольный баллончик с нейропаралитическим газом. ‖color:gui.yellow‖Вызывает частичный паралич‖end‖. ‖color:gui.red‖Может убить человека, для лечения требуется антидот‖end‖.</entitydescription.neurospray>
+    <afflictionname.neuro-gas>Нейропаралитический газ</afflictionname.neuro-gas>
+    <afflictiondescription.neuro-gas>Мне трудно дышать и двигаться! Нейропаралитический газ действует. Нужен антидот немедленно.</afflictiondescription.neuro-gas>
+    <entityname.40mmneurogrenade>40мм граната с нейропаралитическим газом</entityname.40mmneurogrenade>
+    <entitydescription.40mmneurogrenade>40мм граната с нейропаралитическим газом для гранатомёта. ‖color:gui.yellow‖Вызывает частичный паралич‖end‖. ‖color:gui.red‖Может убить человека, для лечения требуется антидот‖end‖.</entitydescription.40mmneurogrenade>
+    <entityname.neurogrenade>Граната с нейропаралитическим газом</entityname.neurogrenade>
+    <entitydescription.neurogrenade>Граната с нейропаралитическим газом. ‖color:gui.yellow‖Вызывает частичный паралич‖end‖. ‖color:gui.red‖Может убить человека, для лечения требуется антидот‖end‖.</entitydescription.neurogrenade>
+    <entityname.mapleblueprint>Чертёж винтовки Maple</entityname.mapleblueprint>
+    <entitydescription.mapleblueprint>Чертёж для создания штурмовой винтовки Maple.</entitydescription.mapleblueprint>
+    <entityname.scarblueprint>Чертёж винтовки SCAR</entityname.scarblueprint>
+    <entitydescription.scarblueprint>Чертёж для создания штурмовой винтовки SCAR.</entitydescription.scarblueprint>
+    <entityname.ash12blueprint>Чертёж винтовки ASH-12</entityname.ash12blueprint>
+    <entitydescription.ash12blueprint>Чертёж для создания штурмовой винтовки ASH-12.</entitydescription.ash12blueprint>
+    <entityname.g36blueprint>Чертёж винтовки G36</entityname.g36blueprint>
+    <entitydescription.g36blueprint>Чертёж для создания штурмовой винтовки G36.</entitydescription.g36blueprint>
+    <entityname.pkpblueprint>Чертёж пулемёта PKP</entityname.pkpblueprint>
+    <entitydescription.pkpblueprint>Чертёж для создания пулемёта PKP.</entitydescription.pkpblueprint>
+    <entityname.m249blueprint>Чертёж пулемёта M249</entityname.m249blueprint>
+    <entitydescription.m249blueprint>Чертёж для создания пулемёта M249.</entitydescription.m249blueprint>
+    <entityname.ceramic-plate-blueprint>Чертёж керамической пластины</entityname.ceramic-plate-blueprint>
+    <entitydescription.ceramic-plate-blueprint>Чертёж для создания керамических бронепластин.</entitydescription.ceramic-plate-blueprint>
+    <entityname.steel-plate-blueprint>Чертёж стальной пластины</entityname.steel-plate-blueprint>
+    <entitydescription.steel-plate-blueprint>Чертёж для создания стальных бронепластин.</entitydescription.steel-plate-blueprint>
+    <entityname.kevlar-plate-blueprint>Чертёж кевларовой пластины</entityname.kevlar-plate-blueprint>
+    <entitydescription.kevlar-plate-blueprint>Чертёж для создания кевларовых бронепластин.</entitydescription.kevlar-plate-blueprint>
+    <entityname.neuroweaponsblueprint>Чертёж нейро-оружия</entityname.neuroweaponsblueprint>
+    <entitydescription.neuroweaponsblueprint>Чертёж для создания нейропаралитического оружия и боеприпасов.</entitydescription.neuroweaponsblueprint>
+    <entityname.stinggrenade>Травматическая граната</entityname.stinggrenade>
+    <entitydescription.stinggrenade>‖color:gui.green‖Создает примерно 75 осколков‖end‖. ‖color:gui.yellow‖Радиус поражения около 5 метров‖end‖. ‖color:gui.red‖Вызывает сильную контузию‖end‖.</entitydescription.stinggrenade>
+    <entityname.P-11peppermagazine>Магазин P-11 с экстрактом бича раптора</entityname.P-11peppermagazine>
+    <entitydescription.P-11peppermagazine>Вмещает 6 патронов с концентрированным экстрактом бича раптора. ‖color:gui.yellow‖Вызывает сильное раздражение глаз‖end‖. ‖color:gui.blue‖Можно смыть водой‖end‖.</entitydescription.P-11peppermagazine>
+    <entityname.AK-47>Автомат АК-47 «Глубина»</entityname.AK-47>
+    <entitydescription.AK-47>Легендарный автомат Калашникова, модифицированный для подводных условий. Используется сепаратистами. ‖color:gui.green‖Патроны 7.62x39мм‖end‖. ‖color:gui.blue‖Средняя эффективность под водой‖end‖. ‖color:gui.yellow‖Имеет боковое крепление для прицелов‖end‖.</entitydescription.AK-47>
+    <entityname.MC-255>Револьверный дробовик МЦ-255 «Шторм»</entityname.MC-255>
+    <entitydescription.MC-255>‖color:gui.green‖Стандартные патроны для дробовика, 5 патронов в барабане‖end‖. ‖color:gui.blue‖Можно носить в кармане‖end‖. ‖color:gui.blue‖Может стрелять под водой‖end‖. ‖color:gui.yellow‖Планка Пикатинни для оптики‖end‖. Используется сепаратистами как эффективное решение для боя в тесных помещениях.</entitydescription.MC-255>
+    <entityname.G36-anim>Винтовка G-36M «АкваЛазер»</entityname.G36-anim>
+    <entitydescription.G36-anim>С модифицированным аккумулятором молний. Использует ‖color:gui.green‖патроны 5.56x45мм‖end‖. ‖color:gui.blue‖Эффективна под водой благодаря ускорению снаряда‖end‖. ‖color:gui.yellow‖Планка Пикатинни для оптики‖end‖. Используется Коалицией для операций по захвату кораблей.</entitydescription.G36-anim>
+    <entityname.AN-94>Штурмовая винтовка АН-94 «Николаич»</entityname.AN-94>
+    <entitydescription.AN-94>‖color:gui.green‖Использует патроны 5.45x39мм‖end‖. ‖color:gui.yellow‖Боковая планка для оптики‖end‖. ‖color:gui.purple‖Уникальный режим стрельбы очередями по 2 патрона‖end‖. ‖color:gui.red‖Практически неэффективна под водой, специальный режим стрельбы отключён‖end‖.</entitydescription.AN-94>
+    <entityname.M4-anim>Винтовка M4A1 «Скорстрел»</entityname.M4-anim>
+    <entitydescription.M4-anim>Штурмовая винтовка M4A1 с высокой скорострельностью. Использует ‖color:gui.green‖патроны 5.56x45мм‖end‖. ‖color:gui.blue‖Низкая эффективность под водой‖end‖. ‖color:gui.yellow‖Планка Пикатинни для тактических аксессуаров‖end‖.</entitydescription.M4-anim>
+    <entityname.Glock>Пистолет Glock «Очередь»</entityname.Glock>
+    <entitydescription.Glock>Модифицированный пистолет Glock с ‖color:gui.purple‖режимом стрельбы очередями по 3 патрона‖end‖. Использует ‖color:gui.green‖патроны 9x19мм‖end‖. ‖color:gui.blue‖Неэффективен под водой‖end‖. Можно держать одной рукой.</entitydescription.Glock>
+    <entityname.mosin-obrez>Винтовка Мосина «Обрез»</entityname.mosin-obrez>
+    <entitydescription.mosin-obrez>Грубо укороченная винтовка Мосина. ‖color:gui.red‖Плохая точность‖end‖, но вмещает ‖color:gui.green‖10 патронов 7.62x54R‖end‖. ‖color:gui.blue‖Не может стрелять под водой из-за модифицированного механизма подачи‖end‖. ‖color:gui.yellow‖Достаточно компактна для ношения в кармане и имеет боковую планку для оптики‖end‖.</entitydescription.mosin-obrez>
+    <entityname.M1>M1 Garand «Полимер»</entityname.M1>
+    <entitydescription.M1>Реплика винтовки, созданная из прочных полимерных материалов. Надёжная винтовка с ‖color:gui.green‖патронами 7.62x51 (7 патронов в магазине)‖end‖. ‖color:gui.blue‖После выстрела под водой затвор необходимо вручную дозакрыть для продолжения стрельбы‖end‖.</entitydescription.M1>
+    <afflictionname.armored_steel>Стальная броня</afflictionname.armored_steel>
+    <afflictiondescription.armored_steel>На мне стальная броня. Я чувствую вес конструкции, но уверен в защите от большинства стандартных угроз.</afflictiondescription.armored_steel>
+    <afflictionname.armored_ceram>Керамическая броня</afflictionname.armored_ceram>
+    <afflictiondescription.armored_ceram>На мне керамическая броня. Я чувствую оптимальный баланс между весом и защитой, идеально против бронебойных пуль.</afflictiondescription.armored_ceram>
+    <afflictionname.aa_crawling>Положение лёжа</afflictionname.aa_crawling>
+    <afflictiondescription.aa_crawling>Я нахожусь в положении лёжа. Отдача оружия значительно снижена, улучшая точность стрельбы. Чтобы встать, используйте назначенную клавишу мода или измените её в настройках Animated Arms в меню ESC.</afflictiondescription.aa_crawling>
+    <text_plate>Снять пластину</text_plate>
+    <text_onoff>Вкл/Выкл</text_onoff>
+    <text_burst>Очередь</text_burst>
+    <text_single>Одиночный</text_single>
+    <pda_call>Позвонить</pda_call>
+    <pda_number>Номер</pda_number>
+    <entityname.Berettabigammo>Расширенный магазин 9x19мм</entityname.Berettabigammo>
+    <entitydescription.Berettabigammo>Вмещает 40 патронов 9x19мм.</entitydescription.Berettabigammo>
+    <entityname.Berettafmjammo>Магазин 9x19мм с экспансивными пулями</entityname.Berettafmjammo>
+    <entitydescription.Berettafmjammo>Вмещает 20 экспансивных патронов.</entitydescription.Berettafmjammo>
+    <entityname.1911bigammo>Расширенный магазин .45 ACP</entityname.1911bigammo>
+    <entitydescription.1911bigammo>Вмещает 14 патронов.</entitydescription.1911bigammo>
+    <entityname.40mmgrenade>40мм осколочно-фугасная граната</entityname.40mmgrenade>
+    <entitydescription.40mmgrenade>Граната для гранатомётов с ‖color:gui.green‖50 летальными осколками‖end‖. ‖color:gui.yellow‖Эффективна на средней дистанции‖end‖.</entitydescription.40mmgrenade>
+    <entityname.repairweapon>Ремонтный набор для оружия</entityname.repairweapon>
+    <entitydescription.repairweapon>Используется для ремонта практически любого оружия. Содержит все необходимые инструменты для быстрого и эффективного обслуживания.</entitydescription.repairweapon>
+    <entityname.M1ammos>Патрон 7.62x51</entityname.M1ammos>
+    <entitydescription.M1ammos>Патрон калибра 7.62x51 для винтовки M1 Garand.</entitydescription.M1ammos>
+    <entityname.M1ammoap>Бронебойный патрон 7.62x51</entityname.M1ammoap>
+    <entitydescription.M1ammoap>‖color:gui.green‖Бронебойные патроны‖end‖ с усиленным сердечником для M1 Garand. ‖color:gui.blue‖Обеспечивает повышенное пробитие брони‖end‖.</entitydescription.M1ammoap>
+    <entityname.M1ammofmj>Экспансивный патрон 7.62x51</entityname.M1ammofmj>
+    <entitydescription.M1ammofmj>‖color:gui.green‖Экспансивные патроны‖end‖ с цельнометаллической оболочкой для M1 Garand. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают значительное кровотечение‖end‖.</entitydescription.M1ammofmj>
+    <entityname.HK416apround>Бронебойный патрон 5.56x45мм</entityname.HK416apround>
+    <entitydescription.HK416apround>Бронебойные патроны 5.56x45мм. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖.</entitydescription.HK416apround>
+    <entityname.HK416round>Патрон 5.56x45мм</entityname.HK416round>
+    <entitydescription.HK416round>Стандартные патроны 5.56x45мм.</entitydescription.HK416round>
+    <entityname.HK416fmjround>Экспансивный патрон 5.56x45мм</entityname.HK416fmjround>
+    <entitydescription.HK416fmjround>Экспансивные патроны 5.56x45мм. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.HK416fmjround>
+    <entityname.akround>Патрон 5.45x39мм</entityname.akround>
+    <entitydescription.akround>Стандартные патроны 5.45x39мм.</entitydescription.akround>
+    <entityname.akapround>Бронебойный патрон 5.45x39мм</entityname.akapround>
+    <entitydescription.akapround>Бронебойные патроны 5.45x39мм. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённым целям‖end‖.</entitydescription.akapround>
+    <entityname.akfmjround>Экспансивный патрон 5.45x39мм</entityname.akfmjround>
+    <entitydescription.akfmjround>Экспансивные патроны 5.45x39мм. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.akfmjround>
+    <entityname.Berettarounds>Патрон 9x19мм</entityname.Berettarounds>
+    <entitydescription.Berettarounds>Стандартные патроны 9x19мм.</entitydescription.Berettarounds>
+    <entityname.Berettaroundfmj>Экспансивный патрон 9x19мм</entityname.Berettaroundfmj>
+    <entitydescription.Berettaroundfmj>Экспансивные патроны 9x19мм. ‖color:gui.yellow‖Эффективны против незащищённых целей, вызывают сильное кровотечение‖end‖.</entitydescription.Berettaroundfmj>
+    <entityname.Deagleround>Патрон .50</entityname.Deagleround>
+    <entitydescription.Deagleround>Стандартные патроны калибра .50.</entitydescription.Deagleround>
+    <entityname.PBround>Патрон 9x18мм</entityname.PBround>
+    <entitydescription.PBround>Стандартные патроны 9x18мм.</entitydescription.PBround>
+    <entityname.mapleround>Патрон 6.8x48мм «Клён»</entityname.mapleround>
+    <entitydescription.mapleround>Стандартные патроны 6.8x48мм.</entitydescription.mapleround>
+    <entityname.mapleapround>Бронебойный патрон 6.8x48мм «Клён»</entityname.mapleapround>
+    <entitydescription.mapleapround>Бронебойные патроны 6.8x48мм. ‖color:gui.blue‖Повышенная пробивная способность‖end‖ за счёт ‖color:gui.red‖незначительного снижения урона по незащищённых целям‖end‖.</entitydescription.mapleapround>
+    <entityname.1911round>Патрон .45 ACP</entityname.1911round>
+    <entitydescription.1911round>Стандартные патроны .45 ACP.</entitydescription.1911round>
+    <entityname.P90round>Патрон 5.7x28мм</entityname.P90round>
+    <entitydescription.P90round>Стандартные патроны 5.7x28мм.</entitydescription.P90round>
+    <entityname.ASH-12magazine>Магазин 12.7x55мм</entityname.ASH-12magazine>
+    <entitydescription.ASH-12magazine>Вмещает 20 патронов 12.7x55мм.</entitydescription.ASH-12magazine>
+    <entityname.heavyfraggrenade>Тяжелая осколочная граната</entityname.heavyfraggrenade>
+    <entitydescription.heavyfraggrenade>‖color:gui.green‖Создает примерно 250 осколков‖end‖. ‖color:gui.yellow‖Радиус поражения около 10 метров‖end‖.</entitydescription.heavyfraggrenade>
+    <entityname.fraggrenade>Осколочная граната</entityname.fraggrenade>
+    <entitydescription.fraggrenade>‖color:gui.green‖Создаёт примерно 150 осколоков‖end‖. ‖color:gui.yellow‖Радиус поражения примерно 7 метров‖end‖.</entitydescription.fraggrenade>
+    <entityname.lightshield>Штурмовой щит «Строб»</entityname.lightshield>
+    <entitydescription.lightshield>Штурмовой щит со встроенной системой ослепления противника. ‖color:gui.yellow‖Временно ослепляет врагов‖end‖. ‖color:gui.blue‖Питается от аккумулятора‖end‖.</entitydescription.lightshield>
+    <entityname.RPGroundpol>Полый снаряд РПГ</entityname.RPGroundpol>
+    <entitydescription.RPGroundpol>Полый снаряд РПГ, внутрь которого можно поместить гранату. ‖color:gui.yellow‖Автоматически снимает чеку у гранаты после пробития одной преграды‖end‖. ‖color:gui.blue‖Многоцелевой боеприпас‖end‖.</entitydescription.RPGroundpol>
+    <entityname.neuro-syringe>Шприц с нейропаралитиком</entityname.neuro-syringe>
+    <entitydescription.neuro-syringe>Шприц с нейропаралитическим веществом. ‖color:gui.yellow‖Вызывает частичный паралич‖end‖. ‖color:gui.red‖Может убить человека, для лечения требуется антидот‖end‖.</entitydescription.neuro-syringe>
+    <entityname.divingknife-throw>Нож ныряльщика (метательный)</entityname.divingknife-throw>
+    <entitydescription.divingknife-throw>Метательная версия ножа водолаза.</entitydescription.divingknife-throw>
+    <entityname.divingknifedementonite-throw>Дементонитовый нож ныряльщика (метательный)</entityname.divingknifedementonite-throw>
+    <entitydescription.divingknifedementonite-throw>Метательная версия дементонитового ножа.</entitydescription.divingknifedementonite-throw>
+    <entityname.divingknifehardened-throw>Закалённый нож ныряльщика (метательный)</entityname.divingknifehardened-throw>
+    <entitydescription.divingknifehardened-throw>Метательная версия закалённого ножа водолаза.</entitydescription.divingknifehardened-throw>
+    <entityname.wrench-throw>Гаечный ключ (метательный)</entityname.wrench-throw>
+    <entitydescription.wrench-throw>Метательная версия гаечного ключа.</entitydescription.wrench-throw>
+    <entityname.wrenchdementonite-throw>Дементонитовый гаечный ключ (метательный)</entityname.wrenchdementonite-throw>
+    <entitydescription.wrenchdementonite-throw>Метательная версия дементонитового гаечного ключа.</entitydescription.wrenchdementonite-throw>
+    <entityname.wrenchhardened-throw>Закалённый гаечный ключ (метательный)</entityname.wrenchhardened-throw>
+    <entitydescription.wrenchhardened-throw>Метательная версия закалённого гаечного ключа.</entitydescription.wrenchhardened-throw>
+    <entityname.thermalgoggles>Тепловизионные очки</entityname.thermalgoggles>
+    <entitydescription.thermalgoggles>Тепловизионные очки с ‖color:gui.green‖обычными наушниками‖end‖. ‖color:gui.yellow‖Позволяют видеть тепловые сигнатуры даже сквозь стены‖end‖. ‖color:gui.red‖Ограниченная дальность относительно тепловизионного прицела‖end‖.</entitydescription.thermalgoggles>
+    <entityname.GrenadeLauncher-single>Однозарядный гранатомёт</entityname.GrenadeLauncher-single>
+    <entitydescription.GrenadeLauncher-single>‖color:gui.green‖Использует 40мм гранаты‖end‖. Однозарядный гранатомёт с ‖color:gui.yellow‖планкой Пикатинни‖end‖. ‖color:gui.blue‖Относительно быстрая перезарядка по сравнению с обычными гранатомётами‖end‖.</entitydescription.GrenadeLauncher-single>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Оружие изнашивается при использовании. Сильно изношенный ствол будет часто клинить. Не забывайте о ремонте у оружейного фабрикатора.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Визуальный вид оружия в руках и его цвет в инвентаре меняются в зависимости от прочности. Чтобы точно узнать состояние оружия, наведите на него курсор.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Обычное оружие теряет эффективность под водой. Для подводных вылазок используйте специальное подводное вооружение.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Без прицельных приспособлений вам придется целиться по ощущениям. Лазерный целеуказатель или оптический прицел вернут привычную метку.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Используйте разные режимы огня. Очередь по 2 патрона повышает кучность, а по 3 — помогает контролировать отдачу.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Столкнулись с сильной отдачей? У оружия два типа отдачи: вертикальную (ствол уходит вверх) можно контролировать, опуская мышь, а горизонтальную (разброс в стороны) компенсируют специальные дульные устройства.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Для лучшего контроля над вертикальной отдачей установите вертикальный компенсатор. С горизонтальным разбросом эффективно борется компенсатор горизонтальной отдачи.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Вертикальная отдача сильно зависит от вашего навыка владения оружием. Чем выше навык, тем быстрее ствол возвращается на цель после выстрела.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Горизонтальная отдача не контролируется игроком, но чем выше ваш навык владения оружием, тем медленнее она накапливается при стрельбе.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Попадание по врагу вызывает баллистический шок, дезориентируя его. Экспансивные и резиновые пули наносят особенно сильную боль.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Сила боли от огнестрельных ранений ощущается слабее, если у вас высокий навык владения оружием. Если у вас установлен мод ‖color:gui.blue‖Neurotrauma‖end‖, морфин может облегчить мучения.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Стрельба без защиты для ушей оглушит вас. Используйте беруши или активные наушники, чтобы избежать звона в ушах и помутнения зрения.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Чтобы лечь для максимальной стабильности, удерживайте [CTRL] и дважды нажмите [S]. Чтобы подняться, удерживайте [CTRL] и нажмите [W]. В положении лёжа отдача и разброс минимальны.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Опущенное забрало на шлеме не только скрывает личность, но и защищает от перцового баллончика и частично смягчает эффект светошумовых гранат.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Чтобы использовать противогаз или прибор ночного видения, поднимите забрало на шлеме. Опустите его для защиты лица в ближнем бою и от нелетальных средств.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Некоторые шлемы имеют встроенные системы, такие как активные наушники (защита от оглушения) или маски (защита от газов), экономя слоты экипировки.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Используйте бронепластины разных типов: кевлар — лёгкий, сталь — надёжный, керамика — максимальная защита, но хрупкая.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Настраивайте своё оружие в оружейном фабрикаторе: прицелы, глушители, тактические фонари и компенсаторы отдачи.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Используйте штурмовой щит для прикрытия и оглушения врагов вспышкой.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Однозарядный гранатомёт и РПГ «Гидроудар» позволяют использовать различные типы снарядов, включая кинетические и кумулятивные.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Нейропаралитический газ вызывает удушье и нарушение двигательных функций. Носите с собой Атропин в качестве антидота.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Перцовые гранаты и баллончики эффективны против незащищённых целей. Скафандр или подводная маска обеспечат защиту.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Все револьверы можно крутить на кнопку. ‖color:gui.yellow‖*Почувствуйте себя Оцелотом из MGS.*‖end‖</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖На некоторых шлемах, например, на шлеме клоуна, есть встроенный проигрыватель кассет для создания уникальной атмосферы.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Функция суицида есть на всём оружии. Используйте её в безвыходной ситуации, чтобы не попасть в плен (например, на RP-серверах).</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Наведите курсор на оружие, чтобы увидеть количество патронов в магазине. Прозрачные магазины позволяют сделать это визуально.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Оружие, брошенное в воде, будет медленно ржаветь. Старайтесь не терять свой ствол в глубинах Европы.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Вы можете вынуть патроны из магазина. Возьмите магазин в руку и нажмите кнопку действия. Чтобы зарядить, перетащите патрон на магазин.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Новое оружие и чертежи можно найти по всей Европе: у фракций, на аванпостах и заброшенных субмаринах.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Настройте перезарядку и быстрое взятие оружия в настройках управления. По умолчанию это клавиши [R] и [Q].</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Большинство оружия и патронов создаётся на оружейном фабрикаторе. Изучайте чертежи и планируйте ресурсы заранее.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Гранаты в моде более смертоносны относительно оригинальной игры, и каждая граната имеет своё уникальное количество осколков.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Тактический лазер позволяет перемещаться без замедления при прицеливании - используйте это тактическое преимущество.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖С этим модом у вас есть 2 стиля игры: летальный (как в большинстве модов) и путь пацифиста - можно стакать боль экспансивными или резиновыми патронами и почти полностью обездвижить врага.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Советское оружие как правило медленнее изнашивается и показывает себя хуже НАТО аналогов, но оружие НАТО имеет более быстрый износ но и большую эффективность.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Данный мод - один из первых, что я создал. На удивление получилось хорошо. Огромное спасибо создателю Guns Enhanced за помощь! И да... ты ожидал здесь увидеть совет, но нет...</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Мод визуализирует направление взгляда вашего и чужих персонажей. В связке с увеличенным зумом это позволяет буквально «читать» действия игроков, например, когда они взаимодействуют с инвентарем.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Большинство снаряжения, оружия и патронов теперь создаются на специальном оружейном фабрикаторе. При необходимости, его также можно изготовить на обычном фабрикаторе.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Нажмите [N], чтобы открыть меню интеракций. В нём можно, например, кричать, указывать, драться и выполнять другие действия.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖В меню взаимодействия [N] есть функция «Указать». Если у вас занята одна рука — вы щёлкнете пальцами, если две — хлопнете в ладоши, а если стоите у двери — постучите в неё.</loadingscreentip>
+    <entityname.pepperspray-big>Струйный баллончик «РапторНет»</entityname.pepperspray-big>
+    <entitydescription.pepperspray-big>Большой струйный баллончик с концентрированным соком бича раптора. ‖color:gui.yellow‖Вызывает сильное раздражение глаз‖end‖. ‖color:gui.blue‖Можно смыть водой‖end‖.</entitydescription.pepperspray-big>
+    <entityname.laserflashlight-flash>Тактический модуль (Выбран фонарик)</entityname.laserflashlight-flash>
+    <entitydescription.laserflashlight-flash>Кнопка переключает режимы между фонариком и лазером. В данном режиме: ‖color:gui.red‖тратит больше заряда относительно лазера‖end‖.</entitydescription.laserflashlight-flash>
+    <entityname.laserflashlight-flash>Тактический модуль (Выбран фонарик)</entityname.laserflashlight-flash>
+    <entitydescription.laserflashlight-flash>Кнопка переключает режимы между фонариком и лазером когда модуль в руках. В данном режиме: ‖color:gui.red‖тратит больше заряда относительно лазера‖end‖.</entitydescription.laserflashlight-flash>
+    <entityname.laserflashlight-laser>Тактический модуль (Выбран лазер)</entityname.laserflashlight-laser>
+    <entitydescription.laserflashlight-laser>Кнопка переключает режимы между фонариком и лазером когда модуль в руках. В данном режиме: ‖color:gui.green‖убирает замедление при прицеливании‖end‖.</entitydescription.laserflashlight-laser>
+    <entityname.laserflashlight-flash>Тактический модуль (Выбран фонарик)</entityname.laserflashlight-flash>
+    <entitydescription.laserflashlight-flash>Кнопка переключает режимы между фонариком и лазером когда модуль в руках. В данном режиме: ‖color:gui.red‖тратит больше заряда относительно лазера‖end‖.</entitydescription.laserflashlight-flash>
+    <entityname.laserflashlight-laser>Тактический модуль (Выбран лазер)</entityname.laserflashlight-laser>
+    <entitydescription.laserflashlight-laser>Кнопка переключает режимы между фонариком и лазером когда модуль в руках. В данном режиме: ‖color:gui.green‖убирает замедление при прицеливании‖end‖.</entitydescription.laserflashlight-laser>
+    <entityname.Revolver>Револьвер «Грауз»</entityname.Revolver>
+    <entitydescription.Revolver>Револьвер под мощный патрон ‖color:gui.green‖6.8x48мм 4 патрона в барабане‖end‖. Был создан для подводников, которым был нужен мощный пистолет, способный стрелять под водой. ‖color:gui.blue‖Отличная эффективность под водой‖end‖. ‖color:gui.yellow‖Встроенный лазерный целеуказатель‖end‖.</entitydescription.Revolver>
+    <entityname.Shotgun>Дробовик «Бездонный»</entityname.Shotgun>
+    <entitydescription.Shotgun>Дробовик, разработанный на Европе, благодаря чему может стрелять под водой. ‖color:gui.green‖Использует стандартные патроны дробовика и вмещает 6 патронов‖end‖. ‖color:gui.yellow‖Имеет боковое крепление для прицелов‖end‖. ‖color:gui.white‖Режим стрельбы сразу 2 пулями‖end‖.</entitydescription.Shotgun>
+    <entityname.bandana-anim>Бандана «Foxhound»</entityname.bandana-anim>
+    <entitydescription.bandana-anim>Особая бандана, позволяющая владельцу несколько раз притвориться мёртвым и затем возродиться. ‖color:gui.yellow‖Отсылка к MGS 3‖end‖.</entitydescription.bandana-anim>
+    <entityname.UMP45>ПП UMP45 «Урбан»</entityname.UMP45>
+    <entitydescription.UMP45>Пистолет-пулемёт под патрон ‖color:gui.green‖.45 ACP.‖end‖ ‖color:gui.yellow‖Оснащён планкой Пикатинни для прицелов‖end‖. Компактные размеры для удобного ношения. ‖color:gui.white‖Режим стрельбы по 3 патрона‖end‖. ‖color:gui.blue‖Плохая эффективность под водой‖end‖.</entitydescription.UMP45>
+    <entityname.UMP45magazine-anim>Магазин .45 ACP</entityname.UMP45magazine-anim>
+    <entitydescription.UMP45magazine-anim>Вмещает 25 патронов .45 ACP.</entitydescription.UMP45magazine-anim>
+    <entityname.UMP45bigmagazine-anim>Увеличенный магазин .45 ACP</entityname.UMP45bigmagazine-anim>
+    <entitydescription.UMP45bigmagazine-anim>Вмещает 50 патронов .45 ACP.</entitydescription.UMP45bigmagazine-anim>
+    <entityname.UMP45fmjmagazine-anim>Экспансивный магазин .45 ACP</entityname.UMP45fmjmagazine-anim>
+    <entitydescription.UMP45fmjmagazine-anim>Вмещает 25 экспансивных патронов .45 ACP. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.UMP45fmjmagazine-anim>
+    <entityname.UMP45bigfmjmagazine-anim>Увеличенный экспансивный магазин .45 ACP</entityname.UMP45bigfmjmagazine-anim>
+    <entitydescription.UMP45bigfmjmagazine-anim>Вмещает 50 экспансивных патронов .45 ACP. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.UMP45bigfmjmagazine-anim>
+    <entityname.1911fmjround>Патрон .45 ACP Экспансивный</entityname.1911fmjround>
+    <entitydescription.1911fmjround>Экспансивный патрон .45 ACP. ‖color:gui.yellow‖Эффективен против незащищённых целей, вызывает сильное кровотечение‖end‖.</entitydescription.1911fmjround>
+    <entitydescription.scrapcannon>Самодельное орудие на батарее, стреляет металлической шрапнелью ‖color:gui.green‖и метательными версиями оружия ближнего боя‖end‖. Точность низкая, зато боеприпасы – это любые случайные куски железа или стали.</entitydescription.scrapcannon>
+    <entityname.ballistichelmet7>Боевой шлем «Спайсер»</entityname.ballistichelmet7>
+    <entitydescription.ballistichelmet7>Боевой шлем с ‖color:gui.green‖встроенным улучшенным спайщиком генов‖end‖ и ‖color:gui.yellow‖интегрированным фонариком‖end‖. ‖color:gui.blue‖Не занимает много места за счёт складной конструкции‖end‖.</entitydescription.ballistichelmet7>
+    <entityname.facemask>Лицевая маска «Фантом»</entityname.facemask>
+    <entitydescription.facemask>Арамидная лицевая маска в сочетании с балаклавой для защиты лица.</entitydescription.facemask>
+    <entityname.Medicalbodyarmor>Бронежилет медика</entityname.Medicalbodyarmor>
+    <entitydescription.Medicalbodyarmor>Бронежилет с ‖color:gui.green‖дополнительными карманами для медицины‖end‖. ‖color:gui.yellow‖Уровень защиты между лёгким и обычным бронежилетом‖end‖.</entitydescription.Medicalbodyarmor>
+    <!-- Basic PDA -->
+    <entityname.PDA-anim>КПК «Базовый»</entityname.PDA-anim>
+    <entitydescription.PDA-anim>Персональный цифровой помощник с базовыми функциями:\n• Фонарик\n• Заметки\n• Простая карта субмарины\n• Просмотр крафтов фабрикатора — 1 слот\n• Воспроизведение музыки через флешки (пониженная громкость)\n• Запитывание устройств (пониженная выходная энергия)\n‖color:gui.white‖Низкое энергопотребление‖end‖.</entitydescription.PDA-anim>
+    <!-- Officer PDA -->
+    <entityname.PDA-officer-anim>КПК «Офицерский»</entityname.PDA-officer-anim>
+    <entitydescription.PDA-officer-anim>Офицерский КПК с расширенными функциями и усиленным питанием:\n• Мощный фонарик\n• Заметки с изменением цвета\n• Карта субмарины с определением местоположения\n• Просмотр крафтов оружейного фабрикатора\n• Просмотр крафтов фабрикатора — 2 слота\n• Воспроизведение музыки через флешки\n• Запитывание устройств\n‖color:gui.blue‖• Встроенный электрошокер‖end‖\n‖color:gui.blue‖• Встроенная глушилка сигнала КПК (радиус 30 метров)‖end‖\n‖color:gui.red‖Высокое энергопотребление‖end‖.</entitydescription.PDA-officer-anim>
+    <!-- Enhanced PDA -->
+    <entityname.PDA-better-anim>КПК «Улучшенный»</entityname.PDA-better-anim>
+    <entitydescription.PDA-better-anim>Улучшенный КПК с расширенными функциями:\n• Мощный фонарик\n• Заметки с изменением цвета\n• Карта субмарины с определением местоположения\n• Просмотр крафтов фабрикатора - 2 слота\n• Воспроизведение музыки через флешки\n• Запитывание устройств\n‖color:gui.yellow‖Среднее энергопотребление‖end‖.</entitydescription.PDA-better-anim>
+    <entityname.PDA-medic-anim>КПК «Медицинский»</entityname.PDA-medic-anim>
+    <entitydescription.PDA-medic-anim>КПК с медицинскими функциями:\n• Мощный фонарик\n• Заметки с изменением цвета\n• Карта субмарины с определением местоположения\n• Просмотр крафтов медицинского фабрикатора — 5 слотов\n• Встроенное обучение для ‖color:gui.blue‖Neurotrauma‖end‖\n• Воспроизведение музыки через флешки\n• Запитывание устройств\n‖color:gui.yellow‖Среднее энергопотребление‖end‖.</entitydescription.PDA-medic-anim>
+    <!-- Mechanical PDA -->
+    <entityname.PDA-mech-anim>КПК «Механический»</entityname.PDA-mech-anim>
+    <entitydescription.PDA-mech-anim>Специализированный КПК для механических работ:\n• Мощный фонарик\n• Заметки с изменением цвета\n• Карта субмарины с определением местоположения и отображением поломок корпуса\n• Функция управления фабрикатором и деконструктором дистанционно\n• Воспроизведение музыки через флешки\n• Запитывание устройств — большое напряжение\n‖color:gui.blue‖• Встроенный электрический сварочный аппарат‖end‖\n‖color:gui.yellow‖Среднее энергопотребление‖end‖.</entitydescription.PDA-mech-anim>
+    <!-- Mechanical PDA -->
+    <entityname.PDA-mech-anim>КПК «Механический»</entityname.PDA-mech-anim>
+    <entitydescription.PDA-mech-anim>Специализированный КПК для механических работ:\n• Мощный фонарик\n• Заметки с изменением цвета\n• Карта субмарины с определением местоположения и отображением поломок корпуса\n• Функция управления фабрикатором и деконструктором дистанционно\n• Воспроизведение музыки через флешки\n• Запитывание устройств - большое напряжение\n‖color:gui.yellow‖Среднее энергопотребление‖end‖.</entitydescription.PDA-mech-anim>
+    <!-- Engineering PDA -->
+    <entityname.PDA-eng-anim>КПК «Инженерный»</entityname.PDA-eng-anim>
+    <entitydescription.PDA-eng-anim>Специализированный КПК для инженерных работ:\n• Сверхмощный фонарик и круговая лампа\n• Заметки с изменением цвета\n• Карта субмарины с определением местоположения и поломок электрических устройств\n• Функция управления реактором и распределителем энергии дистанционно\n• Динамо-машина для ручной зарядки аккумуляторов\n• Воспроизведение музыки через флешки\n• Запитывание устройств - огромное напряжение\n‖color:gui.yellow‖Среднее энергопотребление‖end‖.</entitydescription.PDA-eng-anim>
+    <Manual_Button_Back>Назад</Manual_Button_Back>
+    <Manual_Button_FlashLight>Фонарик</Manual_Button_FlashLight>
+    <Manual_Button_Emergency_Beacon>Аварийный сигнал - SOS</Manual_Button_Emergency_Beacon>
+    <Manual_Button_Fabricator_Recipes>Рецепты фабрикатора</Manual_Button_Fabricator_Recipes>
+    <Manual_Button_Clean_Text>Очистить текст - Сброс КПК</Manual_Button_Clean_Text>
+    <Manual_Button_Beacon_Text>Текст маяка:</Manual_Button_Beacon_Text>
+    <Manual_Button_Text_Color>Цвет текста:</Manual_Button_Text_Color>
+    <Manual_Button_Medical_Fabricator>Медицинские рецепты</Manual_Button_Medical_Fabricator>
+    <Manual_Button_Neurotrauma_Guide>Гайд по Нейротравме</Manual_Button_Neurotrauma_Guide>
+    <Manual_Button_Fabricator_craft>Управление фабрикатором</Manual_Button_Fabricator_craft>
+    <Manual_Button_Deconstruct_Craft>Управление деконструктором</Manual_Button_Deconstruct_Craft>
+    <pda_med>Медицинский маячок на сонаре</pda_med>
+    <!-- Для обычного КПК -->
+    <PDA_Welcome_Basic>Инициализация системы...\n Загрузка прошивки Barotrauma PDA v0.1.7\n Проверка оборудования... ОК\n Установка защищенной подводной сети...\n Все системы работают.\n Добро пожаловать, член экипажа.\n \n Доступные команды:\n • time - показать время игры терминала\n • guess - игра "угадай число"\n • dice(N) - бросить кубик (от 1 до N)\n • quiz - викторина со случайными вопросами\n • lang - изменить язык (по умолчанию: English)\n </PDA_Welcome_Basic>
+    <PDA_Welcome_Better>Инициализация системы...\n Загрузка прошивки Barotrauma PDA v0.3.3\n Проверка оборудования... ОК\n Установка защищенной подводной сети...\n Все системы работают.\n Добро пожаловать, член экипажа.\n \n Доступные команды:\n • time - показать время игры терминала\n • guess - игра "угадай число"\n • dice(N) - бросить кубик (от 1 до N)\n • quiz - викторина со случайными вопросами\n • lang - изменить язык (по умолчанию: English)\n </PDA_Welcome_Better>
+    <PDA_Welcome_Medic>Инициализация системы...\n Загрузка прошивки Barotrauma PDA v0.3.6\n Проверка оборудования... ОК\n Установка защищенной подводной сети...\n Все системы работают.\n Добро пожаловать, член экипажа.\n \n Доступные команды:\n • time - показать время игры терминала\n • guess - игра "угадай число"\n • dice(N) - бросить кубик (от 1 до N)\n • quiz - викторина со случайными вопросами\n • lang - изменить язык (по умолчанию: English)\n </PDA_Welcome_Medic>
+    <Manual_Button_Volume_DOWN>Громкость музыки -</Manual_Button_Volume_DOWN>
+    <Manual_Button_Volume_UP>Громкость музыки +</Manual_Button_Volume_UP>
+    <pda_armed>Включить таймер</pda_armed>
+    <pda_timer>Выставить время</pda_timer>
+    <Radial_flashlight>Круговой фонарь</Radial_flashlight>
+    <Manual_Button_Reactor>Управление реактором</Manual_Button_Reactor>
+    <Manual_Button_Dynamo>Динамо машина</Manual_Button_Dynamo>
+    <afflictionname.stamina>Усталость</afflictionname.stamina>
+    <afflictiondescription.stamina>Показатель насколько вы устали</afflictiondescription.stamina>
+    <Spit>Плевок</Spit>
+    <Shout>Кричать</Shout>
+    <Interaction>Взаимодействия</Interaction>
+    <Fake.handcuffs>Притворится связанным</Fake.handcuffs>
+    <Hands.up>Руки вверх</Hands.up>
+    <Push>Толкать</Push>
+    <Fists>Кулаки</Fists>
+    <Point>Указать</Point>
+    <Remove_fake_handcuffs>Перестать притворяться связанным</Remove_fake_handcuffs>
+    <Vomit>Блевануть</Vomit>
+    <afflictionname.acid-anim>Кислотный ожог слизистой оболочки</afflictionname.acid-anim>
+    <afflictiondescription.acid-anim>Кислота разъедает слизистую глаз и дыхательных путей! Каждое мгновение — невыносимая боль. Антидота не существует. Только вода может на мгновение притупить симптомы.</afflictiondescription.acid-anim>
+    <entityname.IJ-17-obrez>ИЖ-17 «Обрез»</entityname.IJ-17-obrez>
+    <entitydescription.IJ-17-obrez>Грубо укороченная версия ИЖ-17. ‖color:gui.green‖Использует стандартные патроны дробовика (вмещает 1 патрон)‖end‖. ‖color:gui.red‖Ужасная точность‖end‖ и ‖color:gui.orange‖меньший урон по сравнению с оригиналом‖end‖ из-за потери пороховых газов. ‖color:gui.blue‖Может стрелять под водой с высокой эффективностью‖end‖. ‖color:gui.yellow‖Компактен, может быть спрятан в кармане и имеет кустарное крепление для фонарика изолентой‖end‖.</entitydescription.IJ-17-obrez>
+    <onoff>Вкл/Выкл</onoff>
+    <suicide>Самоубийство</suicide>
+    <spin>Крутить</spin>
+    <entityname.PBammo-big>Расширенный магазин 9x18мм</entityname.PBammo-big>
+    <entitydescription.PBammo-big>‖color:gui.green‖20 дозвуковых патронов 9x18мм‖end‖. Увеличенная ёмкость для длительных операций.</entitydescription.PBammo-big>
+    <entityname.Kedr>ПП Кедр «Стрела»</entityname.Kedr>
+    <entitydescription.Kedr>Компактный пистолет-пулемёт, разработанный на базе ПП-91 «Кедр». Отличается малым весом и удобством в ограниченных пространствах подлодок. Использует ‖color:gui.green‖патроны 9x18мм‖end‖. ‖color:gui.blue‖Малоэффективен под водой‖end‖.</entitydescription.Kedr>
+    <entityname.PM>Пистолет ПМ «Макарыч»</entityname.PM>
+    <entitydescription.PM>Надёжный и компактный пистолет, разработанный в середине XX века. Широко распространён благодаря своей простоте и живучести. Использует ‖color:gui.green‖патроны 9x18мм ПБ‖end‖. ‖color:gui.blue‖Плохо эффективен под водой‖end‖. Можно держать одной рукой.</entitydescription.PM>
+    <afflictionname.blind-extinguisher>Пена огнетушителя в глазах</afflictionname.blind-extinguisher>
+    <afflictiondescription.blind-extinguisher>В глазах едкая пена! Сильно жжёт и временно ослепляет. Можно смыть водой.</afflictiondescription.blind-extinguisher>
+    <Welding_mode>Режим сварочного аппарата</Welding_mode>
+    <Tazer_mode>Режим шокера</Tazer_mode>
+    <pda_off>Глушилка КПК на 30 метров</pda_off>
+    <Manual_Button_Repair_Recipes>Рецепты оружейного фабрикатора</Manual_Button_Repair_Recipes>
+    <entityname.Shocker>Шокер «Контролёр»</entityname.Shocker>
+    <entitydescription.Shocker>Электрошоковое устройство ближнего действия, используемое для временного обездвиживания целей. Широко применяется силовиками Коалиции для контроля толпы и нелетального задержания.\n‖color:gui.yellow‖Малое энергопотребление‖end‖.</entitydescription.Shocker>
+    <entityname.40mmgrenade-handgrenade>40-мм граната (ручная)</entityname.40mmgrenade-handgrenade>
+    <entitydescription.40mmgrenade-handgrenade>Переделанная 40-мм граната, приспособленная для ручного метания.\n‖color:gui.green‖Создаёт 50 осколков при взрыве‖end‖.\n‖color:gui.orange‖Не имеет предохранительной скобы — после выдёргивания чеки граната сразу начинает отсчёт‖end‖.\n‖color:gui.red‖Имеет более быстрый взрыватель относительно обычных ручных гранат‖end‖.</entitydescription.40mmgrenade-handgrenade>
+    <entityname.40mmstungrenade-handgrenade>40-мм оглушающая граната (ручная)</entityname.40mmstungrenade-handgrenade>
+    <entitydescription.40mmstungrenade-handgrenade>Переделанная 40-мм оглушающая граната, приспособленная для ручного метания.\n‖color:gui.green‖Не создаёт осколков, только оглушающий эффект‖end‖.\n‖color:gui.orange‖Не имеет предохранительной скобы — после выдёргивания чеки граната сразу начинает отсчёт‖end‖.\n‖color:gui.red‖Имеет более быстрый взрыватель относительно обычных ручных гранат‖end‖.</entitydescription.40mmstungrenade-handgrenade>
+    <entityname.40mmchemgrenade-handgrenade>40-мм кислотная граната (ручная)</entityname.40mmchemgrenade-handgrenade>
+    <entitydescription.40mmchemgrenade-handgrenade>Переделанная 40-мм граната с кислотным наполнителем, приспособленная для ручного метания. При взрыве вызывает сильные кислотные ожоги.\n‖color:gui.green‖Не создаёт осколков, только кислотное облако‖end‖.\n‖color:gui.orange‖Не имеет предохранительной скобы — после выдёргивания чеки граната сразу начинает отсчёт‖end‖.\n‖color:gui.red‖Имеет более быстрый взрыватель относительно обычных ручных гранат‖end‖.</entitydescription.40mmchemgrenade-handgrenade>
+    <entityname.40mmpeppergrenade-handgrenade>40-мм граната с бичом раптора (ручная)</entityname.40mmpeppergrenade-handgrenade>
+    <entitydescription.40mmpeppergrenade-handgrenade>Переделанная 40-мм граната с концентрированным соком бича раптора, приспособленная для ручного метания. ‖color:gui.yellow‖Вызывает сильное раздражение глаз‖end‖. ‖color:gui.blue‖Можно смыть водой‖end‖.\n‖color:gui.green‖Не создаёт осколков, только раздражающее облако‖end‖.\n‖color:gui.orange‖Не имеет предохранительной скобы — после выдёргивания чеки граната сразу начинает отсчёт‖end‖.\n‖color:gui.red‖Имеет более быстрый взрыватель относительно обычных ручных гранат‖end‖.</entitydescription.40mmpeppergrenade-handgrenade>
+    <entityname.40mmneurogrenade-handgrenade>40-мм граната с нейропаралитическим газом (ручная)</entityname.40mmneurogrenade-handgrenade>
+    <entitydescription.40mmneurogrenade-handgrenade>Переделанная 40-мм граната с нейропаралитическим газом, приспособленная для ручного метания. ‖color:gui.yellow‖Вызывает частичный паралич‖end‖. ‖color:gui.red‖Может убить человека, для лечения требуется антидот‖end‖.\n‖color:gui.green‖Не создаёт осколков, только нервно-паралитическое облако‖end‖.\n‖color:gui.orange‖Не имеет предохранительной скобы — после выдёргивания чеки граната сразу начинает отсчёт‖end‖.\n‖color:gui.red‖Имеет более быстрый взрыватель относительно обычных ручных гранат‖end‖.</entitydescription.40mmneurogrenade-handgrenade>
+    <entityname.40mmnuke-handgrenade>40-мм ядерная мини-граната (ручная)</entityname.40mmnuke-handgrenade>
+    <entitydescription.40mmnuke-handgrenade>Переделанная 40-мм ядерная мини-граната, приспособленная для ручного метания. ‖color:gui.red‖Не создаёт осколков при взрыве‖end‖, но наносит колоссальный урон взрывной волной, термическим воздействием и радиацией.\n‖color:gui.orange‖Не имеет предохранительной скобы — после выдёргивания чеки граната сразу начинает отсчёт‖end‖.\n‖color:gui.red‖Имеет более быстрый взрыватель относительно обычных ручных гранат‖end‖.</entitydescription.40mmnuke-handgrenade>
+    <entityname.assistantclothes>Форма ассистента</entityname.assistantclothes>
+    <entitydescription.assistantclothes>‖color:gui.green‖Повышает все навыки на 5‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам и укусам‖end‖. ‖color:gui.orange‖Имеет 2 кармана и подсумки для инструментов и медикаментов‖end‖.</entitydescription.assistantclothes>
+    <entityname.captainsuniform1>Капитанская форма 1</entityname.captainsuniform1>
+    <entitydescription.captainsuniform1>Тёплая куртка, защищающая от холода. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Имеет подсумок для боеприпасов и карман для сигары или выпивки‖end‖.</entitydescription.captainsuniform1>
+    <entityname.captainsuniform2>Капитанская форма 2</entityname.captainsuniform2>
+    <entitydescription.captainsuniform2>Указывает на то, кто здесь главный. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Включает подсумок для боеприпасов и карман для бутылки или трубки‖end‖.</entitydescription.captainsuniform2>
+    <entityname.captainsuniform3>Капитанская форма 3</entityname.captainsuniform3>
+    <entitydescription.captainsuniform3>Стильный мундир, внушающий авторитет. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Оснащена подсумком для патронов и кармашком для сигарет‖end‖.</entitydescription.captainsuniform3>
+    <entityname.captainseparatistsuniform1>Капитанская форма сепаратистов 1</entityname.captainseparatistsuniform1>
+    <entitydescription.captainseparatistsuniform1>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Имеет подсумок для боеприпасов и карман для сигары или выпивки‖end‖.</entitydescription.captainseparatistsuniform1>
+    <entityname.captainseparatistsuniform2>Капитанская форма сепаратистов 2</entityname.captainseparatistsuniform2>
+    <entitydescription.captainseparatistsuniform2>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Включает подсумок для боеприпасов и карман для бутылки или трубки‖end‖.</entitydescription.captainseparatistsuniform2>
+    <entityname.captainseparatistsuniform3>Капитанская форма сепаратистов 3</entityname.captainseparatistsuniform3>
+    <entitydescription.captainseparatistsuniform3>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Оснащена подсумком для патронов и карманчиком для сигарет‖end‖.</entitydescription.captainseparatistsuniform3>
+    <entityname.clowncostume>Костюм клоуна</entityname.clowncostume>
+    <entitydescription.clowncostume>‖color:gui.green‖Иммунитет к взрывам хохота? Нет. Но взрывной урон снижен на 10%‖end‖. ‖color:gui.orange‖Множество карманов для клоунского реквизита и бананов‖end‖. ‖color:gui.orange‖Смешной звук при ходьбе‖end‖.</entitydescription.clowncostume>
+    <entityname.clownsuitunique>Легендарный костюм клоуна</entityname.clownsuitunique>
+    <entitydescription.clownsuitunique>‖color:gui.green‖Снижает взрывной урон на 20%‖end‖. ‖color:gui.orange‖Множество карманов для клоунского реквизита и бананов‖end‖. ‖color:gui.orange‖Смешной звук при ходьбе‖end‖.</entitydescription.clownsuitunique>
+    <entityname.orangejumpsuit1>Оранжевый комбинезон инженера 1</entityname.orangejumpsuit1>
+    <entitydescription.orangejumpsuit1>Защитный костюм для работы с реактором. ‖color:gui.green‖Сильное сопротивление радиации (60%)‖end‖. ‖color:gui.green‖Среднее сопротивление ожогам (20%)‖end‖. ‖color:gui.orange‖Клипса для проводов и КПК‖end‖.</entitydescription.orangejumpsuit1>
+    <entityname.orangejumpsuit2>Оранжевый комбинезон инженера 2</entityname.orangejumpsuit2>
+    <entitydescription.orangejumpsuit2>Электрический костюм с толстой изоляцией. ‖color:gui.green‖Высокое сопротивление ожогам (30%)‖end‖. ‖color:gui.green‖Небольшое сопротивление всем типам физического урона (5%)‖end‖. ‖color:gui.orange‖Клипса для проводов и КПК‖end‖.</entitydescription.orangejumpsuit2>
+    <entityname.engineerseparatistsuniform1>Комбинезон инженера-сепаратиста 1</entityname.engineerseparatistsuniform1>
+    <entitydescription.engineerseparatistsuniform1>‖color:gui.green‖Высокое сопротивление ожогам (30%)‖end‖. ‖color:gui.green‖Небольшое сопротивление всем типам физического урона (5%)‖end‖. ‖color:gui.orange‖Клипса для проводов и КПК‖end‖.</entitydescription.engineerseparatistsuniform1>
+    <entityname.engineerseparatistsuniform2>Комбинезон инженера-сепаратиста 2</entityname.engineerseparatistsuniform2>
+    <entitydescription.engineerseparatistsuniform2>‖color:gui.green‖Высокое сопротивление ожогам (30%)‖end‖. ‖color:gui.green‖Небольшое сопротивление всем типам физического урона (5%)‖end‖. ‖color:gui.orange‖Клипса для проводов и КПК‖end‖.</entitydescription.engineerseparatistsuniform2>
+    <entityname.bluejumpsuit1>Синий комбинезон механика 1</entityname.bluejumpsuit1>
+    <entitydescription.bluejumpsuit1>Униформа механика. ‖color:gui.green‖Повышенное сопротивление порезам (15%)‖end‖. ‖color:gui.green‖Среднее сопротивление укусам (10%) и ожогам (20%)‖end‖. ‖color:gui.orange‖Два крепления для баллонов‖end‖.</entitydescription.bluejumpsuit1>
+    <entityname.bluejumpsuit2>Синий комбинезон механика 2</entityname.bluejumpsuit2>
+    <entitydescription.bluejumpsuit2>Униформа механика. ‖color:gui.green‖Повышенное сопротивление порезам (15%)‖end‖. ‖color:gui.green‖Среднее сопротивление укусам (10%) и ожогам (20%)‖end‖. ‖color:gui.orange‖Два крепления для баллонов‖end‖.</entitydescription.bluejumpsuit2>
+    <entityname.mechanicseparatistsuniform1>Комбинезон механика-сепаратиста 1</entityname.mechanicseparatistsuniform1>
+    <entitydescription.mechanicseparatistsuniform1>‖color:gui.green‖Повышенное сопротивление порезам (15%)‖end‖. ‖color:gui.green‖Среднее сопротивление укусам (10%) и ожогам (20%)‖end‖. ‖color:gui.orange‖Два крепления для баллонов‖end‖.</entitydescription.mechanicseparatistsuniform1>
+    <entityname.mechanicseparatistsuniform2>Комбинезон механика-сепаратиста 2</entityname.mechanicseparatistsuniform2>
+    <entitydescription.mechanicseparatistsuniform2>‖color:gui.green‖Повышенное сопротивление порезам (15%)‖end‖. ‖color:gui.green‖Среднее сопротивление укусам (10%) и ожогам (20%)‖end‖. ‖color:gui.orange‖Два крепления для баллонов‖end‖.</entitydescription.mechanicseparatistsuniform2>
+    <entityname.doctorsuniform1>Медицинская форма 1</entityname.doctorsuniform1>
+    <entitydescription.doctorsuniform1>Полевая форма медика. ‖color:gui.green‖Повышает навык врача на 5‖end‖. ‖color:gui.green‖Небольшое сопротивление всем ранам и укусам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление тупым ударам (10%)‖end‖. ‖color:gui.orange‖Два дополнительных кармана для медикаментов‖end‖.</entitydescription.doctorsuniform1>
+    <entityname.doctorsuniform2>Медицинская форма 2</entityname.doctorsuniform2>
+    <entitydescription.doctorsuniform2>Полевая форма медика. ‖color:gui.green‖Повышает навык врача на 5‖end‖. ‖color:gui.green‖Небольшое сопротивление всем ранам и укусам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление тупым ударам (10%)‖end‖. ‖color:gui.orange‖Два дополнительных кармана для медикаментов‖end‖.</entitydescription.doctorsuniform2>
+    <entityname.medicseparatistsuniform1>Медицинская форма сепаратистов 1</entityname.medicseparatistsuniform1>
+    <entitydescription.medicseparatistsuniform1>‖color:gui.green‖Повышает навык врача на 5‖end‖. ‖color:gui.green‖Небольшое сопротивление всем ранам и укусам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление тупым ударам (10%)‖end‖. ‖color:gui.orange‖Два дополнительных кармана для медикаментов‖end‖.</entitydescription.medicseparatistsuniform1>
+    <entityname.medicseparatistsuniform2>Медицинская форма сепаратистов 2</entityname.medicseparatistsuniform2>
+    <entitydescription.medicseparatistsuniform2>‖color:gui.green‖Повышает навык врача на 5‖end‖. ‖color:gui.green‖Небольшое сопротивление всем ранам и укусам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление тупым ударам (10%)‖end‖. ‖color:gui.orange‖Два дополнительных кармана для медикаментов‖end‖.</entitydescription.medicseparatistsuniform2>
+    <entityname.securityuniform1>Форма охраны 1</entityname.securityuniform1>
+    <entitydescription.securityuniform1>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.orange‖Набедренный подсумок и кейс для наручников или батареи‖end‖.</entitydescription.securityuniform1>
+    <entityname.securityuniform2>Форма охраны 2</entityname.securityuniform2>
+    <entitydescription.securityuniform2>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.red‖Скорость передвижения снижена на 15% с предметами среднего размера в инвентаре‖end‖. ‖color:gui.orange‖Расширяемый подсумок и кейс‖end‖.</entitydescription.securityuniform2>
+    <entityname.securityuniform3>Форма охраны 3</entityname.securityuniform3>
+    <entitydescription.securityuniform3>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.red‖Скорость передвижения снижена на 15% с предметами среднего размера в инвентаре‖end‖. ‖color:gui.orange‖Модульные крепления для снаряжения‖end‖.</entitydescription.securityuniform3>
+    <entityname.securityseparatistsuniform1>Форма охраны сепаратистов 1</entityname.securityseparatistsuniform1>
+    <entitydescription.securityseparatistsuniform1>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.orange‖Набедренный подсумок и кейс‖end‖.</entitydescription.securityseparatistsuniform1>
+    <entityname.securityseparatistsuniform2>Форма охраны сепаратистов 2</entityname.securityseparatistsuniform2>
+    <entitydescription.securityseparatistsuniform2>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.orange‖Набедренный подсумок и кейс‖end‖.</entitydescription.securityseparatistsuniform2>
+    <entityname.securityseparatistsuniform3>Форма охраны сепаратистов 3</entityname.securityseparatistsuniform3>
+    <entitydescription.securityseparatistsuniform3>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.orange‖Набедренный подсумок и кейс‖end‖.</entitydescription.securityseparatistsuniform3>
+    <!-- NPCs Clothing -->
+    <entityname.watchmanclothes>Одежда стража</entityname.watchmanclothes>
+    <entitydescription.watchmanclothes>Из прочного легкого материала. ‖color:gui.green‖Увеличивает скорость передвижения на 10%‖end‖. ‖color:gui.green‖Хорошее сопротивление порезам и укусам (10%)‖end‖.</entitydescription.watchmanclothes>
+    <entityname.commonerclothes1>Одежда осторожного обывателя</entityname.commonerclothes1>
+    <entitydescription.commonerclothes1>‖color:gui.green‖Получает на 5% меньше урона‖end‖. ‖color:gui.green‖Наносит на 30% меньше урона союзникам‖end‖. ‖color:gui.orange‖Есть карман для медикаментов‖end‖.</entitydescription.commonerclothes1>
+    <entityname.commonerclothes2>Одежда грузного обывателя</entityname.commonerclothes2>
+    <entitydescription.commonerclothes2>‖color:gui.green‖Устойчивость к давлению воды увеличена на 20%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам и укусам (5%)‖end‖. ‖color:gui.orange‖Крепление для сварочного/кислородного баллона‖end‖.</entitydescription.commonerclothes2>
+    <entityname.commonerclothes3>Одежда мастера-обывателя</entityname.commonerclothes3>
+    <entitydescription.commonerclothes3>Слегка изолирована. ‖color:gui.green‖Увеличивает скорость ремонта устройств на 10%‖end‖. ‖color:gui.green‖Среднее сопротивление порезам (10%) и ожогам (15%)‖end‖. ‖color:gui.green‖Небольшое сопротивление укусам и тупым ударам (5%)‖end‖. ‖color:gui.orange‖Подсумок для инструментов и крепление для баллонов‖end‖.</entitydescription.commonerclothes3>
+    <entityname.commonerclothes4>Одежда обывателя-ополченца</entityname.commonerclothes4>
+    <entitydescription.commonerclothes4>Лёгкая броня. ‖color:gui.green‖Увеличивает скорость ремонта на 10%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам, укусам, огнестрелу (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление тупым ударам (15%)‖end‖. ‖color:gui.orange‖Кобура для пистолета и кейс для наручников/батареи‖end‖.</entitydescription.commonerclothes4>
+    <entityname.commonerclothes5>Одежда обывателя-докера</entityname.commonerclothes5>
+    <entitydescription.commonerclothes5>Меньше защиты, но удобнее для сварки. ‖color:gui.green‖Увеличивает скорость ремонта корпуса инструментами на 10%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам и укусам (5%)‖end‖. ‖color:gui.green‖Среднее сопротивление ожогам (10%)‖end‖. ‖color:gui.orange‖Подсумок для инструментов и крепление для баллонов‖end‖.</entitydescription.commonerclothes5>
+    <entityname.crewchiefclothes>Одежда боцмана</entityname.crewchiefclothes>
+    <entitydescription.crewchiefclothes>Униформа старшего помощника. ‖color:gui.green‖Повышает все навыки на 2‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам (5%) и ожогам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Подсумок для инструментов и медицинский карман‖end‖.</entitydescription.crewchiefclothes>
+    <entityname.medicalofficerclothes>Одежда медицинского офицера</entityname.medicalofficerclothes>
+    <entitydescription.medicalofficerclothes>Хирургическая одежда. ‖color:gui.green‖Увеличивает эффективность медицинских предметов на 10%‖end‖. ‖color:gui.green‖Повышает навык врача на 15‖end‖. ‖color:gui.orange‖Два кармана для медикаментов‖end‖.</entitydescription.medicalofficerclothes>
+    <entityname.minerclothes>Одежда шахтёра</entityname.minerclothes>
+    <entitydescription.minerclothes>‖color:gui.green‖Увеличивает скорость добычи на 10%‖end‖. ‖color:gui.green‖Среднее сопротивление порезам (15%)‖end‖. ‖color:gui.green‖Высокое сопротивление тупым ударам (20%)‖end‖. ‖color:gui.green‖Небольшое сопротивление укусам (5%)‖end‖. ‖color:gui.orange‖Большие карманы для руды и материалов‖end‖.</entitydescription.minerclothes>
+    <entityname.quartermasterclothes>Одежда квартирмейстера</entityname.quartermasterclothes>
+    <entitydescription.quartermasterclothes>‖color:gui.green‖Увеличивает скорость передвижения на 10% при переноске боеприпасов или ящиков‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.orange‖Подсумок для инструментов и кейс для КПК/сонара‖end‖.</entitydescription.quartermasterclothes>
+    <entityname.researcherclothes>Одежда исследователя</entityname.researcherclothes>
+    <entitydescription.researcherclothes>Функциональная одежда учёного. ‖color:gui.green‖Увеличивает стабильность генной комбинации на 10%‖end‖. ‖color:gui.green‖Повышает навыки электрика, механика и врача на 5‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам и укусам (5%)‖end‖. ‖color:gui.orange‖Два кармана для медикаментов‖end‖.</entitydescription.researcherclothes>
+    <entityname.securitypatrolclothes>Одежда патрульного охраны</entityname.securitypatrolclothes>
+    <entitydescription.securitypatrolclothes>‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление огнестрелу и укусам (10%)‖end‖. ‖color:gui.orange‖Модульные карманы для наручников или батарей‖end‖.</entitydescription.securitypatrolclothes>
+    <entityname.administratorclothes>Одежда администратора</entityname.administratorclothes>
+    <entitydescription.administratorclothes>Одежда среднего менеджмента. ‖color:gui.green‖Повышает навык пилота на 5‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам и укусам (5%)‖end‖. ‖color:gui.orange‖Карман для КПК/Сонара и место для химикатов‖end‖.</entitydescription.administratorclothes>
+    <entityname.banditclothes1>Боевая униформа бандита</entityname.banditclothes1>
+    <entitydescription.banditclothes1>Лоскутная униформа. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Подсумок для инструментов и карман для боеприпасов‖end‖.</entitydescription.banditclothes1>
+    <entityname.banditclothes2>Лёгкая одежда бандита</entityname.banditclothes2>
+    <entitydescription.banditclothes2>Лёгкий материал и удобные ботинки. ‖color:gui.green‖Увеличивает скорость передвижения на 10%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖.</entitydescription.banditclothes2>
+    <entityname.vipclothes1>Одежда VIP 1</entityname.vipclothes1>
+    <entitydescription.vipclothes1>Стильный гидрофобный синтевойлок. ‖color:gui.green‖Уменьшает силу водного потока на 10%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Скрытый карман для медикаментов или небольшого оружия‖end‖.</entitydescription.vipclothes1>
+    <entityname.vipclothes2>Одежда VIP 2</entityname.vipclothes2>
+    <entitydescription.vipclothes2>Прочный кожаный костюм. ‖color:gui.green‖Увеличивает скорость передвижения на 5%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам и тупым ударам (10%)‖end‖. ‖color:gui.orange‖Скрытый карман для медикаментов или небольшого оружия‖end‖.</entitydescription.vipclothes2>
+    <entityname.vipclothes3>Одежда VIP 3</entityname.vipclothes3>
+    <entitydescription.vipclothes3>Высококлассная защитная мода. ‖color:gui.green‖Небольшое сопротивление порезам и ожогам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление укусам, тупым ударам и огнестрелу (10%)‖end‖. ‖color:gui.orange‖Скрытый карман для медикаментов или небольшого оружия‖end‖.</entitydescription.vipclothes3>
+    <entityname.prisonerclothes>Одежда заключённого</entityname.prisonerclothes>
+    <entitydescription.prisonerclothes>Тюремная роба. ‖color:gui.green‖Увеличивает скорость атаки в ближнем бою на 10%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам и укусам (5%)‖end‖.</entitydescription.prisonerclothes>
+    <entityname.separatistcommoner2>Одежда новичка-пирата</entityname.separatistcommoner2>
+    <entitydescription.separatistcommoner2>Одежда сепаратистов. ‖color:gui.green‖Увеличивает скорость передвижения на 10%‖end‖. ‖color:gui.green‖Небольшое сопротивление порезам и огнестрелу (5%)‖end‖. ‖color:gui.orange‖Подсумок для инструментов‖end‖.</entitydescription.separatistcommoner2>
+    <entityname.separatistcommoner1>Одежда пирата</entityname.separatistcommoner1>
+    <entitydescription.separatistcommoner1>Самодельный костюм сепаратистов. ‖color:gui.green‖Увеличивает скорость передвижения на 5%‖end‖. ‖color:gui.green‖Хорошее сопротивление порезам и огнестрелу (10%)‖end‖. ‖color:gui.red‖Скорость передвижения снижена на 15% с предметами среднего размера в инвентаре‖end‖. ‖color:gui.orange‖Подсумок для боеприпасов и кейс‖end‖.</entitydescription.separatistcommoner1>
+    <entityname.separatistcommoner3>Тяжёлая одежда пирата</entityname.separatistcommoner3>
+    <entitydescription.separatistcommoner3>Униформа с легким бронированием. ‖color:gui.green‖Небольшое сопротивление тупым ударам (5%)‖end‖. ‖color:gui.green‖Хорошее сопротивление порезам и огнестрелу (15%)‖end‖. ‖color:gui.orange‖Подсумок для боеприпасов‖end‖.</entitydescription.separatistcommoner3>
+    <entityname.cultistrobes>Одеяния культиста</entityname.cultistrobes>
+    <entitydescription.cultistrobes>‖color:gui.yellow‖Маскирует под Хуска (гуманоидного монстра)‖end‖.</entitydescription.cultistrobes>
+    <entityname.faultycultistrobes>Неисправные одеяния культиста</entityname.faultycultistrobes>
+    <entitydescription.faultycultistrobes>‖color:gui.red‖Сломаны. Не маскируют под Хуска‖end‖.</entitydescription.faultycultistrobes>
+    <entityname.zealotrobes>Одеяния фанатика</entityname.zealotrobes>
+    <entitydescription.zealotrobes>‖color:gui.yellow‖Маскирует под Хуска‖end‖. ‖color:gui.green‖При уровне инфекции выше 50: уменьшает получаемый урон на 25% и кровотечение на 10%‖end‖.</entitydescription.zealotrobes>
+    <!-- Tools -->
+    <entityname.toolbelt>Пояс с инструментами</entityname.toolbelt>
+    <entitydescription.toolbelt>‖color:gui.orange‖Носимый контейнер для инструментов. Имеет 2 регулируемых кармана‖end‖.</entitydescription.toolbelt>
+    <entityname.Bandolier>Бандольер</entityname.Bandolier>
+    <entitydescription.Bandolier>Лёгкий боевой разгрузочный жилет. ‖color:gui.green‖Увеличивает скорость стрельбы из дальнобойного оружия и турелей на 10%‖end‖. ‖color:gui.orange‖Имеет три подсумка для патронов, подсумок для инструментов, чехол для сонара и медицинский карман‖end‖.</entitydescription.Bandolier>
+    <entityname.baseballcap>Бейсболка</entityname.baseballcap>
+    <entitydescription.baseballcap>‖color:gui.green‖Повышает все навыки на 3‖end‖.</entitydescription.baseballcap>
+    <entityname.devcap>Кепка разработчика</entityname.devcap>
+    <entitydescription.devcap>‖color:gui.green‖Повышает все навыки на 3‖end‖.</entitydescription.devcap>
+    <entityname.Lightbodyarmor_sep>Лёгкий бронежилет сепаратистов</entityname.Lightbodyarmor_sep>
+    <entitydescription.Lightbodyarmor_sep>Облегчённая версия бронежилета, используемая сепаратистами. ‖color:gui.green‖Увеличенное место для патронов и гранат‖end‖. ‖color:gui.red‖Защита слабее стандартной‖end‖, но ‖color:gui.yellow‖лучше защищает от осколков‖end‖. ‖color:gui.blue‖Частично сохраняет подвижность, но незначительно замедляет владельца‖end‖.</entitydescription.Lightbodyarmor_sep>
+    <afflictionname.spasm_shot>Боль</afflictionname.spasm_shot>
+    <afflictiondescription.spasm_shot>Сильная боль от полученного ранения сковывает движения и мешает концентрации. Обезболивающие препараты могут временно облегчить состояние.</afflictiondescription.spasm_shot>
+    <entityname.hiddenarmor>Скрытый бронежилет</entityname.hiddenarmor>
+    <entitydescription.hiddenarmor>Тонкий бронежилет, предназначенный для ношения под одеждой. ‖color:gui.green‖Легко скрывается от посторонних глаз‖end‖. ‖color:gui.red‖Защитные свойства минимальны — спасает только от самого лёгкого стрелкового оружия и холодного оружия‖end‖.</entitydescription.hiddenarmor>
+    <single>Одиночный</single>
+    <double>По 2 патрона</double>
+    <tripple>Очередь из 3</tripple>
+    <Weapon_up>по-сомалийски</Weapon_up>
+    <entityname.Toz-106>ТОЗ-106 «Циркуляция»</entityname.Toz-106>
+    <entitydescription.Toz-106>Надёжный болтовой дробовик, модифицированный для подводных условий. Использует ‖color:gui.green‖стандартные патроны для дробовика‖end‖. ‖color:gui.blue‖Может стрелять под водой с сохранением эффективности‖end‖. ‖color:gui.red‖Для быстрой перезарядки требуется навык владения оружием выше 50‖end‖. ‖color:gui.yellow‖Использует магазины от Сайги-12‖end‖.</entitydescription.Toz-106>
+    <entityname.akround-casing>Гильза 5.45x39мм</entityname.akround-casing>
+    <entitydescription.akround-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.akround-casing>
+    <entityname.akround-casing>Гильза 5.45x39мм</entityname.akround-casing>
+    <entitydescription.akround-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.akround-casing>
+    <entityname.Berettarounds-casing>Гильза 9x19мм</entityname.Berettarounds-casing>
+    <entitydescription.Berettarounds-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.Berettarounds-casing>
+    <entityname.1911round-casing>Гильза .45 ACP</entityname.1911round-casing>
+    <entitydescription.1911round-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.1911round-casing>
+    <entityname.HK416round-casing>Гильза 5.56x45мм</entityname.HK416round-casing>
+    <entitydescription.HK416round-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.HK416round-casing>
+    <entityname.PBround-casing>Гильза 9x18мм</entityname.PBround-casing>
+    <entitydescription.PBround-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.PBround-casing>
+    <entityname.mapleround-casing>Гильза 6.8x48мм «Клён»</entityname.mapleround-casing>
+    <entitydescription.mapleround-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.mapleround-casing>
+    <entityname.P90round-casing>Гильза 5.7x28мм</entityname.P90round-casing>
+    <entitydescription.P90round-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.P90round-casing>
+    <entityname.Deagleround-casing>Гильза .50</entityname.Deagleround-casing>
+    <entitydescription.Deagleround-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.Deagleround-casing>
+    <!-- ================================ Гильзы винтовки Мосина ================================ -->
+    <entityname.mosinammos-casing>Гильза 7.62x54R</entityname.mosinammos-casing>
+    <entitydescription.mosinammos-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.mosinammos-casing>
+    <entityname.SKSammos-casing>Гильза 7.62x39мм</entityname.SKSammos-casing>
+    <entitydescription.SKSammos-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.SKSammos-casing>
+    <entityname.SCARround-casing>Гильза 7.62x51мм</entityname.SCARround-casing>
+    <entitydescription.SCARround-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.SCARround-casing>
+    <entityname.M1ammos-casing>Гильза 7.62x51мм</entityname.M1ammos-casing>
+    <entitydescription.M1ammos-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.M1ammos-casing>
+    <entityname.BFG-50ammo-casing>Гильза 12.7x99мм</entityname.BFG-50ammo-casing>
+    <entitydescription.BFG-50ammo-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.BFG-50ammo-casing>
+    <entityname.RSH-12ammos-casing>Гильза 12.7x55мм</entityname.RSH-12ammos-casing>
+    <entitydescription.RSH-12ammos-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.RSH-12ammos-casing>
+    <entityname..38-casing>Гильза .38 калибра</entityname..38-casing>
+    <entitydescription..38-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription..38-casing>
+    <entityname.Model29ammo-casing>Гильза .44 Magnum</entityname.Model29ammo-casing>
+    <entitydescription.Model29ammo-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.Model29ammo-casing>
+    <entityname.Big-Ironammo-casing>Гильза .45 Colt</entityname.Big-Ironammo-casing>
+    <entitydescription.Big-Ironammo-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.Big-Ironammo-casing>
+    <entityname.shotgunshell-casing>Гильза дробовика</entityname.shotgunshell-casing>
+    <entitydescription.shotgunshell-casing>Стреляная гильза от патрона дробовика. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.shotgunshell-casing>
+    <entityname.ak47round-casing>Гильза 7.62x39мм</entityname.ak47round-casing>
+    <entitydescription.ak47round-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.ak47round-casing>
+    <entityname.spp-1round-casing>Гильза СПП-1</entityname.spp-1round-casing>
+    <entitydescription.spp-1round-casing>Стреляная гильза от стреловидного патрона. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.spp-1round-casing>
+    <!-- ================================ Гильзы гранатомёта ================================ -->
+    <entityname.40mmgrenade-casing>Гильза 40мм</entityname.40mmgrenade-casing>
+    <entitydescription.40mmgrenade-casing>Стреляная гильза от 40мм гранаты. Может быть переработана в обычные 40мм гранаты на оружейном фабрикаторе.</entitydescription.40mmgrenade-casing>
+    <!-- ================================ Гильзы КС-23 ================================ -->
+    <entityname.ks-23shell-casing>Гильза 23мм</entityname.ks-23shell-casing>
+    <entitydescription.ks-23shell-casing>Стреляная гильза. Может быть переработана на оружейном фабрикаторе для создания новых патронов.</entitydescription.ks-23shell-casing>
+    <!-- FN Five-seveN -->
+    <entityname.fn57>Пистолет «Five-seveN»</entityname.fn57>
+    <entitydescription.fn57>Бельгийский полуавтоматический пистолет. Использует ‖color:gui.green‖малоимпульсные патроны 5.7x28мм‖end‖. Благодаря высокой начальной скорости пули обладает хорошей бронепробиваемостью. ‖color:gui.yellow‖Имеет встроенный коллиматорный прицел‖end‖. ‖color:gui.blue‖Под водой малоэффективен‖end‖.</entitydescription.fn57>
+    <entityname.fn57ammo>Магазин FN 5.7x28мм</entityname.fn57ammo>
+    <entitydescription.fn57ammo>Стандартный магазин для FN Five-seveN. Вмещает 15 патронов.</entitydescription.fn57ammo>
+    <entityname.fn57bigammo>Увеличенный магазин FN 5.7x28мм</entityname.fn57bigammo>
+    <entitydescription.fn57bigammo>Вмещает 30 патронов 5.7x28мм для увеличения огневой мощи.</entitydescription.fn57bigammo>
+  </Override>
+</infotext>

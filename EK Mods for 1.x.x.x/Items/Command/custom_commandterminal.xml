@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekdockyard_navterminal_eva" tags="command,navterminal,secondarynavterminal" linkable="true" allowedlinks="statusmonitor" category="Machine" scale="0.5" spritecolor="200,200,200,255" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="128,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Command/ekdockyard_commanddevices1.png" depth="0.8" sourcerect="0,0,336,224" origin="0.5,0.5" />
+    <Steering minvoltage="0.5" canbeselected="true" powerconsumption="10" linkuitocomponent="Sonar" msg="ItemMsgInteractSelect" allowuioverlap="true">
+      <RequiredSkill identifier="helm" level="25" />
+      <GuiFrame relativesize="0.55,0.59" anchor="Center" style="OuterGlow" color="0,0,0,0.8" relativeoffset="0.1,-0.05" />
+      <MaintainPosIndicator texture="Content/Items/Command/NavUI.png" sourcerect="50,0,60,61" />
+      <MaintainPosOriginIndicator texture="Content/Items/Command/NavUI.png" sourcerect="0,0,50,54" />
+      <SteeringIndicator texture="Content/Items/Command/NavUI.png" sourcerect="0,135,362,16" origin="0,0.5" />
+      <poweronsound file="Content/Items/PowerOnLight2.ogg" range="1000" loop="false" />
+    </Steering>
+    <aitarget sightrange="200" soundrange="5000" staticsight="true" fadeouttime="5" />
+    <Sonar canbeselected="true" powerconsumption="100" displaybordersize="-0.1" allowuioverlap="true">
+      <GuiFrame relativesize="0.55,0.59" anchor="Center" relativeoffset="0.1,-0.05" />
+      <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" />
+      <sound file="Content/Items/Command/SonarPing2.ogg" type="OnUse" range="1000.0" />
+      <StatusEffect type="OnUse">
+        <sound file="Content/Items/Command/SonarPingFar.ogg" type="OnUse" range="6000.0" volume="0.8" />
+        <sound file="Content/Items/Command/SonarPingFar2.ogg" type="OnUse" range="6000.0" volume="0.8" />
+      </StatusEffect>
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5" />
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5" />
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5" />
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5" />
+      <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5" />
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5" />
+    </Sonar>
+    <CustomInterface canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.15,0.18" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.1125,0.001" style="ItemUI" />
+      <Button text="Signal out #1" connection="signal_out1" />
+      <Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />
+    </CustomInterface>
+    <Controller UserPos="20, 0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
+      <limbposition limb="Head" position="210,35" />
+      <limbposition limb="Torso" position="175,-25" />
+      <limbposition limb="Waist" position="140,-90" />
+      <limbposition limb="RightFoot" position="220,-190" />
+      <limbposition limb="LeftFoot" position="220,-190" />
+      <limbposition limb="RightHand" position="270,-70" allowusinglimb="true" />
+      <limbposition limb="LeftHand" position="270,-70" allowusinglimb="true" />
+    </Controller>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/Weapons/ElectricalDischarger.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="transducer_in" displayname="connection.sonartransducerin" />
+      <input name="velocity_in" displayname="connection.steeringvelocityin" />
+      <output name="velocity_x_out" displayname="connection.velocityxout" />
+      <output name="velocity_y_out" displayname="connection.velocityyout" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+      <output name="toggle_docking" displayname="connection.toggledocking" />
+      <output name="current_velocity_x" displayname="connection.currentvelocityx" />
+      <output name="current_velocity_y" displayname="connection.currentvelocityy" />
+      <output name="current_position_x" displayname="connection.currentpositionx" />
+      <output name="current_position_y" displayname="connection.currentpositiony" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Action" header="electricalrepairsheader" fixDurationHighSkill="5" fixDurationLowSkill="15" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="burn" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+</Items>

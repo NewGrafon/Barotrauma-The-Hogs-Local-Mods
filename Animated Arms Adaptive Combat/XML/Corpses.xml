@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Corpses>
+    <Corpse identifier="captaincorpse1" spawnposition="wreck" job="captain" commonness="0.5" minmoney="50" maxmoney="100">
+      <ItemSet commonness="0.2">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_captain" />
+        <Item identifier="captainsuniform1" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="Big-Iron" equip="false">
+          <Item identifier="Big-Ironammo" />
+          <Item identifier="Big-Ironammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_captain" />
+        <Item identifier="brokendivingsuit" equip="true" />
+        <Item identifier="captainsuniform1" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="captainspipe" equip="false" />
+        <Item identifier="heavybodyarmor" equip="true" />
+        <Item identifier="divingmask" equip="true" />
+      </ItemSet>
+      <ItemSet commonness="0.75">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_captain" />
+        <Item identifier="captainsuniform2" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="PB" equip="false">
+          <Item identifier="PBammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.5">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_captain" />
+        <Item identifier="brokendivingsuit" equip="true" />
+        <Item identifier="captainsuniform2" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="steroids" />
+        <Item identifier="KS-23" equip="false">
+          <Item identifier="ks-23shell" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_captain" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="spas-13" equip="false">
+          <Item identifier="shotgunshell" />
+          <Item identifier="shotgunshell" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.7">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_captain" />
+        <Item identifier="captainsuniform3" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="AK-12" equip="true">
+          <Item identifier="akmagazine" />
+        </Item>
+      </ItemSet>
+    </Corpse>
+    <Corpse identifier="engineercorpse1" spawnposition="wreck" job="engineer" commonness="1" minmoney="10" maxmoney="50">
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_engineer" />
+        <Item identifier="toolbelt">
+          <Item identifier="screwdriver" />
+          <Item identifier="wrench" />
+          <Item identifier="fuelrod" />
+        </Item>
+        <Item identifier="orangejumpsuit1" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="PB" equip="false">
+          <Item identifier="PBammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_engineer" />
+        <Item identifier="screwdriver" equip="true" />
+        <Item identifier="toolbelt">
+          <Item identifier="orangewire" />
+          <Item identifier="button" />
+          <Item identifier="fpgacircuit" />
+          <Item identifier="relaycomponent" />
+        </Item>
+        <Item identifier="orangejumpsuit2" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="colt-1911" equip="true">
+          <Item identifier="1911ammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_engineer" />
+        <Item identifier="screwdriver" equip="true" />
+        <Item identifier="brokendivingsuit" equip="true" />
+        <Item identifier="orangejumpsuit2" equip="true" />
+        <Item identifier="Beretta-92" equip="true">
+          <Item identifier="Berettaammo" />
+        </Item>
+      </ItemSet>
+    </Corpse>
+    <Corpse identifier="officercorpse1" spawnposition="wreck" job="securityofficer" commonness="0.5" minmoney="10" maxmoney="50">
+      <ItemSet commonness="1">
+        <Item identifier="securityuniform1" equip="true" tags="wreck_security" />
+        <Item identifier="idcardwreck" equip="true" />
+        <Item identifier="P90-anim" equip="true">
+          <Item identifier="P90magazine-anim" />
+          <Item identifier="P90magazine-anim" />
+        </Item>
+        <Item identifier="divingknife" equip="false" />
+        <Item identifier="headset" equip="true" />
+      </ItemSet>
+      <ItemSet commonness="0.5">
+        <Item identifier="securityuniform2" equip="true" />
+        <Item identifier="idcardwreck" equip="true" tags="wreck_security" />
+        <Item identifier="HK416-anim" equip="true">
+          <Item identifier="HK416magazine-anim" />
+          <Item identifier="HK416magazine-anim" />
+        </Item>
+        <Item identifier="handcuffs" />
+        <Item identifier="antibleeding1" />
+        <Item identifier="bodyarmor" equip="true" />
+        <Item identifier="headset" equip="true" />
+      </ItemSet>
+      <ItemSet commonness="0.5">
+        <Item identifier="securityuniform3" equip="true" />
+        <Item identifier="idcardwreck" equip="true" tags="wreck_security" />
+        <Item identifier="wrench" />
+        <Item identifier="antibleeding1" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="APS" equip="true">
+          <Item identifier="apsmagazine" />
+          <Item identifier="apsmagazine" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="securityuniform3" equip="true" />
+        <Item identifier="idcardwreck" equip="true" tags="wreck_security" />
+        <Item identifier="brokendivingsuit" equip="true" />
+        <Item identifier="antibleeding1" />
+        <Item identifier="heavybodyarmor" equip="true" />
+        <Item identifier="headset" equip="true" />
+        <Item identifier="Model870" equip="false">
+          <Item identifier="shotgunshell" />
+          <Item identifier="shotgunshell" />
+        </Item>
+      </ItemSet>
+    </Corpse>
+    <Corpse identifier="mediccorpse1" spawnposition="wreck" job="medicaldoctor" commonness="0.5" minmoney="10" maxmoney="50">
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_medic" />
+        <Item identifier="doctorsuniform1" equip="true">
+          <Item identifier="antibloodloss2" />
+        </Item>
+        <Item identifier="antibiotics" />
+        <Item identifier="antidama1" />
+        <Item identifier="SPP-1" equip="true">
+          <Item identifier="spp-1round" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_medic" />
+        <Item identifier="doctorsuniform2" equip="true">
+          <Item identifier="antibloodloss2" />
+        </Item>
+        <Item identifier="antibleeding1" />
+        <Item identifier="antidama1" />
+        <Item identifier="PB" equip="false">
+          <Item identifier="PBammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_medic" />
+        <Item identifier="doctorsuniform2" equip="true" />
+        <Item identifier="healthscanner" equip="true" />
+        <Item identifier="colt-1911" equip="true">
+          <Item identifier="1911ammo" />
+        </Item>
+      </ItemSet>
+    </Corpse>
+    <Corpse identifier="mechaniccorpse1" spawnposition="wreck" job="mechanic" commonness="1" minmoney="10" maxmoney="50">
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_mechanic" />
+        <Item identifier="bluejumpsuit1" equip="true" />
+        <Item identifier="weldingtool" equip="true" />
+        <Item identifier="toolbelt">
+          <Item identifier="wrench" />
+        </Item>
+        <Item identifier="colt-1911" equip="true">
+          <Item identifier="1911ammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_mechanic" />
+        <Item identifier="toolbelt">
+          <Item identifier="weldingfueltank" />
+          <Item identifier="aluminium" />
+        </Item>
+        <Item identifier="crowbar" />
+        <Item identifier="bluejumpsuit2" equip="true" />
+        <Item identifier="Beretta-92" equip="true">
+          <Item identifier="Berettaammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.5">
+        <Item identifier="idcardwreck" equip="true" tags="wreck_mechanic" />
+        <Item identifier="toolbelt" />
+        <Item identifier="bluejumpsuit2" equip="true" />
+        <Item identifier="brokendivingsuit" equip="true">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="weldingtool" equip="true">
+          <Item identifier="weldingfueltank" />
+        </Item>
+        <Item identifier="SPP-1" equip="true">
+          <Item identifier="spp-1round" />
+        </Item>
+      </ItemSet>
+    </Corpse>
+    <Corpse identifier="assistantcorpse1" spawnposition="wreck" job="assistant" commonness="2" minmoney="0" maxmoney="20">
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" />
+        <Item identifier="assistantclothes" equip="true" />
+        <Item identifier="wrench" />
+        <Item identifier="screwdriver" />
+        <Item identifier="colt-1911" equip="true">
+          <Item identifier="1911ammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="1">
+        <Item identifier="idcardwreck" equip="true" />
+        <Item identifier="assistantclothes" equip="true" />
+        <Item identifier="divingmask" equip="true" />
+        <Item identifier="crowbar" equip="true" />
+        <Item identifier="SPP-1" equip="true">
+          <Item identifier="spp-1round" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.4">
+        <Item identifier="idcardwreck" equip="true" />
+        <Item identifier="assistantclothes" equip="true" />
+        <Item identifier="brokendivingsuit" equip="true">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="plasmacutter" equip="true">
+          <Item identifier="oxygentank" />
+        </Item>
+        <Item identifier="Beretta-92" equip="true">
+          <Item identifier="Berettaammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.4">
+        <Item identifier="idcardwreck" equip="true" />
+        <Item identifier="assistantclothes" equip="true" />
+        <Item identifier="brokendivingsuit" equip="true" />
+        <Item identifier="weldingtool" equip="true">
+          <Item identifier="weldingfueltank" />
+        </Item>
+        <Item identifier="Model29" equip="true">
+          <Item identifier="Model29ammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.2">
+        <Item identifier="researcherclothes" equip="true" />
+        <Item identifier="syringegun" equip="true">
+          <Item identifier="cyanide" />
+        </Item>
+        <Item identifier="PB" equip="false">
+          <Item identifier="PBammo" />
+        </Item>
+      </ItemSet>
+      <ItemSet commonness="0.2">
+        <Item identifier="prisonerclothes" equip="true" />
+        <Item identifier="handcuffs" />
+        <Item identifier="colt-1911" equip="true">
+          <Item identifier="1911ammo" />
+        </Item>
+      </ItemSet>
+    </Corpse>
+  </Corpses>
+</Override>

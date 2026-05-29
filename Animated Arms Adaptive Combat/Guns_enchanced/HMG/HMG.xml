@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" condition="10" identifier="hmg" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <Price baseprice="900" sold="true" minleveldifficulty="65">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="true" outcondition="0.1">
+        <RequiredSkill identifier="weapons" level="65" />
+        <RequiredItem identifier="physicorium" amount="2" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+        <RequiredItem identifier="rubber" />
+      </Fabricate>
+      <Deconstruct time="35">
+        <Item identifier="physicorium" amount="2" />
+        <Item identifier="titaniumaluminiumalloy" amount="2" />
+        <Item identifier="rubber" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/GunIcons.png" sourcerect="192,64,64,64" />
+      <Sprite texture="%ModDir%/Guns_enchanced/HMG/HMG.png" sourcerect="0,495,228,99" depth="0.56" origin="0.65,0.26" />
+      <!-- Broken sprites used for animation via changing gun's condition.
+    I initially used decorative sprites, but those work awful with items carried in hands.  -->
+      <!-- Magazine inserted. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/HMG/HMG.png" sourcerect="0,99,228,99" depth="0.56" origin="0.65,0.26" maxcondition="80" />
+      <!-- Top cover opened. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/HMG/HMG.png" sourcerect="0,198,228,99" depth="0.56" origin="0.65,0.26" maxcondition="70" />
+      <!-- Belt inserted. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/HMG/HMG.png" sourcerect="0,297,228,99" depth="0.56" origin="0.65,0.26" maxcondition="60" />
+      <!-- Sight pulled. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/HMG/HMG.png" sourcerect="0,396,228,99" depth="0.56" origin="0.65,0.26" maxcondition="50" />
+      <!-- Empty. No magazine inserted. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/HMG/HMG.png" sourcerect="0,0,228,99" depth="0.56" origin="0.65,0.26" maxcondition="10" />
+      <Body width="220" height="60" density="30" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="55,-5" aimpos="65,5" handle1="-80,-50" handle2="-15,-35" holdangle="-30">
+        <Conditional recoilstabilized="lte 0" />
+        <StatusEffect type="Always" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+      </Holdable>
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="HMG Worn" texture="%ModDir%/Guns_enchanced/HMG/HMG.png" sourcerect="0,0,228,99" canbehiddenbyotherwearables="false" rotation="90" depth="0.55" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
+      </Wearable>
+      <RangedWeapon reload="0.1" holdtrigger="true" barrelpos="80,-12" spread="6" unskilledspread="50" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.22" DualWieldReloadTimePenaltyMultiplier="1" DualWieldAccuracyPenalty="1">
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="255,0,256,256" />
+        <CrosshairPointer texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="0,0,256,256" />
+        <!-- Particles. -->
+        <!-- Visible only on air. -->
+        <ParticleEmitter particle="mediummuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="5,3" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="14,10" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="mediumgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" />
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="80" />
+        <!-- Gunfire sounds. -->
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot4.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot5.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot6.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnUse" offset="0,-5" target="This" condition="25" setvalue="true">
+          <ParticleEmitter particle="hmgammocasing" particleamount="1" anglemin="130" anglemax="150" velocitymin="200" velocitymax="250" CopyEntityAngle="true" />
+          <Explosion range="180.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" applyfireeffects="false" camerashake="15.0" />
+        </StatusEffect>
+        <!-- Can only be used somewhat succesfully from 75+ skill, as then OnFailure turns it into a skill check per shot -->
+        <StatusEffect type="OnFailure" offset="0,-5" target="Character" disabledeltatime="true" comparison="and">
+          <Conditional skillrequirement="true" weapons="lt 90" />
+          <Conditional recoilstabilized="lte 0" />
+          <Affliction identifier="stun" strength="0.15" />
+          <Explosion range="180.0" force="0.75" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" applyfireeffects="false" camerashake="15.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" offset="0,-5" target="Character" disabledeltatime="true" comparison="and">
+          <Conditional skillrequirement="true" weapons="lt 70" />
+          <Conditional recoilstabilized="lte 0" />
+          <Affliction identifier="stun" strength="0.3" />
+          <Explosion range="180.0" force="0.75" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" applyfireeffects="false" camerashake="15.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" offset="0,-5" target="Character" disabledeltatime="true" comparison="and">
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Conditional recoilstabilized="lte 0" />
+          <Affliction identifier="stun" strength="0.75" />
+          <Explosion range="180.0" force="0.75" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" applyfireeffects="false" camerashake="15.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.08" condition="100" setvalue="true" />
+        <!--"Use" contained magazine to spawn projectiles.-->
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="hmgammo">
+          <Use />
+        </StatusEffect>
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="hmgreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="hmgreloading" delay="6.9" condition="100" setvalue="true" />
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+      Why? Simply turning the light on and off is too slow. -->
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" delay="0.08" />
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="hmgreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdpos="55,-5" aimpos="65,5" handle1="-80,-50" handle2="-15,-35" holdangle="-30" aimangle="0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" condition="100" setvalue="true">
+          <RequiredItems items="hmgammo" type="Contained" />
+        </StatusEffect>
+        <StatusEffect Type="Always" OneShot="True" target="This" condition="10" setvalue="true">
+          <RequiredItems items="hmgammo" type="Contained" requireempty="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <!-- Gun requires ammo to use. -->
+        <RequiredItems items="hmgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <!-- Gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="hmgreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="90" />
+      </RangedWeapon>
+      <Propulsion force="-30" usablein="both" ApplyToHands="false">
+        <RequiredItems items="hmgreloading" type="Contained" />
+        <RequiredItems items="hmgammo" type="Contained" />
+      </Propulsion>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet">
+        <Containable items="hmgammo" hide="true" excludebroken="false">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="6.9" setvalue="true" />
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with OnRemoved status effects.
+		Also changes gun and hand position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.01" handle1="-80,-50" handle2="-15,-35" holdpos="35,0" aimpos="35,0" holdangle="10" aimangle="10" condition="0" setvalue="true" />
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.5" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/HMG/HMGMagAttach.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Sets hand's position below magazine. -->
+          <StatusEffect type="OnInserted" target="This" holdpos="35,-10" aimpos="35,-10" delay="0.6" handle1="0,-50" setvalue="true" />
+          <!-- Triggers magazine sprite. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.6" condition="80" setvalue="true">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <!-- Sets hand's position back to default and gun's to middle-position. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.4" handle1="-80,-50" aimangle="0" holdangle="0" holdpos="45,10" aimpos="45,0" setvalue="true" />
+          <!-- Sets hand's position to open the cover. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.8" handle2="-25,-15" setvalue="true" />
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.2" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/HMG/HMGCoverOpen.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Opens the cover. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.3" handle2="-20,15" setvalue="true">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <!-- Triggers animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.4" condition="70" setvalue="true" />
+          <!-- Sets the gun position to insert the belt. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.8" handle1="-80,-50" handle2="-15,-40" holdpos="35,-4" aimpos="35,-4" holdangle="15" aimangle="15" setvalue="true" />
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="3.3" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/HMG/HMGBeltInsert.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Sets hand's position above belt. -->
+          <StatusEffect type="OnInserted" target="This" delay="3.4" holdpos="35,0" aimpos="35,0" handle1="-7,-15" setvalue="true" />
+          <!-- Triggers belt sprite. -->
+          <StatusEffect type="OnInserted" target="This" delay="3.5" condition="59" setvalue="true">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <!-- Sets gun and hand's position to close the cover. -->
+          <StatusEffect type="OnInserted" target="This" delay="4.2" handle1="-80,-50" handle2="-20,15" aimangle="0" holdangle="0" holdpos="45,10" aimpos="45,0" setvalue="true" />
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="4.6" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/HMG/HMGCoverClose.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Closes the cover. -->
+          <StatusEffect type="OnInserted" target="This" delay="4.7" handle2="-25,-15" setvalue="true">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <!-- Triggers animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="4.8" condition="100" setvalue="true" />
+          <!-- Sets gun and hand's position to open the eject port. -->
+          <StatusEffect type="OnInserted" target="This" delay="5.3" handle2="30,-10" aimangle="-10" holdangle="-10" holdpos="45,-5" aimpos="45,-5" setvalue="true" />
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="5.8" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/HMG/HMGEjectPortOpen.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Sets hand's position to close the eject port. -->
+          <StatusEffect type="OnInserted" target="This" delay="5.9" handle2="-30,-10" setvalue="true" />
+          <!-- Triggers animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="6" condition="50" setvalue="true" />
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="6.4" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/HMG/HMGEjectPortClose.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Sets hand's position to open the eject port. -->
+          <StatusEffect type="OnInserted" target="This" delay="6.5" handle2="30,-10" setvalue="true" />
+          <!-- Triggers animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="6.6" condition="100" setvalue="true" />
+          <!-- Sets everything to default. -->
+          <StatusEffect type="OnInserted" target="This" delay="6.8" holdpos="55,-5" aimpos="65,5" handle1="-80,-50" handle2="-15,-35" holdangle="-30" aimangle="0" setvalue="true" />
+          <!-- If the magazine is removed/swapped, plays the sound. -->
+          <StatusEffect type="OnRemoved" target="This" delay="0.1" condition="10" setvalue="true" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/HMG/HMGMagDetach.ogg" range="1000" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="30,-19" setactive="true" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="hmgreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->&gt;
+        <Containable items="hmgreloading" hide="true"><StatusEffect type="OnRemoved" target="Contained"><Remove /></StatusEffect></Containable></ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="90" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="hmgreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,hmgreloading">
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

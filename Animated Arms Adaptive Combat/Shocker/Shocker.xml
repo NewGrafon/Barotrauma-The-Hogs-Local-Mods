@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="Shocker" category="Equipment" HideConditionBar="true" scale="0.25" linkable="true" Tags="smallitem,shocker" impactsoundtag="impact_metal_light" cargocontaineridentifier="metalcrate">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.3" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Price baseprice="150">
+        <Price storeidentifier="merchantoutpost" minavailable="3" />
+        <Price storeidentifier="merchantcity" minavailable="3" />
+        <Price storeidentifier="merchantresearch" minavailable="3" sold="false" />
+        <Price storeidentifier="merchantmilitary" minavailable="3" />
+        <Price storeidentifier="merchantmine" minavailable="3" sold="false" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator,repair" requiredtime="12">
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="plastic" amount="2" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="tin" amount="1" />
+      </Fabricate>
+      <PreferredContainer secondary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.005" />
+      <InventoryIcon texture="%ModDir%/Shocker/Shocker.png" sourcerect="12,10,107,104" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Shocker/Shocker.png" depth="0.57" sourcerect="151,0,50,120" origin="0.50115305,0.3521153" />
+      <Body radius="16" height="30" density="10.05" />
+      <Holdable canBeCombined="true" attachable="false" slots="RightHand,LeftHand,Any" cameraaimoffset="400" aimable="true" aimangle="-60" aimpos="45,0" handle1="0,-45" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" targettype="This" aimpos="80,10" setvalue="true" duration="0.1" />
+        <StatusEffect type="OnUse" targettype="This" aimpos="45,0" setvalue="true" delay="0.2" />
+      </Holdable>
+      <RepairTool firedamage="5.0" structurefixamount="2.5" range="55" barrelpos="0,10" particles="weld" repairmultiple="true" repairthroughwalls="false" combatpriority="30">
+        <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        <ParticleEmitter particle="electricshock" particlespersecond="7" copyentityangle="true" scalemultiplier="0.05,0.05" />
+        <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="5" anglemin="-5" scalemultiplier="0.5,0.5" anglemax="5" velocitymin="10" velocitymax="100" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="0.9" type="OnUse" range="500" loop="true" selectionmode="random" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="0.925" type="OnUse" range="500" loop="true" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="0.95" type="OnUse" range="500" loop="true" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="0.975" type="OnUse" range="500" loop="true" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="1.0" type="OnUse" range="500" loop="true" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="1.025" type="OnUse" range="500" loop="true" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="1.05" type="OnUse" range="500" loop="true" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="1.075" type="OnUse" range="500" loop="true" />
+        <Sound file="%ModDir%/Saunds/taser_taze.ogg" frequencymultiplier="1.25" type="OnUse" range="500" loop="true" />
+        <StatusEffect type="OnUse" target="Contained" Condition="-5" />
+        <StatusEffect type="OnUse" targettype="Limb" IsDangerous="true">
+          <Affliction identifier="electricshock" amount="50" />
+          <Affliction identifier="burn" amount="1" />
+          <Affliction identifier="slow" amount="5" />
+          <Affliction identifier="spasm_shot" amount="15" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Limb" IsDangerous="true">
+          <Conditional immunity="gt 0" bloodpressure="gt 0" />
+          <ReduceAffliction identifier="fibrillation" amount="10" />
+          <ReduceAffliction identifier="tachycardia" amount="10" />
+          <ReduceAffliction identifier="cardiacarrest" amount="10" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="NearbyCharacters" range="125">
+          <Conditional InWater="true" />
+          <Affliction identifier="electricshock" amount="40" />
+          <Affliction identifier="burn" amount="0.5" />
+          <Affliction identifier="slow" amount="2" />
+          <Affliction identifier="spasm_shot" amount="15" />
+        </StatusEffect>
+        <RequiredSkill identifier="weapons" level="20" />
+      </RepairTool>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" containedstateindicatorslot="0" containedstateindicatorstyle="battery" autoinject="true" autoinjectthreshold="Infinity" allowswappingcontaineditems="true">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" hide="true"></Containable>
+      </ItemContainer>
+    </Item>
+  </Items>
+</Override>

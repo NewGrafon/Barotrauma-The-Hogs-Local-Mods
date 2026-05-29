@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character speciesname="Ekdronerallybeacon" humanoid="False" group="human" speciestranslationoverride="" displayname="" tags="ekdronerallybeacon" hasinfo="False" husk="False" usehuskappendage="False" needsair="False" needswater="False" canspeak="False" noise="50000" visibility="50000" blooddecal="blood" bleedparticleair="blooddrop" bleedparticlewater="waterblood" eatingspeed="10" pathfinderpriority="1" hideinsonar="False" sonardisruption="0">
+  <ragdolls folder="%ModDir%/Characters/Ekdronerallybeacon/Ragdolls/" />
+  <animations folder="%ModDir%/Characters/Ekdronerallybeacon/Animations/" />
+  <health vitality="10000" doesbleed="False" crushdepth="-Infinity" usehealthwindow="False" bleedingreduction="0" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="0" />
+  <ai combatstrength="1" sight="1" hearing="1" aggressionhurt="100" aggressiongreed="10" fleehealththreshold="0" attackwhenprovoked="False" avoidgunfire="False" aggressiveboarding="False" enforceaggressivebehaviorformissions="True" targetouterwalls="True" randomattack="False" />
+  <StatusEffect type="Always" target="Character" disabledeltatime="true" stackable="false" delay="5.5">
+    <RemoveCharacter />
+  </StatusEffect>
+</Character>

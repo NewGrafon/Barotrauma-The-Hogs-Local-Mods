@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Rotatable Vent Pipe A2" identifier="ekdockyard_scalablepipe1" category="Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Misc/deco_pipes1.png" sourcerect="0,0,640,32" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="288,0,64,64" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,0,640,32" origin="0.5,0.5" maxcondition="100" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="16,0,576,32" origin="0.5,0.5" maxcondition="90" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,512,32" origin="0.5,0.5" maxcondition="80" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,448,32" origin="0.5,0.5" maxcondition="70" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,384,32" origin="0.5,0.5" maxcondition="61" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,320,32" origin="0.5,0.5" maxcondition="50" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,256,32" origin="0.5,0.5" maxcondition="40" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,192,32" origin="0.5,0.5" maxcondition="31" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,128,32" origin="0.5,0.5" maxcondition="20" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,0,64,32" origin="0.5,0.5" maxcondition="10" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" indestructible="true" setvalue="true">
+        <Conditional indestructible="false" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Rotatable Vent Pipe A3" identifier="ekdockyard_scalablepipe2" category="Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Misc/deco_pipes1.png" sourcerect="0,48,640,24" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="288,32,64,64" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,48,640,24" origin="0.5,0.5" maxcondition="100" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="16,48,576,24" origin="0.5,0.5" maxcondition="90" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,512,24" origin="0.5,0.5" maxcondition="80" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,448,24" origin="0.5,0.5" maxcondition="70" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,384,24" origin="0.5,0.5" maxcondition="61" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,320,24" origin="0.5,0.5" maxcondition="50" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,256,24" origin="0.5,0.5" maxcondition="40" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,192,24" origin="0.5,0.5" maxcondition="31" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,128,24" origin="0.5,0.5" maxcondition="20" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,48,64,24" origin="0.5,0.5" maxcondition="10" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" indestructible="true" setvalue="true">
+        <Conditional indestructible="false" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Rotatable Vent Pipe A4" identifier="ekdockyard_scalablepipe3" category="Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Misc/deco_pipes1.png" sourcerect="0,80,640,16" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="288,64,64,64" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,80,640,16" origin="0.5,0.5" maxcondition="100" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="16,80,576,16" origin="0.5,0.5" maxcondition="90" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,512,16" origin="0.5,0.5" maxcondition="80" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,448,16" origin="0.5,0.5" maxcondition="70" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,384,16" origin="0.5,0.5" maxcondition="61" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,320,16" origin="0.5,0.5" maxcondition="50" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,256,16" origin="0.5,0.5" maxcondition="40" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,192,16" origin="0.5,0.5" maxcondition="31" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,128,16" origin="0.5,0.5" maxcondition="20" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,80,64,16" origin="0.5,0.5" maxcondition="10" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" indestructible="true" setvalue="true">
+        <Conditional indestructible="false" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Rotatable Vent Pipe A7" identifier="ekdockyard_scalablepipe4" category="Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Misc/deco_pipes1.png" sourcerect="0,112,640,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="288,112,64,64" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,112,640,64" origin="0.5,0.5" maxcondition="100" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="16,112,576,64" origin="0.5,0.5" maxcondition="90" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,512,64" origin="0.5,0.5" maxcondition="80" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,448,64" origin="0.5,0.5" maxcondition="70" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,384,64" origin="0.5,0.5" maxcondition="61" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,320,64" origin="0.5,0.5" maxcondition="50" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,256,64" origin="0.5,0.5" maxcondition="40" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,192,64" origin="0.5,0.5" maxcondition="31" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,128,64" origin="0.5,0.5" maxcondition="20" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="32,112,64,64" origin="0.5,0.5" maxcondition="10" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" indestructible="true" setvalue="true">
+        <Conditional indestructible="false" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Rotatable Vent Duct A1" identifier="ekdockyard_scalablevent1" category="Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Misc/deco_pipes1.png" sourcerect="0,192,640,96" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="272,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,640,96" origin="0.5,0.5" maxcondition="100" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,576,96" origin="0.5,0.5" maxcondition="90" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,512,96" origin="0.5,0.5" maxcondition="80" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,448,96" origin="0.5,0.5" maxcondition="70" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,384,96" origin="0.5,0.5" maxcondition="61" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,320,96" origin="0.5,0.5" maxcondition="50" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,256,96" origin="0.5,0.5" maxcondition="40" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,192,96" origin="0.5,0.5" maxcondition="31" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,128,96" origin="0.5,0.5" maxcondition="20" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,192,64,96" origin="0.5,0.5" maxcondition="10" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" indestructible="true" setvalue="true">
+        <Conditional indestructible="false" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Rotatable Vent Duct B1" identifier="ekdockyard_scalablevent2" category="Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Misc/deco_pipes1.png" sourcerect="0,304,640,112" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="8,304,112,112" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,640,112" origin="0.5,0.5" maxcondition="100" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,576,112" origin="0.5,0.5" maxcondition="90" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,512,112" origin="0.5,0.5" maxcondition="80" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,448,112" origin="0.5,0.5" maxcondition="70" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,384,112" origin="0.5,0.5" maxcondition="61" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,320,112" origin="0.5,0.5" maxcondition="50" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,256,112" origin="0.5,0.5" maxcondition="40" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,192,112" origin="0.5,0.5" maxcondition="31" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,128,112" origin="0.5,0.5" maxcondition="20" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,304,64,112" origin="0.5,0.5" maxcondition="10" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" indestructible="true" setvalue="true">
+        <Conditional indestructible="false" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Rotatable Vent Duct B2" identifier="ekdockyard_scalablevent3" category="Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Misc/deco_pipes1.png" sourcerect="0,432,640,48" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,48,48" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,640,48" origin="0.5,0.5" maxcondition="100" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,576,48" origin="0.5,0.5" maxcondition="90" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,512,48" origin="0.5,0.5" maxcondition="80" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,448,48" origin="0.5,0.5" maxcondition="70" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,384,48" origin="0.5,0.5" maxcondition="61" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,320,48" origin="0.5,0.5" maxcondition="50" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,256,48" origin="0.5,0.5" maxcondition="40" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,192,48" origin="0.5,0.5" maxcondition="31" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,128,48" origin="0.5,0.5" maxcondition="20" />
+    <BrokenSprite texture="%ModDir%/Items/Misc/deco_pipes1.png" depth="0.89" sourcerect="0,432,64,48" origin="0.5,0.5" maxcondition="10" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" indestructible="true" setvalue="true">
+        <Conditional indestructible="false" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+</Items>

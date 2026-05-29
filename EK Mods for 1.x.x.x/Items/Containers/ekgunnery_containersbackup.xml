@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekgunnery_magazinestoragesmall" tags="container,ekgunnery_mediumammo_container,railgunammocontainer,coilgunammocontainer,ammocontainer" category="Legacy" pickdistance="150" scale="0.5" waterproof="true" fireproof="true" explosiondamagemultiplier="0.1" spritecolor="200,200,200,255">
+    <Sprite texture="%ModDir%/Items/Containers/ekgunnery_containers.png" depth="0.84" sourcerect="0,0,208,208" origin="0.5,0.5" />
+    <ItemContainer autofill="False" capacity="9" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.15,0.35" anchor="Center" style="ItemUI" />
+      <Containable items="smallitem,mediumitem,ekgunnery_mediumammo,railgunammo,railgunshell,coilgunammo,coilgunammobox,chaingunammo,pulselaserammo,ammobox,depthchargeammo,ekgunnery_mediumsslammo" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_magazinestoragemedium" tags="container,ekgunnery_mediumammo_container,railgunammocontainer,coilgunammocontainer,ammocontainer" category="Legacy" pickdistance="150" scale="0.5" waterproof="true" fireproof="true" explosiondamagemultiplier="0.1" spritecolor="200,200,200,255">
+    <Sprite texture="%ModDir%/Items/Containers/ekgunnery_containers.png" depth="0.84" sourcerect="208,0,320,208" origin="0.5,0.5" />
+    <ItemContainer autofill="False" capacity="18" slotsperrow="6" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" />
+      <Containable items="smallitem,mediumitem,ekgunnery_mediumammo,railgunammo,railgunshell,coilgunammo,coilgunammobox,chaingunammo,pulselaserammo,ammobox,depthchargeammo,ekgunnery_mediumsslammo" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_loadingelevatormedium" tags="container,ekgunnery_mediumammo_container,railgunammocontainer,coilgunammocontainer,ammocontainer" category="Legacy" linkable="true" displaysidebysidewhenlinked="true" allowedlinks="ekgunnery_loadingelevatormedium" pickdistance="150" scale="0.5" waterproof="true" fireproof="true" explosiondamagemultiplier="0.1" spritecolor="200,200,200,255">
+    <Sprite texture="%ModDir%/Items/Containers/ekgunnery_containers.png" depth="0.84" sourcerect="528,0,400,208" origin="0.5,0.5" />
+    <ItemContainer autofill="False" capacity="9" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.15,0.35" anchor="Center" style="ItemUI" />
+      <Containable items="smallitem,mediumitem,ekgunnery_mediumammo,railgunammo,railgunshell,coilgunammo,coilgunammobox,chaingunammo,pulselaserammo,ammobox,depthchargeammo,ekgunnery_mediumsslammo" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_mediumsslrocket_cargocontainer" pickdistance="75" scale="0.5">
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="carbon" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.54" sourcerect="728,224,176,216" origin="0.5,0.5" />
+    <Body width="100" height="200" density="25" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="52,-86" holdangle="20" handle1="-73,80" handle2="-73,80" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.3" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="8" slotsperrow="4" maxstacksize="1" itempos="-28,-5" iteminterval="19,0.5" itemrotation="90" itemsperrow="4" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+      <!--<GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />-->
+      <Containable identifiers="ekgunnery_tagsmallshell,ekgunnery_mediumsslammo,ekgunnery_cannonammo">
+        <!--<StatusEffect type="OnContaining" target="Character" SpeedMultiplier="0.5" setvalue="true" />-->
+      </Containable>
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_heavyrailgunshellrack1" tags="container,heavyrailgunammocontainer,ekgunnery_heavyrailguncontainer_compact" pickdistance="120" scale="0.5" canflipx="false" canflipy="false">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.84" sourcerect="912,496,96,208" origin="0.5,0.5" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="3" slotsperrow="3" itempos="48,-40" iteminterval="0,-64" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="heavyrailgunammo,ekgunnery_largeshell" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_heavyrailgunshellrack2" tags="container,heavyrailgunammocontainer,ekgunnery_heavyrailguncontainer_compact" pickdistance="120" scale="0.5" canflipx="false" canflipy="false">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.84" sourcerect="1008,496,96,336" origin="0.5,0.5" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="5" slotsperrow="5" itempos="48,-40" iteminterval="0,-64" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="heavyrailgunammo,ekgunnery_largeshell" />
+    </ItemContainer>
+  </Item>
+</Items>

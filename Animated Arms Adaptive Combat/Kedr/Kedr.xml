@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!--Автоматы-->
+    <Item name="Kedr Береговой" identifier="Kedr" category="Weapon" subcategory="Animated_arms_weapons" description="Это штурмовая винтовка, модифицированная для использования в специфических условиях. Она использует ‖color:gui.green‖стандартные патроны 5.56x45мм‖end‖. HRKedr ‖color:gui.blue‖малоэффективна под водой‖end‖. ‖color:gui.red‖Винтовка предназначена для ношения исключительно на спине‖end‖." HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.3" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна оружия -->
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.188" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.188" />
+      <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.188" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="300" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <!-- Крафтинг оружия -->
+      <Fabricate suitablefabricators="repair" requiredtime="40">
+        <RequiredSkill identifier="weapons" level="20" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem identifier="tin" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="25" displayname="repairweapon">
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem identifier="Kedr" amount="1" />
+        <RequiredItem identifier="repairweapon" amount="1" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+        <RequiredItem identifier="tin" amount="1" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="1" />
+        <Item identifier="thorium" amount="1" />
+      </Deconstruct>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/Kedr/Kedr.png" sourcerect="17,261,113,116" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Kedr/Kedr.png" sourcerect="0,0,289,96" depth="0.55" origin="0.50494003,0.24978435" />
+      <!-- Сломанные спрайты для анимации -->
+      <BrokenSprite texture="%ModDir%/Kedr/Kedr.png" name="Kedr Rifle BrokenSprite1" sourcerect="0,103,289,96" depth="0.55" origin="0.5010049,0.2505921" maxcondition="1" />
+      <BrokenSprite texture="%ModDir%/Kedr/Kedr.png" sourcerect="0,0,289,96" depth="0.55" origin="0.50494003,0.24978435" maxcondition="0" />
+      <!-- Физические параметры -->
+      <Body width="120" height="50" density="25" />
+      <!-- Удержание в руках -->
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="70,-20" aimpos="90,8" handle1="-35,-34" handle2="30,-13" holdangle="-15">
+        <StatusEffect type="OnActive" target="Character" interval="1" duration="1.1" stackable="false" SpeedMultiplier="0.9" setvalue="true" />
+        <!-- Замедление. -->
+        <StatusEffect type="OnSecondaryUse" target="Character" ObstructVisionAmount="0.01" SpeedMultiplier="0.7" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="-0.5" unskilledspread="-1" stackable="true" disabledeltatime="true" setvalue="false" comparison="and" interval="0.05">
+          <Conditional Spread="gt 1.5" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-10" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-5" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This" target="this" tags="suppressed" interval="1" duration="1.1" setvalue="true">
+          <RequiredItem items="suppressor" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="200,-7" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="140,-7" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="compensator" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="compensator" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="hider" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="hider" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="firing" duration="0.05" stackable="false" setvalue="true" comparison="and">
+          <Conditional IsBot="false" targetcontainer="true" />
+          <Conditional HasStatusTag="single" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.05" setvalue="true" stackable="false" disabledeltatime="true" conditional="and">
+          <Conditional HasStatusTag="firing" />
+          <Conditional HasStatusTag="single" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.0" setvalue="true" disabledeltatime="true" comparison="and">
+          <Conditional HasStatusTag="neq firing" />
+          <Conditional HasStatusTag="neq cantfire" />
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="cantfire" duration="0.1" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" interval="3" showtexts="false" setvalue="true">
+          <Conditional showtexts="true" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" spritecolor="255,225,210,255">
+          <Conditional HasStatusTag="condition-75" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="0.5" spritecolor="231,204,184,255">
+          <Conditional HasStatusTag="condition-50" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="1" spritecolor="190,140,100,255">
+          <Conditional HasStatusTag="condition-25" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.13" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <TickBox text="onoff">
+          <StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+        </TickBox>
+        <TickBox text="single">
+          <StatusEffect type="OnUse" target="This" tags="single" duration="0.26" interval="0.25" disabledeltatime="true" />
+        </TickBox>
+        <Button text="Weapon_up">
+          <StatusEffect type="OnUse" target="This" aimpos="20,55" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" MatchOnEmpty="true" TargetSlot="4" />
+            <SpawnItem identifiers="weapons-up" spawnposition="ThisInventory" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimpos="50,10" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Contained" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="125" aimpos="35,-10" handle2="0,0" handle1="-10,-35" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This" holdpos="45,-20" aimpos="50,10" handle1="-10,-35" handle2="23,-5" holdangle="-30" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+      </CustomInterface>
+      <!-- Параметры стрельбы -->
+      <RangedWeapon reload="0.1" holdtrigger="true" barrelpos="50,-7" spread="2" weapondamagemodifier="0.75" unskilledspread="4" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.0" DualWieldAccuracyPenalty="1">
+        <StatusEffect type="OnUse" target="This" reloadtimer="0.08" setvalue="true" stackable="false" disabledeltatime="true" conditional="and">
+          <Conditional HasStatusTag="firing" />
+          <Conditional HasStatusTag="single" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="this" showtexts="true" interval="2" duration="2.1" setvalue="true" comparison="and">
+          <Conditional hasstatustag="med-scan" />
+          <RequiredItems items="med-scan" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnEating" target="This" aimangle="0" handle1="-10,-35" aimpos="50,10" handle2="40,-50" delay="0.15">
+          <Conditional HasStatusTag="suicide" />
+          <Dropitem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="0.5" unskilledspread="1" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 15" />
+          <Conditional HasStatusTag="hider" />
+          <Conditional IsBot="false" targetcontainer="true" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="0.25" unskilledspread="0.5" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 15" />
+          <Conditional HasStatusTag="neq hider" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="+2" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 20" />
+          <Conditional HasStatusTag="neq compensator" />
+          <Conditional HasStatusTag="neq single" />
+          <Conditional IsBot="false" targetcontainer="true" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="+1.5" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 20" />
+          <Conditional HasStatusTag="compensator" />
+          <Conditional HasStatusTag="neq single" />
+          <Conditional HasStatusTag="neq single" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.15" stackable="false" setvalue="true" disabledeltatime="true" />
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="255,0,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,0,256,256" />
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="neq suppressed" />
+          <ParticleEmitter particle="smallmuzzleflash" particleamount="1" distance="26" Angle="-4" CopyEntityAngle="true" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" distance="26" Angle="-4" scalemultiplier="0.75,0.75" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="2,1" distance="26" Angle="-4" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="3,2" distance="26" Angle="-4" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" distance="26" Angle="-4" CopyEntityAngle="true" />
+          <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" distance="26" Angle="-4" scalemultiplier="1.5,1.5" CopyEntityAngle="true" />
+          <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" distance="26" Angle="-4" velocitymax="50" CopyEntityAngle="true" />
+          <ParticleEmitter particle="gunbubbles" particleamount="6" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="-22" distancemax="22" CopyEntityAngle="true" />
+          <Sound file="%ModDir%/Kedr/Kedr.ogg" frequencymultiplier="1.3" type="OnUse" range="2000" selectionmode="Random" />
+          <Sound file="%ModDir%/Kedr/Kedr-1.ogg" frequencymultiplier="1.3" type="OnUse" range="2000" />
+          <Sound file="%ModDir%/Kedr/Kedr-2.ogg" frequencymultiplier="1.3" type="OnUse" range="2000" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="suppressed" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" distance="45" Angle="-4" scalemultiplier="0.6,0.6" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="1,0.5" distance="45" Angle="-4" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" scalemultiplier="0.3,0.3" distance="45" Angle="-4" CopyEntityAngle="true" />
+          <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" distance="45" Angle="-4" scalemultiplier="1.5,1.5" CopyEntityAngle="true" />
+          <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" distance="45" Angle="-4" velocitymax="50" CopyEntityAngle="true" />
+          <ParticleEmitter particle="gunbubbles" particleamount="6" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="-22" distancemax="22" CopyEntityAngle="true" />
+          <Sound file="%ModDir%/Kedr/Kedr-sup.ogg" frequencymultiplier="1.5" type="OnUse" range="750" selectionmode="Random" />
+          <Sound file="%ModDir%/Kedr/Kedr-1-sup.ogg" frequencymultiplier="1.5" type="OnUse" range="750" />
+          <Sound file="%ModDir%/Kedr/Kedr-2-sup.ogg" frequencymultiplier="1.5" type="OnUse" range="750" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="250" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="tinnitus_shot" strength="4" />
+          </Explosion>
+          <Conditional HasStatusTag="neq suppressed" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+          <Explosion range="200" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          <Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="5.0" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="1" setvalue="true">
+          <SpawnItem identifier="PBround-casing" spawnposition="This" aimspread="30" rotationtype="Collider" rotation="90" count="1" Impulse="0.03" />
+          <RequiredItems items="Kedrchamber" type="Contained" />
+          <RequiredItems items="Kedrreloading" type="Contained" />
+          <RequiredItems items="repair" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemComponent" isActive="true">
+          <RequiredItems items="PBammo,PBammo-big" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.22" condition="100" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" DualWieldAccuracyPenalty="1" setvalue="true" />
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="Kedrchamber" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Kedrreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Kedrreloading" delay="2.2" condition="100" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Kedrchamber" condition="100" setvalue="true" delay="1.4" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Kedrchamber" delay="1.5">
+          <Conditional targetcontainer="true" targetitemcomponent="Rangedweapon" DualWieldAccuracyPenalty="eq 2" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="Kedrreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" holdpos="45,-20" aimpos="50,10" handle1="-10,-35" handle2="23,-5" holdangle="-30" aimangle="0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" hideitems="false" setvalue="true" />
+        <RequiredSkill identifier="weapons" level="30" />
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-5.75">
+          <Conditional inwater="false" />
+          <Use />
+          <RequiredItems items="PBammo,PBammo-big" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-10.375">
+          <Conditional inwater="true" />
+          <Use />
+          <RequiredItems items="PBammo,PBammo-big" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="Contained" targetidentifiers="repair" stackable="false" condition="-6" interval="6" />
+        <RequiredItems items="repair" type="Contained" />
+        <RequiredItems items="Kedrreloading" type="Contained" />
+      </RangedWeapon>
+      <!-- Логика магазина -->
+      <ItemComponent isActive="false">
+        <StatusEffect type="OnActive" target="Contained" delay="0.1" targetidentifiers="Kedrchamber">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Contained">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" DualWieldAccuracyPenalty="2" delay="0.1" setvalue="true" />
+        <StatusEffect type="OnActive" target="Contained" targetidentifiers="Kedrchamber" condition="100" setvalue="true" />
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" isActive="false" />
+      </ItemComponent>
+      <!-- Контейнер для магазина -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="false" depth="0.54" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56" spawnwithid="repair" showcontainedstateindicator="false">
+        <Containable items="pbammo" itempos="12,-12">
+          <StatusEffect type="OnInserted" target="NearbyItems" range="5" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <Remove />
+          </StatusEffect>
+          <!-- Механика перезарядки -->
+          <StatusEffect type="OnInserted" target="Contained" conditionalcomparison="and">
+            <Conditional targetcontainer="true" TargetItemComponent="RangedWeapon" DualWieldAccuracyPenalty="eq 1" />
+            <Conditional condition="neq 0" />
+            <Use />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" DualWieldAccuracyPenalty="2" setvalue="true" delay="1.5" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontaineditem="true" condition="gt 0" />
+          </StatusEffect>
+          <!-- Начальные эффекты (не зависят от навыка) -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained,Character" spritecolor="255,255,255,0" delay="0.01" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <!-- Эффекты для навыка оружия < 50 (замедленная анимация) -->
+          <StatusEffect type="OnInserted" target="This" DualWieldAccuracyPenalty="2" setvalue="true" delay="2.81" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontaineditem="true" condition="gt 0" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="3.19" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-65,-70" condition="0" handle1="-10,-35" holdpos="40,0" aimpos="50,1" holdangle="-10" aimangle="-10" delay="0.01" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+            <Sound file="%ModDir%/Kedr/KedrEjectPortOpen.ogg" frequencymultiplier="0.8" type="OnUse" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.19" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.75" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/Kedr/KedrMagAttach.ogg" frequencymultiplier="1.25" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="40,-50" delay="0.63" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.94" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+            <ParticleEmitter particle="gunbubbles" particleamount="5" anglemin="260" anglemax="280" velocitymin="10" velocitymax="20" distancemin="20" distancemax="30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="17,-5" delay="1.88" holdangle="-16" aimangle="-16" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2.44" setvalue="true" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/Kedr/KedrEjectPortClose.ogg" frequencymultiplier="1.25" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="45,-5" delay="2.63" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="100" holdpos="40,-20" handle1="-10,-35" handle2="23,-5" holdangle="-30" aimpos="50,10" aimangle="0" delay="3.0" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="170" anglemax="190" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-65,-70" condition="0" holdpos="40,0" aimpos="50,10" delay="0.01" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.75" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/Kedr/KedrMagAttach.ogg" frequencymultiplier="1.25" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="40,-50" delay="1.31" holdangle="-5" aimangle="-5" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.31" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+            <ParticleEmitter particle="gunbubbles" particleamount="5" anglemin="260" anglemax="280" velocitymin="10" velocitymax="20" distancemin="20" distancemax="30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="23,-5" delay="1.88" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="40,-20" handle1="-10,-35" holdangle="-30" condition="100" aimpos="50,10" aimangle="0" delay="2.63" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <!-- Эффекты для навыка оружия >= 50 (обычная скорость) -->
+          <StatusEffect type="OnInserted" target="This" DualWieldAccuracyPenalty="2" setvalue="true" delay="1.5" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontaineditem="true" condition="gt 0" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="1.7" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-65,-70" condition="0" handle1="-10,-35" holdpos="40,0" aimpos="50,1" holdangle="-10" aimangle="-10" delay="0.01" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Sound file="%ModDir%/Kedr/KedrEjectPortOpen.ogg" frequencymultiplier="0.8" type="OnUse" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.1" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.4" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/Kedr/KedrMagAttach.ogg" frequencymultiplier="0.8" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="40,-50" delay="0.5" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.5" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <ParticleEmitter particle="gunbubbles" particleamount="5" anglemin="260" anglemax="280" velocitymin="10" velocitymax="20" distancemin="20" distancemax="30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="0.75" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" DualWieldAccuracyPenalty="eq 1" />
+            <RequiredSkill identifier="weapons" level="50" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="10,7" delay="1.15" condition="75" holdangle="-16" aimangle="-16" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.3" setvalue="true" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/Kedr/KedrEjectPortClose.ogg" frequencymultiplier="1.25" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="45,-5" delay="1.4" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="100" holdpos="40,-20" handle1="-10,-35" handle2="23,-5" holdangle="-30" aimpos="50,10" aimangle="0" delay="1.6" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="170" anglemax="190" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-65,-70" condition="0" holdpos="40,0" aimpos="50,10" delay="0.01" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.4" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/Kedr/KedrMagAttach.ogg" frequencymultiplier="1.25" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="40,-50" delay="0.7" holdangle="-5" aimangle="-5" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.7" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <ParticleEmitter particle="gunbubbles" particleamount="5" anglemin="260" anglemax="280" velocitymin="10" velocitymax="20" distancemin="20" distancemax="30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="0.9" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" DualWieldAccuracyPenalty="eq 2" />
+            <RequiredSkill identifier="weapons" level="50" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="23,-5" delay="1.2" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="40,-20" handle1="-10,-35" holdangle="-30" condition="100" aimpos="50,10" aimangle="0" delay="1.3" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          </StatusEffect>
+          <StatusEffect type="OnRemoved" target="This">
+            <Sound file="%ModDir%/Saunds/MagDetach.ogg" frequencymultiplier="1.0" range="600" volume="0.5" loop="false" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="%ModDir%/attachments-2.png" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="suppressor_pistol,compensator_pistol,hider_pistol" hide="false" itempos="40,2">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,0" delay="0.01" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" handle1="-30,-35" handle2="30,0" setvalue="true" delay="0.2" />
+            <StatusEffect type="OnInserted" target="This" handle1="-20,-30" setvalue="true" delay="0.3" />
+            <StatusEffect type="OnInserted" target="This" handle1="-10,-25" setvalue="true" delay="0.4" />
+            <StatusEffect type="OnInserted" target="This" handle1="15,-15" setvalue="true" delay="0.5" />
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="1" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" handle1="-20,-30" setvalue="true" delay="1.4" />
+            <StatusEffect type="OnInserted" target="This" handle1="-10,-35" handle2="23,-5" setvalue="true" delay="1.5" />
+            <StatusEffect type="OnInserted" target="This" tag="suppressed" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments-1.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Контейнеры для прокси-предметов -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="Kedrreloading" removecontaineditemsondeconstruct="true">
+        <Containable items="Kedrreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="Kedrchamber" removecontaineditemsondeconstruct="true">
+        <Containable items="Kedrchamber" hide="true" />
+      </ItemContainer>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="weapons-up" hide="true" />
+      </ItemContainer>
+      <!-- Параметры для ИИ -->
+      <aitarget sightrange="1500" soundrange="3000" fadeouttime="4" />
+      <!-- Качество оружия -->
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="40" />
+      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
+    </Item>
+    <!-- Прокси-элемент для перезарядки -->
+    <Item name=" " identifier="Kedrreloading" maxstacksize="1" scale="0.3" damagedbyexplosions="true" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Kedrreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="71,343,52,59" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <!-- Прокси-элемент для патронника -->
+    <Item name=" " identifier="Kedrchamber" maxstacksize="1" scale="0.3" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Kedrchamber">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false" SpawnWithId="PBround" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="PBround" hide="true" />
+        <StatusEffect type="OnUse" target="This" AllowWhenBroken="true">
+          <SpawnItem identifiers="PBround" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Vanilla weapon loaders -->
+  <Item name="" identifier="ekgunnery_coilgunloader_single" tags="coilgunequipment,coilgunammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="coilgun" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="0,0,144,144" origin="0.5,0.5" />
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="75" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.15" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="6" itempos="72,-76" iteminterval="0,0" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <Containable items="coilgunammo" excludeditems="extendedcoilgunammo" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem items="coilgunammo" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <!-- Mod weapon loaders -->
+  <Item name="" identifier="ekgunnery_chaingunloader_single" tags="ekgunnery_chaingunequipment,ekgunnery_chaingunammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_chaingun" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="0,144,128,192" origin="0.5,0.5" />
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="75" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.15" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="6" itempos="64,-98" iteminterval="0,0" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <Containable items="ekgunnery_chaingunammo" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem items="ekgunnery_chaingunammo" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_autocannonloader_single" tags="ekgunnery_autocannonequipment,ekgunnery_autocannonammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_autocannon" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="0,336,144,272" origin="0.5,0.5" />
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="75" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.15" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="6" itempos="72,-155" iteminterval="0,0" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <Containable items="ekgunnery_autocannonammo" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem items="ekgunnery_autocannonammo" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_microsslloader" tags="ekgunnery_microsslequipment,ekgunnery_microsslammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_microssl" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="144,336,136,160" origin="0.5,0.5" />
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="75" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.15" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="6" itempos="68,-96" iteminterval="0,0" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <Containable items="ekgunnery_microsslammo" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem items="ekgunnery_microsslammo" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekgunnery_medium_ssl_loaderhorizontal" tags="ekgunnery_mediumsslequipment,ekgunnery_mediumsslammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_medium_ssl" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="152,8,240,320" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.78" sourcerect="400,0,32,288" origin="0.5,0.5" offset="57,0" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.78" sourcerect="432,0,32,288" origin="0.5,0.5" offset="-57,0" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="8" slotsperrow="8" itempos="120,-48" iteminterval="0,-32" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="mediumsslammo" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.25" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekgunnery_medium_ssl_loadercompact1" tags="mediumsslcontainer_compact,ekgunnery_mediumsslequipment,ekgunnery_mediumsslammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_medium_ssl" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="472,8,240,128" origin="0.5,0.5" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="8" slotsperrow="8" itempos="60,-44" iteminterval="40,-40" itemsperrow="4" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="mediumsslammo" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.25" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekgunnery_medium_ssl_loadercompact2" tags="mediumsslcontainer_compact,ekgunnery_mediumsslequipment,ekgunnery_mediumsslammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_medium_ssl" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="728,8,160,208" origin="0.5,0.5" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="8" slotsperrow="8" itempos="60,-44" iteminterval="40,-40" itemsperrow="2" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="mediumsslammo" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.25" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekgunnery_medium_ssl_loadercompact3" tags="mediumsslcontainer_compact,ekgunnery_mediumsslequipment,ekgunnery_mediumsslammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_medium_ssl" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="472,152,240,208" origin="0.5,0.5" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="16" slotsperrow="8" itempos="60,-44" iteminterval="40,-40" itemsperrow="4" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="mediumsslammo" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.25" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekgunnery_heavyrailgunloader" tags="ekgunnery_heavyrailgunequipment,ekgunnery_heavyrailgunammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_heavyrailgun" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="144,496,384,400" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.78" sourcerect="528,496,384,400" origin="0.5,0.5" offset="0,0" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="5" slotsperrow="5" itempos="195,-76" iteminterval="0,-64" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="heavyrailgunammo" excludeditems="ekgunnery_mediumsslammo" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.25" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekgunnery_heavyrailgunloader_single" tags="ekgunnery_heavyrailgunequipment,ekgunnery_heavyrailgunammosource,turretammosource" category="Legacy" linkable="true" allowedlinks="ekgunnery_heavyrailgun" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.8" sourcerect="144,896,384,144" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_loaders.png" depth="0.78" sourcerect="528,896,384,144" origin="0.5,0.5" offset="0,0" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="1" itempos="195,-76" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.79">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="heavyrailgunammo" excludeditems="ekgunnery_mediumsslammo" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="5" mindeteriorationdelay="120" maxdeteriorationdelay="600" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.25" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+</Items>

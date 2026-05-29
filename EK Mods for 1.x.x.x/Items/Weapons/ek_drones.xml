@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Todo: Wait for this to work -->
+  <Item name="" identifier="ek_drone_beacon" aliases="drone rally beacon,drone beacon" category="Equipment" hideinmenus="false" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,ek_drone_follow_beacon" impactsoundtag="impact_metal_light" scale="0.32">
+    <Price baseprice="210" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+    </Price>
+    <!--
+	45
+	80
+	80
+	-->
+    <Deconstruct time="6">
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredSkill identifier="weapons" level="15" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="640,128,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/drone_items.png" sourcerect="0,0,32,96" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="94" density="10" />
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,-15" holdangle="10" throwforce="3.0" msg="ItemMsgPickUpSelect">
+      <LightComponent LightColor="0.4,1.0,0.3,0.7" range="20" powerconsumption="0" Flicker="0.35" IsOn="false" canbeselected="false">
+        <StatusEffect type="OnActive" targettype="This" disabledeltatime="true" stackable="false" delay="4.5" checkconditionalalways="true">
+          <Conditional IsOn="eq true" targetitemcomponent="LightComponent" />
+          <SpawnCharacter speciesname="Ekdronerallybeacon" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This">
+          <sound file="%ModDir%/Items/Weapons/ek_advancedbeacon_noise.ogg" type="OnUse" range="760.0" loop="true" />
+        </StatusEffect>
+      </LightComponent>
+    </Throwable>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.15,0.12" anchor="BottomRight" absoluteoffset="20,20" style="ItemUI" />
+      <TickBox text="Beacon Active" IsOn="true">
+        <sound file="%ModDir%/Items/Weapons/ek_dronebeacon_button.ogg" type="OnActive" range="250.0" loop="true" volume="0.3" />
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <AiTarget sightrange="1000.0" maxsoundrange="5000" minsoundrange="0" />
+  </Item>
+  <Item name="" identifier="ek_drone_beaconattack" aliases="drone attack beacon" category="Equipment" hideinmenus="false" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,ek_drone_attack_beacon" impactsoundtag="impact_metal_light" scale="0.32">
+    <Price baseprice="210" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+    </Price>
+    <!--
+	45
+	80
+	80
+	-->
+    <Deconstruct time="6">
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredSkill identifier="weapons" level="15" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="640,192,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/drone_items.png" sourcerect="0,96,32,96" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="94" density="10" />
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,-15" holdangle="10" throwforce="3.0" msg="ItemMsgPickUpSelect">
+      <LightComponent LightColor="1.0,0.25,0.2,0.7" range="35" powerconsumption="0" Flicker="0.35" IsOn="false" canbeselected="false">
+        <StatusEffect type="OnActive" targettype="This" disabledeltatime="true" stackable="false" delay="4.5" checkconditionalalways="true">
+          <Conditional IsOn="eq true" targetitemcomponent="LightComponent" />
+          <SpawnCharacter speciesname="Ekdroneattackbeacon" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This">
+          <sound file="%ModDir%/Items/Weapons/ek_advancedbeacon_noise.ogg" type="OnUse" range="760.0" loop="true" />
+        </StatusEffect>
+      </LightComponent>
+    </Throwable>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.15,0.12" anchor="BottomRight" absoluteoffset="20,20" style="ItemUI" />
+      <TickBox text="Beacon Active" IsOn="true">
+        <sound file="%ModDir%/Items/Weapons/ek_dronebeacon_button.ogg" type="OnActive" range="250.0" loop="true" volume="0.3" />
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <AiTarget sightrange="1000.0" maxsoundrange="5000" minsoundrange="0" />
+  </Item>
+  <Item name="" identifier="ek_gundrone" aliases="gun drone" tags="crate,ek_deployable_drone" waterproof="true" fireproof="true" category="Misc" sonarsize="3" scale="0.55" impactsoundtag="impact_metal_heavy">
+    <!--<Price storeidentifier="merchantMilitary" buyprice="500" />-->
+    <Price baseprice="500" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+    </Price>
+    <!--
+	20
+	20
+	150
+	150
+	80
+	80
+	-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="handheldsonar" />
+      <RequiredItem identifier="fpgacircuit" amount="2" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="steel" amount="2" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="handheldsonar" />
+      <Item identifier="fpgacircuit" amount="2" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Weapons/drone_deployables.png" sourcerect="0,0,288,160" depth="0.55" origin="0.5,0.65" />
+    <Body width="224" height="96" density="10" />
+    <!--
+	<Throwable slots="RightHand+LeftHand" holdpos="10,-50" handle1="-10,20" handle2="10,20" throwforce="0.5" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" delay="1.5" disabledeltatime="true" stackable="false">
+        <SpawnCharacter speciesname="gundrone" />
+        <Remove />
+      </StatusEffect>
+    </Throwable>
+	-->
+    <Holdable slots="RightHand+LeftHand" holdpos="10,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect">
+      <CustomInterface drawhudwhenequipped="true" canbeselected="false">
+        <GuiFrame style="ItemUI" absoluteoffset="0,160" anchor="BottomCenter" relativesize="0.09,0.15" />
+        <Button text="Activate (IFF ON)">
+          <StatusEffect target="This,Character" type="OnUse" Condition="-10" disabledeltatime="true">
+            <Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+            <SpawnCharacter speciesname="gundrone" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+        <Button text="Activate (IFF OFF)">
+          <StatusEffect target="This,Character" type="OnUse" Condition="-10" disabledeltatime="true">
+            <Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+            <SpawnCharacter speciesname="gundrone_noiff" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ek_gundrone_wreck" aliases="gun drone wreck" tags="crate" waterproof="true" fireproof="true" category="Misc" hideinmenus="true" sonarsize="3" scale="0.55" impactsoundtag="impact_metal_heavy" HideConditionBar="true">
+    <Price baseprice="150" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="0.7" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="0.8" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.8" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" sold="false" />
+    </Price>
+    <Deconstruct time="20">
+      <Item identifier="steel" amount="2" />
+      <Item identifier="aluminium" />
+      <Item identifier="copper" />
+      <Item identifier="plastic" amount="2" />
+      <Item identifier="titanium" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Characters/Gun Drone/gun_drone.png" sourcerect="288,0,288,160" depth="0.55" origin="0.5,0.65" />
+    <Body width="224" height="96" density="12" />
+    <Holdable slots="RightHand+LeftHand" holdpos="10,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="Always" target="This" Condition="-5">
+        <Conditional Condition="gt 0" />
+        <ParticleEmitter particle="ekthermitebubbles" drawtarget="Water" particlespersecond="4" distancemin="0" distancemax="40" />
+        <ParticleEmitter particle="ekthermitesmoke" particlespersecond="4" distancemin="0" distancemax="40" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This">
+        <Conditional Condition="gt 60" />
+        <ParticleEmitter particle="weldspark" particlespersecond="8" distancemin="0" distancemax="40" anglemin="-360" anglemax="360" startsizemin="0.6,0.4" startsizemax="1.2,0.8" velocitymin="200" velocitymax="400" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ek_walkerdrone" aliases="walker drone" tags="crate,ek_deployable_drone" waterproof="true" fireproof="true" category="Misc" sonarsize="3" scale="0.55" impactsoundtag="impact_metal_heavy">
+    <!--<Price storeidentifier="merchantMilitary" buyprice="500" />-->
+    <Price baseprice="500" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+    </Price>
+    <!--
+	20
+	20
+	150
+	150
+	80
+	80
+	-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="handheldsonar" />
+      <RequiredItem identifier="fpgacircuit" amount="2" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="steel" amount="2" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="handheldsonar" />
+      <Item identifier="fpgacircuit" amount="2" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Characters/Walker Drone/walker_drone.png" sourcerect="320,0,304,144" depth="0.55" origin="0.5,0.65" />
+    <Body width="224" height="96" density="10" />
+    <!--
+    <Throwable slots="RightHand+LeftHand" holdpos="10,-50" handle1="-10,20" handle2="10,20" throwforce="0.5" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" delay="1.5" disabledeltatime="true" stackable="false">
+        <SpawnCharacter speciesname="walkerdrone" />
+        <Remove />
+      </StatusEffect>
+    </Throwable>
+	-->
+    <Holdable slots="RightHand+LeftHand" holdpos="10,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect">
+      <CustomInterface drawhudwhenequipped="true" canbeselected="false">
+        <GuiFrame style="ItemUI" absoluteoffset="0,160" anchor="BottomCenter" relativesize="0.09,0.15" />
+        <Button text="Activate (IFF ON)">
+          <StatusEffect target="This,Character" type="OnUse" Condition="-10" disabledeltatime="true">
+            <Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+            <SpawnCharacter speciesname="walkerdrone" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+        <Button text="Activate (IFF OFF)">
+          <StatusEffect target="This,Character" type="OnUse" Condition="-10" disabledeltatime="true">
+            <Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+            <SpawnCharacter speciesname="walkerdrone_noiff" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Holdable>
+  </Item>
+  <Item identifier="ek_walkerdrone_turret" category="hidden" tags="" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="True">
+    <Sprite texture="%ModDir%/Characters/Walker Drone/walker_drone.png" sourcerect="96,144,208,96" depth="0.55" origin="0.5,0.5" />
+    <Body width="80" height="25" density="50" />
+    <Holdable slots="Any,RightHand" controlpose="false" aimpos="150,0" handle1="-50,-2" holdangle="0" usehandrotationforholdangle="true" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon barrelpos="45,0" spread="4" reload="0.333" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_battlerifle.ogg" type="OnUse" range="2000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="ek_drumlmg_round" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="ek_drumlmg_round" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" containedstateindicatorstyle="spear">
+      <Containable items="ek_drumlmg_round" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ek_walkerdrone_wreck" aliases="walker drone wreck" tags="crate" waterproof="true" fireproof="true" category="Misc" hideinmenus="true" sonarsize="3" scale="0.55" impactsoundtag="impact_metal_heavy" HideConditionBar="true">
+    <Price baseprice="150" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="0.7" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="0.8" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.8" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" sold="false" />
+    </Price>
+    <Deconstruct time="20">
+      <Item identifier="steel" amount="2" />
+      <Item identifier="aluminium" />
+      <Item identifier="copper" />
+      <Item identifier="plastic" amount="2" />
+      <Item identifier="titanium" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Characters/Walker Drone/walker_drone.png" sourcerect="320,144,304,160" depth="0.55" origin="0.5,0.65" />
+    <Body width="224" height="96" density="12" />
+    <Holdable slots="RightHand+LeftHand" holdpos="10,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="Always" target="This" Condition="-5">
+        <Conditional Condition="gt 0" />
+        <ParticleEmitter particle="ekthermitebubbles" drawtarget="Water" particlespersecond="4" distancemin="0" distancemax="40" />
+        <ParticleEmitter particle="ekthermitesmoke" particlespersecond="4" distancemin="0" distancemax="40" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This">
+        <Conditional Condition="gt 60" />
+        <ParticleEmitter particle="weldspark" particlespersecond="8" distancemin="0" distancemax="40" anglemin="-360" anglemax="360" startsizemin="0.6,0.4" startsizemax="1.2,0.8" velocitymin="200" velocitymax="400" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Todo: Wait for this to work -->
+  <!--
+  <Item name="Drone Disarm Key" identifier="ek_drone_disarmkey" aliases="drone disarmer key,drone disarmer" category="Equipment" hideinmenus="true"
+  description="."
+  interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,tool,weapon" impactsoundtag="impact_metal_light" scale="0.32">
+    <Deconstruct time="6">
+      <Item identifier="steel"  />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredSkill identifier="weapons" level="15"/>
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <InventoryIcon texture="Mods/EK Armory/Items/InventoryIcons.png" sourcerect="640,128,64,64" origin="0.5,0.5" />
+    <Sprite texture="Mods/EK Armory/Items/Weapons/drone_items.png" sourcerect="0,0,32,96" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="94" density="10" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="50,0" handle1="-85,-35" handle2="0,-27" msg="ItemMsgPickUpSelect" />
+    <RepairTool structurefixamount="0" range="150" barrelpos="35,13" repairmultiple="true" repairthroughwalls="false" combatpriority="1">
+      <ParticleEmitter particle="weld" particlespersecond="50" copyentityangle="true"/>
+      <StatusEffect type="OnUse" targettype="Limb" tag="ek_drone_disarm_tag" >
+        <Affliction identifier="ek_drone_disarm" amount="3.5" />
+      </StatusEffect>
+    </RepairTool>
+
+	<AiTarget sightrange="1000.0" maxsoundrange="3500" minsoundrange="0"/>
+  </Item>
+  -->
+  <!-- 
+  "The truth? You can't handle the truth!"
+  Cleaned up extra repairtool code a bit.
+  
+  Todo: Allow multiple programmable function chips 
+  -->
+  <Item name="" identifier="ek_drone_multitool" aliases="drone disarmer,drone maintenance tool" category="Equipment" hideinmenus="fale" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,tool,weapon" impactsoundtag="impact_metal_light" scale="0.32">
+    <Price baseprice="180" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" />
+    </Price>
+    <!--
+	20
+	80
+	80
+	-->
+    <Deconstruct time="8">
+      <Item identifier="steel" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredSkill identifier="weapons" level="15" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Weapons/drone_items.png" sourcerect="32,0,112,112" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="94" density="10" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="50,10" handle1="-24,-25" handle2="0,-25" msg="ItemMsgPickUpSelect" />
+    <RepairTool structurefixamount="0" range="300" barrelpos="35,13" repairmultiple="true" repairthroughwalls="false" combatpriority="1">
+      <StatusEffect type="OnUse" targettype="Limb">
+        <Affliction identifier="ek_drone_disarm" amount="3.5" />
+      </StatusEffect>
+      <sound file="%ModDir%/Items/Weapons/ek_dronemultitool_hum_mono.ogg" type="OnUse" range="500.0" loop="true" />
+      <!--
+	  <LightComponent LightColor="0.2,0.7,0.5,0.5" Flicker="0.75" range="150" powerconsumption="0" >
+        <LightTexture texture="Mods/EK Armory/Lights/laser_light_wide.png" origin="-0.027, 0.4" size="1.0,0.3" />
+      </LightComponent>
+	  -->
+      <!--
+	  <LightComponent LightColor="0.2,0.7,0.5,0.5" Flicker="0.75" range="150" powerconsumption="0" >
+        <LightTexture texture="Mods/EK Utilities/Lights/laserbore_beam.png" origin="-0.027, 0.4" size="1.0,0.3" />
+      </LightComponent>
+	  -->
+      <LightComponent LightColor="0.2,0.7,0.5,0.5" range="145" Flicker="0.3">
+        <LightTexture texture="%ModDir%/Lights/laser_light_wide.png" origin="-0.027, 0.5" size="1.0,0.3" />
+      </LightComponent>
+    </RepairTool>
+  </Item>
+</Items>

@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
+  <Override>
+    <entityname.AK-74>AK-74 «潜水型»</entityname.AK-74>
+    <entitydescription.AK-74>这把传奇AK-74的改装版由分离主义势力设计。‖color:gui.yellow‖使用侧装式瞄具支架‖end‖。使用‖color:gui.green‖标准5.45x39mm弹药‖end‖。经特殊改装后，AK-74"潜水型"‖color:gui.blue‖可在水下射击（效果降低）‖end‖。</entitydescription.AK-74>
+    <entityname.akbigmagazine>5.45x39mm弹鼓</entityname.akbigmagazine>
+    <entitydescription.akbigmagazine>60发大容量弹鼓。</entitydescription.akbigmagazine>
+    <entityname.akbigapmagazine>5.45x39mm穿甲弹鼓</entityname.akbigapmagazine>
+    <entitydescription.akbigapmagazine>可装60发5.45x39mm穿甲弹。</entitydescription.akbigapmagazine>
+    <entityname.akbigfmjmagazine>5.45x39mm空尖弹鼓</entityname.akbigfmjmagazine>
+    <entitydescription.akbigfmjmagazine>‖color:gui.green‖60发5.45x39mm空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。兼容AK-74和AK-12。</entitydescription.akbigfmjmagazine>
+    <entityname.akapmagazine>5.45x39mm穿甲弹匣</entityname.akapmagazine>
+    <entitydescription.akapmagazine>30发穿甲弹匣。</entitydescription.akapmagazine>
+    <entityname.akmagazine>5.45x39mm弹匣</entityname.akmagazine>
+    <entitydescription.akmagazine>30发标准弹匣</entitydescription.akmagazine>
+    <entityname.akfmjmagazine>5.45x39mm空尖弹匣</entityname.akfmjmagazine>
+    <entitydescription.akfmjmagazine>‖color:gui.green‖30发5.45x39mm空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。兼容AK-74和AK-12。</entitydescription.akfmjmagazine>
+    <entityname.Beretta-92>贝雷塔 «92»</entityname.Beretta-92>
+    <entitydescription.Beretta-92>这把经典的伯莱塔手枪可靠性高，在欧洲被私人军事公司和联盟成员广泛使用。它使用‖color:gui.green‖9x19mm弹药‖end‖，可以单手握持，‖color:gui.blue‖但在水下效果较差‖end‖。</entitydescription.Beretta-92>
+    <entityname.Berettaammo>9x19mm弹匣</entityname.Berettaammo>
+    <entitydescription.Berettaammo>可装20发。</entitydescription.Berettaammo>
+    <entityname.Big-Iron>‖color:gui.yellow‖“巨铁”左轮手枪‖end‖</entityname.Big-Iron>
+    <entitydescription.Big-Iron>这把传奇左轮以其超高的射速和独特的‖color:gui.yellow‖“巨铁”‖end‖铭文而闻名，使用‖color:gui.green‖.45柯尔特弹药‖end‖。它是为古地球一位被遗忘的英雄量身定做的。尽管它‖color:gui.red‖需要双手握持‖end‖，并且‖color:gui.blue‖在水下完全无用‖end‖，但它是一件珍贵的遗物，其历史早已失落在时光深处。</entitydescription.Big-Iron>
+    <entityname.Big-Ironammo>.45柯尔特子弹</entityname.Big-Ironammo>
+    <entitydescription.Big-Ironammo>“巨铁”左轮手枪弹药。</entitydescription.Big-Ironammo>
+    <entityname.HK416-anim>突击步枪«木卫二-R7»</entityname.HK416-anim>
+    <entitydescription.HK416-anim>完全在木卫二利用当地材料设计和组装的突击步枪。被联盟前哨站的守卫使用。它使用‖color:gui.green‖标准5.56x45mm弹药‖end‖。‖color:gui.blue‖水下效果差‖end‖。</entitydescription.HK416-anim>
+    <entityname.HK416apmagazine-anim>5.56x45mm穿甲弹匣</entityname.HK416apmagazine-anim>
+    <entitydescription.HK416apmagazine-anim>可装30发穿甲弹。</entitydescription.HK416apmagazine-anim>
+    <entityname.HK416magazine-anim>5.56x45mm弹匣</entityname.HK416magazine-anim>
+    <entitydescription.HK416magazine-anim>可装30发弹药。</entitydescription.HK416magazine-anim>
+    <entityname.HK416fmjmagazine-anim>5.56x45mm空尖弹匣</entityname.HK416fmjmagazine-anim>
+    <entitydescription.HK416fmjmagazine-anim>‖color:gui.green‖30发5.56x45mm空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.HK416fmjmagazine-anim>
+    <entityname.colt-1911>柯尔特 «M1911水蛇型»</entityname.colt-1911>
+    <entitydescription.colt-1911>经过改装和防水处理的M1911“水蛇型”，使用‖color:gui.green‖.45 ACP弹药‖end‖，是一款可靠的单手手枪，‖color:gui.blue‖可以在水下射击但效果降低‖end‖。</entitydescription.colt-1911>
+    <entityname.1911ammo>.45 ACP弹匣</entityname.1911ammo>
+    <entitydescription.1911ammo>可装7发。</entitydescription.1911ammo>
+    <entityname.Model29>左轮手枪 «Model-29»</entityname.Model29>
+    <entitydescription.Model29>一把强大的左轮手枪，在整个欧洲的雇佣兵和猎人手中很常见。它使用‖color:gui.green‖.44马格南弹药‖end‖。可单手握持，‖color:gui.blue‖但在水下几乎无用‖end‖</entitydescription.Model29>
+    <entityname.Model29ammoap>.44马格南穿甲弹</entityname.Model29ammoap>
+    <entitydescription.Model29ammoap>Model-29左轮手枪穿甲弹。</entitydescription.Model29ammoap>
+    <entityname.Model29ammo>.44马格南子弹</entityname.Model29ammo>
+    <entitydescription.Model29ammo>Model-29左轮手枪弹药。</entitydescription.Model29ammo>
+    <entityname.mosin>莫辛 «步枪»</entityname.mosin>
+    <entitydescription.mosin>这把19世纪末的步枪无需过多介绍。使用‖color:gui.green‖强大的7.62x54R弹药‖end‖。‖color:gui.yellow‖配备侧置瞄具接口‖end‖。‖color:gui.blue‖由于高弹速，在水下也有效‖end‖。</entitydescription.mosin>
+    <entityname.mosinammo>7.62x54R子弹</entityname.mosinammo>
+    <entitydescription.mosinammo>莫辛步枪弹药。</entitydescription.mosinammo>
+    <entityname.mosinammofmj>7.62x54R扩张弹</entityname.mosinammofmj>
+    <entitydescription.mosinammofmj>‖color:gui.green‖扩张型弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.mosinammofmj>
+    <entityname.P90-anim>P90«破浪型»</entityname.P90-anim>
+    <entitydescription.P90-anim>紧凑型冲锋枪，具有‖color:gui.purple‖3发点射模式‖end‖。使用‖color:gui.green‖标准5.7x28mm弹药‖end‖。P90在‖color:gui.blue‖水下效果较差‖end‖，并且由于需要防水，其‖color:gui.red‖射速有所降低‖end‖。</entitydescription.P90-anim>
+    <entityname.P90magazine-anim>5.7x28mm弹匣</entityname.P90magazine-anim>
+    <entitydescription.P90magazine-anim>可装50发子弹。仅与P90破浪型兼容。</entitydescription.P90magazine-anim>
+    <entityname.spas-13>SPAS-13“寂静射手”霰弹枪</entityname.spas-13>
+    <entitydescription.spas-13>这把SPAS-12的改装版被重新设计以在欧洲潮湿的环境中可靠运行。‖color:gui.red‖为获得最佳性能，半自动射击系统已被移除，每次射击后都需要手动上膛‖end‖。它使用‖color:gui.green‖标准霰弹（可装8发）‖end‖。此改装版‖color:gui.blue‖无法在水下射击‖end‖。</entitydescription.spas-13>
+    <entityname.maple>枫木 «突击步枪»</entityname.maple>
+    <entitydescription.maple>这把可靠的突击步枪专为在欧洲的恶劣条件下使用而设计，尤其受到联盟成员的重视。它使用特别设计的‖color:gui.green‖6.8x48mm风暴弹药‖end‖，经过优化，‖color:gui.blue‖可在水下有效射击且不损失杀伤力，步枪本身也具有中性浮力‖end‖。</entitydescription.maple>
+    <entityname.maplemagazine>6.8x48mm风暴弹匣</entityname.maplemagazine>
+    <entitydescription.maplemagazine>可装20发枫木步枪子弹。</entitydescription.maplemagazine>
+    <entityname.mapleapmagazine>6.8x48mm风暴穿甲弹匣</entityname.mapleapmagazine>
+    <entitydescription.mapleapmagazine>可装20发枫木步枪穿甲弹。</entitydescription.mapleapmagazine>
+    <entityname.spp-1>SPP-1«水下手枪»</entityname.spp-1>
+    <entitydescription.spp-1>这把苏联水下手枪，尽管年代久远，但在水下仍然是有效的武器。它使用特殊的‖color:gui.green‖箭形弹药‖end‖。主要特点：‖color:gui.red‖造成撕裂伤而非枪伤‖end‖。‖color:gui.blue‖仅在水下有效，在陆地上精度和伤害会显著降低‖end‖。</entitydescription.spp-1>
+    <entityname.spp-1round>SPP-1箭形弹</entityname.spp-1round>
+    <entitydescription.spp-1round>SPP-1水下手枪专用箭形弹。‖color:gui.red‖造成撕裂伤‖end‖。</entitydescription.spp-1round>
+    <entityname.pu_scope>PU瞄准镜</entityname.pu_scope>
+    <entitydescription.pu_scope>‖color:gui.green‖安装方式：‖end‖
+- 侧置瞄具支架
+‖color:gui.blue‖中等放大倍率‖end‖。经典的苏联光学瞄准镜。</entitydescription.pu_scope>
+    <entityname.mosinammoap>7.62x54R穿甲弹</entityname.mosinammoap>
+    <entitydescription.mosinammoap>莫辛步枪专用的‖color:gui.green‖穿甲弹药‖end‖。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。使用钢芯而非铅芯。</entitydescription.mosinammoap>
+    <entityname.ks-23>‖color:gui.yellow‖KS-23 «大口径霰弹枪»‖end‖</entityname.ks-23>
+    <entitydescription.ks-23>苏联‖color:gui.green‖23mm口径卡宾枪式霰弹枪‖end‖，基于一架飞机大炮。‖color:gui.yellow‖对无甲目标极为有效‖end‖，但‖color:gui.blue‖在水下完全无用‖end‖。‖color:gui.red‖每次射击后需要手动上膛。由于弹药特性，穿甲效果不佳‖end‖。‖color:gui.green‖使用带重型弹丸的专用23mm梭子鱼弹药‖end‖。</entitydescription.ks-23>
+    <entityname.ks-23shell>23mm梭子鱼弹药</entityname.ks-23shell>
+    <entitydescription.ks-23shell>一种带有钨合金弹丸的重型霰弹。‖color:gui.yellow‖对软目标有效‖end‖，但‖color:gui.red‖穿甲能力低‖end‖且后坐力强。</entitydescription.ks-23shell>
+    <entityname.ks-23apshell>23mm梭子鱼-AP弹药</entityname.ks-23apshell>
+    <entitydescription.ks-23apshell>KS-23的‖color:gui.green‖穿甲‖end‖变体。由于其‖color:gui.green‖钨芯‖end‖，‖color:gui.blue‖能穿透轻型护甲和潜艇舱壁‖end‖。‖color:gui.red‖弹丸分散度较低‖end‖，但‖color:gui.red‖需要精准命中‖end‖。‖color:gui.yellow‖对加固结构有效‖end‖。</entitydescription.ks-23apshell>
+    <entityname.APS>APS «海盾»水下步枪</entityname.APS>
+    <entitydescription.APS>一把苏联特种用途步枪。使用‖color:gui.green‖26发"伊格拉-M"弹匣‖end‖。‖color:gui.blue‖仅在水下有效，在陆地上明显较弱‖end‖。‖color:gui.red‖造成撕裂伤而非枪伤‖end‖。</entitydescription.APS>
+    <entityname.apsmagazine>伊格拉-M弹匣</entityname.apsmagazine>
+    <entitydescription.apsmagazine>‖color:gui.green‖26发箭形弹药‖end‖。‖color:gui.blue‖对欧洲生物有效‖end‖。‖color:gui.red‖在陆地上效果较差‖end‖。</entitydescription.apsmagazine>
+    <entityname.apsapmagazine>伊格拉-AP弹匣</entityname.apsapmagazine>
+    <entitydescription.apsapmagazine>‖color:gui.green‖26发穿甲箭形弹药‖end‖。‖color:gui.blue‖能穿透欧洲生物的护甲‖end‖。‖color:gui.red‖对无甲目标较弱‖end‖。</entitydescription.apsapmagazine>
+    <entityname.apsfmjmagazine>伊格拉-M空尖弹匣</entityname.apsfmjmagazine>
+    <entitydescription.apsfmjmagazine>‖color:gui.green‖26发箭形弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.apsfmjmagazine>
+    <entityname.ks-23zvshell>23mm星型弹药</entityname.ks-23zvshell>
+    <entitydescription.ks-23zvshell>KS-23的‖color:gui.green‖闪光弹‖end‖。‖color:gui.blue‖造成轻微烧伤并暂时眩晕目标‖end‖。‖color:gui.yellow‖对无甲敌人有效‖end‖。‖color:gui.red‖在水下无效‖end‖。</entitydescription.ks-23zvshell>
+    <afflictionname.KS-23zvezdocha>星型弹</afflictionname.KS-23zvezdocha>
+    <afflictiondescription.KS-23zvezdocha>你被闪光弹击中。你的视线模糊，耳朵里嗡嗡作响。</afflictiondescription.KS-23zvezdocha>
+    <entityname.heavybodyarmor>重型护甲</entityname.heavybodyarmor>
+    <entitydescription.heavybodyarmor>‖color:gui.yellow‖背部有主武器挂载点‖end‖，并‖color:gui.green‖增强了防弹保护‖end‖。‖color:gui.red‖明显降低移动速度‖end‖。‖color:gui.red‖没有普通物品的存储空间‖end‖。‖color:gui.yellow‖推荐用于突击作战‖end‖。</entitydescription.heavybodyarmor>
+    <entityname.bodyarmor>护甲</entityname.bodyarmor>
+    <entitydescription.bodyarmor>尽管护甲可能无法抵御欧洲大部分生物，但如果潜艇上出现叛徒，它会非常有用。</entitydescription.bodyarmor>
+    <entityname.AK-12>AK-12 «分裂主义者»</entityname.AK-12>
+    <entitydescription.AK-12>卡拉什尼科夫步枪的第五代。‖color:gui.green‖使用弹道性能更好的5.45x39mm弹药‖end‖。‖color:gui.yellow‖配备侧装式瞄具接口‖end‖。‖color:gui.yellow‖配有下挂式榴弹发射器‖end‖。‖color:gui.blue‖在水下完全无效‖end‖。</entitydescription.AK-12>
+    <entityname.Deagle>‖color:gui.yellow‖沙漠之鹰 «水下獠牙»‖end‖</entityname.Deagle>
+    <entitydescription.Deagle>使用‖color:gui.green‖.50‖end‖口径弹药的重型手枪。‖color:gui.blue‖在水下射击时有中等效果‖end‖。‖color:gui.red‖强劲的后坐力需要双手握持‖end‖。由联盟精锐部队使用。</entitydescription.Deagle>
+    <entityname.Deagleammo>.50弹匣</entityname.Deagleammo>
+    <entitydescription.Deagleammo>‖color:gui.green‖7发特制弹药‖end‖。‖color:gui.red‖有限的弹容量‖end‖由‖color:gui.green‖卓越的停止力‖end‖弥补。</entitydescription.Deagleammo>
+    <entityname.laser>‖color:gui.orange‖战术激光瞄准镜‖end‖</entityname.laser>
+    <entitydescription.laser>当安装在武器上时：‖color:gui.red‖投射红色光束以增强可见性‖end‖，并允许在瞄准时移动而不减速。</entitydescription.laser>
+    <entityname.colim_scope>准直瞄准镜«Walther»</entityname.colim_scope>
+    <entitydescription.colim_scope>‖color:gui.green‖安装方式:‖end‖
+- 皮卡汀尼导轨
+‖color:gui.red‖增加红色瞄准点‖end‖。‖color:gui.blue‖改善瞄准时的视野角度‖end‖。现代战术准直瞄准镜。</entitydescription.colim_scope>
+    <entityname.PB>PB«消音»</entityname.PB>
+    <entitydescription.PB>使用‖color:gui.green‖9x18mm弹药‖end‖的消音手枪。‖color:gui.red‖射击时不会吸引生物的注意‖end‖。弹药制造成本低。‖color:gui.blue‖在水下完全无用‖end‖。是分裂主义和破坏组织的常用武器。</entitydescription.PB>
+    <entityname.PBammo>9x18mm弹匣</entityname.PBammo>
+    <entitydescription.PBammo>‖color:gui.green‖10发9x18mm亚音速弹药‖end‖。</entitydescription.PBammo>
+    <entityname.M249>‖color:gui.yellow‖M249«紧凑飓风»‖end‖</entityname.M249>
+    <entitydescription.M249>为在狭窄舱室操作而特别缩短的机枪。‖color:gui.green‖使用150发容量的5.56x45mm弹链供弹‖end‖，提供密集的火力。‖color:gui.blue‖设计特点完全阻止了水下射击‖end‖。‖color:gui.red‖需要65级“武器”技能才能有效装填‖end‖。在欧洲是一种罕见的武器。</entitydescription.M249>
+    <entityname.M249magazine>5.56x45mm弹链弹匣</entityname.M249magazine>
+    <entitydescription.M249magazine>‖color:gui.green‖装在钢盒中的150发5.56x45mm弹药‖end‖。‖color:gui.red‖显著增加武器重量‖end‖，但提供了‖color:gui.green‖持续的火力‖end‖。</entitydescription.M249magazine>
+    <entityname.laserflashlight>‖color:gui.orange‖战术手电+激光‖end‖</entityname.laserflashlight>
+    <entitydescription.laserflashlight>‖color:gui.yellow‖内置强力手电筒‖end‖。安装后：‖color:gui.red‖增加红色瞄准点‖end‖，并在瞄准时消除减速。‖color:gui.red‖显著增加电量消耗‖end‖。</entitydescription.laserflashlight>
+    <entityname.acog_scope>ACOG战术瞄准镜</entityname.acog_scope>
+    <entitydescription.acog_scope>‖color:gui.green‖安装方式：‖end‖
+- 皮卡汀尼导轨
+‖color:gui.blue‖中低放大倍率‖end‖。现代战术光学瞄准镜。</entitydescription.acog_scope>
+    <entityname.thermal_scope>热成像瞄准镜</entityname.thermal_scope>
+    <entitydescription.thermal_scope>‖color:gui.green‖安装方式：‖end‖
+- 皮卡汀尼导轨
+‖color:gui.blue‖中低放大倍率‖end‖。在能见度差的情况下，‖color:gui.yellow‖提供白色热成像以识别目标‖end‖。</entitydescription.thermal_scope>
+    <entityname.SCAR>SCAR«水风暴»</entityname.SCAR>
+    <entitydescription.SCAR>一把强大的突击步枪，使用‖color:gui.green‖7.62x51mm弹药‖end‖。‖color:gui.blue‖在水下有中等效果‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨‖end‖。</entitydescription.SCAR>
+    <entityname.SCARmagazine>7.62x51mm弹匣</entityname.SCARmagazine>
+    <entitydescription.SCARmagazine>‖color:gui.green‖20发7.62x51mm弹药‖end‖。标准弹药。</entitydescription.SCARmagazine>
+    <entityname.SCARapmagazine>7.62x51mm穿甲弹匣</entityname.SCARapmagazine>
+    <entitydescription.SCARapmagazine>‖color:gui.green‖20发7.62x51mm穿甲弹药‖end‖。</entitydescription.SCARapmagazine>
+    <entityname.SCARfmjmagazine>7.62x51mm空尖弹匣</entityname.SCARfmjmagazine>
+    <entitydescription.SCARfmjmagazine>‖color:gui.green‖20发7.62x51mm空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.SCARfmjmagazine>
+    <afflictionname.spasm_shot>枪伤痉挛</afflictionname.spasm_shot>
+    <entityname.Reck>左轮手枪 «伏特»</entityname.Reck>
+    <entitydescription.Reck>一把紧凑型Reck Cobra左轮手枪，使用‖color:gui.green‖.38口径弹药‖end‖。轻便易于隐蔽携带。‖color:gui.blue‖在水下无用‖end‖。</entitydescription.Reck>
+    <entityname.reck.38>.38口径子弹</entityname.reck.38>
+    <entitydescription.reck.38>标准.38口径弹药。‖color:gui.green‖适用于大多数该口径左轮手枪‖end‖。</entitydescription.reck.38>
+    <entityname..38ap>.38口径穿甲弹</entityname..38ap>
+    <entitydescription..38ap>.38口径穿甲弹。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖伤害略有降低‖end‖。</entitydescription..38ap>
+    <entityname.Model870>霰弹枪 «雷明顿 870»</entityname.Model870>
+    <entitydescription.Model870>一把老旧的雷明顿870泵动式霰弹枪。组装质量和机制都相当差。常被强盗和分裂分子使用。‖color:gui.green‖使用标准霰弹（可装4发）‖end‖。‖color:gui.blue‖不能在水下射击‖end‖。</entitydescription.Model870>
+    <entityname.SAIGA>‖color:gui.yellow‖霰弹枪 «赛加-12»‖end‖</entityname.SAIGA>
+    <entitydescription.SAIGA>一把基于AK平台的半自动霰弹枪。使用‖color:gui.green‖标准霰弹‖end‖。‖color:gui.blue‖经过水下射击改装‖end‖。‖color:gui.yellow‖可使用侧装式瞄具支架安装光学瞄准镜‖end‖。</entitydescription.SAIGA>
+    <entityname.shotgunshellap>穿甲霰弹</entityname.shotgunshellap>
+    <entitydescription.shotgunshellap>‖color:gui.green‖穿甲霰弹‖end‖。‖color:gui.blue‖在水下效果高‖end‖。设计用于‖color:gui.green‖穿透轻型护甲‖end‖。</entitydescription.shotgunshellap>
+    <entityname.shotgunshellfmj>空尖霰弹</entityname.shotgunshellfmj>
+    <entitydescription.shotgunshellfmj>‖color:gui.green‖空尖弹‖end‖。‖color:gui.blue‖在水下有中等效果‖end‖。‖color:gui.yellow‖对无甲目标极为有效，造成严重出血‖end‖。</entitydescription.shotgunshellfmj>
+    <entityname.SAIGAmagazine>Saiga-12 / Toz-106 弹匣</entityname.SAIGAmagazine>
+    <entitydescription.SAIGAmagazine>‖color:gui.green‖10发标准霰弹‖end‖。兼容Saiga-12和Toz-106。</entitydescription.SAIGAmagazine>
+    <entityname.SAIGAapmagazine>Saiga-12 / Toz-106 穿甲弹匣</entityname.SAIGAapmagazine>
+    <entitydescription.SAIGAapmagazine>‖color:gui.green‖5发穿甲霰弹‖end‖。兼容Saiga-12和Toz-106。</entitydescription.SAIGAapmagazine>
+    <entityname.SAIGAfmjmagazine>Saiga-12 / Toz-106 膨胀弹匣</entityname.SAIGAfmjmagazine>
+    <entitydescription.SAIGAfmjmagazine>‖color:gui.green‖5发膨胀霰弹‖end‖。兼容Saiga-12和Toz-106。</entitydescription.SAIGAfmjmagazine>
+    <entityname.scout>步枪 «Aqua Scout»</entityname.scout>
+    <entitydescription.scout>一把轻型战术步枪。使用‖color:gui.green‖5.56x45mm弹药‖end‖。‖color:gui.blue‖在水下有中等效果‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨‖end‖。是侦察和精确射击的理想选择。</entitydescription.scout>
+    <entityname.scoutmagazine>Aqua Scout 5.56x45mm弹匣</entityname.scoutmagazine>
+    <entitydescription.scoutmagazine>‖color:gui.green‖10发标准5.56x45mm弹药‖end‖。仅兼容Aqua Scout步枪。</entitydescription.scoutmagazine>
+    <entityname.scoutapmagazine>Aqua Scout 5.56x45mm穿甲弹匣</entityname.scoutapmagazine>
+    <entitydescription.scoutapmagazine>‖color:gui.green‖10发穿甲5.56x45mm弹药‖end‖。‖color:gui.blue‖在水下效果好‖end‖。仅兼容Aqua Scout步枪。</entitydescription.scoutapmagazine>
+    <entityname.scoutfmjmagazine>Aqua Scout 5.56x45mm空尖弹匣</entityname.scoutfmjmagazine>
+    <entitydescription.scoutfmjmagazine>‖color:gui.green‖10发空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。仅兼容Aqua Scout步枪。</entitydescription.scoutfmjmagazine>
+    <entityname.Model29ammofmj>.44马格南空尖弹</entityname.Model29ammofmj>
+    <entitydescription.Model29ammofmj>‖color:gui.green‖空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标极为有效，造成严重出血‖end‖。</entitydescription.Model29ammofmj>
+    <entityname..38fmj>.38口径空尖弹</entityname..38fmj>
+    <entitydescription..38fmj>‖color:gui.green‖空尖弹药‖end‖。‖color:gui.yellow‖造成严重撕裂伤和大量出血‖end‖。</entitydescription..38fmj>
+    <entityname.R8>左轮手枪 «R8战术型»</entityname.R8>
+    <entitydescription.R8>一把现代左轮手枪，带有‖color:gui.yellow‖顶部皮卡汀尼导轨‖end‖。使用‖color:gui.green‖.38口径弹药‖end‖。‖color:gui.blue‖在水下无效‖end‖。‖color:gui.yellow‖支持光学和准直瞄准镜‖end‖。后坐力低，精度高。</entitydescription.R8>
+    <entityname.RPG>‖color:gui.yellow‖RPG«水压冲击»‖end‖</entityname.RPG>
+    <entitydescription.RPG>一把改装过的榴弹发射器，带有一个‖color:gui.yellow‖用于战术瞄准镜的皮卡汀尼导轨‖end‖。特殊的‖color:gui.blue‖水力系统使其能够在水下射击‖end‖。‖color:gui.red‖会减缓持有者的移动速度‖end‖。使用‖color:gui.green‖RPG火箭弹‖end‖。</entitydescription.RPG>
+    <entityname.RPGround>RPG高爆火箭弹</entityname.RPGround>
+    <entitydescription.RPGround>‖color:gui.green‖高爆装药‖end‖。‖color:gui.yellow‖对潜艇船体和密集敌人有效‖end‖。</entitydescription.RPGround>
+    <entityname.RPGroundap>RPG动能火箭弹</entityname.RPGroundap>
+    <entitydescription.RPGroundap>‖color:gui.green‖动能穿甲弹‖end‖。‖color:gui.blue‖可穿透多重障碍‖end‖。‖color:gui.yellow‖不会爆炸，射击后可回收‖end‖。</entitydescription.RPGroundap>
+    <entityname.RPGroundkm1>RPG聚能破甲火箭弹</entityname.RPGroundkm1>
+    <entitydescription.RPGroundkm1>‖color:gui.green‖穿甲装药‖end‖。‖color:gui.blue‖可穿透2m厚的墙壁‖end‖。‖color:gui.red‖容易跳弹‖end‖。‖color:gui.yellow‖造成小范围爆炸‖end‖。</entitydescription.RPGroundkm1>
+    <entityname.RPGroundkm2>RPG串联装药火箭弹</entityname.RPGroundkm2>
+    <entitydescription.RPGroundkm2>‖color:gui.green‖两相聚能装药‖end‖。‖color:gui.blue‖可穿透4m厚的墙壁‖end‖。‖color:gui.green‖不易跳弹‖end‖。‖color:gui.yellow‖爆炸威力与高爆火箭弹相当‖end‖。</entitydescription.RPGroundkm2>
+    <entityname.MP5-anim>MP5«通用型»冲锋枪</entityname.MP5-anim>
+    <entitydescription.MP5-anim>冲锋枪，具有‖color:gui.purple‖3发点射模式‖end‖。使用‖color:gui.green‖9x19弹药‖end‖。‖color:gui.blue‖水下效果低‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨，可安装战术配件‖end‖。</entitydescription.MP5-anim>
+    <entityname.MP5magazine-anim>MP5 9x19弹匣</entityname.MP5magazine-anim>
+    <entitydescription.MP5magazine-anim>‖color:gui.green‖30发9x19标准弹药‖end‖。</entitydescription.MP5magazine-anim>
+    <entityname.MP5bigmagazine-anim>MP5 9x19弹鼓</entityname.MP5bigmagazine-anim>
+    <entitydescription.MP5bigmagazine-anim>‖color:gui.green‖50发9x19弹药‖end‖。</entitydescription.MP5bigmagazine-anim>
+    <entityname.MP5bigfmjmagazine-anim>MP5 9x19空尖弹鼓</entityname.MP5bigfmjmagazine-anim>
+    <entitydescription.MP5bigfmjmagazine-anim>‖color:gui.green‖50发9x19空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.MP5bigfmjmagazine-anim>
+    <entityname.MP5fmjmagazine-anim>MP5 9x19空尖弹匣</entityname.MP5fmjmagazine-anim>
+    <entitydescription.MP5fmjmagazine-anim>‖color:gui.green‖30发9x19空尖弹药‖end‖.‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖.</entitydescription.MP5fmjmagazine-anim>
+    <entityname.SKS>半自动卡宾枪SKS「浪涌」</entityname.SKS>
+    <entitydescription.SKS>改进型SKS步枪。使用‖color:gui.green‖7.62x39mm弹药‖end‖。‖color:gui.blue‖水中中等有效‖end‖。‖color:gui.yellow‖配备侧置瞄具接口‖end‖。</entitydescription.SKS>
+    <entityname.SKSammos>7.62x39mm子弹</entityname.SKSammos>
+    <entitydescription.SKSammos>‖color:gui.green‖SKS标准弹药‖end‖。</entitydescription.SKSammos>
+    <entityname.SKSammoap>7.62x39mm穿甲弹</entityname.SKSammoap>
+    <entitydescription.SKSammoap>‖color:gui.green‖SKS穿甲弹药‖end‖。‖color:gui.blue‖水中效果好‖end‖。‖color:gui.red‖伤害略有降低‖end‖。</entitydescription.SKSammoap>
+    <entityname.SKSammofmj>7.62x39mm空尖弹</entityname.SKSammofmj>
+    <entitydescription.SKSammofmj>‖color:gui.green‖空尖弹药‖end‖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.SKSammofmj>
+    <entityname.Lightbodyarmor>轻型护甲</entityname.Lightbodyarmor>
+    <entitydescription.Lightbodyarmor>一个轻便版本，‖color:gui.green‖有更多弹药和手榴弹的存储空间‖end‖。‖color:gui.red‖保护性弱于标准版本‖end‖，但‖color:gui.yellow‖能更好地防范破片‖end‖。‖color:gui.blue‖完全保持移动性‖end‖。</entitydescription.Lightbodyarmor>
+    <entityname.AK-47>突击步枪AK-47 «深水型»</entityname.AK-47>
+    <entitydescription.AK-47>传奇的卡拉什尼科夫突击步枪，为水下条件改装。分离主义者使用。‖color:gui.green‖7.62x39mm弹药‖end‖。‖color:gui.blue‖水中中等有效‖end‖。‖color:gui.yellow‖配有侧置瞄具接口‖end‖。</entitydescription.AK-47>
+    <entityname.ak47magazine>7.62x39mm弹匣</entityname.ak47magazine>
+    <entitydescription.ak47magazine>30发标准7.62x39mm弹药。</entitydescription.ak47magazine>
+    <entityname.ak47apmagazine>7.62x39mm穿甲弹匣</entityname.ak47apmagazine>
+    <entitydescription.ak47apmagazine>30发7.62x39mm穿甲弹。‖color:gui.blue‖水下效果良好‖end‖。</entitydescription.ak47apmagazine>
+    <entityname.ak47fmjmagazine>7.62x39mm扩张型弹匣</entityname.ak47fmjmagazine>
+    <entitydescription.ak47fmjmagazine>30发7.62x39mm扩张弹。‖color:gui.red‖造成严重出血‖end‖。</entitydescription.ak47fmjmagazine>
+    <entityname.p-11>手枪«P-11涅柔斯»</entityname.p-11>
+    <entitydescription.p-11>SPP-1的德国对应型号。使用‖color:gui.green‖专用水下弹药‖end‖。‖color:gui.blue‖水下高效‖end‖。‖color:gui.red‖陆上威力弱‖end‖。‖color:gui.yellow‖可配备非致命弹匣‖end‖。</entitydescription.p-11>
+    <entityname.P-11magazine>P-11弹匣</entityname.P-11magazine>
+    <entitydescription.P-11magazine>‖color:gui.green‖6发水下弹药‖end‖。标准配置。</entitydescription.P-11magazine>
+    <entityname.P-11apmagazine>P-11穿甲弹匣</entityname.P-11apmagazine>
+    <entitydescription.P-11apmagazine>‖color:gui.green‖6发水下穿甲弹‖end‖。‖color:gui.blue‖穿透轻型装甲‖end‖。</entitydescription.P-11apmagazine>
+    <entityname.P-11blankmagazine>P-11训练弹匣</entityname.P-11blankmagazine>
+    <entitydescription.P-11blankmagazine>‖color:gui.green‖6发训练弹药‖end‖。‖color:gui.yellow‖不会造成致命伤害‖end‖。‖color:gui.red‖仅陆地有效‖end‖。</entitydescription.P-11blankmagazine>
+    <entityname.railgunshellkm1>电磁炮聚能弹</entityname.railgunshellkm1>
+    <entitydescription.railgunshellkm1>‖color:gui.blue‖穿透3米厚装甲‖end‖。‖color:gui.yellow‖专为水下目标设计‖end‖。‖color:gui.red‖确保摧毁潜艇内部舱室‖end‖。</entitydescription.railgunshellkm1>
+    <entityname.railgunshellkm2>电磁炮串联弹</entityname.railgunshellkm2>
+    <entitydescription.railgunshellkm2>‖color:gui.blue‖穿透6米厚装甲‖end‖。‖color:gui.yellow‖专为水下目标设计‖end‖。‖color:gui.red‖确保摧毁潜艇内部舱室‖end‖。</entitydescription.railgunshellkm2>
+    <entityname.suppressor_shotgun>霰弹枪消音器</entityname.suppressor_shotgun>
+    <entitydescription.suppressor_shotgun>降低枪声。适用于大多数该类型武器。</entitydescription.suppressor_shotgun>
+    <entityname.suppressor_pistol>手枪消音器</entityname.suppressor_pistol>
+    <entitydescription.suppressor_pistol>降低枪声。适用于大多数该类型武器。</entitydescription.suppressor_pistol>
+    <entityname.suppressor_rifle>步枪消音器</entityname.suppressor_rifle>
+    <entitydescription.suppressor_rifle>降低枪声。适用于大多数该类型武器。</entitydescription.suppressor_rifle>
+    <entityname.suppressor_sniper>狙击步枪消音器</entityname.suppressor_sniper>
+    <entitydescription.suppressor_sniper>降低枪声。适用于大多数该类型武器。</entitydescription.suppressor_sniper>
+    <entityname.headset_noise>主动降噪耳机</entityname.headset_noise>
+    <entitydescription.headset_noise>保护使用者不被巨响震晕，免受噪音伤害。其工作原理是利用内置麦克风拾取巨响并产生反向声波来中和它们。</entitydescription.headset_noise>
+    <afflictionname.tinnitus_shot>射击后晕眩</afflictionname.tinnitus_shot>
+    <afflictiondescription.tinnitus_shot>高分贝枪声后短暂失聪或震晕</afflictiondescription.tinnitus_shot>
+    <entityname.ASM-DT>突击步枪ASM-DT「二重奏」</entityname.ASM-DT>
+    <entitydescription.ASM-DT>混合型水下步枪。使用‖color:gui.green‖5.45x39mm弹药和水下飞镖弹‖end‖。‖color:gui.blue‖水陆两用有效‖end‖。‖color:gui.yellow‖侧置瞄具导轨‖end‖。</entitydescription.ASM-DT>
+    <entityname.compensator_rifle>步枪垂直后坐力补偿器</entityname.compensator_rifle>
+    <entitydescription.compensator_rifle>‖color:gui.green‖减少垂直后坐力‖end‖。‖color:gui.blue‖提升长点射控制能力‖end‖。‖color:gui.yellow‖兼容步枪‖end‖。</entitydescription.compensator_rifle>
+    <entityname.colim_scope-1>红点瞄准镜«OKP-7»</entityname.colim_scope-1>
+    <entitydescription.colim_scope-1>‖color:gui.green‖安装方式:‖end‖
+- 侧置支架
+‖color:gui.red‖增加红色瞄准点‖end‖。‖color:gui.blue‖改善瞄准时的视野角度‖end‖。专为侧置导轨武器设计。</entitydescription.colim_scope-1>
+    <entityname.SVU>狙击步枪СВУ「波浪」</entityname.SVU>
+    <entitydescription.SVU>紧凑型无托步枪。‖color:gui.green‖适合狭窄空间使用‖end‖。使用‖color:gui.green‖7.62x54мм R弹药‖end‖。‖color:gui.blue‖水中中等有效‖end‖。‖color:gui.yellow‖侧置瞄具接口‖end‖。</entitydescription.SVU>
+    <entityname.SVUmagazine>СВУ 7.62mm弹匣</entityname.SVUmagazine>
+    <entitydescription.SVUmagazine>‖color:gui.green‖10发标准7.62x54мм R弹药‖end‖。</entitydescription.SVUmagazine>
+    <entityname.SVUapmagazine>СВУ穿甲弹匣</entityname.SVUapmagazine>
+    <entitydescription.SVUapmagazine>‖color:gui.green‖10发7.62x54мм R穿甲弹‖end‖。‖color:gui.blue‖增强穿透能力‖end‖，‖color:gui.red‖对无甲目标伤害略降‖end‖。</entitydescription.SVUapmagazine>
+    <entityname.SVUfmjmagazine>СВУ扩张型弹匣</entityname.SVUfmjmagazine>
+    <entitydescription.SVUfmjmagazine>‖color:gui.green‖10发7.62x54мм R扩张弹‖end‖。‖color:gui.yellow‖对无防护目标高效，造成严重出血‖end‖。</entitydescription.SVUfmjmagazine>
+    <entityname.pso_scope>光学瞄准镜PSO-1</entityname.pso_scope>
+    <entitydescription.pso_scope>‖color:gui.green‖安装方式:‖end‖
+- 侧置支架
+‖color:gui.red‖大幅增加观察距离‖end‖。‖color:gui.yellow‖兼容侧置导轨武器‖end‖。</entitydescription.pso_scope>
+    <entityname.BFG-50>狙击步枪BFG-50「雷神」</entityname.BFG-50>
+    <entitydescription.BFG-50>强大狙击系统。使用‖color:gui.green‖12.7x99mm弹药‖end‖。‖color:gui.red‖水下射击会卡弹‖end‖。‖color:gui.yellow‖皮卡汀尼导轨接口‖end‖。</entitydescription.BFG-50>
+    <entityname.BFG-50ammo>12.7x99mm子弹</entityname.BFG-50ammo>
+    <entitydescription.BFG-50ammo>‖color:gui.green‖BFG-50标准弹药‖end‖。</entitydescription.BFG-50ammo>
+    <entityname.BFG-50ammoap>12.7x99mm穿甲弹</entityname.BFG-50ammoap>
+    <entitydescription.BFG-50ammoap>‖color:gui.green‖BFG-50穿甲弹药‖end‖。‖color:gui.blue‖增强穿透能力‖end‖，‖color:gui.red‖对无甲目标伤害略降‖end‖。</entitydescription.BFG-50ammoap>
+    <entityname.BFG-50ammoexp>12.7x99mm爆炸弹</entityname.BFG-50ammoexp>
+    <entitydescription.BFG-50ammoexp>‖color:gui.green‖BFG-50爆炸弹药‖end‖。‖color:gui.yellow‖对群体目标和加固结构有效‖end‖。</entitydescription.BFG-50ammoexp>
+    <entityname.brite_scope>光学瞄准镜「Brite」</entityname.brite_scope>
+    <entitydescription.brite_scope>‖color:gui.green‖安装方式:‖end‖
+- 皮卡汀尼导轨
+‖color:gui.red‖大幅增加观察距离‖end‖。‖color:gui.yellow‖兼容皮卡汀尼导轨武器‖end‖。</entitydescription.brite_scope>
+    <entityname.nvg-anim>夜视仪「猫头鹰」</entityname.nvg-anim>
+    <entitydescription.nvg-anim>‖color:gui.green‖夜视仪配普通耳机‖end‖。‖color:gui.blue‖提供全黑暗环境视野‖end‖。‖color:gui.yellow‖电池供电‖end‖。‖color:gui.red‖不防护巨响‖end‖。</entitydescription.nvg-anim>
+    <entityname.hider_rifle>步枪水平后坐力补偿器</entityname.hider_rifle>
+    <entitydescription.hider_rifle>‖color:gui.green‖减少水平后坐力‖end‖。‖color:gui.blue‖提升长点射控制能力‖end‖。‖color:gui.yellow‖兼容步枪‖end‖。</entitydescription.hider_rifle>
+    <entityname.RSH-12>左轮手枪RSH-12「破冰」</entityname.RSH-12>
+    <entitydescription.RSH-12>大口径左轮手枪。使用‖color:gui.green‖12.7x55mm弹药‖end‖。‖color:gui.blue‖水中中等有效‖end‖。‖color:gui.yellow‖强大制止力‖end‖。‖color:gui.red‖需双手握持射击‖end‖。</entitydescription.RSH-12>
+    <entityname.RSH-12ammo>12.7x55mm子弹</entityname.RSH-12ammo>
+    <entitydescription.RSH-12ammo>‖color:gui.green‖RSH-12标准弹药‖end‖。</entitydescription.RSH-12ammo>
+    <entityname.RSH-12ammoap>12.7x55mm穿甲弹</entityname.RSH-12ammoap>
+    <entitydescription.RSH-12ammoap>‖color:gui.green‖RSH-12穿甲弹药‖end‖。‖color:gui.blue‖增强穿透能力‖end‖，‖color:gui.red‖对无甲目标伤害略降‖end‖。</entitydescription.RSH-12ammoap>
+    <entityname.RSH-12ammofmj>12.7x55mm扩张弹</entityname.RSH-12ammofmj>
+    <entitydescription.RSH-12ammofmj>‖color:gui.green‖RSH-12扩张型弹药‖end‖。‖color:gui.yellow‖对无防护目标高效，造成严重出血‖end‖。</entitydescription.RSH-12ammofmj>
+    <entityname.PKP>‖color:gui.yellow‖机枪佩切涅格-无托型「龙卷风」‖end‖</entityname.PKP>
+    <entitydescription.PKP>无托结构机枪。使用‖color:gui.green‖100发弹链供弹7.62x54мм R弹药‖end‖。‖color:gui.blue‖因供弹系统无法水下射击‖end‖。‖color:gui.red‖需要75级武器技能有效装填‖end‖。‖color:gui.blue‖欧罗巴稀有枪械‖end‖。</entitydescription.PKP>
+    <entityname.PKPmagazine>PKP 7.62x54мм R弹链箱</entityname.PKPmagazine>
+    <entitydescription.PKPmagazine>‖color:gui.green‖100发7.62x54мм R弹药‖end‖.</entitydescription.PKPmagazine>
+    <entityname.cassetteplayer>卡带播放器</entityname.cassetteplayer>
+    <entitydescription.cassetteplayer>‖color:gui.yellow‖老旧磁带播放器‖end‖。‖color:gui.green‖可播放音乐‖end‖。‖color:gui.blue‖电池供电‖end‖。</entitydescription.cassetteplayer>
+    <entityname..38>.38口径子弹</entityname..38>
+    <entitydescription..38>‖color:gui.green‖标准左轮手枪弹药‖end‖。‖color:gui.yellow‖兼容多数同口径左轮‖end‖。</entitydescription..38>
+    <entityname.repair>武器状态指示器</entityname.repair>
+    <entitydescription.repair>‖color:gui.green‖绿色 - 武器近乎全新‖end‖
+‖color:gui.yellow‖黄色 - 磨损状态‖end‖
+‖color:gui.red‖红色 - 严重磨损‖end‖
+‖color:gui.grey‖黑色 - 状态趋近于零‖end‖</entitydescription.repair>
+    <entityname.repair-very-broken>武器状态指示器</entityname.repair-very-broken>
+    <entitydescription.repair-very-broken>‖color:gui.green‖绿色 - 武器几乎全新‖end‖
+‖color:gui.yellow‖黄色 - 磨损状态‖end‖
+‖color:gui.red‖红色 - 严重磨损‖end‖
+‖color:gui.grey‖黑色 - 状态趋近于零‖end‖</entitydescription.repair-very-broken>
+    <entityname.repair-broken>武器状态指示器</entityname.repair-broken>
+    <entitydescription.repair-broken>‖color:gui.green‖绿色 - 武器几乎全新‖end‖
+‖color:gui.yellow‖黄色 - 磨损状态‖end‖
+‖color:gui.red‖红色 - 严重磨损‖end‖
+‖color:gui.grey‖黑色 - 状态趋近于零‖end‖</entitydescription.repair-broken>
+    <entityname.aa_repair>枪匠制造机</entityname.aa_repair>
+    <entitydescription.aa_repair>维修、制造武器、弹药和装备。专业枪械工作设备。</entitydescription.aa_repair>
+    <itemmsgdetachcrowbar>[[use]] 使用撬棍拆卸</itemmsgdetachcrowbar>
+    <displayname.repairweapon>[itemname] (维修)</displayname.repairweapon>
+    <entityname.TOZ-34>TOZ-34霰弹枪 «Компакт»</entityname.TOZ-34>
+    <entitydescription.TOZ-34>使用‖color:gui.green‖ 标准霰弹弹药 (容纳2发子弹)‖end‖。‖color:gui.blue‖可水下射击‖end‖。‖color:gui.green‖不占空间‖end‖。</entitydescription.TOZ-34>
+    <entityname.IJ-17>IJ-17霰弹枪 «Убой»</entityname.IJ-17>
+    <entitydescription.IJ-17>使用‖color:gui.green‖ 标准霰弹弹药 (容纳1发子弹)‖end‖。‖color:gui.blue‖可水下射击‖end‖。‖color:gui.red‖造成更高伤害‖end‖。</entitydescription.IJ-17>
+    <entityname.compensator_pistol>手枪和冲锋枪垂直后坐力补偿器</entityname.compensator_pistol>
+    <entitydescription.compensator_pistol>‖color:gui.green‖减少垂直后坐力‖end‖。‖color:gui.blue‖提升射击控制能力‖end‖。‖color:gui.yellow‖兼容手枪和冲锋枪‖end‖。</entitydescription.compensator_pistol>
+    <entityname.hider_pistol>手枪和冲锋枪水平后坐力补偿器</entityname.hider_pistol>
+    <entitydescription.hider_pistol>‖color:gui.green‖减少水平后坐力‖end‖。‖color:gui.blue‖提升射击控制能力‖end‖。‖color:gui.yellow‖兼容手枪和冲锋枪‖end‖。</entitydescription.hider_pistol>
+    <entityname.AK-74M>AK-74M「海军陆战队」突击步枪</entityname.AK-74M>
+    <entitydescription.AK-74M>AK-74的改进型号。所有参数提升。提高可靠性和精度。‖color:gui.yellow‖装有侧轨，可安装瞄准镜‖end‖。‖color:gui.blue‖可在水下射击，但效率降低‖end‖。‖color:gui.green‖使用5.45x39mm弹药‖end‖。</entitydescription.AK-74M>
+    <entityname.earplugs>耳塞</entityname.earplugs>
+    <entitydescription.earplugs>‖color:gui.green‖防护枪声巨响‖end‖。‖color:gui.blue‖可单独佩戴或插入耳机‖end‖。‖color:gui.red‖减弱所有环境声音‖end‖。</entitydescription.earplugs>
+    <entityname.kevlar-plate-blueprint>防弹衣凯夫拉板</entityname.kevlar-plate-blueprint>
+    <entitydescription.kevlar-plate-blueprint>‖color:gui.green‖现代复合材料‖end‖。‖color:gui.yellow‖最轻量选项‖end‖，‖color:gui.yellow‖抗损伤性高‖end‖。‖color:gui.red‖提供破片和手枪子弹基础防护‖end‖。</entitydescription.kevlar-plate-blueprint>
+    <entityname.steel-plate-blueprint>防弹衣钢板</entityname.steel-plate-blueprint>
+    <entitydescription.steel-plate-blueprint>‖color:gui.green‖经典装甲钢‖end‖。‖color:gui.red‖最重量选项‖end‖，‖color:gui.yellow‖抗损伤性中等‖end‖。‖color:gui.yellow‖提供步枪子弹可靠防护‖end‖。</entitydescription.steel-plate-blueprint>
+    <entityname.ceramic-plate-blueprint>防弹衣陶瓷板</entityname.ceramic-plate-blueprint>
+    <entitydescription.ceramic-plate-blueprint>‖color:gui.green‖高科技陶瓷‖end‖。‖color:gui.yellow‖中等重量‖end‖，但‖color:gui.red‖抗多次击中能力低‖end‖。‖color:gui.yellow‖提供穿甲弹最大防护‖end‖。</entitydescription.ceramic-plate-blueprint>
+    <afflictionname.armored_kevlar>凯夫拉装甲</afflictionname.armored_kevlar>
+    <afflictiondescription.armored_kevlar>我穿着凯夫拉装甲。我感到轻便灵活，但知道对严重威胁的防护有限。</afflictiondescription.armored_kevlar>
+    <afflictionname.armored_steel>钢铁装甲</afflictionname.armored_steel>
+    <afflictiondescription.armored_steel>我穿着钢铁装甲。我感受到结构的重量，但对大多数标准威胁的防护有信心。</afflictiondescription.armored_steel>
+    <afflictionname.armored_ceram>陶瓷装甲</afflictionname.armored_ceram>
+    <afflictiondescription.armored_ceram>我穿着陶瓷装甲。我感觉重量和防护之间达到最佳平衡，完美对抗穿甲弹。</afflictiondescription.armored_ceram>
+    <entityname.MC-255>转轮霰弹枪MЦ-255「风暴」</entityname.MC-255>
+    <entitydescription.MC-255>‖color:gui.green‖标准霰弹弹药，5发弹巢‖end‖。‖color:gui.blue‖可口袋携带‖end‖。‖color:gui.blue‖可水下射击‖end‖。‖color:gui.yellow‖皮卡汀尼导轨接口‖end‖。分离主义者用于狭窄空间作战的高效解决方案。</entitydescription.MC-255>
+    <entityname.G36-anim>步枪G-36M「水激光」</entityname.G36-anim>
+    <entitydescription.G36-anim>配改进型雷电蓄能器。使用‖color:gui.green‖5.56x45mm弹药‖end‖。‖color:gui.blue‖借助弹丸加速技术水下有效‖end‖。‖color:gui.yellow‖皮卡汀尼导轨接口‖end‖。联盟部队用于登船作战。</entitydescription.G36-anim>
+    <text_plate>拆卸板材</text_plate>
+    <text_onoff>开/关</text_onoff>
+    <text_burst>连发</text_burst>
+    <text_single>单发</text_single>
+    <pda_call>打电话</pda_call>
+    <pda_number>号码</pda_number>
+    <entityname.AN-94>突击步枪AN-94「Nikolaich」</entityname.AN-94>
+    <entitydescription.AN-94>‖color:gui.green‖使用5.45x39mm弹药‖end‖。‖color:gui.yellow‖侧置瞄具接口‖end‖。‖color:gui.purple‖独特双发点射模式‖end‖。‖color:gui.red‖水下效果差，特殊射击模式无效‖end‖。</entitydescription.AN-94>
+    <afflictionname.aa_crawling>卧姿</afflictionname.aa_crawling>
+    <afflictiondescription.aa_crawling>我处于卧倒姿势。武器后坐力显著降低，提高了射击精度。要站起，请使用模组绑定的按键，或在 ESC 菜单中的 Animated Arms 设置里修改。</afflictiondescription.aa_crawling>
+    <entityname.fraggrenade>破片手榴弹</entityname.fraggrenade>
+    <entitydescription.fraggrenade>‖color:gui.green‖产生约150破片‖end‖。‖color:gui.yellow‖杀伤半径约7米‖end‖。</entitydescription.fraggrenade>
+    <entityname.heavyfraggrenade>重型破片手榴弹</entityname.heavyfraggrenade>
+    <entitydescription.heavyfraggrenade>‖color:gui.green‖产生约250破片‖end‖。‖color:gui.yellow‖杀伤半径约10米‖end‖。</entitydescription.heavyfraggrenade>
+    <entityname.fraggrenade>破片手榴弹</entityname.fraggrenade>
+    <entitydescription.fraggrenade>‖color:gui.green‖产生约150破片‖end‖。‖color:gui.yellow‖杀伤半径约7米‖end‖。</entitydescription.fraggrenade>
+    <entityname.heavyfraggrenade>重型破片手榴弹</entityname.heavyfraggrenade>
+    <entitydescription.heavyfraggrenade>‖color:gui.green‖产生约250破片‖end‖。‖color:gui.yellow‖杀伤半径约10米‖end‖。</entitydescription.heavyfraggrenade>
+    <entityname.stinggrenade>防暴手榴弹</entityname.stinggrenade>
+    <entitydescription.stinggrenade>‖color:gui.green‖产生约75破片‖end‖。‖color:gui.yellow‖杀伤半径约5米‖end‖。‖color:gui.red‖造成严重震荡‖end‖。</entitydescription.stinggrenade>
+    <entityname.M4-anim>步枪 M4A1 «速射型»</entityname.M4-anim>
+    <entitydescription.M4-anim>M4A1突击步枪，射速高。使用‖color:gui.green‖5.56x45mm弹药‖end‖。‖color:gui.blue‖水下效果差‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨，可安装战术配件‖end‖。</entitydescription.M4-anim>
+    <entityname.Glock>格洛克手枪 «点射»</entityname.Glock>
+    <entitydescription.Glock>改进型格洛克手枪，具有‖color:gui.purple‖3发点射模式‖end‖。使用‖color:gui.green‖9x19mm弹药‖end‖。‖color:gui.blue‖水下效果差‖end‖。可单手握持。</entitydescription.Glock>
+    <entityname.Berettabigammo>9x19mm扩容弹匣</entityname.Berettabigammo>
+    <entitydescription.Berettabigammo>可装40发9x19mm弹药。</entitydescription.Berettabigammo>
+    <entityname.Berettafmjammo>9x19mm空尖弹匣</entityname.Berettafmjammo>
+    <entitydescription.Berettafmjammo>可装20发空尖弹药。</entitydescription.Berettafmjammo>
+    <entityname.1911bigammo>.45 ACP扩容弹匣</entityname.1911bigammo>
+    <entitydescription.1911bigammo>可装14发子弹。</entitydescription.1911bigammo>
+    <entityname.spp-1apround>SPP-1穿甲飞镖弹</entityname.spp-1apround>
+    <entitydescription.spp-1apround>SPP-1水下手枪穿甲飞镖。‖color:gui.blue‖穿透轻型护甲‖end‖。‖color:gui.red‖造成撕裂伤‖end‖。</entitydescription.spp-1apround>
+    <entityname.mosin-obrez>莫辛步枪 «截短型»</entityname.mosin-obrez>
+    <entitydescription.mosin-obrez>粗糙截短的莫辛步枪。‖color:gui.red‖精度较差‖end‖但可装‖color:gui.green‖10发7.62x54R弹药‖end‖。‖color:gui.blue‖因供弹系统改装无法水下射击‖end‖。‖color:gui.yellow‖足够紧凑，可放入口袋携带并配有侧置瞄具接口‖end‖。</entitydescription.mosin-obrez>
+    <entityname.40mmgrenade>40毫米高爆破片手榴弹</entityname.40mmgrenade>
+    <entitydescription.40mmgrenade>用于榴弹发射器，含有‖color:gui.green‖50个致命破片‖end‖。‖color:gui.yellow‖中距离有效‖end‖。</entitydescription.40mmgrenade>
+    <entityname.repairweapon>武器维修包</entityname.repairweapon>
+    <entitydescription.repairweapon>用于修理几乎所有武器。内含所有必备工具，确保快速高效的维修。</entitydescription.repairweapon>
+    <entityname.M1>M1 盖伦枪“聚合物”</entityname.M1>
+    <entitydescription.M1>作为一把聚合物材料制成的复制步枪。可靠的步枪，使用‖color:gui.green‖7.62x51子弹（弹匣容量7发）‖end‖。‖color:gui.blue‖水下射击后需手动重新关闭枪机以继续射击‖end‖。</entitydescription.M1>
+    <entityname.M1ammos>7.62x51 子弹</entityname.M1ammos>
+    <entitydescription.M1ammos>适用于 M1 Garand 步枪的 7.62x51 口径子弹。</entitydescription.M1ammos>
+    <entityname.M1ammoap>7.62x51 穿甲弹</entityname.M1ammoap>
+    <entitydescription.M1ammoap>‖color:gui.green‖穿甲弹‖end‖，带强化弹芯，适用于 M1 Garand。‖color:gui.blue‖对装甲目标具有更强穿透力‖end‖。</entitydescription.M1ammoap>
+    <entityname.M1ammofmj>7.62x51 扩张弹</entityname.M1ammofmj>
+    <entitydescription.M1ammofmj>‖color:gui.green‖扩张弹‖end‖，全金属被甲弹，适用于 M1 Garand。‖color:gui.yellow‖对非装甲目标有效，造成大量出血‖end‖。</entitydescription.M1ammofmj>
+    <entityname.HK416apround>5.56x45mm穿甲弹</entityname.HK416apround>
+    <entitydescription.HK416apround>5.56x45mm穿甲弹药。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。</entitydescription.HK416apround>
+    <entityname.HK416round>5.56x45mm子弹</entityname.HK416round>
+    <entitydescription.HK416round>标准5.56x45mm弹药。</entitydescription.HK416round>
+    <entityname.HK416fmjround>5.56x45mm空尖弹</entityname.HK416fmjround>
+    <entitydescription.HK416fmjround>5.56x45mm空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.HK416fmjround>
+    <entityname.akround>5.45x39mm子弹</entityname.akround>
+    <entitydescription.akround>标准5.45x39mm弹药。</entitydescription.akround>
+    <entityname.akapround>5.45x39mm穿甲弹</entityname.akapround>
+    <entitydescription.akapround>5.45x39mm穿甲弹药。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。</entitydescription.akapround>
+    <entityname.akfmjround>5.45x39mm空尖弹</entityname.akfmjround>
+    <entitydescription.akfmjround>5.45x39mm空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.akfmjround>
+    <entityname.spp-1fmjround>SPP-1空尖飞镖</entityname.spp-1fmjround>
+    <entitydescription.spp-1fmjround>SPP-1水下手枪空尖飞镖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。‖color:gui.red‖造成撕裂伤‖end‖。</entitydescription.spp-1fmjround>
+    <entityname.Berettarounds>9x19mm子弹</entityname.Berettarounds>
+    <entitydescription.Berettarounds>标准9x19mm弹药。</entitydescription.Berettarounds>
+    <entityname.Berettaroundfmj>9x19mm空尖弹</entityname.Berettaroundfmj>
+    <entitydescription.Berettaroundfmj>9x19mm空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.Berettaroundfmj>
+    <entityname.Deagleround>.50子弹</entityname.Deagleround>
+    <entitydescription.Deagleround>标准.50口径弹药。</entitydescription.Deagleround>
+    <entityname.PBround>9x18mm子弹</entityname.PBround>
+    <entitydescription.PBround>标准9x18mm弹药。</entitydescription.PBround>
+    <entityname.mapleround>6.8x48mm风暴子弹</entityname.mapleround>
+    <entitydescription.mapleround>标准6.8x48mm风暴弹药。</entitydescription.mapleround>
+    <entityname.mapleapround>6.8x48mm风暴穿甲弹</entityname.mapleapround>
+    <entitydescription.mapleapround>6.8x48mm风暴穿甲弹药。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。</entitydescription.mapleapround>
+    <entityname.1911round>.45 ACP子弹</entityname.1911round>
+    <entitydescription.1911round>标准.45 ACP弹药。</entitydescription.1911round>
+    <entityname.P90round>5.7x28mm子弹</entityname.P90round>
+    <entitydescription.P90round>标准5.7x28mm弹药。</entitydescription.P90round>
+    <entityname.ASH-12magazine>12.7x55mm弹匣</entityname.ASH-12magazine>
+    <entitydescription.ASH-12magazine>可装20发12.7x55mm弹药。</entitydescription.ASH-12magazine>
+    <entityname.ASH-12apmagazine>12.7x55mm穿甲弹匣</entityname.ASH-12apmagazine>
+    <entitydescription.ASH-12apmagazine>可装20发12.7x55mm穿甲弹。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。</entitydescription.ASH-12apmagazine>
+    <entityname.ASH-12fmjmagazine>12.7x55mm空尖弹匣</entityname.ASH-12fmjmagazine>
+    <entitydescription.ASH-12fmjmagazine>可装20发12.7x55mm空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.ASH-12fmjmagazine>
+    <entityname.ASH-12>ASH-12步枪 «雷暴»</entityname.ASH-12>
+    <entitydescription.ASH-12>强大的突击步枪，使用‖color:gui.green‖12.7x55mm弹药‖end‖。‖color:gui.blue‖水下中等有效‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨‖end‖。‖color:gui.yellow‖使用狙击步枪消音器‖end‖。</entitydescription.ASH-12>
+    <entityname.Ruger>左轮手枪 Ruger «安培»</entityname.Ruger>
+    <entitydescription.Ruger>左轮手枪，使用‖color:gui.green‖9x19mm弹药，7发弹巢‖end‖。‖color:gui.yellow‖后坐力低且射速高‖end‖。‖color:gui.blue‖水下效果差‖end‖。</entitydescription.Ruger>
+    <entityname.med-scan>下挂式医疗扫描仪</entityname.med-scan>
+    <entitydescription.med-scan>安装在武器上时：‖color:gui.green‖仅在瞄准时显示玩家医疗状态‖end‖。‖color:gui.yellow‖安装在手电筒插槽‖end‖。</entitydescription.med-scan>
+    <entityname.maplefmjround>6.8x48mm风暴空尖弹</entityname.maplefmjround>
+    <entitydescription.maplefmjround>6.8x48mm风暴空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.maplefmjround>
+    <entityname.maplefmjmagazine>6.8x48mm风暴空尖弹匣</entityname.maplefmjmagazine>
+    <entitydescription.maplefmjmagazine>可装20发6.8x48mm风暴空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.maplefmjmagazine>
+    <entityname.assaultriflemagazine>6.8x48mm«深渊之鞭»弹匣</entityname.assaultriflemagazine>
+    <entitydescription.assaultriflemagazine>可装30发6.8x48mm弹药。</entitydescription.assaultriflemagazine>
+    <entityname.assaultrifleapmagazine>6.8x48mm«深渊之鞭»穿甲弹匣</entityname.assaultrifleapmagazine>
+    <entitydescription.assaultrifleapmagazine>可装30发6.8x48mm穿甲弹。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。</entitydescription.assaultrifleapmagazine>
+    <entityname.assaultriflefmjmagazine>6.8x48mm«深渊之鞭»空尖弹匣</entityname.assaultriflefmjmagazine>
+    <entitydescription.assaultriflefmjmagazine>可装30发6.8x48mm空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.assaultriflefmjmagazine>
+    <entityname.assaultrifle>突击步枪 «深渊之鞭»</entityname.assaultrifle>
+    <entitydescription.assaultrifle>突击步枪，使用‖color:gui.green‖6.8x48mm弹药‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨‖end‖。‖color:gui.white‖2发点射模式‖end‖。‖color:gui.blue‖水下效果好‖end‖。由联盟在木卫二研发，用于突袭前哨站。</entitydescription.assaultrifle>
+    <afflictionname.pepper>猛禽克星接触黏膜组织</afflictionname.pepper>
+    <afflictiondescription.pepper>我的眼睛被猛禽克星灼伤了！需要立即用水冲洗。</afflictiondescription.pepper>
+    <afflictionname.pepper-big>猛禽克星接触黏膜组织</afflictionname.pepper-big>
+    <afflictiondescription.pepper-big>我的眼睛被猛禽克星灼伤了！需要立即用水冲洗。</afflictiondescription.pepper-big>
+    <entityname.pepperspray>气雾喷射式猛禽克星喷雾</entityname.pepperspray>
+    <entitydescription.pepperspray>自卫喷雾，采用气雾喷射式浓缩猛禽克星汁液设计。‖color:gui.yellow‖近距离有效‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.pepperspray>
+    <entityname.40mmnuke>40毫米核迷你炮弹</entityname.40mmnuke>
+    <entitydescription.40mmnuke>用于榴弹发射器的小型核炮弹。‖color:gui.red‖爆炸时不产生破片‖end‖。</entitydescription.40mmnuke>
+    <entityname.40mmpeppergrenade>40毫米猛禽克星榴弹</entityname.40mmpeppergrenade>
+    <entitydescription.40mmpeppergrenade>用于榴弹发射器的40毫米浓缩猛禽克星汁液榴弹。‖color:gui.yellow‖造成严重眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.40mmpeppergrenade>
+    <entityname.ballistichelmet1-open>开面罩防弹头盔</entityname.ballistichelmet1-open>
+    <entityname.ballistichelmet2-open>开面罩射手头盔</entityname.ballistichelmet2-open>
+    <entityname.piratehelmet1-open>开面罩分裂分子头盔</entityname.piratehelmet1-open>
+    <entityname.piratehelmet2-open>开面罩分裂分子加固头盔</entityname.piratehelmet2-open>
+    <entityname.ballistichelmet3-open>开面罩防暴头盔</entityname.ballistichelmet3-open>
+    <entityname.peppergrenade>猛禽克星手榴弹</entityname.peppergrenade>
+    <entitydescription.peppergrenade>含有浓缩猛禽克星汁液的手榴弹。‖color:gui.yellow‖造成严重眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.peppergrenade>
+    <entityname.ballistichelmet6>小丑头盔</entityname.ballistichelmet6>
+    <entitydescription.ballistichelmet6>‖color:gui.green‖内置耳机‖end‖。‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖可拆卸小丑面具式面罩，带有奇怪旗帜图案‖end‖。‖color:gui.yellow‖内置扬声器可播放音乐‖end‖。</entitydescription.ballistichelmet6>
+    <entityname.ballistichelmet6-open>开面罩小丑头盔</entityname.ballistichelmet6-open>
+    <entitydescription.ballistichelmet6-open>‖color:gui.green‖内置耳机‖end‖。‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖可拆卸小丑面具式面罩，带有奇怪旗帜图案‖end‖。‖color:gui.yellow‖内置扬声器可播放音乐‖end‖。</entitydescription.ballistichelmet6-open>
+    <entityname.gasmask>防毒面具 «神盾»</entityname.gasmask>
+    <entitydescription.gasmask>‖color:gui.blue‖防护胡椒气体和神经麻痹气体‖end‖。‖color:gui.green‖内置耳机‖end‖。</entitydescription.gasmask>
+    <entityname.gasmask-noise>防毒面具 «神盾-降噪»</entityname.gasmask-noise>
+    <entitydescription.gasmask-noise>‖color:gui.blue‖防护胡椒气体和神经麻痹气体‖end‖。‖color:gui.green‖配备主动降噪耳机‖end‖。</entitydescription.gasmask-noise>
+    <entityname.piratehelmet3-open>开面罩分裂分子轻型头盔</entityname.piratehelmet3-open>
+    <entityname.ballistichelmet5-open>开面罩战术头盔「打击者」</entityname.ballistichelmet5-open>
+    <entityname.ballistichelmet1>防弹头盔</entityname.ballistichelmet1>
+    <entitydescription.ballistichelmet1>‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。虽然头盔无法防护大多数海洋生物，但若潜艇出现叛徒时将极为实用。</entitydescription.ballistichelmet1>
+    <entityname.ballistichelmet2>射手头盔</entityname.ballistichelmet2>
+    <entitydescription.ballistichelmet2>‖color:gui.green‖不妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。这款头盔比防弹型号更轻。佩戴者仍可使用潜望镜。</entitydescription.ballistichelmet2>
+    <entityname.piratehelmet>分裂分子头盔</entityname.piratehelmet>
+    <entitydescription.piratehelmet>‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。改装防弹头盔「阿尔滕」。尽管是手工改进，头盔异常坚固。</entitydescription.piratehelmet>
+    <entityname.piratehelmet2>分裂分子加固头盔</entityname.piratehelmet2>
+    <entitydescription.piratehelmet2>‖color:gui.red‖严重妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。加固型「阿尔滕」头盔配三条纹面罩。增强防弹保护。不知为何这个图案似曾相识。</entitydescription.piratehelmet2>
+    <entityname.ballistichelmet3>防暴头盔</entityname.ballistichelmet3>
+    <entitydescription.ballistichelmet3>‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。用于镇压大规模骚乱，但也适合对抗外星入侵者。</entitydescription.ballistichelmet3>
+    <entityname.piratehelmet3>分裂分子轻型头盔</entityname.piratehelmet3>
+    <entitydescription.piratehelmet3>‖color:gui.green‖不妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。改装防弹头盔。轻量化版本保持防护。尽管是手工改进，头盔异常坚固。</entitydescription.piratehelmet3>
+    <entityname.ballistichelmet5>战术头盔「打击者」</entityname.ballistichelmet5>
+    <entitydescription.ballistichelmet5>‖color:gui.yellow‖配备主动降噪耳机‖end‖。‖color:gui.red‖中等限制视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。联盟突击头盔的轻量化版本。防护等级基本不变，但移除夜视仪和氧气面罩。</entitydescription.ballistichelmet5>
+    <!-- Шлемы с открытым забралом -->
+    <entityname.ballistichelmet1-open>开面罩防弹头盔</entityname.ballistichelmet1-open>
+    <entitydescription.ballistichelmet1-open>‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。虽然头盔无法防护大多数海洋生物，但若潜艇出现叛徒时将极为实用。</entitydescription.ballistichelmet1-open>
+    <entityname.ballistichelmet2-open>开面罩射手头盔</entityname.ballistichelmet2-open>
+    <entitydescription.ballistichelmet2-open>‖color:gui.green‖不妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。这款头盔比防弹型号更轻。佩戴者仍可使用潜望镜。</entitydescription.ballistichelmet2-open>
+    <entityname.piratehelmet1-open>开面罩分裂分子头盔</entityname.piratehelmet1-open>
+    <entitydescription.piratehelmet1-open>‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。改装防弹头盔「阿尔滕」。尽管是手工改进，头盔异常坚固。</entitydescription.piratehelmet1-open>
+    <entityname.piratehelmet2-open>开面罩分裂分子加固头盔</entityname.piratehelmet2-open>
+    <entitydescription.piratehelmet2-open>‖color:gui.red‖严重妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。加固型「阿尔滕」头盔配三条纹面罩。增强防弹保护。不知为何这个图案似曾相识。</entitydescription.piratehelmet2-open>
+    <entityname.ballistichelmet3-open>开面罩防暴头盔</entityname.ballistichelmet3-open>
+    <entitydescription.ballistichelmet3-open>‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。用于镇压大规模骚乱，但也适合对抗外星入侵者。</entitydescription.ballistichelmet3-open>
+    <entityname.piratehelmet3-open>开面罩分裂分子轻型头盔</entityname.piratehelmet3-open>
+    <entitydescription.piratehelmet3-open>‖color:gui.green‖不妨碍视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。改装防弹头盔。轻量化版本保持防护。尽管是手工改进，头盔异常坚固。</entitydescription.piratehelmet3-open>
+    <entityname.ballistichelmet5-open>开面罩战术头盔「打击者」</entityname.ballistichelmet5-open>
+    <entitydescription.ballistichelmet5-open>‖color:gui.yellow‖配备主动降噪耳机‖end‖。‖color:gui.red‖中等限制视野‖end‖。‖color:gui.white‖具有可翻折面罩‖end‖。联盟突击头盔的轻量化版本。防护等级基本不变，但移除夜视仪和氧气面罩。</entitydescription.ballistichelmet5-open>
+    <!-- Шлем helmet4 без изменений -->
+    <entityname.ballistichelmet4>突击头盔「波塞冬」</entityname.ballistichelmet4>
+    <entitydescription.ballistichelmet4>‖color:gui.yellow‖配备主动降噪耳机‖end‖。‖color:gui.red‖严重限制视野‖end‖。联盟用于占领前哨站。目前最坚固的头盔，内置氧气面罩、‖color:gui.blue‖内置防毒面具可防护有毒气体‖end‖和带电池仓夜视仪。不适用于侦察。</entitydescription.ballistichelmet4>
+    <AA.camera>相机缩放</AA.camera>
+    <AA.camera.description>玩家相机的缩放程度。\n设为 0 以禁用。</AA.camera.description>
+    <AA.periscope>潜望镜偏移</AA.periscope>
+    <AA.periscope.description>潜望镜控制视角的缩放程度。\n影响炮塔、探照灯、相机等。\n设为 0 以禁用。</AA.periscope.description>
+    <AA.aiming>瞄准偏移</AA.aiming>
+    <AA.aiming.description>瞄准时相机的偏移程度。\n影响近战武器、远程武器和手榴弹。\n设为 0 以禁用。</AA.aiming.description>
+    <AA.sync>与其他玩家同步</AA.sync>
+    <AA.sync.description>勾选时，连接的玩家将使用相同的缩放配置。\n取消勾选以允许其他玩家使用自己的设置。</AA.sync.description>
+    <AA.sync.enabled>无法更改 - 已与服务器同步</AA.sync.enabled>
+    <AA.incompatibility.nteyes>无法更改 - 与 NT Eyes 不兼容。</AA.incompatibility.nteyes>
+    <EnhancedImmersion.ModName>镜头控制</EnhancedImmersion.ModName>
+    <entityname.Atropini>阿托品</entityname.Atropini>
+    <entitydescription.Atropini>神经麻痹物质解毒剂。长期使用会导致视力模糊和轻度化学依赖。</entitydescription.Atropini>
+    <entityname.neurospray>气雾神经麻痹气体喷雾</entityname.neurospray>
+    <entitydescription.neurospray>气雾型神经麻痹气体罐。‖color:gui.yellow‖造成部分麻痹‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。</entitydescription.neurospray>
+    <afflictionname.neuro-gas>神经麻痹气体</afflictionname.neuro-gas>
+    <afflictiondescription.neuro-gas>我呼吸困难且难以移动！神经麻痹气体正在生效。需要立即使用解毒剂。</afflictiondescription.neuro-gas>
+    <entityname.40mmneurogrenade>40毫米神经麻痹气体榴弹</entityname.40mmneurogrenade>
+    <entitydescription.40mmneurogrenade>用于榴弹发射器的40毫米神经麻痹气体榴弹。‖color:gui.yellow‖造成部分麻痹‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。</entitydescription.40mmneurogrenade>
+    <entityname.neurogrenade>神经麻痹气体手榴弹</entityname.neurogrenade>
+    <entitydescription.neurogrenade>含有神经麻痹气体的手榴弹。‖color:gui.yellow‖造成部分麻痹‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。</entitydescription.neurogrenade>
+    <entityname.mapleblueprint>枫木步枪蓝图</entityname.mapleblueprint>
+    <entitydescription.mapleblueprint>制作枫木突击步枪的蓝图。</entitydescription.mapleblueprint>
+    <entityname.scarblueprint>SCAR步枪蓝图</entityname.scarblueprint>
+    <entitydescription.scarblueprint>制作SCAR突击步枪的蓝图。</entitydescription.scarblueprint>
+    <entityname.ash12blueprint>ASH-12步枪蓝图</entityname.ash12blueprint>
+    <entitydescription.ash12blueprint>制作ASH-12突击步枪的蓝图。</entitydescription.ash12blueprint>
+    <entityname.g36blueprint>G36步枪蓝图</entityname.g36blueprint>
+    <entitydescription.g36blueprint>制作G36突击步枪的蓝图。</entitydescription.g36blueprint>
+    <entityname.pkpblueprint>PKP机枪蓝图</entityname.pkpblueprint>
+    <entitydescription.pkpblueprint>制作PKP机枪的蓝图。</entitydescription.pkpblueprint>
+    <entityname.m249blueprint>M249机枪蓝图</entityname.m249blueprint>
+    <entitydescription.m249blueprint>制作M249机枪的蓝图。</entitydescription.m249blueprint>
+    <entityname.ceramic-plate-blueprint>陶瓷板蓝图</entityname.ceramic-plate-blueprint>
+    <entitydescription.ceramic-plate-blueprint>制作陶瓷装甲板的蓝图。</entitydescription.ceramic-plate-blueprint>
+    <entityname.steel-plate-blueprint>钢板蓝图</entityname.steel-plate-blueprint>
+    <entitydescription.steel-plate-blueprint>制作钢制装甲板的蓝图。</entitydescription.steel-plate-blueprint>
+    <entityname.kevlar-plate-blueprint>凯夫拉板蓝图</entityname.kevlar-plate-blueprint>
+    <entitydescription.kevlar-plate-blueprint>制作凯夫拉装甲板的蓝图。</entitydescription.kevlar-plate-blueprint>
+    <entityname.neuroweaponsblueprint>神经武器蓝图</entityname.neuroweaponsblueprint>
+    <entitydescription.neuroweaponsblueprint>制作神经麻痹武器和弹药的蓝图。</entitydescription.neuroweaponsblueprint>
+    <entityname.P-11peppermagazine>P-11猛禽克星提取物弹匣</entityname.P-11peppermagazine>
+    <entitydescription.P-11peppermagazine>可装6发浓缩猛禽克星提取物弹药。‖color:gui.yellow‖造成严重眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.P-11peppermagazine>
+    <entityname.lightshield>突击盾牌 «频闪»</entityname.lightshield>
+    <entitydescription.lightshield>带有内置致盲系统的突击盾牌。‖color:gui.yellow‖暂时致盲敌人‖end‖。‖color:gui.blue‖电池供电‖end‖。</entitydescription.lightshield>
+    <entityname.RPGroundpol>RPG空心炮弹</entityname.RPGroundpol>
+    <entitydescription.RPGroundpol>可容纳手榴弹的RPG空心炮弹。‖color:gui.yellow‖穿透一个障碍后自动解除手榴弹保险‖end‖。‖color:gui.blue‖多用途弹药‖end‖。</entitydescription.RPGroundpol>
+    <entityname.spp-1apround>SPP-1穿甲飞镖弹</entityname.spp-1apround>
+    <entitydescription.spp-1apround>SPP-1水下手枪穿甲飞镖。‖color:gui.blue‖穿透轻型护甲‖end‖。‖color:gui.red‖造成撕裂伤‖end‖。</entitydescription.spp-1apround>
+    <entityname.spp-1fmjround>SPP-1空尖飞镖</entityname.spp-1fmjround>
+    <entitydescription.spp-1fmjround>SPP-1水下手枪空尖飞镖。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。‖color:gui.red‖造成撕裂伤‖end‖。</entitydescription.spp-1fmjround>
+    <entityname.kevlar-plate>防弹衣凯夫拉板</entityname.kevlar-plate>
+    <entitydescription.kevlar-plate>‖color:gui.green‖现代复合材料‖end‖。‖color:gui.yellow‖最轻量选项‖end‖，‖color:gui.yellow‖抗损伤性高‖end‖。‖color:gui.red‖提供破片和手枪子弹基础防护‖end‖。</entitydescription.kevlar-plate>
+    <entityname.steel-plate>防弹衣钢板</entityname.steel-plate>
+    <entitydescription.steel-plate>‖color:gui.green‖经典装甲钢‖end‖。‖color:gui.red‖最重量选项‖end‖，‖color:gui.yellow‖抗损伤性中等‖end‖。‖color:gui.yellow‖提供步枪子弹可靠防护‖end‖。</entitydescription.steel-plate>
+    <entityname.ceramic-plate>防弹衣陶瓷板</entityname.ceramic-plate>
+    <entitydescription.ceramic-plate>‖color:gui.green‖高科技陶瓷‖end‖。‖color:gui.yellow‖中等重量‖end‖，但‖color:gui.red‖抗多次击中能力低‖end‖。‖color:gui.yellow‖提供穿甲弹最大防护‖end‖。</entitydescription.ceramic-plate>
+    <entityname.ASH-12apmagazine>12.7x55mm穿甲弹匣</entityname.ASH-12apmagazine>
+    <entitydescription.ASH-12apmagazine>可装20发12.7x55mm穿甲弹。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。</entitydescription.ASH-12apmagazine>
+    <entityname.ASH-12fmjmagazine>12.7x55mm空尖弹匣</entityname.ASH-12fmjmagazine>
+    <entitydescription.ASH-12fmjmagazine>可装20发12.7x55mm空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.ASH-12fmjmagazine>
+    <entityname.ASH-12>ASH-12步枪 «雷暴»</entityname.ASH-12>
+    <entitydescription.ASH-12>强大的突击步枪，使用‖color:gui.green‖12.7x55mm弹药‖end‖。‖color:gui.blue‖水下中等有效‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨‖end‖。‖color:gui.yellow‖使用狙击步枪消音器‖end‖。</entitydescription.ASH-12>
+    <entityname.Ruger>左轮手枪 Ruger «安培»</entityname.Ruger>
+    <entitydescription.Ruger>左轮手枪，使用‖color:gui.green‖9x19mm弹药，7发弹巢‖end‖。‖color:gui.yellow‖后坐力低且射速高‖end‖。‖color:gui.blue‖水下效果差‖end‖。</entitydescription.Ruger>
+    <entityname.med-scan>下挂式医疗扫描仪</entityname.med-scan>
+    <entitydescription.med-scan>安装在武器上时：‖color:gui.green‖仅在瞄准时显示玩家医疗状态‖end‖。‖color:gui.yellow‖安装在手电筒插槽‖end‖。</entitydescription.med-scan>
+    <entityname.maplefmjround>6.8x48mm风暴空尖弹</entityname.maplefmjround>
+    <entitydescription.maplefmjround>6.8x48mm风暴空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.maplefmjround>
+    <entityname.maplefmjmagazine>6.8x48mm风暴空尖弹匣</entityname.maplefmjmagazine>
+    <entitydescription.maplefmjmagazine>可装20发6.8x48mm风暴空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.maplefmjmagazine>
+    <entityname.assaultriflemagazine>6.8x48mm«深渊之鞭»弹匣</entityname.assaultriflemagazine>
+    <entitydescription.assaultriflemagazine>可装30发6.8x48mm弹药。</entitydescription.assaultriflemagazine>
+    <entityname.assaultrifleapmagazine>6.8x48mm«深渊之鞭»穿甲弹匣</entityname.assaultrifleapmagazine>
+    <entitydescription.assaultrifleapmagazine>可装30发6.8x48mm穿甲弹。‖color:gui.blue‖穿透力增强‖end‖，代价是‖color:gui.red‖对无甲目标伤害略有降低‖end‖。</entitydescription.assaultrifleapmagazine>
+    <entityname.assaultriflefmjmagazine>6.8x48mm«深渊之鞭»空尖弹匣</entityname.assaultriflefmjmagazine>
+    <entitydescription.assaultriflefmjmagazine>可装30发6.8x48mm空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.assaultriflefmjmagazine>
+    <entityname.assaultrifle>突击步枪 «深渊之鞭»</entityname.assaultrifle>
+    <entitydescription.assaultrifle>突击步枪，使用‖color:gui.green‖6.8x48mm弹药‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨‖end‖。‖color:gui.white‖2发点射模式‖end‖。‖color:gui.blue‖水下效果好‖end‖。由联盟在木卫二研发，用于突袭前哨站。</entitydescription.assaultrifle>
+    <entityname.pepperspray>气雾喷射式猛禽克星喷雾</entityname.pepperspray>
+    <entitydescription.pepperspray>自卫喷雾，采用气雾喷射式浓缩猛禽克星汁液设计。‖color:gui.yellow‖近距离有效‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.pepperspray>
+    <entityname.40mmnuke>40毫米核迷你炮弹</entityname.40mmnuke>
+    <entitydescription.40mmnuke>用于榴弹发射器的小型核炮弹。‖color:gui.red‖爆炸时不产生破片‖end‖。</entitydescription.40mmnuke>
+    <entityname.40mmpeppergrenade>40毫米猛禽克星榴弹</entityname.40mmpeppergrenade>
+    <entitydescription.40mmpeppergrenade>用于榴弹发射器的40毫米浓缩猛禽克星汁液榴弹。‖color:gui.yellow‖造成严重眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.40mmpeppergrenade>
+    <entityname.peppergrenade>猛禽克星手榴弹</entityname.peppergrenade>
+    <entitydescription.peppergrenade>含有浓缩猛禽克星汁液的手榴弹。‖color:gui.yellow‖造成严重眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.peppergrenade>
+    <entityname.ballistichelmet6>小丑头盔</entityname.ballistichelmet6>
+    <entitydescription.ballistichelmet6>‖color:gui.green‖内置耳机‖end‖。‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖可拆卸小丑面具式面罩，带有奇怪旗帜图案‖end‖。‖color:gui.yellow‖内置扬声器可播放音乐‖end‖。</entitydescription.ballistichelmet6>
+    <entityname.ballistichelmet6-open>开面罩小丑头盔</entityname.ballistichelmet6-open>
+    <entitydescription.ballistichelmet6-open>‖color:gui.green‖内置耳机‖end‖。‖color:gui.red‖轻微妨碍视野‖end‖。‖color:gui.white‖可拆卸小丑面具式面罩，带有奇怪旗帜图案‖end‖。‖color:gui.yellow‖内置扬声器可播放音乐‖end‖。</entitydescription.ballistichelmet6-open>
+    <entityname.gasmask>防毒面具 «神盾»</entityname.gasmask>
+    <entitydescription.gasmask>‖color:gui.blue‖防护胡椒气体和神经麻痹气体‖end‖。‖color:gui.green‖内置耳机‖end‖。</entitydescription.gasmask>
+    <entityname.Atropini>阿托品</entityname.Atropini>
+    <entitydescription.Atropini>神经麻痹物质解毒剂。长期使用会导致视力模糊和轻度化学依赖。</entitydescription.Atropini>
+    <entityname.neurospray>气雾神经麻痹气体喷雾</entityname.neurospray>
+    <entitydescription.neurospray>气雾型神经麻痹气体罐。‖color:gui.yellow‖造成部分麻痹‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。</entitydescription.neurospray>
+    <afflictionname.neuro-gas>神经麻痹气体</afflictionname.neuro-gas>
+    <afflictiondescription.neuro-gas>我呼吸困难且难以移动！神经麻痹气体正在生效。需要立即使用解毒剂。</afflictiondescription.neuro-gas>
+    <entityname.40mmneurogrenade>40毫米神经麻痹气体榴弹</entityname.40mmneurogrenade>
+    <entitydescription.40mmneurogrenade>用于榴弹发射器的40毫米神经麻痹气体榴弹。‖color:gui.yellow‖造成部分麻痹‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。</entitydescription.40mmneurogrenade>
+    <entityname.neurogrenade>神经麻痹气体手榴弹</entityname.neurogrenade>
+    <entitydescription.neurogrenade>含有神经麻痹气体的手榴弹。‖color:gui.yellow‖造成部分麻痹‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。</entitydescription.neurogrenade>
+    <entityname.mapleblueprint>枫木步枪蓝图</entityname.mapleblueprint>
+    <entitydescription.mapleblueprint>制作枫木突击步枪的蓝图。</entitydescription.mapleblueprint>
+    <entityname.scarblueprint>SCAR步枪蓝图</entityname.scarblueprint>
+    <entitydescription.scarblueprint>制作SCAR突击步枪的蓝图。</entitydescription.scarblueprint>
+    <entityname.ash12blueprint>ASH-12步枪蓝图</entityname.ash12blueprint>
+    <entitydescription.ash12blueprint>制作ASH-12突击步枪的蓝图。</entitydescription.ash12blueprint>
+    <entityname.g36blueprint>G36步枪蓝图</entityname.g36blueprint>
+    <entitydescription.g36blueprint>制作G36突击步枪的蓝图。</entitydescription.g36blueprint>
+    <entityname.pkpblueprint>PKP机枪蓝图</entityname.pkpblueprint>
+    <entitydescription.pkpblueprint>制作PKP机枪的蓝图。</entitydescription.pkpblueprint>
+    <entityname.m249blueprint>M249机枪蓝图</entityname.m249blueprint>
+    <entitydescription.m249blueprint>制作M249机枪的蓝图。</entitydescription.m249blueprint>
+    <entityname.ceramic-plate-blueprint>陶瓷板蓝图</entityname.ceramic-plate-blueprint>
+    <entitydescription.ceramic-plate-blueprint>制作陶瓷装甲板的蓝图。</entitydescription.ceramic-plate-blueprint>
+    <entityname.steel-plate-blueprint>钢板蓝图</entityname.steel-plate-blueprint>
+    <entitydescription.steel-plate-blueprint>制作钢制装甲板的蓝图。</entitydescription.steel-plate-blueprint>
+    <entityname.kevlar-plate-blueprint>凯夫拉板蓝图</entityname.kevlar-plate-blueprint>
+    <entitydescription.kevlar-plate-blueprint>制作凯夫拉装甲板的蓝图。</entitydescription.kevlar-plate-blueprint>
+    <entityname.neuroweaponsblueprint>神经武器蓝图</entityname.neuroweaponsblueprint>
+    <entitydescription.neuroweaponsblueprint>制作神经麻痹武器和弹药的蓝图。</entitydescription.neuroweaponsblueprint>
+    <entityname.P-11peppermagazine>P-11猛禽克星提取物弹匣</entityname.P-11peppermagazine>
+    <entitydescription.P-11peppermagazine>可装6发浓缩猛禽克星提取物弹药。‖color:gui.yellow‖造成严重眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.P-11peppermagazine>
+    <entityname.MC-255>转轮霰弹枪MЦ-255«风暴»</entityname.MC-255>
+    <entitydescription.MC-255>‖color:gui.green‖标准霰弹弹药，5发弹巢‖end‖。‖color:gui.blue‖可口袋携带‖end‖。‖color:gui.blue‖可水下射击‖end‖。‖color:gui.yellow‖皮卡汀尼导轨接口‖end‖。分离主义者用于狭窄空间作战的高效解决方案。</entitydescription.MC-255>
+    <entityname.G36-anim>步枪G-36M«水激光»</entityname.G36-anim>
+    <entitydescription.G36-anim>配改进型雷电蓄能器。使用‖color:gui.green‖5.56x45mm弹药‖end‖。‖color:gui.blue‖借助弹丸加速技术水下有效‖end‖。‖color:gui.yellow‖皮卡汀尼导轨接口‖end‖。联盟部队用于登船作战。</entitydescription.G36-anim>
+    <entityname.AN-94>突击步枪AN-94«Nikolaich»</entityname.AN-94>
+    <entitydescription.AN-94>‖color:gui.green‖使用5.45x39mm弹药‖end‖。‖color:gui.yellow‖侧置瞄具接口‖end‖。‖color:gui.purple‖独特双发点射模式‖end‖。‖color:gui.red‖水下效果差，特殊射击模式无效‖end‖。</entitydescription.AN-94>
+    <entityname.M4-anim>步枪 M4A1 «速射型»</entityname.M4-anim>
+    <entitydescription.M4-anim>M4A1突击步枪，射速高。使用‖color:gui.green‖5.56x45mm弹药‖end‖。‖color:gui.blue‖水下效果差‖end‖。‖color:gui.yellow‖配有皮卡汀尼导轨，可安装战术配件‖end‖。</entitydescription.M4-anim>
+    <entityname.Glock>格洛克手枪 «点射»</entityname.Glock>
+    <entitydescription.Glock>改进型格洛克手枪，具有‖color:gui.purple‖3发点射模式‖end‖。使用‖color:gui.green‖9x19mm弹药‖end‖。‖color:gui.blue‖水下效果差‖end‖。可单手握持。</entitydescription.Glock>
+    <entityname.mosin-obrez>莫辛步枪 «截短型»</entityname.mosin-obrez>
+    <entitydescription.mosin-obrez>粗糙截短的莫辛步枪。‖color:gui.red‖精度较差‖end‖但可装‖color:gui.green‖10发7.62x54R弹药‖end‖。‖color:gui.blue‖因供弹系统改装无法水下射击‖end‖。‖color:gui.yellow‖足够紧凑，可放入口袋携带并配有侧置瞄具接口‖end‖。</entitydescription.mosin-obrez>
+    <entityname.M1>M1 盖伦枪"聚合物"</entityname.M1>
+    <entitydescription.M1>作为一把聚合物材料制成的复制步枪。可靠的步枪，使用‖color:gui.green‖7.62x51子弹（弹匣容量7发）‖end‖。‖color:gui.blue‖水下射击后需手动重新关闭枪机以继续射击‖end‖。</entitydescription.M1>
+    <entityname.heavyfraggrenade>重型破片手榴弹</entityname.heavyfraggrenade>
+    <entitydescription.heavyfraggrenade>‖color:gui.green‖产生约250破片‖end‖。‖color:gui.yellow‖杀伤半径约10米‖end‖。</entitydescription.heavyfraggrenade>
+    <entityname.lightshield>突击盾牌 «频闪»</entityname.lightshield>
+    <entitydescription.lightshield>带有内置致盲系统的突击盾牌。‖color:gui.yellow‖暂时致盲敌人‖end‖。‖color:gui.blue‖电池供电‖end‖。</entitydescription.lightshield>
+    <entityname.RPGroundpol>RPG空心炮弹</entityname.RPGroundpol>
+    <entitydescription.RPGroundpol>可容纳手榴弹的RPG空心炮弹。‖color:gui.yellow‖穿透一个障碍后自动解除手榴弹保险‖end‖。‖color:gui.blue‖多用途弹药‖end‖。</entitydescription.RPGroundpol>
+    <entityname.neuro-syringe>神经麻痹注射器</entityname.neuro-syringe>
+    <entitydescription.neuro-syringe>含有神经麻痹剂的注射器。‖color:gui.yellow‖造成部分麻痹‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。</entitydescription.neuro-syringe>
+    <entityname.divingknife-throw>潜水刀（投掷版）</entityname.divingknife-throw>
+    <entitydescription.divingknife-throw>潜水刀的投掷版本。</entitydescription.divingknife-throw>
+    <entityname.divingknifedementonite-throw>恶魔岩刀（投掷版）</entityname.divingknifedementonite-throw>
+    <entitydescription.divingknifedementonite-throw>恶魔岩刀的投掷版本。</entitydescription.divingknifedementonite-throw>
+    <entityname.divingknifehardened-throw>硬化潜水刀（投掷版）</entityname.divingknifehardened-throw>
+    <entitydescription.divingknifehardened-throw>硬化潜水刀的投掷版本。</entitydescription.divingknifehardened-throw>
+    <entityname.wrench-throw>扳手（投掷版）</entityname.wrench-throw>
+    <entitydescription.wrench-throw>扳手的投掷版本。</entitydescription.wrench-throw>
+    <entityname.wrenchdementonite-throw>恶魔岩扳手（投掷版）</entityname.wrenchdementonite-throw>
+    <entitydescription.wrenchdementonite-throw>恶魔岩扳手的投掷版本。</entitydescription.wrenchdementonite-throw>
+    <entityname.wrenchhardened-throw>硬化扳手（投掷版）</entityname.wrenchhardened-throw>
+    <entitydescription.wrenchhardened-throw>硬化扳手的投掷版本。</entitydescription.wrenchhardened-throw>
+    <entityname.thermalgoggles>热成像护目镜</entityname.thermalgoggles>
+    <entitydescription.thermalgoggles>配备‖color:gui.green‖普通耳机‖end‖的热成像护目镜。‖color:gui.yellow‖可穿透墙壁检测热信号‖end‖。‖color:gui.red‖相比热成像瞄准镜射程有限‖end‖。</entitydescription.thermalgoggles>
+    <entityname.GrenadeLauncher-single>单发榴弹发射器</entityname.GrenadeLauncher-single>
+    <entitydescription.GrenadeLauncher-single>‖color:gui.green‖使用40毫米榴弹‖end‖。单发榴弹发射器，带有‖color:gui.yellow‖皮卡汀尼导轨‖end‖。‖color:gui.blue‖相比标准榴弹发射器装填速度较快‖end‖。</entitydescription.GrenadeLauncher-single>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖武器会随着使用磨损。严重磨损的枪管会经常卡弹。别忘了在武器制造机进行维修。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖手中武器的视觉外观和库存中的颜色会根据耐久度变化。将鼠标悬停其上可查看精确状态。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖普通武器在水下会失效。进行水下任务请使用专用水下武器。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖没有瞄具时，您需要凭感觉瞄准。激光指示器或光学瞄准镜将恢复准星。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖利用不同射击模式。2发点射提高精度，3发点射有助于控制后坐力。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖后坐力太强？武器有两种后坐力：垂直后坐力（枪口上跳）可通过下拉鼠标控制，水平后坐力（左右散布）需专用枪口装置补偿。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖安装垂直补偿器以更好地控制垂直后坐力。水平补偿器则有效对抗水平散布。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖垂直后坐力恢复速度很大程度上取决于您的武器技能。技能越高，射击后复位越快。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖水平后坐力无法由玩家控制，但更高的武器技能会减缓其在连续射击中的累积速度。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖击中敌人会引发弹道休克，使其失去方向感。扩张性和橡胶子弹会造成特别剧烈的疼痛。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖高武器技能会减轻枪伤带来的疼痛感。如果您安装了 ‖color:gui.blue‖Neurotrauma‖end‖ 模组，吗啡可以缓解痛苦。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖无听力保护射击会震聋您。使用耳塞或主动降噪耳机以避免耳鸣和视力模糊。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖打开 ESC 菜单中的 Animated Arms 设置，可以修改按键绑定、关闭病症效果，并调整其他模组选项。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖放下头盔面罩不仅隐藏身份，还能防御胡椒喷雾并部分减弱闪光弹效果。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖升起头盔面罩以使用防毒面具或夜视仪。放下它可在近战中和对抗非致命武器时保护面部。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖某些头盔集成了系统，如主动耳机（防眩晕）或面罩（防毒气），节省装备栏位。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖使用不同类型的防弹插板：凯夫拉 - 轻便，钢制 - 可靠，陶瓷 - 防护最高但易碎。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖在武器制造机定制您的武器：瞄准镜、消音器、战术灯和后坐力补偿器。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖使用防爆盾进行掩护并通过闪光致盲敌人。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖单发榴弹发射器和 RPG "水力打击" 可使用多种弹药，包括动能弹和破甲弹。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖神经毒气导致窒息和运动功能受损。携带阿托品作为解毒剂。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖胡椒手榴弹和喷雾对无防护目标有效。潜水服或面具可提供免疫。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖所有左轮手枪都可以通过按钮旋转。‖color:gui.yellow‖*感受MGS中山猫的感觉。*‖end‖</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖部分头盔（例如小丑头盔）配有内置磁带播放器，可营造独特氛围。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖所有武器都配有自毁功能。在绝境中使用以避免被俘（例如在 RP 服务器上）。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖将鼠标悬停在武器上可查看弹匣中的弹药数量。透明弹匣允许视觉确认。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖遗弃在水中的武器会缓慢生锈。尽量不要在木卫二的深海中丢失您的枪械。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖您可以从弹匣中取出弹药。手持弹匣并按下互动键。要装填，将弹药拖到弹匣上。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖新的武器和蓝图可以在整个木卫二找到：在各派系、前哨站和废弃潜艇上。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖按键绑定在 ESC 菜单的 Animated Arms 设置中修改。你也可以在那里切换战斗病症和其他模组功能。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖大多数武器和弹药都在武器制造机中制作。学习蓝图并提前规划资源。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖模组中的手榴弹比原版更具致命性，且每颗手榴弹都有独特的破片数量。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖战术激光让您可以在瞄准时无减速移动 - 善用这一战术优势。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖本模组提供两种游戏风格：致命（像大多数武器模组）和和平主义 - 您可以用扩张弹或橡胶子弹积累痛苦值，几乎完全 immobilize 敌人。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖苏联武器通常磨损较慢但性能不如北约武器，而北约武器磨损较快但效率更高。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖这是我最先创建的模组之一。出乎意料地效果不错。衷心感谢Guns Enhanced的作者提供的帮助！是的...你期待在这里看到提示，但是并没有...</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖本模组会可视化您角色和其他角色的视线方向。结合增强的缩放功能，您可以直观地“解读”玩家的动作，例如当他们正在管理库存时。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖现在，大多数装备、武器和弹药都需要在专用的武器制造机中制作。如有需要，也可以在普通制造机上制作它。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖使用你设置的互动键打开互动菜单。你可以在 ESC 菜单的 Animated Arms 设置中修改它。</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖互动菜单 [N] 中有一个"指向"功能。如果一只手被占用——你会打响指，如果双手都被占用——你会鼓掌，如果站在门前——你会敲门。</loadingscreentip>
+    <entityname.pepperspray-big>喷射式«RaptorNet»罐</entityname.pepperspray-big>
+    <entitydescription.pepperspray-big>装有浓缩猛禽克星汁液的大型喷射式罐体。‖color:gui.yellow‖造成严重眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。</entitydescription.pepperspray-big>
+    <entityname.laserflashlight-flash>战术模块 (已选手电)</entityname.laserflashlight-flash>
+    <entitydescription.laserflashlight-flash>模块在手中时按钮在手电和激光模式间切换。在此模式下：‖color:gui.red‖相比激光模式消耗更多电量‖end‖。</entitydescription.laserflashlight-flash>
+    <entityname.laserflashlight-laser>战术模块 (已选激光)</entityname.laserflashlight-laser>
+    <entitydescription.laserflashlight-laser>模块在手中时按钮在手电和激光模式间切换。在此模式下：‖color:gui.green‖瞄准时消除减速‖end‖。</entitydescription.laserflashlight-laser>
+    <entityname.Revolver>左轮手枪«克劳兹»</entityname.Revolver>
+    <entitydescription.Revolver>使用强大的‖color:gui.green‖6.8x48mm弹药，4发弹巢‖end‖的左轮手枪。为需要能在水下射击的强大手枪的潜水员创建。‖color:gui.blue‖水下效果极佳‖end‖。‖color:gui.yellow‖内置激光目标指示器‖end‖。</entitydescription.Revolver>
+    <entityname.Shotgun>霰弹枪«深渊»</entityname.Shotgun>
+    <entitydescription.Shotgun>在木卫二研发的霰弹枪，因此可在水下射击。‖color:gui.green‖使用标准霰弹弹药并可装6发子弹‖end‖。‖color:gui.yellow‖配有侧置瞄具接口‖end‖。‖color:gui.white‖双发射击模式‖end‖。</entitydescription.Shotgun>
+    <entityname.bandana-anim>头带«Foxhound»</entityname.bandana-anim>
+    <entitydescription.bandana-anim>特殊头带，允许佩戴者多次装死然后复活。‖color:gui.yellow‖致敬MGS 3‖end‖。</entitydescription.bandana-anim>
+    <entityname.UMP45>冲锋枪 UMP45«都市型»</entityname.UMP45>
+    <entitydescription.UMP45>冲锋枪，使用‖color:gui.green‖.45 ACP‖end‖弹药。‖color:gui.yellow‖配有皮卡汀尼导轨用于瞄准镜‖end‖。紧凑尺寸便于携带。‖color:gui.white‖3发点射模式‖end‖。‖color:gui.blue‖水下效果差‖end‖。</entitydescription.UMP45>
+    <entityname.UMP45magazine-anim>.45 ACP弹匣</entityname.UMP45magazine-anim>
+    <entitydescription.UMP45magazine-anim>可装25发.45 ACP弹药。</entitydescription.UMP45magazine-anim>
+    <entityname.UMP45bigmagazine-anim>.45 ACP扩容弹匣</entityname.UMP45bigmagazine-anim>
+    <entitydescription.UMP45bigmagazine-anim>可装50发.45 ACP弹药。</entitydescription.UMP45bigmagazine-anim>
+    <entityname.UMP45fmjmagazine-anim>.45 ACP空尖弹匣</entityname.UMP45fmjmagazine-anim>
+    <entitydescription.UMP45fmjmagazine-anim>可装25发.45 ACP空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.UMP45fmjmagazine-anim>
+    <entityname.UMP45bigfmjmagazine-anim>.45 ACP空尖扩容弹匣</entityname.UMP45bigfmjmagazine-anim>
+    <entitydescription.UMP45bigfmjmagazine-anim>可装50发.45 ACP空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.UMP45bigfmjmagazine-anim>
+    <entityname.1911fmjround>.45 ACP空尖弹</entityname.1911fmjround>
+    <entitydescription.1911fmjround>.45 ACP空尖弹药。‖color:gui.yellow‖对无甲目标高效，造成严重出血‖end‖。</entitydescription.1911fmjround>
+    <entitydescription.scrapcannon>电池供电的自制火炮，发射金属破片‖color:gui.green‖和近战武器的投掷版本‖end‖。精度低，但弹药可以是任何随机铁块或钢块。</entitydescription.scrapcannon>
+    <entityname.ballistichelmet7>战斗头盔«剪接者»</entityname.ballistichelmet7>
+    <entitydescription.ballistichelmet7>战斗头盔，带有‖color:gui.green‖内置改进型基因剪接器‖end‖和‖color:gui.yellow‖集成手电筒‖end‖。‖color:gui.blue‖因可折叠设计而不占空间‖end‖。</entitydescription.ballistichelmet7>
+    <entityname.facemask>面罩«幻影»</entityname.facemask>
+    <entitydescription.facemask>芳纶纤维面罩与巴拉克拉瓦帽结合，提供面部保护。</entitydescription.facemask>
+    <entityname.Medicalbodyarmor>医疗兵防弹衣</entityname.Medicalbodyarmor>
+    <entitydescription.Medicalbodyarmor>防弹衣，带有‖color:gui.green‖额外医疗袋‖end‖。‖color:gui.yellow‖防护等级介于轻型与标准防弹衣之间‖end‖。</entitydescription.Medicalbodyarmor>
+    <!-- Basic PDA -->
+    <entityname.PDA-anim>PDA 「基础型」</entityname.PDA-anim>
+    <entitydescription.PDA-anim>具备基础功能的个人数字助理：\n• 手电筒\n• 笔记功能\n• 简易潜艇地图\n• 查看制造台配方 — 1个槽位\n• 通过U盘播放音乐（音量较低）\n• 为外部设备供电（输出功率较低）\n‖color:gui.white‖低耗电‖end‖.</entitydescription.PDA-anim>
+    <!-- Officer PDA -->
+    <entityname.PDA-officer-anim>PDA 「军官型」</entityname.PDA-officer-anim>
+    <entitydescription.PDA-officer-anim>军官型PDA，功能增强且供电强化：\n• 强力手电筒\n• 可自定义颜色的笔记\n• 潜艇地图与实时定位\n• 查看武器制造台配方\n• 查看普通制造台配方 — 2个槽位\n• 通过U盘播放音乐\n• 为外部设备供电\n‖color:gui.blue‖• 内置电击器‖end‖\n‖color:gui.blue‖• 内置PDA信号屏蔽器（半径30米）‖end‖\n‖color:gui.red‖高耗电‖end‖.</entitydescription.PDA-officer-anim>
+    <!-- Enhanced PDA -->
+    <entityname.PDA-better-anim>PDA「增强型」</entityname.PDA-better-anim>
+    <entitydescription.PDA-better-anim>具有扩展功能的增强型PDA：\n• 强光手电筒\n• 可更改颜色的笔记\n• 带定位的潜艇地图\n• 查看制造机配方 - 2个槽位\n• 通过U盘播放音乐\n• 设备供电\n‖color:gui.yellow‖中等能耗‖end‖。</entitydescription.PDA-better-anim>
+    <!-- Medical PDA -->
+    <entityname.PDA-medic-anim>PDA「医疗型」</entityname.PDA-medic-anim>
+    <entitydescription.PDA-medic-anim>具有医疗功能的PDA：\n• 强光手电筒\n• 可更改颜色的笔记\n• 带定位的潜艇地图\n• 查看医疗制造机配方 - 5个槽位\n• 内置‖color:gui.blue‖Neurotrauma‖end‖教程\n• 通过U盘播放音乐\n• 设备供电\n‖color:gui.yellow‖中等能耗‖end‖。</entitydescription.PDA-medic-anim>
+    <!-- Mechanical PDA -->
+    <entityname.PDA-mech-anim>PDA 「机械型」</entityname.PDA-mech-anim>
+    <entitydescription.PDA-mech-anim>专为机械工作设计的PDA：\n• 强力手电筒\n• 可自定义颜色的笔记\n• 潜艇地图与实时定位及船体损坏显示\n• 远程控制制造台和解构台\n• 通过U盘播放音乐\n• 为外部设备供电 — 高电压\n‖color:gui.blue‖• 内置电动焊接器‖end‖\n‖color:gui.yellow‖中等耗电‖end‖.</entitydescription.PDA-mech-anim>
+    <!-- Engineering PDA -->
+    <entityname.PDA-eng-anim>PDA「工程型」</entityname.PDA-eng-anim>
+    <entitydescription.PDA-eng-anim>用于工程作业的专用PDA：\n• 超强手电筒和环形灯\n• 可更改颜色的笔记功能\n• 潜艇地图，带定位和电气设备故障检测\n• 远程反应堆和配电管理功能\n• 手动充电发电机，用于电池充电\n• 通过U盘播放音乐\n• 设备供电 - 巨大电压输出\n‖color:gui.yellow‖中等能耗‖end‖。</entitydescription.PDA-eng-anim>
+    <Manual_Button_Back>返回</Manual_Button_Back>
+    <Manual_Button_FlashLight>手电筒</Manual_Button_FlashLight>
+    <Manual_Button_Emergency_Beacon>紧急求救信号—SOS</Manual_Button_Emergency_Beacon>
+    <Manual_Button_Fabricator_Recipes>制造机配方</Manual_Button_Fabricator_Recipes>
+    <Manual_Button_Clean_Text>清空文本 - 重置PDA</Manual_Button_Clean_Text>
+    <Manual_Button_Beacon_Text>信标文本:</Manual_Button_Beacon_Text>
+    <Manual_Button_Text_Color>文本颜色:</Manual_Button_Text_Color>
+    <Manual_Button_Medical_Fabricator>医疗制造机配方</Manual_Button_Medical_Fabricator>
+    <Manual_Button_Neurotrauma_Guide>神经创伤指南</Manual_Button_Neurotrauma_Guide>
+    <Manual_Button_Fabricator_craft>制造器控制</Manual_Button_Fabricator_craft>
+    <Manual_Button_Deconstruct_Craft>解构器控制</Manual_Button_Deconstruct_Craft>
+    <pda_med>声纳上的医疗信标</pda_med>
+    <PDA_Welcome_Basic>系统初始化中...\n 加载 Barotrauma PDA 固件 v0.1.7\n 硬件检测中... 完成\n 建立安全的 Subnautica 网络...\n 所有系统正常运行。\n 欢迎，船员。\n \n 可用命令:\n • time - 显示终端游戏时间\n • guess - 数字猜谜游戏\n • dice(N) - 掷骰子 (1 到 N)\n • quiz - 随机问答游戏\n • lang - 更改语言 (默认: English)\n </PDA_Welcome_Basic>
+    <PDA_Welcome_Better>系统初始化中...\n 加载 Barotrauma PDA 固件 v0.3.3\n 硬件检测中... 完成\n 建立安全的 Subnautica 网络...\n 所有系统正常运行。\n 欢迎，船员。\n \n 可用命令:\n • time - 显示终端游戏时间\n • guess - 数字猜谜游戏\n • dice(N) - 掷骰子 (1 到 N)\n • quiz - 随机问答游戏\n • lang - 更改语言 (默认: English)\n </PDA_Welcome_Better>
+    <PDA_Welcome_Medic>系统初始化中...\n 加载 Barotrauma PDA 固件 v0.3.6\n 硬件检测中... 完成\n 建立安全的 Subnautica 网络...\n 所有系统正常运行。\n 欢迎，船员。\n \n 可用命令:\n • time - 显示终端游戏时间\n • guess - 数字猜谜游戏\n • dice(N) - 掷骰子 (1 到 N)\n • quiz - 随机问答游戏\n • lang - 更改语言 (默认: English)\n </PDA_Welcome_Medic>
+    <Manual_Button_Volume_DOWN>音乐音量 -</Manual_Button_Volume_DOWN>
+    <Manual_Button_Volume_UP>音乐音量 +</Manual_Button_Volume_UP>
+    <pda_armed>启用定时器</pda_armed>
+    <pda_timer>设置时间</pda_timer>
+    <Radial_flashlight>圆形手电筒</Radial_flashlight>
+    <Manual_Button_Reactor>反应堆控制</Manual_Button_Reactor>
+    <Manual_Button_Dynamo>发电机</Manual_Button_Dynamo>
+    <afflictionname.stamina>疲劳</afflictionname.stamina>
+    <afflictiondescription.stamina>表示你有多疲倦的程度</afflictiondescription.stamina>
+    <Spit>吐痰</Spit>
+    <Shout>喊叫</Shout>
+    <Interaction>互动</Interaction>
+    <Fake.handcuffs>假装被铐</Fake.handcuffs>
+    <Hands.up>举手</Hands.up>
+    <Push>推</Push>
+    <Fists>拳头</Fists>
+    <Point>指</Point>
+    <Remove_fake_handcuffs>解开假手铐</Remove_fake_handcuffs>
+    <Vomit>呕吐</Vomit>
+    <afflictionname.acid-anim>酸性粘膜灼伤</afflictionname.acid-anim>
+    <afflictiondescription.acid-anim>酸液正在灼伤我的眼部与呼吸道粘膜！每一刻都是难以忍受的剧痛。没有解药。唯有水能暂时缓解症状。</afflictiondescription.acid-anim>
+    <entityname.IJ-17-obrez>ИЖ-17 "短管版"</entityname.IJ-17-obrez>
+    <entitydescription.IJ-17-obrez>粗制短管的ИЖ-17版本。‖color:gui.green‖使用标准霰弹弹药（可装填1发）‖end‖。‖color:gui.red‖精度极差‖end‖，且 ‖color:gui.orange‖相比原版伤害更低‖end‖（由于火药燃气损失）。‖color:gui.blue‖可高效在水下射击‖end‖。‖color:gui.yellow‖紧凑，可隐藏于口袋中，并配有胶带固定的自制手电筒支架‖end‖。</entitydescription.IJ-17-obrez>
+    <onoff>开/关</onoff>
+    <suicide>自杀</suicide>
+    <spin>旋转</spin>
+    <entityname.PBammo-big>9x18мм 加长弹匣</entityname.PBammo-big>
+    <entitydescription.PBammo-big>‖color:gui.green‖20 发亚音速 9x18мм 弹药‖end‖。加大容量，适合长时间行动。</entitydescription.PBammo-big>
+    <entityname.PM>ПМ 手枪 "马卡雷奇"</entityname.PM>
+    <entitydescription.PM>一款可靠且紧凑的手枪，研制于20世纪中期。因其简单和耐用而广泛使用。使用 ‖color:gui.green‖9x18мм 弹药‖end‖。‖color:gui.blue‖水下效果较差‖end‖。可单手持握。</entitydescription.PM>
+    <entityname.Kedr>Кедр 冲锋枪 "箭矢"</entityname.Kedr>
+    <entitydescription.Kedr>一款紧凑型冲锋枪，基于ПП-91 "Кедр"发展而来。以其轻便和在潜艇狭窄空间内的易用性而闻名。使用 ‖color:gui.green‖9x18мм 弹药‖end‖。‖color:gui.blue‖水下效果较差‖end‖。</entitydescription.Kedr>
+    <afflictionname.blind-extinguisher>灭火器泡沫入眼</afflictionname.blind-extinguisher>
+    <afflictiondescription.blind-extinguisher>眼睛里进了腐蚀性泡沫！剧烈灼烧并暂时致盲。可用水冲洗。</afflictiondescription.blind-extinguisher>
+    <Welding_mode>焊机模式</Welding_mode>
+    <Manual_Button_Repair_Recipes>武器制造机配方</Manual_Button_Repair_Recipes>
+    <Tazer_mode>电击模式</Tazer_mode>
+    <pda_off_range>30米PDA干扰器</pda_off_range>
+    <entityname.Shocker>电击器 「控制者」</entityname.Shocker>
+    <entitydescription.Shocker>近距离电击装置，用于暂时使目标丧失行动能力。广泛用于联盟安全部队的 crowd control 和非致命性抓捕。\n‖color:gui.yellow‖低耗电‖end‖.</entitydescription.Shocker>
+    <entityname.40mmgrenade-handgrenade>40毫米手榴弹（改装）</entityname.40mmgrenade-handgrenade>
+    <entitydescription.40mmgrenade-handgrenade>改装自40毫米榴弹，可用于手投掷。\n‖color:gui.green‖爆炸时产生50枚破片‖end‖。\n‖color:gui.orange‖无保险握片 — 拔销后立即启动引信‖end‖。\n‖color:gui.red‖引信比普通手榴弹更快‖end‖。</entitydescription.40mmgrenade-handgrenade>
+    <entityname.40mmstungrenade-handgrenade>40毫米眩晕手榴弹（改装）</entityname.40mmstungrenade-handgrenade>
+    <entitydescription.40mmstungrenade-handgrenade>改装自40毫米眩晕榴弹，可用于手投掷。\n‖color:gui.green‖不产生破片，仅有眩晕效果‖end‖。\n‖color:gui.orange‖无保险握片 — 拔销后立即启动引信‖end‖。\n‖color:gui.red‖引信比普通手榴弹更快‖end‖。</entitydescription.40mmstungrenade-handgrenade>
+    <entityname.40mmchemgrenade-handgrenade>40毫米酸液手榴弹（改装）</entityname.40mmchemgrenade-handgrenade>
+    <entitydescription.40mmchemgrenade-handgrenade>改装自40毫米酸液榴弹，可用于手投掷。爆炸时造成严重的化学灼伤。\n‖color:gui.green‖不产生破片，仅产生酸液云‖end‖。\n‖color:gui.orange‖无保险握片 — 拔销后立即启动引信‖end‖。\n‖color:gui.red‖引信比普通手榴弹更快‖end‖。</entitydescription.40mmchemgrenade-handgrenade>
+    <entityname.40mmpeppergrenade-handgrenade>40毫米辣椒手榴弹（改装）</entityname.40mmpeppergrenade-handgrenade>
+    <entitydescription.40mmpeppergrenade-handgrenade>改装自40毫米辣椒榴弹，填充浓缩迅猛龙胆汁提取物，可用于手投掷。‖color:gui.yellow‖引起严重的眼部刺激‖end‖。‖color:gui.blue‖可用水冲洗‖end‖。\n‖color:gui.green‖不产生破片，仅产生刺激云‖end‖。\n‖color:gui.orange‖无保险握片 — 拔销后立即启动引信‖end‖。\n‖color:gui.red‖引信比普通手榴弹更快‖end‖。</entitydescription.40mmpeppergrenade-handgrenade>
+    <entityname.40mmneurogrenade-handgrenade>40毫米神经毒气手榴弹（改装）</entityname.40mmneurogrenade-handgrenade>
+    <entitydescription.40mmneurogrenade-handgrenade>改装自40毫米神经毒气榴弹，可用于手投掷。‖color:gui.yellow‖引起局部瘫痪‖end‖。‖color:gui.red‖可能致命，需要解毒剂治疗‖end‖。\n‖color:gui.green‖不产生破片，仅产生神经毒气云‖end‖。\n‖color:gui.orange‖无保险握片 — 拔销后立即启动引信‖end‖。\n‖color:gui.red‖引信比普通手榴弹更快‖end‖。</entitydescription.40mmneurogrenade-handgrenade>
+    <entityname.40mmnuke-handgrenade>40毫米迷你核手榴弹（改装）</entityname.40mmnuke-handgrenade>
+    <entitydescription.40mmnuke-handgrenade>改装自40毫米迷你核弹，可用于手投掷。‖color:gui.red‖爆炸时不产生破片‖end‖，但通过冲击波、热辐射和辐射造成巨大伤害。\n‖color:gui.orange‖无保险握片 — 拔销后立即启动引信‖end‖。\n‖color:gui.red‖引信比普通手榴弹更快‖end‖。</entitydescription.40mmnuke-handgrenade>
+    <entityname.assistantclothes>助手服</entityname.assistantclothes>
+    <entitydescription.assistantclothes>‖color:gui.green‖所有技能+5‖end‖。‖color:gui.green‖轻微减免撕裂伤和咬伤‖end‖。‖color:gui.orange‖拥有2个口袋以及工具和医疗用品包‖end‖。</entitydescription.assistantclothes>
+    <entityname.captainsuniform1>船长制服 1</entityname.captainsuniform1>
+    <entitydescription.captainsuniform1>抵御寒冷的保暖夹克。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖配有弹药包和雪茄或酒水口袋‖end‖。</entitydescription.captainsuniform1>
+    <entityname.captainsuniform2>船长制服 2</entityname.captainsuniform2>
+    <entitydescription.captainsuniform2>彰显领导身份。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖配有弹药包和酒或烟斗口袋‖end‖。</entitydescription.captainsuniform2>
+    <entityname.captainsuniform3>船长制服 3</entityname.captainsuniform3>
+    <entitydescription.captainsuniform3>彰显权威的时尚制服。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖配有弹药包和香烟小袋‖end‖。</entitydescription.captainsuniform3>
+    <entityname.captainseparatistsuniform1>分离主义者船长制服 1</entityname.captainseparatistsuniform1>
+    <entitydescription.captainseparatistsuniform1>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖配有弹药包和雪茄或酒水口袋‖end‖。</entitydescription.captainseparatistsuniform1>
+    <entityname.captainseparatistsuniform2>分离主义者船长制服 2</entityname.captainseparatistsuniform2>
+    <entitydescription.captainseparatistsuniform2>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖配有弹药包和酒或烟斗口袋‖end‖。</entitydescription.captainseparatistsuniform2>
+    <entityname.captainseparatistsuniform3>分离主义者船长制服 3</entityname.captainseparatistsuniform3>
+    <entitydescription.captainseparatistsuniform3>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖配有弹药包和香烟小袋‖end‖。</entitydescription.captainseparatistsuniform3>
+    <entityname.clowncostume>小丑服</entityname.clowncostume>
+    <entitydescription.clowncostume>‖color:gui.green‖爆炸伤害降低10%‖end‖。‖color:gui.orange‖大量口袋用于存放小丑道具和香蕉‖end‖。‖color:gui.orange‖走路发出滑稽的声音‖end‖。</entitydescription.clowncostume>
+    <entityname.clownsuitunique>传奇小丑服</entityname.clownsuitunique>
+    <entitydescription.clownsuitunique>‖color:gui.green‖爆炸伤害降低20%‖end‖。‖color:gui.orange‖大量口袋用于存放小丑道具和香蕉‖end‖。‖color:gui.orange‖走路发出滑稽的声音‖end‖。</entitydescription.clownsuitunique>
+    <entityname.orangejumpsuit1>工程师连体服 1</entityname.orangejumpsuit1>
+    <entitydescription.orangejumpsuit1>用于反应堆工作的防护服。‖color:gui.green‖高抗辐射 (60%)‖end‖。‖color:gui.green‖中等抗烧伤 (20%)‖end‖。‖color:gui.orange‖用于电线和PDA的夹子‖end‖。</entitydescription.orangejumpsuit1>
+    <entityname.orangejumpsuit2>工程师连体服 2</entityname.orangejumpsuit2>
+    <entitydescription.orangejumpsuit2>带厚绝缘层的电工服。‖color:gui.green‖高抗烧伤 (30%)‖end‖。‖color:gui.green‖轻微减免所有类型物理伤害 (5%)‖end‖。‖color:gui.orange‖用于电线和PDA的夹子‖end‖。</entitydescription.orangejumpsuit2>
+    <entityname.engineerseparatistsuniform1>工程师分离主义者制服 1</entityname.engineerseparatistsuniform1>
+    <entitydescription.engineerseparatistsuniform1>‖color:gui.green‖高抗烧伤 (30%)‖end‖。‖color:gui.green‖轻微减免所有类型物理伤害 (5%)‖end‖。‖color:gui.orange‖用于电线和PDA的夹子‖end‖。</entitydescription.engineerseparatistsuniform1>
+    <entityname.engineerseparatistsuniform2>工程师分离主义者制服 2</entityname.engineerseparatistsuniform2>
+    <entitydescription.engineerseparatistsuniform2>‖color:gui.green‖高抗烧伤 (30%)‖end‖。‖color:gui.green‖轻微减免所有类型物理伤害 (5%)‖end‖。‖color:gui.orange‖用于电线和PDA的夹子‖end‖。</entitydescription.engineerseparatistsuniform2>
+    <entityname.bluejumpsuit1>机械师连体服 1</entityname.bluejumpsuit1>
+    <entitydescription.bluejumpsuit1>机械师制服。‖color:gui.green‖较高抗撕裂伤 (15%)‖end‖。‖color:gui.green‖中等抗咬伤 (10%) 和烧伤 (20%)‖end‖。‖color:gui.orange‖两个气瓶架‖end‖。</entitydescription.bluejumpsuit1>
+    <entityname.bluejumpsuit2>机械师连体服 2</entityname.bluejumpsuit2>
+    <entitydescription.bluejumpsuit2>机械师制服。‖color:gui.green‖较高抗撕裂伤 (15%)‖end‖。‖color:gui.green‖中等抗咬伤 (10%) 和烧伤 (20%)‖end‖。‖color:gui.orange‖两个气瓶架‖end‖。</entitydescription.bluejumpsuit2>
+    <entityname.mechanicseparatistsuniform1>机械师分离主义者制服 1</entityname.mechanicseparatistsuniform1>
+    <entitydescription.mechanicseparatistsuniform1>‖color:gui.green‖较高抗撕裂伤 (15%)‖end‖。‖color:gui.green‖中等抗咬伤 (10%) 和烧伤 (20%)‖end‖。‖color:gui.orange‖两个气瓶架‖end‖。</entitydescription.mechanicseparatistsuniform1>
+    <entityname.mechanicseparatistsuniform2>机械师分离主义者制服 2</entityname.mechanicseparatistsuniform2>
+    <entitydescription.mechanicseparatistsuniform2>‖color:gui.green‖较高抗撕裂伤 (15%)‖end‖。‖color:gui.green‖中等抗咬伤 (10%) 和烧伤 (20%)‖end‖。‖color:gui.orange‖两个气瓶架‖end‖。</entitydescription.mechanicseparatistsuniform2>
+    <entityname.doctorsuniform1>医疗兵制服 1</entityname.doctorsuniform1>
+    <entitydescription.doctorsuniform1>野战医疗兵制服。‖color:gui.green‖医疗技能+5‖end‖。‖color:gui.green‖轻微减免伤口和咬伤 (5%)‖end‖。‖color:gui.green‖良好减免钝器伤 (10%)‖end‖。‖color:gui.orange‖两个额外的医疗口袋‖end‖。</entitydescription.doctorsuniform1>
+    <entityname.doctorsuniform2>医疗兵制服 2</entityname.doctorsuniform2>
+    <entitydescription.doctorsuniform2>野战医疗兵制服。‖color:gui.green‖医疗技能+5‖end‖。‖color:gui.green‖轻微减免伤口和咬伤 (5%)‖end‖。‖color:gui.green‖良好减免钝器伤 (10%)‖end‖。‖color:gui.orange‖两个额外的医疗口袋‖end‖。</entitydescription.doctorsuniform2>
+    <entityname.medicseparatistsuniform1>医疗兵分离主义者制服 1</entityname.medicseparatistsuniform1>
+    <entitydescription.medicseparatistsuniform1>‖color:gui.green‖医疗技能+5‖end‖。‖color:gui.green‖轻微减免伤口和咬伤 (5%)‖end‖。‖color:gui.green‖良好减免钝器伤 (10%)‖end‖。‖color:gui.orange‖两个额外的医疗口袋‖end‖。</entitydescription.medicseparatistsuniform1>
+    <entityname.medicseparatistsuniform2>医疗兵分离主义者制服 2</entityname.medicseparatistsuniform2>
+    <entitydescription.medicseparatistsuniform2>‖color:gui.green‖医疗技能+5‖end‖。‖color:gui.green‖轻微减免伤口和咬伤 (5%)‖end‖。‖color:gui.green‖良好减免钝器伤 (10%)‖end‖。‖color:gui.orange‖两个额外的医疗口袋‖end‖。</entitydescription.medicseparatistsuniform2>
+    <entityname.securityuniform1>安保制服 1</entityname.securityuniform1>
+    <entitydescription.securityuniform1>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.orange‖臀部弹药包和手铐/电池盒‖end‖。</entitydescription.securityuniform1>
+    <entityname.securityuniform2>安保制服 2</entityname.securityuniform2>
+    <entitydescription.securityuniform2>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.red‖携带中型物品时移动速度降低15%‖end‖。‖color:gui.orange‖可扩展的弹药包和盒子‖end‖。</entitydescription.securityuniform2>
+    <entityname.securityuniform3>安保制服 3</entityname.securityuniform3>
+    <entitydescription.securityuniform3>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.red‖携带中型物品时移动速度降低15%‖end‖。‖color:gui.orange‖模块化装备挂载点‖end‖。</entitydescription.securityuniform3>
+    <entityname.securityseparatistsuniform1>安保分离主义者制服 1</entityname.securityseparatistsuniform1>
+    <entitydescription.securityseparatistsuniform1>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.orange‖臀部弹药包和盒子‖end‖。</entitydescription.securityseparatistsuniform1>
+    <entityname.securityseparatistsuniform2>安保分离主义者制服 2</entityname.securityseparatistsuniform2>
+    <entitydescription.securityseparatistsuniform2>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.orange‖臀部弹药包和盒子‖end‖。</entitydescription.securityseparatistsuniform2>
+    <entityname.securityseparatistsuniform3>安保分离主义者制服 3</entityname.securityseparatistsuniform3>
+    <entitydescription.securityseparatistsuniform3>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.orange‖臀部弹药包和盒子‖end‖。</entitydescription.securityseparatistsuniform3>
+    <!-- NPCs Clothing -->
+    <entityname.watchmanclothes>守夜人服装</entityname.watchmanclothes>
+    <entitydescription.watchmanclothes>由耐用的轻质材料制成。‖color:gui.green‖移动速度+10%‖end‖。‖color:gui.green‖良好减免撕裂伤和咬伤 (10%)‖end‖。</entitydescription.watchmanclothes>
+    <entityname.commonerclothes1>谨慎居民外套</entityname.commonerclothes1>
+    <entitydescription.commonerclothes1>‖color:gui.green‖受到的伤害减少5%‖end‖。‖color:gui.green‖对友方伤害减少30%‖end‖。‖color:gui.orange‖有一个医疗用品口袋‖end‖。</entitydescription.commonerclothes1>
+    <entityname.commonerclothes2>加重居民外套</entityname.commonerclothes2>
+    <entitydescription.commonerclothes2>‖color:gui.green‖水流阻力增加20%‖end‖。‖color:gui.green‖轻微减免撕裂伤和咬伤 (5%)‖end‖。‖color:gui.orange‖用于焊接/氧气瓶的挂环‖end‖。</entitydescription.commonerclothes2>
+    <entityname.commonerclothes3>工匠居民外套</entityname.commonerclothes3>
+    <entitydescription.commonerclothes3>轻微绝缘。‖color:gui.green‖设备维修速度+10%‖end‖。‖color:gui.green‖中等抗撕裂伤 (10%) 和烧伤 (15%)‖end‖。‖color:gui.green‖轻微减免咬伤和钝器伤 (5%)‖end‖。‖color:gui.orange‖工具包和气瓶挂环‖end‖。</entitydescription.commonerclothes3>
+    <entityname.commonerclothes4>民兵居民外套</entityname.commonerclothes4>
+    <entitydescription.commonerclothes4>轻甲。‖color:gui.green‖维修速度+10%‖end‖。‖color:gui.green‖轻微减免撕裂伤、咬伤、枪伤 (5%)‖end‖。‖color:gui.green‖良好减免钝器伤 (15%)‖end‖。‖color:gui.orange‖手枪套和手铐/电池盒‖end‖。</entitydescription.commonerclothes4>
+    <entityname.commonerclothes5>船坞居民外套</entityname.commonerclothes5>
+    <entitydescription.commonerclothes5>防护性较低，更适合焊接。‖color:gui.green‖工具船体维修速度+10%‖end‖。‖color:gui.green‖轻微减免撕裂伤和咬伤 (5%)‖end‖。‖color:gui.green‖中等抗烧伤 (10%)‖end‖。‖color:gui.orange‖工具包和气瓶挂环‖end‖。</entitydescription.commonerclothes5>
+    <entityname.crewchiefclothes>水手长服装</entityname.crewchiefclothes>
+    <entitydescription.crewchiefclothes>典型的管事衣着。‖color:gui.green‖所有技能+2‖end‖。‖color:gui.green‖轻微减免撕裂伤 (5%) 和烧伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖工具包和医疗袋‖end‖。</entitydescription.crewchiefclothes>
+    <entityname.medicalofficerclothes>医官服装</entityname.medicalofficerclothes>
+    <entitydescription.medicalofficerclothes>外科手术服。‖color:gui.green‖医疗物品效果+10%‖end‖。‖color:gui.green‖医疗技能+15‖end‖。‖color:gui.orange‖两个医疗口袋‖end‖。</entitydescription.medicalofficerclothes>
+    <entityname.minerclothes>矿工服装</entityname.minerclothes>
+    <entitydescription.minerclothes>‖color:gui.green‖采矿速度+10%‖end‖。‖color:gui.green‖中等抗撕裂伤 (15%)‖end‖。‖color:gui.green‖高抗钝器伤 (20%)‖end‖。‖color:gui.green‖轻微减免咬伤 (5%)‖end‖。‖color:gui.orange‖用于矿石和材料的大口袋‖end‖。</entitydescription.minerclothes>
+    <entityname.quartermasterclothes>军需官服装</entityname.quartermasterclothes>
+    <entitydescription.quartermasterclothes>‖color:gui.green‖携带弹药或板条箱时移动速度+10%‖end‖。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.orange‖工具包和PDA/声纳盒‖end‖。</entitydescription.quartermasterclothes>
+    <entityname.researcherclothes>研究员服装</entityname.researcherclothes>
+    <entitydescription.researcherclothes>功能齐全的科学家服装。‖color:gui.green‖基因组合稳定性+10%‖end‖。‖color:gui.green‖电气、机械和医疗技能+5‖end‖。‖color:gui.green‖轻微减免撕裂伤和咬伤 (5%)‖end‖。‖color:gui.orange‖两个医疗口袋‖end‖。</entitydescription.researcherclothes>
+    <entityname.securitypatrolclothes>安保巡逻服装</entityname.securitypatrolclothes>
+    <entitydescription.securitypatrolclothes>‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免枪伤和咬伤 (10%)‖end‖。‖color:gui.orange‖用于手铐或电池的模块化插槽‖end‖。</entitydescription.securitypatrolclothes>
+    <entityname.administratorclothes>管理员服装</entityname.administratorclothes>
+    <entitydescription.administratorclothes>中层管理人员衣着。‖color:gui.green‖驾驶技能+5‖end‖。‖color:gui.green‖轻微减免撕裂伤和咬伤 (5%)‖end‖。‖color:gui.orange‖PDA/声纳口袋和化学品放置处‖end‖。</entitydescription.administratorclothes>
+    <entityname.banditclothes1>强盗战斗服</entityname.banditclothes1>
+    <entitydescription.banditclothes1>拼凑制服。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖工具包和弹药袋‖end‖。</entitydescription.banditclothes1>
+    <entityname.banditclothes2>强盗轻便外套</entityname.banditclothes2>
+    <entitydescription.banditclothes2>轻质材料和加厚靴子。‖color:gui.green‖移动速度+10%‖end‖。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。</entitydescription.banditclothes2>
+    <entityname.vipclothes1>贵宾服装 1</entityname.vipclothes1>
+    <entitydescription.vipclothes1>时尚的疏水合成纤维。‖color:gui.green‖水流推力减少10%‖end‖。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖用于医疗物品或小型武器的隐藏口袋‖end‖。</entitydescription.vipclothes1>
+    <entityname.vipclothes2>贵宾服装 2</entityname.vipclothes2>
+    <entitydescription.vipclothes2>耐用的欧罗巴皮衣。‖color:gui.green‖移动速度+5%‖end‖。‖color:gui.green‖轻微减免撕裂伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤和钝器伤 (10%)‖end‖。‖color:gui.orange‖用于医疗物品或小型武器的隐藏口袋‖end‖。</entitydescription.vipclothes2>
+    <entityname.vipclothes3>贵宾服装 3</entityname.vipclothes3>
+    <entitydescription.vipclothes3>高端防护时装。‖color:gui.green‖轻微减免撕裂伤和烧伤 (5%)‖end‖。‖color:gui.green‖良好减免咬伤、钝器伤和枪伤 (10%)‖end‖。‖color:gui.orange‖用于医疗物品或小型武器的隐藏口袋‖end‖。</entitydescription.vipclothes3>
+    <entityname.prisonerclothes>囚服</entityname.prisonerclothes>
+    <entitydescription.prisonerclothes>监狱连体服。‖color:gui.green‖近战攻击速度+10%‖end‖。‖color:gui.green‖轻微减免撕裂伤和咬伤 (5%)‖end‖。</entitydescription.prisonerclothes>
+    <entityname.separatistcommoner2>海盗新手服装</entityname.separatistcommoner2>
+    <entitydescription.separatistcommoner2>分离主义者外套。‖color:gui.green‖移动速度+10%‖end‖。‖color:gui.green‖轻微减免撕裂伤和枪伤 (5%)‖end‖。‖color:gui.orange‖工具包‖end‖。</entitydescription.separatistcommoner2>
+    <entityname.separatistcommoner1>海盗外套</entityname.separatistcommoner1>
+    <entitydescription.separatistcommoner1>手工制作的分离主义者服装。‖color:gui.green‖移动速度+5%‖end‖。‖color:gui.green‖良好减免撕裂伤和枪伤 (10%)‖end‖。‖color:gui.red‖携带中型物品时移动速度降低15%‖end‖。‖color:gui.orange‖弹药袋和盒子‖end‖。</entitydescription.separatistcommoner1>
+    <entityname.separatistcommoner3>海盗重装外套</entityname.separatistcommoner3>
+    <entitydescription.separatistcommoner3>带有轻质装甲板的制服。‖color:gui.green‖轻微减免钝器伤 (5%)‖end‖。‖color:gui.green‖良好减免撕裂伤和枪伤 (15%)‖end‖。‖color:gui.orange‖弹药袋‖end‖。</entitydescription.separatistcommoner3>
+    <entityname.cultistrobes>邪教徒长袍</entityname.cultistrobes>
+    <entitydescription.cultistrobes>‖color:gui.yellow‖将穿着者伪装成怪物 Husk‖end‖。</entitydescription.cultistrobes>
+    <entityname.faultycultistrobes>有缺陷的邪教徒长袍</entityname.faultycultistrobes>
+    <entitydescription.faultycultistrobes>‖color:gui.red‖破损。无法伪装成 Husk‖end‖。</entitydescription.faultycultistrobes>
+    <entityname.zealotrobes>狂热者长袍</entityname.zealotrobes>
+    <entitydescription.zealotrobes>‖color:gui.yellow‖伪装成 Husk‖end‖。‖color:gui.green‖当感染度 &gt;50 时：受到的伤害减少25%，流血减少10%‖end‖。</entitydescription.zealotrobes>
+    <!-- Tools -->
+    <entityname.toolbelt>工具带</entityname.toolbelt>
+    <entitydescription.toolbelt>‖color:gui.orange‖可穿戴的工具容器。拥有2个可调节的挂包‖end‖。</entitydescription.toolbelt>
+    <entityname.Bandolier>子弹带</entityname.Bandolier>
+    <entitydescription.Bandolier>轻型战斗装备。‖color:gui.green‖远程武器和炮塔射击速度+10%‖end‖。‖color:gui.orange‖拥有三个弹药袋、一个工具包、一个声纳盒和一个医疗袋‖end‖。</entitydescription.Bandolier>
+    <entityname.baseballcap>棒球帽</entityname.baseballcap>
+    <entitydescription.baseballcap>‖color:gui.green‖所有技能+3‖end‖。</entitydescription.baseballcap>
+    <entityname.devcap>开发者帽</entityname.devcap>
+    <entitydescription.devcap>‖color:gui.green‖所有技能+3‖end‖。</entitydescription.devcap>
+    <entityname.Lightbodyarmor_sep>分离主义者轻型防弹衣</entityname.Lightbodyarmor_sep>
+    <entitydescription.Lightbodyarmor_sep>分离主义者使用的轻型防弹衣变体。‖color:gui.green‖增加弹药和手榴弹的携带空间‖end‖。‖color:gui.red‖防护能力低于标准防弹衣‖end‖，但‖color:gui.yellow‖对破片防护更好‖end‖。‖color:gui.blue‖部分保持机动性，但略微减慢穿戴者速度‖end‖。</entitydescription.Lightbodyarmor_sep>
+    <afflictionname.spasm_shot>疼痛</afflictionname.spasm_shot>
+    <afflictiondescription.spasm_shot>伤口带来的剧烈疼痛阻碍行动和集中注意力。止痛药可以暂时缓解症状。</afflictiondescription.spasm_shot>
+    <entityname.hiddenarmor>隐蔽防弹衣</entityname.hiddenarmor>
+    <entitydescription.hiddenarmor>设计用于穿在衣服下面的薄型防弹衣。‖color:gui.green‖易于隐藏，不易被发现‖end‖。‖color:gui.red‖防护性能极低 — 仅能抵挡最轻型的 firearms 和冷兵器‖end‖。</entitydescription.hiddenarmor>
+    <single>单发</single>
+    <double>两连发</double>
+    <tripple>三连发</tripple>
+    <Weapon_up>索马里式</Weapon_up>
+    <entityname.Toz-106>ТОЗ-104 "循环"</entityname.Toz-106>
+    <entitydescription.Toz-106>一种可靠的栓动式霰弹枪，为水下行动进行了改装。使用 ‖color:gui.green‖标准霰弹‖end‖。 ‖color:gui.blue‖可在水下有效射击‖end‖。 ‖color:gui.red‖需要武器技能高于50才能快速泵动上膛‖end‖。 ‖color:gui.yellow‖兼容Saiga-12的弹匣‖end‖.</entitydescription.Toz-106>
+    <!-- Simplified Chinese Translations (简体中文) -->
+    <entityname.akround-casing>5.45x39mm 弹壳</entityname.akround-casing>
+    <entitydescription.akround-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.akround-casing>
+    <entityname.Berettarounds-casing>9x19mm 弹壳</entityname.Berettarounds-casing>
+    <entitydescription.Berettarounds-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.Berettarounds-casing>
+    <entityname.1911round-casing>.45 ACP 弹壳</entityname.1911round-casing>
+    <entitydescription.1911round-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.1911round-casing>
+    <entityname.HK416round-casing>5.56x45mm 弹壳</entityname.HK416round-casing>
+    <entitydescription.HK416round-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.HK416round-casing>
+    <entityname.PBround-casing>9x18mm 弹壳</entityname.PBround-casing>
+    <entitydescription.PBround-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.PBround-casing>
+    <entityname.mapleround-casing>6.8x48mm "枫树" 弹壳</entityname.mapleround-casing>
+    <entitydescription.mapleround-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.mapleround-casing>
+    <entityname.P90round-casing>5.7x28mm 弹壳</entityname.P90round-casing>
+    <entitydescription.P90round-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.P90round-casing>
+    <entityname.Deagleround-casing>.50 弹壳</entityname.Deagleround-casing>
+    <entitydescription.Deagleround-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.Deagleround-casing>
+    <!-- ================================ 莫辛-纳甘步枪弹壳 ================================ -->
+    <entityname.mosinammos-casing>7.62x54R弹壳</entityname.mosinammos-casing>
+    <entitydescription.mosinammos-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.mosinammos-casing>
+    <entityname.SKSammos-casing>7.62x39mm 弹壳</entityname.SKSammos-casing>
+    <entitydescription.SKSammos-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.SKSammos-casing>
+    <entityname.SCARround-casing>7.62x51mm 弹壳</entityname.SCARround-casing>
+    <entitydescription.SCARround-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.SCARround-casing>
+    <entityname.M1ammos-casing>7.62x51mm 弹壳</entityname.M1ammos-casing>
+    <entitydescription.M1ammos-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.M1ammos-casing>
+    <entityname.BFG-50ammo-casing>12.7x99mm 弹壳</entityname.BFG-50ammo-casing>
+    <entitydescription.BFG-50ammo-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.BFG-50ammo-casing>
+    <entityname.RSH-12ammos-casing>12.7x55mm 弹壳</entityname.RSH-12ammos-casing>
+    <entitydescription.RSH-12ammos-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.RSH-12ammos-casing>
+    <entityname..38-casing>.38 口径 弹壳</entityname..38-casing>
+    <entitydescription..38-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription..38-casing>
+    <entityname.Model29ammo-casing>.44 Magnum 弹壳</entityname.Model29ammo-casing>
+    <entitydescription.Model29ammo-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.Model29ammo-casing>
+    <entityname.Big-Ironammo-casing>.45 Colt 弹壳</entityname.Big-Ironammo-casing>
+    <entitydescription.Big-Ironammo-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.Big-Ironammo-casing>
+    <entityname.shotgunshell-casing>霰弹弹壳</entityname.shotgunshell-casing>
+    <entitydescription.shotgunshell-casing>使用过的霰弹弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.shotgunshell-casing>
+    <entityname.ak47round-casing>7.62x39mm 弹壳</entityname.ak47round-casing>
+    <entitydescription.ak47round-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.ak47round-casing>
+    <entityname.spp-1round-casing>SPP-1 弹壳</entityname.spp-1round-casing>
+    <entitydescription.spp-1round-casing>使用过的箭形弹弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.spp-1round-casing>
+    <entityname.40mmgrenade-casing>40毫米弹壳</entityname.40mmgrenade-casing>
+    <entitydescription.40mmgrenade-casing>使用过的40毫米榴弹弹壳。可在武器制造台上回收再利用，制成普通40毫米榴弹。</entitydescription.40mmgrenade-casing>
+    <!-- ================================ KS-23弹壳 ================================ -->
+    <entityname.ks-23shell-casing>23毫米弹壳</entityname.ks-23shell-casing>
+    <entitydescription.ks-23shell-casing>使用过的弹壳。可在武器制造台上加工以制造新弹药。</entitydescription.ks-23shell-casing>
+    <!-- FN Five-seveN -->
+    <entityname.fn57>"Five-seveN" 手枪</entityname.fn57>
+    <entitydescription.fn57>比利时制造的半自动手枪。使用‖color:gui.green‖5.7x28mm低后坐力弹药‖end‖。由于初速高，因此具有优异的穿透力。‖color:gui.yellow‖配备内置反射式瞄准镜‖end‖。‖color:gui.blue‖水下效能不佳‖end‖。</entitydescription.fn57>
+    <entityname.fn57ammo>FN 5.7x28毫米弹匣</entityname.fn57ammo>
+    <entitydescription.fn57ammo>FN Five-seveN的标准弹匣。可容纳15发子弹。</entitydescription.fn57ammo>
+    <entityname.fn57bigammo>FN 5.7x28毫米加长弹匣</entityname.fn57bigammo>
+    <entitydescription.fn57bigammo>可容纳30发5.7x28毫米弹药，以提供更强的火力。</entitydescription.fn57bigammo>
+  </Override>
+</infotext>

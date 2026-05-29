@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <CargoMission identifier="cargoweaponscoalition" tags="cargocoalition,cargoweaponscoalition" type="Cargo" difficulty="1" commonness="100" achievementidentifier="cargomission">
+    <Items>
+      <Item identifier="securemetalcrate" reward="600" maxcount="4">
+        <Item identifier="HK416-anim" amount="1" />
+        <Item identifier="HK416magazine-anim" amount="9" />
+        <Item identifier="fraggrenade" amount="2" />
+      </Item>
+    </Items>
+    <Reputation identifier="coalition" amount="5" amountforopposingfaction="-5" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,256,256,256" color="243,146,55" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </CargoMission>
+  <CargoMission identifier="cargoweaponsseparatist" tags="cargoseparatist,cargoweaponsseparatist" type="Cargo" difficulty="1" commonness="75" achievementidentifier="cargomission">
+    <Items>
+      <Item identifier="securemetalcrate" reward="500" maxcount="4">
+        <Item identifier="AK-74" amount="1" />
+        <Item identifier="akmagazine" amount="9" />
+        <Item identifier="heavyfraggrenade" amount="2" />
+      </Item>
+    </Items>
+    <Reputation identifier="separatists" amount="5" amountforopposingfaction="-5" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,256,256,256" color="243,146,55" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </CargoMission>
+  <CargoMission identifier="cargoweaponscultist" tags="cargocultist,cargoweaponscultist" type="Cargo" difficulty="1" commonness="50" achievementidentifier="cargomission">
+    <Items>
+      <Item identifier="securemetalcrate" reward="500" maxcount="4">
+        <Item identifier="p-11" amount="1" />
+        <Item identifier="spp-1" amount="1" />
+        <Item identifier="spp-1round" amount="30" />
+        <Item identifier="P-11magazine" amount="6" />
+        <Item identifier="chemgrenade" amount="2" />
+      </Item>
+    </Items>
+    <Reputation identifier="separatists" amount="5" amountforopposingfaction="-5" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,256,256,256" color="243,146,55" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </CargoMission>
+</Override>

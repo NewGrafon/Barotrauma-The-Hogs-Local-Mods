@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- Чертежи для оружия из TalentsSecurity -->
+    <Item name="" identifier="mapleblueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="700" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="coalition" min="55" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="coalition" min="55" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="coalition" min="55" />
+        </Price>
+      </Price>
+      <PreferredContainer primary="armory" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedarmory,wreckarmory" amount="1" spawnprobability="0.005" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="maple,mapleapmagazine,maplemagazine" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="scarblueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="850" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="coalition" min="65" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="coalition" min="65" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="coalition" min="65" />
+        </Price>
+      </Price>
+      <PreferredContainer primary="armory" amount="1" spawnprobability="0.008" />
+      <PreferredContainer secondary="abandonedarmory,wreckarmory" amount="1" spawnprobability="0.004" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="SCAR,SCARmagazine,SCARapmagazine,SCARfmjmagazine" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="ash12blueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="900" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="coalition" min="70" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="coalition" min="70" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="coalition" min="70" />
+        </Price>
+      </Price>
+      <PreferredContainer primary="armory" amount="1" spawnprobability="0.007" />
+      <PreferredContainer secondary="abandonedarmory,wreckarmory" amount="1" spawnprobability="0.003" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="ASH-12,ASH-12magazine,ASH-12apmagazine,ASH-12fmjmagazine" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="g36blueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="750" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="coalition" min="60" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="coalition" min="60" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="coalition" min="60" />
+        </Price>
+      </Price>
+      <PreferredContainer primary="armory" amount="1" spawnprobability="0.009" />
+      <PreferredContainer secondary="abandonedarmory,wreckarmory" amount="1" spawnprobability="0.004" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="G36-anim" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- Чертежи для пулеметов -->
+    <Item name="" identifier="pkpblueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="1200" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="separatists" min="85" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="separatists" min="85" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="separatists" min="85" />
+        </Price>
+      </Price>
+      <PreferredContainer primary="armory" amount="1" spawnprobability="0.003" />
+      <PreferredContainer secondary="abandonedarmory,wreckarmory" amount="1" spawnprobability="0.001" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="PKP,PKPmagazine" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="m249blueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="1100" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="coalition" min="80" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="coalition" min="80" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="coalition" min="80" />
+        </Price>
+      </Price>
+      <PreferredContainer primary="armory" amount="1" spawnprobability="0.004" />
+      <PreferredContainer secondary="abandonedarmory,wreckarmory" amount="1" spawnprobability="0.002" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="M249,M249magazine" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- Чертежи для нейро-оружия -->
+    <Item name="" identifier="neuroweaponsblueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="650" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="separatists" min="50" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="separatists" min="50" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="separatists" min="50" />
+        </Price>
+      </Price>
+      <PreferredContainer primary="armory" amount="1" spawnprobability="0.012" />
+      <PreferredContainer secondary="abandonedarmory,wreckarmory" amount="1" spawnprobability="0.006" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="40mmneurogrenade,neurogrenade,neurospray,neuro-syringe" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- Существующие пластины -->
+    <Item name="" identifier="ceramic-plate-blueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="400" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+      </Price>
+      <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.03" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="ceramic-plate" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="steel-plate-blueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="400" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+      </Price>
+      <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.03" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="steel-plate" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="kevlar-plate-blueprint" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="400" minavailable="1" maxavailable="1" sold="false">
+        <Price storeidentifier="merchantoutpost" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+        <Price storeidentifier="merchantcity" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" sold="true">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+      </Price>
+      <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.03" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items_02.png" sourcerect="0,1744,112,32" depth="0.6" origin="0.5,0.5" />
+      <Body width="110" height="30" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-33" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" unlockrecipe="kevlar-plate" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+  </Items>
+</Override>

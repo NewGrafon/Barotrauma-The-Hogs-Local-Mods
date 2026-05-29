@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- THIS IS A VERY BAD IDEA BUT I AM DOING IT ANYWAYS -->
+<Override>
+  <Items>
+    <Item name="" identifier="skyholderartifact" category="Alien" Tags="alien,alienartifact" sonarsize="30" scale="0.5" impactsoundtag="impact_metal_heavy" allowsellingwhenbroken="true" hideconditionbar="true">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <Price baseprice="1250" soldeverywhere="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      </Price>
+      <PreferredContainer primary="wrecksecurearmcab,wreckshuttlecrate" minamount="0" maxamount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.6" sourcerect="630,0,82,108" origin="0.5,0.5" />
+      <Deconstruct time="30">
+        <Item identifier="steel" />
+        <Item identifier="oxygeniteshard" />
+        <Item identifier="oxygeniteshard" />
+        <Item identifier="oxygeniteshard" />
+      </Deconstruct>
+      <Body radius="45" density="50" friction="0.95" />
+      <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This,Hull" oxygen="-50000.0">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <ParticleEmitter particle="skyholderfx2" anglemax="360" distancemin="100" distancemax="300" velocitymin="-700" velocitymax="-1200" particlespersecond="100" />
+          <ParticleEmitter particle="skyholderfx" anglemax="360" particlespersecond="2" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <sound file="Content/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="thermalartifact" category="Alien" Tags="alien,alienartifact" sonarsize="30" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <Price baseprice="2000" soldeverywhere="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      </Price>
+      <PreferredContainer primary="wrecksecurearmcab,wreckshuttlecrate" minamount="0" maxamount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.6" sourcerect="542,112,102,99" origin="0.5,0.5" />
+      <Deconstruct time="30">
+        <Item identifier="steel" />
+        <Item identifier="incendium" />
+        <Item identifier="incendium" />
+        <Item identifier="incendium" />
+      </Deconstruct>
+      <Body radius="45" density="50" friction="0.95" />
+      <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="NotInWater" target="This" stackable="false" delay="10" checkconditionalalways="true">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <ParticleEmitter particle="thermalSetFire" anglemax="360" scalemultiplier="3,3" particleamount="40" />
+          <sound file="Content/Items/Alien/AlienTurret1.ogg" range="500.0" loop="false" />
+          <Fire />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <ParticleEmitter particle="thermalfx" anglemax="360" distancemax="5" particlespersecond="40" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <sound file="Content/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This,Character" targetlimbs="LeftHand,RightHand">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <Affliction identifier="burn" strength="0.5" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="faradayartifact" category="Alien" Tags="alien,alienartifact" sonarsize="30" scale="0.5" impactsoundtag="impact_metal_heavy" allowsellingwhenbroken="true" hideconditionbar="true">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <Price baseprice="1750" soldeverywhere="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      </Price>
+      <PreferredContainer primary="wrecksecurearmcab,wreckshuttlecrate" minamount="0" maxamount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.6" sourcerect="645,108,93,103" origin="0.5,0.5" />
+      <Deconstruct time="30">
+        <Item identifier="steel" />
+        <Item identifier="fulgurium" />
+        <Item identifier="fulgurium" />
+        <Item identifier="fulgurium" />
+      </Deconstruct>
+      <Body radius="45" density="50" friction="0.95" />
+      <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
+        <!-- EMP explosion every 10 seconds -->
+        <StatusEffect type="Always" target="This" Condition="0" disabledeltatime="true" delay="10" stackable="false" setvalue="true" />
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <sound file="Content/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
+        </StatusEffect>
+        <!-- Use a constant conditional instead of 'OnBroken', this fixes a semi-rare bug where an artifact would 'break' during a load transition and become inert -->
+        <StatusEffect type="Always" target="This" Condition="100" disabledeltatime="true" delay="0.5" stackable="false" allowwhenbroken="true" checkconditionalalways="true">
+          <Conditional condition="eq 0" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.5" checkconditionalalways="true">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <Explosion range="200.0" empstrength="5" camerashake="0" stun="0" force="2.0" flames="false" smoke="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <ParticleEmitter particle="faradayfx" anglemax="360" distancemax="80" scalemultiplier="2.6,2.6" particleamount="40" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <ParticleEmitter particle="faradayfx" anglemax="360" distancemax="10" particlespersecond="10" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="nasonovartifact" category="Alien" Tags="alien,nasonov,alienartifact" pickdistance="150" sonarsize="30" scale="0.5" impactsoundtag="impact_metal_heavy" allowsellingwhenbroken="true" hideconditionbar="true">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <Price baseprice="1500" soldeverywhere="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      </Price>
+      <PreferredContainer primary="wrecksecurearmcab,wreckshuttlecrate" minamount="0" maxamount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.6" sourcerect="718,6,78,102" origin="0.5,0.5" />
+      <Deconstruct time="30">
+        <Item identifier="steel" />
+        <Item identifier="physicorium" />
+        <Item identifier="physicorium" />
+        <Item identifier="physicorium" />
+      </Deconstruct>
+      <AiTarget sightrange="10000.0" soundrange="10000" static="True" />
+      <Body radius="45" density="50" friction="0.95" />
+      <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <sound file="Content/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <ParticleEmitter particle="nasonovsparkles" anglemax="360" distancemax="10" velocitymin="10" velocitymax="60" emitinterval="0.55" particleamount="5" particlespersecond="5" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="0" delay="1.1" stackable="false" setvalue="true" checkconditionalalways="true" />
+        <!-- Use a constant conditional instead of 'OnBroken', this fixes a semi-rare bug where an artifact would 'break' during a load transition and become inert -->
+        <StatusEffect type="Always" target="This" Condition="100" disabledeltatime="true" delay="0.5" stackable="false" allowwhenbroken="true" checkconditionalalways="true">
+          <Conditional condition="eq 0" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.4">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <ParticleEmitter particle="nasonovfx" anglemax="360" particleamount="3" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="psychosisartifact" category="Alien" Tags="alien,alienartifact" sonarsize="30" spritecolor="200,200,200,255" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <Upgrade gameversion="0.9.3.1" scale="0.5" />
+      <Price baseprice="1500" soldeverywhere="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.85" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      </Price>
+      <PreferredContainer primary="wrecksecurearmcab,wreckshuttlecrate" minamount="0" maxamount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.6" sourcerect="541,0,88,108" origin="0.5,0.5" />
+      <Deconstruct time="30">
+        <Item identifier="steel" />
+        <Item identifier="dementonite" />
+        <Item identifier="dementonite" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <Body radius="45" density="50" friction="0.95" />
+      <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <sound file="Content/Items/Alien/AlienArtifactLoop1.ogg" range="500.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This,NearbyCharacters" range="450">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <ParticleEmitter particle="nasonovsparkles" anglemax="360" distancemax="10" velocitymin="10" velocitymax="60" emitinterval="0.55" particleamount="5" particlespersecond="5" />
+          <ParticleEmitter particle="psychosisfx" scalemultiplier="0.7,0.7" anglemax="360" emitinterval="1.1" particleamount="1" particlespersecond="1" />
+          <Affliction identifier="psychosis" strength="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This,Character">
+          <Conditional hastag="neq artifactcontainer" targetcontainer="true" />
+          <Affliction identifier="psychosis" strength="0.5" />
+        </StatusEffect>
+      </Holdable>
+      <LightComponent range="150.0" lightcolor="255,56,144,111" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.9" pulsefrequency="0.25" />
+    </Item>
+    <!--
+  <Item name="" identifier="shellshield" category="Equipment" tags="smallitem" health="500" cargocontaineridentifier="metalcrate" damagedbyprojectiles="true" impactsoundtag="impact_soft" scale="0.5" allowasextracargo="true">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <Price baseprice="1" soldeverywhere="false" canbespecial="false">
+      <Price storeidentifier="merchantoutpost" sold="false"/>
+      <Price storeidentifier="merchantcity" sold="false"/>
+      <Price storeidentifier="merchantresearch" sold="false"/>
+      <Price storeidentifier="merchantmilitary" sold="false"/>
+      <Price storeidentifier="merchantmine" sold="false"/>
+    </Price>
+    <PreferredContainer primary="locker"/>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="962,322,61,61" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" sourcerect="464,1,48,229" origin="0.5,0.5" depth="0.55" />
+    <Body width="40" height="145" density="30" />
+    <Holdable slots="RightHand,LeftHand" aimpos="60,-30" holdpos="45,-30" handle1="-10,0" handle2="10,0" controlpose="true" blocksplayers="true" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+      <StatusEffect type="OnBroken" target="This">
+        <particleemitter particle="brownchunks" drawontop="true" particleamount="50" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="30" scalemin="0.1" scalemax="0.35" />
+        <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnDamaged" target="This">
+        <particleemitter particle="brownchunks" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+        <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+-->
+  </Items>
+</Override>

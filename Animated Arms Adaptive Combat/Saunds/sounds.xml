@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <sounds>
+    <music file="%ModDir%/Saunds/Main music.ogg" type="menu" continuefromprevioustime="true" />
+    <music file="%ModDir%/Saunds/Lobby.ogg" type="editor" continuefromprevioustime="true" />
+    <music file="%ModDir%/Saunds/Dead.ogg" type="crewdead" />
+  </sounds>
+</Override>

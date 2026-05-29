@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekgunnery_modularmissile_body1a" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="0,0,96,308" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,100" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="0,0,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="0,0,96,308" origin="0.5, 0.6" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body1b" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="96,0,96,308" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,100" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="0,0,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="96,0,96,308" origin="0.5, 0.6" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body2a" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="192,0,96,308" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,115" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,0,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="192,0,96,308" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body2b" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="288,0,96,308" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,115" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,0,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="288,0,96,308" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body2c" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="200,200,200,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="384,0,96,308" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,115" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,0,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="384,0,96,308" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body3a" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="480,0,64,512" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,75" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="128,0,80,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="480,0,64,512" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_torpedobubbles" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="2" scalemax="2.5" />
+      <ParticleEmitter particle="ekgunnery_torpedomist" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body3b" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="544,0,64,512" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,75" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="128,0,80,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="544,0,64,512" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_torpedobubbles" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="2" scalemax="2.5" />
+      <ParticleEmitter particle="ekgunnery_torpedomist" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body3c" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="608,0,64,512" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,75" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="128,0,80,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="608,0,64,512" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_torpedobubbles" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="2" scalemax="2.5" />
+      <ParticleEmitter particle="ekgunnery_torpedomist" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body3d" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="200,200,200,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="672,0,64,512" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,75" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="128,0,80,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="672,0,64,512" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_torpedobubbles" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="2" scalemax="2.5" />
+      <ParticleEmitter particle="ekgunnery_torpedomist" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body4a" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="0,320,80,320" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,115" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="0,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="0,320,80,320" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body4b" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="80,320,80,320" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,115" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="0,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="80,320,80,320" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body4c" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="200,200,200,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="160,320,80,320" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,115" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="0,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="160,320,80,320" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-750" scalemin="1" scalemax="1.25" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body5a" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="0,640,112,496" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,220" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="0,640,112,496" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="1.5" scalemax="2.0" />
+      <ParticleEmitter particle="ekgunneryrockettrailmedium" particleamount="1" anglemin="-5" anglemax="5" velocitymin="-100" velocitymax="-250" scalemin="1.5" scalemax="2.0" distancemin="-64" distancemax="-64" colormultiplier="255,125,100,255" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body5b" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="112,640,112,496" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,220" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="112,640,112,496" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="1.5" scalemax="2.0" />
+      <ParticleEmitter particle="ekgunneryrockettrailmedium" particleamount="1" anglemin="-5" anglemax="5" velocitymin="-100" velocitymax="-250" scalemin="1.5" scalemax="2.0" distancemin="-64" distancemax="-64" colormultiplier="255,125,100,255" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body5c" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="224,640,112,496" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,220" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="224,640,112,496" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="1.5" scalemax="2.0" />
+      <ParticleEmitter particle="ekgunneryrockettrailmedium" particleamount="1" anglemin="-5" anglemax="5" velocitymin="-100" velocitymax="-250" scalemin="1.5" scalemax="2.0" distancemin="-64" distancemax="-64" colormultiplier="255,125,100,255" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body5d" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="336,640,112,496" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,220" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="336,640,112,496" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="1.5" scalemax="2.0" />
+      <ParticleEmitter particle="ekgunneryrockettrailmedium" particleamount="1" anglemin="-5" anglemax="5" velocitymin="-100" velocitymax="-250" scalemin="1.5" scalemax="2.0" distancemin="-64" distancemax="-64" colormultiplier="255,125,100,255" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_body5e" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" sourcerect="448,640,112,496" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,0,1,1" origin="0.5,0.5" maxcondition="90" />
+    <ItemContainer hideitems="true" drawinventory="false" capacity="1" canbeselected="false" characterusable="false">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="48,48" reload="0.025" firingoffset="0,220" usefiringoffsetformuzzleflash="true" rotationlimits="180,-180" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_modularmissile.png" sourcerect="64,32,64,24" origin="0.5, 0.49" />
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_modularmissile1.png" depth="0.805" sourcerect="448,640,112,496" origin="0.5, 0.5" />
+      <ParticleEmitter particle="ekgunnery_missileglow" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="1.5" scalemax="2.0" />
+      <ParticleEmitter particle="ekgunneryrockettrailmedium" particleamount="1" anglemin="-5" anglemax="5" velocitymin="-100" velocitymax="-250" scalemin="1.5" scalemax="2.0" distancemin="-64" distancemax="-64" colormultiplier="255,125,100,255" />
+      <ParticleEmitter particle="ekgunnery_missilesmoke" particleamount="1" anglemin="-20" anglemax="20" velocitymin="-250" velocitymax="-500" scalemin="6.0" scalemax="8.0" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_soundemitter1" category="Legacy" Tags="sound" scale="0.5" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="224,256,32,32" />
+    <LightComponent canbeselected="false" lightcolor="0,0,0,2" castshadows="false" range="1">
+      <sound file="%ModDir%/Items/Weapons/ekgunnery_rocketmotor1_mono.ogg" type="OnActive" range="8000.0" loop="true" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_soundemitter2" category="Legacy" Tags="sound" scale="0.5" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="224,256,32,32" />
+    <LightComponent canbeselected="false" lightcolor="0,0,0,2" castshadows="false" range="1">
+      <sound file="%ModDir%/Items/Weapons/ekgunnery_largetorpedomotor1_mono.ogg" type="OnActive" range="8000.0" loop="true" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_engine1" Tags="engine" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,288,64,32" />
+    <Engine minvoltage="0.0" powerconsumption="0.0" maxforce="50" canbeselected="true" propellerpos="0,0" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.18" minsize="450,200" anchor="Center" style="ItemUI" />
+    </Engine>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="set_force" displayname="connection.setforce" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_pump1" Tags="engine" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="64,288,64,32" />
+    <Pump canbeselected="true" maxflow="50" PowerConsumption="0.0" MinVoltage="0.0" IsOn="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+    </Pump>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_active" displayname="connection.setstate" />
+      <input name="set_speed" displayname="connection.setpumpingspeed" />
+      <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_transducer1" Tags="command,camera,sonartransducer" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="true" offsetonselected="1100" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="256,192,64,64" />
+    <SonarTransducer MinVoltage="0.5" PowerConsumption="100" canbeselected="true" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="control_in" displayname="connection.controlin" />
+      <output name="data_out" displayname="connection.sonardataout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_transducer2" Tags="command,camera,sonartransducer" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="true" offsetonselected="1500" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="256,192,64,64" />
+    <SonarTransducer MinVoltage="0.5" PowerConsumption="100" canbeselected="true" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="control_in" displayname="connection.controlin" />
+      <output name="data_out" displayname="connection.sonardataout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_navcomputer1" Tags="command,sonarmonitor" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="256,256,64,64" />
+    <Steering minvoltage="0" canbeselected="false" powerconsumption="0" linkuitocomponent="Sonar" msg="ItemMsgInteractSelect" allowuioverlap="true" hudlayer="-1">
+      <GuiFrame relativesize="0.55,0.59" anchor="Center" style="OuterGlow" color="0,0,0,0.8" relativeoffset="0.1,-0.05" />
+      <MaintainPosIndicator texture="Content/Items/Command/NavUI.png" sourcerect="50,0,60,61" />
+      <MaintainPosOriginIndicator texture="Content/Items/Command/NavUI.png" sourcerect="0,0,50,54" />
+      <SteeringIndicator texture="Content/Items/Command/NavUI.png" sourcerect="0,135,362,16" origin="0,0.5" />
+      <poweronsound file="Content/Items/PowerOnLight2.ogg" range="1000" loop="false" />
+      <!-- <RequiredSkill identifier="weapons" level="50" /> -->
+    </Steering>
+    <Sonar range="100.0" canbeselected="false" powerconsumption="0" displaybordersize="-0.1" allowuioverlap="true" hudlayer="-2">
+      <GuiFrame relativesize="0.55,0.59" anchor="Center" relativeoffset="0.1,-0.05" />
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5" />
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5" />
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5" />
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5" />
+      <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5" />
+      <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5" />
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5" />
+    </Sonar>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="velocity_in" displayname="connection.steeringvelocityin" />
+      <output name="velocity_x_out" displayname="connection.velocityxout" />
+      <output name="velocity_y_out" displayname="connection.velocityyout" />
+      <output name="current_velocity_x" displayname="connection.currentvelocityx" />
+      <output name="current_velocity_y" displayname="connection.currentvelocityy" />
+      <output name="current_position_x" displayname="connection.currentpositionx" />
+      <output name="current_position_y" displayname="connection.currentpositiony" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_dockingporty" tags="dock" category="Legacy" linkable="true" scale="0.5" indestructible="true" requirecursorinsidetrigger="true" requirebodyinsidetrigger="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="128,256,96,64" depth="0.94" origin="0.5,0.5" />
+    <trigger x="2" y="-2" width="12" height="60" />
+    <trigger x="82" y="-2" width="12" height="60" />
+    <DockingPort IsHorizontal="false" DistanceTolerance="64,175" DockedDistance="64">
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <sound file="%ModDir%/Items/Weapons/ekgunnery_missiledock1.ogg" type="OnSecondaryUse" range="1500.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <sound file="%ModDir%/Items/Weapons/ekgunnery_missiledock2.ogg" type="OnUse" range="1500.0" />
+      </StatusEffect>
+    </DockingPort>
+    <PowerTransfer CanBeOverloaded="false" FireProbability="0.0" />
+    <Wire />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="power" displayname="connection.power" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+      <output name="proximity_sensor" displayname="connection.dockingproximitysensor" fallbackdisplayname="label.readytodock" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_dockingportshorty" tags="dock" category="Legacy" linkable="true" scale="0.5" indestructible="true" requirecursorinsidetrigger="true" requirebodyinsidetrigger="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="128,256,96,64" depth="0.94" origin="0.5,0.5" />
+    <trigger x="2" y="-2" width="12" height="60" />
+    <trigger x="82" y="-2" width="12" height="60" />
+    <DockingPort IsHorizontal="false" DistanceTolerance="64,175" DockedDistance="32">
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <sound file="%ModDir%/Items/Weapons/ekgunnery_missiledock1.ogg" type="OnSecondaryUse" range="1500.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <sound file="%ModDir%/Items/Weapons/ekgunnery_missiledock2.ogg" type="OnUse" range="1500.0" />
+      </StatusEffect>
+    </DockingPort>
+    <PowerTransfer CanBeOverloaded="false" FireProbability="0.0" />
+    <Wire />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="power" displayname="connection.power" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+      <output name="proximity_sensor" displayname="connection.dockingproximitysensor" fallbackdisplayname="label.readytodock" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_dockingportx" tags="dock" category="Legacy" linkable="true" scale="0.5" indestructible="true" requirecursorinsidetrigger="true" requirebodyinsidetrigger="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="192,160,64,96" depth="0.94" origin="0.5,0.5" />
+    <trigger x="2" y="-2" width="60" height="12" />
+    <trigger x="2" y="-82" width="60" height="12" />
+    <DockingPort IsHorizontal="true" DistanceTolerance="175,64" DockedDistance="64">
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <sound file="Mods/EK Dockyard/Items/Door/dockingrail2.ogg" type="OnSecondaryUse" range="1500.0" volume="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <sound file="Mods/EK Dockyard/Items/Door/dockingrail1.ogg" type="OnUse" range="1500.0" volume="0.5" />
+      </StatusEffect>
+    </DockingPort>
+    <PowerTransfer CanBeOverloaded="false" FireProbability="0.0" />
+    <Wire />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="power" displayname="connection.power" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+      <output name="proximity_sensor" displayname="connection.dockingproximitysensor" fallbackdisplayname="label.readytodock" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_dockingportshortx" tags="dock" category="Legacy" linkable="true" scale="0.5" indestructible="true" requirecursorinsidetrigger="true" requirebodyinsidetrigger="false" invulnerabletodamage="true" hiddeningame="true">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="192,160,64,96" depth="0.94" origin="0.5,0.5" />
+    <trigger x="2" y="-2" width="60" height="12" />
+    <trigger x="2" y="-82" width="60" height="12" />
+    <DockingPort IsHorizontal="true" DistanceTolerance="175,64" DockedDistance="32">
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <sound file="Mods/EK Dockyard/Items/Door/dockingrail2.ogg" type="OnSecondaryUse" range="1500.0" volume="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <sound file="Mods/EK Dockyard/Items/Door/dockingrail1.ogg" type="OnUse" range="1500.0" volume="0.5" />
+      </StatusEffect>
+    </DockingPort>
+    <PowerTransfer CanBeOverloaded="false" FireProbability="0.0" />
+    <Wire />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="power" displayname="connection.power" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+      <output name="proximity_sensor" displayname="connection.dockingproximitysensor" fallbackdisplayname="label.readytodock" />
+    </ConnectionPanel>
+  </Item>
+  <!-- Spawn position bug & no physics force
+  <Item name="Forcer Test 1" identifier="ekgunnery_forcertest1" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255" 
+  description="Component of modular shuttle-based munitions" >
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <LightComponent range="600" lightcolor="140,197,180,111" IsOn="true" castshadows="true" allowingameediting="false" flicker="0.2" flickerspeed="5.0" pulsefrequency="0.2" pulseamount="0.4">
+      <sprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="1075,1367,395,395" origin="0.5,0.5" />
+      <StatusEffect type="Always" target="This">
+        <sound file="Content/Items/Alien/ALIEN_gravitySphereLoop.ogg" range="500.0" loop="true" />
+      </StatusEffect>
+    </LightComponent>
+    <TriggerComponent triggeredby="Submarine" force="0,-250" radius="250" forcemode="Acceleration" forcefalloff="true" forcevelocitylimit="200">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="gravityspherefx" particleamount="1" emitinterval="1.25" />
+      </StatusEffect>
+    </TriggerComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  
+  <Item name="Forcer Test 2" identifier="ekgunnery_forcertest2" category="Legacy" focusonselected="false" linkable="false" Scale="1.0" nonplayerteaminteractable="True" spritecolor="255,255,255,255" 
+  description="Component of modular shuttle-based munitions" >
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="0,192,96,96" canflipy="false" />
+    <LightComponent range="600" lightcolor="140,197,180,111" IsOn="true" castshadows="true" allowingameediting="false" flicker="0.2" flickerspeed="5.0" pulsefrequency="0.2" pulseamount="0.4">
+      <sprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="1075,1367,395,395" origin="0.5,0.5" />
+      <StatusEffect type="Always" target="This">
+        <sound file="Content/Items/Alien/ALIEN_gravitySphereLoop.ogg" range="500.0" loop="true" />
+      </StatusEffect>
+    </LightComponent>
+    <TriggerComponent triggeredby="Submarine" force="0,250" radius="250" forcemode="Acceleration" forcefalloff="true" forcevelocitylimit="200">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="gravityspherefx" particleamount="1" emitinterval="1.25" />
+      </StatusEffect>
+    </TriggerComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  -->
+  <Item name="" identifier="ekgunnery_modularmissile_thruster100" Tags="engine" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="256,128,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="96,192,64,64" canflipy="false" />
+    <!--<StaticBody width="60" radius="60" />-->
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true">
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <Containable items="ekgunnery_modularmissile_thrusterforcer100" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_modularmissile_thrusterforcer100" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="32,32" rotationlimits="270,270" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" recoildistance="0" reload="0" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8" firingoffset="0,150" usefiringoffsetformuzzleflash="false">
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.810" sourcerect="256,128,64,64" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="ekgunnery_modularmissile_thrusterforcer100" identifier="ekgunnery_modularmissile_thrusterforcer100" tags="" hideinmenus="true" category="Legacy" scale="1">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="35" density="5.25" />
+    <Projectile characterusable="false" launchimpulse="45.0" targetforce="-45" sticktostructures="true" stickpermanently="true" maxtargetstohit="1">
+      <StatusEffect type="OnImpact" target="This" condition="-100" disabledeltatime="true" />
+      <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="0.08" />
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <Attack targetforce="-50" severlimbsprobability="0">
+        <Affliction identifier="drag" strength="0.01" />
+      </Attack>
+    </Projectile>
+  </Item>
+  <Item name="" identifier="ekgunnery_modularmissile_thruster050" Tags="engine" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="256,128,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.8" sourcerect="96,192,64,64" canflipy="false" />
+    <!--<StaticBody width="60" radius="60" />-->
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true">
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <Containable items="ekgunnery_modularmissile_thrusterforcer050" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_modularmissile_thrusterforcer050" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="32,32" rotationlimits="270,270" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" recoildistance="0" reload="0" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8" firingoffset="0,150" usefiringoffsetformuzzleflash="false">
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" depth="0.810" sourcerect="256,128,64,64" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="ekgunnery_modularmissile_thrusterforcer050" identifier="ekgunnery_modularmissile_thrusterforcer050" tags="" hideinmenus="true" category="Legacy" scale="1">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_rotationhelper.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="35" density="2.5" />
+    <Projectile characterusable="false" launchimpulse="45.0" targetforce="-45" sticktostructures="true" stickpermanently="true" maxtargetstohit="1">
+      <StatusEffect type="OnImpact" target="This" condition="-100" disabledeltatime="true" />
+      <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="0.08" />
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <Attack targetforce="-50" severlimbsprobability="0">
+        <Affliction identifier="drag" strength="0.01" />
+      </Attack>
+    </Projectile>
+  </Item>
+</Items>

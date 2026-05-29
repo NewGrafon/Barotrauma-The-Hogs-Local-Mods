@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="scrapcannon" HideConditionBar="true" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,mountableweapon,provocativetohumanai" Scale="0.5" impactsoundtag="impact_metal_heavy">
+      <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+      <Price baseprice="640" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="2" sold="true">
+          <Reputation faction="separatists" min="70" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="2" sold="true">
+          <Reputation faction="separatists" min="70" />
+        </Price>
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="copper" />
+        <Item identifier="plastic" />
+        <Item identifier="lead" />
+        <Item identifier="titaniumaluminiumalloy" amount="2" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="70" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="65" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="lead" amount="2" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/scrapcannon/scrapcannon.png" name="icon" sourcerect="3,287,126,115" depth="0.55" origin="0.5,0.45" />
+      <Sprite texture="%ModDir%/scrapcannon/scrapcannon.png" sourcerect="0,32,158,58" depth="0.55" origin="0.5,0.45" />
+      <BrokenSprite texture="%ModDir%/scrapcannon/scrapcannon.png" name="cond - 50" sourcerect="199,94,158,58" depth="0.55" origin="0.5,0.45" maxcondition="50" />
+      <BrokenSprite texture="%ModDir%/scrapcannon/scrapcannon.png" name="conditin - 0" sourcerect="0,130,158,81" depth="0.55" origin="0.49686953,0.5749619" maxcondition="0" />
+      <Body width="158" height="40" density="25" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="55,-10" handle1="-26,-20" handle2="10,-3" holdangle="-35">
+			      <StatusEffect type="OnBroken" target="Contained" targetidentifiers="flamreloading" delay="0.01" condition="0" setvalue="true" />
+		      <StatusEffect type="OnBroken" target="Contained" targetidentifiers="flamreloading" delay="3" condition="100" setvalue="true" /><StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="flamreloading" condition="100" setvalue="true" /><StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" /><StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true"><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" /><Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" /><Conditional HasStatusTag="neq recoil_lock" /></StatusEffect></Holdable>
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Scrap Cannon Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="354,371,158,55" limb="Torso" scale="0.5" origin="0.5,1.0" />
+      </Wearable>
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Scrap Cannon Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="100" inheritlimbdepth="false" depth="0.6" sourcerect="354,371,158,55" limb="Torso" scale="0.5" origin="0.5,1.0" />
+      </Wearable>
+      <RangedWeapon reload="2.5" barrelpos="67,5" spread="0" unskilledspread="4" combatPriority="80" launchimpulse="20" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <ParticleEmitter particle="explosionsmoke" particleamount="2" velocitymin="0" anglemin="0" anglemax="360" velocitymax="0" distance="5" scalemin="0.3" scalemax="0.5" />
+        <ParticleEmitter particle="shrapnel" particleamount="50" velocitymin="500" velocitymax="1500" anglemin="-30" anglemax="30" scalemin="0.5" scalemax="1.0" />
+        <ParticleEmitter particle="spark" particleamount="50" velocitymin="500" velocitymax="1500" anglemin="-30" anglemax="30" scalemin="0.5" scalemax="1.0" />
+        <Sound file="Content/Items/Jobgear/Mechanic/WEAPON_scrapCannonShot1.ogg" range="3000" type="OnUse" selectionmode="Random" volume="4" />
+        <Sound file="Content/Items/Jobgear/Mechanic/WEAPON_scrapCannonShot2.ogg" range="3000" type="OnUse" volume="4" />
+        <Sound file="Content/Items/Jobgear/Mechanic/WEAPON_scrapCannonShot3.ogg" range="3000" type="OnUse" volume="4" />
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="250.0" force="3" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" Condition="-12.5" targetslot="7" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" Condition="-1" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" delay="2.25">
+          <RequiredItems items="scrapcannonammo,throwable" type="Contained" />
+          <Sound file="%ModDir%/Saunds/weapon_unjam.ogg" frequencymultiplier="1.5" volume="0.25" type="OnUse" range="500" />
+          <ParticleEmitter particle="spark" particleamount="20" velocitymin="100" velocitymax="200" distance="30" anglemin="-15" anglemax="15" scalemin="0.25" scalemax="0.5" CopyEntityAngle="true" />
+        </StatusEffect>
+        <RequiredItems items="scrapcannonammo,throwable" type="Contained" msg="itemmsgammorequired" />
+        <RequiredItems items="mobilebattery" type="Contained" msg="itemmsgbatterycellrequired" />
+        <RequiredItems items="flamreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="45" />
+      </RangedWeapon>
+      <ItemContainer capacity="7" maxstacksize="1" slotsperrow="2" hideitems="true" containedspritedepth="0.56" containedstateindicatorslot="0">
+        <Containable items="scrapcannonammo,throwable">
+          <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.01" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This" delay="3.0" setvalue="true" />
+          <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" hideitems="true" holdpos="50,-15" aimpos="45,0" handle2="10,-3" holdangle="-10" aimangle="-10" condition="0" delay="0.01" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" condition="50" delay="0.02" handle2="0,15" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.4" condition="0" handle2="50,25" setvalue="true" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" frequencymultiplier="2" type="OnUse" volume="3" range="500" />
+          </StatusEffect>
+          <!-- Промежуточные кадры для handle2 -->
+          <StatusEffect type="OnInserted" target="This" delay="0.3" handle2="25,20" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.35" handle2="37,22" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.45" handle2="55,27" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.5" handle2="60,28" setvalue="true" stackable="false" />
+          <!-- Промежуточные кадры для particle effects -->
+          <StatusEffect type="OnInserted" target="This" delay="0.4" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="lte 99" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="4" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.5" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="lte 98.5" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.95" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.6" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="lte 98" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.9" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.7" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="lte 97.5" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.85" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.8" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 97" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.91" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.9" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 96.5" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.915" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.0" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 96" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.92" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.1" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 95.5" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.925" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.2" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 95" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.93" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.3" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 94.5" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.935" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.4" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 94" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.94" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.5" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 93.5" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.945" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.6" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 93" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.95" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.7" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 92.5" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.955" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.8" setvalue="true" forceplaysounds="true">
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" velocitymin="0" velocitymax="25" anglemin="0" anglemax="360" scalemin="0.25" scalemax="1" />
+            <Conditional condition="eq 92" />
+            <sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" frequencymultiplier="3.96" volume="0.5" />
+          </StatusEffect>
+          <!-- Промежуточные кадры для itempos и handle2 -->
+          <StatusEffect type="OnInserted" target="This" delay="1.1" hideitems="false" itempos="0,32" handle2="-12,38" condition="0" setvalue="true" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/Saunds/magout_545.ogg" frequencymultiplier="0.6" type="OnUse" volume="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.2" itempos="0,31" handle2="-13,37" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.3" itempos="0,29" handle2="-14,34" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.4" itempos="0,27" handle2="-15,32" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.45" itempos="0,25" handle2="-16,30" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.5" itempos="0,23" handle2="-17,27" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.55" itempos="0,21" handle2="-18,24" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.6" itempos="0,19" handle2="-19,21" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.65" itempos="0,17" handle2="-20,18" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.7" itempos="0,15" handle2="-20,15" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" itempos="0,13" delay="1.75" aimangle="5" holdangle="5" setvalue="true" stackable="false">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" itempos="0,11" delay="1.8" aimangle="3" holdangle="3" setvalue="true" stackable="false">
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" itempos="0,10" delay="1.85" aimangle="0" holdangle="0" setvalue="true" stackable="false">
+            <ParticleEmitter particle="gunbubbles" particleamount="1" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+          </StatusEffect>
+          <!-- Промежуточные кадры для handle2 возврата -->
+          <StatusEffect type="OnInserted" target="This" delay="2.0" handle2="30,28" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="2.1" handle2="40,27" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="2.2" handle2="50,26" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="2.3" handle2="45,25" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="2.4" handle2="35,24" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="2.5" handle2="25,23" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="2.6" condition="100" handle2="-26,-20" setvalue="true" stackable="false">
+            <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2.7" hideitems="true" holdpos="55,-15" aimpos="50,-5" handle1="-26,-20" handle2="8,-1" holdangle="-25" aimangle="-5" condition="100" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This" delay="2.8" hideitems="true" holdpos="60,-15" aimpos="55,-8" handle1="-26,-20" handle2="9,-2" holdangle="-30" aimangle="-3" condition="100" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This" delay="2.9" hideitems="true" holdpos="60,-15" aimpos="55,-10" handle1="-26,-20" handle2="10,-3" holdangle="-35" aimangle="0" condition="100" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="3.0" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" hideitems="true" maxstacksize="1">
+          <Containable items="mobilebattery" />
+          <SlotIcon texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        </SubContainer>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="flamreloading" removecontaineditemsondeconstruct="true">
+        <Containable items="flamreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="25" />
+      <SkillRequirementHint identifier="mechanical" level="45" />
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,1114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Кассетный магнитофон" identifier="cassetteplayer" HideConditionBar="true" category="Misc" Tags="mediumitem,cstplayer" scale="0.325">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
+      <Price baseprice="250" minavailable="1">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="batterycell" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="Fabricator" requiredtime="10">
+        <Item identifier="aluminium" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="batterycell" />
+      </Fabricate>
+      <Upgrade gameversion="0.9.2.0" scale="0.5" />
+      <PreferredContainer primary="wreckstoragecab" spawnprobability="0.06" />
+      <InventoryIcon name="jukebox icon" texture="%ModDir%/ammunition.png" limb="Head" scale="0.5" sourcerect="541,846,132,130" origin="0.49680504,0.49730295" />
+      <sprite name="jukebox" texture="%ModDir%/ammunition.png" sourcerect="173,871,96,63" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <BrokenSprite name="jukebox cassete in" texture="%ModDir%/ammunition.png" sourcerect="72,871,96,63" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" maxcondition="99" />
+      <Body width="100" height="50" density="12" />
+      <ItemContainer capacity="1" canbeselected="true" excludebroken="false">
+        <Containable items="cassette" hide="false" canbeselected="true" excludebroken="false" itempos="50,7">
+          <StatusEffect type="OnActive" target="Contained,This">
+            <Use />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" Condition="99" AllowWhenBroken="true" setvalue="true" />
+          <StatusEffect type="OnRemoved" target="This" Condition="100" AllowWhenBroken="true" setvalue="true" />
+          <StatusEffect type="OnInserted" target="Contained" Condition="50" setactive="true" delay="0.01" setvalue="true" AllowWhenBroken="true" />
+          <StatusEffect type="OnRemoved" target="Contained" Condition="0" setactive="false" setvalue="true" AllowWhenBroken="true" />
+        </Containable>
+        <SlotIcon slotindex="0" texture="%ModDir%/ContainerIndicators-5.png" origin="0.5,0.5" />
+      </ItemContainer>
+      <Holdable selectkey="Select" pickkey="Use" canbeselected="true" slots="RightHand,LeftHand,Any" msg="ItemMsgDetach" PickingTime="0.0" holdpos="5,-65" aimpos="5,32" handle1="0,25" holdangle="0" swingwhenholding="False" swingwhenaiming="False" swingwhenusing="False" controlpose="true" attachable="true" aimable="true">
+        <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.1,0.12" anchor="Center" absoluteoffset="5,98" style="ItemUI" />
+          <Button text="Manual_Button_Volume_UP">
+            <StatusEffect type="OnUse" target="Contained" condition="10" disabledeltatime="true" />
+          </Button>
+          <Button text="Manual_Button_Volume_DOWN">
+            <StatusEffect type="OnUse" target="Contained" condition="-10" disabledeltatime="true" />
+          </Button>
+        </CustomInterface>
+      </Holdable>
+    </Item>
+    <Item name="«Скованные одной цепью»" condition="0" identifier="cassette-skovan" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Связанные одной целью.." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="170">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-skovan-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-skovan" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/skovannye.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Razor Mind»" condition="0" identifier="cassette-razor" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Payday 2 vibes" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="150">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="cassette-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-razor" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/razor.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Закрой за мной дверь»" condition="0" identifier="cassette-dver" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Цой жив!" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="230">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="cassette-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-dver" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/dver.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Группа крови на рукаве»" condition="0" identifier="cassette-krov" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Цой жив!" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="240">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="cassette-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-dver" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/krov.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Звезда по имени солнце»" condition="0" identifier="cassette-zvezda" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Цой жив, навсегда" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="240">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="cassette-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-dver" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/zvezda.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Duran Duran - Invisible Galleons Cover»" condition="0" identifier="cassette-grind" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="No That's Not Solid Snake!" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="130">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="cassette-grind-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-grind" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/grind.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Arlekino - Geoffrey Day Remix»" condition="0" identifier="cassette-arlekino" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Atomic Heart Forever" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="110">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="cassette-arlekino-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-arlekino" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/arlekino.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Полковнику никто не пишет»" condition="0" identifier="cassette-polkov" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Грустная музыка для одиноких душ" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="130">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-polkov-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-polkov" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/pishet.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Вечно молодой»" condition="0" identifier="cassette-molodoy" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Классика советского рока" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="120">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-molodoy-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-molodoy" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/molodoy.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Main theme»" condition="0" identifier="cassette-chaos" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Главная тема хаоса" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="100">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-chaos-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-chaos" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Main music.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Main theme 2»" condition="0" identifier="cassette-chaos-2" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Альтернативная главная тема" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="100">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-chaos-2-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-chaos-2" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Lobby.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«The Glitch Mob - Seven Nation Army Remix»" condition="0" identifier="cassette-seven" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="100">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-seven-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-seven" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/SevenNationArmy.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Paint It, Black»" condition="0" identifier="cassette-paint" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Классика The Rolling Stones" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="100">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-paint-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-paint" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/paint.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«The Man Who Sold The World»" condition="0" identifier="cassette-sold" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="В исполнении Midge Ure" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="110">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-sold-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-sold" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/sold.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Snake Eater»" condition="0" identifier="cassette-snake" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="I'm still in a dream... Snake Eater." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-sold-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-sold" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Snake_Eater.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Nirvana - Smells Like Teen Spirit»" condition="0" identifier="cassette-teen" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="The shot that kicked off the 90s." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="150">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-sold-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-sold" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/teen_spirit.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Hopes and Dreams / SAVE the World - Undertale»" condition="0" identifier="cassette-hopes" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description="The power of feeling determined." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-sold-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-sold" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Hopes_and_Dreams.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Numb – Linkin Park»" condition="0" identifier="cassette-numb" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description=" " scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="170">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/numb.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«What I've Done – Linkin Park»" condition="0" identifier="cassette-done" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description=" " scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/done.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Figure.09 - Linkin Park»" condition="0" identifier="cassette-figure" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" description=" " scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/figure09.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Tom Tom by Holy Fuck»" condition="0" description="You don't seem to understand earth isn't yours to conquer" identifier="cassette-holy" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/holy.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«War Without Reason Cut Version»" condition="0" description="CORE FAILURE IMMINENT. 70.. 69.. 68.. 67.." identifier="cassette-war" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/war.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Звёздное Лето | Atomic Heart»" condition="0" description="Объявляем этот ремикс официальным гимном лета" identifier="cassette-leto" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/leto.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="Prey – “Mind Game”" condition="0" description="‖color:gui.blue‖“Not a mimic.”‖end‖" identifier="cassette-prey" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/prey.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="Lying From You - Linkin Park" condition="0" description="This is probably one of Linkin Park's best songs" identifier="cassette-lying" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="350">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/lying.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«В наших глазах»" condition="0" description="Мы ждали лета, пришла зима... и так всегда...." identifier="cassette-glaza" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/glaza.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«Альянс - На заре»" condition="0" description="Любопытно, но в этой песне всего один глагол - зовут" identifier="cassette-zare" category="Misc" Tags="smallitem,cassette" Subcategory="cassette" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="cassette-numb-icon" texture="%ModDir%/ammunition.png" sourcerect="399,846,118,116" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="cassette-numb" texture="%ModDir%/ammunition.png" sourcerect="291,881,71,45" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="40" density="30"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/zare.ogg" type="OnActive" range="750" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Razor Mind»" condition="0" identifier="flash-razor" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Payday 2 vibes" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/razor.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Закрой за мной дверь»" condition="0" identifier="flash-dver" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Цой жив!" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="460">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/dver.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Группа крови на рукаве»" condition="0" identifier="flash-krov" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Цой жив!" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="480">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/krov.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Звезда по имени солнце»" condition="0" identifier="flash-zvezda" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Цой жив!" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="480">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/zvezda.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Duran Duran - Invisible Galleons Cover»" condition="0" identifier="flash-grind" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="No That's Not Solid Snake!" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="260">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/grind.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Arlekino - Geoffrey Day Remix»" condition="0" identifier="flash-arlekino" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Atomic Heart Forever" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="220">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/arlekino.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Полковнику никто не пишет»" condition="0" identifier="flash-polkov" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Грустная музыка для одиноких душ" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="260">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/pishet.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Вечно молодой»" condition="0" identifier="flash-molodoy" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Классика советского рока" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="240">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/molodoy.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Main theme»" condition="0" identifier="flash-chaos" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Главная тема хаоса" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Main music.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Main theme 2»" condition="0" identifier="flash-chaos-2" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Альтернативная главная тема" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Lobby.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «The Glitch Mob - Seven Nation Army Remix»" condition="0" identifier="flash-seven" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/SevenNationArmy.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Paint It, Black»" condition="0" identifier="flash-paint" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="Классика The Rolling Stones" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/paint.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «The Man Who Sold The World»" condition="0" identifier="flash-sold" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="В исполнении Midge Ure" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="220">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/sold.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Snake Eater»" condition="0" identifier="flash-snake" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="I'm still in a dream... Snake Eater." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Snake_Eater.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Nirvana - Smells Like Teen Spirit»" condition="0" identifier="flash-teen" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="The shot that kicked off the 90s." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/teen_spirit.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Hopes and Dreams / SAVE the World - Undertale»" condition="0" identifier="flash-hopes" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="The power of feeling determined." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="600">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/Hopes_and_Dreams.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Numb – Linkin Park»" condition="0" identifier="flash-numb" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="I'm tired of being what you want me to be..." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="340">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/numb.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «What I've Done – Linkin Park»" condition="0" identifier="flash-done" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="I'm tired of being what you want me to be..." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/done.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Figure.09 - Linkin Park»" condition="0" identifier="flash-figure" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" description="I'm tired of being what you want me to be..." scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="500">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/figure09.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«PDA-КПК Tom Tom by Holy Fuck»" condition="0" description="You don't seem to understand earth isn't yours to conquer" identifier="flash-holy" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/holy.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«PDA-КПК War Without Reason Cut Version»" condition="0" description="CORE FAILURE IMMINENT. 70.. 69.. 68.. 67.." identifier="flash-war" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/war.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="«PDA-КПК Звёздное Лето | Atomic Heart»" condition="0" description="Объявляем этот ремикс официальным гимном лета" identifier="flash-leto" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/leto.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК Prey – “Mind Game”" condition="0" description="‖color:gui.blue‖“Not a mimic.”‖end‖" identifier="flash-prey" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="500">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/prey.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК Lying From You - Linkin Park" condition="0" description="This is probably one of Linkin Park's best songs" identifier="flash-lying" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="550">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/lying.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «В наших глазах»" condition="0" description="Мы ждали лета, пришла зима... и так всегда...." identifier="flash-glaza" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="450">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/glaza.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+    <Item name="PDA-КПК «Альянс - На заре»" condition="0" description="Любопытно, но в этой песне всего один глагол - зовут" identifier="flash-zare" category="Misc" Tags="smallitem,flash" Subcategory="flash" cargocontaineridentifier="metalcrate" hideinmenus="false" scale="0.3" spritecolor="220,220,255,255" inventoryiconcolor="220,220,255,255">
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.005" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.005" />
+      <Price baseprice="500">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon name="PDA-КПК flash-razor-icon" texture="%ModDir%/ammunition.png" sourcerect="5,623,101,97" depth="0.55" origin="0.5,0.5" />
+      <Sprite name="PDA-КПК flash-razor" texture="%ModDir%/ammunition.png" sourcerect="130,674,46,19" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" height="10" density="20"></Body>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" CharacterUsable="false">
+        <StatusEffect type="Always" target="This,Character" oneshot="true" setvalue="true" condition="0"></StatusEffect>
+      </Holdable>
+      <Powered IsActive="true" PowerConsumption="1">
+        <sound file="%ModDir%/Saunds/zare.ogg" type="OnActive" range="125" loop="true" volume="0.01" volumeproperty="condition" Stream="true" mutebackgroundmusic="true" />
+      </Powered>
+    </Item>
+  </Items>
+</Override>

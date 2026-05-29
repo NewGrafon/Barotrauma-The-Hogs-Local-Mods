@@ -1,0 +1,1287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Afflictions>
+    <Affliction name="Звёздочка" identifier="KS-23zvezdocha" type="invertcontrols" description="Вы поражены светошумовым боеприпасом. В глазах темнеет, а в ушах звенит." maxstrength="100" showiconthreshold="1000" hideiconafterdelay="false" affectmachines="false" DamageOverlayAlpha="0" ShowBarInHealthMenu="true" afflictionoverlayalphaislinear="true">
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+      <AfflictionOverlay texture="Content/UI/blindoverlay.png" />
+      <!-- Звон в ушах (тинитус) -->
+      <Effect minstrength="0" maxstrength="100" strengthchange="-7">
+        <StatusEffect target="Character" setvalue="true" LowPassMultiplier="0.2" ObstructVisionAmountAmount="0.25">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="%ModDir%/Saunds/my_ears.ogg" dontmuffle="true" forceplay="true" />
+        </StatusEffect>
+        <!-- Визуальные эффекты -->
+        <MinScreenBlur>0.5</MinScreenBlur>
+        <MaxScreenBlur>1</MaxScreenBlur>
+        <MinFaceTintColor>255,0,0,100</MinFaceTintColor>
+        <MaxFaceTintColor>255,0,0,255</MaxFaceTintColor>
+        <MinAfflictionOverlayAlphaMultiplier>0.2</MinAfflictionOverlayAlphaMultiplier>
+        <MaxAfflictionOverlayAlphaMultiplier>1</MaxAfflictionOverlayAlphaMultiplier>
+      </Effect>
+    </Affliction>
+    <Affliction name="" identifier="spasm_shot" type="stun" targets="human,humanhusk" grainburst="3" limbspecific="false" maxstrength="150" WeaponsSkillGain="1.0" affectmachines="false" DamageOverlayAlpha="0" ShowBarInHealthMenu="true" showiconthreshold="15" iconcolors="255,200,100,255;255,140,50,255;255,80,0,255">
+      <Effect minstrength="0" maxstrength="50" minchromaticaberration="1.5" graincolor="255,100,100,175" maxchromaticaberration="3.0" minscreenblur="0" maxscreenblur="0.25" minscreendistort="0.0" maxscreendistort="0.25" convulseamount="0.10" minradialdistort="0" maxradialdistort="0.25" strengthchange="-5" minskillmultiplier="1" maxskillmultiplier="0.9" minspeedmultiplier="1.0" maxspeedmultiplier="0.75"></Effect>
+      <Effect minstrength="50" maxstrength="90" minchromaticaberration="1.5" graincolor="255,100,100,175" maxchromaticaberration="3.0" minscreenblur="0.25" maxscreenblur="0.5" minscreendistort="0.25" maxscreendistort="0.5" convulseamount="0.25" minradialdistort="0.25" maxradialdistort="0.5" strengthchange="-3" minskillmultiplier="1" maxskillmultiplier="0.7" minspeedmultiplier="0.75" mingrainstrength="0.0" maxgrainstrength="0.5" maxspeedmultiplier="0.5"></Effect>
+      <Effect minstrength="90" maxstrength="115" minchromaticaberration="5.0" graincolor="255,100,100,210" maxchromaticaberration="10.0" minscreendistort="0.5" maxscreendistort="1" minscreenblur="0.5" maxscreenblur="1" minradialdistort="1" maxradialdistort="2" minspeedmultiplier="0.5" maxspeedmultiplier="0.5" minskillmultiplier="0.7" maxskillmultiplier="0.3" convulseamount="0.5" mingrainstrength="0.5" maxgrainstrength="1" strengthchange="-2"></Effect>
+      <Effect minstrength="115" maxstrength="150" minchromaticaberration="10.0" graincolor="255,100,100,255" maxchromaticaberration="15.0" minscreendistort="1" maxscreendistort="1.5" minscreenblur="1" maxscreenblur="1.5" minradialdistort="2" maxradialdistort="2.5" minspeedmultiplier="0.5" maxspeedmultiplier="0.25" minskillmultiplier="0.3" maxskillmultiplier="0.0" convulseamount="0.65" mingrainstrength="1" maxgrainstrength="3" strengthchange="-1.5">
+        <StatusEffect target="Character" interval="1" CauseSpeechImpediment="false" duration="1.1" LowPassMultiplier="0.2" camerashake="10" ObstructVisionAmount="10" setvalue="true" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional IsLocalPlayer="True" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" />
+          <Sound file="%ModDir%/Saunds/very_pain-3.ogg" dontmuffle="true" loop="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="4" minstrength="85" maxstrength="115">
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" />
+          <Conditional hasspecifiertag="male" />
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Sound file="%ModDir%/Saunds/pain-1-male.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/pain-2-male.ogg" />
+          <Sound file="%ModDir%/Saunds/pain-3-male.ogg" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" />
+          <Conditional hasspecifiertag="female" />
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Sound file="%ModDir%/Saunds/pain-1-female.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/pain-2-female.ogg" />
+          <Sound file="%ModDir%/Saunds/pain-3-female.ogg" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="1.7" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" />
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Spasm.xml" priority="10" ExpectedSpecies="Human" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/SpasmRun.xml" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="1" maxinterval="3" minstrength="115" maxstrength="150">
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="10" lockhands="true" duration="2" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" />
+          <Conditional hasspecifiertag="male" />
+          <Conditional skillrequirement="true" weapons="lt 75" />
+          <Sound file="%ModDir%/Saunds/man_pain1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/man_pain2.ogg" />
+          <Sound file="%ModDir%/Saunds/man_pain3.ogg" />
+          <Affliction identifier="oxygenlow" strength="0.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="10" duration="2" lockhands="true" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" />
+          <Conditional hasspecifiertag="female" />
+          <Conditional skillrequirement="true" weapons="lt 75" />
+          <Sound file="%ModDir%/Saunds/female_pain1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_pain2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_pain3.ogg" />
+          <Affliction identifier="oxygenlow" strength="0.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="1.7" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" />
+          <Conditional skillrequirement="true" weapons="lt 75" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Spasm.xml" priority="10" ExpectedSpecies="Human" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/SpasmRun.xml" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="1" maxinterval="1" minstrength="149" maxstrength="150">
+        <StatusEffect target="Character" setvalue="true" duration="1" interval="1" comparison="and">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" analgesia="lt 1" anesthesia="lt 1" sym_unconsciousness="lt 1" adrenalinerush="lt 1" immunity="gt 0" />
+          <Affliction identifier="aa_crawling-gas" strength="1" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="3" maxinterval="3" minstrength="115" maxstrength="150">
+        <StatusEffect target="NearbyItems" Range="2" targetidentifiers="mobileradio" JamTimer="3.1" setvalue="true">
+          <Conditional aaac_disable_shotpain="lt 1" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="1" maxinterval="1" minstrength="1" maxstrength="150">
+        <StatusEffect target="Character" duration="1.1" setvalue="true">
+          <Conditional aaac_disable_shotpain="lt 1" />
+          <ReduceAffliction identifier="spasm_shot" strength="1" />
+          <Conditional analgesia="gte 1" anesthesia="gte 1" afadrenaline="gte 1" combatstimulant="gte 1" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon-10.png" sourcerect="0,0,128,128" origin="0,0" />
+      <PeriodicEffect mininterval="0.1" maxinterval="0.1" minstrength="1" maxstrength="150">
+        <StatusEffect target="Character" duration="0.1" setvalue="true">
+          <Conditional aaac_disable_shotpain="gte 1" />
+          <ReduceAffliction identifier="spasm_shot" strength="1000" />
+        </StatusEffect>
+      </PeriodicEffect>
+    </Affliction>
+    <Affliction name="" identifier="tinnitus_shot" description="" type="stun" limbspecific="false" affectmachines="false" indicatorlimb="Head" causeofdeathdescription="" selfcauseofdeathdescription="" showiconthreshold="1" maxstrength="125">
+      <Effect minstrength="0" maxstrength="30" strengthchange="-2.5">
+        <StatusEffect target="Character" interval="1" duration="1.1" LowPassMultiplier="0.2" ObstructVisionAmount="0.01" setvalue="true" comparison="and">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+          <Conditional HasStatusTag="neq hasheadset" />
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="30" maxstrength="70" strengthchange="-5" minscreendistort="0.01" maxscreendistort="0.04" minscreenblur="0.05" maxscreenblur="0.1">
+        <StatusEffect target="Character" interval="1" duration="1.1" stackable="false" ObstructVisionAmount="0.1" LowPassMultiplier="0.2" comparison="and">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+          <Conditional IsLocalPlayer="True" />
+          <Conditional HasStatusTag="neq hasheadset" />
+          <Sound file="%ModDir%/Saunds/my_ears_loop1.ogg" loop="true" volume="0.10" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" duration="1.1" LowPassMultiplier="0.4" setvalue="true">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+          <Conditional HasStatusTag="neq hasheadset" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="70" maxstrength="100" strengthchange="-5" minscreendistort="0.04" maxscreendistort="0.08" minscreenblur="0.1" maxscreenblur="0.4">
+        <StatusEffect target="Character" setvalue="true" interval="1" duration="1.1" stackable="false" ObstructVisionAmount="10" LowPassMultiplier="0.2" comparison="and">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+          <Conditional HasStatusTag="neq hasheadset" />
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="%ModDir%/Saunds/my_ears_loop1.ogg" loop="true" volume="0.2" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" Interval="1" Range="1" targetidentifiers="mobileradio" JamTimer="1.25" stackable="false" setvalue="true">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="100" maxstrength="125" strengthchange="-3" minscreendistort="0.08" maxscreendistort="0.12" minscreenblur="0.4" maxscreenblur="0.6">
+        <StatusEffect target="Character" setvalue="true" interval="1" duration="1.1" ObstructVisionAmount="10" stackable="false" minscreendistort="0.08" maxscreendistort="0.12" minscreenblur="0.4" maxscreenblur="0.6" LowPassMultiplier="0.2" comparison="and">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+          <Conditional HasStatusTag="neq hasheadset" />
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="%ModDir%/Saunds/my_ears_loop1.ogg" loop="true" volume="0.3" dontmuffle="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="5" minstrength="75" maxstrength="125">
+        <StatusEffect target="Character" SpeedMultiplier="0.5" setvalue="true" ObstructVisionAmount="10" duration="1.5" stackable="false" LowPassMultiplier="0.2" comparison="and">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+          <Conditional HasStatusTag="neq hasheadset" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Sound file="%ModDir%/Saunds/pain-1-male.ogg" Range="1500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/pain-2-male.ogg" Range="1500" />
+          <Sound file="%ModDir%/Saunds/pain-3-male.ogg" Range="1500" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/tinnitus.xml" priority="98" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/tinnitusRun.xml" priority="98" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.5" setvalue="true" ObstructVisionAmount="10" duration="1.5" stackable="false" LowPassMultiplier="0.2" comparison="and">
+          <Conditional aaac_disable_shottinnitus="lt 1" />
+          <Conditional HasStatusTag="neq hasheadset" />
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Sound file="%ModDir%/Saunds/pain-1-female.ogg" Range="2000" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/pain-2-female.ogg" Range="2000" />
+          <Sound file="%ModDir%/Saunds/pain-3-female.ogg" Range="2000" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/tinnitus.xml" priority="98" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/tinnitusRun.xml" priority="98" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="0.1" maxinterval="0.1" minstrength="1" maxstrength="125">
+        <StatusEffect target="Character" duration="0.1" setvalue="true">
+          <Conditional aaac_disable_shottinnitus="gte 1" />
+          <ReduceAffliction identifier="tinnitus_shot" strength="1000" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon.png" sourcerect="0,0,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="aaac_disable_shotpain" type="buff" limbspecific="false" affectmachines="false" maxstrength="1000" showiconthreshold="1000" showinhealthscannerthreshold="1000">
+      <Effect minstrength="0" maxstrength="1000" strengthchange="0">
+        <StatusEffect target="Character" duration="2.1" Interval="2" stackable="false">
+          <ReduceAffliction identifier="spasm_shot" strength="10000000000" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction identifier="aaac_disable_shottinnitus" type="buff" limbspecific="false" affectmachines="false" maxstrength="1000" showiconthreshold="1000" showinhealthscannerthreshold="1000">
+      <Effect minstrength="0" maxstrength="1000" strengthchange="0">
+        <StatusEffect target="Character" duration="2.1" Interval="2" stackable="false">
+          <ReduceAffliction identifier="tinnitus_shot" strength="1000000000" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction identifier="aaac_disable_crawl" type="buff" limbspecific="false" affectmachines="false" maxstrength="1000" showiconthreshold="1000" showinhealthscannerthreshold="1000">
+      <Effect minstrength="0" maxstrength="1000" strengthchange="0">
+        <StatusEffect type="Always" target="Character" interval="2" duration="2.1" stackable="false">
+          <ReduceAffliction identifier="aa_crawling" strength="100" />
+          <ReduceAffliction identifier="aa_crawling-1" strength="100" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction identifier="aaac_disable_interact" type="buff" limbspecific="false" affectmachines="false" maxstrength="1000" showiconthreshold="1000" showinhealthscannerthreshold="1000">
+      <Effect minstrength="0" maxstrength="1000" strengthchange="0" />
+    </Affliction>
+    <Affliction name="" identifier="armored_ceram" description="" type="resistance" isbuff="true" HealableInMedicalClinic="false" limbspecific="false" maxstrength="100" showiconthreshold="1" showinhealthscannerthreshold="500">
+      <Effect minstrength="0" maxstrength="100" resistancefor="gunshotwound,bleeding,spasm_shot,spasm_shot" minresistance="0.9" maxresistance="0.9" Tag="ceramic">
+        <StatValue stattype="MovementSpeed" minvalue="-0.15" maxvalue="-0.15" />
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-1.png" sourcerect="0,0,128,128" origin="0,0" color="255,255,255,255" />
+    </Affliction>
+    <Affliction name="" identifier="armored_steel" description="" type="resistance" isbuff="true" HealableInMedicalClinic="false" limbspecific="false" maxstrength="100" showiconthreshold="1" showinhealthscannerthreshold="500">
+      <Effect minstrength="0" maxstrength="100" resistancefor="gunshotwound,bleeding,spasm_shot,spasm_shot" minresistance="0.4" maxresistance="0.7">
+        <StatValue stattype="MovementSpeed" minvalue="-0.3" maxvalue="-0.3" />
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-2.png" sourcerect="0,0,128,128" origin="0,0" color="125,125,255,255" />
+    </Affliction>
+    <Affliction name="" identifier="armored_kevlar" description="" type="resistance" isbuff="true" HealableInMedicalClinic="false" limbspecific="false" maxstrength="100" showiconthreshold="1" showinhealthscannerthreshold="500">
+      <Effect minstrength="0" maxstrength="100" resistancefor="gunshotwound,bleeding,explosiondamage,spasm_shot" minresistance="0.1" maxresistance="0.4">
+        <StatValue stattype="MovementSpeed" minvalue="-0.1" maxvalue="-0.1" />
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-3.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction name="" identifier="armored_proxy" description="" type="resistance" isbuff="true" HealableInMedicalClinic="false" limbspecific="false" maxstrength="100" showiconthreshold="1000" showinhealthscannerthreshold="1000">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-50">
+        <StatusEffect type="OnDamaged" target="Character" setvalue="true">
+          <RequiredAffliction identifier="gunshotwound" />
+          <ReduceAffliction identifier="armored_ceram" strength="20" />
+          <ReduceAffliction identifier="armored_steel" strength="10" />
+          <ReduceAffliction identifier="armored_kevlar" strength="5" />
+          <Sound file="%ModDir%/Saunds/bulletproof_impact.ogg" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/bulletproof_impact.ogg" range="500" frequencymultiplier="0.75" />
+          <Sound file="%ModDir%/Saunds/bulletproof_impact.ogg" range="500" frequencymultiplier="1.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatimer="true" Interval="1" setvalue="true">
+          <Conditional armored_proxy="lte 25" />
+          <ReduceAffliction identifier="armored_ceram" strength="100" />
+          <ReduceAffliction identifier="armored_steel" strength="100" />
+          <ReduceAffliction identifier="armored_kevlar" strength="100" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction identifier="aa_crawling" type="crawl" limbspecific="false" maxstrength="10" showiconthreshold="0" showicontoothersthreshold="50" showinhealthscannerthreshold="50" interval="1">
+      <Effect minstrength="0" maxstrength="10">
+        <StatusEffect target="Character">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/CrawlingWalk.xml" priority="100" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/CrawlingRun.xml" priority="100" />
+          <TriggerAnimation Type="Crouch" path="%ModDir%/Animations/CrawlingCrouch.xml" priority="100" />
+          <Conditional aaac_disable_crawl="eq 0" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="Character" oneshot="true" interval="2" stackable="false">
+          <Conditional aaac_disable_crawl="gt 0" />
+          <ReduceAffliction identifier="aa_crawling" strength="100000" />
+          <ReduceAffliction identifier="aa_crawling-1" strength="100000" />
+        </StatusEffect>
+        <StatValue stattype="RangedSpreadReduction" value="1" />
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-4.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="aa_crawling-1" type="crawl" limbspecific="false" maxstrength="10" showiconthreshold="0" showicontoothersthreshold="50" showinhealthscannerthreshold="50" interval="1">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-5">
+        <StatusEffect target="Character">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/CrouchWalk.xml" priority="200" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/CrouchRun.xml" priority="200" />
+          <TriggerAnimation Type="Crouch" path="%ModDir%/Animations/Crouch.xml" priority="200" />
+          <Conditional aaac_disable_crawl="eq 0" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="Character" oneshot="true" interval="2" stackable="false">
+          <Conditional aaac_disable_crawl="gt 0" />
+          <ReduceAffliction identifier="aa_crawling" strength="100000" />
+          <ReduceAffliction identifier="aa_crawling-1" strength="100000" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-4.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="pepper" type="invertcontrols" minradialdistort="0.0" maxradialdistort="0.5" maxstrength="125" indicatorlimb="Head" limbspecific="false" affectmachines="false">
+      <Effect minstrength="0" maxstrength="80" mingrainstrength="0.0" maxgrainstrength="8.0" graincolor="255,0,0,255" minscreenblur="0" maxscreenblur="2.5" strengthchange="-0.5" minskillmultiplier="1" maxskillmultiplier="0.25" minspeedmultiplier="1.0" maxspeedmultiplier="0.75" minfacetint="255,0,0,0" maxfacetint="255,0,0,100" minchromaticaberration="4" maxchromaticaberration="5">
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="pepper" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="0.01" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="waterdrop" particlespersecond="1" copyentityangle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="2">
+          <Conditional pepper="lte 25" />
+          <Conditional pressureProtection="gte 1000" />
+          <RequiredItem items="diving" type="Equipped" />
+          <ReduceAffliction identifier="pepper" strength="1000" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesname="Mudraptor_pet" />
+          <Affliction identifier="organdamage" amount="2.5" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" mingrainstrength="8.0" maxgrainstrength="10.0" graincolor="255,0,0,255" minradialdistort="0.5" maxradialdistort="0.7" strengthchange="-1" minscreenblur="3" maxscreenblur="5" minskillmultiplier="0.5" maxskillmultiplier="0.25" convulseamount="0.10" minfacetint="255,0,0,100" maxfacetint="255,0,0,100" minspeedmultiplier="1.0" maxspeedmultiplier="0.5" minchromaticaberration="4" maxchromaticaberration="5">
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="pepper" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="waterdrop" particlespersecond="2" copyentityangle="true" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.0" maxvalue="-0.3" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.3" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.3" />
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesname="Mudraptor_pet" />
+          <Affliction identifier="organdamage" amount="5" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="100" maxstrength="125" mingrainstrength="10.0" maxgrainstrength="12.0" graincolor="255,0,0,255" minradialdistort="0.75" maxradialdistort="1.0" strengthchange="-1.25" minskillmultiplier="0.25" maxskillmultiplier="0.0" minscreenblur="5" maxscreenblur="5" convulseamount="0.25" minfacetint="255,0,0,100" maxfacetint="255,0,0,175" minspeedmultiplier="0.5" maxspeedmultiplier="0.25" minchromaticaberration="5" maxchromaticaberration="5">
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="pepper" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="waterdrop" particlespersecond="4" copyentityangle="true" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.3" maxvalue="-0.5" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.3" maxvalue="-0.5" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.3" maxvalue="-0.5" />
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesname="Mudraptor_pet" />
+          <Affliction identifier="organdamage" amount="10" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="5" maxinterval="10" minstrength="100" maxstrength="125">
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Blind.xml" priority="11" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/BlindRun.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Blind.xml" priority="11" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/BlindRun.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" duration="2" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon-5.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="pda-buff" isbuff="true" duration="0.05" maxstrength="1" showiconthreshold="1" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="RangedSpreadReduction" value="0.01" />
+      </Effect>
+    </Affliction>
+    <Affliction identifier="pepper-big" type="invertcontrols" minradialdistort="0.0" maxradialdistort="0.5" maxstrength="125" indicatorlimb="Head" limbspecific="false" affectmachines="false">
+      <Effect minstrength="0" maxstrength="80" mingrainstrength="0.0" maxgrainstrength="8.0" graincolor="255,0,0,255" minscreenblur="0" maxscreenblur="2.5" strengthchange="-0.5" minskillmultiplier="1" maxskillmultiplier="0.25" minspeedmultiplier="1.0" maxspeedmultiplier="0.75" minfacetint="255,0,0,0" maxfacetint="255,0,0,100" minchromaticaberration="4" maxchromaticaberration="5">
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="pepper" strength="0.1" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="0.01" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="waterdrop" particlespersecond="1" copyentityangle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="2">
+          <Conditional pepper="lte 25" />
+          <Conditional pressureProtection="gte 1000" />
+          <RequiredItem items="diving" type="Equipped" />
+          <ReduceAffliction identifier="pepper" strength="1000" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesname="Mudraptor_pet" />
+          <Affliction identifier="organdamage" amount="2.5" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" mingrainstrength="8.0" maxgrainstrength="10.0" graincolor="255,0,0,255" minradialdistort="0.5" maxradialdistort="0.7" strengthchange="-1" minscreenblur="3" maxscreenblur="5" minskillmultiplier="0.5" maxskillmultiplier="0.25" convulseamount="0.10" minfacetint="255,0,0,100" maxfacetint="255,0,0,100" minspeedmultiplier="1.0" maxspeedmultiplier="0.5" minchromaticaberration="4" maxchromaticaberration="5">
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="pepper" strength="0.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="waterdrop" particlespersecond="2" copyentityangle="true" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.0" maxvalue="-0.3" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.3" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.3" />
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesname="Mudraptor_pet" />
+          <Affliction identifier="organdamage" amount="5" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="100" maxstrength="125" mingrainstrength="10.0" maxgrainstrength="12.0" graincolor="255,0,0,255" minradialdistort="0.75" maxradialdistort="1.0" strengthchange="-1.25" minskillmultiplier="0.25" maxskillmultiplier="0.0" minscreenblur="5" maxscreenblur="5" convulseamount="0.25" minfacetint="255,0,0,100" maxfacetint="255,0,0,175" minspeedmultiplier="0.5" maxspeedmultiplier="0.25" minchromaticaberration="5" maxchromaticaberration="5">
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="pepper" strength="0.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="waterdrop" particlespersecond="4" copyentityangle="true" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.3" maxvalue="-0.5" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.3" maxvalue="-0.5" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.3" maxvalue="-0.5" />
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesname="Mudraptor_pet" />
+          <Affliction identifier="organdamage" amount="10" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="5" maxinterval="10" minstrength="100" maxstrength="125">
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Blind.xml" priority="11" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/BlindRun.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Blind.xml" priority="11" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/BlindRun.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" duration="2" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon-5.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="neuro-gas" type="poison" minradialdistort="0.0" maxradialdistort="0.5" affectmachines="false" maxstrength="125" limbspecific="false">
+      <Effect minstrength="0" maxstrength="80" mingrainstrength="0.0" maxgrainstrength="2.67" graincolor="255,255,255,255" minscreenblur="0" maxscreenblur="0" strengthchange="-0.25" minskillmultiplier="1" maxskillmultiplier="0.25" minspeedmultiplier="1.0" maxspeedmultiplier="0.6" convulseamount="0.25" minchromaticaberration="8" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="0.01" targetLimbs="Head"></StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0.0" maxvalue="-0.6" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.6" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.6" />
+        <StatusEffect target="Character" duration="2">
+          <Conditional neuro-gas="lte 25" />
+          <Conditional pressureProtection="gte 1000" />
+          <RequiredItem items="diving" type="Equipped" />
+          <ReduceAffliction identifier="neuro-gas" strength="1000" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" mingrainstrength="2.67" maxgrainstrength="3.33" graincolor="255,255,255,255" minradialdistort="0.5" maxradialdistort="0.7" strengthchange="-0.5" minscreenblur="0" maxscreenblur="0" minskillmultiplier="0.5" maxskillmultiplier="0.25" convulseamount="0.5" minspeedmultiplier="0.6" maxspeedmultiplier="0.3" minchromaticaberration="8" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head"></StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.6" maxvalue="-1.0" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.6" maxvalue="-1.0" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.6" maxvalue="-1.0" />
+      </Effect>
+      <Effect minstrength="100" maxstrength="125" mingrainstrength="3.33" maxgrainstrength="4.0" graincolor="255,255,255,255" minradialdistort="0.75" maxradialdistort="1.0" strengthchange="-1.25" minskillmultiplier="0.25" maxskillmultiplier="0.0" minscreenblur="0" maxscreenblur="0" convulseamount="1" minspeedmultiplier="0.3" maxspeedmultiplier="0.00" minchromaticaberration="10" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head"></StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-1.0" maxvalue="-1.8" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-1.0" maxvalue="-1.8" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-1.0" maxvalue="-1.8" />
+      </Effect>
+      <PeriodicEffect mininterval="5" maxinterval="7.5" minstrength="100" maxstrength="125">
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="10" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+          <Affliction identifier="stun" strength="0.01" />
+          <Affliction identifier="aa_crawling-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="10" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="stun" strength="0.01" />
+          <Affliction identifier="aa_crawling-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" delay="10" duration="3" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.75" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="120" delay="15" comparison="and">
+          <Conditional ishuman="true" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" shockwave="false" decal="fruitsplatter_brown" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" colormultiplier="185,122,87,255" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" frequencymultiplier="0.75" />
+          <SpawnItem identifier="poop" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="10" maxinterval="15" minstrength="50" maxstrength="100">
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="5" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+          <Affliction identifier="aa_crawling-1-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="5" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="aa_crawling-1-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" delay="5" duration="2" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon-6.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="aa_crawling-gas" type="crawl" limbspecific="false" maxstrength="10" showiconthreshold="0" showicontoothersthreshold="50" showinhealthscannerthreshold="50" interval="1">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-1">
+        <StatusEffect target="Character" lockhands="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/CrawlingWalk.xml" priority="100" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/CrawlingRun.xml" priority="100" />
+          <TriggerAnimation Type="Crouch" path="%ModDir%/Animations/CrawlingCrouch.xml" priority="100" />
+          <ReduceAffliction identifier="aa_crawling-1" strength="100" />
+          <ReduceAffliction identifier="aa_crawling" strength="100" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1">
+          <Conditional aa_crawling-gas="lt 1" />
+          <Affliction identifier="aa_crawling-1-gas" strength="1000" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-4.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="aa_crawling-1-gas" type="crawl" limbspecific="false" maxstrength="10" showiconthreshold="0" showicontoothersthreshold="50" showinhealthscannerthreshold="50" interval="1">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-1">
+        <StatusEffect target="Character">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/CrouchWalk-gas.xml" priority="100" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/CrouchRun-gas.xml" priority="100" />
+          <TriggerAnimation Type="Crouch" path="%ModDir%/Animations/Crouch-gas.xml" priority="100" />
+          <ReduceAffliction identifier="aa_crawling-1" strength="100" />
+          <ReduceAffliction identifier="aa_crawling" strength="100" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-4.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="shield-flash" type="invertcontrols" maxstrength="100" showiconthreshold="1000" hideiconafterdelay="false" affectmachines="false" DamageOverlayAlpha="0" ShowBarInHealthMenu="true" afflictionoverlayalphaislinear="true">
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+      <AfflictionOverlay texture="Content/UI/blindoverlay.png" />
+      <!-- Звон в ушах (тинитус) -->
+      <Effect minstrength="0" maxstrength="100" strengthchange="-5" minscreenblur="0.00" maxscreenblur="2">
+        <StatusEffect target="Character" setvalue="true" LowPassMultiplier="0.2" ObstructVisionAmountAmount="1">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Blind.xml" priority="11" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/BlindRun.xml" priority="11" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="suicide" identifier="suicide-damage" description="" type="debuff" limbspecific="false" showiconthreshold="1000" indicatorlimb="Torso" maxstrength="100" iconcolors="160,160,160,255;255,255,150,255" affectmachines="true">
+      <Effect minstrength="0" maxstrength="100" resistancefor="damage" minresistance="0" maxresistance="-1.5">
+        <StatusEffect target="Character" disabledeltatime="true" delay="5.1" stackable="false">
+          <ReduceAffliction identifier="suicide-damage" strength="10000" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction identifier="acid-gas" type="poison" minradialdistort="0.0" maxradialdistort="0.5" affectmachines="false" maxstrength="125" limbspecific="false">
+      <Effect minstrength="0" maxstrength="80" mingrainstrength="0.0" maxgrainstrength="2.67" graincolor="155,255,155,255" minscreenblur="0" maxscreenblur="0" strengthchange="-0.25" minskillmultiplier="1" maxskillmultiplier="0.25" minspeedmultiplier="1.0" maxspeedmultiplier="0.6" convulseamount="0.25" minchromaticaberration="8" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="0.01" targetLimbs="Head"></StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0.0" maxvalue="-0.6" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.6" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.6" />
+        <StatusEffect target="Character" duration="2" comparison="and">
+          <Conditional neuro-gas="lte 25" />
+          <RequiredItem items="diving" type="Equipped" />
+          <ReduceAffliction identifier="neuro-gas" strength="1000" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" mingrainstrength="2.67" maxgrainstrength="3.33" graincolor="255,255,255,255" minradialdistort="0.5" maxradialdistort="0.7" strengthchange="-0.5" minscreenblur="0" maxscreenblur="0" minskillmultiplier="0.5" maxskillmultiplier="0.25" convulseamount="0.5" minspeedmultiplier="0.6" maxspeedmultiplier="0.3" minchromaticaberration="8" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head"></StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.6" maxvalue="-1.0" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.6" maxvalue="-1.0" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.6" maxvalue="-1.0" />
+      </Effect>
+      <Effect minstrength="100" maxstrength="125" mingrainstrength="3.33" maxgrainstrength="4.0" graincolor="255,255,255,255" minradialdistort="0.75" maxradialdistort="1.0" strengthchange="-1.25" minskillmultiplier="0.25" maxskillmultiplier="0.0" minscreenblur="0" maxscreenblur="0" convulseamount="1" minspeedmultiplier="0.3" maxspeedmultiplier="0.00" minchromaticaberration="10" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head"></StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-1.0" maxvalue="-1.8" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-1.0" maxvalue="-1.8" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-1.0" maxvalue="-1.8" />
+      </Effect>
+      <PeriodicEffect mininterval="5" maxinterval="7.5" minstrength="100" maxstrength="125">
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="10" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+          <Affliction identifier="stun" strength="0.01" />
+          <Affliction identifier="aa_crawling-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="10" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="stun" strength="0.01" />
+          <Affliction identifier="aa_crawling-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" delay="10" duration="3" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.75" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="120" delay="15" comparison="and">
+          <Conditional ishuman="true" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" shockwave="false" decal="fruitsplatter_brown" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" colormultiplier="185,122,87,255" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" frequencymultiplier="0.75" />
+          <SpawnItem identifier="poop" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="10" maxinterval="15" minstrength="50" maxstrength="100">
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="5" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+          <Affliction identifier="aa_crawling-1-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.08" delay="5" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="aa_crawling-1-gas" strength="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" duration="2" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon-6.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction name="Burning-anim" identifier="Burning-anim" type="burn" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" activationthreshold="1.0" showiconthreshold="1000" maxstrength="15">
+      <!-- A buildup for burning, you don't burn yet until reaching 5 -->
+      <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="0" convulseamount="0.2" mingrainstrength="0" maxgrainstrength="1" graincolor="255,69,0,255" strengthchange="-0.1">
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.85" scalemax="1.15" DistanceMin="0" DistanceMax="40" ParticlesPerSecond="100" AngleMin="0" AngleMax="360" VelocityMax="25" />
+          <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="4" scalemax="3" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.5" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" />
+          <Affliction identifier="spasm_shot" amount="5" />
+          <SpawnItem identifiers="fire-proxy" spawnposition="ThisInventory" probability="0.01" SpawnIfInventoryFull="false" SpawnIfNotInInventory="false" SpawnIfCantBeContained="false" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="0.1" checkconditionalalways="false">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="Burning-anim" amount="1000" />
+        </StatusEffect>
+      </Effect>
+      <!-- You actively start burning here -->
+      <Effect minstrength="5" maxstrength="10" minvitalitydecrease="0" mingrainstrength="1" convulseamount="0.4" maxgrainstrength="2" graincolor="255,69,0,255" maxvitalitydecrease="0" strengthchange="-0.1">
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.85" scalemax="1.15" DistanceMin="0" DistanceMax="40" ParticlesPerSecond="200" AngleMin="0" AngleMax="360" VelocityMax="25" />
+          <ParticleEmitter particle="smoke" particlespersecond="4" scalemin="4" scalemax="3" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.6" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" />
+          <Affliction identifier="spasm_shot" amount="10" />
+          <SpawnItem identifiers="fire-proxy" spawnposition="ThisInventory" probability="0.01" SpawnIfInventoryFull="false" SpawnIfNotInInventory="false" SpawnIfCantBeContained="false" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="0.1" checkconditionalalways="false">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="Burning-anim" amount="1000" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" interval="1" duration="0.5" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.25" />
+        </StatusEffect>
+      </Effect>
+      <!-- Past 10, you've fully caught on fire and burning reduces at a much slower rate -->
+      <Effect minstrength="10" maxstrength="15" minvitalitydecrease="0" mingrainstrength="2" convulseamount="0.6" maxgrainstrength="4" graincolor="255,69,0,255" maxvitalitydecrease="0" strengthchange="-0.1">
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.85" scalemax="1.15" DistanceMin="0" DistanceMax="40" ParticlesPerSecond="300" AngleMin="0" AngleMax="360" VelocityMax="25" />
+          <ParticleEmitter particle="smoke" particlespersecond="6" scalemin="4" scalemax="3" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="1" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" />
+          <Affliction identifier="spasm_shot" amount="20" />
+          <SpawnItem identifiers="fire-proxy" spawnposition="ThisInventory" probability="0.01" SpawnIfInventoryFull="false" SpawnIfNotInInventory="false" SpawnIfCantBeContained="false" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="0.1" checkconditionalalways="false">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="Burning-anim" amount="1000" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" interval="0.5" duration="0.5" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.25" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1" minstrength="14" maxstrength="15">
+        <StatusEffect target="NearbyItems" spritecolor="75,75,75,255" range="1" stackable="false" interval="10" comparison="and" />
+        <StatusEffect target="NearbyItems" Interval="10" Range="1" stackable="false" targetidentifiers="clothing,mobileradio" setvalue="true">
+          <ParticleEmitter particle="swirlysmoke" particleamount="3" scalemultiplier="1,1" />
+          <Dropcontaineditems />
+          <Remove />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,0,0,255" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="Burning" type="burn" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" activationthreshold="1.0" showiconthreshold="1000" maxstrength="15">
+      <!-- A buildup for burning, you don't burn yet until reaching 5 -->
+      <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="0" convulseamount="0.2" mingrainstrength="0" maxgrainstrength="1" graincolor="255,69,0,255" strengthchange="-0.1">
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.85" scalemax="1.15" DistanceMin="0" DistanceMax="40" ParticlesPerSecond="100" AngleMin="0" AngleMax="360" VelocityMax="25" />
+          <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="4" scalemax="3" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.15" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" />
+          <Affliction identifier="spasm_shot" amount="5" />
+          <SpawnItem identifiers="fire-proxy" spawnposition="ThisInventory" probability="0.01" SpawnIfInventoryFull="false" SpawnIfNotInInventory="false" SpawnIfCantBeContained="false" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="0.1" checkconditionalalways="false">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="Burning-anim" amount="1000" />
+        </StatusEffect>
+      </Effect>
+      <!-- You actively start burning here -->
+      <Effect minstrength="5" maxstrength="10" minvitalitydecrease="0" mingrainstrength="1" convulseamount="0.4" maxgrainstrength="2" graincolor="255,69,0,255" maxvitalitydecrease="0" strengthchange="-0.1">
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.85" scalemax="1.15" DistanceMin="0" DistanceMax="40" ParticlesPerSecond="200" AngleMin="0" AngleMax="360" VelocityMax="25" />
+          <ParticleEmitter particle="smoke" particlespersecond="4" scalemin="4" scalemax="3" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.35" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" />
+          <Affliction identifier="spasm_shot" amount="10" />
+          <SpawnItem identifiers="fire-proxy" spawnposition="ThisInventory" probability="0.01" SpawnIfInventoryFull="false" SpawnIfNotInInventory="false" SpawnIfCantBeContained="false" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="0.1" checkconditionalalways="false">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="Burning-anim" amount="1000" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" interval="1" duration="0.25" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.25" />
+        </StatusEffect>
+      </Effect>
+      <!-- Past 10, you've fully caught on fire and burning reduces at a much slower rate -->
+      <Effect minstrength="10" maxstrength="15" minvitalitydecrease="0" mingrainstrength="2" convulseamount="0.6" maxgrainstrength="4" graincolor="255,69,0,255" maxvitalitydecrease="0" strengthchange="-0.1">
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.85" scalemax="1.15" DistanceMin="0" DistanceMax="40" ParticlesPerSecond="300" AngleMin="0" AngleMax="360" VelocityMax="25" />
+          <ParticleEmitter particle="smoke" particlespersecond="6" scalemin="4" scalemax="3" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.7" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" />
+          <Affliction identifier="spasm_shot" amount="20" />
+          <SpawnItem identifiers="fire-proxy" spawnposition="ThisInventory" probability="0.01" SpawnIfInventoryFull="false" SpawnIfNotInInventory="false" SpawnIfCantBeContained="false" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="0.1" checkconditionalalways="false">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="Burning-anim" amount="1000" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" interval="1" duration="0.5" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.25" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1" minstrength="14" maxstrength="15">
+        <StatusEffect target="NearbyItems" spritecolor="75,75,75,255" range="1" stackable="false" interval="10" comparison="and" />
+        <StatusEffect target="NearbyItems" Interval="10" Range="1" stackable="false" targetidentifiers="clothing,mobileradio,toolbelt,backpack" setvalue="true">
+          <ParticleEmitter particle="swirlysmoke" particleamount="3" scalemultiplier="1,1" />
+          <Dropcontaineditems />
+          <Remove />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,0,0,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="spasm-fire" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="true" showiconthreshold="1000" showinhealthscannerthreshold="100" maxstrength="2">
+      <PeriodicEffect mininterval="0.25" maxinterval="0.5">
+        <StatusEffect target="limb" disabledeltatime="true">
+          <Explosion range="5.0" structuredamage="0" itemdamage="0" force="5.0" severlimbsprobability="0.0" ballastfloradamage="0" smoke="false" flash="false" flames="false" shockwave="false" sparks="false" underwaterbubble="false" />
+          <ReduceAffliction identifier="spasm-fire" amount="0.1" />
+          <Affliction identifier="stun" amount="0.25" />
+          <Affliction identifier="spasm_shot" amount="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true">
+          <ReduceAffliction identifier="Burning-anim" amount="0.15" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <Effect minstrength="0" maxstrength="2" convulseamount="0.25"></Effect>
+    </Affliction>
+    <Affliction identifier="miracleworker-anim" type="talentbuff" isbuff="true" showiconthreshold="1000" showinhealthscannerthreshold="1000" hideiconafterdelay="true" limbspecific="false" maxstrength="1" treatmentthreshold="1000" duration="1" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="600">
+        <AbilityFlag flagtype="CanNotDieToAfflictions" />
+      </Effect>
+      <AfflictionOverlay texture="%ModDir%/snake.png" />
+    </Affliction>
+    <Affliction name="" identifier="spit" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="true" showiconthreshold="1000" showinhealthscannerthreshold="100" maxstrength="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="-10">
+        <StatusEffect target="Character" targetLimbs="Head" stackable="false" delay="1" comparison="and">
+          <ParticleEmitter particleamount="7" distance="0" angle="-10" particle="waterdrop" velocitymin="400" velocitymax="500" copyentityangle="true" />
+          <Remove />
+          <Conditional healthpercentage="gt 66" />
+          <Sound file="%ModDir%/Saunds/spit.ogg" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/spit1.ogg" range="500" />
+          <Sound file="%ModDir%/Saunds/spit2.ogg" range="500" />
+          <Conditional HideFace="eq False" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetLimbs="Head" stackable="false" delay="1" comparison="and">
+          <ParticleEmitter particleamount="8" angle="-10" scalemultiplier="0.25,0.25" distance="0" particle="bloodsplash" velocitymin="300" velocitymax="400" copyentityangle="true" />|
+		<ParticleEmitter particleamount="2" angle="-10" distance="0" particle="waterdrop" velocitymin="400" velocitymax="500" copyentityangle="true" /><Remove /><Conditional healthpercentage="lte 66" /><Conditional healthpercentage="gt 33" /><Sound file="%ModDir%/Saunds/spit.ogg" range="500" frequencymultiplier="0.75" selectionmode="Random" /><Sound file="%ModDir%/Saunds/spit1.ogg" range="500" frequencymultiplier="0.75" /><Sound file="%ModDir%/Saunds/spit2.ogg" range="500" frequencymultiplier="0.75" /><Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.25" shockwave="false" underwaterbubble="false" /><Conditional HideFace="eq False" /></StatusEffect>
+        <StatusEffect target="Character" targetLimbs="Head" stackable="false" delay="1" comparison="and">
+          <ParticleEmitter particleamount="4" angle="-10" scalemultiplier="0.35,0.35" distance="0" particle="bloodsplash" velocitymin="200" velocitymax="300" copyentityangle="true" />
+          <ParticleEmitter particleamount="4" angle="-10" scalemultiplier="0.4,0.4" distance="0" particle="heavygib" velocitymin="200" velocitymax="300" copyentityangle="true" />
+          <ParticleEmitter particleamount="1" angle="-10" distance="0" particle="waterdrop" velocitymin="400" velocitymax="500" copyentityangle="true" />
+          <Remove />
+          <Conditional healthpercentage="lte 33" />
+          <Sound file="%ModDir%/Saunds/spit.ogg" range="500" frequencymultiplier="0.75" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/spit1.ogg" range="500" frequencymultiplier="0.75" />
+          <Sound file="%ModDir%/Saunds/spit2.ogg" range="500" frequencymultiplier="0.75" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.25" shockwave="false" underwaterbubble="false" />
+          <Conditional HideFace="eq False" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="" identifier="spasm-shout" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="true" showiconthreshold="1000" showinhealthscannerthreshold="100" maxstrength="2">
+      <Effect minstrength="0" maxstrength="1" convulseamount="0.25" strengthchange="-0.75"></Effect>
+      <Effect minstrength="1" maxstrength="2" convulseamount="0.25" strengthchange="-0.75">
+        <StatusEffect target="Character" duration="0.5" stackable="false" comparison="and">
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_onfire1.ogg" frequencymultiplier="0.9" Range="1500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_onfire1.ogg" frequencymultiplier="0.95" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire1.ogg" frequencymultiplier="1.0" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire1.ogg" frequencymultiplier="1.05" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire1.ogg" frequencymultiplier="1.1" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire2.ogg" frequencymultiplier="0.9" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire2.ogg" frequencymultiplier="0.95" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire2.ogg" frequencymultiplier="1.0" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire2.ogg" frequencymultiplier="1.05" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire2.ogg" frequencymultiplier="1.1" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire3.ogg" frequencymultiplier="0.9" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire3.ogg" frequencymultiplier="0.95" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire3.ogg" frequencymultiplier="1.0" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire3.ogg" frequencymultiplier="1.05" Range="1500" />
+          <Sound file="%ModDir%/Saunds/male_onfire3.ogg" frequencymultiplier="1.1" Range="1500" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="0.5" stackable="false" comparison="and">
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/woman_agony1.ogg" frequencymultiplier="0.9" Range="1500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/woman_agony1.ogg" frequencymultiplier="0.95" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony1.ogg" frequencymultiplier="1.0" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony1.ogg" frequencymultiplier="1.05" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony1.ogg" frequencymultiplier="1.1" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony2.ogg" frequencymultiplier="0.9" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony2.ogg" frequencymultiplier="0.95" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony2.ogg" frequencymultiplier="1.0" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony2.ogg" frequencymultiplier="1.05" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony2.ogg" frequencymultiplier="1.1" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony3.ogg" frequencymultiplier="0.9" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony3.ogg" frequencymultiplier="0.95" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony3.ogg" frequencymultiplier="1.0" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony3.ogg" frequencymultiplier="1.05" Range="1500" />
+          <Sound file="%ModDir%/Saunds/woman_agony3.ogg" frequencymultiplier="1.1" Range="1500" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="" identifier="blind_anim" description="" type="none" limbspecific="false" indicatorlimb="Head" maxstrength="10" showiconthreshold="1000" showicontoothersthreshold="1000" afflictionoverlayalphaislinear="false">
+      <Effect minstrength="0" maxstrength="10" multiplybymaxvitality="true" graincolor="25,0,0,255" mingrainstrength="0.0" maxgrainstrength="100" strengthchange="-0.1" minvitalitydecrease="0" maxvitalitydecrease="0" MinAfflictionOverlayAlphaMultiplier="0.01" MaxAfflictionOverlayAlphaMultiplier="10"></Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,768,128,128" color="195,136,60,255" origin="0,0" />
+      <AfflictionOverlay texture="%ModDir%/Overlay_material.png" />
+    </Affliction>
+    <Affliction name="" identifier="blind_anim_2" description="" type="none" limbspecific="false" indicatorlimb="Head" maxstrength="0.1" showiconthreshold="1000" showicontoothersthreshold="1000" afflictionoverlayalphaislinear="false">
+      <Effect minstrength="0" maxstrength="0.1" multiplybymaxvitality="true" graincolor="50,50,50,255" mingrainstrength="0.0" maxgrainstrength="100" strengthchange="-0.1" minvitalitydecrease="0" maxvitalitydecrease="0" MinAfflictionOverlayAlphaMultiplier="0.1" MaxAfflictionOverlayAlphaMultiplier="1"></Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,768,128,128" color="195,136,60,255" origin="0,0" />
+      <AfflictionOverlay texture="%ModDir%/Overlay_material2.png" />
+    </Affliction>
+    <Affliction name="" identifier="call" ShowIconThreshold="1000" Duration="13">
+      <Effect>
+        <StatusEffect target="Character" comparison="and" CheckConditionalAlways="true">
+          <Conditional HasStatusTag="hasphone" />
+          <Conditional isLocalPlayer="true" />
+          <Sound file="%ModDir%/Saunds/Hold.ogg" dontmuffle="true" loop="true" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="" identifier="pickup" ShowIconThreshold="1000" Duration="0.1">
+      <Effect>
+        <StatusEffect target="Character" comparison="and" CheckConditionalAlways="true">
+          <Conditional HasStatusTag="hasphone" />
+          <Conditional isLocalPlayer="true" />
+          <Sound file="%ModDir%/Saunds/PickUp.ogg" dontmuffle="true" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="" identifier="hangup" ShowIconThreshold="1000" Duration="0.1">
+      <Effect>
+        <StatusEffect target="Character" comparison="and" CheckConditionalAlways="true">
+          <Conditional HasStatusTag="hasphone" />
+          <Conditional isLocalPlayer="true" />
+          <Sound file="%ModDir%/Saunds/HangUp.ogg" dontmuffle="true" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="" identifier="stamina" description="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showicontoothersthreshold="10000" showinhealthscannerthreshold="10000" maxstrength="100" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" type="stun" isbuff="false" iconcolors="100,200,255,0;100,200,255,255" healableinmedicalclinic="false">
+      <Description textidentifier="afflictiondescription.stamina" target="Self" />
+      <Effect minstrength="0" maxstrength="75" strengthchange="-3">
+        <StatusEffect target="Character" DisableRunning="false" duration="5" setvalue="true" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0" maxvalue="-0.25" />
+      </Effect>
+      <Effect minstrength="75" maxstrength="95" strengthchange="-3" minspeedmultiplier="1.0" maxspeedmultiplier="0.2" mingrainstrength="0.0" maxgrainstrength="0.25">
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.25" maxvalue="-0.75" />
+      </Effect>
+      <Effect minstrength="95" maxstrength="100" strengthchange="-3" minspeedmultiplier="0.1" graincolor="100,100,100,255" mingrainstrength="0.25" maxgrainstrength="0.5" maxspeedmultiplier="0.2">
+        <StatusEffect target="Character" duration="3.1" Interval="3" stackable="false" ObstructVisionAmount="0.01" comparison="and">
+          <TriggerAnimation Type="Walk" filename="Vomit" priority="10" ExpectedSpecies="Human" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/man-gasps-2.ogg" range="350" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/man-gasps-1.ogg" range="350" />
+          <Sound file="%ModDir%/Saunds/man-gasps-2.ogg" range="350" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/man-gasps-1.ogg" range="350" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/man-gasps-2.ogg" range="350" frequencymultiplier="0.9" />
+          <Sound file="%ModDir%/Saunds/man-gasps-1.ogg" range="350" frequencymultiplier="0.9" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="3.1" Interval="3" stackable="false" ObstructVisionAmount="0.01" comparison="and">
+          <TriggerAnimation Type="Walk" filename="Vomit" priority="10" ExpectedSpecies="Human" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female-gasps-2.ogg" range="350" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female-gasps-1.ogg" range="350" />
+          <Sound file="%ModDir%/Saunds/female-gasps-2.ogg" range="350" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female-gasps-1.ogg" range="350" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female-gasps-2.ogg" range="350" frequencymultiplier="0.9" />
+          <Sound file="%ModDir%/Saunds/female-gasps-1.ogg" range="350" frequencymultiplier="0.9" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0" maxvalue="-0.25" />
+      </Effect>
+      <icon texture="%ModDir%/Icon_Stamina.png" sourcerect="0,0,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="fear-anim" type="debuff" limbspecific="false" showiconthreshold="0" showicontoothersthreshold="1000" showinhealthscannerthreshold="10000" treatmentthreshold="1000" karmachangeonapplied="0" maxstrength="5" affectmachines="false" healcostmultiplier="0">
+      <Effect minstrength="0" maxstrength="1" strengthchange="-0.2" minchromaticaberration="0" maxchromaticaberration="10">
+        <StatusEffect target="Character" comparison="and" interval="1">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Sounds/HeartbeatDiastole1.ogg" loop="true" volume="0.7" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="and" interval="1" delay="0.3">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Sounds/HeartbeatSystole1.ogg" loop="true" volume="0.7" dontmuffle="true" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="1" maxstrength="3" ConvulseAmount="0.35" strengthchange="-0.3" minspeedmultiplier="0.75" maxspeedmultiplier="0.75" minchromaticaberration="10" maxchromaticaberration="15" minskillmultiplier="0.85" maxskillmultiplier="0.85">
+        <StatusEffect target="Character" comparison="and" interval="1">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Sounds/HeartbeatDiastole1.ogg" loop="true" volume="1" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="and" interval="1" delay="0.3">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Sounds/HeartbeatSystole1.ogg" loop="true" volume="1" dontmuffle="true" />
+        </StatusEffect>
+        <StatValue stattype="RangedSpreadReduction" value="-0.5" />
+        <StatValue stattype="MeleeAttackMultiplier" value="-0.1" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" value="-0.15" />
+      </Effect>
+      <Effect minstrength="3" maxstrength="5" ConvulseAmount="0.45" strengthchange="-0.4" minspeedmultiplier="0.5" maxspeedmultiplier="0.5" minchromaticaberration="15" maxchromaticaberration="25" minskillmultiplier="0.7" maxskillmultiplier="0.7">
+        <StatusEffect target="Character" comparison="and" interval="0.8">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Sounds/HeartbeatDiastole1.ogg" loop="true" volume="1" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="and" interval="0.8" delay="0.3">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Sounds/HeartbeatSystole1.ogg" loop="true" volume="1" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="0.15">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="4" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="and">
+          <Conditional mass="lt 50" />
+          <Conditional ishusk="eq false" />
+          <AiTrigger state="Flee" duration="5" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="0.5" disabledeltatime="true">
+          <Affliction identifier="psychosis" strength="0.25" />
+        </StatusEffect>
+        <StatValue stattype="RangedSpreadReduction" value="-0.7" />
+        <StatValue stattype="MeleeAttackMultiplier" value="-0.2" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" value="-0.35" />
+      </Effect>
+      <icon texture="%ModDir%/Afflictionsicon-8.png" />
+    </Affliction>
+    <fake-stun name="Stun" identifier="fake-stun" description="The patient is dazed and unresponsive." type="stun" limbspecific="false" indicatorlimb="Head" activationthreshold="0.0" showiconthreshold="1000" maxstrength="30">
+      <Description textidentifier="afflictiondescription.stun" target="OtherCharacter" />
+      <Description textidentifier="afflictiondescription.stun.self" target="Self" />
+      <Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+    </fake-stun>
+    <fake-pressure name="Barotrauma" identifier="fake-pressure" description="There is obvious massive organ damage and the blood vessels of the eye have burst, creating an unnerving red gaze." type="pressure" causeofdeathdescription="Crushed by water pressure" selfcauseofdeathdescription="You have been crushed by water pressure." limbspecific="false" maxstrength="1" showiconthreshold="1000" damageoverlayalpha="0.6">
+      <Effect minstrength="0" maxstrength="1" multiplybymaxvitality="true" minvitalitydecrease="10" maxvitalitydecrease="10" minbodytint="60,0,0,0" maxbodytint="60,0,0,200" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </fake-pressure>
+    <Affliction identifier="acid-anim" type="poison" minradialdistort="0.0" maxradialdistort="0.5" maxstrength="125" indicatorlimb="Head" limbspecific="false" affectmachines="false">
+      <Effect minstrength="0" maxstrength="80" mingrainstrength="0.0" maxgrainstrength="3" graincolor="155,155,75,155" minscreenblur="0" maxscreenblur="2.5" strengthchange="-0.5" minskillmultiplier="1" maxskillmultiplier="0.25" minspeedmultiplier="1.0" maxspeedmultiplier="0.75" minfacetint="255,0,0,0" maxfacetint="255,0,0,100" minchromaticaberration="4" maxchromaticaberration="5">
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="acid-anim" strength="0.2" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="0.01" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="bloodsplash" scalemin="0.1" scalemax="0.20" particlespersecond="1" copyentityangle="true" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.8" volume="0.05" range="300" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.85" volume="0.05" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.9" volume="0.05" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.95" volume="0.05" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.0" volume="0.05" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.05" volume="0.05" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.1" volume="0.05" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.15" volume="0.05" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.2" volume="0.05" range="300" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="2">
+          <Conditional pepper="lte 25" />
+          <Conditional pressureProtection="gte 1000" />
+          <RequiredItem items="diving" type="Equipped" />
+          <ReduceAffliction identifier="acid-anim" strength="1000" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional ishuman="false" />
+          <Affliction identifier="organdamage" amount="5" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Torso">
+          <ParticleEmitter distance="6" particle="fixfoam-anim" scalemin="30" scalemax="30" particlespersecond="1" copyentityangle="false" />
+          <Affliction identifier="internaldamage" amount="0.2" />
+          <Affliction identifier="spasm_shot" amount="2" />
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" mingrainstrength="3" maxgrainstrength="5" graincolor="155,155,75,155" minradialdistort="0.5" maxradialdistort="0.7" strengthchange="-1" minscreenblur="3" maxscreenblur="5" minskillmultiplier="0.5" maxskillmultiplier="0.25" convulseamount="0.10" minfacetint="255,0,0,100" maxfacetint="255,0,0,100" minspeedmultiplier="1.0" maxspeedmultiplier="0.5" minchromaticaberration="4" maxchromaticaberration="5">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="bloodsplash" scalemin="0.1" scalemax="0.20" particlespersecond="2" copyentityangle="true" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.8" volume="0.1" range="300" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.85" volume="0.075" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.9" volume="0.075" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.95" volume="0.075" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.0" volume="0.075" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.05" volume="0.075" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.1" volume="0.075" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.15" volume="0.075" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.2" volume="0.075" range="300" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.0" maxvalue="-0.3" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.3" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.3" />
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional ishuman="false" />
+          <Affliction identifier="organdamage" amount="7.5" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Torso">
+          <ParticleEmitter distance="6" particle="fixfoam-anim" scalemin="30" scalemax="30" particlespersecond="1" copyentityangle="false" />
+          <Affliction identifier="internaldamage" amount="0.35" />
+          <Affliction identifier="spasm_shot" amount="4" />
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="100" maxstrength="125" mingrainstrength="5" maxgrainstrength="7.5" graincolor="155,155,75,155" minradialdistort="0.75" maxradialdistort="1.0" strengthchange="-1.25" minskillmultiplier="0.25" maxskillmultiplier="0.0" minscreenblur="5" maxscreenblur="5" convulseamount="0.25" minfacetint="255,0,0,100" maxfacetint="255,0,0,175" minspeedmultiplier="0.5" maxspeedmultiplier="0.25" minchromaticaberration="5" maxchromaticaberration="5">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head">
+          <ParticleEmitter distance="6" particle="bloodsplash" scalemin="0.1" scalemax="0.20" particlespersecond="3" copyentityangle="true" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.8" volume="0.1" range="300" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.85" volume="0.1" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.9" volume="0.1" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="0.95" volume="0.1" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.0" volume="0.1" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.05" volume="0.1" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.1" volume="0.1" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.15" volume="0.1" range="300" />
+          <Sound file="%ModDir%/Saunds/acidonflesh.ogg" frequencymultiplier="1.2" volume="0.1" range="300" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.3" maxvalue="-0.5" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.3" maxvalue="-0.5" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.3" maxvalue="-0.5" />
+        <StatusEffect target="Character" duration="1" stackable="false">
+          <Conditional ishuman="false" />
+          <Affliction identifier="organdamage" amount="10" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Torso">
+          <ParticleEmitter distance="6" particle="fixfoam-anim" scalemin="30" scalemax="30" particlespersecond="1" copyentityangle="false" />
+          <Affliction identifier="internaldamage" amount="0.5" />
+          <Affliction identifier="spasm_shot" amount="7.5" />
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="5" maxinterval="15" minstrength="75" maxstrength="125">
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/male_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/male_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/male_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" filename="Vomit" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.25" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" />
+          <Sound file="%ModDir%/Saunds/female_blind1.ogg" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/Saunds/female_blind2.ogg" frequencymultiplier="1.1" />
+          <Sound file="%ModDir%/Saunds/female_blind3.ogg" frequencymultiplier="0.9" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" filename="Vomit" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimbs="Head" duration="1">
+          <ParticleEmitter particle="bloodsplash" copyentityangle="true" anglemin="-20" anglemax="5" particlespersecond="100" velocitymin="60" velocitymax="250" scalemin="0.2" scalemax="0.4" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="1.25" shockwave="false" underwaterbubble="false" />
+          <Conditional HideFace="eq False" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" duration="1" comparison="and">
+          <Conditional immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="1" />
+          <Affliction identifier="lungdamage" strength="0.15" />
+          <Affliction identifier="pneumothorax" strength="0.01" />
+          <Affliction identifier="cerebralhypoxia" strength="0.15" />
+          <Affliction identifier="bloodloss" strength="0.125" />
+          <Affliction identifier="concussion" strength="0.025" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon-8.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+    <Affliction identifier="surrender-anim" type="debuff" limbspecific="false" showiconthreshold="0" showicontoothersthreshold="1000" showinhealthscannerthreshold="10000" treatmentthreshold="1000" karmachangeonapplied="0" maxstrength="1" affectmachines="false" healcostmultiplier="0">
+      <Effect minstrength="0" maxstrength="1" strengthchange="-0.5" convulseamount="0.4" />
+    </Affliction>
+    <Affliction identifier="blind-extinguisher" type="poison" minradialdistort="0.0" maxradialdistort="0.5" affectmachines="false" maxstrength="125" limbspecific="false">
+      <Effect minstrength="0" maxstrength="80" minscreenblur="0" maxscreenblur="0" strengthchange="-2" minskillmultiplier="1" maxskillmultiplier="0.25" minchromaticaberration="8" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="0.01" targetLimbs="Head"></StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0.0" maxvalue="-0.6" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.6" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.0" maxvalue="-0.6" />
+        <StatusEffect target="Character" duration="2" comparison="and">
+          <Conditional blind-extinguisher="lte 25" />
+          <RequiredItem items="diving" type="Equipped" />
+          <ReduceAffliction identifier="blind-extinguisher" strength="1000" />
+        </StatusEffect>
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="blind-extinguisher" strength="10" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Torso">
+          <ParticleEmitter distance="6" particle="fixfoam-anim" scalemin="30" scalemax="30" particlespersecond="2" copyentityangle="false" />
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" minradialdistort="0.5" maxradialdistort="0.7" strengthchange="-2" minscreenblur="0" maxscreenblur="0" minskillmultiplier="0.5" maxskillmultiplier="0.25" minspeedmultiplier="0.9" maxspeedmultiplier="0.8" minchromaticaberration="8" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head"></StatusEffect>
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="blind-extinguisher" strength="10" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.6" maxvalue="-1.0" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.6" maxvalue="-1.0" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-0.6" maxvalue="-1.0" />
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Torso">
+          <ParticleEmitter distance="6" particle="fixfoam-anim" scalemin="30" scalemax="30" particlespersecond="5" copyentityangle="false" />
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="100" maxstrength="125" minradialdistort="0.75" maxradialdistort="1.0" strengthchange="-2" minskillmultiplier="0.25" maxskillmultiplier="0.0" minscreenblur="0" maxscreenblur="0" minspeedmultiplier="0.6" maxspeedmultiplier="0.8" minchromaticaberration="10" maxchromaticaberration="10">
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Head"></StatusEffect>
+        <StatusEffect type="InWater" Interval="0.5" target="Character">
+          <ReduceAffliction identifier="blind-extinguisher" strength="10" />
+        </StatusEffect>
+        <StatusEffect target="Character" ObstructVisionAmount="10" targetLimbs="Torso">
+          <ParticleEmitter distance="6" particle="fixfoam-anim" scalemin="30" scalemax="30" particlespersecond="5" copyentityangle="false" />
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-1.0" maxvalue="-1.8" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-1.0" maxvalue="-1.8" />
+        <StatValue stattype="NaturalMeleeAttackMultiplier" minvalue="-1.0" maxvalue="-1.8" />
+      </Effect>
+      <PeriodicEffect mininterval="7" maxinterval="12" minstrength="50" maxstrength="125">
+        <StatusEffect target="Character" SpeedMultiplier="0.5" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Blind.xml" priority="11" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/BlindRun.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.5" setvalue="true" ObstructVisionAmount="0.01" duration="1.7" LowPassMultiplier="0.2" comparison="and">
+          <Conditional healthpercentage="gt 0" />
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Affliction identifier="nausea" strength="0.125" />
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/Blind.xml" priority="11" />
+          <TriggerAnimation Type="Run" path="%ModDir%/Animations/BlindRun.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" duration="2" comparison="and">
+          <Conditional healthpercentage="gt 0" immunity="gt 0" sym_unconsciousness="lt 2" />
+          <Conditional ishuman="true" />
+          <Affliction identifier="oxygenlow" strength="0.25" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir%/Afflictionsicon-9.png" sourcerect="0,0,128,128" origin="0,0" color="125,255,125,255" />
+    </Affliction>
+  </Afflictions>
+</Override>

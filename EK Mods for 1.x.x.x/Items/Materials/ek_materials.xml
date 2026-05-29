@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ek_weaponparts" category="Material" aliases="weapon_components,weapon parts,weapon_parts" tags="mediumitem,ek_fabricator_kit,crate" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="3">
+    <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.5" />
+    <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.15" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+    <Price baseprice="400" sold="false" minleveldifficulty="10">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.2" sold="true" minavailable="1" />
+    </Price>
+    <Deconstruct time="30">
+      <Item identifier="steel" mincondition="0.6" />
+      <Item identifier="aluminium" mincondition="0.95" />
+      <Item identifier="titaniumaluminiumalloy" mincondition="0.95" />
+      <Item identifier="rubber" mincondition="0.95" />
+      <Item identifier="plastic" mincondition="0.6" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="40">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="rubber" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="256,64,64,64" />
+    <Sprite texture="%ModDir%/Items/Containers/containers_ek.png" depth="0.54" sourcerect="384,240,112,80" />
+    <Body width="112" height="80" density="20" />
+    <Holdable slots="RightHand,LeftHand" holdpos="10,-70" handle1="-5,35" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+  </Item>
+  <Item name="Loading Kit" identifier="ek_loadingkit" category="Material" aliases="loading_kit,ammo kit,ammo_kit" tags="mediumitem,ek_fabricator_kit,crate" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="3">
+    <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.5" />
+    <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.15" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+    <Price baseprice="150" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.2" sold="true" minavailable="1" />
+    </Price>
+    <Deconstruct time="20">
+      <Item identifier="steel" mincondition="0.85" />
+      <Item identifier="aluminium" mincondition="0.85" />
+      <Item identifier="aluminium" mincondition="0.50" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="40">
+      <RequiredSkill identifier="weapons" level="65" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="potassium" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="320,128,64,64" />
+    <Sprite texture="%ModDir%/Items/Containers/containers_ek.png" depth="0.54" sourcerect="384,336,128,80" />
+    <Body width="122" height="80" density="15" />
+    <Holdable slots="RightHand,LeftHand" holdpos="10,-70" handle1="-5,35" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ek_weapontritium" category="Material" tags="smallitem,mediumitem,ek_fabricator_parts" cargocontaineridentifier="metalcrate" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_light" maxstacksize="3">
+    <Price baseprice="450" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" multiplier="0.6" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="0.8" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantengineering" multiplier="1.25" />
+    </Price>
+    <Deconstruct time="30" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="240" outcondition="0.5">
+      <RequiredSkill identifier="medical" level="45" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem identifier="fuelrod" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="lithium" mincondition="0.5" usecondition="true" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Materials/materials_ek.png" sourcerect="0,0,64,64" />
+    <Sprite texture="%ModDir%/Items/Materials/materials_ek.png" depth="0.54" sourcerect="128,0,64,96" />
+    <Body width="50" height="79" density="13" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="false" holdangle="-50" holdpos="-15,-60" handle1="-20,-10" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" removeOnCombined="true" />
+  </Item>
+  <Item name="" identifier="ek_gaussparts" category="Material" tags="smallitem,mediumitem,ek_fabricator_parts" cargocontaineridentifier="metalcrate" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_light" maxstacksize="3">
+    <Price baseprice="500" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="0.6" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="0.8" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" mincondition="0.25" />
+      <!-- 80 -->
+      <Item identifier="plastic" mincondition="0.5" />
+      <Item identifier="plastic" mincondition="0.75" />
+      <Item identifier="plastic" mincondition="1" />
+      <Item identifier="fulgurium" outcondition="0.5" mincondition="0.24" />
+      <!-- 400 -->
+      <Item identifier="fulgurium" outcondition="0.5" mincondition="0.49" />
+      <Item identifier="fulgurium" outcondition="0.5" mincondition="0.74" />
+      <Item identifier="fulgurium" outcondition="0.5" mincondition="0.99" />
+      <Item identifier="copper" outcondition="0.5" mincondition="0.24" />
+      <!-- 44 -->
+      <Item identifier="copper" outcondition="0.5" mincondition="0.49" />
+      <Item identifier="copper" outcondition="0.5" mincondition="0.74" />
+      <Item identifier="copper" outcondition="0.5" mincondition="0.99" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="120" outcondition="0.5">
+      <RequiredSkill identifier="electrical" level="60" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fulgurium" mincondition="0.99" usecondition="false" />
+      <RequiredItem identifier="copper" mincondition="0.99" usecondition="false" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Materials/materials_ek.png" sourcerect="64,0,64,64" />
+    <Sprite texture="%ModDir%/Items/Materials/materials_ek.png" depth="0.54" sourcerect="192,64,128,64" />
+    <Body width="120" height="60" density="25" />
+    <Holdable slots="RightHand,LeftHand" holdpos="10,-70" handle1="-2,22" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" removeOnCombined="true">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+  </Item>
+  <!-- Issue reported with certain individuals receiving laser diodes when purchasing other items. Tag issue? -->
+  <Item name="" identifier="ek_laserparts" category="Material" tags="smallitem,mediumitem,ek_fabricator_parts" cargocontaineridentifier="metalcrate" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_light" maxstacksize="3">
+    <Price baseprice="450" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" multiplier="0.6" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="0.8" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" outcondition="0.5" mincondition="0.24" />
+      <!-- 84 -->
+      <Item identifier="aluminium" outcondition="0.5" mincondition="0.49" />
+      <Item identifier="aluminium" outcondition="0.5" mincondition="0.74" />
+      <Item identifier="aluminium" outcondition="0.5" mincondition="0.99" />
+      <Item identifier="silicon" outcondition="0.5" mincondition="0.24" />
+      <!-- 124 -->
+      <Item identifier="silicon" outcondition="0.5" mincondition="0.49" />
+      <Item identifier="silicon" outcondition="0.5" mincondition="0.74" />
+      <Item identifier="silicon" outcondition="0.5" mincondition="0.99" />
+      <Item identifier="fpgacircuit" mincondition="0.24" />
+      <!-- 200 -->
+      <Item identifier="fpgacircuit" mincondition="0.49" />
+      <Item identifier="fpgacircuit" mincondition="0.74" />
+      <Item identifier="fpgacircuit" mincondition="0.99" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="120" outcondition="0.5">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="aluminium" mincondition="0.9" usecondition="false" />
+      <RequiredItem identifier="silicon" mincondition="0.9" usecondition="false" />
+      <RequiredItem identifier="oxygentank" mincondition="0.99" usecondition="true" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Materials/materials_ek.png" sourcerect="64,64,64,64" />
+    <Sprite texture="%ModDir%/Items/Materials/materials_ek.png" depth="0.54" sourcerect="192,128,128,64" />
+    <Body width="120" height="60" density="25" />
+    <Holdable slots="RightHand,LeftHand" holdpos="10,-70" handle1="-2,22" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" removeOnCombined="true">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+  </Item>
+</Items>

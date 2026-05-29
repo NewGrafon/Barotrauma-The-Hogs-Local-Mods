@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" identifier="alienpistol" category="Weapon,Alien" tags="smallitem,weapon,alien,mountableweapon,pistolitem" Scale="0.5" impactsoundtag="impact_metal_light">
+      <Price baseprice="500" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.9" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="0.9" />
+      </Price>
+      <PreferredContainer primary="ruinstorage,ruinstoragesmall" amount="1" spawnprobability="0.02" />
+      <PreferredContainer primary="ruinstoragelarge" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="ruintreasure" amount="1" spawnprobability="0.3" />
+      <PreferredContainer secondary="researchcontainer" amount="1" spawnprobability="0.01" />
+      <Deconstruct time="20">
+        <Item identifier="dementonite" />
+        <Item identifier="fulgurium" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="0,1875,104,58" />
+      <Sprite texture="%ModDir%/AlienPistol/AlienPistol.png" sourcerect="0,0,108,56" depth="0.55" />
+      <BrokenSprite texture="%ModDir%/AlienPistol/AlienPistol.png" sourcerect="0,56,108,56" depth="0.55" maxcondition="99" />
+      <BrokenSprite texture="%ModDir%/AlienPistol/AlienPistol.png" sourcerect="0,0,108,56" depth="0.55" maxcondition="0" />
+      <Body width="100" height="50" density="25" />
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="90,0" handle1="2,-7" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon reload="0.4" barrelpos="43,6" spread="0" unskilledspread="2" drawhudwhenequipped="true" crosshairscale="0.225" combatpriority="60">
+        <!-- Gunfire sounds. -->
+        <sound file="Content/Items/Alien/AlienTurret1.ogg" type="OnUse" range="1000.0" />
+        <sound file="Content/Items/Alien/AlienTurret2.ogg" type="OnUse" range="1000.0" />
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="0,768,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="256,768,256,256" />
+        <!-- Particles. -->
+        <ParticleEmitter particle="muzzleflashnucleargun" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemultiplier="0.5,0.5" colormultiplier="255,200,200,200" scalemin="0.0" scalemax="0.6" />
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="0" distancemax="40" />
+        <!-- Uses the 'magazine'. -->
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- Unskilled high recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="3.0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 40" />
+        </StatusEffect>
+        <!-- Skilled low recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="3.0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 40" />
+        </StatusEffect>
+        <!-- Applies psychosis on use. -->
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="psychosis" strength="2.5" />
+        </StatusEffect>
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+      Why? Simply turning the light on and off is too slow. -->
+        <StatusEffect type="OnUse" target="This" targetitemcomponent="lightcomponent" lightcolor="175,175,255,255" delay="0.01" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" targetitemcomponent="lightcomponent" lightcolor="175,175,255,0" delay="0.3" setvalue="true" />
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="alpreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="alpreloading" delay="2.5" condition="100" setvalue="true" />
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="alpreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" aimpos="90,0" handle1="2,-7" holdpos="0,0" holdangle="0" aimangle="0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="175,175,225,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" target="This,Character,Contained" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+        <!-- Gun requires ammo to use. -->
+        <RequiredItems identifier="alienpowercell" type="Contained" />
+        <!-- Alien gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="alpreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="40" />
+      </RangedWeapon>
+      <!-- Gun's muzzle which works like a light component. -->
+      <LightComponent range="27.0" isOn="true" lightcolor="175,175,255,0">
+        <LightTexture texture="%ModDir%/AlienPistol/AlienPistolMuzzle.png" origin="0.5,0.5" size="1.0,1.0" />
+      </LightComponent>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="-6,21" itemrotation="250" showcontainedstateindicator="false">
+        <Containable items="alienpowercell" excludebroken="false">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true">
+            <SpawnItem identifiers="alien-handle" spawnposition="SameInventory" spawnifcantbecontained="false" SpawnIfInventoryFull="false" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="0.9" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="2.0" setvalue="true" />
+          <!-- Makes the power cell invisible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="true" delay="0.01" setvalue="true" stackable="false" />
+          <!-- Breaks the weapon and rotates the gun and moves hands. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.01" aimpos="30,-20" holdpos="40,-20" aimangle="10" holdangle="10" condition="0" setvalue="true" stackable="false" />
+          <!-- Plays the sound. -->
+          <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/AlienPistol/AlienPistolUnload.ogg" volume="2" type="OnUse" range="1000" />
+          </StatusEffect>
+          <!-- Plays the sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/AlienPistol/AlienPistolLoad.ogg" type="OnUse" volume="2" range="1000" />
+          </StatusEffect>
+          <!-- Rotates the gun and moves hands. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.1" aimpos="30,-30" holdpos="40,-25" aimangle="-10" holdangle="-10" setvalue="true" stackable="false" />
+          <!-- Makes the power cell visible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="false" delay="1.4" setvalue="true" stackable="false" />
+          <!-- Sets condition for animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.5" condition="50" setvalue="true" stackable="false" />
+          <!-- Sets condition for animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.3" condition="100" setvalue="true" stackable="false" />
+          <!-- Sets everything to default. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.4" aimpos="90,0" holdpos="0,0" aimangle="0" holdangle="0" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="alpreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->&gt;
+        <Containable items="alpreloading" hide="true" /></ItemContainer>
+      <SkillRequirementHint identifier="weapons" level="40" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="alpreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,alpreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name=" " identifier="alien-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" handle2="-40,-10" delay="1.2" holdpos="50,-18" aimpos="50,-18" />
+        <StatusEffect type="Always" target="This" delay="2.2">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="alienpowercell" category="Alien,Equipment" maxstacksize="8" Tags="alien,smallitem,alienpowercell" scale="0.3" impactsoundtag="impact_metal_light">
+      <Price baseprice="220" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="lead" />
+        <Item identifier="fulgurium" />
+      </Deconstruct>
+      <PreferredContainer primary="alienpistol" amount="1" spawnprobability="1.0" />
+      <PreferredContainer primary="ancientweapon" amount="1" spawnprobability="1.0" />
+      <PreferredContainer primary="wrecksecarmcab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="ruinstorage,ruinstoragesmall" amount="1" spawnprobability="0.2" />
+      <PreferredContainer primary="ruinstoragelarge" minamount="1" maxamount="2" spawnprobability="0.4" />
+      <PreferredContainer primary="ruintreasure" minamount="2" maxamount="3" spawnprobability="0.5" />
+      <PreferredContainer secondary="researchcontainer" amount="1" spawnprobability="0.02" />
+      <Sprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="58,187,28,73" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="86,187,28,73" origin="0.5,0.5" maxcondition="89" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="114,187,28,73" origin="0.5,0.5" maxcondition="81" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="142,187,28,73" origin="0.5,0.5" maxcondition="75" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="170,187,28,73" origin="0.5,0.5" maxcondition="69" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="198,187,28,73" origin="0.5,0.5" maxcondition="53" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="58,260,28,73" origin="0.5,0.5" maxcondition="41" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="86,260,28,73" origin="0.5,0.5" maxcondition="33" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="114,260,28,73" origin="0.5,0.5" maxcondition="21" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="142,260,28,73" origin="0.5,0.5" maxcondition="9" />
+      <BrokenSprite texture="%ModDir%/Ammunition-2.png" depth="0.7" sourcerect="170,260,28,73" origin="0.5,0.5" maxcondition="0" />
+      <LightComponent AllowInGameEditing="false" lightcolor="112,146,190,30" canbeselected="false" range="50.0" IsOn="true" castshadows="false" />
+      <Body radius="15" height="40" density="30" />
+      <Holdable slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="alienprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="battery">
+        <Containable items="alienprojectile" />
+        <StatusEffect type="OnUse" target="This" condition="-4.0" disabledeltatime="true">
+          <SpawnItem identifiers="alienprojectile" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" Condition="2.0" checkconditionalalways="true" comparison="and">
+          <Conditional hastag="eq aliengenerator" targetcontainer="true" />
+          <Conditional condition="gt 0" targetcontainer="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+  </Items>
+</Override>

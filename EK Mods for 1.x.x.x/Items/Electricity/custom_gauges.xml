@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekdockyard_customgauge1a" category="Electrical,Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" spritecolor="165,160,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.8" sourcerect="0,0,128,128" origin="0.5, 0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="280,0,64,64" depth="0.815" origin="0.5,0.5" />
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="64,64" reload="999999999" rotationlimits="0,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.805" sourcerect="256,0,16,64" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_customgauge1b" category="Electrical,Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" spritecolor="165,160,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.8" sourcerect="128,0,128,128" origin="0.5, 0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="280,0,64,64" depth="0.815" origin="0.5,0.5" />
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="64,64" reload="999999999" rotationlimits="0,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.805" sourcerect="256,0,16,64" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugesector1a" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="352,0,32,32" depth="0.81" origin="0,1" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugesector1b" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="352,40,32,32" depth="0.81" origin="0,1" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugesector1c" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="280,72,64,32" depth="0.81" origin="0.5,1" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgauge2a" category="Electrical,Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" spritecolor="165,160,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.8" sourcerect="0,128,128,128" origin="0.5, 0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="288,128,96,96" depth="0.815" origin="0.5,0.5" />
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="64,64" reload="999999999" rotationlimits="0,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.805" sourcerect="256,128,16,88" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_customgauge2b" category="Electrical,Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" spritecolor="165,160,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.8" sourcerect="128,128,128,128" origin="0.5, 0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="288,128,96,96" depth="0.815" origin="0.5,0.5" />
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="64,84" reload="999999999" rotationlimits="0,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/gauges1.png" depth="0.805" sourcerect="256,128,16,96" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugesector2a" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="288,224,48,32" depth="0.81" origin="0,1" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugesector2b" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="336,128,48,48" depth="0.81" origin="0,1" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugesector2c" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges1.png" sourcerect="288,128,96,48" depth="0.81" origin="0.5,1" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgauge_engine1a" category="Electrical,Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" spritecolor="165,160,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" depth="0.8" sourcerect="0,0,128,128" origin="0.5, 0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" sourcerect="0,128,96,96" depth="0.815" origin="0.5,0.5" />
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" depth="0.025" sourcerect="0,224,96,96" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="64,64" reload="999999999" rotationlimits="0,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" depth="0.805" sourcerect="256,128,32,48" origin="0.5, 1" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_customgauge_engine1b" category="Electrical,Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" spritecolor="165,160,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" depth="0.8" sourcerect="128,0,128,128" origin="0.5, 0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" sourcerect="0,128,96,96" depth="0.815" origin="0.5,0.5" />
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" depth="0.025" sourcerect="128,224,96,96" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="64,64" reload="999999999" rotationlimits="0,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" depth="0.798" sourcerect="288,80,32,96" origin="0.5, 1" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugemarkings_engine1a" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" sourcerect="144,128,96,96" depth="0.805" origin="0.5,0.5" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugemarkings_engine1b" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" sourcerect="192,224,96,96" depth="0.805" origin="0.5,0.5" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugesector_engine1a" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_engine.png" sourcerect="96,128,32,48" depth="0.81" origin="0.5,1" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgauge_turret1a" category="Electrical,Decorative" tags="smallitem" focusonselected="false" linkable="false" Scale="0.5" spritecolor="165,160,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_turretclock.png" depth="0.8" sourcerect="0,0,128,128" origin="0.5, 0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/gauges2_turretclock.png" sourcerect="0,128,96,96" depth="0.815" origin="0.5,0.5" />
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="%ModDir%/Items/Electricity/gauges2_turretclock.png" depth="0.025" sourcerect="0,224,96,96" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <Turret canbeselected="false" characterusable="false" linkable="false" barrelpos="64,64" reload="999999999" rotationlimits="0,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/gauges2_turretclock.png" depth="0.805" sourcerect="288,128,32,48" origin="0.5, 1" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugemarkings_turret1a" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_turretclock.png" sourcerect="96,128,96,96" depth="0.805" origin="0.5,0.5" />
+  </Item>
+  <Item name="" identifier="ekdockyard_customgaugemarkings_turret1b" category="Electrical,Decorative" Tags="smallitem" scale="0.5" noninteractable="True">
+    <Sprite texture="%ModDir%/Items/Electricity/gauges2_turretclock.png" sourcerect="192,128,96,96" depth="0.805" origin="0.5,0.5" />
+  </Item>
+</Items>

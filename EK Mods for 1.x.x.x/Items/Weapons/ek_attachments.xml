@@ -1,0 +1,2642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ek_suppressor" aliases="suppressor,silencer,ekcompatibility_suppressor" category="Equipment" Tags="smallitem,weapon,gun,ekcompatibility_suppressor" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+    <Price baseprice="80" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="rubber" />
+      <RequiredSkill identifier="weapons" level="60" />
+    </Fabricate>
+    <Deconstruct time="8">
+      <Item identifier="steel" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,192,64,64" />
+    <Sprite texture="weapons_ek.png" sourcerect="128,384,80,16" depth="0.55" />
+    <Body width="67" height="16" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" holdangle="-90" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="ek_lightattachment" aliases="taclight,light attachment,flashlight attachment,ekcompatibility_taclight" category="Equipment" Tags="smallitem,ekcompatibility_taclight" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+    <Price baseprice="120" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem tag="lightcomponent" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+      <Item identifier="lightcomponent" />
+    </Deconstruct>
+    <Sprite texture="weapons_ek.png" sourcerect="368,496,48,16" depth="0.55" />
+    <Body width="38" height="14" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" holdangle="-90" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="ek_laserattachment" aliases="laser attachment, laser sight attachment,ekcompatibility_lasersight" category="Equipment" Tags="smallitem,ekcompatibility_lasersight" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+    <Price baseprice="150" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem tag="lightcomponent" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="lightcomponent" />
+    </Deconstruct>
+    <Sprite texture="weapons_ek.png" sourcerect="368,480,48,16" depth="0.55" />
+    <Body width="38" height="14" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" holdangle="-90" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="ek_sonarattachment" aliases="sonar attachment, sonar scope attachment,ekcompatibility_sonarscope" category="Equipment" Tags="smallitem,ekcompatibility_sonarscope" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+    <Price baseprice="180" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="electrical" level="60" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="handheldsonar" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="aluminium" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="handheldsonar" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,256,64,64" />
+    <Sprite texture="weapons_ek.png" sourcerect="448,896,80,48" depth="0.55" />
+    <Body width="64" height="32" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" holdangle="-90" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="ek_piperifle_flashlight" aliases="pipe rifle taclight,pipegun taclight, pipe rifle flashlight" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_piperound,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_piperifle" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_piperifle" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,480,368,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,480,368,96" depth="0.83" />
+    <Body width="90" height="30" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-15" aimpos="55,0" handle1="-50,-15" handle2="30,-7.5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="68,9" holdpos="45,-10" aimpos="40,0" handle1="-35,-10" handle2="28,-30" -->
+    <RangedWeapon barrelpos="170,20" spread="4" unskilledspread="8" reload="1.25" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_piperifle.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="2.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <RequiredItems identifiers="revolverround,revolverammo,ek_piperound" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" itempos="27,10" iteminterval="0,-4" capacity="4" maxstacksize="1" hideitems="true">
+      <Containable identifiers="revolverround,revolverammo,ek_piperound" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.003, 0.487" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_piperifle_laser" aliases="pipe rifle laser,pipegun laser, pipe rifle laser" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_piperound,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_piperifle" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_piperifle" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,576,368,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,576,368,96" depth="0.83" />
+    <Body width="90" height="30" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-15" aimpos="55,0" handle1="-50,-15" handle2="30,-7.5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="68,9" holdpos="45,-10" aimpos="40,0" handle1="-35,-10" handle2="28,-30" -->
+    <RangedWeapon barrelpos="170,20" spread="4" unskilledspread="8" reload="1.25" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_piperifle.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="2.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <RequiredItems identifiers="revolverround,revolverammo,ek_piperound" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" itempos="27,10" iteminterval="0,-4" capacity="4" maxstacksize="1" hideitems="true">
+      <Containable identifiers="revolverround,revolverammo,ek_piperound" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.002, 0.475" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_piperifle_suppressed" aliases="suppressed pipegun, pipegun suppressed, suppressed pipe gun, pipe gun suppressed" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_piperound,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_piperifle" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_piperifle" />
+      <Item identifier="ek_suppressor" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,64,64,64" />
+    <Sprite texture="weapons_ek.png" sourcerect="448,160,432,96" depth="0.55" />
+    <!-- <Sprite texture="weapons_ek.png" sourcerect="0,160,368,96" depth="0.55" /> -->
+    <!-- Shared Sprite, add decorative sprites -->
+    <!--<DecorativeSprite name="Weapon Attachment" texture="weapons_ek.png" sourcerect="128,384,80,16" depth="0.55" offset="208,16" /> -->
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="448,160,432,96" depth="0.83" />
+    <Body width="90" height="30" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-15" aimpos="55,0" handle1="-50,-15" handle2="30,-7.5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="74,9" holdpos="45,-10" aimpos="40,0" handle1="-35,-10" handle2="28,-30" -->
+    <RangedWeapon barrelpos="205,20" spread="4" unskilledspread="8" reload="1.25" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <RequiredItems identifiers="revolverround,revolverammo,ek_piperound" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" itempos="27,10" iteminterval="0,-4" capacity="4" maxstacksize="1" hideitems="true">
+      <Containable identifiers="revolverround,revolverammo,ek_piperound" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_piperifle_suppressed_flashlight" aliases="suppressed pipegun taclight, pipegun suppressed taclight, suppressed pipe gun taclight, pipe gun suppressed taclight" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_piperound,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_piperifle" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_piperifle" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="368,480,432,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="368,480,432,96" depth="0.83" />
+    <Body width="90" height="30" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-15" aimpos="55,0" handle1="-50,-15" handle2="30,-7.5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="74,9" holdpos="45,-10" aimpos="40,0" handle1="-35,-10" handle2="28,-30" -->
+    <RangedWeapon barrelpos="205,20" spread="4" unskilledspread="8" reload="1.25" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <RequiredItems identifiers="revolverround,revolverammo,ek_piperound" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" itempos="27,10" iteminterval="0,-4" capacity="4" maxstacksize="1" hideitems="true">
+      <Containable identifiers="revolverround,revolverammo,ek_piperound" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.003, 0.487" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_piperifle_suppressed_laser" aliases="suppressed pipegun laser, pipegun suppressed laser, suppressed pipe gun laser, pipe gun suppressed laser" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_piperound,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_piperifle" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_piperifle" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="368,576,432,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="368,576,432,96" depth="0.83" />
+    <Body width="90" height="30" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-15" aimpos="55,0" handle1="-50,-15" handle2="30,-7.5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="74,9" holdpos="45,-10" aimpos="40,0" handle1="-35,-10" handle2="28,-30" -->
+    <RangedWeapon barrelpos="205,20" spread="4" unskilledspread="8" reload="1.25" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <RequiredItems identifiers="revolverround,revolverammo,ek_piperound" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" itempos="27,10" iteminterval="0,-4" capacity="4" maxstacksize="1" hideitems="true">
+      <Containable identifiers="revolverround,revolverammo,ek_piperound" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.002, 0.475" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_handgun_flashlight" aliases="handgun taclight" category="Equipment,Weapon" tags="smallitem,weapon,gun,ek_ammotag_9mm,gunsmith,pistolitem" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_handgun" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_handgun" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,0,112,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,0,112,64" depth="0.83" />
+    <Body width="90" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,10" handle1="-30,-12" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="20,5" aimpos="80,10" handle1="-9,-11" -->
+    <RangedWeapon barrelpos="55,25" spread="4" unskilledspread="12" reload="0.33" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_handgun_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_handgun_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-40,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_handgun_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_handgun_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_handgun_laser" aliases="handgun laser" category="Equipment,Weapon" tags="smallitem,weapon,gun,ek_ammotag_9mm,gunsmith,pistolitem" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_handgun" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_handgun" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,64,112,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,64,112,64" depth="0.83" />
+    <Body width="90" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,10" handle1="-30,-12" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="20,5" aimpos="80,10" handle1="-9,-11" -->
+    <RangedWeapon barrelpos="55,25" spread="4" unskilledspread="12" reload="0.33" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_handgun_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_handgun_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-40,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_handgun_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_handgun_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.001, 0.5" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_handgun_suppressed" aliases="suppressed handgun, handgun suppressed" category="Equipment,Weapon" tags="smallitem,weapon,gun,ek_ammotag_9mm,gunsmith,pistolitem" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_handgun" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_handgun" />
+      <Item identifier="ek_suppressor" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,0,64,64" />
+    <Sprite texture="weapons_ek.png" sourcerect="448,0,240,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="448,0,240,64" depth="0.83" />
+    <!-- Todo: Wait for mirroring to work
+	<DecorativeSprite name="suppressor Sprite" texture="weapons_ek.png" depth="0.53" sourcerect="128,384,80,16" origin="0.5,0.5" offset="80,25" /> -->
+    <Body width="90" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,10" handle1="-30,-12" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="34,5" aimpos="80,10" handle1="-9,-11" -->
+    <RangedWeapon barrelpos="118,25" spread="4" unskilledspread="12" reload="0.33" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_handgun.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_handgun_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-40,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_handgun_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_handgun_skin" />
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_handgun_suppressed_flashlight" aliases="suppressed handgun taclight, handgun taclight suppressed" category="Equipment,Weapon" tags="smallitem,weapon,gun,ek_ammotag_9mm,gunsmith,pistolitem" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_handgun" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_handgun" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="112,0,240,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="112,0,240,64" depth="0.83" />
+    <!-- Todo: Wait for mirroring to work
+	<DecorativeSprite name="suppressor Sprite" texture="weapons_ek.png" depth="0.53" sourcerect="128,384,80,16" origin="0.5,0.5" offset="80,25" /> -->
+    <Body width="90" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,10" handle1="-30,-12" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="34,5" aimpos="80,10" handle1="-9,-11" -->
+    <RangedWeapon barrelpos="118,25" spread="4" unskilledspread="12" reload="0.33" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_handgun.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_handgun_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-40,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_handgun_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_handgun_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_handgun_suppressed_laser" aliases="suppressed handgun laser, handgun laser suppressed" category="Equipment,Weapon" tags="smallitem,weapon,gun,ek_ammotag_9mm,gunsmith,pistolitem" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_handgun" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_handgun" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="112,64,240,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="112,64,240,64" depth="0.83" />
+    <!-- Todo: Wait for mirroring to work
+	<DecorativeSprite name="suppressor Sprite" texture="weapons_ek.png" depth="0.53" sourcerect="128,384,80,16" origin="0.5,0.5" offset="80,25" /> -->
+    <Body width="90" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,10" handle1="-30,-12" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="34,5" aimpos="80,10" handle1="-9,-11" -->
+    <RangedWeapon barrelpos="118,25" spread="4" unskilledspread="12" reload="0.33" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_handgun.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_handgun_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-40,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_handgun_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_handgun_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_handgun_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.001, 0.5" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_mini_smg_flashlight" aliases="mini smg taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_10mm,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_mini_smg" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_mini_smg" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="320,192,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,208,128,80" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,208,128,80" depth="0.83" />
+    <Body width="128" height="56" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="55,-5" handle1="-34,-16" handle2="20,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="34,6" holdpos="45,-10" aimpos="55,-10" handle1="-28,-16" handle2="20,0" holdangle="-40" -->
+    <RangedWeapon barrelpos="64,15" spread="9" unskilledspread="18" reload="0.09" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_microsmg_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_mini_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_mini_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.001, 0.495" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_mini_smg_laser" aliases="mini smg laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_10mm,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_mini_smg" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_mini_smg" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="320,192,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="128,208,128,80" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="128,208,128,80" depth="0.83" />
+    <Body width="128" height="56" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="55,-5" handle1="-34,-16" handle2="20,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="34,6" holdpos="45,-10" aimpos="55,-10" handle1="-28,-16" handle2="20,0" holdangle="-40" -->
+    <RangedWeapon barrelpos="64,15" spread="9" unskilledspread="18" reload="0.09" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_microsmg_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_mini_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_mini_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.001, 0.495" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_mini_smg_suppressed" aliases="compact smg suppressed, suppressed mini smg, mini smg suppressed,ek_mini_smg_supressed" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_10mm,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_mini_smg" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_mini_smg" />
+      <Item identifier="ek_suppressor" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="320,192,64,64" />
+    <Sprite texture="weapons_ek.png" sourcerect="528,576,256,80" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="448,64,352,96" depth="0.83" />
+    <Body width="128" height="56" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="55,-5" handle1="-34,-16" handle2="20,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="44,6" holdpos="45,-10" aimpos="55,-10" handle1="-28,-16" handle2="20,0" holdangle="-40" -->
+    <RangedWeapon barrelpos="142,15" spread="9" unskilledspread="18" reload="0.09" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_microsmg_mono.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_mini_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_mini_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_mini_smg_suppressed_flashlight" aliases="compact smg taclight suppressed, suppressed mini smg taclight, mini smg taclight suppressed,ek_mini_smg_supressed_flashlight" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_10mm,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_mini_smg" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_mini_smg" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="320,192,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="256,208,256,80" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="256,208,256,80" depth="0.83" />
+    <Body width="128" height="56" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="55,-5" handle1="-34,-16" handle2="20,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="44,6" holdpos="45,-10" aimpos="55,-10" handle1="-28,-16" handle2="20,0" holdangle="-40" -->
+    <RangedWeapon barrelpos="142,15" spread="9" unskilledspread="18" reload="0.09" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_microsmg_mono.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_mini_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_mini_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.001, 0.495" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_mini_smg_suppressed_laser" aliases="compact smg laser suppressed, suppressed mini smg laser, mini smg laser suppressed,ek_mini_smg_supressed_laser" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_10mm,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_mini_smg" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_mini_smg" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="320,192,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="512,208,256,80" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="512,208,256,80" depth="0.83" />
+    <Body width="128" height="56" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="55,-5" handle1="-34,-16" handle2="20,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="44,6" holdpos="45,-10" aimpos="55,-10" handle1="-28,-16" handle2="20,0" holdangle="-40" -->
+    <RangedWeapon barrelpos="142,15" spread="9" unskilledspread="18" reload="0.09" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_microsmg_mono.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_mini_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-20">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_mini_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_mini_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.001, 0.495" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_smg_flashlight" aliases="marine smg taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_57mm,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_smg" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_smg" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,288,256,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,288,256,96" depth="0.83" />
+    <Body width="240" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-10" aimpos="45,3" handle1="5,-22" handle2="110,-16" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="52,4" holdpos="45,-10" aimpos="40,10" handle1="18,-21" handle2="102,-17" holdangle="-40" -->
+    <RangedWeapon barrelpos="124,8" spread="9" unskilledspread="18" reload="0.09" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_marine_smg_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-60,-16">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_smg_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.014, 0.487" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_smg_laser" aliases="marine smg laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_57mm,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_smg" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_smg" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,384,256,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,384,256,96" depth="0.83" />
+    <Body width="240" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-10" aimpos="45,3" handle1="5,-22" handle2="110,-16" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="52,4" holdpos="45,-10" aimpos="40,10" handle1="18,-21" handle2="102,-17" holdangle="-40" -->
+    <RangedWeapon barrelpos="124,8" spread="9" unskilledspread="18" reload="0.09" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksmg" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_marine_smg_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-60,-16">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_smg_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.010, 0.475" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_smg_suppressed" aliases="suppressed smg, smg suppressed,ek_smg_supressed" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_57mm,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_smg" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_smg" />
+      <Item identifier="ek_suppressor" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,0,64,64" />
+    <Sprite texture="weapons_ek.png" sourcerect="448,64,352,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="448,64,352,96" depth="0.83" />
+    <Body width="240" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-10" aimpos="45,3" handle1="5,-22" handle2="110,-16" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="52,4" holdpos="45,-10" aimpos="40,10" handle1="18,-21" handle2="102,-17" holdangle="-40" -->
+    <RangedWeapon barrelpos="175,8" spread="9" unskilledspread="18" reload="0.09" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_smg.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-60,-16">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_smg_skin" />
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_smg_suppressed_flashlight" aliases="suppressed smg taclight, smg taclight suppressed,ek_smg_supressed_flashlight" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_57mm,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_smg" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_smg" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="256,288,352,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="256,288,352,96" depth="0.83" />
+    <Body width="240" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-10" aimpos="45,3" handle1="5,-22" handle2="110,-16" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="52,4" holdpos="45,-10" aimpos="40,10" handle1="18,-21" handle2="102,-17" holdangle="-40" -->
+    <RangedWeapon barrelpos="175,8" spread="9" unskilledspread="18" reload="0.09" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_smg.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-60,-16">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_smg_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.014, 0.487" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_smg_suppressed_laser" aliases="suppressed smg laser, smg laser suppressed,ek_smg_supressed_laser" category="Equipment,Weapon" tags="mediumitem,weapon,gun,ek_ammotag_57mm,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_smg" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_smg" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="256,384,352,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="256,384,352,96" depth="0.83" />
+    <Body width="240" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-10" aimpos="45,3" handle1="5,-22" handle2="110,-16" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="52,4" holdpos="45,-10" aimpos="40,10" handle1="18,-21" handle2="102,-17" holdangle="-40" -->
+    <RangedWeapon barrelpos="175,8" spread="9" unskilledspread="18" reload="0.09" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_smg.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_smg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-60,-16">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_smg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_smg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_smg_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.010, 0.475" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_tactical_shotgun_flashlight" aliases="shotgun taclight, tactical shotgun taclight,ek_shotgun_flashlight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_shotgunshell,shotgun,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_tactical_shotgun" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_tactical_shotgun" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,256,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="448,0,272,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="448,0,272,96" depth="0.83" />
+    <Body width="272" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="35,-5" handle1="-25,-18" handle2="100,-6" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="56,8" holdpos="45,-10" aimpos="30,5" handle1="-2,-18" handle2="100,-16" holdangle="-40" -->
+    <RangedWeapon barrelpos="136,16" spread="0" unskilledspread="8" reload="1.1" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_shotgun_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_shotgun_shells,shotgunshell,shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="40" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="6" maxstacksize="1" hideitems="true" itempos="-60,-16">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_shotgun_shells,shotgunshell,shotgunammo" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_shotgun_shells" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.026, 0.495" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_tactical_shotgun_laser" aliases="shotgun laser, tactical shotgun laser,ek_shotgun_laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_shotgunshell,shotgun,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_tactical_shotgun" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_tactical_shotgun" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,256,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="448,96,272,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="448,96,272,96" depth="0.83" />
+    <Body width="272" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="35,-5" handle1="-25,-18" handle2="100,-6" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="56,8" holdpos="45,-10" aimpos="30,5" handle1="-2,-18" handle2="100,-16" holdangle="-40" -->
+    <RangedWeapon barrelpos="136,16" spread="0" unskilledspread="8" reload="1.1" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_shotgun_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_shotgun_shells,shotgunshell,shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="40" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="6" maxstacksize="1" hideitems="true" itempos="-60,-16">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_shotgun_shells,shotgunshell,shotgunammo" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_shotgun_shells" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.018, 0.485" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_tazer_flashlight" aliases="tazer taclight, stun gun taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_tazer" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_tazer" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_tazer" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <!--<InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,0,64,64" />-->
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,128,88,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,128,88,64" depth="0.83" />
+    <Body width="88" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,10" handle1="-20,-5" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="40,15" aimpos="80,10" handle1="-9,-11" -->
+    <RangedWeapon barrelpos="40,15" spread="1" unskilledspread="12" reload="1.5" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <sound file="%ModDir%/Items/Weapons/ek_tazer1.ogg" type="OnUse" selectionmode="random" range="1000" />
+      <sound file="%ModDir%/Items/Weapons/ek_tazer2.ogg" type="OnUse" range="1000" />
+      <sound file="%ModDir%/Items/Weapons/ek_tazer3.ogg" type="OnUse" range="1000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_tazer_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_tazer_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+      <Containable identifiers="ek_tazer_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_tazer_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.503" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+  </Item>
+  <Item name="" identifier="ek_drumlmg_flashlight" aliases="machinegun taclight, machine gun taclight, lmg taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_556drum,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_drumlmg" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_drumlmg" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,128,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="288,672,320,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="288,672,320,96" depth="0.83" />
+    <Body width="240" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-5" aimpos="50,-10" handle1="-30,-15" handle2="80,-5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="64,7" holdpos="45,-10" aimpos="45,-10" handle1="-10,-21" handle2="102,-14" holdangle="-40" -->
+    <RangedWeapon barrelpos="160,24" spread="8" unskilledspread="30" reload="0.07" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_drum_lmg_mono.ogg" type="OnUse" range="4500" />
+      <StatusEffect type="OnUse">
+        <Explosion range="180.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_drumlmg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_drumlmg_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="65" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="28,-28">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_drumlmg_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_drumlmg_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.040, 0.5" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_dartgun_flashlight" aliases="dart gun taclight,dartgun taclight,ek_dartgun_flashlugh" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_dart" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_dartgun" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_dartgun" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="256,256,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,672,288,112" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,672,288,112" depth="0.83" />
+    <Body width="275" height="60" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-5" aimpos="45,0" handle1="-50,-20" handle2="50,5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="90,9" holdpos="45,-10" aimpos="40,10" handle1="-30,-15" handle2="50,-5" holdangle="-40" -->
+    <RangedWeapon barrelpos="144,16" spread="4" unskilledspread="8" reload="1.25" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Items/Weapons/ek_dartgun_mono.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="3.0" />
+      </StatusEffect>
+      <RequiredItems identifiers="ek_dart" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" itempos="27,10" iteminterval="0,-4" capacity="4" maxstacksize="1" hideitems="true">
+      <Containable identifiers="ek_dart" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="1,29,120,35" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.020, 0.497" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+  </Item>
+  <Item name="" identifier="ek_gausspistol_flashlight" aliases="gauss pistol taclight, coil pistol taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,loadable,ek_ammotag_gausspistol,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_gausspistol" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_gausspistol" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="800,480,176,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="96,128,176,80" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="45,-2" handle1="0,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="35,7" aimpos="45,-5" handle1="10,-11" -->
+    <RangedWeapon barrelpos="85,16" spread="4" unskilledspread="18" reload="0.25" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_gausspistol_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-1.5" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gausspistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_gausspistol_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_gausspistol_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gausspistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.009, 0.497" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_gausspistol_laser" aliases="gauss pistol laser, coil pistol laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,loadable,ek_ammotag_gausspistol,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_gausspistol" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_gausspistol" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="976,480,176,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="272,128,176,80" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="45,-2" handle1="0,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="35,7" aimpos="45,-5" handle1="10,-11" -->
+    <RangedWeapon barrelpos="85,16" spread="4" unskilledspread="18" reload="0.25" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_gausspistol_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-1.5" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gausspistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_gausspistol_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_gausspistol_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gausspistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.007, 0.495" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_gaussrifle_flashlight" aliases="gauss rifle taclight, coil rifle taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,loadable,ek_ammotag_gaussrifle,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_gaussrifle" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_gaussrifle" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,785,320,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,785,320,96" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-5" aimpos="50,5" handle1="-30,-22" handle2="100,-10" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="48,2" holdpos="45,-10" aimpos="50,10" handle1="-18,-21" handle2="102,-19" holdangle="-40" -->
+    <RangedWeapon barrelpos="156,8" spread="0.5" unskilledspread="18" reload="0.37" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_gaussrifle_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-1.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gaussrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_gaussrifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="40" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-82,-28">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_gaussrifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gaussrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.023, 0.505" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_gaussrifle_laser" aliases="gauss rifle laser, coil rifle laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,loadable,ek_ammotag_gaussrifle,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_gaussrifle" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_gaussrifle" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="320,785,320,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="320,785,320,96" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-5" aimpos="50,5" handle1="-30,-22" handle2="100,-10" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="48,2" holdpos="45,-10" aimpos="50,10" handle1="-18,-21" handle2="102,-19" holdangle="-40" -->
+    <RangedWeapon barrelpos="156,8" spread="0.5" unskilledspread="18" reload="0.37" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_gaussrifle_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-1.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gaussrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_gaussrifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="40" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-82,-28">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_gaussrifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_gaussrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.013, 0.509" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_torpedorifle_sonarscope" aliases="torpedorifle sonar, torpedo rifle sonar" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_microtorpedo" Scale="0.32" impactsoundtag="impact_metal_heavy">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_torpedorifle" />
+      <RequiredItem identifier="ek_sonarattachment" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_torpedorifle" />
+      <Item identifier="ek_sonarattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,880,320,128" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="0,880,320,128" depth="0.83" />
+    <Body width="304" height="96" density="40" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="50,0" handle1="-18,-40" handle2="92,-25" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="80,8" holdpos="45,-10" aimpos="40,10" handle1="-16,-40" handle2="92,-25" holdangle="-40" -->
+    <RangedWeapon barrelpos="150,8" spread="1" unskilledspread="15" reload="1.5" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamelauncher" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaklauncher" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_torpedo_rifle_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="180.0" force="3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="9.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_microtorpedo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="40" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="2" maxstacksize="1" hideitems="true">
+      <Containable identifiers="ek_microtorpedo" />
+      <ContainedStateIndicator texture="%ModDir%/UI/ek_containerindicators.png" sourcerect="0,0,128,32" />
+    </ItemContainer>
+    <AiTarget />
+    <!--<Sonar range="4000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1">
+      <StatusEffect type="OnUse">
+	    <sound file="Content/Items/Command/SonarPing.ogg" range="1000.0" />
+      </StatusEffect>
+      <GuiFrame relativesize="0.2,0.333" anchor="BottomLeft" relativeoffset="0,0.05"/>
+      <PingCircle texture="%ModDir%/UI/Sonarscope/pingcircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="%ModDir%/UI/Sonarscope/directionalpingcircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="%ModDir%/UI/Sonarscope/sonaroverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="%ModDir%/UI/Sonarscope/sonarbackground.png" origin="0.5,0.5" />
+      <Blip texture="%ModDir%/UI/Sonarscope/sonarblip.png" origin="0.5,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5"/>
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5"/>
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5"/>
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5"/>
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5"/>
+    </Sonar>-->
+    <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" hasmineralscanner="false" allowuioverlap="true">
+      <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" />
+      <GuiFrame relativesize="0.35,0.35" anchor="CenterLeft" relativeoffset="0.006,-0.01" />
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5" />
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5" />
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5" />
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5" />
+      <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5" />
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5" />
+    </Sonar>
+  </Item>
+  <Item name="" identifier="ek_rocketlauncher_sonarscope" aliases="marine rpg sonar,rocketlauncher sonar,rocket launcher sonar,ek rocketlauncher sonar,ek rocket launcher sonar,rpg sonar,ek rpg sonar" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_rocket" Scale="0.38" impactsoundtag="impact_metal_heavy">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_rocketlauncher" />
+      <RequiredItem identifier="ek_sonarattachment" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_rocketlauncher" />
+      <Item identifier="ek_sonarattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="384,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="320,880,288,128" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="320,880,288,128" depth="0.83" />
+    <Body width="304" height="96" density="40" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="25,5" aimpos="20,5" handle1="6,-20" handle2="100,-28" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="100,22" holdpos="30,10" aimpos="30,10" handle1="8,-16" handle2="96,-32" holdangle="-40" -->
+    <RangedWeapon barrelpos="135,28" spread="1" unskilledspread="15" reload="1.5" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamelauncher" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaklauncher" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_rocket_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="180.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="9.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_rocketammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="40" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="true">
+      <Containable identifiers="ek_rocketammo" />
+      <ContainedStateIndicator texture="%ModDir%/UI/ek_containerindicators.png" sourcerect="0,32,128,32" />
+    </ItemContainer>
+    <AiTarget />
+    <!--<Sonar range="4000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1">
+      <StatusEffect type="OnUse">
+	    <sound file="Content/Items/Command/SonarPing.ogg" range="1000.0" />
+      </StatusEffect>
+      <GuiFrame relativesize="0.2,0.333" anchor="BottomLeft" relativeoffset="0,0.05"/>
+      <PingCircle texture="%ModDir%/UI/Sonarscope/pingcircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="%ModDir%/UI/Sonarscope/directionalpingcircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="%ModDir%/UI/Sonarscope/sonaroverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="%ModDir%/UI/Sonarscope/sonarbackground.png" origin="0.5,0.5" />
+      <Blip texture="%ModDir%/UI/Sonarscope/sonarblip.png" origin="0.5,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5"/>
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5"/>
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5"/>
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5"/>
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5"/>
+    </Sonar>-->
+    <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" hasmineralscanner="false" allowuioverlap="true">
+      <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" />
+      <GuiFrame relativesize="0.35,0.35" anchor="CenterLeft" relativeoffset="0.006,-0.01" />
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5" />
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5" />
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5" />
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5" />
+      <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5" />
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5" />
+    </Sonar>
+  </Item>
+  <Item name="" identifier="ek_beast_ssl_flashlight" aliases="beast ssl taclight,ssl taclight,beast taclight,ek beast taclight,beast autocannon taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_30mmfc,gunsmith,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_beast_ssl" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_beast_ssl" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="640,688,368,144" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="640,688,368,144" depth="0.83" />
+    <Body width="336" height="100" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-45" aimpos="55,-35" handle1="-152,24" handle2="0,56" holdangle="50" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="70,-2" holdpos="40,-45" aimpos="55,-35" handle1="-152,24" handle2="0,56" holdangle="50" -->
+    <RangedWeapon barrelpos="136,-18" spread="5" unskilledspread="35" reload="0.35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamelauncher" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaklauncher" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_beastfire.ogg" type="OnUse" range="5500" />
+      <StatusEffect type="OnUse">
+        <Explosion range="100.0" force="1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="8.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_ssl_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_ssl_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_ssl_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_ssl_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.011, 0.502" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_battlerifle_flashlight" aliases="marine battle rifle taclight,marine assault rifle taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_556,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_battlerifle" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_battlerifle" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="768,32,336,112" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="768,32,336,112" depth="0.83" />
+    <Body width="330" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="65,-5" aimpos="58,5" handle1="-47.5,-25" handle2="42.5,-5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="68,5" holdpos="60,-10" aimpos="58,10" handle1="-48,-21" handle2="38,-8" holdangle="-40" -->
+    <RangedWeapon barrelpos="166,12" spread="2" unskilledspread="14" reload="0.11" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_battlerifle.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_battlerifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-33">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_battlerifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_battlerifle_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.023, 0.503" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_battlerifle_laser" aliases="marine battle rifle laser,marine assault rifle laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_556,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_battlerifle" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_battlerifle" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="768,144,336,112" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="768,32,336,112" depth="0.83" />
+    <Body width="330" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="65,-5" aimpos="58,5" handle1="-47.5,-25" handle2="42.5,-5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="68,5" holdpos="60,-10" aimpos="58,10" handle1="-48,-21" handle2="38,-8" holdangle="-40" -->
+    <RangedWeapon barrelpos="166,12" spread="2" unskilledspread="14" reload="0.11" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_battlerifle.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_battlerifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-33">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_battlerifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_battlerifle_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="0.003, 0.477" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+  </Item>
+  <Item name="" identifier="ek_battlerifle_suppressed" aliases="marine assault rifle suppressed,marine battle rifle suppressed,ek_battlerifle_supressed" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_556,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_battlerifle" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_battlerifle" />
+      <Item identifier="ek_suppressor" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,64,64,64" />
+    <Sprite texture="weapons_ek.png" sourcerect="0,1136,432,112" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="0,1136,432,112" depth="0.83" />
+    <Body width="330" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="65,-5" aimpos="58,5" handle1="-47.5,-25" handle2="42.5,-5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="68,5" holdpos="60,-10" aimpos="58,10" handle1="-48,-21" handle2="38,-8" holdangle="-40" -->
+    <RangedWeapon barrelpos="215,12" spread="2" unskilledspread="14" reload="0.11" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_battlerifle.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flash="false" flames="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_battlerifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-33">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_battlerifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_battlerifle_skin" />
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_battlerifle_suppressed_flashlight" aliases="marine assault rifle taclight suppressed,marine battle rifle taclight suppressed,ek_battlerifle_supressed_flashlight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_556,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_battlerifle" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_battlerifle" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="720,256,432,112" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="0,1136,432,112" depth="0.83" />
+    <Body width="330" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="65,-5" aimpos="58,5" handle1="-47.5,-25" handle2="42.5,-5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="68,5" holdpos="60,-10" aimpos="58,10" handle1="-48,-21" handle2="38,-8" holdangle="-40" -->
+    <RangedWeapon barrelpos="215,12" spread="2" unskilledspread="14" reload="0.11" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_battlerifle.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flash="false" flames="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_battlerifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-33">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_battlerifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_battlerifle_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.023, 0.503" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_battlerifle_suppressed_laser" aliases="marine assault rifle laser suppressed,marine battle rifle laser suppressed,ek_battlerifle_supressed_laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_556,gunsmith,mountableweapon" Scale="0.32" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_battlerifle" />
+      <RequiredItem tag="ekcompatibility_suppressor" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_battlerifle" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="720,368,432,112" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="0,1136,432,112" depth="0.83" />
+    <Body width="330" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="65,-5" aimpos="58,5" handle1="-47.5,-25" handle2="42.5,-5" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="68,5" holdpos="60,-10" aimpos="58,10" handle1="-48,-21" handle2="38,-8" holdangle="-40" -->
+    <RangedWeapon barrelpos="215,12" spread="2" unskilledspread="14" reload="0.11" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_battlerifle.ogg" type="OnUse" range="3000" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flash="false" flames="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifier="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_battlerifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="8,-33">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifier="ek_battlerifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_battlerifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" hudpos="0.5, 0.4" itempos="0,0" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <Containable identifiers="ek_battlerifle_skin" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="0.003, 0.477" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_laserpistol_flashlight" aliases="laser pistol taclight,laserpistol taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_laserpistol,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <!--<Price storeidentifier="merchantResearch" buyprice="80" />-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_laserpistol" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_laserpistol" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="928,576,128,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="928,576,128,96" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="63,0" handle1="-26,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="25,7" aimpos="63,0" handle1="-14,-11" -->
+    <RangedWeapon barrelpos="60,12" spread="0.5" unskilledspread="14" reload="0.32" combatPriority="45" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamelaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaklaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_laserpistol_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="2.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserpistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_laserpistol_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <StatusEffect type="Always" target="This" condition="100" setvalue="true" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+      <Containable identifiers="ek_laserpistol_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserpistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.004, 0.501" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_laserpistol_laser" aliases="laser pistol laser,laserpistol laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_laserpistol,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <!--<Price storeidentifier="merchantResearch" buyprice="80" />-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_laserpistol" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_laserpistol" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,0,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="800,576,128,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="800,576,128,96" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="63,0" handle1="-26,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="25,7" aimpos="63,0" handle1="-14,-11" -->
+    <RangedWeapon barrelpos="60,12" spread="0.5" unskilledspread="14" reload="0.32" combatPriority="45" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamelaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaklaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_laserpistol_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="2.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserpistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_laserpistol_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <StatusEffect type="Always" target="This" condition="100" setvalue="true" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+      <Containable identifiers="ek_laserpistol_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserpistol_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="0.0, 0.501" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_laserrifle_flashlight" aliases="laser rifle taclight,laserrifle taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_laserrifle,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <!--<Price storeidentifier="merchantResearch" buyprice="80" />-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_laserrifle" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_laserrifle" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="640,928,320,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="640,928,320,96" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="50,5" handle1="-30,-25" handle2="105,-15" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="48,2" holdpos="45,-10" aimpos="50,10" handle1="-18,-21" handle2="102,-19" holdangle="-40" -->
+    <RangedWeapon barrelpos="154,10" spread="0.5" unskilledspread="18" reload="0.37" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamelaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaklaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_laserrifle_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_laserrifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+      <StatusEffect type="Always" target="This" condition="100" setvalue="true" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="46,-28">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+      <Containable identifiers="ek_laserrifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.023, 0.502" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_laserrifle_laser" aliases="laser rifle laser,laserrifle laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,gun,ek_ammotag_laserrifle,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+    <!--<Price storeidentifier="merchantResearch" buyprice="80" />-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_laserrifle" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_laserrifle" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,64,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="640,832,320,96" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="640,832,320,96" depth="0.83" />
+    <Body width="176" height="64" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="50,5" handle1="-30,-25" handle2="105,-15" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="48,2" holdpos="45,-10" aimpos="50,10" handle1="-18,-21" handle2="102,-19" holdangle="-40" -->
+    <RangedWeapon barrelpos="154,10" spread="0.5" unskilledspread="18" reload="0.37" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamelaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaklaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_laserrifle_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <RequiredItems identifier="ek_laserrifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="45" />
+      <StatusEffect type="Always" target="This" condition="100" setvalue="true" />
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="46,-28">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+      <Containable identifiers="ek_laserrifle_mags" />
+      <StatusEffect type="OnUse" target="Contained">
+        <RequiredItem identifiers="ek_laserrifle_mags" type="Contained" />
+        <Use />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.013, 0.504" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_revolver_flashlight" aliases="ek revolver flashlight,ek revolver taclight" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_357,gunsmith,mountableweapon" Scale="0.34" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_revolver" />
+      <RequiredItem tag="ekcompatibility_taclight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_revolver" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,320,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="0,1024,128,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapons_ek.png" sourcerect="576,320,64,64" depth="0.83" />
+    <Body width="128" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,5" handle1="-32,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="30,5" aimpos="80,10" handle1="-13,-11" -->
+    <RangedWeapon barrelpos="64,19" spread="1" unskilledspread="12" reload="0.6" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_revolver_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <StatusEffect type="Always" target="Contained" targetidentifiers="ek_revolverloader" disabledeltatime="true" delay="0.02" stackable="false">
+        <RequiredItem identifier="ek_revolverloader" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_physicorium" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_riot" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="6" maxstacksize="1" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_revolverammo,ek_revolverloader,ek_ammotag357,revolverammo" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.003, 0.497" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_revolver_laser" aliases="ek revolver laser" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_357,gunsmith,mountableweapon" Scale="0.34" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_revolver" />
+      <RequiredItem tag="ekcompatibility_lasersight" />
+    </Fabricate>
+    <Deconstruct time="1">
+      <Item identifier="ek_revolver" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,320,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="128,1024,128,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="256,1024,128,64" depth="0.83" />
+    <Body width="128" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,5" handle1="-32,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="30,5" aimpos="80,10" handle1="-13,-11" -->
+    <RangedWeapon barrelpos="64,19" spread="1" unskilledspread="12" reload="0.6" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_revolver_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <StatusEffect type="Always" target="Contained" targetidentifiers="ek_revolverloader" disabledeltatime="true" delay="0.02" stackable="false">
+        <RequiredItem identifier="ek_revolverloader" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_physicorium" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_riot" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="6" maxstacksize="1" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_revolverammo,ek_revolverloader,ek_ammotag357,revolverammo" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.002, 0.495" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_revolver_suppressed" aliases="ek revolver suppressed,suppressed ek revolver,ek_revolver_suppressed" hideinmenus="true" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_357,gunsmith,mountableweapon" Scale="0.34" impactsoundtag="impact_metal_light">
+    <!--<Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_revolver"/>
+      <RequiredItem tag="ekcompatibility_suppressor"/>
+    </Fabricate>-->
+    <Deconstruct time="1">
+      <Item identifier="ek_revolver" />
+      <Item identifier="ek_suppressor" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,320,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="256,1024,256,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="256,1024,256,64" depth="0.83" />
+    <Body width="128" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,5" handle1="-35,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="50,5" aimpos="80,10" handle1="-13,-11" -->
+    <RangedWeapon barrelpos="128,19" spread="1" unskilledspread="12" reload="0.6" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <StatusEffect type="Always" target="Contained" targetidentifiers="ek_revolverloader" disabledeltatime="true" delay="0.02" stackable="false">
+        <RequiredItem identifier="ek_revolverloader" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_physicorium" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_riot" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="6" maxstacksize="1" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_revolverammo,ek_revolverloader,ek_ammotag357,revolverammo" />
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_revolver_suppressed_flashlight" aliases="suppressed ek revolver flashlight,suppressed ek revolver taclight,ek_revolver_supressed_flashlight" hideinmenus="true" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_357,gunsmith,mountableweapon" Scale="0.34" impactsoundtag="impact_metal_light">
+    <!--<Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_revolver"/>
+      <RequiredItem tag="ekcompatibility_suppressor"/>
+      <RequiredItem tag="ekcompatibility_taclight"/>
+    </Fabricate>-->
+    <Deconstruct time="1">
+      <Item identifier="ek_revolver" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_lightattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,320,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="512,1024,256,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="512,1024,256,64" depth="0.83" />
+    <Body width="128" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,5" handle1="-35,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="50,5" aimpos="80,10" handle1="-13,-11" -->
+    <RangedWeapon barrelpos="128,19" spread="1" unskilledspread="12" reload="0.6" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <StatusEffect type="Always" target="Contained" targetidentifiers="ek_revolverloader" disabledeltatime="true" delay="0.02" stackable="false">
+        <RequiredItem identifier="ek_revolverloader" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_physicorium" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_riot" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="6" maxstacksize="1" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_revolverammo,ek_revolverloader,ek_ammotag357,revolverammo" />
+    </ItemContainer>
+    <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="450" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.003, 0.497" size="1.0,1.0" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Flashlight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_revolver_suppressed_laser" aliases="suppressed ek revolver laser,ek_revolver_supressed_laser" hideinmenus="true" category="Equipment,Weapon" cargocontaineridentifier="ek_weapons_case" tags="smallitem,weapon,gun,ek_ammotag_357,gunsmith,mountableweapon" Scale="0.34" impactsoundtag="impact_metal_light">
+    <!--<Fabricate suitablefabricators="fabricator" requiredtime="1.5">
+      <RequiredItem identifier="ek_revolver"/>
+      <RequiredItem tag="ekcompatibility_suppressor"/>
+      <RequiredItem tag="ekcompatibility_lasersight"/>
+    </Fabricate>-->
+    <Deconstruct time="1">
+      <Item identifier="ek_revolver" />
+      <Item identifier="ek_suppressor" />
+      <Item identifier="ek_laserattachment" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,320,64,64" />
+    <Sprite texture="weapon_attachments_ek.png" sourcerect="768,1024,256,64" depth="0.55" />
+    <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="weapon_attachments_ek.png" sourcerect="768,1024,256,64" depth="0.83" />
+    <Body width="128" height="64" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="80,5" handle1="-35,-11" msg="ItemMsgPickUpSelect" />
+    <!-- barrelpos="50,5" aimpos="80,10" handle1="-13,-11" -->
+    <RangedWeapon barrelpos="128,19" spread="1" unskilledspread="12" reload="0.6" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+      </StatusEffect>
+      <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+      <StatusEffect type="Always" target="Contained" targetidentifiers="ek_revolverloader" disabledeltatime="true" delay="0.02" stackable="false">
+        <RequiredItem identifier="ek_revolverloader" type="Contained" />
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_physicorium" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_physicorium" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Contained,This" disabledeltatime="true" delay="0.04" stackable="false">
+        <RequiredItem identifier="ek_revolverspeedloader_riot" type="Contained" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ek_revolverammo_riot" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="6" maxstacksize="1" hideitems="true" allowuioverlap="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <Containable identifiers="ek_revolverammo,ek_revolverloader,ek_ammotag357,revolverammo" />
+    </ItemContainer>
+    <LightComponent LightColor="0.7,0.0,0.0,0.5" Flicker="0.02" range="700" powerconsumption="0" IsOn="false" canbeselected="true">
+      <LightTexture texture="%ModDir%/Lights/laser_light.png" origin="-0.002, 0.495" size="1.0,0.3" />
+    </LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="Laser Sight">
+        <StatusEffect type="OnUse" target="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+</Items>

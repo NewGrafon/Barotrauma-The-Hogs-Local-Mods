@@ -1,0 +1,900 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="English" nowhitespace="false" translatedname="English">
+  <Override>
+    <entityname.AK-74>AK-74 «Diver»</entityname.AK-74>
+    <entitydescription.AK-74>Modified version of legendary AK-74. Fires ‖color:gui.green‖5.45x39mm ammunition‖end‖. ‖color:gui.blue‖Can fire underwater with reduced effectiveness‖end‖.</entitydescription.AK-74>
+    <entityname.akbigmagazine>5.45x39mm Drum Magazine</entityname.akbigmagazine>
+    <entitydescription.akbigmagazine>Holds 60 rounds.</entitydescription.akbigmagazine>
+    <entityname.akbigapmagazine>5.45x39mm AP Drum Magazine</entityname.akbigapmagazine>
+    <entitydescription.akbigapmagazine>Holds 60 armor-piercing rounds.</entitydescription.akbigapmagazine>
+    <entityname.akbigfmjmagazine>5.45x39mm Hollow Point Drum Magazine</entityname.akbigfmjmagazine>
+    <entitydescription.akbigfmjmagazine>‖color:gui.green‖60 Hollow Point rounds‖end‖. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖. Compatible with AK-74 and AK-12.</entitydescription.akbigfmjmagazine>
+    <entityname.akapmagazine>5.45x39mm AP Magazine</entityname.akapmagazine>
+    <entitydescription.akapmagazine>Holds 30 rounds.</entitydescription.akapmagazine>
+    <entityname.akmagazine>5.45x39mm Magazine</entityname.akmagazine>
+    <entitydescription.akmagazine>Holds 30 rounds.</entitydescription.akmagazine>
+    <entityname.akfmjmagazine>5.45x39mm Hollow Point Magazine</entityname.akfmjmagazine>
+    <entitydescription.akfmjmagazine>‖color:gui.green‖30 Hollow Point rounds‖end‖. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖. Compatible with AK-74 and AK-12.</entitydescription.akfmjmagazine>
+    <entityname.Beretta-92>Glock «92»</entityname.Beretta-92>
+    <entitydescription.Beretta-92>A classic handgun, reliable and widely used in Europe by private military companies and Coalition members alike. It uses ‖color:gui.green‖9x19mm ammunition‖end‖. Can be held in one hand, ‖color:gui.blue‖but is quite ineffective underwater‖end‖.</entitydescription.Beretta-92>
+    <entityname.Berettaammo>9x19mm Magazine</entityname.Berettaammo>
+    <entitydescription.Berettaammo>Holds 20 rounds.</entitydescription.Berettaammo>
+    <entityname.Big-Iron>‖color:gui.yellow‖Big-Iron Revolver‖end‖</entityname.Big-Iron>
+    <entitydescription.Big-Iron>A legendary revolver known for its absurdly fast firing rate and the distinctive ‖color:gui.yellow‖Big-Iron‖end‖ engraving, uses ‖color:gui.green‖.45 Colt ammunition‖end‖ and was custom-made for one of the forgotten heroes of the Old Earth. Despite its two-handed grip requirement and its ‖color:gui.blue‖complete uselessness underwater‖end‖, it is a priceless relic whose history has been lost to time.</entitydescription.Big-Iron>
+    <entityname.Big-Ironammo>.45 Colt Round</entityname.Big-Ironammo>
+    <entitydescription.Big-Ironammo>Ammunition for the Big-Iron Revolver.</entitydescription.Big-Ironammo>
+    <entityname.HK416-anim>Assault Rifle «Europa-R7»</entityname.HK416-anim>
+    <entitydescription.HK416-anim>Assault rifle entirely designed and assembled on Europa using local materials. Used by guards at Coalition outposts. It uses ‖color:gui.green‖standard 5.56x45mm ammunition‖end‖. ‖color:gui.blue‖Ineffective underwater‖end‖.</entitydescription.HK416-anim>
+    <entityname.HK416apmagazine-anim>5.56x45mm AP Magazine</entityname.HK416apmagazine-anim>
+    <entitydescription.HK416apmagazine-anim>Holds 30 armor-piercing rounds.</entitydescription.HK416apmagazine-anim>
+    <entityname.HK416magazine-anim>5.56x45mm Magazine</entityname.HK416magazine-anim>
+    <entitydescription.HK416magazine-anim>Holds 30 rounds.</entitydescription.HK416magazine-anim>
+    <entityname.HK416fmjmagazine-anim>5.56x45mm Hollow Point Magazine</entityname.HK416fmjmagazine-anim>
+    <entitydescription.HK416fmjmagazine-anim>‖color:gui.green‖30 Hollow Point rounds‖end‖. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.HK416fmjmagazine-anim>
+    <entityname.colt-1911>Colt «M1911 Hydra»</entityname.colt-1911>
+    <entitydescription.colt-1911>The modified and waterproofed M1911 "Hydra" chambered in ‖color:gui.green‖.45 ACP‖end‖ is a reliable one-handed pistol capable of ‖color:gui.blue‖firing underwater with reduced effectiveness‖end‖.</entitydescription.colt-1911>
+    <entityname.1911ammo>.45 ACP Magazine</entityname.1911ammo>
+    <entitydescription.1911ammo>Holds 7 rounds.</entitydescription.1911ammo>
+    <entityname.Model29>Revolver «Model-29»</entityname.Model29>
+    <entitydescription.Model29>A powerful revolver often found in the hands of mercenaries and hunters throughout Europe. It uses ‖color:gui.green‖.44 Magnum rounds‖end‖. It can be held with one hand, ‖color:gui.blue‖but is almost useless underwater‖end‖</entitydescription.Model29>
+    <entityname.Model29ammoap>.44 Magnum AP Round</entityname.Model29ammoap>
+    <entitydescription.Model29ammoap>Armor-piercing rounds for the Model-29 revolver.</entitydescription.Model29ammoap>
+    <entityname.Model29ammo>.44 Magnum Round</entityname.Model29ammo>
+    <entitydescription.Model29ammo>Rounds for the Model-29 revolver.</entitydescription.Model29ammo>
+    <entityname.mosin>Mosin «Rifle»</entityname.mosin>
+    <entitydescription.mosin>This late 19th-century rifle needs no introduction. Fires ‖color:gui.green‖powerful 7.62x54R rounds‖end‖. ‖color:gui.yellow‖Features a side-mounted optic rail‖end‖. ‖color:gui.blue‖Effective underwater thanks to high bullet velocity‖end‖.</entitydescription.mosin>
+    <entityname.mosinammo>7.62x54R Round</entityname.mosinammo>
+    <entitydescription.mosinammo>Ammunition for the Mosin Rifle.</entitydescription.mosinammo>
+    <entityname.mosinammofmj>7.62x54R Expansive Round</entityname.mosinammofmj>
+    <entitydescription.mosinammofmj>‖color:gui.green‖Expansive ammunition‖end‖ for Mosin rifle. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.mosinammofmj>
+    <entityname.P90-anim>P90 «Wavebreaker» SMG</entityname.P90-anim>
+    <entitydescription.P90-anim>Compact submachine gun with ‖color:gui.purple‖3-round burst fire mode‖end‖. Uses ‖color:gui.green‖standard 5.7x28mm ammunition‖end‖. The P90 is ‖color:gui.blue‖ineffective underwater‖end‖, and its ‖color:gui.red‖rate of fire is reduced due to the need for waterproofing the mechanisms‖end‖.</entitydescription.P90-anim>
+    <entityname.P90magazine-anim>5.7x28mm Magazine</entityname.P90magazine-anim>
+    <entitydescription.P90magazine-anim>Holds 50 rounds. Only compatible with the P90 Wavebreaker.</entitydescription.P90magazine-anim>
+    <entityname.spas-13>SPAS-13 «Slowfire» Shotgun</entityname.spas-13>
+    <entitydescription.spas-13>This SPAS-12 modification has been re-engineered for reliable operation in Europe's moist conditions. ‖color:gui.red‖The semi-auto firing system was removed for optimal performance, requiring manual chambering after each shot.‖end‖ It uses ‖color:gui.green‖standard shotgun shells (holds 8 rounds)‖end‖. This modification ‖color:gui.blue‖cannot fire underwater‖end‖.</entitydescription.spas-13>
+    <entityname.maple>Maple «Assault Rifle»</entityname.maple>
+    <entitydescription.maple>This reliable assault rifle was engineered for use in Europe's harsh conditions, particularly valued among Coalition members. It uses specially designed ‖color:gui.green‖6.8x48mm «Maple» rounds‖end‖, optimized for ‖color:gui.blue‖effective underwater firing with no loss of stopping power, and the rifle itself has neutral buoyancy‖end‖.</entitydescription.maple>
+    <entityname.maplemagazine>6.8x48mm «Maple» Magazine</entityname.maplemagazine>
+    <entitydescription.maplemagazine>Holds 20 rounds for the Maple rifle.</entitydescription.maplemagazine>
+    <entityname.mapleapmagazine>6.8x48mm «Maple» AP Magazine</entityname.mapleapmagazine>
+    <entitydescription.mapleapmagazine>Holds 20 armor-piercing rounds for the Maple rifle.</entitydescription.mapleapmagazine>
+    <entityname.spp-1>SPP-1 «Underwater Pistol»</entityname.spp-1>
+    <entitydescription.spp-1>This Soviet underwater pistol, despite its age, remains an effective weapon underwater. It uses special ‖color:gui.green‖fletchette rounds‖end‖. Key feature: ‖color:gui.red‖inflicts lacerations instead of gunshot wounds‖end‖. ‖color:gui.blue‖Only effective underwater, with significantly reduced accuracy and damage on land‖end‖.</entitydescription.spp-1>
+    <entityname.spp-1round>SPP-1 Fletchette Round</entityname.spp-1round>
+    <entitydescription.spp-1round>A special fletchette round for the SPP-1 underwater pistol. ‖color:gui.red‖Inflicts lacerations‖end‖.</entitydescription.spp-1round>
+    <entityname.pu_scope>PU Scope</entityname.pu_scope>
+    <entitydescription.pu_scope>‖color:gui.green‖Mounting:‖end‖
+- Side-mounted optic rail
+‖color:gui.blue‖Medium magnification‖end‖. A classic Soviet optic scope.</entitydescription.pu_scope>
+    <entityname.mosinammoap>7.62x54R AP Round</entityname.mosinammoap>
+    <entitydescription.mosinammoap>A special ‖color:gui.green‖armor-piercing round‖end‖ for the Mosin Rifle. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖. Uses a steel core instead of lead.</entitydescription.mosinammoap>
+    <entityname.ks-23>‖color:gui.yellow‖KS-23 «Kombat Shotgun»‖end‖</entityname.ks-23>
+    <entitydescription.ks-23>A Soviet ‖color:gui.green‖23mm carbine shotgun‖end‖ based on an aircraft cannon. ‖color:gui.yellow‖Extremely effective against unarmored targets‖end‖, but ‖color:gui.blue‖completely useless underwater‖end‖. ‖color:gui.red‖Requires manual chambering after each shot. Poor armor penetration‖end‖ due to the projectile's design. ‖color:gui.green‖Uses specialized 23mm Barracuda rounds with heavy shot‖end‖.</entitydescription.ks-23>
+    <entityname.ks-23shell>23mm Barracuda Shell</entityname.ks-23shell>
+    <entitydescription.ks-23shell>A heavy shotgun shell with tungsten alloy projectiles. ‖color:gui.yellow‖Effective against soft targets‖end‖, but ‖color:gui.red‖has low armor penetration‖end‖ and strong recoil.</entitydescription.ks-23shell>
+    <entityname.ks-23apshell>23mm Barracuda-AP Shell</entityname.ks-23apshell>
+    <entitydescription.ks-23apshell>An ‖color:gui.green‖armor-piercing‖end‖ variant for the KS-23. ‖color:gui.blue‖Penetrates light armor and submarine bulkheads‖end‖ thanks to its ‖color:gui.green‖tungsten core‖end‖. ‖color:gui.red‖Tighter spread‖end‖, but ‖color:gui.red‖requires precise hits‖end‖. ‖color:gui.yellow‖Effective against fortified structures‖end‖.</entitydescription.ks-23apshell>
+    <entityname.APS>APS «Sea Shield» Underwater Rifle</entityname.APS>
+    <entitydescription.APS>A Soviet special purpose rifle. Uses ‖color:gui.green‖26-round "Igla-M" magazines‖end‖. ‖color:gui.blue‖Only effective underwater, significantly weaker on land‖end‖. ‖color:gui.red‖Inflicts lacerations instead of gunshot wounds‖end‖.</entitydescription.APS>
+    <entityname.apsmagazine>Igla-M Magazine</entityname.apsmagazine>
+    <entitydescription.apsmagazine>‖color:gui.green‖26 fletchette rounds‖end‖. ‖color:gui.blue‖Effective against Europan creatures‖end‖. ‖color:gui.red‖Less effective on land‖end‖.</entitydescription.apsmagazine>
+    <entityname.apsapmagazine>Igla-AP Magazine</entityname.apsapmagazine>
+    <entitydescription.apsapmagazine>‖color:gui.green‖26 armor-piercing fletchette rounds‖end‖. ‖color:gui.blue‖Penetrates armor of Europan creatures‖end‖. ‖color:gui.red‖Weaker against unarmored targets‖end‖.</entitydescription.apsapmagazine>
+    <entityname.apsfmjmagazine>Igla-M Hollow Point Magazine</entityname.apsfmjmagazine>
+    <entitydescription.apsfmjmagazine>‖color:gui.green‖26 fletchette rounds‖end‖. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.apsfmjmagazine>
+    <entityname.ks-23zvshell>23mm Zvezdochka Shell</entityname.ks-23zvshell>
+    <entitydescription.ks-23zvshell>A ‖color:gui.green‖flashbang round‖end‖ for the KS-23. ‖color:gui.blue‖Inflicts light burns and temporarily stuns targets‖end‖. ‖color:gui.yellow‖Effective against unarmored enemies‖end‖. ‖color:gui.red‖Does not work underwater‖end‖.</entitydescription.ks-23zvshell>
+    <afflictionname.KS-23zvezdocha>Zvezdochka</afflictionname.KS-23zvezdocha>
+    <afflictiondescription.KS-23zvezdocha>You have been hit by a flashbang round. Your vision is obscured and your ears are ringing.</afflictiondescription.KS-23zvezdocha>
+    <entityname.heavybodyarmor>Heavy Body Armor</entityname.heavybodyarmor>
+    <entitydescription.heavybodyarmor>‖color:gui.yellow‖Has a main weapon mount on the back‖end‖ and ‖color:gui.green‖enhanced protection against bullets‖end‖. ‖color:gui.red‖Noticeably slows down movement speed‖end‖. ‖color:gui.red‖Has no storage for regular items‖end‖. ‖color:gui.yellow‖Recommended for assault operations‖end‖.</entitydescription.heavybodyarmor>
+    <entityname.bodyarmor>Body Armor</entityname.bodyarmor>
+    <entitydescription.bodyarmor>While body armor may not be able to protect against most of Europe's creatures, it will be more than useful if a traitor is on board the submarine.</entitydescription.bodyarmor>
+    <entityname.AK-12>AK-12 «Separatist»</entityname.AK-12>
+    <entitydescription.AK-12>The fifth generation of the Kalashnikov rifle. ‖color:gui.green‖Uses 5.45x39mm rounds with improved ballistics‖end‖. ‖color:gui.yellow‖Features a side-mounted optic rail‖end‖. ‖color:gui.yellow‖Comes with an under-barrel grenade launcher‖end‖. ‖color:gui.blue‖Completely ineffective underwater‖end‖.</entitydescription.AK-12>
+    <entityname.Deagle>‖color:gui.yellow‖Desert Eagle «Submarine Fang»‖end‖</entityname.Deagle>
+    <entitydescription.Deagle>A heavy pistol chambered in ‖color:gui.green‖.50‖end‖ caliber. ‖color:gui.blue‖Has medium effectiveness when firing underwater‖end‖. ‖color:gui.red‖Powerful recoil requires a two-handed grip‖end‖. Used by Coalition elite units.</entitydescription.Deagle>
+    <entityname.Deagleammo>.50 Magazine</entityname.Deagleammo>
+    <entitydescription.Deagleammo>‖color:gui.green‖7 specialized rounds‖end‖. ‖color:gui.red‖Limited capacity‖end‖ is offset by ‖color:gui.green‖exceptional stopping power‖end‖.</entitydescription.Deagleammo>
+    <entityname.laser>‖color:gui.orange‖Tactical Laser Sight‖end‖</entityname.laser>
+    <entitydescription.laser>When attached to a weapon: ‖color:gui.red‖projects a red beam for improved visibility‖end‖ and allows for movement without slowdown when aiming.</entitydescription.laser>
+    <entityname.colim_scope>Collimator Sight «Walther»</entityname.colim_scope>
+    <entitydescription.colim_scope>‖color:gui.green‖Mounting type:‖end‖
+- Picatinny rail
+‖color:gui.red‖Adds red aiming dot‖end‖. ‖color:gui.blue‖Improves field of view when aiming‖end‖. Modern tactical collimator sight.</entitydescription.colim_scope>
+    <entityname.PB>PB «Silencer»</entityname.PB>
+    <entitydescription.PB>A silenced pistol chambered in ‖color:gui.green‖9x18mm ammunition‖end‖. ‖color:gui.red‖Does not attract creatures when firing‖end‖. Inexpensive ammunition to manufacture. ‖color:gui.blue‖Completely useless underwater‖end‖. A primary weapon of separatists and sabotage groups.</entitydescription.PB>
+    <entityname.PBammo>9x18mm Magazine</entityname.PBammo>
+    <entitydescription.PBammo>‖color:gui.green‖10 subsonic 9x18mm rounds‖end‖.</entitydescription.PBammo>
+    <entityname.M249>‖color:gui.yellow‖Machine Gun M249 «Compact Hurricane»‖end‖</entityname.M249>
+    <entitydescription.M249>A special shortened modification of the machine gun for operations in confined compartments. ‖color:gui.green‖Uses 5.56x45mm belt-fed ammunition with a capacity of 150 rounds‖end‖, providing dense firepower. ‖color:gui.blue‖Design features completely prevent firing underwater‖end‖. ‖color:gui.red‖Requires a "Weapons" skill of level 65 for effective reloading‖end‖. A rare piece of weaponry in Europe.</entitydescription.M249>
+    <entityname.M249magazine>5.56x45mm Belt Magazine</entityname.M249magazine>
+    <entitydescription.M249magazine>‖color:gui.green‖150 rounds of 5.56x45mm in a steel box‖end‖. ‖color:gui.red‖Significantly increases the weapon's weight‖end‖ but provides ‖color:gui.green‖sustained firepower‖end‖.</entitydescription.M249magazine>
+    <entityname.laserflashlight>‖color:gui.orange‖Tactical Flashlight + Laser‖end‖</entityname.laserflashlight>
+    <entitydescription.laserflashlight>‖color:gui.yellow‖Built-in powerful flashlight‖end‖. When attached: ‖color:gui.red‖adds a red aiming point‖end‖ and removes the slowdown when aiming. ‖color:gui.red‖Significantly increases power consumption‖end‖.</entitydescription.laserflashlight>
+    <entityname.acog_scope>ACOG Tactical Scope</entityname.acog_scope>
+    <entitydescription.acog_scope>‖color:gui.green‖Mounting:‖end‖
+- Picatinny rail
+‖color:gui.blue‖Medium-low magnification‖end‖. A modern tactical optic scope.</entitydescription.acog_scope>
+    <entityname.thermal_scope>Thermal Scope</entityname.thermal_scope>
+    <entitydescription.thermal_scope>‖color:gui.green‖Mounting:‖end‖
+- Picatinny rail
+‖color:gui.blue‖Medium-low magnification‖end‖. ‖color:gui.yellow‖White thermal indication‖end‖ for target acquisition in poor visibility conditions.</entitydescription.thermal_scope>
+    <entityname.SCAR>SCAR «WaterSpout»</entityname.SCAR>
+    <entitydescription.SCAR>A powerful assault rifle chambered in ‖color:gui.green‖7.62x51mm rounds‖end‖. ‖color:gui.blue‖Moderately effective underwater‖end‖. ‖color:gui.yellow‖Features a Picatinny rail‖end‖.</entitydescription.SCAR>
+    <entityname.SCARmagazine>7.62x51mm Magazine</entityname.SCARmagazine>
+    <entitydescription.SCARmagazine>‖color:gui.green‖20 rounds of 7.62x51mm‖end‖. Standard ammunition.</entitydescription.SCARmagazine>
+    <entityname.SCARapmagazine>7.62x51mm AP Magazine</entityname.SCARapmagazine>
+    <entitydescription.SCARapmagazine>‖color:gui.green‖20 armor-piercing rounds of 7.62x51mm‖end‖.</entitydescription.SCARapmagazine>
+    <entityname.SCARfmjmagazine>7.62x51mm Hollow Point Magazine</entityname.SCARfmjmagazine>
+    <entitydescription.SCARfmjmagazine>‖color:gui.green‖20 Hollow Point rounds‖end‖. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.SCARfmjmagazine>
+    <afflictionname.spasm_shot>Spasm Shot</afflictionname.spasm_shot>
+    <entityname.Reck>Revolver «Volt»</entityname.Reck>
+    <entitydescription.Reck>A compact Reck Cobra revolver chambered in ‖color:gui.green‖.38 rounds‖end‖. Light and convenient for concealed carry. ‖color:gui.blue‖Useless underwater‖end‖.</entitydescription.Reck>
+    <entityname.reck.38>.38 Round</entityname.reck.38>
+    <entitydescription.reck.38>Standard .38 caliber round. ‖color:gui.green‖Fits most revolvers of this caliber‖end‖.</entitydescription.reck.38>
+    <entityname..38ap>.38 AP Round</entityname..38ap>
+    <entitydescription..38ap>Armor-piercing .38 caliber round. ‖color:gui.blue‖Increased penetration‖end‖ at the cost of a ‖color:gui.red‖small damage reduction‖end‖.</entitydescription..38ap>
+    <entityname.Model870>Shotgun «Remington 870»</entityname.Model870>
+    <entitydescription.Model870>An old Remington 870 pump-action shotgun. It has rather low build quality and an unreliable mechanism. Often used by bandits and separatists. ‖color:gui.green‖Standard shotgun shells (holds 4 rounds)‖end‖. ‖color:gui.blue‖Cannot fire underwater‖end‖.</entitydescription.Model870>
+    <entityname.SAIGA>‖color:gui.yellow‖Shotgun «Saiga-12»‖end‖</entityname.SAIGA>
+    <entitydescription.SAIGA>A semi-automatic shotgun based on the AK platform. Uses ‖color:gui.green‖standard shotgun shells‖end‖. ‖color:gui.blue‖Modified for underwater firing‖end‖. ‖color:gui.yellow‖Optics can be mounted on the side rail‖end‖.</entitydescription.SAIGA>
+    <entityname.shotgunshellap>Shotgun AP Shell</entityname.shotgunshellap>
+    <entitydescription.shotgunshellap>‖color:gui.green‖Armor-piercing shotgun shells‖end‖. ‖color:gui.blue‖High effectiveness underwater‖end‖. Designed for ‖color:gui.green‖penetrating light armor‖end‖.</entitydescription.shotgunshellap>
+    <entityname.shotgunshellfmj>Shotgun Hollow Point Shell</entityname.shotgunshellfmj>
+    <entitydescription.shotgunshellfmj>‖color:gui.green‖Hollow Point shells‖end‖. ‖color:gui.blue‖Medium effectiveness underwater‖end‖. ‖color:gui.yellow‖Extremely effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.shotgunshellfmj>
+    <entityname.SAIGAmagazine>Saiga-12 / Toz-106 Magazine</entityname.SAIGAmagazine>
+    <entitydescription.SAIGAmagazine>‖color:gui.green‖10 standard shotgun shells‖end‖. Compatible with Saiga-12 and Toz-106.</entitydescription.SAIGAmagazine>
+    <entityname.SAIGAapmagazine>AP Saiga-12 / Toz-106 Magazine</entityname.SAIGAapmagazine>
+    <entitydescription.SAIGAapmagazine>‖color:gui.green‖5 armor-piercing shotgun shells‖end‖. Compatible with Saiga-12 and Toz-106.</entitydescription.SAIGAapmagazine>
+    <entityname.SAIGAfmjmagazine>FMJ Saiga-12 / Toz-106 Magazine</entityname.SAIGAfmjmagazine>
+    <entitydescription.SAIGAfmjmagazine>‖color:gui.green‖5 expanding shotgun shells‖end‖. Compatible with Saiga-12 and Toz-106.</entitydescription.SAIGAfmjmagazine>
+    <entityname.scout>Rifle «Aqua Scout»</entityname.scout>
+    <entitydescription.scout>A lightweight tactical rifle. Chambers ‖color:gui.green‖5.56x45mm rounds‖end‖. ‖color:gui.blue‖Has medium effectiveness underwater‖end‖. ‖color:gui.yellow‖Features a Picatinny rail‖end‖. Ideal for scouting and precision shooting.</entitydescription.scout>
+    <entityname.scoutmagazine>Scout 5.56x45mm Magazine</entityname.scoutmagazine>
+    <entitydescription.scoutmagazine>‖color:gui.green‖10 standard 5.56x45mm rounds‖end‖. Only compatible with the Scout rifle.</entitydescription.scoutmagazine>
+    <entityname.scoutapmagazine>Scout 5.56x45mm AP Magazine</entityname.scoutapmagazine>
+    <entitydescription.scoutapmagazine>‖color:gui.green‖10 armor-piercing 5.56x45mm rounds‖end‖. ‖color:gui.blue‖Good effectiveness underwater‖end‖. Only compatible with the Scout rifle.</entitydescription.scoutapmagazine>
+    <entityname.scoutfmjmagazine>Scout 5.56x45mm Hollow Point Magazine</entityname.scoutfmjmagazine>
+    <entitydescription.scoutfmjmagazine>‖color:gui.green‖10 Hollow Point rounds‖end‖. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖. Only compatible with the Scout rifle.</entitydescription.scoutfmjmagazine>
+    <entityname.Model29ammofmj>.44 Magnum Hollow Point Round</entityname.Model29ammofmj>
+    <entitydescription.Model29ammofmj>‖color:gui.green‖Hollow Point rounds‖end‖. ‖color:gui.yellow‖Extremely effective against unarmored targets, causes massive bleeding‖end‖.</entitydescription.Model29ammofmj>
+    <entityname..38fmj>.38 Hollow Point Round</entityname..38fmj>
+    <entitydescription..38fmj>‖color:gui.green‖Full Metal Jacket rounds‖end‖. ‖color:gui.yellow‖Inflicts heavy lacerations with intense bleeding‖end‖.</entitydescription..38fmj>
+    <entityname.R8>Revolver «R8 Tactician»</entityname.R8>
+    <entitydescription.R8>A modern revolver with a ‖color:gui.yellow‖top-mounted Picatinny rail‖end‖. Uses ‖color:gui.green‖.38 rounds‖end‖. ‖color:gui.blue‖Ineffective underwater‖end‖. ‖color:gui.yellow‖Supports optic and collimator sights‖end‖. Low recoil, high accuracy.</entitydescription.R8>
+    <entityname.RPG>‖color:gui.yellow‖RPG «Hydrostrike»‖end‖</entityname.RPG>
+    <entitydescription.RPG>A modified grenade launcher with a ‖color:gui.yellow‖Picatinny rail for tactical scopes‖end‖. A ‖color:gui.blue‖special hydro-system allows for underwater firing‖end‖. ‖color:gui.red‖Slows down the owner's movement‖end‖. Uses ‖color:gui.green‖RPG rockets‖end‖.</entitydescription.RPG>
+    <entityname.RPGround>RPG HE Rocket</entityname.RPGround>
+    <entitydescription.RPGround>‖color:gui.green‖High-explosive charge‖end‖. ‖color:gui.yellow‖Effective against submarine hulls and clusters of enemies‖end‖.</entitydescription.RPGround>
+    <entityname.RPGroundap>RPG Kinetic Rocket</entityname.RPGroundap>
+    <entitydescription.RPGroundap>‖color:gui.green‖Kinetic penetrating projectile‖end‖. ‖color:gui.blue‖Penetrates multiple obstacles‖end‖. ‖color:gui.yellow‖Does not explode, can be recovered after firing‖end‖.</entitydescription.RPGroundap>
+    <entityname.RPGroundkm1>RPG HEAT Rocket</entityname.RPGroundkm1>
+    <entitydescription.RPGroundkm1>‖color:gui.green‖Armor-piercing charge‖end‖. ‖color:gui.blue‖Penetrates walls up to 2m thick‖end‖. ‖color:gui.red‖Prone to ricochets‖end‖. ‖color:gui.yellow‖Causes a small explosion‖end‖.</entitydescription.RPGroundkm1>
+    <entityname.RPGroundkm2>RPG Tandem Rocket</entityname.RPGroundkm2>
+    <entitydescription.RPGroundkm2>‖color:gui.green‖Two-phase cumulative charge‖end‖. ‖color:gui.blue‖Penetrates walls up to 4m thick‖end‖. ‖color:gui.green‖Resistant to ricochets‖end‖. ‖color:gui.yellow‖Explosion power is comparable to a high-explosive rocket‖end‖.</entitydescription.RPGroundkm2>
+    <entityname.MP5-anim>MP5 «Utility» SMG</entityname.MP5-anim>
+    <entitydescription.MP5-anim>Submachine gun with ‖color:gui.purple‖3-round burst fire mode‖end‖. Uses ‖color:gui.green‖9x19mm ammunition‖end‖. ‖color:gui.blue‖Low effectiveness underwater‖end‖. ‖color:gui.yellow‖Features Picatinny rail for tactical accessories‖end‖.</entitydescription.MP5-anim>
+    <entityname.MP5magazine-anim>MP5 9x19 Magazine</entityname.MP5magazine-anim>
+    <entitydescription.MP5magazine-anim>‖color:gui.green‖30 standard 9x19 rounds‖end‖.</entitydescription.MP5magazine-anim>
+    <entityname.MP5bigmagazine-anim>MP5 9x19 Drum Magazine</entityname.MP5bigmagazine-anim>
+    <entitydescription.MP5bigmagazine-anim>‖color:gui.green‖50 rounds of 9x19 ammunition‖end‖.</entitydescription.MP5bigmagazine-anim>
+    <entityname.MP5bigfmjmagazine-anim>MP5 9x19 Hollow Point Drum Magazine</entityname.MP5bigfmjmagazine-anim>
+    <entitydescription.MP5bigfmjmagazine-anim>‖color:gui.green‖50 Hollow Point rounds of 9x19 ammunition‖end‖. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.MP5bigfmjmagazine-anim>
+    <entityname.MP5fmjmagazine-anim>MP5 9x19 Hollow Point Magazine</entityname.MP5fmjmagazine-anim>
+    <entitydescription.MP5fmjmagazine-anim>‖color:gui.green‖30 Hollow Point rounds‖end‖. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.MP5fmjmagazine-anim>
+    <entityname.SKS>SKS Carbine "Priboy"</entityname.SKS>
+    <entitydescription.SKS>Modified SKS variant. Chambers ‖color:gui.green‖7.62x39mm rounds‖end‖. ‖color:gui.blue‖Moderately effective underwater‖end‖. ‖color:gui.yellow‖Features side-mounted optics rail‖end‖.</entitydescription.SKS>
+    <entityname.SKSammos>7.62x39mm Round</entityname.SKSammos>
+    <entitydescription.SKSammos>‖color:gui.green‖Standard ammunition for SKS‖end‖.</entitydescription.SKSammos>
+    <entityname.SKSammoap>7.62x39mm AP Round</entityname.SKSammoap>
+    <entitydescription.SKSammoap>‖color:gui.green‖Armor-piercing rounds for SKS‖end‖. ‖color:gui.blue‖Good effectiveness underwater‖end‖. ‖color:gui.red‖Slightly reduced damage‖end‖.</entitydescription.SKSammoap>
+    <entityname.SKSammofmj>7.62x39mm Hollow Point Round</entityname.SKSammofmj>
+    <entitydescription.SKSammofmj>‖color:gui.green‖Hollow Point rounds‖end‖. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.SKSammofmj>
+    <entityname.Lightbodyarmor>Light Body Armor</entityname.Lightbodyarmor>
+    <entitydescription.Lightbodyarmor>A lighter version with ‖color:gui.green‖increased storage for ammo and grenades‖end‖. ‖color:gui.red‖Weaker protection than the standard version‖end‖, but ‖color:gui.yellow‖better protects against shrapnel‖end‖. ‖color:gui.blue‖Maintains full mobility‖end‖.</entitydescription.Lightbodyarmor>
+    <entityname.ak47magazine-anim>7.62x39mm Magazine</entityname.ak47magazine-anim>
+    <entitydescription.ak47magazine-anim>30 standard 7.62x39mm rounds.</entitydescription.ak47magazine-anim>
+    <entityname.ak47apmagazine-anim>7.62x39mm AP Magazine</entityname.ak47apmagazine-anim>
+    <entitydescription.ak47apmagazine-anim>30 armor-piercing 7.62x39mm rounds. ‖color:gui.blue‖Good effectiveness underwater‖end‖.</entitydescription.ak47apmagazine-anim>
+    <entityname.ak47fmjmagazine-anim>7.62x39mm Expansive Magazine</entityname.ak47fmjmagazine-anim>
+    <entitydescription.ak47fmjmagazine-anim>30 expansive 7.62x39mm rounds. ‖color:gui.red‖Causes severe bleeding‖end‖.</entitydescription.ak47fmjmagazine-anim>
+    <entityname.p-11>Pistol P-11 «Nereus»</entityname.p-11>
+    <entitydescription.p-11>German counterpart to SPP-1. Uses ‖color:gui.green‖specialized underwater ammunition‖end‖. ‖color:gui.blue‖Highly effective underwater‖end‖. ‖color:gui.red‖Weak on land‖end‖. ‖color:gui.yellow‖Can be equipped with less-lethal magazine‖end‖.</entitydescription.p-11>
+    <entityname.P-11magazine>P-11 Magazine</entityname.P-11magazine>
+    <entitydescription.P-11magazine>‖color:gui.green‖6 underwater rounds‖end‖. Standard ammunition.</entitydescription.P-11magazine>
+    <entityname.P-11apmagazine>P-11 AP Magazine</entityname.P-11apmagazine>
+    <entitydescription.P-11apmagazine>‖color:gui.green‖6 armor-piercing underwater rounds‖end‖. ‖color:gui.blue‖Penetrates light armor‖end‖.</entitydescription.P-11apmagazine>
+    <entityname.P-11blankmagazine>P-11 Less-Lethal Magazine</entityname.P-11blankmagazine>
+    <entitydescription.P-11blankmagazine>‖color:gui.green‖6 less-lethal rounds‖end‖. ‖color:gui.yellow‖Non-fatal damage only‖end‖. ‖color:gui.red‖Land use only‖end‖.</entitydescription.P-11blankmagazine>
+    <entityname.railgunshellkm1>Railgun HEAT Shell</entityname.railgunshellkm1>
+    <entitydescription.railgunshellkm1>‖color:gui.blue‖Penetrates up to 3m of armor‖end‖. ‖color:gui.yellow‖Exceptionally effective against submarines‖end‖ - ‖color:gui.red‖easily breaches hulls, killing crew and destroying systems‖end‖.</entitydescription.railgunshellkm1>
+    <entityname.railgunshellkm2>Railgun Tandem Charge Shell</entityname.railgunshellkm2>
+    <entitydescription.railgunshellkm2>‖color:gui.blue‖Penetrates up to 6m of armor‖end‖. ‖color:gui.yellow‖Exceptionally effective against submarines‖end‖ - ‖color:gui.red‖easily breaches hulls, killing crew and destroying systems‖end‖.</entitydescription.railgunshellkm2>
+    <entityname.suppressor_shotgun>Shotgun Suppressor</entityname.suppressor_shotgun>
+    <entitydescription.suppressor_shotgun>Reduces gunshot sound. Fits most types of this weapon.</entitydescription.suppressor_shotgun>
+    <entityname.suppressor_pistol>Pistol Suppressor</entityname.suppressor_pistol>
+    <entitydescription.suppressor_pistol>Reduces gunshot sound. Fits most types of this weapon.</entitydescription.suppressor_pistol>
+    <entityname.suppressor_rifle>Rifle Suppressor</entityname.suppressor_rifle>
+    <entitydescription.suppressor_rifle>Reduces gunshot sound. Fits most types of this weapon.</entitydescription.suppressor_rifle>
+    <entityname.suppressor_sniper>Sniper Rifle Suppressor</entityname.suppressor_sniper>
+    <entitydescription.suppressor_sniper>Reduces gunshot sound. Fits most types of this weapon.</entitydescription.suppressor_sniper>
+    <entityname.headset_noise>Active Headphones</entityname.headset_noise>
+    <entitydescription.headset_noise>Protects from stunning and damage caused by loud shots. They work by using built-in microphones that pick up loud sounds and create an opposite sound wave to neutralize them.</entitydescription.headset_noise>
+    <afflictionname.tinnitus_shot>Stunning after a shot</afflictionname.tinnitus_shot>
+    <afflictiondescription.tinnitus_shot>Brief hearing loss and stunning after a loud shot</afflictiondescription.tinnitus_shot>
+    <entityname.ASM-DT>ASM-DT Assault Rifle "Duet"</entityname.ASM-DT>
+    <entitydescription.ASM-DT>Hybrid underwater assault rifle. Chambers ‖color:gui.green‖5.45x39mm and flechette rounds‖end‖. ‖color:gui.blue‖Effective in both environments‖end‖. ‖color:gui.yellow‖Side-mounted optics rail‖end‖.</entitydescription.ASM-DT>
+    <entityname.compensator_rifle>Rifle Vertical Recoil Compensator</entityname.compensator_rifle>
+    <entitydescription.compensator_rifle>‖color:gui.green‖Reduces vertical recoil‖end‖. ‖color:gui.blue‖Improves weapon control during long bursts‖end‖. ‖color:gui.yellow‖Compatible with rifles‖end‖.</entitydescription.compensator_rifle>
+    <entityname.colim_scope-1>Collimator Sight «OKP-7»</entityname.colim_scope-1>
+    <entitydescription.colim_scope-1>‖color:gui.green‖Mounting type:‖end‖
+- Side bracket
+‖color:gui.red‖Adds red aiming dot‖end‖. ‖color:gui.blue‖Improves field of view when aiming‖end‖. Specialized sight for side-mounted weapons.</entitydescription.colim_scope-1>
+    <entityname.SVU>Sniper Rifle SVU "Volna"</entityname.SVU>
+    <entitydescription.SVU>Compact bullpup rifle. ‖color:gui.green‖Ideal for confined spaces‖end‖. Chambers ‖color:gui.green‖7.62x54mm R rounds‖end‖. ‖color:gui.blue‖Moderately effective underwater‖end‖. ‖color:gui.yellow‖Side-mounted optics rail‖end‖.</entitydescription.SVU>
+    <entityname.SVUmagazine>SVU 7.62mm Magazine</entityname.SVUmagazine>
+    <entitydescription.SVUmagazine>‖color:gui.green‖10 standard 7.62x54mm R rounds‖end‖.</entitydescription.SVUmagazine>
+    <entityname.SVUapmagazine>SVU AP Magazine</entityname.SVUapmagazine>
+    <entitydescription.SVUapmagazine>‖color:gui.green‖10 armor-piercing 7.62x54mm R rounds‖end‖. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.SVUapmagazine>
+    <entityname.SVUfmjmagazine>SVU Expansive Magazine</entityname.SVUfmjmagazine>
+    <entitydescription.SVUfmjmagazine>‖color:gui.green‖10 expansive 7.62x54mm R rounds‖end‖. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.SVUfmjmagazine>
+    <entityname.pso_scope>PSO-1 Optical Sight</entityname.pso_scope>
+    <entitydescription.pso_scope>‖color:gui.green‖Mounting type:‖end‖
+- Side bracket
+‖color:gui.red‖Greatly increases viewing range‖end‖. ‖color:gui.yellow‖Compatible with side-mounted rail weapons‖end‖.</entitydescription.pso_scope>
+    <entityname.BFG-50>Sniper Rifle BFG-50 "Thunderbringer"</entityname.BFG-50>
+    <entitydescription.BFG-50>Powerful sniper system. Chambers ‖color:gui.green‖12.7x99mm rounds‖end‖. ‖color:gui.red‖Jams when attempting to fire underwater‖end‖. ‖color:gui.yellow‖Picatinny rail for optics‖end‖.</entitydescription.BFG-50>
+    <entityname.BFG-50ammo>12.7x99mm Round</entityname.BFG-50ammo>
+    <entitydescription.BFG-50ammo>‖color:gui.green‖Standard ammunition for BFG-50‖end‖.</entitydescription.BFG-50ammo>
+    <entityname.BFG-50ammoap>12.7x99mm AP Round</entityname.BFG-50ammoap>
+    <entitydescription.BFG-50ammoap>‖color:gui.green‖Armor-piercing rounds for BFG-50‖end‖. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.BFG-50ammoap>
+    <entityname.BFG-50ammoexp>12.7x99mm Explosive Round</entityname.BFG-50ammoexp>
+    <entitydescription.BFG-50ammoexp>‖color:gui.green‖Explosive rounds for BFG-50‖end‖. ‖color:gui.yellow‖Effective against groups of targets and fortified structures‖end‖.</entitydescription.BFG-50ammoexp>
+    <entityname.brite_scope>Optical Sight "Brite"</entityname.brite_scope>
+    <entitydescription.brite_scope>‖color:gui.green‖Mounting type:‖end‖
+- Picatinny rail
+‖color:gui.red‖Greatly increases viewing range‖end‖. ‖color:gui.yellow‖Compatible with Picatinny rail weapons‖end‖.</entitydescription.brite_scope>
+    <entityname.nvg-anim>Night Vision Device "Owl"</entityname.nvg-anim>
+    <entitydescription.nvg-anim>‖color:gui.green‖NVG with standard headphones‖end‖. ‖color:gui.blue‖Provides visibility in total darkness‖end‖. ‖color:gui.yellow‖Battery powered‖end‖. ‖color:gui.red‖No protection from loud sounds‖end‖.</entitydescription.nvg-anim>
+    <entityname.hider_rifle>Rifle Horizontal Recoil Compensator</entityname.hider_rifle>
+    <entitydescription.hider_rifle>‖color:gui.green‖Reduces horizontal recoil‖end‖. ‖color:gui.blue‖Improves weapon control during long bursts‖end‖. ‖color:gui.yellow‖Compatible with rifles‖end‖.</entitydescription.hider_rifle>
+    <entityname.RSH-12>Revolver RSH-12 "Icebreaker"</entityname.RSH-12>
+    <entitydescription.RSH-12>Heavy caliber revolver. Chambers ‖color:gui.green‖12.7x55mm rounds‖end‖. ‖color:gui.blue‖Moderately effective underwater‖end‖. ‖color:gui.yellow‖Powerful stopping power‖end‖. ‖color:gui.red‖Requires two-handed grip‖end‖.</entitydescription.RSH-12>
+    <entityname.RSH-12ammo>12.7x55mm Round</entityname.RSH-12ammo>
+    <entitydescription.RSH-12ammo>‖color:gui.green‖Standard ammunition for RSH-12‖end‖.</entitydescription.RSH-12ammo>
+    <entityname.RSH-12ammoap>12.7x55mm AP Round</entityname.RSH-12ammoap>
+    <entitydescription.RSH-12ammoap>‖color:gui.green‖Armor-piercing rounds for RSH-12‖end‖. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.RSH-12ammoap>
+    <entityname.RSH-12ammofmj>12.7x55mm Expansive Round</entityname.RSH-12ammofmj>
+    <entitydescription.RSH-12ammofmj>‖color:gui.green‖Expansive rounds for RSH-12‖end‖. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.RSH-12ammofmj>
+    <entityname.PKP>‖color:gui.yellow‖Machine Gun Pecheneg-Bullpup "Tornado"‖end‖</entityname.PKP>
+    <entitydescription.PKP>Bullpup machine gun. Uses ‖color:gui.green‖7.62x54mm R rounds with 100-round belt feed‖end‖. ‖color:gui.blue‖Cannot fire underwater‖end‖ due to feeding system. ‖color:gui.red‖Weapons skill (75) required for effective reloading‖end‖. ‖color:gui.blue‖Extremely rare firearm on Europa‖end‖.</entitydescription.PKP>
+    <entityname.PKPmagazine>PKP 7.62x54mm R Belt Magazine</entityname.PKPmagazine>
+    <entitydescription.PKPmagazine>‖color:gui.green‖100 7.62x54mm R rounds‖end‖.</entitydescription.PKPmagazine>
+    <entityname.cassetteplayer>Cassette Player</entityname.cassetteplayer>
+    <entitydescription.cassetteplayer>‖color:gui.yellow‖Old cassette player‖end‖. ‖color:gui.green‖Can play music‖end‖. ‖color:gui.blue‖Battery powered‖end‖.</entitydescription.cassetteplayer>
+    <entityname..38>.38 Caliber Round</entityname..38>
+    <entitydescription..38>‖color:gui.green‖Standard revolver ammunition‖end‖. ‖color:gui.yellow‖Compatible with most revolvers of this caliber‖end‖.</entitydescription..38>
+    <entityname.repair>Weapon Condition Indicator</entityname.repair>
+    <entitydescription.repair>‖color:gui.green‖Green - weapon almost new‖end‖
+‖color:gui.yellow‖Yellow - worn condition‖end‖
+‖color:gui.red‖Red - heavily worn‖end‖
+‖color:gui.grey‖Black - condition approaching zero‖end‖</entitydescription.repair>
+    <entityname.repair-very-broken>Weapon Condition Indicator</entityname.repair-very-broken>
+    <entitydescription.repair-very-broken>‖color:gui.green‖Green - Weapon is almost new‖end‖
+‖color:gui.yellow‖Yellow - Worn condition‖end‖
+‖color:gui.red‖Red - Heavily worn‖end‖
+‖color:gui.grey‖Black - Condition is approaching zero‖end‖</entitydescription.repair-very-broken>
+    <entityname.repair-broken>Weapon Condition Indicator</entityname.repair-broken>
+    <entitydescription.repair-broken>‖color:gui.green‖Green - Weapon is almost new‖end‖
+‖color:gui.yellow‖Yellow - Worn condition‖end‖
+‖color:gui.red‖Red - Heavily worn‖end‖
+‖color:gui.grey‖Black - Condition is approaching zero‖end‖</entitydescription.repair-broken>
+    <entityname.aa_repair>Gunsmith fabricator</entityname.aa_repair>
+    <entitydescription.aa_repair>Repairs, creates weapons, ammunition and equipment. Professional firearms equipment.</entitydescription.aa_repair>
+    <itemmsgdetachcrowbar>[[use]] Detach using crowbar</itemmsgdetachcrowbar>
+    <displayname.repairweapon>[itemname] (repair)</displayname.repairweapon>
+    <entityname.TOZ-34>TOZ-34 Shotgun «Kompaqt»</entityname.TOZ-34>
+    <entitydescription.TOZ-34>Uses ‖color:gui.green‖standard shotgun shells (Holds 2 rounds)‖end‖. ‖color:gui.blue‖Can fire underwater‖end‖. ‖color:gui.green‖Does not take up much space‖end‖.</entitydescription.TOZ-34>
+    <entityname.IJ-17>IJ-17 Shotgun «Uboy»</entityname.IJ-17>
+    <entitydescription.IJ-17>Uses ‖color:gui.green‖standard shotgun shells (Holds 1 round)‖end‖. ‖color:gui.blue‖Can fire underwater‖end‖. ‖color:gui.red‖Deals more damage‖end‖.</entitydescription.IJ-17>
+    <entityname.compensator_pistol>Pistol and SMG Vertical Recoil Compensator</entityname.compensator_pistol>
+    <entitydescription.compensator_pistol>‖color:gui.green‖Reduces vertical recoil‖end‖. ‖color:gui.blue‖Improves weapon control during firing‖end‖. ‖color:gui.yellow‖Compatible with pistols and SMGs‖end‖.</entitydescription.compensator_pistol>
+    <entityname.hider_pistol>Pistol and SMG Horizontal Recoil Compensator</entityname.hider_pistol>
+    <entitydescription.hider_pistol>‖color:gui.green‖Reduces horizontal recoil‖end‖. ‖color:gui.blue‖Improves weapon control during firing‖end‖. ‖color:gui.yellow‖Compatible with pistols and SMGs‖end‖.</entitydescription.hider_pistol>
+    <entityname.AK-74M>AK-74M «Morskoy Pekhota» Assault Rifle</entityname.AK-74M>
+    <entitydescription.AK-74M>Modified version of AK-74. All parameters improved. Enhanced reliability and accuracy. ‖color:gui.yellow‖Features a side rail mount for optical sights‖end‖. ‖color:gui.blue‖Can fire underwater with reduced effectiveness‖end‖. ‖color:gui.green‖Chambers 5.45x39mm rounds‖end‖.</entitydescription.AK-74M>
+    <entityname.earplugs>Earplugs</entityname.earplugs>
+    <entitydescription.earplugs>‖color:gui.green‖Protect from loud gunshot sounds‖end‖. ‖color:gui.blue‖Can be worn separately or inserted into headphones‖end‖. ‖color:gui.red‖Muffles all ambient sounds‖end‖.</entitydescription.earplugs>
+    <entityname.kevlar-plate-blueprint>Kevlar Plate for Body Armor</entityname.kevlar-plate-blueprint>
+    <entitydescription.kevlar-plate-blueprint>‖color:gui.green‖Modern composite material‖end‖. ‖color:gui.yellow‖Lightest option‖end‖ with ‖color:gui.yellow‖high damage resistance‖end‖. ‖color:gui.red‖Provides basic protection against shrapnel and pistol rounds‖end‖.</entitydescription.kevlar-plate-blueprint>
+    <entityname.steel-plate-blueprint>Steel Plate for Body Armor</entityname.steel-plate-blueprint>
+    <entitydescription.steel-plate-blueprint>‖color:gui.green‖Classic armor steel‖end‖. ‖color:gui.red‖Heaviest option‖end‖ with ‖color:gui.yellow‖medium damage resistance‖end‖. ‖color:gui.yellow‖Provides reliable protection against rifle rounds‖end‖.</entitydescription.steel-plate-blueprint>
+    <entityname.ceramic-plate-blueprint>Ceramic Plate for Body Armor</entityname.ceramic-plate-blueprint>
+    <entitydescription.ceramic-plate-blueprint>‖color:gui.green‖High-tech ceramic‖end‖. ‖color:gui.yellow‖Medium weight‖end‖ but ‖color:gui.red‖low resistance to multiple hits‖end‖. ‖color:gui.yellow‖Provides maximum protection against armor-piercing rounds‖end‖.</entitydescription.ceramic-plate-blueprint>
+    <afflictionname.armored_kevlar>Kevlar Armor</afflictionname.armored_kevlar>
+    <afflictiondescription.armored_kevlar>I'm wearing kevlar armor. I feel lightness and mobility, but I know protection against serious threats is limited.</afflictiondescription.armored_kevlar>
+    <afflictionname.armored_steel>Steel Armor</afflictionname.armored_steel>
+    <afflictiondescription.armored_steel>I'm wearing steel armor. I feel the weight of the construction, but I'm confident in protection against most standard threats.</afflictiondescription.armored_steel>
+    <afflictionname.armored_ceram>Ceramic Armor</afflictionname.armored_ceram>
+    <afflictiondescription.armored_ceram>I'm wearing ceramic armor. I feel the optimal balance between weight and protection, perfect against armor-piercing rounds.</afflictiondescription.armored_ceram>
+    <entityname.MC-255>Revolver Shotgun MC-255 «Storm»</entityname.MC-255>
+    <entitydescription.MC-255>‖color:gui.green‖Standard shotgun shells, 5 rounds in cylinder‖end‖. ‖color:gui.blue‖Pocket carry possible‖end‖. ‖color:gui.blue‖Can fire underwater‖end‖. ‖color:gui.yellow‖Picatinny rail for optics‖end‖. Used by separatists as effective solution for combat in tight spaces.</entitydescription.MC-255>
+    <entityname.G36-anim>Rifle G-36M "AquaLaser"</entityname.G36-anim>
+    <entitydescription.G36-anim>With modified lightning accumulator. Uses ‖color:gui.green‖5.56x45mm rounds‖end‖. ‖color:gui.blue‖Effective underwater due to projectile acceleration‖end‖. ‖color:gui.yellow‖Picatinny rail for optics‖end‖. Used by Coalition for ship boarding operations.</entitydescription.G36-anim>
+    <text_plate>Take off plate</text_plate>
+    <text_onoff>On/Off</text_onoff>
+    <text_burst>Burst</text_burst>
+    <text_single>Single</text_single>
+    <pda_call>Call</pda_call>
+    <pda_number>Number</pda_number>
+    <entityname.AN-94>Assault Rifle AN-94 "Nikolaich"</entityname.AN-94>
+    <entitydescription.AN-94>‖color:gui.green‖Chambers 5.45x39mm rounds‖end‖. ‖color:gui.yellow‖Side-mounted optics rail‖end‖. ‖color:gui.purple‖Unique two-round burst mode‖end‖. ‖color:gui.red‖Largely ineffective underwater, special firing mode disabled‖end‖.</entitydescription.AN-94>
+    <afflictionname.aa_crawling>Prone Position</afflictionname.aa_crawling>
+    <afflictiondescription.aa_crawling>I am in a prone position. Weapon recoil is significantly reduced, improving shooting accuracy. Use the configured mod keybind to stand up, or change it in the Animated Arms settings from the ESC menu.</afflictiondescription.aa_crawling>
+    <entityname.fraggrenade>Fragmentation Grenade</entityname.fraggrenade>
+    <entitydescription.fraggrenade>‖color:gui.green‖Produces approximately 150 fragments‖end‖. ‖color:gui.yellow‖Blast radius about 7 meters‖end‖.</entitydescription.fraggrenade>
+    <entityname.heavyfraggrenade>Heavy Fragmentation Grenade</entityname.heavyfraggrenade>
+    <entitydescription.heavyfraggrenade>‖color:gui.green‖Produces approximately 250 fragments‖end‖. ‖color:gui.yellow‖Blast radius about 10 meters‖end‖.</entitydescription.heavyfraggrenade>
+    <entityname.stinggrenade>Less-Lethal Grenade</entityname.stinggrenade>
+    <entitydescription.stinggrenade>‖color:gui.green‖Produces approximately 75 fragments‖end‖. ‖color:gui.yellow‖Blast radius about 5 meters‖end‖. ‖color:gui.red‖Causes severe concussion‖end‖.</entitydescription.stinggrenade>
+    <entityname.M4-anim>Rifle M4A1 «Rapidfire»</entityname.M4-anim>
+    <entitydescription.M4-anim>Assault rifle M4A1 with high rate of fire. Uses ‖color:gui.green‖5.56x45mm ammunition‖end‖. ‖color:gui.blue‖Low effectiveness underwater‖end‖. ‖color:gui.yellow‖Features Picatinny rail for tactical accessories‖end‖.</entitydescription.M4-anim>
+    <entityname.Glock>Glock Pistol «Burst»</entityname.Glock>
+    <entitydescription.Glock>Modified Glock pistol with ‖color:gui.purple‖3-round burst fire mode‖end‖. Uses ‖color:gui.green‖9x19mm ammunition‖end‖. ‖color:gui.blue‖Ineffective underwater‖end‖. Can be held in one hand.</entitydescription.Glock>
+    <entityname.Berettabigammo>9x19mm Extended Magazine</entityname.Berettabigammo>
+    <entitydescription.Berettabigammo>Holds 40 rounds of 9x19mm ammunition.</entitydescription.Berettabigammo>
+    <entityname.Berettafmjammo>9x19mm Hollow Point Magazine</entityname.Berettafmjammo>
+    <entitydescription.Berettafmjammo>Holds 20 hollow point rounds.</entitydescription.Berettafmjammo>
+    <entityname.1911bigammo>.45 ACP Extended Magazine</entityname.1911bigammo>
+    <entitydescription.1911bigammo>Holds 14 rounds.</entitydescription.1911bigammo>
+    <entityname.spp-1apround>SPP-1 Armor-Piercing Dart</entityname.spp-1apround>
+    <entitydescription.spp-1apround>Armor-piercing dart for the SPP-1 underwater pistol. ‖color:gui.blue‖Penetrates light armor‖end‖. ‖color:gui.red‖Causes lacerations‖end‖.</entitydescription.spp-1apround>
+    <entityname.mosin-obrez>Mosin Rifle «Obrez»</entityname.mosin-obrez>
+    <entitydescription.mosin-obrez>Crudely shortened Mosin rifle. ‖color:gui.red‖Poor accuracy‖end‖ but holds ‖color:gui.green‖10 rounds of 7.62x54R ammunition‖end‖. ‖color:gui.blue‖Cannot fire underwater due to modified feeding mechanism‖end‖. ‖color:gui.yellow‖Compact enough for pocket carry and features side-mounted optic rail‖end‖.</entitydescription.mosin-obrez>
+    <entityname.40mmgrenade>40mm High-Explosive Fragmentation Grenade</entityname.40mmgrenade>
+    <entitydescription.40mmgrenade>Grenade for grenade launchers with ‖color:gui.green‖50 lethal fragments‖end‖. ‖color:gui.yellow‖Effective at medium range‖end‖.</entitydescription.40mmgrenade>
+    <entityname.repairweapon>Weapon Repair Kit</entityname.repairweapon>
+    <entitydescription.repairweapon>Used to repair almost any weapon. Contains all essential tools for fast and efficient maintenance.</entitydescription.repairweapon>
+    <entityname.M1>M1 Garand Polymer</entityname.M1>
+    <entitydescription.M1>A replica rifle crafted from durable polymer materials. Reliable rifle with ‖color:gui.green‖7.62x51 rounds (7 rounds per magazine)‖end‖. ‖color:gui.blue‖After firing underwater, the bolt must be manually closed again to continue shooting‖end‖.</entitydescription.M1>
+    <entityname.M1ammos>7.62x51 Round</entityname.M1ammos>
+    <entitydescription.M1ammos>7.62x51 caliber round for the M1 Garand rifle.</entitydescription.M1ammos>
+    <entityname.M1ammoap>7.62x51 Armor-Piercing Round</entityname.M1ammoap>
+    <entitydescription.M1ammoap>‖color:gui.green‖Armor-piercing ammunition‖end‖ with reinforced core for the M1 Garand. ‖color:gui.blue‖Provides enhanced penetration against armor‖end‖.</entitydescription.M1ammoap>
+    <entityname.M1ammofmj>7.62x51 Expansive Round</entityname.M1ammofmj>
+    <entitydescription.M1ammofmj>‖color:gui.green‖Expansive ammunition‖end‖ with full metal jacket for the M1 Garand. ‖color:gui.yellow‖Effective against unarmored targets, causing significant bleeding‖end‖.</entitydescription.M1ammofmj>
+    <entityname.HK416apround>5.56x45mm AP Round</entityname.HK416apround>
+    <entitydescription.HK416apround>Armor-piercing 5.56x45mm ammunition. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.HK416apround>
+    <entityname.HK416round>5.56x45mm Round</entityname.HK416round>
+    <entitydescription.HK416round>Standard 5.56x45mm ammunition.</entitydescription.HK416round>
+    <entityname.HK416fmjround>5.56x45mm Hollow Point Round</entityname.HK416fmjround>
+    <entitydescription.HK416fmjround>Hollow Point 5.56x45mm ammunition. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.HK416fmjround>
+    <entityname.akround>5.45x39mm Round</entityname.akround>
+    <entitydescription.akround>Standard 5.45x39mm ammunition.</entitydescription.akround>
+    <entityname.akapround>5.45x39mm AP Round</entityname.akapround>
+    <entitydescription.akapround>Armor-piercing 5.45x39mm ammunition. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.akapround>
+    <entityname.akfmjround>5.45x39mm Hollow Point Round</entityname.akfmjround>
+    <entitydescription.akfmjround>Hollow Point 5.45x39mm ammunition. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.akfmjround>
+    <entityname.spp-1fmjround>SPP-1 Hollow Point Dart</entityname.spp-1fmjround>
+    <entitydescription.spp-1fmjround>Hollow Point dart for the SPP-1 underwater pistol. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖. ‖color:gui.red‖Causes lacerations‖end‖.</entitydescription.spp-1fmjround>
+    <entityname.Berettarounds>9x19mm Round</entityname.Berettarounds>
+    <entitydescription.Berettarounds>Standard 9x19mm ammunition.</entitydescription.Berettarounds>
+    <entityname.Berettaroundfmj>9x19mm Hollow Point Round</entityname.Berettaroundfmj>
+    <entitydescription.Berettaroundfmj>Hollow Point 9x19mm ammunition. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.Berettaroundfmj>
+    <entityname.Deagleround>.50 Round</entityname.Deagleround>
+    <entitydescription.Deagleround>Standard .50 caliber ammunition.</entitydescription.Deagleround>
+    <entityname.PBround>9x18mm Round</entityname.PBround>
+    <entitydescription.PBround>Standard 9x18mm ammunition.</entitydescription.PBround>
+    <entityname.mapleround>6.8x48mm «Maple» Round</entityname.mapleround>
+    <entitydescription.mapleround>Standard 6.8x48mm ammunition.</entitydescription.mapleround>
+    <entityname.mapleapround>6.8x48mm «Maple» AP Round</entityname.mapleapround>
+    <entitydescription.mapleapround>Armor-piercing 6.8x48mm ammunition. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.mapleapround>
+    <entityname.1911round>.45 ACP Round</entityname.1911round>
+    <entitydescription.1911round>Standard .45 ACP ammunition.</entitydescription.1911round>
+    <entityname.P90round>5.7x28mm Round</entityname.P90round>
+    <entitydescription.P90round>Standard 5.7x28mm ammunition.</entitydescription.P90round>
+    <entityname.ASH-12magazine>12.7x55mm Magazine</entityname.ASH-12magazine>
+    <entitydescription.ASH-12magazine>Holds 20 rounds of 12.7x55mm ammunition.</entitydescription.ASH-12magazine>
+    <entityname.ASH-12apmagazine>12.7x55mm AP Magazine</entityname.ASH-12apmagazine>
+    <entitydescription.ASH-12apmagazine>Holds 20 armor-piercing rounds of 12.7x55mm. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.ASH-12apmagazine>
+    <entityname.ASH-12fmjmagazine>12.7x55mm Hollow Point Magazine</entityname.ASH-12fmjmagazine>
+    <entitydescription.ASH-12fmjmagazine>Holds 20 hollow point rounds of 12.7x55mm. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.ASH-12fmjmagazine>
+    <entityname.ASH-12>Rifle ASH-12 «Thunder«Maple»»</entityname.ASH-12>
+    <entitydescription.ASH-12>Powerful assault rifle chambered in ‖color:gui.green‖12.7x55mm rounds‖end‖. ‖color:gui.blue‖Moderately effective underwater‖end‖. ‖color:gui.yellow‖Features Picatinny rail‖end‖. ‖color:gui.yellow‖Uses sniper rifle suppressor‖end‖.</entitydescription.ASH-12>
+    <entityname.Ruger>Revolver Ruger «Ampere»</entityname.Ruger>
+    <entitydescription.Ruger>Revolver chambered in ‖color:gui.green‖9x19mm ammunition with 7-round cylinder‖end‖. ‖color:gui.yellow‖Low recoil and high rate of fire‖end‖. ‖color:gui.blue‖Ineffective underwater‖end‖.</entitydescription.Ruger>
+    <entityname.med-scan>Underbarrel Medical Scanner</entityname.med-scan>
+    <entitydescription.med-scan>When attached to a weapon: ‖color:gui.green‖displays medical status of players only when aiming‖end‖. ‖color:gui.yellow‖Mounts in flashlight slot‖end‖.</entitydescription.med-scan>
+    <entityname.maplefmjround>6.8x48mm «Maple» Hollow Point Round</entityname.maplefmjround>
+    <entitydescription.maplefmjround>Hollow Point 6.8x48mm ammunition. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.maplefmjround>
+    <entityname.maplefmjmagazine>6.8x48mm «Maple» Hollow Point Magazine</entityname.maplefmjmagazine>
+    <entitydescription.maplefmjmagazine>Holds 20 hollow point rounds of 6.8x48mm. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.maplefmjmagazine>
+    <entityname.assaultriflemagazine>6.8x48mm «byssal Whip» Magazine</entityname.assaultriflemagazine>
+    <entitydescription.assaultriflemagazine>Holds 30 rounds of 6.8x48mm ammunition.</entitydescription.assaultriflemagazine>
+    <entityname.assaultrifleapmagazine>6.8x48mm «byssal Whip» AP Magazine</entityname.assaultrifleapmagazine>
+    <entitydescription.assaultrifleapmagazine>Holds 30 armor-piercing rounds of 6.8x48mm. ‖color:gui.blue‖Increased penetration capability‖end‖ at the cost of ‖color:gui.red‖slightly reduced damage against unarmored targets‖end‖.</entitydescription.assaultrifleapmagazine>
+    <entityname.assaultriflefmjmagazine>6.8x48mm «byssal Whip» Hollow Point Magazine</entityname.assaultriflefmjmagazine>
+    <entitydescription.assaultriflefmjmagazine>Holds 30 hollow point rounds of 6.8x48mm. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.assaultriflefmjmagazine>
+    <entityname.assaultrifle>Assault Rifle «Abyssal Whip»</entityname.assaultrifle>
+    <entitydescription.assaultrifle>Assault rifle chambered in ‖color:gui.green‖6.8x48mm ammunition‖end‖. ‖color:gui.yellow‖Features Picatinny rail‖end‖. ‖color:gui.white‖2-round burst fire mode‖end‖. ‖color:gui.blue‖Good effectiveness underwater‖end‖. Developed by the Coalition on Europa for assaulting outposts.</entitydescription.assaultrifle>
+    <afflictionname.pepper>Raptor's Bane on Mucous Membranes</afflictionname.pepper>
+    <afflictiondescription.pepper>My eyes are burning from Raptor's Bane! I need to wash them with water immediately.</afflictiondescription.pepper>
+    <afflictionname.pepper-big>Raptor's Bane on Mucous Membranes</afflictionname.pepper-big>
+    <afflictiondescription.pepper-big>My eyes are burning from Raptor's Bane! I need to wash them with water immediately.</afflictiondescription.pepper-big>
+    <entityname.pepperspray>Aerosol-Stream Raptor's Bane Spray</entityname.pepperspray>
+    <entitydescription.pepperspray>Self-defense spray with aerosol-stream delivery of concentrated Raptor's Bane juice. ‖color:gui.yellow‖Effective at close range‖end‖. ‖color:gui.blue‖Can be washed off with water‖end‖.</entitydescription.pepperspray>
+    <entityname.40mmnuke>40mm Nuclear Mini-Shell</entityname.40mmnuke>
+    <entitydescription.40mmnuke>Small nuclear shell for grenade launcher. ‖color:gui.red‖Does not create fragments when exploded‖end‖.</entitydescription.40mmnuke>
+    <entityname.40mmpeppergrenade>40mm Raptor's Bane Grenade</entityname.40mmpeppergrenade>
+    <entitydescription.40mmpeppergrenade>40mm grenade with concentrated Raptor's Bane juice for grenade launcher. ‖color:gui.yellow‖Causes severe eye irritation‖end‖. ‖color:gui.blue‖Can be washed off with water‖end‖.</entitydescription.40mmpeppergrenade>
+    <entityname.ballistichelmet1-open>Bulletproof Helmet with Open Visor</entityname.ballistichelmet1-open>
+    <entityname.ballistichelmet2-open>Marksman Helmet with Open Visor</entityname.ballistichelmet2-open>
+    <entityname.piratehelmet1-open>Separatist Helmet with Open Visor</entityname.piratehelmet1-open>
+    <entityname.piratehelmet2-open>Reinforced Separatist Helmet with Open Visor</entityname.piratehelmet2-open>
+    <entityname.ballistichelmet3-open>Riot Control Helmet with Open Visor</entityname.ballistichelmet3-open>
+    <entityname.peppergrenade>Raptor's Bane Grenade</entityname.peppergrenade>
+    <entitydescription.peppergrenade>Grenade with concentrated Raptor's Bane juice. ‖color:gui.yellow‖Causes severe eye irritation‖end‖. ‖color:gui.blue‖Can be washed off with water‖end‖.</entitydescription.peppergrenade>
+    <entityname.ballistichelmet6>Clown Helmet</entityname.ballistichelmet6>
+    <entitydescription.ballistichelmet6>‖color:gui.green‖Features built-in headphones‖end‖. ‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Removable clown mask visor with strange flag pattern‖end‖. ‖color:gui.yellow‖Built-in speaker for music playback‖end‖.</entitydescription.ballistichelmet6>
+    <entityname.ballistichelmet6-open>Clown Helmet with Open Visor</entityname.ballistichelmet6-open>
+    <entitydescription.ballistichelmet6-open>‖color:gui.green‖Features built-in headphones‖end‖. ‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Removable clown mask visor with strange flag pattern‖end‖. ‖color:gui.yellow‖Built-in speaker for music playback‖end‖.</entitydescription.ballistichelmet6-open>
+    <entityname.gasmask>Gas Mask «Aegis»</entityname.gasmask>
+    <entitydescription.gasmask>‖color:gui.blue‖Protects against pepper gas and neuroparalytic gas‖end‖. ‖color:gui.green‖Features built-in headphones‖end‖.</entitydescription.gasmask>
+    <entityname.ballistichelmet1>Bulletproof Helmet</entityname.ballistichelmet1>
+    <entitydescription.ballistichelmet1>‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. While the helmet can't protect against most ocean inhabitants, it will be more than useful if a traitor is aboard the submarine.</entitydescription.ballistichelmet1>
+    <entityname.ballistichelmet2>Marksman Helmet</entityname.ballistichelmet2>
+    <entitydescription.ballistichelmet2>‖color:gui.green‖Does not obstruct view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. This helmet is lighter than the bulletproof variant. It does not interfere with the use of periscopes.</entitydescription.ballistichelmet2>
+    <entityname.piratehelmet>Separatist Helmet</entityname.piratehelmet>
+    <entitydescription.piratehelmet>‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Modified "Altyn" bulletproof helmet. Despite makeshift improvements, the helmet looks surprisingly sturdy.</entitydescription.piratehelmet>
+    <entityname.piratehelmet2>Reinforced Separatist Helmet</entityname.piratehelmet2>
+    <entitydescription.piratehelmet2>‖color:gui.red‖Greatly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Reinforced "Altyn" helmet with three-stripe visor. Enhanced protection against gunshot wounds. For some reason this pattern seems familiar to you.</entitydescription.piratehelmet2>
+    <entityname.ballistichelmet3>Riot Control Helmet</entityname.ballistichelmet3>
+    <entitydescription.ballistichelmet3>‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Helmet for quelling mass riots, but also suitable for fighting alien invaders.</entitydescription.ballistichelmet3>
+    <entityname.piratehelmet3>Light Separatist Helmet</entityname.piratehelmet3>
+    <entitydescription.piratehelmet3>‖color:gui.green‖Does not obstruct view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Modified bulletproof helmet. Lightweight version with preserved protection. Despite makeshift improvements, the helmet looks surprisingly sturdy.</entitydescription.piratehelmet3>
+    <entityname.ballistichelmet5>Tactical Helmet "Striker"</entityname.ballistichelmet5>
+    <entitydescription.ballistichelmet5>‖color:gui.yellow‖Features active headphones‖end‖. ‖color:gui.red‖Moderately limits visibility‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Lightweight version of Coalition assault helmet. Protection level remains virtually unchanged, but lacks NVG and oxygen mask.</entitydescription.ballistichelmet5>
+    <!-- Шлемы с открытым забралом -->
+    <entityname.ballistichelmet1-open>Bulletproof Helmet with Open Visor</entityname.ballistichelmet1-open>
+    <entitydescription.ballistichelmet1-open>‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. While the helmet can't protect against most ocean inhabitants, it will be more than useful if a traitor is aboard the submarine.</entitydescription.ballistichelmet1-open>
+    <entityname.ballistichelmet2-open>Marksman Helmet with Open Visor</entityname.ballistichelmet2-open>
+    <entitydescription.ballistichelmet2-open>‖color:gui.green‖Does not obstruct view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. This helmet is lighter than the bulletproof variant. It does not interfere with the use of periscopes.</entitydescription.ballistichelmet2-open>
+    <entityname.piratehelmet1-open>Separatist Helmet with Open Visor</entityname.piratehelmet1-open>
+    <entitydescription.piratehelmet1-open>‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Modified "Altyn" bulletproof helmet. Despite makeshift improvements, the helmet looks surprisingly sturdy.</entitydescription.piratehelmet1-open>
+    <entityname.piratehelmet2-open>Reinforced Separatist Helmet with Open Visor</entityname.piratehelmet2-open>
+    <entitydescription.piratehelmet2-open>‖color:gui.red‖Greatly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Reinforced "Altyn" helmet with three-stripe visor. Enhanced protection against gunshot wounds. For some reason this pattern seems familiar to you.</entitydescription.piratehelmet2-open>
+    <entityname.ballistichelmet3-open>Riot Control Helmet with Open Visor</entityname.ballistichelmet3-open>
+    <entitydescription.ballistichelmet3-open>‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Helmet for quelling mass riots, but also suitable for fighting alien invaders.</entitydescription.ballistichelmet3-open>
+    <entityname.piratehelmet3-open>Light Separatist Helmet with Open Visor</entityname.piratehelmet3-open>
+    <entitydescription.piratehelmet3-open>‖color:gui.green‖Does not obstruct view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Modified bulletproof helmet. Lightweight version with preserved protection. Despite makeshift improvements, the helmet looks surprisingly sturdy.</entitydescription.piratehelmet3-open>
+    <entityname.ballistichelmet5-open>Tactical Helmet "Striker" with Open Visor</entityname.ballistichelmet5-open>
+    <entitydescription.ballistichelmet5-open>‖color:gui.yellow‖Features active headphones‖end‖. ‖color:gui.red‖Moderately limits visibility‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Lightweight version of Coalition assault helmet. Protection level remains virtually unchanged, but lacks NVG and oxygen mask.</entitydescription.ballistichelmet5-open>
+    <!-- Шлем helmet4 без изменений -->
+    <entityname.ballistichelmet4>Assault Helmet "Poseidon"</entityname.ballistichelmet4>
+    <entitydescription.ballistichelmet4>‖color:gui.yellow‖Features active headphones‖end‖. ‖color:gui.red‖Greatly limits visibility‖end‖. Used by the Coalition for capturing outposts. The most durable helmet currently, features built-in oxygen mask, ‖color:gui.blue‖built-in gas mask for toxic gases‖end‖ and integrated NVG with battery compartment. Not intended for reconnaissance.</entitydescription.ballistichelmet4>
+    <AA.camera>Camera Zoom</AA.camera>
+    <AA.camera.description>How much the player camera should zoom in.\nSet to 0 to disable.</AA.camera.description>
+    <AA.periscope>Periscope Offset</AA.periscope>
+    <AA.periscope.description>How much periscope-controlled views should zoom out.\nAffects turrets, searchlights, cameras, etc.\nSet to 0 to disable.</AA.periscope.description>
+    <AA.aiming>Aiming Offset</AA.aiming>
+    <AA.aiming.description>How much the camera should be offset when aiming.\nAffects melee weapons, ranged weapons, and grenades.\nSet to 0 to disable.</AA.aiming.description>
+    <AA.sync>Sync with other players</AA.sync>
+    <AA.sync.description>When checked, makes connected players use the same zoom configuration.\nUncheck to allow other players to use their own settings.</AA.sync.description>
+    <AA.sync.enabled>Cannot change - synced with server</AA.sync.enabled>
+    <AA.incompatibility.nteyes>Cannot change - incompatible with NT Eyes.</AA.incompatibility.nteyes>
+    <EnhancedImmersion.ModName>Camera Control</EnhancedImmersion.ModName>
+    <entityname.Atropini>Atropini</entityname.Atropini>
+    <entitydescription.Atropini>Antidote against neuroparalytic substances. Causes blurred vision and mild chemical dependency with prolonged use.</entitydescription.Atropini>
+    <entityname.neurospray>Aerosol Neuroparalytic Gas Spray</entityname.neurospray>
+    <entitydescription.neurospray>Aerosol-type neuroparalytic gas canister. ‖color:gui.yellow‖Causes partial paralysis‖end‖. ‖color:gui.red‖Can be lethal to humans, requires antidote for treatment‖end‖.</entitydescription.neurospray>
+    <afflictionname.neuro-gas>Neuroparalytic Gas</afflictionname.neuro-gas>
+    <afflictiondescription.neuro-gas>I'm having trouble breathing and moving! This neuroparalytic gas is taking effect. Need an antidote immediately.</afflictiondescription.neuro-gas>
+    <entityname.40mmneurogrenade>40mm Neuroparalytic Grenade</entityname.40mmneurogrenade>
+    <entitydescription.40mmneurogrenade>40mm grenade with neuroparalytic gas for grenade launcher. ‖color:gui.yellow‖Causes partial paralysis‖end‖. ‖color:gui.red‖Can be lethal to humans, requires antidote for treatment‖end‖.</entitydescription.40mmneurogrenade>
+    <entityname.neurogrenade>Neuroparalytic Grenade</entityname.neurogrenade>
+    <entitydescription.neurogrenade>Grenade with neuroparalytic gas. ‖color:gui.yellow‖Causes partial paralysis‖end‖. ‖color:gui.red‖Can be lethal to humans, requires antidote for treatment‖end‖.</entitydescription.neurogrenade>
+    <entityname.mapleblueprint>Maple Rifle Blueprint</entityname.mapleblueprint>
+    <entitydescription.mapleblueprint>Blueprint for crafting the Maple assault rifle.</entitydescription.mapleblueprint>
+    <entityname.scarblueprint>SCAR Rifle Blueprint</entityname.scarblueprint>
+    <entitydescription.scarblueprint>Blueprint for crafting the SCAR assault rifle.</entitydescription.scarblueprint>
+    <entityname.ash12blueprint>ASH-12 Rifle Blueprint</entityname.ash12blueprint>
+    <entitydescription.ash12blueprint>Blueprint for crafting the ASH-12 assault rifle.</entitydescription.ash12blueprint>
+    <entityname.g36blueprint>G36 Rifle Blueprint</entityname.g36blueprint>
+    <entitydescription.g36blueprint>Blueprint for crafting the G36 assault rifle.</entitydescription.g36blueprint>
+    <entityname.pkpblueprint>PKP Machine Gun Blueprint</entityname.pkpblueprint>
+    <entitydescription.pkpblueprint>Blueprint for crafting the PKP machine gun.</entitydescription.pkpblueprint>
+    <entityname.m249blueprint>M249 Machine Gun Blueprint</entityname.m249blueprint>
+    <entitydescription.m249blueprint>Blueprint for crafting the M249 machine gun.</entitydescription.m249blueprint>
+    <entityname.ceramic-plate-blueprint>Ceramic Plate Blueprint</entityname.ceramic-plate-blueprint>
+    <entitydescription.ceramic-plate-blueprint>Blueprint for crafting ceramic armor plates.</entitydescription.ceramic-plate-blueprint>
+    <entityname.steel-plate-blueprint>Steel Plate Blueprint</entityname.steel-plate-blueprint>
+    <entitydescription.steel-plate-blueprint>Blueprint for crafting steel armor plates.</entitydescription.steel-plate-blueprint>
+    <entityname.kevlar-plate-blueprint>Kevlar Plate Blueprint</entityname.kevlar-plate-blueprint>
+    <entitydescription.kevlar-plate-blueprint>Blueprint for crafting kevlar armor plates.</entitydescription.kevlar-plate-blueprint>
+    <entityname.neuroweaponsblueprint>Neuro-weapons Blueprint</entityname.neuroweaponsblueprint>
+    <entitydescription.neuroweaponsblueprint>Blueprint for crafting neuroparalytic weapons and ammunition.</entitydescription.neuroweaponsblueprint>
+    <entityname.P-11peppermagazine>P-11 Raptor's Bane Magazine</entityname.P-11peppermagazine>
+    <entitydescription.P-11peppermagazine>Holds 6 rounds with concentrated Raptor's Bane extract. ‖color:gui.yellow‖Causes severe eye irritation‖end‖. ‖color:gui.blue‖Can be washed off with water‖end‖.</entitydescription.P-11peppermagazine>
+    <entityname.lightshield>Assault Shield «Strobe»</entityname.lightshield>
+    <entitydescription.lightshield>Assault shield with built-in strobe disorientation system. ‖color:gui.yellow‖Temporarily blinds enemies‖end‖. ‖color:gui.blue‖Powered by battery‖end‖.</entitydescription.lightshield>
+    <entityname.RPGroundpol>RPG Hollow Shell</entityname.RPGroundpol>
+    <entitydescription.RPGroundpol>Hollow RPG shell that can hold a grenade inside. ‖color:gui.yellow‖Automatically arms grenade after penetrating one obstacle‖end‖. ‖color:gui.blue‖Multi-purpose ammunition‖end‖.</entitydescription.RPGroundpol>
+    <entityname.spp-1apround>SPP-1 Armor-Piercing Dart</entityname.spp-1apround>
+    <entitydescription.spp-1apround>Armor-piercing dart for the SPP-1 underwater pistol. ‖color:gui.blue‖Penetrates light armor‖end‖. ‖color:gui.red‖Causes lacerations‖end‖.</entitydescription.spp-1apround>
+    <entityname.spp-1fmjround>SPP-1 Hollow Point Dart</entityname.spp-1fmjround>
+    <entitydescription.spp-1fmjround>Hollow Point dart for the SPP-1 underwater pistol. ‖color:gui.yellow‖Highly effective against unarmored targets, causes severe bleeding‖end‖. ‖color:gui.red‖Causes lacerations‖end‖.</entitydescription.spp-1fmjround>
+    <entityname.AK-47>Assault Rifle AK-47 «Depth»</entityname.AK-47>
+    <entitydescription.AK-47>Legendary Kalashnikov assault rifle, modified for underwater conditions. Used by separatists. ‖color:gui.green‖7.62x39mm ammunition‖end‖. ‖color:gui.blue‖Medium effectiveness underwater‖end‖. ‖color:gui.yellow‖Features side-mounted optic rail‖end‖.</entitydescription.AK-47>
+    <entityname.kevlar-plate>Kevlar Plate for Body Armor</entityname.kevlar-plate>
+    <entitydescription.kevlar-plate>‖color:gui.green‖Modern composite material‖end‖. ‖color:gui.yellow‖Lightest option‖end‖ with ‖color:gui.yellow‖high damage resistance‖end‖. ‖color:gui.red‖Provides basic protection against shrapnel and pistol rounds‖end‖.</entitydescription.kevlar-plate>
+    <entityname.steel-plate>Steel Plate for Body Armor</entityname.steel-plate>
+    <entitydescription.steel-plate>‖color:gui.green‖Classic armor steel‖end‖. ‖color:gui.red‖Heaviest option‖end‖ with ‖color:gui.yellow‖medium damage resistance‖end‖. ‖color:gui.yellow‖Provides reliable protection against rifle rounds‖end‖.</entitydescription.steel-plate>
+    <entityname.ceramic-plate>Ceramic Plate for Body Armor</entityname.ceramic-plate>
+    <entitydescription.ceramic-plate>‖color:gui.green‖High-tech ceramic‖end‖. ‖color:gui.yellow‖Medium weight‖end‖ but ‖color:gui.red‖low resistance to multiple hits‖end‖. ‖color:gui.yellow‖Provides maximum protection against armor-piercing rounds‖end‖.</entitydescription.ceramic-plate>
+    <entityname.piratehelmet3-open>Light Separatist Helmet with Open Visor</entityname.piratehelmet3-open>
+    <entitydescription.piratehelmet3-open>‖color:gui.green‖Does not obstruct view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Modified bulletproof helmet. Lightweight version with preserved protection. Despite makeshift improvements, the helmet looks surprisingly sturdy.</entitydescription.piratehelmet3-open>
+    <entityname.piratehelmet1-open>Separatist Helmet with Open Visor</entityname.piratehelmet1-open>
+    <entitydescription.piratehelmet1-open>‖color:gui.green‖Features built-in headphones‖end‖. ‖color:gui.red‖Slightly obstructs view‖end‖. ‖color:gui.white‖Features flip-down visor‖end‖. Modified "Altyn" bulletproof helmet. Despite makeshift improvements, the helmet looks surprisingly sturdy.</entitydescription.piratehelmet1-open>
+    <entityname.neuro-syringe>Neuroparalytic Syringe</entityname.neuro-syringe>
+    <entitydescription.neuro-syringe>Syringe with neuroparalytic agent. ‖color:gui.yellow‖Causes partial paralysis‖end‖. ‖color:gui.red‖Can be lethal to humans, requires antidote for treatment‖end‖.</entitydescription.neuro-syringe>
+    <entityname.divingknife-throw>Diving Knife (Throwable)</entityname.divingknife-throw>
+    <entitydescription.divingknife-throw>Throwable version of the diving knife.</entitydescription.divingknife-throw>
+    <entityname.divingknifedementonite-throw>Dementonite Diving Knife (Throwable)</entityname.divingknifedementonite-throw>
+    <entitydescription.divingknifedementonite-throw>Throwable version of the dementonite knife.</entitydescription.divingknifedementonite-throw>
+    <entityname.divingknifehardened-throw>Hardened Diving Knife (Throwable)</entityname.divingknifehardened-throw>
+    <entitydescription.divingknifehardened-throw>Throwable version of the hardened diving knife.</entitydescription.divingknifehardened-throw>
+    <entityname.wrench-throw>Wrench (Throwable)</entityname.wrench-throw>
+    <entitydescription.wrench-throw>Throwable version of the wrench.</entitydescription.wrench-throw>
+    <entityname.wrenchdementonite-throw>Dementonite Wrench (Throwable)</entityname.wrenchdementonite-throw>
+    <entitydescription.wrenchdementonite-throw>Throwable version of the dementonite wrench.</entitydescription.wrenchdementonite-throw>
+    <entityname.wrenchhardened-throw>Hardened Wrench (Throwable)</entityname.wrenchhardened-throw>
+    <entitydescription.wrenchhardened-throw>Throwable version of the hardened wrench.</entitydescription.wrenchhardened-throw>
+    <entityname.thermalgoggles>Thermal Goggles</entityname.thermalgoggles>
+    <entitydescription.thermalgoggles>Thermal imaging goggles with ‖color:gui.green‖standard headphones‖end‖. ‖color:gui.yellow‖Detects heat signatures through walls‖end‖. ‖color:gui.red‖Limited range compared to thermal scopes‖end‖.</entitydescription.thermalgoggles>
+    <entityname.GrenadeLauncher-single>Single-shot Grenade Launcher</entityname.GrenadeLauncher-single>
+    <entitydescription.GrenadeLauncher-single>‖color:gui.green‖Uses 40mm grenades‖end‖. Single-shot grenade launcher with ‖color:gui.yellow‖Picatinny rail‖end‖. ‖color:gui.blue‖Relatively fast reload compared to standard grenade launchers‖end‖.</entitydescription.GrenadeLauncher-single>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Weapons degrade with use. A heavily worn barrel will frequently jam. Don't forget to repair at the Gunsmith Fabricator.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖The visual appearance of a weapon in hands and its color in inventory change based on condition. Hover over it to check exact durability.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Standard weapons lose effectiveness underwater. Use specialized underwater arms for aquatic missions.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Without aiming attachments, you must rely on instinct. A laser sight or optical scope will restore the aiming reticle.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Utilize different fire modes. 2-round burst increases accuracy, while 3-round burst helps manage recoil.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Struggling with strong recoil? Weapons have two types: vertical (muzzle climb) can be controlled by pulling down, horizontal (side-to-side spread) is tamed with specific muzzle devices.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖For better vertical recoil control, install a vertical compensator. A horizontal compensator effectively counters horizontal spread.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Vertical recoil recovery speed heavily depends on your Weapons skill. Higher skill means faster recentering after shots.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Horizontal recoil cannot be controlled by the player, but higher Weapons skill slows its accumulation during sustained fire.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Hitting an enemy induces ballistic shock, disorienting them. Expansive and rubber bullets cause particularly severe pain.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖The intensity of pain from gunshot wounds is felt less with high Weapons skill. If you have the ‖color:gui.blue‖Neurotrauma‖end‖ mod installed, morphine can alleviate the suffering.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Firing without ear protection will deafen you. Use earplugs or active headphones to avoid tinnitus and blurred vision.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Open the Animated Arms settings from the ESC menu to change keybinds, disable afflictions, and configure other mod options.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖A lowered helmet visor not only conceals identity but also protects against pepper spray and partially mitigates flashbang effects.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Raise the helmet visor to use a gas mask or night vision device. Lower it for face protection in CQC and against non-lethals.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Some helmets feature integrated systems like active headphones (stun protection) or maSKS (gas protection), saving equipment slots.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Use different armor plate types: Kevlar - lightweight, Steel - reliable, Ceramic - maximum protection but fragile.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Customize your weapon at the Gunsmith Fabricator: scopes, suppressors, tactical lights, and recoil compensators.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Use the ballistic shield for cover and to stun enemies with its flash.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖The single-shot grenade launcher and RPG "Hydrostrike" can utilize various projectiles, including kinetic and HEAT rounds.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Neuroparalytic gas causes suffocation and impaired motor functions. Carry Atropine as an antidote.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Pepper grenades and sprays are effective against unprotected targets. A diving suit or mask provides immunity.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖All revolvers can be spun with a button. ‖color:gui.yellow‖*Feel like Ocelot from MGS.*‖end‖</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Some helmets, like the clown helmet, feature a built-in cassette player for creating a unique atmosphere.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖A suicide function is available on all weapons. Use it in hopeless situations to avoid capture (e.g., on RP servers).</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Hover over a weapon to see the ammo count in its magazine. Transparent magazines allow visual confirmation.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Weapons left in water will slowly rust. Try not to lose your gun in Europa's depths.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖You can unload ammo from magazines. Hold the magazine and press the action button. To load, drag ammo onto the magazine.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖New weapons and schematics can be found across Europa: on factions, outposts, and derelict submarines.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Keybinds are configured in the Animated Arms settings from the ESC menu. You can also toggle combat afflictions and other mod features there.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Most weapons and ammunition are crafted at the Gunsmith Fabricator. Study blueprints and plan your resources in advance.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Grenades in this mod are more lethal compared to vanilla, and each grenade has its own unique shrapnel count.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Tactical laser allows you to move without slowdown while aiming - use this tactical advantage.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖This mod offers two playstyles: lethal (like most weapon mods) and pacifist - you can stack pain with expansive or rubber bullets and almost completely immobilize enemies.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Soviet weapons generally wear out slower and perform worse than NATO counterparts, but NATO weapons have faster wear but higher effectiveness.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖This mod is one of the first I've created. Surprisingly, it turned out well. Huge thanks to the creator of Guns Enhanced for help! And yes... you expected a tip here, but no...</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖The mod visualizes where your and other characters are looking. Combined with the enhanced zoom, this allows you to literally "read" players' actions, such as when they are managing their inventory.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Most equipment, weapons, and ammunition are now crafted at a dedicated Weapons Fabricator. If needed, it can also be created at a regular fabricator.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖Use your configured interaction key to open the interaction menu. You can change it in the Animated Arms settings from the ESC menu.</loadingscreentip>
+    <loadingscreentip>‖color:gui.green‖Animated Arms: ‖end‖The interaction menu has a "Point" function. If one hand is occupied — you'll snap your fingers, if both are full — you'll clap, and if you're near a door — you'll knock on it.</loadingscreentip>
+    <entityname.pepperspray-big>Stream-type «RaptorNet» Canister</entityname.pepperspray-big>
+    <entitydescription.pepperspray-big>Large stream-type canister with concentrated Raptor's Bane juice. ‖color:gui.yellow‖Causes severe eye irritation‖end‖. ‖color:gui.blue‖Can be washed off with water‖end‖.</entitydescription.pepperspray-big>
+    <entityname.laserflashlight-flash>Tactical Module (Flashlight Selected)</entityname.laserflashlight-flash>
+    <entitydescription.laserflashlight-flash>Button switches between flashlight and laser modes when the module is in hands. In this mode: ‖color:gui.red‖consumes more battery compared to laser mode‖end‖.</entitydescription.laserflashlight-flash>
+    <entityname.laserflashlight-laser>Tactical Module (Laser Selected)</entityname.laserflashlight-laser>
+    <entitydescription.laserflashlight-laser>Button switches between flashlight and laser modes when the module is in hands. In this mode: ‖color:gui.green‖removes the slowdown when aiming‖end‖.</entitydescription.laserflashlight-laser>
+    <entityname.Revolver>Revolver «Grauz»</entityname.Revolver>
+    <entitydescription.Revolver>Revolver chambered in powerful ‖color:gui.green‖6.8x48mm ammunition with 4-round cylinder‖end‖. Created for divers who needed a powerful pistol capable of firing underwater. ‖color:gui.blue‖Excellent effectiveness underwater‖end‖. ‖color:gui.yellow‖Built-in laser target designator‖end‖.</entitydescription.Revolver>
+    <entityname.Shotgun>Shotgun «Abyssal»</entityname.Shotgun>
+    <entitydescription.Shotgun>Shotgun developed on Europa, allowing it to fire underwater. ‖color:gui.green‖Uses standard shotgun shells and holds 6 rounds‖end‖. ‖color:gui.yellow‖Features side-mounted optic rail‖end‖. ‖color:gui.white‖Dual-shot firing mode‖end‖.</entitydescription.Shotgun>
+    <entityname.bandana-anim>Bandana «Foxhound»</entityname.bandana-anim>
+    <entitydescription.bandana-anim>Special bandana that allows the wearer to feign death multiple times and then revive. ‖color:gui.yellow‖Reference to MGS 3‖end‖.</entitydescription.bandana-anim>
+    <entityname.UMP45>SMG UMP45 «Urban»</entityname.UMP45>
+    <entitydescription.UMP45>Submachine gun chambered in ‖color:gui.green‖.45 ACP.‖end‖ ‖color:gui.yellow‖Features Picatinny rail for optics‖end‖. Compact size for easy carrying. ‖color:gui.white‖3-round burst fire mode‖end‖. ‖color:gui.blue‖Poor effectiveness underwater‖end‖.</entitydescription.UMP45>
+    <entityname.UMP45magazine-anim>.45 ACP Magazine</entityname.UMP45magazine-anim>
+    <entitydescription.UMP45magazine-anim>Holds 25 rounds of .45 ACP ammunition.</entitydescription.UMP45magazine-anim>
+    <entityname.UMP45bigmagazine-anim>.45 ACP Extended Magazine</entityname.UMP45bigmagazine-anim>
+    <entitydescription.UMP45bigmagazine-anim>Holds 50 rounds of .45 ACP ammunition.</entitydescription.UMP45bigmagazine-anim>
+    <entityname.UMP45fmjmagazine-anim>.45 ACP Hollow Point Magazine</entityname.UMP45fmjmagazine-anim>
+    <entitydescription.UMP45fmjmagazine-anim>Holds 25 hollow point rounds of .45 ACP. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.UMP45fmjmagazine-anim>
+    <entityname.UMP45bigfmjmagazine-anim>.45 ACP Hollow Point Extended Magazine</entityname.UMP45bigfmjmagazine-anim>
+    <entitydescription.UMP45bigfmjmagazine-anim>Holds 50 hollow point rounds of .45 ACP. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.UMP45bigfmjmagazine-anim>
+    <entityname.1911fmjround>.45 ACP Hollow Point Round</entityname.1911fmjround>
+    <entitydescription.1911fmjround>Hollow Point .45 ACP ammunition. ‖color:gui.yellow‖Effective against unarmored targets, causes severe bleeding‖end‖.</entitydescription.1911fmjround>
+    <entitydescription.scrapcannon>Homemade battery-powered cannon that fires metal shrapnel ‖color:gui.green‖and thrown versions of melee weapons‖end‖. Low accuracy, but ammunition can be any random pieces of iron or steel.</entitydescription.scrapcannon>
+    <entityname.ballistichelmet7>Combat Helmet «Splicer»</entityname.ballistichelmet7>
+    <entitydescription.ballistichelmet7>Combat helmet with ‖color:gui.green‖built-in improved gene splicer‖end‖ and ‖color:gui.yellow‖integrated flashlight‖end‖. ‖color:gui.blue‖Compact due to foldable design‖end‖.</entitydescription.ballistichelmet7>
+    <entityname.facemask>Face Mask «Phantom»</entityname.facemask>
+    <entitydescription.facemask>Aramid fiber face mask combined with balaclava for facial protection.</entitydescription.facemask>
+    <entityname.Medicalbodyarmor>Medic Body Armor</entityname.Medicalbodyarmor>
+    <entitydescription.Medicalbodyarmor>Body armor with ‖color:gui.green‖additional medical pouches‖end‖. ‖color:gui.yellow‖Protection level between light and standard body armor‖end‖.</entitydescription.Medicalbodyarmor>
+    <!-- Basic PDA -->
+    <entityname.PDA-anim>PDA "Basic"</entityname.PDA-anim>
+    <entitydescription.PDA-anim>Personal digital assistant with basic functions:\n• Flashlight\n• Notes\n• Simple submarine map\n• View fabricator crafts — 1 slot\n• Play music via USB drives (reduced volume)\n• Power external devices (reduced output)\n‖color:gui.white‖Low power consumption‖end‖.</entitydescription.PDA-anim>
+    <!-- Officer PDA -->
+    <entityname.PDA-officer-anim>PDA "Officer"</entityname.PDA-officer-anim>
+    <entitydescription.PDA-officer-anim>Officer's PDA with advanced functions and enhanced power supply:\n• Powerful flashlight\n• Notes with color customization\n• Submarine map with location tracking\n• View weapon fabricator crafts\n• View fabricator crafts — 2 slots\n• Play music via USB drives\n• Power external devices\n‖color:gui.blue‖• Built-in taser‖end‖\n‖color:gui.blue‖• Built-in PDA signal jammer (30m radius)‖end‖\n‖color:gui.red‖High power consumption‖end‖.</entitydescription.PDA-officer-anim>
+    <!-- Enhanced PDA -->
+    <entityname.PDA-better-anim>PDA «Enhanced»</entityname.PDA-better-anim>
+    <entitydescription.PDA-better-anim>Enhanced PDA with extended functions:\n• Powerful flashlight\n• Notes with color change\n• Submarine map with location tracking\n• Fabricator recipes view - 2 slots\n• Music playback via flash drives\n• Device power supply\n‖color:gui.yellow‖Medium power consumption‖end‖.</entitydescription.PDA-better-anim>
+    <!-- Medical PDA -->
+    <entityname.PDA-medic-anim>PDA «Medical»</entityname.PDA-medic-anim>
+    <entitydescription.PDA-medic-anim>PDA with medical functions:\n• Powerful flashlight\n• Notes with color change\n• Submarine map with location tracking\n• Medical fabricator recipes view - 5 slots\n• Built-in tutorial for ‖color:gui.blue‖Neurotrauma‖end‖\n• Music playback via flash drives\n• Device power supply\n‖color:gui.yellow‖Medium power consumption‖end‖.</entitydescription.PDA-medic-anim>
+    <!-- Mechanical PDA -->
+    <entityname.PDA-mech-anim>PDA "Mechanical"</entityname.PDA-mech-anim>
+    <entitydescription.PDA-mech-anim>Specialized PDA for mechanical work:\n• Powerful flashlight\n• Notes with color customization\n• Submarine map with location tracking and hull damage display\n• Remote fabricator and deconstructor control\n• Play music via USB drives\n• Power external devices — high voltage\n‖color:gui.blue‖• Built-in electric welding tool‖end‖\n‖color:gui.yellow‖Average power consumption‖end‖.</entitydescription.PDA-mech-anim>
+    <!-- Engineering PDA -->
+    <entityname.PDA-eng-anim>PDA «Engineering»</entityname.PDA-eng-anim>
+    <entitydescription.PDA-eng-anim>Specialized PDA for engineering work:\n• Ultra-powerful flashlight and radial lamp\n• Notes with color customization\n• Submarine map with location tracking and electrical device failure detection\n• Remote reactor and power distributor management function\n• Dynamo machine for manual battery charging\n• Music playback via flash drives\n• Device power supply - enormous voltage output\n‖color:gui.yellow‖Medium power consumption‖end‖.</entitydescription.PDA-eng-anim>
+    <Manual_Button_Back>Back</Manual_Button_Back>
+    <Manual_Button_FlashLight>Flashlight</Manual_Button_FlashLight>
+    <Manual_Button_Emergency_Beacon>Emergency signal – SOS</Manual_Button_Emergency_Beacon>
+    <Manual_Button_Fabricator_Recipes>Fabricator recipes</Manual_Button_Fabricator_Recipes>
+    <Manual_Button_Clean_Text>Clean text - Reset PDA</Manual_Button_Clean_Text>
+    <Manual_Button_Beacon_Text>Beacon Text:</Manual_Button_Beacon_Text>
+    <Manual_Button_Text_Color>Text color:</Manual_Button_Text_Color>
+    <Manual_Button_Medical_Fabricator>Medical Fabricator recipes</Manual_Button_Medical_Fabricator>
+    <Manual_Button_Neurotrauma_Guide>Neurotrauma guide</Manual_Button_Neurotrauma_Guide>
+    <Manual_Button_Fabricator_craft>Fabricator Control</Manual_Button_Fabricator_craft>
+    <Manual_Button_Deconstruct_Craft>Deconstructor Control</Manual_Button_Deconstruct_Craft>
+    <pda_med>Medical beacon on sonar</pda_med>
+    <!-- Для обычного КПК -->
+    <PDA_Welcome_Basic>Initializing system...\n Loading Barotrauma PDA firmware v0.1.7\n Performing hardware check... OK\n Establishing secure subnautica network...\n All systems operational.\n Welcome, crew member.\n \n Available commands:\n • time - show terminal game time\n • guess - number guessing game\n • dice(N) - roll dice (1 to N)\n • quiz - random questions quiz\n • lang - change language (default: English)\n </PDA_Welcome_Basic>
+    <PDA_Welcome_Better>Initializing system...\n Loading Barotrauma PDA firmware v0.3.3\n Performing hardware check... OK\n Establishing secure subnautica network...\n All systems operational.\n Welcome, crew member.\n \n Available commands:\n • time - show terminal game time\n • guess - number guessing game\n • dice(N) - roll dice (1 to N)\n • quiz - random questions quiz\n • lang - change language (default: English)\n </PDA_Welcome_Better>
+    <PDA_Welcome_Medic>Initializing system...\n Loading Barotrauma PDA firmware v0.3.6\n Performing hardware check... OK\n Establishing secure subnautica network...\n All systems operational.\n Welcome, crew member.\n \n Available commands:\n • time - show terminal game time\n • guess - number guessing game\n • dice(N) - roll dice (1 to N)\n • quiz - random questions quiz\n • lang - change language (default: English)\n </PDA_Welcome_Medic>
+    <Manual_Button_Volume_DOWN>Music Volume -</Manual_Button_Volume_DOWN>
+    <Manual_Button_Volume_UP>Music Volume +</Manual_Button_Volume_UP>
+    <pda_armed>Enable timer</pda_armed>
+    <pda_timer>Set time</pda_timer>
+    <Radial_flashlight>Radial Flashlight</Radial_flashlight>
+    <Manual_Button_Reactor>Reactor Control</Manual_Button_Reactor>
+    <Manual_Button_Dynamo>Dynamo Machine</Manual_Button_Dynamo>
+    <afflictionname.stamina>Fatigue</afflictionname.stamina>
+    <afflictiondescription.stamina>A measure of how tired you are</afflictiondescription.stamina>
+    <Spit>Spit</Spit>
+    <Shout>Shout</Shout>
+    <Interaction>Interaction</Interaction>
+    <Fake.handcuffs>Fake handcuffs</Fake.handcuffs>
+    <Hands.up>Hands up</Hands.up>
+    <Push>Push</Push>
+    <Fists>Fists</Fists>
+    <Point>Point</Point>
+    <Remove_fake_handcuffs>Remove fake handcuffs</Remove_fake_handcuffs>
+    <Vomit>Vomit</Vomit>
+    <afflictionname.acid-anim>Acid Burn (Mucous Membranes)</afflictionname.acid-anim>
+    <afflictiondescription.acid-anim>The acid is searing my eyes and lungs! Every moment is unbearable agony. There is no antidote. Only water can temporarily soothe the symptoms.</afflictiondescription.acid-anim>
+    <entityname.IJ-17-obrez>IZH-17 "Obrez"</entityname.IJ-17-obrez>
+    <entitydescription.IJ-17-obrez>A crudely shortened version of the IZH-17. ‖color:gui.green‖Uses standard shotgun shells (holds 1 shell)‖end‖. ‖color:gui.red‖Terrible accuracy‖end‖ and ‖color:gui.orange‖reduced damage compared to the original‖end‖ due to the loss of propellant gases. ‖color:gui.blue‖Can fire underwater with high efficiency‖end‖. ‖color:gui.yellow‖Compact, can be concealed in a pocket, and features a makeshift flashlight mount held with duct tape‖end‖.</entitydescription.IJ-17-obrez>
+    <onoff>On/Off</onoff>
+    <suicide>Suicide</suicide>
+    <spin>Spin</spin>
+    <entityname.PBammo-big>Extended 9x18mm Magazine</entityname.PBammo-big>
+    <entitydescription.PBammo-big>‖color:gui.green‖20 subsonic 9x18mm rounds‖end‖. Increased capacity for prolonged operations.</entitydescription.PBammo-big>
+    <entityname.PM>PM Pistol "Makarych"</entityname.PM>
+    <entitydescription.PM>A reliable and compact pistol developed in the mid-20th century. Widely used due to its simplicity and durability. Chambered in ‖color:gui.green‖9x18mm rounds‖end‖. ‖color:gui.blue‖Poorly effective underwater‖end‖. Can be held in one hand.</entitydescription.PM>
+    <entityname.Kedr>Kedr SMG "Strela"</entityname.Kedr>
+    <entitydescription.Kedr>A compact submachine gun developed from the PP-91 Kedr. Known for its light weight and ease of use in the confined spaces of submarines. Chambered in ‖color:gui.green‖9x18mm rounds‖end‖. ‖color:gui.blue‖Poorly effective underwater‖end‖.</entitydescription.Kedr>
+    <afflictionname.blind-extinguisher>Extinguisher Foam in Eyes</afflictionname.blind-extinguisher>
+    <afflictiondescription.blind-extinguisher>Caustic foam in the eyes! It burns severely and temporarily blinds. Can be washed off with water.</afflictiondescription.blind-extinguisher>
+    <Tazer_mode>Tazer mode</Tazer_mode>
+    <pda_off_range>30 meter jammer</pda_off_range>
+    <Manual_Button_Repair_Recipes>Weapon Fabricator Recipes</Manual_Button_Repair_Recipes>
+    <Welding_mode>Welding mode</Welding_mode>
+    <entityname.Shocker>Shocker "Controller"</entityname.Shocker>
+    <entitydescription.Shocker>Close-range electroshock device used for temporarily immobilizing targets. Widely used by Coalition security forces for crowd control and non-lethal apprehension.\n‖color:gui.yellow‖Low power consumption‖end‖.</entitydescription.Shocker>
+    <entityname.40mmgrenade-handgrenade>40mm Grenade (Hand)</entityname.40mmgrenade-handgrenade>
+    <entitydescription.40mmgrenade-handgrenade>Converted 40mm grenade adapted for hand throwing.\n‖color:gui.green‖Creates 50 fragments on detonation‖end‖.\n‖color:gui.orange‖No safety lever — the fuse starts immediately after pulling the pin‖end‖.\n‖color:gui.red‖Has a faster fuse compared to standard hand grenades‖end‖.</entitydescription.40mmgrenade-handgrenade>
+    <entityname.40mmstungrenade-handgrenade>40mm Stun Grenade (Hand)</entityname.40mmstungrenade-handgrenade>
+    <entitydescription.40mmstungrenade-handgrenade>Converted 40mm stun grenade adapted for hand throwing.\n‖color:gui.green‖Creates no fragments, only stun effect‖end‖.\n‖color:gui.orange‖No safety lever — the fuse starts immediately after pulling the pin‖end‖.\n‖color:gui.red‖Has a faster fuse compared to standard hand grenades‖end‖.</entitydescription.40mmstungrenade-handgrenade>
+    <entityname.40mmchemgrenade-handgrenade>40mm Chemical Grenade (Hand)</entityname.40mmchemgrenade-handgrenade>
+    <entitydescription.40mmchemgrenade-handgrenade>Converted 40mm grenade filled with acid, adapted for hand throwing. Causes severe chemical burns on detonation.\n‖color:gui.green‖Creates no fragments, only acid cloud‖end‖.\n‖color:gui.orange‖No safety lever — the fuse starts immediately after pulling the pin‖end‖.\n‖color:gui.red‖Has a faster fuse compared to standard hand grenades‖end‖.</entitydescription.40mmchemgrenade-handgrenade>
+    <entityname.40mmpeppergrenade-handgrenade>40mm Pepper Grenade (Hand)</entityname.40mmpeppergrenade-handgrenade>
+    <entitydescription.40mmpeppergrenade-handgrenade>Converted 40mm grenade filled with concentrated raptor bile extract, adapted for hand throwing. ‖color:gui.yellow‖Causes severe eye irritation‖end‖. ‖color:gui.blue‖Can be washed off with water‖end‖.\n‖color:gui.green‖Creates no fragments, only irritant cloud‖end‖.\n‖color:gui.orange‖No safety lever — the fuse starts immediately after pulling the pin‖end‖.\n‖color:gui.red‖Has a faster fuse compared to standard hand grenades‖end‖.</entitydescription.40mmpeppergrenade-handgrenade>
+    <entityname.40mmneurogrenade-handgrenade>40mm Neurotoxin Grenade (Hand)</entityname.40mmneurogrenade-handgrenade>
+    <entitydescription.40mmneurogrenade-handgrenade>Converted 40mm grenade filled with neuroparalytic gas, adapted for hand throwing. ‖color:gui.yellow‖Causes partial paralysis‖end‖. ‖color:gui.red‖Can be lethal, requires antidote for treatment‖end‖.\n‖color:gui.green‖Creates no fragments, only neurotoxic cloud‖end‖.\n‖color:gui.orange‖No safety lever — the fuse starts immediately after pulling the pin‖end‖.\n‖color:gui.red‖Has a faster fuse compared to standard hand grenades‖end‖.</entitydescription.40mmneurogrenade-handgrenade>
+    <entityname.40mmnuke-handgrenade>40mm Mini Nuke (Hand)</entityname.40mmnuke-handgrenade>
+    <entitydescription.40mmnuke-handgrenade>Converted 40mm mini-nuke round adapted for hand throwing. ‖color:gui.red‖Produces no shrapnel on detonation‖end‖, but deals massive damage through blast wave, thermal effects and radiation.\n‖color:gui.orange‖No safety lever — the fuse starts immediately after pulling the pin‖end‖.\n‖color:gui.red‖Has a faster fuse compared to standard hand grenades‖end‖.</entitydescription.40mmnuke-handgrenade>
+    <entityname.baseballcap>Бейсболка</entityname.baseballcap>
+    <entitydescription.baseballcap>‖color:gui.green‖Повышает все навыки на 3‖end‖.</entitydescription.baseballcap>
+    <entityname.devcap>Кепка разработчика</entityname.devcap>
+    <entitydescription.devcap>‖color:gui.green‖Повышает все навыки на 3‖end‖.</entitydescription.devcap>
+    <!-- English -->
+    <entityname.assistantclothes>Assistant Clothes</entityname.assistantclothes>
+    <entitydescription.assistantclothes>‖color:gui.green‖Boosts all skills by 5‖end‖. ‖color:gui.green‖Slight resistance to lacerations and bite wounds‖end‖. ‖color:gui.orange‖Has 2 pockets and pouches for tools and medical supplies‖end‖.</entitydescription.assistantclothes>
+    <entityname.captainsuniform1>Captain's Uniform 1</entityname.captainsuniform1>
+    <entitydescription.captainsuniform1>A warm jacket to protect against the cold. ‖color:gui.green‖Slight resistance to lacerations (5%)‖end‖. ‖color:gui.green‖Good resistance to bite wounds and blunt trauma (10%)‖end‖. ‖color:gui.orange‖Features an ammo pouch and a pocket for a cigar or a drink‖end‖.</entitydescription.captainsuniform1>
+    <entityname.captainsuniform2>Captain's Uniform 2</entityname.captainsuniform2>
+    <entitydescription.captainsuniform2>Indicates who is in charge. ‖color:gui.green‖Slight resistance to lacerations (5%)‖end‖. ‖color:gui.green‖Good resistance to bite wounds and blunt trauma (10%)‖end‖. ‖color:gui.orange‖Includes an ammo pouch and a pocket for booze or a pipe‖end‖.</entitydescription.captainsuniform2>
+    <entityname.captainsuniform3>Captain's Uniform 3</entityname.captainsuniform3>
+    <entitydescription.captainsuniform3>A stylish uniform that conveys authority. ‖color:gui.green‖Slight resistance to lacerations (5%)‖end‖. ‖color:gui.green‖Good resistance to bite wounds and blunt trauma (10%)‖end‖. ‖color:gui.orange‖Equipped with an ammo pouch and a small pocket for smokes‖end‖.</entitydescription.captainsuniform3>
+    <entityname.captainseparatistsuniform1>Captain Separatist's Uniform 1</entityname.captainseparatistsuniform1>
+    <entitydescription.captainseparatistsuniform1>‖color:gui.green‖Slight resistance to lacerations (5%)‖end‖. ‖color:gui.green‖Good resistance to bite wounds and blunt trauma (10%)‖end‖. ‖color:gui.orange‖Features an ammo pouch and a pocket for a cigar or a drink‖end‖.</entitydescription.captainseparatistsuniform1>
+    <entityname.captainseparatistsuniform2>Captain Separatist's Uniform 2</entityname.captainseparatistsuniform2>
+    <entitydescription.captainseparatistsuniform2>‖color:gui.green‖Slight resistance to lacerations (5%)‖end‖. ‖color:gui.green‖Good resistance to bite wounds and blunt trauma (10%)‖end‖. ‖color:gui.orange‖Includes an ammo pouch and a pocket for booze or a pipe‖end‖.</entitydescription.captainseparatistsuniform2>
+    <entityname.captainseparatistsuniform3>Captain Separatist's Uniform 3</entityname.captainseparatistsuniform3>
+    <entitydescription.captainseparatistsuniform3>‖color:gui.green‖Slight resistance to lacerations (5%)‖end‖. ‖color:gui.green‖Good resistance to bite wounds and blunt trauma (10%)‖end‖. ‖color:gui.orange‖Equipped with an ammo pouch and a small pocket for smokes‖end‖.</entitydescription.captainseparatistsuniform3>
+    <entityname.clowncostume>Clown Costume</entityname.clowncostume>
+    <entitydescription.clowncostume>‖color:gui.green‖Explosion damage reduced by 10%‖end‖. ‖color:gui.orange‖Lots of pockets for clown props and bananas‖end‖. ‖color:gui.orange‖Funny footsteps‖end‖.</entitydescription.clowncostume>
+    <entityname.clownsuitunique>Legendary Clown Suit</entityname.clownsuitunique>
+    <entitydescription.clownsuitunique>‖color:gui.green‖Explosion damage reduced by 20%‖end‖. ‖color:gui.orange‖Lots of pockets for clown props and bananas‖end‖. ‖color:gui.orange‖Funny footsteps‖end‖.</entitydescription.clownsuitunique>
+    <entityname.orangejumpsuit1>Engineer Jumpsuit 1</entityname.orangejumpsuit1>
+    <entitydescription.orangejumpsuit1>Protective suit for reactor work. ‖color:gui.green‖High radiation resistance (60%)‖end‖. ‖color:gui.green‖Medium burn resistance (20%)‖end‖. ‖color:gui.orange‖Clip for wires and PDA‖end‖.</entitydescription.orangejumpsuit1>
+    <entityname.orangejumpsuit2>Engineer Jumpsuit 2</entityname.orangejumpsuit2>
+    <entitydescription.orangejumpsuit2>Electrical suit with thick insulation. ‖color:gui.green‖High burn resistance (30%)‖end‖. ‖color:gui.green‖Slight resistance to all physical damage types (5%)‖end‖. ‖color:gui.orange‖Clip for wires and PDA‖end‖.</entitydescription.orangejumpsuit2>
+    <entityname.engineerseparatistsuniform1>Engineer Separatist Uniform 1</entityname.engineerseparatistsuniform1>
+    <entitydescription.engineerseparatistsuniform1>‖color:gui.green‖High burn resistance (30%)‖end‖. ‖color:gui.green‖Slight resistance to all physical damage types (5%)‖end‖. ‖color:gui.orange‖Clip for wires and PDA‖end‖.</entitydescription.engineerseparatistsuniform1>
+    <entityname.engineerseparatistsuniform2>Engineer Separatist Uniform 2</entityname.engineerseparatistsuniform2>
+    <entitydescription.engineerseparatistsuniform2>‖color:gui.green‖High burn resistance (30%)‖end‖. ‖color:gui.green‖Slight resistance to all physical damage types (5%)‖end‖. ‖color:gui.orange‖Clip for wires and PDA‖end‖.</entitydescription.engineerseparatistsuniform2>
+    <entityname.bluejumpsuit1>Mechanic Jumpsuit 1</entityname.bluejumpsuit1>
+    <entitydescription.bluejumpsuit1>Mechanic's uniform. ‖color:gui.green‖Increased laceration resistance (15%)‖end‖. ‖color:gui.green‖Medium bite (10%) and burn (20%) resistance‖end‖. ‖color:gui.orange‖Two tank holders‖end‖.</entitydescription.bluejumpsuit1>
+    <entityname.bluejumpsuit2>Mechanic Jumpsuit 2</entityname.bluejumpsuit2>
+    <entitydescription.bluejumpsuit2>Mechanic's uniform. ‖color:gui.green‖Increased laceration resistance (15%)‖end‖. ‖color:gui.green‖Medium bite (10%) and burn (20%) resistance‖end‖. ‖color:gui.orange‖Two tank holders‖end‖.</entitydescription.bluejumpsuit2>
+    <entityname.mechanicseparatistsuniform1>Mechanic Separatist Uniform 1</entityname.mechanicseparatistsuniform1>
+    <entitydescription.mechanicseparatistsuniform1>‖color:gui.green‖Increased laceration resistance (15%)‖end‖. ‖color:gui.green‖Medium bite (10%) and burn (20%) resistance‖end‖. ‖color:gui.orange‖Two tank holders‖end‖.</entitydescription.mechanicseparatistsuniform1>
+    <entityname.mechanicseparatistsuniform2>Mechanic Separatist Uniform 2</entityname.mechanicseparatistsuniform2>
+    <entitydescription.mechanicseparatistsuniform2>‖color:gui.green‖Increased laceration resistance (15%)‖end‖. ‖color:gui.green‖Medium bite (10%) and burn (20%) resistance‖end‖. ‖color:gui.orange‖Two tank holders‖end‖.</entitydescription.mechanicseparatistsuniform2>
+    <entityname.doctorsuniform1>Medic Uniform 1</entityname.doctorsuniform1>
+    <entitydescription.doctorsuniform1>Field medic uniform. ‖color:gui.green‖Boosts medical skill by 5‖end‖. ‖color:gui.green‖Slight resistance to wounds and bites (5%)‖end‖. ‖color:gui.green‖Good blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Two additional medical pockets‖end‖.</entitydescription.doctorsuniform1>
+    <entityname.doctorsuniform2>Medic Uniform 2</entityname.doctorsuniform2>
+    <entitydescription.doctorsuniform2>Field medic uniform. ‖color:gui.green‖Boosts medical skill by 5‖end‖. ‖color:gui.green‖Slight resistance to wounds and bites (5%)‖end‖. ‖color:gui.green‖Good blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Two additional medical pockets‖end‖.</entitydescription.doctorsuniform2>
+    <entityname.medicseparatistsuniform1>Medic Separatist Uniform 1</entityname.medicseparatistsuniform1>
+    <entitydescription.medicseparatistsuniform1>‖color:gui.green‖Boosts medical skill by 5‖end‖. ‖color:gui.green‖Slight resistance to wounds and bites (5%)‖end‖. ‖color:gui.green‖Good blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Two additional medical pockets‖end‖.</entitydescription.medicseparatistsuniform1>
+    <entityname.medicseparatistsuniform2>Medic Separatist Uniform 2</entityname.medicseparatistsuniform2>
+    <entitydescription.medicseparatistsuniform2>‖color:gui.green‖Boosts medical skill by 5‖end‖. ‖color:gui.green‖Slight resistance to wounds and bites (5%)‖end‖. ‖color:gui.green‖Good blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Two additional medical pockets‖end‖.</entitydescription.medicseparatistsuniform2>
+    <entityname.securityuniform1>Security Uniform 1</entityname.securityuniform1>
+    <entitydescription.securityuniform1>‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.orange‖A hip pouch and a case for handcuffs or a battery‖end‖.</entitydescription.securityuniform1>
+    <entityname.securityuniform2>Security Uniform 2</entityname.securityuniform2>
+    <entitydescription.securityuniform2>‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.red‖Movement speed reduced by 15% when carrying medium items‖end‖. ‖color:gui.orange‖Expandable pouch and case‖end‖.</entitydescription.securityuniform2>
+    <entityname.securityuniform3>Security Uniform 3</entityname.securityuniform3>
+    <entitydescription.securityuniform3>‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.red‖Movement speed reduced by 15% when carrying medium items‖end‖. ‖color:gui.orange‖Modular rigging for gear‖end‖.</entitydescription.securityuniform3>
+    <entityname.securityseparatistsuniform1>Security Separatist Uniform 1</entityname.securityseparatistsuniform1>
+    <entitydescription.securityseparatistsuniform1>‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.orange‖A hip pouch and a case‖end‖.</entitydescription.securityseparatistsuniform1>
+    <entityname.securityseparatistsuniform2>Security Separatist Uniform 2</entityname.securityseparatistsuniform2>
+    <entitydescription.securityseparatistsuniform2>‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.orange‖A hip pouch and a case‖end‖.</entitydescription.securityseparatistsuniform2>
+    <entityname.securityseparatistsuniform3>Security Separatist Uniform 3</entityname.securityseparatistsuniform3>
+    <entitydescription.securityseparatistsuniform3>‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.orange‖A hip pouch and a case‖end‖.</entitydescription.securityseparatistsuniform3>
+    <!-- NPCs Clothing -->
+    <entityname.watchmanclothes>Watchman Clothes</entityname.watchmanclothes>
+    <entitydescription.watchmanclothes>Made of durable light material. ‖color:gui.green‖Increases movement speed by 10%‖end‖. ‖color:gui.green‖Good laceration and bite resistance (10%)‖end‖.</entitydescription.watchmanclothes>
+    <entityname.commonerclothes1>Cautious Dweller Outfit</entityname.commonerclothes1>
+    <entitydescription.commonerclothes1>‖color:gui.green‖Takes 5% less damage‖end‖. ‖color:gui.green‖Deals 30% less friendly fire damage‖end‖. ‖color:gui.orange‖Has a pocket for medical supplies‖end‖.</entitydescription.commonerclothes1>
+    <entityname.commonerclothes2>Weighted Dweller Outfit</entityname.commonerclothes2>
+    <entitydescription.commonerclothes2>‖color:gui.green‖Water flow resistance increased by 20%‖end‖. ‖color:gui.green‖Slight laceration and bite resistance (5%)‖end‖. ‖color:gui.orange‖Carry loop for a welding/oxygen tank‖end‖.</entitydescription.commonerclothes2>
+    <entityname.commonerclothes3>Tinker Dweller Outfit</entityname.commonerclothes3>
+    <entitydescription.commonerclothes3>Mildly insulated. ‖color:gui.green‖Increases device repair speed by 10%‖end‖. ‖color:gui.green‖Medium laceration (10%) and burn (15%) resistance‖end‖. ‖color:gui.green‖Slight bite and blunt trauma resistance (5%)‖end‖. ‖color:gui.orange‖Tool holster and tank loop‖end‖.</entitydescription.commonerclothes3>
+    <entityname.commonerclothes4>Militia Dweller Outfit</entityname.commonerclothes4>
+    <entitydescription.commonerclothes4>Lightly armored. ‖color:gui.green‖Increases repair speed by 10%‖end‖. ‖color:gui.green‖Slight laceration, bite, gunshot resistance (5%)‖end‖. ‖color:gui.green‖Good blunt trauma resistance (15%)‖end‖. ‖color:gui.orange‖Pistol holster and handcuff/battery case‖end‖.</entitydescription.commonerclothes4>
+    <entityname.commonerclothes5>Dockyard Dweller Outfit</entityname.commonerclothes5>
+    <entitydescription.commonerclothes5>Less protective, better for welding. ‖color:gui.green‖Increases tool hull repair speed by 10%‖end‖. ‖color:gui.green‖Slight laceration and bite resistance (5%)‖end‖. ‖color:gui.green‖Medium burn resistance (10%)‖end‖. ‖color:gui.orange‖Tool holster and tank loop‖end‖.</entitydescription.commonerclothes5>
+    <entityname.crewchiefclothes>Crew Chief Clothes</entityname.crewchiefclothes>
+    <entitydescription.crewchiefclothes>Bosun's attire. ‖color:gui.green‖Boosts all skills by 2‖end‖. ‖color:gui.green‖Slight laceration (5%) and burn (5%) resistance‖end‖. ‖color:gui.green‖Good bite and blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Tool holster and medical pouch‖end‖.</entitydescription.crewchiefclothes>
+    <entityname.medicalofficerclothes>Medical Officer Clothes</entityname.medicalofficerclothes>
+    <entitydescription.medicalofficerclothes>Surgical wear. ‖color:gui.green‖Increases medical item effectiveness by 10%‖end‖. ‖color:gui.green‖Boosts medical skill by 15‖end‖. ‖color:gui.orange‖Two medical pockets‖end‖.</entitydescription.medicalofficerclothes>
+    <entityname.minerclothes>Miner Clothes</entityname.minerclothes>
+    <entitydescription.minerclothes>‖color:gui.green‖Increases mining speed by 10%‖end‖. ‖color:gui.green‖Medium laceration resistance (15%)‖end‖. ‖color:gui.green‖High blunt trauma resistance (20%)‖end‖. ‖color:gui.green‖Slight bite resistance (5%)‖end‖. ‖color:gui.orange‖Large pockets for ore and materials‖end‖.</entitydescription.minerclothes>
+    <entityname.quartermasterclothes>Quartermaster Clothes</entityname.quartermasterclothes>
+    <entitydescription.quartermasterclothes>‖color:gui.green‖Increases movement speed by 10% when carrying ammo or crates‖end‖. ‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.orange‖Tool holster and PDA/Sonar case‖end‖.</entitydescription.quartermasterclothes>
+    <entityname.researcherclothes>Researcher Clothes</entityname.researcherclothes>
+    <entitydescription.researcherclothes>Functional scientist's garb. ‖color:gui.green‖Increases genetic combination stability by 10%‖end‖. ‖color:gui.green‖Boosts electrical, mechanical, and medical skills by 5‖end‖. ‖color:gui.green‖Slight laceration and bite resistance (5%)‖end‖. ‖color:gui.orange‖Two medical pockets‖end‖.</entitydescription.researcherclothes>
+    <entityname.securitypatrolclothes>Security Patrol Clothes</entityname.securitypatrolclothes>
+    <entitydescription.securitypatrolclothes>‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good gunshot and bite resistance (10%)‖end‖. ‖color:gui.orange‖Modular slots for handcuffs or batteries‖end‖.</entitydescription.securitypatrolclothes>
+    <entityname.administratorclothes>Administrator Clothes</entityname.administratorclothes>
+    <entitydescription.administratorclothes>Middle management attire. ‖color:gui.green‖Boosts helm skill by 5‖end‖. ‖color:gui.green‖Slight laceration and bite resistance (5%)‖end‖. ‖color:gui.orange‖PDA/Sonar pocket and a spot for chems‖end‖.</entitydescription.administratorclothes>
+    <entityname.banditclothes1>Bandit Combat Uniform</entityname.banditclothes1>
+    <entitydescription.banditclothes1>Patchwork uniform. ‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good bite and blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Tool holster and ammo pouch‖end‖.</entitydescription.banditclothes1>
+    <entityname.banditclothes2>Bandit Light Outfit</entityname.banditclothes2>
+    <entitydescription.banditclothes2>Light material and padded boots. ‖color:gui.green‖Increases movement speed by 10%‖end‖. ‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good bite and blunt trauma resistance (10%)‖end‖.</entitydescription.banditclothes2>
+    <entityname.vipclothes1>VIP Clothes 1</entityname.vipclothes1>
+    <entitydescription.vipclothes1>Stylish hydrophobic synthfiber. ‖color:gui.green‖Reduces water flow push by 10%‖end‖. ‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good bite and blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Concealed pocket for meds or small weapon‖end‖.</entitydescription.vipclothes1>
+    <entityname.vipclothes2>VIP Clothes 2</entityname.vipclothes2>
+    <entitydescription.vipclothes2>Durable leather suit. ‖color:gui.green‖Increases movement speed by 5%‖end‖. ‖color:gui.green‖Slight laceration resistance (5%)‖end‖. ‖color:gui.green‖Good bite and blunt trauma resistance (10%)‖end‖. ‖color:gui.orange‖Concealed pocket for meds or small weapon‖end‖.</entitydescription.vipclothes2>
+    <entityname.vipclothes3>VIP Clothes 3</entityname.vipclothes3>
+    <entitydescription.vipclothes3>High-end protective fashion. ‖color:gui.green‖Slight laceration and burn resistance (5%)‖end‖. ‖color:gui.green‖Good bite, blunt trauma, and gunshot resistance (10%)‖end‖. ‖color:gui.orange‖Concealed pocket for meds or small weapon‖end‖.</entitydescription.vipclothes3>
+    <entityname.prisonerclothes>Prisoner Clothes</entityname.prisonerclothes>
+    <entitydescription.prisonerclothes>Prison jumpsuit. ‖color:gui.green‖Increases melee attack speed by 10%‖end‖. ‖color:gui.green‖Slight laceration and bite resistance (5%)‖end‖.</entitydescription.prisonerclothes>
+    <entityname.separatistcommoner2>Pirate Novice Clothes</entityname.separatistcommoner2>
+    <entitydescription.separatistcommoner2>Separatist outfit. ‖color:gui.green‖Increases movement speed by 10%‖end‖. ‖color:gui.green‖Slight laceration and gunshot resistance (5%)‖end‖. ‖color:gui.orange‖Tool holster‖end‖.</entitydescription.separatistcommoner2>
+    <entityname.separatistcommoner1>Pirate Outfit</entityname.separatistcommoner1>
+    <entitydescription.separatistcommoner1>Hand-made separatist costume. ‖color:gui.green‖Increases movement speed by 5%‖end‖. ‖color:gui.green‖Good laceration and gunshot resistance (10%)‖end‖. ‖color:gui.red‖Movement speed reduced by 15% when carrying medium items‖end‖. ‖color:gui.orange‖Ammo pouch and case‖end‖.</entitydescription.separatistcommoner1>
+    <entityname.separatistcommoner3>Pirate Heavy Outfit</entityname.separatistcommoner3>
+    <entitydescription.separatistcommoner3>Uniform with light armor plating. ‖color:gui.green‖Slight blunt trauma resistance (5%)‖end‖. ‖color:gui.green‖Good laceration and gunshot resistance (15%)‖end‖. ‖color:gui.orange‖Ammo pouch‖end‖.</entitydescription.separatistcommoner3>
+    <entityname.cultistrobes>Cultist Robes</entityname.cultistrobes>
+    <entitydescription.cultistrobes>‖color:gui.yellow‖Disguises the wearer as a Husk‖end‖.</entitydescription.cultistrobes>
+    <entityname.faultycultistrobes>Faulty Cultist Robes</entityname.faultycultistrobes>
+    <entitydescription.faultycultistrobes>‖color:gui.red‖Broken. Does not disguise as a Husk‖end‖.</entitydescription.faultycultistrobes>
+    <entityname.zealotrobes>Zealot Robes</entityname.zealotrobes>
+    <entitydescription.zealotrobes>‖color:gui.yellow‖Disguises as a Husk‖end‖. ‖color:gui.green‖With infection &gt;50: reduces damage taken by 25% and bleeding by 10%‖end‖.</entitydescription.zealotrobes>
+    <!-- Tools -->
+    <entityname.toolbelt>Toolbelt</entityname.toolbelt>
+    <entitydescription.toolbelt>‖color:gui.orange‖A wearable container for tools. Has 2 adjustable holsters‖end‖.</entitydescription.toolbelt>
+    <entityname.Bandolier>Bandolier</entityname.Bandolier>
+    <entitydescription.Bandolier>Light combat rig. ‖color:gui.green‖Increases ranged weapon and turret firing speed by 10%‖end‖. ‖color:gui.orange‖Has three ammo pouches, a tool holster, a sonar case, and a med pouch‖end‖.</entitydescription.Bandolier>
+    <entityname.baseballcap>Baseball Cap</entityname.baseballcap>
+    <entitydescription.baseballcap>‖color:gui.green‖Boosts all skills by 3‖end‖.</entitydescription.baseballcap>
+    <entityname.devcap>Dev Cap</entityname.devcap>
+    <entitydescription.devcap>‖color:gui.green‖Boosts all skills by 3‖end‖.</entitydescription.devcap>
+    <entityname.Lightbodyarmor_sep>Separatist Light Body Armor</entityname.Lightbodyarmor_sep>
+    <entitydescription.Lightbodyarmor_sep>Lightweight body armor variant used by separatists. ‖color:gui.green‖Increased storage for ammo and grenades‖end‖. ‖color:gui.red‖Weaker protection than standard armor‖end‖, but ‖color:gui.yellow‖better against shrapnel‖end‖. ‖color:gui.blue‖Partially maintains mobility, but slightly slows down the wearer‖end‖.</entitydescription.Lightbodyarmor_sep>
+    <afflictionname.spasm_shot>Pain</afflictionname.spasm_shot>
+    <afflictiondescription.spasm_shot>Intense pain from the wound hinders movement and concentration. Painkillers can temporarily alleviate the condition.</afflictiondescription.spasm_shot>
+    <entityname.hiddenarmor>Concealed Body Armor</entityname.hiddenarmor>
+    <entitydescription.hiddenarmor>Thin body armor designed to be worn under clothing. ‖color:gui.green‖Easily hidden from plain sight‖end‖. ‖color:gui.red‖Protective properties are minimal — only stops the lightest firearms and melee weapons‖end‖.</entitydescription.hiddenarmor>
+    <single>Single</single>
+    <double>2-Round Burst</double>
+    <tripple>3-Round Burst</tripple>
+    <Weapon_up>Somali style</Weapon_up>
+    <entityname.Toz-106>ТОЗ-104 «Циркуляция»</entityname.Toz-106>
+    <entitydescription.Toz-106>Надёжный болтовой дробовик, модифицированный для подводных условий. Использует ‖color:gui.green‖стандартные патроны для дробовика‖end‖. ‖color:gui.blue‖Может стрелять под водой с сохранением эффективности‖end‖. ‖color:gui.red‖Для быстрой перезарядки требуется навык владения оружием выше 50‖end‖. ‖color:gui.yellow‖Использует магазины от Сайги-12‖end‖.</entitydescription.Toz-106>
+    <entityname.akround-casing>5.45x39mm Casing</entityname.akround-casing>
+    <entitydescription.akround-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.akround-casing>
+    <entityname.Berettarounds-casing>9x19mm Casing</entityname.Berettarounds-casing>
+    <entitydescription.Berettarounds-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.Berettarounds-casing>
+    <entityname.1911round-casing>.45 ACP Casing</entityname.1911round-casing>
+    <entitydescription.1911round-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.1911round-casing>
+    <entityname.HK416round-casing>5.56x45mm Casing</entityname.HK416round-casing>
+    <entitydescription.HK416round-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.HK416round-casing>
+    <entityname.PBround-casing>9x18mm Casing</entityname.PBround-casing>
+    <entitydescription.PBround-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.PBround-casing>
+    <entityname.mapleround-casing>6.8x48mm "Maple" Casing</entityname.mapleround-casing>
+    <entitydescription.mapleround-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.mapleround-casing>
+    <entityname.P90round-casing>5.7x28mm Casing</entityname.P90round-casing>
+    <entitydescription.P90round-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.P90round-casing>
+    <entityname.Deagleround-casing>.50 Casing</entityname.Deagleround-casing>
+    <entitydescription.Deagleround-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.Deagleround-casing>
+    <!-- ================================ Mosin Rifle Casings ================================ -->
+    <entityname.mosinammos-casing>7.62x54R Casing</entityname.mosinammos-casing>
+    <entitydescription.mosinammos-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.mosinammos-casing>
+    <entityname.SKSammos-casing>7.62x39mm Casing</entityname.SKSammos-casing>
+    <entitydescription.SKSammos-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.SKSammos-casing>
+    <entityname.SCARround-casing>7.62x51mm Casing</entityname.SCARround-casing>
+    <entitydescription.SCARround-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.SCARround-casing>
+    <entityname.M1ammos-casing>7.62x51mm Casing</entityname.M1ammos-casing>
+    <entitydescription.M1ammos-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.M1ammos-casing>
+    <entityname.BFG-50ammo-casing>12.7x99mm Casing</entityname.BFG-50ammo-casing>
+    <entitydescription.BFG-50ammo-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.BFG-50ammo-casing>
+    <entityname.RSH-12ammos-casing>12.7x55mm Casing</entityname.RSH-12ammos-casing>
+    <entitydescription.RSH-12ammos-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.RSH-12ammos-casing>
+    <entityname..38-casing>.38 Caliber Casing</entityname..38-casing>
+    <entitydescription..38-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription..38-casing>
+    <entityname.Model29ammo-casing>.44 Magnum Casing</entityname.Model29ammo-casing>
+    <entitydescription.Model29ammo-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.Model29ammo-casing>
+    <entityname.Big-Ironammo-casing>.45 Colt Casing</entityname.Big-Ironammo-casing>
+    <entitydescription.Big-Ironammo-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.Big-Ironammo-casing>
+    <entityname.shotgunshell-casing>Shotgun Shell Casing</entityname.shotgunshell-casing>
+    <entitydescription.shotgunshell-casing>Spent shotgun shell casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.shotgunshell-casing>
+    <entityname.ak47round-casing>7.62x39mm Casing</entityname.ak47round-casing>
+    <entitydescription.ak47round-casing>Spent casing. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.ak47round-casing>
+    <entityname.spp-1round-casing>SPP-1 Casing</entityname.spp-1round-casing>
+    <entitydescription.spp-1round-casing>Spent casing from a flechette round. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.spp-1round-casing>
+    <!-- ================================ Grenade Launcher Casings ================================ -->
+    <entityname.40mmgrenade-casing>40mm Casing</entityname.40mmgrenade-casing>
+    <entitydescription.40mmgrenade-casing>Spent 40mm grenade casing. Can be recycled into regular 40mm grenades at a weapon fabricator.</entitydescription.40mmgrenade-casing>
+    <!-- ================================ KS-23 Casings ================================ -->
+    <entityname.ks-23shell-casing>23mm Casing</entityname.ks-23shell-casing>
+    <entitydescription.ks-23shell-casing>Spent casing from a flechette round. Can be processed at the weapons fabricator to create new ammunition.</entitydescription.ks-23shell-casing>
+    <entityname.fn57>Five-seveN Pistol</entityname.fn57>
+    <entitydescription.fn57>Belgian semi-automatic pistol. Uses ‖color:gui.green‖low-impulse 5.7x28mm ammunition‖end‖. Due to the high muzzle velocity, it has good armor penetration. ‖color:gui.yellow‖Features an integrated collimator sight‖end‖. ‖color:gui.blue‖Ineffective underwater‖end‖.</entitydescription.fn57>
+    <entityname.fn57ammo>FN 5.7x28mm Magazine</entityname.fn57ammo>
+    <entitydescription.fn57ammo>Standard magazine for the FN Five-seveN. Holds 15 rounds.</entitydescription.fn57ammo>
+    <entityname.fn57bigammo>FN 5.7x28mm Extended Magazine</entityname.fn57bigammo>
+    <entitydescription.fn57bigammo>Holds 30 rounds of 5.7x28mm for increased firepower.</entitydescription.fn57bigammo>
+  </Override>
+</infotext>

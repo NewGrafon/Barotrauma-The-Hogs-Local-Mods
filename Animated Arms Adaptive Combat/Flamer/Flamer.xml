@@ -1,0 +1,1731 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Override>
+      <Items>
+        <Item name="" HideConditionBar="true" identifier="flamer" category="Equipment" Tags="mediumitem,weapon,gun,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+          <Upgrade gameversion="0.10.0.0" scale="0.5" />
+          <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0.2" notcampaign="true" notpvp="true" />
+          <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.1" />
+          <PreferredContainer secondary="armcab,weaponholder" />
+          <Price baseprice="105" sold="false">
+            <Price storeidentifier="merchantoutpost" />
+            <Price storeidentifier="merchantcity" multiplier="0.9" />
+            <Price storeidentifier="merchantresearch" multiplier="1.25" />
+            <Price storeidentifier="merchantmilitary" sold="true" multiplier="1.25" minavailable="1" />
+            <Price storeidentifier="merchantmine" />
+            <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+          </Price>
+          <InventoryIcon texture="%ModDir%/Flamer/Flamer.png" sourcerect="1,93,126,139" origin="0.5,0.5" />
+          <Sprite texture="%ModDir%/Flamer/Flamer.png" sourcerect="0,0,144,74" depth="0.55" origin="0.5,0.5" />
+          <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="rubber" />
+          </Deconstruct>
+          <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+            <RequiredSkill identifier="mechanical" level="30" />
+            <RequiredSkill identifier="weapons" level="20" />
+            <RequiredItem identifier="steel" amount="2" />
+            <RequiredItem identifier="rubber" amount="2" />
+          </Fabricate>
+          <Body width="150" height="77" density="25" />
+          <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-30" holdangle="-30" aimpos="50,-10" handle1="-62,-16" handle2="-11,-6" msg="ItemMsgPickUpSelect">
+            <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+              <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+              <Button text="Melee">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamer-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+              <Button text="Throw">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamer-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+            </CustomInterface>
+          </Holdable>
+          <RepairTool firedamage="25.0" structurefixamount="0.0" usablein="Air" range="500" barrelpos="35,15" fireprobability="0.1" repairmultiple="true" RepairMultipleWalls="false" repairthroughwalls="false" repairthroughholes="true" combatpriority="50" spread="25" unskilledspread="25">
+            <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+            <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="flamreloading" condition="100" setvalue="true" />
+            <StatusEffect Type="Always" OneShot="True" target="This" holdpos="50,-30" holdangle="-30" aimpos="50,-10" handle1="-62,-16" handle2="-11,-6" aimangle="0" condition="100" setvalue="true" />
+            <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+            <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+            <StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+            <!-- the item must contain a welding fuel tank for it to work -->
+            <RequiredItems items="weldingtoolfuel,oxygensource" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+            <RequiredSkill identifier="weapons" level="50" />
+            <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="265" anglemax="275" velocitymin="0" velocitymax="50" />
+            <ParticleEmitter particle="flamethrower" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="1000" velocitymax="1500" highqualitycollisiondetection="true" />
+            <ParticleEmitter particle="flamethrowersmoke" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="500" velocitymax="1000" />
+            <sound file="Content/Items/Weapons/FlameThrowerLoop.ogg" type="OnUse" range="750.0" loop="true" />
+            <StatusEffect type="OnSuccess" targettype="UseTarget" targets="item" Condition="-15.0">
+              <Conditional HasTag="neq weldable" />
+            </StatusEffect>
+            <!-- make the item unusable when there's less than 10% oxygen -->
+            <StatusEffect type="OnUse" target="Hull,This" UsableIn="None">
+              <Conditional OxygenPercentage="lt 10" />
+            </StatusEffect>
+            <!-- make the item usable again when there's more than 10% oxygen -->
+            <StatusEffect type="OnUse" target="Hull,This" UsableIn="Air">
+              <Conditional OxygenPercentage="gt 10" />
+            </StatusEffect>
+            <!-- when using, the contained welding fuel tank will detoriate (= lose fuel) -->
+            <StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" Condition="-25.0" />
+            <StatusEffect type="OnUse" targettype="Contained" targets="incendiumfueltank" Condition="-10.0" />
+            <!-- do burn damage to characters -->
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional InWater="false" />
+              <Affliction identifier="burn" amount="1" />
+              <Affliction identifier="Burning-anim" amount="2" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="UseTarget">
+              <RequiredItem items="incendiumfueltank" type="Contained" />
+              <Conditional InWater="false" />
+              <Affliction identifier="burn" amount="1.5" />
+              <Affliction identifier="Burning-anim" amount="4" />
+              <Affliction identifier="stun" strength="1" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This" firedamage="40.0" fireprobability="0.35" setvalue="true">
+              <RequiredItem items="incendiumfueltank" type="Contained" />
+            </StatusEffect>
+            <!-- explode if oxygen tanks are inserted -->
+            <StatusEffect type="OnUse" targettype="Contained" targets="oxygentank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+              <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+              <Explosion range="150.0" force="3" applyfireeffects="false">
+                <Affliction identifier="burn" strength="25" />
+                <Affliction identifier="stun" strength="5" />
+              </Explosion>
+            </StatusEffect>
+            <StatusEffect type="OnUse" targettype="Contained" targets="oxygenitetank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+              <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+              <Explosion range="150.0" force="6" applyfireeffects="false">
+                <Affliction identifier="burn" strength="50" />
+                <Affliction identifier="stun" strength="10" />
+              </Explosion>
+            </StatusEffect>
+            <!-- consume oxygen from the hull -->
+            <StatusEffect type="OnUse" target="Hull" Oxygen="-10000" />
+            <!-- Self-damage on fail -->
+            <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+              <Conditional InWater="false" />
+              <Affliction identifier="burn" strength="7.5" probability="0.5" />
+            </StatusEffect>
+            <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+              <RequiredItem items="incendiumfueltank" type="Contained" />
+              <Conditional InWater="false" />
+              <Affliction identifier="burn" strength="5.0" probability="0.5" />
+            </StatusEffect>
+            <!-- Gun's muzzle which works like a light component. -->
+            <LightComponent range="38.0" lightcolor="255,174,121,255" Flicker="0.8" FlickerSpeed="0.6">
+              <LightTexture texture="%ModDir%/Flamer/FlamerMuzzle.png" origin="0.5,0.5" size="1.0,1.0" />
+            </LightComponent>-&gt;
+        <!-- Requires welding fuel. --><RequiredItems items="weldingtoolfuel,oxygensource" type="Contained" /></RepairTool>
+          <!-- one welding fuel or oxygen tank can be contained inside the welding tool -->
+          <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="10,-22" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+            <Containable items="weldingtoolfuel,oxygensource" excludebroken="false">
+              <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+                <Conditional ishuman="true" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" delay="0.01" condition="0" setvalue="true" />
+              <StatusEffect type="OnInserted" target="This" delay="2.0" condition="100" setvalue="true" />
+              <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+                <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" type="OnUse" volume="3" range="1000" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" hideitems="true" handle2="-65,-25" aimangle="10" holdangle="10" holdpos="30,-20" condition="0" delay="0.01" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="0.9" hideitems="false" itempos="10,-40" handle2="8,-30" setvalue="true" forceplaysounds="true" stackable="false">
+                <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" type="OnUse" volume="3" range="1000" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" delay="1.0" itempos="10,-38" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.05" itempos="10,-36" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.1" itempos="10,-34" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.15" itempos="10,-32" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.2" itempos="10,-30" handle2="8,-20" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.25" itempos="10,-28" handle2="8,-18" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.3" itempos="10,-26" handle2="8,-16" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.35" itempos="10,-24" handle2="8,-14" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.4" itempos="10,-22" handle2="8,-12" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.45" itempos="10,-21" handle2="8,-11" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.5" itempos="10,-20" aimangle="15" holdangle="15" setvalue="true" stackable="false">
+                <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" delay="2.0" holdpos="50,-30" holdangle="-30" aimpos="50,-10" aimangle="0" handle1="-62,-16" handle2="-11,-6" condition="100" setvalue="true" />
+              <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="2.0" setvalue="true">
+                <Conditional ishuman="true" />
+              </StatusEffect>
+            </Containable>
+          </ItemContainer>
+          <aitarget sightrange="5000" soundrange="500" fadeouttime="5" />
+          <SkillRequirementHint identifier="weapons" level="50" />
+        </Item>
+        <!-- Flamer Melee Mode -->
+        <Item name="" identifier="flamer-melee" category="Equipment" Tags="mediumitem,weapon,gun,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+          <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="rubber" />
+          </Deconstruct>
+          <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+            <RequiredSkill identifier="mechanical" level="30" />
+            <RequiredSkill identifier="weapons" level="20" />
+            <RequiredItem identifier="steel" amount="2" />
+            <RequiredItem identifier="rubber" amount="2" />
+          </Fabricate>
+          <InventoryIcon texture="%ModDir%/Flamer/Flamer.png" sourcerect="1,93,126,139" origin="0.5,0.5" />
+          <Sprite texture="%ModDir%/Flamer/Flamer.png" sourcerect="0,0,144,74" depth="0.55" origin="0.5,0.5" />
+          <Body width="150" height="77" density="30" />
+          <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" aimpos="45,10" handle1="0,7" handle2="0,15" holdangle="60" aimangle="260" reload="3.0" range="120" combatpriority="35" msg="ItemMsgPickUpSelect">
+            <Attack structuredamage="6" itemdamage="8" targetimpulse="20">
+              <Affliction identifier="blunttrauma" strength="12" />
+              <Affliction identifier="stun" strength="0.8" />
+              <StatusEffect type="OnUse" target="UseTarget">
+                <Conditional entitytype="eq Character" />
+                <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.6" selectionmode="random" range="500" />
+                <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="0.6" range="500" />
+              </StatusEffect>
+              <StatusEffect type="OnUse" target="UseTarget">
+                <Conditional entitytype="eq Structure" />
+                <Conditional hastag="eq door" />
+                <ParticleEmitter particle="spark" particleamount="10" anglemin="360" anglemax="0" velocitymin="-300" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+                <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="600" frequencymultiplier="0.6" selectionmode="Random" />
+                <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="600" frequencymultiplier="0.6" />
+                <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="600" frequencymultiplier="0.6" />
+                <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="600" frequencymultiplier="0.6" />
+              </StatusEffect>
+            </Attack>
+            <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+              <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+              <Button text="Flamer">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamer" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+              <Button text="Throw">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamer-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+            </CustomInterface>
+          </MeleeWeapon>
+          <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="OnUse" target="Character">
+              <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+            </StatusEffect>
+          </RepairTool>
+          <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+          <Quality>
+            <QualityStat stattype="StrikingPowerMultiplier" value="0.12" />
+          </Quality>
+          <Upgrade gameversion="0.10.0.0" scale="0.5" />
+        </Item>
+        <!-- Flamer Throw Mode -->
+        <Item name="" identifier="flamer-throw" category="Equipment" Tags="mediumitem,weapon,gun,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5" useinhealthinterface="True">
+          <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="rubber" />
+          </Deconstruct>
+          <InventoryIcon texture="%ModDir%/Flamer/Flamer.png" sourcerect="1,93,126,139" origin="0.5,0.5" />
+          <Sprite texture="%ModDir%/Flamer/Flamer.png" sourcerect="0,0,144,74" depth="0.55" origin="0.5,0.5" />
+          <Body width="150" height="77" density="30" />
+          <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-30" aimangle="25" handle1="-15,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="OnSecondaryUse" target="Character">
+              <Affliction identifier="stamina" targetlimbs="torso" strength="2000" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+              <Use />
+            </StatusEffect>
+            <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+              <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+              <Button text="Flamer">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamer" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+              <Button text="Melee">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamer-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+            </CustomInterface>
+          </Throwable>
+          <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="6" DamageUser="false">
+            <Attack>
+              <Affliction identifier="blunttrauma" strength="25" />
+              <Affliction identifier="stun" strength="1.0" />
+              <StatusEffect type="OnUse" target="UseTarget">
+                <Conditional entitytype="eq Character" />
+                <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="1.5" selectionmode="random" range="600" />
+                <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="1.5" range="600" />
+              </StatusEffect>
+            </Attack>
+            <StatusEffect type="OnImpact" target="UseTarget">
+              <Conditional entitytype="eq Structure" />
+              <Conditional hastag="eq door" />
+              <ParticleEmitter particle="spark" particleamount="12" anglemin="360" anglemax="0" velocitymin="-350" velocitymax="350" scalemin="0.5" scalemax="1.0" />
+              <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="700" frequencymultiplier="1.5" selectionmode="Random" />
+              <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="700" frequencymultiplier="1.5" />
+              <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="700" frequencymultiplier="1.5" />
+              <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="700" frequencymultiplier="1.5" />
+            </StatusEffect>
+          </Projectile>
+          <aitarget sightrange="600" soundrange="600" fadeouttime="1.5" />
+        </Item>
+      </Items>
+    </Override>
+    <Item name="" identifier="weldingtool" category="Equipment" Tags="smallitem,weldingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" useinhealthinterface="True" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="respawncontainer_kingofthehull" amount="2" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer primary="engcab" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer secondary="supplycab" amount="1" spawnprobability="0.2" notcampaign="true" notpvp="true" />
+      <PreferredContainer primary="outpostsupplycab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+      <Price baseprice="150">
+        <Price storeidentifier="merchantoutpost" minavailable="3" />
+        <Price storeidentifier="merchantcity" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="10" />
+        <Price storeidentifier="merchantengineering" minavailable="5" multiplier="0.9" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,3,152,88" depth="0.55" origin="0.5,0.5" />
+      <!-- the item takes 10 seconds to break down in a deconstructor and turns into steel and plastic -->
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate>
+      <!-- physics body -->
+      <Body width="150" height="60" density="25" />
+      <!-- the character will hold the item 50 pixels in front of him, with his hands at the handle1 and handle2 positions -->
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-62,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Melee">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="weldingtool-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+              <DropContainedItems />
+            </StatusEffect>
+          </Button>
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="weldingtool-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+              <DropContainedItems />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Holdable>
+      <RepairTool firedamage="10.0" structurefixamount="2.0" range="150" barrelpos="35,12" particles="weld" repairmultiple="true" repairthroughwalls="false" combatpriority="3" levelwallfixamount="-0.425" targetforce="10">
+        <!-- the item must contain a welding fuel tank for it to work -->
+        <RequiredItems items="weldingtoolfuel,oxygensource" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+        <RequiredSkill identifier="mechanical" level="50" />
+        <ParticleEmitter particle="weld" particlespersecond="50" copyentityangle="true" />
+        <ParticleEmitterHitStructure particle="weldspark" particlespersecond="200" anglemin="-40" anglemax="40" velocitymin="200" velocitymax="800" />
+        <ParticleEmitterHitStructure particle="GlowDot" particlespersecond="60" emitinterval="0.7" particleamount="10" scalemin="0.9" scalemax="1.0" anglemin="0" anglemax="360" velocitymin="10" velocitymax="50" />
+        <ParticleEmitterHitStructure particle="MistSmoke" particlespersecond="20" anglemin="-10" anglemax="10" velocitymin="0" velocitymax="50" />
+        <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="weldspark" particlespersecond="200" anglemin="-40" anglemax="40" velocitymin="200" velocitymax="800" />
+        <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="MistSmoke" particlespersecond="20" anglemin="-10" anglemax="10" velocitymin="10" velocitymax="100" />
+        <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="0" velocitymax="50" />
+        <sound file="Content/Items/Tools/WeldingLoop.ogg" type="OnUse" range="500.0" loop="true" />
+        <!-- when using, the contained welding fuel tank will detoriate (= lose fuel) -->
+        <StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" Condition="-1.0" />
+        <StatusEffect type="OnUse" targettype="Contained" targets="incendiumfueltank" Condition="-0.6" />
+        <!-- welding a door, it will get stuck after a while -->
+        <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="5.0" />
+        <StatusEffect type="OnSuccess" targettype="UseTarget" targets="item" Condition="-3.0">
+          <Conditional HasTag="neq weldable" />
+        </StatusEffect>
+        <!-- do burn damage to characters -->
+        <StatusEffect type="OnSuccess" targettype="Limb">
+          <Affliction identifier="burn" amount="2.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Contained" targets="oxygentank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+          <Explosion range="150.0" force="3" applyfireeffects="false">
+            <Affliction identifier="burn" strength="25" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Contained" targets="oxygenitetank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+          <Explosion range="150.0" force="6" applyfireeffects="false">
+            <Affliction identifier="burn" strength="50" />
+            <Affliction identifier="stun" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- the tool can fix structures, i.e. walls and windows -->
+        <Fixable identifier="structure" />
+        <NonFixable identifier="thalamus,ice" />
+        <LightComponent LightColor="255,229,178,100" Range="150" Flicker="0.5">
+          <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+        </LightComponent>
+      </RepairTool>
+      <!-- one welding fuel or oxygen tank can be contained inside the welding tool -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="0,-39" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <Containable items="weldingtoolfuel,oxygensource">
+          <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.0075" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.0075" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This" delay="1.5" setvalue="true" />
+          <StatusEffect type="OnRemoved" target="This" delay="0.0075" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" hideitems="true" handle2="-65,-25" aimangle="10" holdangle="10" holdpos="30,-20" condition="0" delay="0.0075" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" hideitems="false" itempos="0,-55" delay="0.675" handle2="8,-30" setvalue="true" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.725" itempos="0,-53" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.775" itempos="0,-51" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.825" itempos="0,-49" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.875" itempos="0,-47" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.925" itempos="0,-45" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="0.975" itempos="0,-43" handle2="8,-20" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.025" itempos="0,-41" handle2="8,-16" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.075" itempos="0,-39" handle2="8,-14" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.125" itempos="0,-38" handle2="8,-12" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.175" itempos="0,-37" handle2="8,-11" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.225" itempos="0,-36" aimangle="15" holdangle="15" setvalue="true" stackable="false">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.5" holdpos="50,-30" holdangle="-30" aimpos="50,-10" aimangle="0" handle1="-62,-16" handle2="-11,-6" condition="100" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="1.5" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="flamreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->&gt;
+        <Containable items="flamreloading" hide="true"><StatusEffect type="OnRemoved" target="Contained"><Remove /></StatusEffect></Containable></ItemContainer>
+      <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
+      <Quality>
+        <QualityStat stattype="RepairToolStructureRepairMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <Upgrade gameversion="0.14.0.0">
+        <RepairTool>
+          <RequiredItems items="weldingtoolfuel,oxygensource" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+        </RepairTool>
+      </Upgrade>
+      <Upgrade gameversion="0.15.4.0">
+        <ItemContainer itempos="8,-35" />
+      </Upgrade>
+      <SuitableTreatment identifier="ntc_bentmetal" suitability="50" />
+      <SkillRequirementHint identifier="mechanical" level="50" />
+    </Item>
+    <Item name="" identifier="weldingtool-melee" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,3,152,88" depth="0.55" origin="0.5,0.5" />
+      <Body width="150" height="60" density="25" />
+      <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" aimpos="45,10" handle1="0,7" handle2="0,15" holdangle="60" aimangle="260" reload="2.5" range="100" combatpriority="20" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="3" itemdamage="4" targetimpulse="15">
+          <Affliction identifier="blunttrauma" strength="6" />
+          <Affliction identifier="stun" strength="0.5" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.75" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="0.75" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.3" scalemax="0.6" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Tool">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="weldingtool" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+              <DropContainedItems />
+            </StatusEffect>
+          </Button>
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="weldingtool-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+              <DropContainedItems />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="15" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="weldingtool-throw" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,3,152,88" depth="0.55" origin="0.5,0.5" />
+      <Body width="150" height="60" density="25" />
+      <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="1500" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Tool">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="weldingtool" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+              <DropContainedItems />
+            </StatusEffect>
+          </Button>
+          <Button text="Melee">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="weldingtool-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+              <DropContainedItems />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="15" />
+          <Affliction identifier="stun" strength="0.6" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.4" scalemax="0.8" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Items>
+      <Item name="" identifier="plasmacutter" category="Equipment" Tags="smallitem,cuttingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.45" impactsoundtag="impact_metal_light">
+        <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="1" notcampaign="true" />
+        <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+        <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab,wreckdivingcab" amount="1" spawnprobability="0.05" />
+        <PreferredContainer primary="divingcab" secondary="engcab" />
+        <Price baseprice="150">
+          <Price storeidentifier="merchantoutpost" minavailable="3" />
+          <Price storeidentifier="merchantcity" minavailable="2" />
+          <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+          <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+          <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="10" />
+          <Price storeidentifier="merchantengineering" minavailable="5" multiplier="0.9" />
+        </Price>
+        <Deconstruct time="10">
+          <Item identifier="steel" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="fabricator" requiredtime="20">
+          <RequiredSkill identifier="mechanical" level="30" />
+          <RequiredItem identifier="steel" amount="2" />
+          <RequiredItem identifier="plastic" amount="2" />
+        </Fabricate>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,0,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,166,159,87" depth="0.55" origin="0.5,0.5" />
+        <Body radius="40" width="60" density="25" />
+        <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-60,-21" handle2="-21,-20" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="plasmacutter-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="plasmacutter-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Holdable>
+        <RepairTool firedamage="10.0" structurefixamount="-0.5" range="150" barrelpos="55,10" combatpriority="5" repairmultiple="true" repairthroughwalls="false" maxoverlappingwalldist="0.0" repairthroughholes="true" levelwallfixamount="-5.0" targetforce="10">
+          <RequiredItems items="oxygensource,weldingtoolfuel" type="Contained" msg="ItemMsgOxygenTankRequired" />
+          <RequiredSkill identifier="mechanical" level="50" />
+          <StatusEffect type="OnUse" targettype="Contained" targets="oxygensource" Condition="-1.0" />
+          <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="-20.0" />
+          <StatusEffect type="OnSuccess" targettype="UseTarget" Condition="-15.0" />
+          <StatusEffect type="OnSuccess" targettype="Limb" severlimbsprobability="0.005">
+            <Affliction identifier="burn" amount="4.0" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+            <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+            <Explosion range="150.0" force="3" applyfireeffects="false">
+              <Affliction identifier="burn" strength="25" />
+              <Affliction identifier="stun" strength="5" />
+            </Explosion>
+          </StatusEffect>
+          <StatusEffect type="OnUse" targettype="Contained" targets="incendiumfueltank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+            <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+            <Explosion range="150.0" ballastfloradamage="50" force="6" applyfireeffects="true" ignorefireeffectsfortags="incendiumfueltank">
+              <Affliction identifier="burn" strength="100" />
+              <Affliction identifier="stun" strength="10" />
+            </Explosion>
+          </StatusEffect>
+          <ParticleEmitter particle="plasma" particlespersecond="50" copyentityangle="true" />
+          <ParticleEmitterHitStructure particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+          <ParticleEmitterHitStructure particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="20" />
+          <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+          <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+          <ParticleEmitterHitItem identifiers="ore" particle="iceshards" particlespersecond="5" anglemin="-40" anglemax="40" velocitymin="10" velocitymax="300" scalemin="0.5" scalemax="1.0" />
+          <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="0" velocitymax="50" />
+          <sound file="Content/Items/Tools/PlasmaCutterLoop.ogg" type="OnUse" range="750.0" loop="true" />
+          <Fixable identifier="structure" />
+          <LightComponent LightColor="204,178,255,100" range="150" Flicker="0.5">
+            <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+          </LightComponent>
+        </RepairTool>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="0,-39" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+          <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+          <Containable items="weldingtoolfuel,oxygensource">
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.0075" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="0.0075" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" delay="1.5" setvalue="true" />
+            <StatusEffect type="OnRemoved" target="This" delay="0.0075" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" hideitems="true" handle2="-65,-25" aimangle="10" holdangle="10" holdpos="30,-20" condition="0" delay="0.0075" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" hideitems="false" itempos="0,-55" delay="0.675" handle2="8,-30" setvalue="true" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="0.725" itempos="0,-53" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.775" itempos="0,-51" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.825" itempos="0,-49" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.875" itempos="0,-47" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.925" itempos="0,-45" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.975" itempos="0,-43" handle2="8,-20" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.025" itempos="0,-41" handle2="8,-16" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.075" itempos="0,-39" handle2="8,-14" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.125" itempos="0,-38" handle2="8,-12" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.175" itempos="0,-37" handle2="8,-11" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.225" itempos="0,-36" aimangle="15" holdangle="15" setvalue="true" stackable="false">
+              <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="1.5" holdpos="50,-30" holdangle="-30" aimpos="50,-10" aimangle="0" handle1="-62,-16" handle2="-11,-6" condition="100" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="1.5" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="flamreloading" removecontaineditemsondeconstruct="true">
+          <Containable items="flamreloading" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
+        <Quality>
+          <QualityStat stattype="RepairToolStructureDamageMultiplier" value="0.1" />
+          <QualityStat stattype="RepairToolDeattachTimeMultiplier" value="0.1" />
+        </Quality>
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+        <Upgrade gameversion="0.14.0.0">
+          <RepairTool>
+            <RequiredItems identifier="oxygensource,weldingtoolfuel" type="Contained" msg="ItemMsgOxygenTankRequired" />
+          </RepairTool>
+        </Upgrade>
+        <SkillRequirementHint identifier="mechanical" level="50" />
+      </Item>
+      <!-- Plasma Cutter Melee Mode -->
+      <Item name="" identifier="plasmacutter-melee" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.45" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+        <Deconstruct time="10">
+          <Item identifier="steel" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="fabricator" requiredtime="20">
+          <RequiredSkill identifier="mechanical" level="30" />
+          <RequiredItem identifier="steel" amount="2" />
+          <RequiredItem identifier="plastic" amount="2" />
+        </Fabricate>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,0,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,166,159,87" depth="0.55" origin="0.5,0.5" />
+        <Body radius="40" width="60" density="25" />
+        <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" aimpos="45,10" handle1="0,7" handle2="0,15" holdangle="60" aimangle="260" reload="2.5" range="100" combatpriority="20" msg="ItemMsgPickUpSelect">
+          <Attack structuredamage="4" itemdamage="5" targetimpulse="15">
+            <Affliction identifier="blunttrauma" strength="8" />
+            <Affliction identifier="stun" strength="0.6" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.75" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="0.75" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Structure" />
+              <Conditional hastag="eq door" />
+              <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.3" scalemax="0.6" />
+              <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" selectionmode="Random" />
+              <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+            </StatusEffect>
+          </Attack>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+            <Button text="Tool">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="plasmacutter" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="plasmacutter-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </MeleeWeapon>
+        <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="15" />
+          </StatusEffect>
+        </RepairTool>
+        <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+        <Quality>
+          <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+        </Quality>
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      </Item>
+      <!-- Plasma Cutter Throw Mode -->
+      <Item name="" identifier="plasmacutter-throw" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.45" impacttolerance="4" useinhealthinterface="True">
+        <Deconstruct time="10">
+          <Item identifier="steel" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,0,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,166,159,87" depth="0.55" origin="0.5,0.5" />
+        <Body radius="40" width="60" density="25" />
+        <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnSecondaryUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="1500" />
+          </StatusEffect>
+          <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+            <Use />
+          </StatusEffect>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Tool">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="plasmacutter" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="plasmacutter-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Throwable>
+        <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+          <Attack>
+            <Affliction identifier="blunttrauma" strength="18" />
+            <Affliction identifier="stun" strength="0.8" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+            </StatusEffect>
+          </Attack>
+          <StatusEffect type="OnImpact" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.4" scalemax="0.8" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Projectile>
+        <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      </Item>
+    </Items>
+    <Items>
+      <Item name="" identifier="sprayer" category="Equipment" Tags="smallitem,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
+        <PreferredContainer primary="engcab" />
+        <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.05" />
+        <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab" amount="1" spawnprobability="0.1" />
+        <Price baseprice="120">
+          <Price storeidentifier="merchantoutpost" minavailable="3" />
+          <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="5" />
+          <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+          <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+          <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="10" />
+        </Price>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,256,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="373,165,124,73" depth="0.55" origin="0.5,0.5" />
+        <!-- the item takes 25 seconds to break down in a deconstructor and turns into steel and plastic -->
+        <Deconstruct time="25">
+          <Item identifier="steel" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="fabricator" requiredtime="35">
+          <RequiredSkill identifier="mechanical" level="30" />
+          <RequiredItem identifier="steel" />
+          <RequiredItem identifier="plastic" />
+          <RequiredItem identifier="plastic" />
+        </Fabricate>
+        <!-- physics body -->
+        <Body width="150" height="60" density="25" />
+        <!-- the character will hold the item 50 pixels in front of him, with his hands at the handle1 and handle2 positions -->
+        <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="50,-10" handle1="-39,-20" handle2="-10,-10" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="sprayer-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="sprayer-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Holdable>
+        <Sprayer barrelpos="34,8" spread="0" unskilledspread="0" drawhudwhenequipped="true" crosshairscale="0.1" spraystrength="6.0" range="300">
+          <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+          <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+          <ParticleEmitter particle="spray" velocitymin="500.0" velocitymax="650.0" particlespersecond="100" />
+          <RequiredItems items="ethanol, paint" type="Contained" msg="ItemMsgPaintOrCleaningAgentRequired" />
+          <sound file="Content/Items/Tools/Sprayer.ogg" type="OnUse" range="500.0" loop="true" />
+          <!--When containing paint, reduce its condition by 1.5 when used-->
+          <StatusEffect type="OnUse" target="Contained" Condition="-1.5">
+            <RequiredItem items="paint" type="Contained" />
+          </StatusEffect>
+          <!--Reduce ethanol condition slower than paint-->
+          <StatusEffect type="OnUse" target="Contained" Condition="-0.75">
+            <RequiredItem items="ethanol" type="Contained" />
+          </StatusEffect>
+          <PaintColors>
+            <PaintColor paintitem="ethanol" color="200,200,200,0" />
+            <PaintColor paintitem="redpaint" color="128,0,0,180" />
+            <PaintColor paintitem="greenpaint" color="0,128,0,180" />
+            <PaintColor paintitem="bluepaint" color="0,0,128,180" />
+            <PaintColor paintitem="blackpaint" color="0,0,0,180" />
+            <PaintColor paintitem="whitepaint" color="128,128,128,180" />
+          </PaintColors>
+        </Sprayer>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="8,-35" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+          <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+          <Containable items="ethanol, paint">
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.0067" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="0.0067" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" delay="1.333" setvalue="true" />
+            <StatusEffect type="OnRemoved" target="This" delay="0.0067" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="1.4" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" hideitems="true" handle2="-65,-25" aimangle="10" holdangle="10" holdpos="30,-20" condition="0" delay="0.0067" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" hideitems="false" itempos="8,-45" delay="0.45" handle2="8,-30" setvalue="true" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" frequencymultiplier="1.4" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="0.5" itempos="8,-44" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.55" itempos="8,-43" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.6" itempos="8,-42" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.65" itempos="8,-41" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.7" itempos="8,-40" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.75" itempos="8,-39" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.8" itempos="8,-38" handle2="8,-20" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.85" itempos="8,-37" handle2="8,-16" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.9" itempos="8,-36" handle2="8,-14" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.95" itempos="8,-35" handle2="8,-12" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.0" itempos="8,-34" handle2="8,-11" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.05" itempos="8,-33" aimangle="15" holdangle="15" setvalue="true" stackable="false">
+              <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="1.333" holdpos="50,-30" holdangle="-30" aimpos="50,-10" aimangle="0" handle1="-62,-16" handle2="-11,-6" condition="100" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="1.333" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="flamreloading" removecontaineditemsondeconstruct="true">
+          <Containable items="flamreloading" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
+      </Item>
+      <!-- Sprayer Melee Mode -->
+      <Item name="" identifier="sprayer-melee" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+        <Deconstruct time="25">
+          <Item identifier="steel" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="fabricator" requiredtime="35">
+          <RequiredSkill identifier="mechanical" level="30" />
+          <RequiredItem identifier="steel" />
+          <RequiredItem identifier="plastic" />
+          <RequiredItem identifier="plastic" />
+        </Fabricate>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,256,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="373,165,124,73" depth="0.55" origin="0.5,0.5" />
+        <Body width="150" height="60" density="25" />
+        <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" aimpos="45,10" handle1="0,7" handle2="0,15" holdangle="60" aimangle="260" reload="2.5" range="100" combatpriority="15" msg="ItemMsgPickUpSelect">
+          <Attack structuredamage="2" itemdamage="3" targetimpulse="12">
+            <Affliction identifier="blunttrauma" strength="5" />
+            <Affliction identifier="stun" strength="0.4" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.75" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="0.75" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Structure" />
+              <Conditional hastag="eq door" />
+              <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-200" velocitymax="200" scalemin="0.3" scalemax="0.6" />
+              <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" selectionmode="Random" />
+              <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+            </StatusEffect>
+          </Attack>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+            <Button text="Tool">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="sprayer" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="sprayer-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </MeleeWeapon>
+        <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="12" />
+          </StatusEffect>
+        </RepairTool>
+        <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+        <Quality>
+          <QualityStat stattype="StrikingPowerMultiplier" value="0.08" />
+        </Quality>
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      </Item>
+      <!-- Sprayer Throw Mode -->
+      <Item name="" identifier="sprayer-throw" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
+        <Deconstruct time="25">
+          <Item identifier="steel" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,256,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="373,165,124,73" depth="0.55" origin="0.5,0.5" />
+        <Body width="150" height="60" density="25" />
+        <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="2.5" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnSecondaryUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="1200" />
+          </StatusEffect>
+          <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+            <Use />
+          </StatusEffect>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Tool">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="sprayer" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="sprayer-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Throwable>
+        <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+          <Attack>
+            <Affliction identifier="blunttrauma" strength="12" />
+            <Affliction identifier="stun" strength="0.5" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+            </StatusEffect>
+          </Attack>
+          <StatusEffect type="OnImpact" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-200" velocitymax="200" scalemin="0.4" scalemax="0.8" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Projectile>
+        <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      </Item>
+    </Items>
+    <Override>
+      <Items>
+        <Item name="" identifier="flamerunique" category="Equipment" Tags="smallitem,weapon,gun,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" allowasextracargo="true">
+          <PreferredContainer primary="secarmcab" secondary="armcab" />
+          <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0.02" />
+          <PreferredContainer secondary="wreckarmcab" spawnprobability="0.05" />
+          <Price baseprice="755" sold="false" canbespecial="false" />
+          <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,256,62,64" />
+          <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="263,193,150,87" depth="0.55" origin="0.5,0.5" />
+          <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="plastic" />
+          </Deconstruct>
+          <Body width="150" height="77" density="25" />
+          <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="50,0" handle1="-55,-20" handle2="-15,-10" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+            <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+              <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+              <Button text="Melee">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamerunique-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+              <Button text="Throw">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamerunique-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+            </CustomInterface>
+          </Holdable>
+          <RepairTool firedamage="20.0" structurefixamount="0.0" range="500" barrelpos="35,10" fireprobability="0.0" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatpriority="60" spread="25" unskilledspread="25">
+            <RequiredItems items="weldingtoolfuel,oxygensource" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+            <RequiredSkill identifier="weapons" level="40" />
+            <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="265" anglemax="275" velocitymin="0" velocitymax="50" />
+            <ParticleEmitter particle="steamspray" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="1500" velocitymax="2000" highqualitycollisiondetection="true" />
+            <ParticleEmitter particle="bubbles" particlespersecond="20" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="5" velocitymax="100" copyentityangle="true" />
+            <sound file="Content/Items/Weapons/FlameThrowerLoop.ogg" type="OnUse" range="750.0" loop="true" />
+            <StatusEffect type="OnFailure" target="UseTarget">
+              <ParticleEmitter particle="bubbles" particlespersecond="20" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="5" velocitymax="100" copyentityangle="true" />
+              <ParticleEmitter particle="fleshsmoke" particlespersecond="10" anglemin="-10" anglemax="10" scalemin="1" scalemax="1.5" velocitymin="5" velocitymax="200" copyentityangle="true" />
+            </StatusEffect>
+            <!-- when using, the contained welding fuel tank will detoriate (= lose fuel) -->
+            <StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" Condition="-10.0" />
+            <StatusEffect type="OnUse" targettype="Contained" targets="incendiumfueltank" Condition="-2.0" />
+            <!-- do burn damage to characters -->
+            <StatusEffect type="OnSuccess" target="UseTarget">
+              <Affliction identifier="burn" amount="2" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="UseTarget">
+              <RequiredItem items="incendiumfueltank" type="Contained" />
+              <Affliction identifier="burn" amount="4.0" />
+              <Affliction identifier="stun" strength="1" probability="0.1" />
+            </StatusEffect>
+            <!-- explode if oxygen tanks are inserted -->
+            <StatusEffect type="OnUse" targettype="Contained" targets="oxygentank" delay="1.0" stackable="false" Condition="-100.0" disabledeltatime="true">
+              <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+              <Explosion range="150.0" force="3" applyfireeffects="false">
+                <Affliction identifier="burn" strength="25" />
+                <Affliction identifier="stun" strength="5" />
+              </Explosion>
+            </StatusEffect>
+            <StatusEffect type="OnUse" targettype="Contained" targets="oxygenitetank" delay="1.0" stackable="false" Condition="-100.0" disabledeltatime="true">
+              <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+              <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+              <Explosion range="150.0" force="6" applyfireeffects="false">
+                <Affliction identifier="burn" strength="50" />
+                <Affliction identifier="stun" strength="10" />
+              </Explosion>
+            </StatusEffect>
+            <!-- Self-damage on fail -->
+            <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+              <Affliction identifier="burn" strength="7.5" probability="0.5" />
+            </StatusEffect>
+            <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+              <RequiredItem items="incendiumfueltank" type="Contained" />
+              <Affliction identifier="burn" strength="5.0" probability="0.5" />
+            </StatusEffect>
+          </RepairTool>
+          <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="11,-15" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+            <Containable items="weldingtoolfuel,oxygensource">
+              <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+                <Conditional ishuman="true" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" delay="0.01" setvalue="true" />
+              <StatusEffect type="OnInserted" target="This" delay="2.0" setvalue="true" />
+              <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+                <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" hideitems="true" handle2="-65,-25" aimangle="10" holdangle="10" holdpos="30,-20" condition="0" delay="0.01" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" hideitems="false" itempos="11,-37" delay="0.7" handle2="8,-30" setvalue="true" forceplaysounds="true" stackable="false">
+                <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" delay="0.75" itempos="11,-35" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="0.8" itempos="11,-33" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="0.85" itempos="11,-31" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="0.9" itempos="11,-29" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="0.95" itempos="11,-27" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.0" itempos="11,-25" handle2="8,-20" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.05" itempos="11,-23" handle2="8,-18" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.1" itempos="11,-21" handle2="8,-16" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.15" itempos="11,-19" handle2="8,-14" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.2" itempos="11,-17" handle2="8,-12" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.25" itempos="11,-15" handle2="8,-11" setvalue="true" stackable="false" />
+              <StatusEffect type="OnInserted" target="This" delay="1.3" itempos="11,-14" aimangle="15" holdangle="15" setvalue="true" stackable="false">
+                <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+              </StatusEffect>
+              <StatusEffect type="OnInserted" target="This" delay="2.0" holdpos="50,-30" holdangle="-30" aimpos="50,-10" aimangle="0" handle1="-62,-16" handle2="-11,-6" condition="100" setvalue="true" />
+              <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="2.0" setvalue="true">
+                <Conditional ishuman="true" />
+              </StatusEffect>
+            </Containable>
+          </ItemContainer>
+          <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="flamreloading" removecontaineditemsondeconstruct="true">
+            <Containable items="flamreloading" hide="true">
+              <StatusEffect type="OnRemoved" target="Contained">
+                <Remove />
+              </StatusEffect>
+            </Containable>
+          </ItemContainer>
+          <aitarget sightrange="5000" soundrange="500" fadeouttime="5" />
+          <SkillRequirementHint identifier="weapons" level="40" />
+        </Item>
+        <!-- Flamer Unique Melee Mode -->
+        <Item name="" identifier="flamerunique-melee" category="Equipment" Tags="smallitem,weapon,gun,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" hideinmenus="true">
+          <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="plastic" />
+          </Deconstruct>
+          <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,256,62,64" />
+          <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="263,193,150,87" depth="0.55" origin="0.5,0.5" />
+          <Body width="150" height="77" density="25" />
+          <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" aimpos="45,10" handle1="0,7" handle2="0,15" holdangle="60" aimangle="260" reload="2.8" range="110" combatpriority="40" msg="ItemMsgPickUpSelect">
+            <Attack structuredamage="5" itemdamage="6" targetimpulse="18">
+              <Affliction identifier="blunttrauma" strength="10" />
+              <Affliction identifier="stun" strength="0.7" />
+              <StatusEffect type="OnUse" target="UseTarget">
+                <Conditional entitytype="eq Character" />
+                <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.7" selectionmode="random" range="500" />
+                <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="0.7" range="500" />
+              </StatusEffect>
+              <StatusEffect type="OnUse" target="UseTarget">
+                <Conditional entitytype="eq Structure" />
+                <Conditional hastag="eq door" />
+                <ParticleEmitter particle="spark" particleamount="9" anglemin="360" anglemax="0" velocitymin="-280" velocitymax="280" scalemin="0.35" scalemax="0.7" />
+                <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="550" frequencymultiplier="0.7" selectionmode="Random" />
+                <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="550" frequencymultiplier="0.7" />
+                <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="550" frequencymultiplier="0.7" />
+                <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="550" frequencymultiplier="0.7" />
+              </StatusEffect>
+            </Attack>
+            <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+              <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+              <Button text="Unique">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamerunique" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+              <Button text="Throw">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamerunique-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+            </CustomInterface>
+          </MeleeWeapon>
+          <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="OnUse" target="Character">
+              <Affliction identifier="stamina" targetlimbs="torso" strength="18" />
+            </StatusEffect>
+          </RepairTool>
+          <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+          <Quality>
+            <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+          </Quality>
+          <Upgrade gameversion="0.10.0.0" scale="0.5" />
+        </Item>
+        <!-- Flamer Unique Throw Mode -->
+        <Item name="" identifier="flamerunique-throw" category="Equipment" Tags="smallitem,weapon,gun,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True" hideinmenus="true">
+          <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="plastic" />
+          </Deconstruct>
+          <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,256,62,64" />
+          <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="263,193,150,87" depth="0.55" origin="0.5,0.5" />
+          <Body width="150" height="77" density="25" />
+          <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-12,0" DamageUser="false" throwforce="3.2" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="OnSecondaryUse" target="Character">
+              <Affliction identifier="stamina" targetlimbs="torso" strength="1800" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+              <Use />
+            </StatusEffect>
+            <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+              <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+              <Button text="Unique">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamerunique" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+              <Button text="Melee">
+                <StatusEffect type="OnUse" target="This">
+                  <SpawnItem identifiers="flamerunique-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                  <Remove />
+                  <DropContainedItems />
+                </StatusEffect>
+              </Button>
+            </CustomInterface>
+          </Throwable>
+          <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+            <Attack>
+              <Affliction identifier="blunttrauma" strength="20" />
+              <Affliction identifier="stun" strength="0.9" />
+              <StatusEffect type="OnUse" target="UseTarget">
+                <Conditional entitytype="eq Character" />
+                <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="1.8" selectionmode="random" range="550" />
+                <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="1.8" range="550" />
+              </StatusEffect>
+            </Attack>
+            <StatusEffect type="OnImpact" target="UseTarget">
+              <Conditional entitytype="eq Structure" />
+              <Conditional hastag="eq door" />
+              <ParticleEmitter particle="spark" particleamount="9" anglemin="360" anglemax="0" velocitymin="-300" velocitymax="300" scalemin="0.45" scalemax="0.9" />
+              <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="600" frequencymultiplier="1.8" selectionmode="Random" />
+              <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="600" frequencymultiplier="1.8" />
+              <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="600" frequencymultiplier="1.8" />
+              <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="600" frequencymultiplier="1.8" />
+            </StatusEffect>
+          </Projectile>
+          <aitarget sightrange="550" soundrange="550" fadeouttime="1.2" />
+        </Item>
+      </Items>
+    </Override>
+    <Items>
+      <Item name="" identifier="syringegun" category="Equipment,Medical,Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,gun,mountableweapon" scale="0.5" impactsoundtag="impact_metal_light">
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+        <PreferredContainer primary="armcab" amount="1" spawnprobability="0.2" notcampaign="true" notpvp="true" />
+        <PreferredContainer secondary="secarmcab,weaponholder" />
+        <PreferredContainer secondary="wreckmedcab,abandonedmedcab,piratemedcab,wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.05" />
+        <Price baseprice="190" minavailable="1">
+          <Price storeidentifier="merchantoutpost" sold="false" />
+          <Price storeidentifier="merchantcity" sold="false" multiplier="0.9" />
+          <Price storeidentifier="merchantresearch" multiplier="1.25" />
+          <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.25" />
+          <Price storeidentifier="merchantmine" sold="false" />
+          <Price storeidentifier="merchantmedical" multiplier="1.25" />
+        </Price>
+        <Deconstruct time="10">
+          <Item identifier="aluminium" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="fabricator" requiredtime="10">
+          <RequiredSkill identifier="medical" level="50" />
+          <RequiredItem identifier="aluminium" amount="2" />
+          <RequiredItem identifier="plastic" amount="2" />
+        </Fabricate>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,64,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,93,149,71" depth="0.7" origin="0.5,0.5" />
+        <Body width="90" radius="40" density="25" />
+        <Holdable slots="RightHand+LeftHand,Any" controlpose="true" aimpos="30,-20" handle1="0,-7" handle2="55, 20" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="syringegun-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="syringegun-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Holdable>
+        <RangedWeapon barrelpos="71,30" spread="0" unskilledspread="10" drawhudwhenequipped="true" crosshairscale="0.2">
+          <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+          <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+          <Sound file="Content/Items/Weapons/SyringeGun1.ogg" type="OnUse" range="1000" volume="0.75" />
+          <Sound file="Content/Items/Weapons/SyringeGun2.ogg" type="OnUse" range="1000" volume="0.75" />
+          <RequiredItems items="syringe" type="Contained" msg="ItemMsgSyringeRequired" />
+          <RequiredSkill identifier="weapons" level="20" />
+          <RequiredSkill identifier="medical" level="30" />
+        </RangedWeapon>
+        <ItemContainer capacity="1" maxstacksize="4" itempos="0,25" itemrotation="-90" hideitems="false" containedstateindicatorstyle="syringe">
+          <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="384,448,64,64" origin="0.5,0.5" />
+          <Containable items="syringe">
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="0.01" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" delay="2.0" setvalue="true" />
+            <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" hideitems="true" aimangle="-10" holdangle="-10" aimpos="40,-20" holdpos="40,-20" handle1="0,-7" handle2="-40,0" condition="0" delay="0.01" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.8" hideitems="false" itempos="0,45" handle2="-25,35" setvalue="true" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" frequencymultiplier="1.5" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="0.85" itempos="0,43" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.9" itempos="0,41" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="0.95" itempos="0,39" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.0" itempos="0,37" setvalue="true" stackable="false">
+              <Sound file="%ModDir%/Saunds/Syringe.ogg" frequencymultiplier="1.2" type="OnUse" volume="3" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="1.05" itempos="0,35" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.1" itempos="0,33" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.15" itempos="0,31" handle2="-22,25" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.2" itempos="0,29" handle2="-21,20" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.25" itempos="0,27" handle2="-20,18" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" delay="1.3" itempos="0,25" handle2="-20,15" setvalue="true" stackable="false" />
+            <StatusEffect type="OnInserted" target="This" hideitems="false" itempos="0,23" delay="1.35" aimangle="15" holdangle="15" setvalue="true" stackable="false">
+              <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="2.0" aimpos="30,-20" handle1="0,-7" handle2="55, 20" holdpos="0,0" aimangle="0" holdangle="0" condition="100" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="2.0" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="flamreloading" removecontaineditemsondeconstruct="true">
+          <Containable items="flamreloading" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <aitarget sightrange="0" soundrange="0" />
+        <SkillRequirementHint identifier="weapons" level="20" />
+        <SkillRequirementHint identifier="medical" level="30" />
+      </Item>
+      <!-- Syringe Gun Melee Mode -->
+      <Item name="" identifier="syringegun-melee" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+        <Deconstruct time="10">
+          <Item identifier="aluminium" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,64,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,93,149,71" depth="0.7" origin="0.5,0.5" />
+        <Body width="90" radius="40" density="25" />
+        <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" aimpos="45,10" handle1="0,7" handle2="0,15" holdangle="60" aimangle="260" reload="2.5" range="100" combatpriority="15" msg="ItemMsgPickUpSelect">
+          <Attack structuredamage="2" itemdamage="3" targetimpulse="10">
+            <Affliction identifier="blunttrauma" strength="4" />
+            <Affliction identifier="stun" strength="0.3" />
+            <Affliction identifier="bleeding" strength="1" probability="0.1" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.75" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="0.75" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Structure" />
+              <Conditional hastag="eq door" />
+              <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-150" velocitymax="150" scalemin="0.3" scalemax="0.6" />
+              <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" selectionmode="Random" />
+              <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+            </StatusEffect>
+          </Attack>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+            <Button text="Gun">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="syringegun" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="syringegun-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </MeleeWeapon>
+        <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="10" />
+          </StatusEffect>
+        </RepairTool>
+        <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+        <Quality>
+          <QualityStat stattype="StrikingPowerMultiplier" value="0.06" />
+        </Quality>
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      </Item>
+      <!-- Syringe Gun Throw Mode -->
+      <Item name="" identifier="syringegun-throw" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
+        <Deconstruct time="10">
+          <Item identifier="aluminium" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,64,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,93,149,71" depth="0.7" origin="0.5,0.5" />
+        <Body width="90" radius="40" density="25" />
+        <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="2" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnSecondaryUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+            <Use />
+          </StatusEffect>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Gun">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="syringegun" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="syringegun-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Throwable>
+        <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+          <Attack>
+            <Affliction identifier="blunttrauma" strength="8" />
+            <Affliction identifier="stun" strength="0.4" />
+            <Affliction identifier="bleeding" strength="2" probability="0.2" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+            </StatusEffect>
+          </Attack>
+          <StatusEffect type="OnImpact" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-150" velocitymax="150" scalemin="0.4" scalemax="0.8" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Projectile>
+        <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      </Item>
+    </Items>
+    <Items>
+      <Item name="" identifier="advancedsyringegun" variantof="syringegun">
+        <PreferredContainer primary="armcab" amount="1" spawnprobability="0" notcampaign="true" />
+        <PreferredContainer secondary="secarmcab,weaponholder" />
+        <PreferredContainer secondary="wreckmedcab,abandonedmedcab,piratemedcab,wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0" />
+        <Price baseprice="310" sold="false">
+          <Price storeidentifier="merchanthusk" minavailable="1" maxavailable="2" sold="true">
+            <Reputation faction="huskcult" min="50" />
+          </Price>
+        </Price>
+        <Deconstruct time="10">
+          <Item identifier="titaniumaluminiumalloy" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+          <RequiredSkill identifier="medical" level="50" />
+          <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+          <RequiredItem identifier="aluminium" amount="1" />
+          <RequiredItem identifier="plastic" amount="2" />
+        </Fabricate>
+        <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="354,429,145,78" depth="0.7" origin="0.5,0.5" />
+        <Body width="90" height="74" density="25" />
+        <Holdable slots="RightHand+LeftHand,Any" controlpose="true" aimpos="30,-20" handle1="0,-7" handle2="55, 20" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="Always" OneShot="True" target="This,Contained,Character" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="advancedsyringegun-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="advancedsyringegun-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Holdable>
+        <RangedWeapon launchimpulse="10.0" barrelpos="71,30" spread="0" unskilledspread="10" drawhudwhenequipped="true" crosshairscale="0.2">
+          <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+          <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+          <Sound file="Content/Items/Weapons/SyringeGun1.ogg" type="OnUse" range="1000" volume="0.75" />
+          <Sound file="Content/Items/Weapons/SyringeGun2.ogg" type="OnUse" range="1000" volume="0.75" />
+          <RequiredItems items="syringe" type="Contained" msg="ItemMsgSyringeRequired" />
+          <RequiredSkill identifier="weapons" level="30" />
+          <RequiredSkill identifier="medical" level="50" />
+        </RangedWeapon>
+        <ItemContainer capacity="2" maxstacksize="8" itempos="0,25" itemrotation="-90" hideitems="false" containedstateindicatorstyle="syringe" ShowTotalStackCapacityInContainedStateIndicator="true" containedstateindicatorslot="0">
+          <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="384,448,64,64" origin="0.5,0.5" />
+          <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="384,448,64,64" origin="0.5,0.5" />
+          <Containable items="syringe">
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+            <!-- Hides the slots, preventing the person from adding more or removing. -->
+            <StatusEffect type="OnInserted" target="This" delay="0.01" setvalue="true" />
+            <!-- Unhides the slots, allowing the person from adding more or removing. -->
+            <StatusEffect type="OnInserted" target="This" delay="2.0" setvalue="true" />
+            <!-- Plays the sound of the can is removed. -->
+            <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" frequencymultiplier="0.75" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <!-- Makes the fuel can invisible. -->
+            <StatusEffect type="OnInserted" target="This" hideitems="true" aimangle="-10" holdangle="-10" aimpos="40,-20" holdpos="40,-20" handle1="0,-7" handle2="-40,0" condition="0" delay="0.01" setvalue="true" stackable="false" />
+            <!-- Sound and hand animation. -->
+            <StatusEffect type="OnInserted" target="This" delay="0.8" hideitems="false" itempos="0,40" handle2="-25,35" setvalue="true" forceplaysounds="true" stackable="false">
+              <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" frequencymultiplier="1.5" type="OnUse" volume="2" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="1" itempos="0,35" setvalue="true" stackable="false">
+              <Sound file="%ModDir%/Saunds/Syringe.ogg" frequencymultiplier="1.2" type="OnUse" volume="3" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" delay="1.1" itempos="0,30" setvalue="true" stackable="false" />
+            <!-- Hand animation. -->
+            <StatusEffect type="OnInserted" target="This" delay="1.2" itempos="0,25" handle2="-20,15" setvalue="true" stackable="false" />
+            <!-- Makes the fuel can visible. -->
+            <StatusEffect type="OnInserted" target="This" hideitems="false" itempos="0,20" delay="1.3" aimangle="20" holdangle="20" setvalue="true" stackable="false">
+              <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+            </StatusEffect>
+            <!-- Last animation stage. -->
+            <StatusEffect type="OnInserted" target="This" delay="2" aimpos="30,-20" handle1="0,-7" handle2="55, 20" holdpos="0,0" aimangle="0" holdangle="0" condition="100" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This,Contained,Character" AllowAccess="true" noninteractable="false" delay="2" setvalue="true">
+              <Conditional ishuman="true" />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="flamreloading" removecontaineditemsondeconstruct="true">
+          <Containable items="flamreloading" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </ItemContainer>
+        <StatusHUD drawhudwhenequipped="true" />
+        <SkillRequirementHint identifier="weapons" level="30" />
+        <SkillRequirementHint identifier="medical" level="50" />
+      </Item>
+      <!-- Advanced Syringe Gun Melee Mode -->
+      <Item name="" identifier="advancedsyringegun-melee" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+        <Deconstruct time="10">
+          <Item identifier="titaniumaluminiumalloy" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="354,429,145,78" depth="0.7" origin="0.5,0.5" />
+        <Body width="90" height="74" density="25" />
+        <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" aimpos="45,10" handle1="0,7" handle2="0,15" holdangle="60" aimangle="260" reload="2.5" range="100" combatpriority="18" msg="ItemMsgPickUpSelect">
+          <Attack structuredamage="3" itemdamage="4" targetimpulse="12">
+            <Affliction identifier="blunttrauma" strength="6" />
+            <Affliction identifier="stun" strength="0.4" />
+            <Affliction identifier="bleeding" strength="1.5" probability="0.15" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.75" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="0.75" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Structure" />
+              <Conditional hastag="eq door" />
+              <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-180" velocitymax="180" scalemin="0.3" scalemax="0.6" />
+              <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" selectionmode="Random" />
+              <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+              <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="0.75" />
+            </StatusEffect>
+          </Attack>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+            <Button text="Gun">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="advancedsyringegun" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Throw">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="advancedsyringegun-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </MeleeWeapon>
+        <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="12" />
+          </StatusEffect>
+        </RepairTool>
+        <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+        <Quality>
+          <QualityStat stattype="StrikingPowerMultiplier" value="0.08" />
+        </Quality>
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      </Item>
+      <!-- Advanced Syringe Gun Throw Mode -->
+      <Item name="" identifier="advancedsyringegun-throw" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
+        <Deconstruct time="10">
+          <Item identifier="titaniumaluminiumalloy" />
+          <Item identifier="plastic" />
+        </Deconstruct>
+        <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="354,429,145,78" depth="0.7" origin="0.5,0.5" />
+        <Body width="90" height="74" density="25" />
+        <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="2.2" msg="ItemMsgPickUpSelect">
+          <StatusEffect type="OnSecondaryUse" target="Character">
+            <Affliction identifier="stamina" targetlimbs="torso" strength="1100" />
+          </StatusEffect>
+          <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+            <Use />
+          </StatusEffect>
+          <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+            <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+            <Button text="Gun">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="advancedsyringegun" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+            <Button text="Melee">
+              <StatusEffect type="OnUse" target="This">
+                <SpawnItem identifiers="advancedsyringegun-melee" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+                <Remove />
+                <DropContainedItems />
+              </StatusEffect>
+            </Button>
+          </CustomInterface>
+        </Throwable>
+        <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+          <Attack>
+            <Affliction identifier="blunttrauma" strength="10" />
+            <Affliction identifier="stun" strength="0.5" />
+            <Affliction identifier="bleeding" strength="2.5" probability="0.25" />
+            <StatusEffect type="OnUse" target="UseTarget">
+              <Conditional entitytype="eq Character" />
+              <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+              <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+            </StatusEffect>
+          </Attack>
+          <StatusEffect type="OnImpact" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-180" velocitymax="180" scalemin="0.4" scalemax="0.8" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Projectile>
+        <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      </Item>
+    </Items>
+  </Items>
+</Override>

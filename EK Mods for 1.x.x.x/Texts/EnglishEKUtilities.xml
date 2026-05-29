@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- ekutility_containers.xml -->
+  <entityname.ekutility_smallshelf>Small Shelf</entityname.ekutility_smallshelf>
+  <entitydescription.ekutility_smallshelf>Basic wall-mounted storage solution. ( Place by pressing aim + use )</entitydescription.ekutility_smallshelf>
+  <entityname.ekutility_mediumshelf>Shelf</entityname.ekutility_mediumshelf>
+  <entitydescription.ekutility_mediumshelf>Basic wall-mounted storage solution. ( Place by pressing aim + use )</entitydescription.ekutility_mediumshelf>
+  <entityname.ekutility_shellrack>Large Railgun Shell Rack</entityname.ekutility_shellrack>
+  <entitydescription.ekutility_shellrack>A metal frame designed to hold railgun shells. ( Place by pressing aim + use )</entitydescription.ekutility_shellrack>
+  <entityname.ekutility_shellrack_huge>Huge Railgun Shell Rack</entityname.ekutility_shellrack_huge>
+  <entitydescription.ekutility_shellrack_huge>A wall-mounted magazine designed to hold many railgun shells. ( Place by pressing aim + use )</entitydescription.ekutility_shellrack_huge>
+  <entityname.ekutility_craterack>Crate Rack</entityname.ekutility_craterack>
+  <entitydescription.ekutility_craterack>A shelf for neatly storing cargo crates. ( Place by pressing aim + use )</entitydescription.ekutility_craterack>
+  <entityname.ekutility_craterack_tall>Tall Crate Rack</entityname.ekutility_craterack_tall>
+  <entitydescription.ekutility_craterack_tall>A taller shelf for neatly storing cargo crates. ( Place by pressing aim + use )</entitydescription.ekutility_craterack_tall>
+  <entityname.ekutility_craterack_freezer>Climate-Controlled Crate Rack</entityname.ekutility_craterack_freezer>
+  <entitydescription.ekutility_craterack_freezer>An enclosed crate shelf with controls for temperature or humidity sensitive cargo. Requires electricity. ( Place by pressing aim + use )</entitydescription.ekutility_craterack_freezer>
+  <entityname.ekutility_chemlightboxred>Chemlight Box (Red)</entityname.ekutility_chemlightboxred>
+  <entitydescription.ekutility_chemlightboxred>Box of chemlights; a disposable single-use light source. Red in color.</entitydescription.ekutility_chemlightboxred>
+  <entityname.ekutility_chemlightboxgreen>Chemlight Box (Green)</entityname.ekutility_chemlightboxgreen>
+  <entitydescription.ekutility_chemlightboxgreen>Box of chemlights; a disposable single-use light source. Green in color.</entitydescription.ekutility_chemlightboxgreen>
+  <entityname.ekutility_chemlightboxblue>Chemlight Box (Blue)</entityname.ekutility_chemlightboxblue>
+  <entitydescription.ekutility_chemlightboxblue>Box of chemlights; a disposable single-use light source. Blue in color.</entitydescription.ekutility_chemlightboxblue>
+  <entityname.ekutility_chemlightboxyellow>Chemlight Box (Yellow)</entityname.ekutility_chemlightboxyellow>
+  <entitydescription.ekutility_chemlightboxyellow>Box of chemlights; a disposable single-use light source. Amber in color.</entitydescription.ekutility_chemlightboxyellow>
+  <entityname.ekutility_cart_depthcharge>Rolling Cart</entityname.ekutility_cart_depthcharge>
+  <entitydescription.ekutility_cart_depthcharge>A sturdy metal cart for transporting items like metal crates, depth charge shells, and diving suits.</entitydescription.ekutility_cart_depthcharge>
+  <entityname.ekutility_handtruck>Hand Truck</entityname.ekutility_handtruck>
+  <entitydescription.ekutility_handtruck>A simple hand truck for moving heavy railgun shells with ease.</entitydescription.ekutility_handtruck>
+  <entityname.ekutility_handtruck_reactorfuel>Fuelrod Handling Truck</entityname.ekutility_handtruck_reactorfuel>
+  <entitydescription.ekutility_handtruck_reactorfuel>A hand truck with shielded pig for moving fuel rods outside the reactor.</entitydescription.ekutility_handtruck_reactorfuel>
+  <entityname.ekutility_artifactbox>Artifact Container</entityname.ekutility_artifactbox>
+  <entitydescription.ekutility_artifactbox>A large heavily-insulated container designed to hold artifacts for transportation and study.</entitydescription.ekutility_artifactbox>
+  <entityname.ekutility_storagecrate>Industrial Strength Crate</entityname.ekutility_storagecrate>
+  <entitydescription.ekutility_storagecrate>A rugged watertight container for storage and transportation.</entitydescription.ekutility_storagecrate>
+  <entityname.ekutility_crateblocker>Cargo Crate Blocker</entityname.ekutility_crateblocker>
+  <entitydescription.ekutility_crateblocker>An empty storage spacer. Can be used to prevent placing cargo in unused crate slots.</entitydescription.ekutility_crateblocker>
+  <entityname.ekutility_materiallocker>Material Storage Locker</entityname.ekutility_materiallocker>
+  <entitydescription.ekutility_materiallocker>A heavy storage locker for organization. ( Place by pressing aim + use )</entitydescription.ekutility_materiallocker>
+  <entityname.ekutility_mulecargo>Crate Transport Mule</entityname.ekutility_mulecargo>
+  <entitydescription.ekutility_mulecargo>Self-propelled underwater sled capable of carrying 4 cargo crates.</entitydescription.ekutility_mulecargo>
+  <entityname.ekutility_securelockercaptain>Secure Locker (Captain)</entityname.ekutility_securelockercaptain>
+  <entitydescription.ekutility_securelockercaptain>Lockable storage for small- and medium-sized items. ( Place by pressing aim + use )</entitydescription.ekutility_securelockercaptain>
+  <entityname.ekutility_securelockersecurityofficer>Secure Locker (Security Officer)</entityname.ekutility_securelockersecurityofficer>
+  <entitydescription.ekutility_securelockersecurityofficer>Lockable storage for small- and medium-sized items. ( Place by pressing aim + use )</entitydescription.ekutility_securelockersecurityofficer>
+  <entityname.ekutility_securelockermedicaldoctor>Secure Locker (Medical Doctor)</entityname.ekutility_securelockermedicaldoctor>
+  <entitydescription.ekutility_securelockermedicaldoctor>Lockable storage for small- and medium-sized items. ( Place by pressing aim + use )</entitydescription.ekutility_securelockermedicaldoctor>
+  <entityname.ekutility_securelockermechanic>Secure Locker (Mechanic)</entityname.ekutility_securelockermechanic>
+  <entitydescription.ekutility_securelockermechanic>Lockable storage for small- and medium-sized items. ( Place by pressing aim + use )</entitydescription.ekutility_securelockermechanic>
+  <entityname.ekutility_securelockerengineer>Secure Locker (Engineer)</entityname.ekutility_securelockerengineer>
+  <entitydescription.ekutility_securelockerengineer>Lockable storage for small- and medium-sized items. ( Place by pressing aim + use )</entitydescription.ekutility_securelockerengineer>
+  <!-- ekutility_labels.xml -->
+  <entityname.ekutility_label_text>Text Label</entityname.ekutility_label_text>
+  <entitydescription.ekutility_label_text>A blank label card with room for written information.</entitydescription.ekutility_label_text>
+  <entityname.ekutility_label_iron>Iron Label</entityname.ekutility_label_iron>
+  <entitydescription.ekutility_label_iron>A label card with a picture of iron on it.</entitydescription.ekutility_label_iron>
+  <entityname.ekutility_label_aluminium>Aluminium Label</entityname.ekutility_label_aluminium>
+  <entitydescription.ekutility_label_aluminium>A label card with a picture of aluminium on it.</entitydescription.ekutility_label_aluminium>
+  <entityname.ekutility_label_copper>Copper Label</entityname.ekutility_label_copper>
+  <entitydescription.ekutility_label_copper>A label card with a picture of copper on it.</entitydescription.ekutility_label_copper>
+  <entityname.ekutility_label_titanium>Titanium Label</entityname.ekutility_label_titanium>
+  <entitydescription.ekutility_label_titanium>A label card with a picture of titanium on it.</entitydescription.ekutility_label_titanium>
+  <entityname.ekutility_label_carbon>Carbon Label</entityname.ekutility_label_carbon>
+  <entitydescription.ekutility_label_carbon>A label card with a picture of carbon on it.</entitydescription.ekutility_label_carbon>
+  <entityname.ekutility_label_lead>Lead Label</entityname.ekutility_label_lead>
+  <entitydescription.ekutility_label_lead>A label card with a picture of lead on it.</entitydescription.ekutility_label_lead>
+  <entityname.ekutility_label_tin>Tin Label</entityname.ekutility_label_tin>
+  <entitydescription.ekutility_label_tin>A label card with a picture of tin on it.</entitydescription.ekutility_label_tin>
+  <entityname.ekutility_label_zinc>Zinc Label</entityname.ekutility_label_zinc>
+  <entitydescription.ekutility_label_zinc>A label card with a picture of zinc on it.</entitydescription.ekutility_label_zinc>
+  <entityname.ekutility_label_silicon>Silicon Label</entityname.ekutility_label_silicon>
+  <entitydescription.ekutility_label_silicon>A label card with a picture of silicon on it.</entitydescription.ekutility_label_silicon>
+  <entityname.ekutility_label_uranium>Uranium Label</entityname.ekutility_label_uranium>
+  <entitydescription.ekutility_label_uranium>A label card with a picture of uranium on it.</entitydescription.ekutility_label_uranium>
+  <entityname.ekutility_label_thorium>Thorium Label</entityname.ekutility_label_thorium>
+  <entitydescription.ekutility_label_thorium>A label card with a picture of thorium on it.</entitydescription.ekutility_label_thorium>
+  <entityname.ekutility_label_steel>Steel Label</entityname.ekutility_label_steel>
+  <entitydescription.ekutility_label_steel>A label card with a picture of steel on it.</entitydescription.ekutility_label_steel>
+  <entityname.ekutility_label_titaniumaluminiumalloy>Titanium-Aluminium Alloy Label</entityname.ekutility_label_titaniumaluminiumalloy>
+  <entitydescription.ekutility_label_titaniumaluminiumalloy>A label card with a picture of titanium-aluminium alloy on it.</entitydescription.ekutility_label_titaniumaluminiumalloy>
+  <entityname.ekutility_label_plastic>Plastic Label</entityname.ekutility_label_plastic>
+  <entitydescription.ekutility_label_plastic>A label card with a picture of plastic on it.</entitydescription.ekutility_label_plastic>
+  <entityname.ekutility_label_rubber>Rubber Label</entityname.ekutility_label_rubber>
+  <entitydescription.ekutility_label_rubber>A label card with a picture of rubber on it.</entitydescription.ekutility_label_rubber>
+  <entityname.ekutility_label_fpgacircuit>FPGA Circuit Label</entityname.ekutility_label_fpgacircuit>
+  <entitydescription.ekutility_label_fpgacircuit>A label card with a picture of an fpga circuit on it.</entitydescription.ekutility_label_fpgacircuit>
+  <entityname.ekutility_label_organicfiber>Organic Fiber Label</entityname.ekutility_label_organicfiber>
+  <entitydescription.ekutility_label_organicfiber>A label card with a picture of organic fiber on it.</entitydescription.ekutility_label_organicfiber>
+  <entityname.ekutility_label_ballisticfiber>Ballistic Fiber Label</entityname.ekutility_label_ballisticfiber>
+  <entitydescription.ekutility_label_ballisticfiber>A label card with a picture of ballistic fiber on it.</entitydescription.ekutility_label_ballisticfiber>
+  <entityname.ekutility_label_physicorium>Physicorium Label</entityname.ekutility_label_physicorium>
+  <entitydescription.ekutility_label_physicorium>A label card with a picture of physicorium alloy on it.</entitydescription.ekutility_label_physicorium>
+  <entityname.ekutility_label_fulgurium>Fulgurium Label</entityname.ekutility_label_fulgurium>
+  <entitydescription.ekutility_label_fulgurium>A label card with a picture of fulgurium on it.</entitydescription.ekutility_label_fulgurium>
+  <entityname.ekutility_label_sulphuriteshard>Sulphurite Label</entityname.ekutility_label_sulphuriteshard>
+  <entitydescription.ekutility_label_sulphuriteshard>A label card with a picture of sulphurite on it.</entitydescription.ekutility_label_sulphuriteshard>
+  <entityname.ekutility_label_oxygeniteshard>Oxygenite Label</entityname.ekutility_label_oxygeniteshard>
+  <entitydescription.ekutility_label_oxygeniteshard>A label card with a picture of oxygenite on it.</entitydescription.ekutility_label_oxygeniteshard>
+  <entityname.ekutility_label_incendium>Incendium Label</entityname.ekutility_label_incendium>
+  <entitydescription.ekutility_label_incendium>A label card with a picture of incendium on it.</entitydescription.ekutility_label_incendium>
+  <entityname.ekutility_label_dementonite>Dementonite Label</entityname.ekutility_label_dementonite>
+  <entitydescription.ekutility_label_dementonite>A label card with a picture of dementonite fiber on it.</entitydescription.ekutility_label_dementonite>
+  <entityname.ekutility_label_flashpowder>Flash Powder Label</entityname.ekutility_label_flashpowder>
+  <entitydescription.ekutility_label_flashpowder>A label card with a picture of flash powder on it.</entitydescription.ekutility_label_flashpowder>
+  <entityname.ekutility_label_lithium>Lithium Label</entityname.ekutility_label_lithium>
+  <entitydescription.ekutility_label_lithium>A label card with a picture of lithium on it.</entitydescription.ekutility_label_lithium>
+  <entityname.ekutility_label_sodium>Sodium Label</entityname.ekutility_label_sodium>
+  <entitydescription.ekutility_label_sodium>A label card with a picture of sodium on it.</entitydescription.ekutility_label_sodium>
+  <entityname.ekutility_label_magnesium>Magnesium Label</entityname.ekutility_label_magnesium>
+  <entitydescription.ekutility_label_magnesium>A label card with a picture of magnesium on it.</entitydescription.ekutility_label_magnesium>
+  <entityname.ekutility_label_potassium>Potassium Label</entityname.ekutility_label_potassium>
+  <entitydescription.ekutility_label_potassium>A label card with a picture of potassium on it.</entitydescription.ekutility_label_potassium>
+  <entityname.ekutility_label_chlorine>Chlorine Label</entityname.ekutility_label_chlorine>
+  <entitydescription.ekutility_label_chlorine>A label card with a picture of chlorine on it.</entitydescription.ekutility_label_chlorine>
+  <entityname.ekutility_label_calcium>Calcium Label</entityname.ekutility_label_calcium>
+  <entitydescription.ekutility_label_calcium>A label card with a picture of calcium on it.</entitydescription.ekutility_label_calcium>
+  <entityname.ekutility_label_phosphorus>Phosphorus Label</entityname.ekutility_label_phosphorus>
+  <entitydescription.ekutility_label_phosphorus>A label card with a picture of phosphorus on it.</entitydescription.ekutility_label_phosphorus>
+  <entityname.ekutility_label_ethanol>Ethanol Label</entityname.ekutility_label_ethanol>
+  <entitydescription.ekutility_label_ethanol>A label card with a picture of ethanol on it.</entitydescription.ekutility_label_ethanol>
+  <entityname.ekutility_label_sulphuricacid>Sulphuric Acid Label</entityname.ekutility_label_sulphuricacid>
+  <entitydescription.ekutility_label_sulphuricacid>A label card with a picture of sulphuric acid on it.</entitydescription.ekutility_label_sulphuricacid>
+  <entityname.ekutility_label_bandage>Bandage Label</entityname.ekutility_label_bandage>
+  <entitydescription.ekutility_label_bandage>A label card with a picture of a bandage on it.</entitydescription.ekutility_label_bandage>
+  <entityname.ekutility_label_plastiseal>Plastiseal Label</entityname.ekutility_label_plastiseal>
+  <entitydescription.ekutility_label_plastiseal>A label card with a picture of plastiseal on it.</entitydescription.ekutility_label_plastiseal>
+  <entityname.ekutility_label_antibioticglue>Antibiotic Glue Label</entityname.ekutility_label_antibioticglue>
+  <entitydescription.ekutility_label_antibioticglue>A label card with a picture of antibiotic glue on it.</entitydescription.ekutility_label_antibioticglue>
+  <entityname.ekutility_label_tonicliquid>Tonic Liquid Label</entityname.ekutility_label_tonicliquid>
+  <entitydescription.ekutility_label_tonicliquid>A label card with a picture of tonic liquid on it.</entitydescription.ekutility_label_tonicliquid>
+  <entityname.ekutility_label_saline>Saline Label</entityname.ekutility_label_saline>
+  <entitydescription.ekutility_label_saline>A label card with a picture of saline on it.</entitydescription.ekutility_label_saline>
+  <entityname.ekutility_label_bloodpack>Blood Pack Label</entityname.ekutility_label_bloodpack>
+  <entitydescription.ekutility_label_bloodpack>A label card with a picture of a blood pack on it.</entitydescription.ekutility_label_bloodpack>
+  <entityname.ekutility_label_adrenaline>Adrenaline Label</entityname.ekutility_label_adrenaline>
+  <entitydescription.ekutility_label_adrenaline>A label card with a picture of adrenaline on it.</entitydescription.ekutility_label_adrenaline>
+  <entityname.ekutility_label_opium>Opium Label</entityname.ekutility_label_opium>
+  <entitydescription.ekutility_label_opium>A label card with a picture of opium on it.</entitydescription.ekutility_label_opium>
+  <entityname.ekutility_label_elastin>Elastin Label</entityname.ekutility_label_elastin>
+  <entitydescription.ekutility_label_elastin>A label card with a picture of elastin on it.</entitydescription.ekutility_label_elastin>
+  <entityname.ekutility_label_alienblood>Alien Blood Label</entityname.ekutility_label_alienblood>
+  <entitydescription.ekutility_label_alienblood>A label card with a picture of alien blood on it.</entitydescription.ekutility_label_alienblood>
+  <entityname.ekutility_label_adrenalinegland>Adrenaline Gland Label</entityname.ekutility_label_adrenalinegland>
+  <entitydescription.ekutility_label_adrenalinegland>A label card with a picture of an adrenaline gland on it.</entitydescription.ekutility_label_adrenalinegland>
+  <entityname.ekutility_label_swimbladder>Swim Bladder Label</entityname.ekutility_label_swimbladder>
+  <entitydescription.ekutility_label_swimbladder>A label card with a picture of a swim bladder on it.</entitydescription.ekutility_label_swimbladder>
+  <entityname.ekutility_label_paralyxis>Paralyxis Label</entityname.ekutility_label_paralyxis>
+  <entitydescription.ekutility_label_paralyxis>A label card with a picture of paralyxis on it.</entitydescription.ekutility_label_paralyxis>
+  <entityname.ekutility_label_huskeggs>Velonaceps Calyx Label</entityname.ekutility_label_huskeggs>
+  <entitydescription.ekutility_label_huskeggs>A label card with a picture of velonaceps calyx on it.</entitydescription.ekutility_label_huskeggs>
+  <entityname.ekutility_label_fiberplant>Fiber Plant Label</entityname.ekutility_label_fiberplant>
+  <entitydescription.ekutility_label_fiberplant>A label card with a picture of a fiber plant on it.</entitydescription.ekutility_label_fiberplant>
+  <entityname.ekutility_label_elastinplant>Elastin Plant Label</entityname.ekutility_label_elastinplant>
+  <entitydescription.ekutility_label_elastinplant>A label card with a picture of an elastin plant on it.</entitydescription.ekutility_label_elastinplant>
+  <entityname.ekutility_label_aquaticpoppy>Aquatic Poppy Label</entityname.ekutility_label_aquaticpoppy>
+  <entitydescription.ekutility_label_aquaticpoppy>A label card with a picture of an aquatic poppy on it.</entitydescription.ekutility_label_aquaticpoppy>
+  <entityname.ekutility_label_yeastshroom>Yeast Mushroom Label</entityname.ekutility_label_yeastshroom>
+  <entitydescription.ekutility_label_yeastshroom>A label card with a picture of a yeast mushroom on it.</entitydescription.ekutility_label_yeastshroom>
+  <entityname.ekutility_label_slimebacteria>Slime Bacteria Label</entityname.ekutility_label_slimebacteria>
+  <entitydescription.ekutility_label_slimebacteria>A label card with a picture of slime bacteria on it.</entitydescription.ekutility_label_slimebacteria>
+  <entityname.ekutility_label_creepingorange>Pomegrenade Label</entityname.ekutility_label_creepingorange>
+  <entitydescription.ekutility_label_creepingorange>A label card with a picture of a pomegrenade on it.</entitydescription.ekutility_label_creepingorange>
+  <entityname.ekutility_label_tobaccobud>Tobacco Bud Label</entityname.ekutility_label_tobaccobud>
+  <entitydescription.ekutility_label_tobaccobud>A label card with a picture of a tobacco bud on it.</entitydescription.ekutility_label_tobaccobud>
+  <entityname.ekutility_label_saltbulb>Salt Bulb Label</entityname.ekutility_label_saltbulb>
+  <entitydescription.ekutility_label_saltbulb>A label card with a picture of a salt bulb on it.</entitydescription.ekutility_label_saltbulb>
+  <entityname.ekutility_label_raptorbane>Raptorbane Label</entityname.ekutility_label_raptorbane>
+  <entitydescription.ekutility_label_raptorbane>A label card with a picture of raptorbane on it.</entitydescription.ekutility_label_raptorbane>
+  <entityname.ekutility_label_stabilozine>Stabilozine Label</entityname.ekutility_label_stabilozine>
+  <entitydescription.ekutility_label_stabilozine>A label card with a picture of stabilozine on it.</entitydescription.ekutility_label_stabilozine>
+  <entityname.ekutility_label_morphine>Morphine Label</entityname.ekutility_label_morphine>
+  <entitydescription.ekutility_label_morphine>A label card with a picture of morphine on it.</entitydescription.ekutility_label_morphine>
+  <entityname.ekutility_label_fentanyl>Fentanyl Label</entityname.ekutility_label_fentanyl>
+  <entitydescription.ekutility_label_fentanyl>A label card with a picture of fentanyl on it.</entitydescription.ekutility_label_fentanyl>
+  <entityname.ekutility_label_deusizine>Deusizine Label</entityname.ekutility_label_deusizine>
+  <entitydescription.ekutility_label_deusizine>A label card with a picture of deusizine on it.</entitydescription.ekutility_label_deusizine>
+  <entityname.ekutility_label_naloxone>Naloxone Label</entityname.ekutility_label_naloxone>
+  <entitydescription.ekutility_label_naloxone>A label card with a picture of naloxone on it.</entitydescription.ekutility_label_naloxone>
+  <entityname.ekutility_label_haloperidol>Haloperidol Label</entityname.ekutility_label_haloperidol>
+  <entitydescription.ekutility_label_haloperidol>A label card with a picture of haloperidol on it.</entitydescription.ekutility_label_haloperidol>
+  <entityname.ekutility_label_methamphetamine>Methamphetamine Label</entityname.ekutility_label_methamphetamine>
+  <entitydescription.ekutility_label_methamphetamine>A label card with a picture of methamphetamine on it.</entitydescription.ekutility_label_methamphetamine>
+  <entityname.ekutility_label_steroids>Anabolic Steroids Label</entityname.ekutility_label_steroids>
+  <entitydescription.ekutility_label_steroids>A label card with a picture of anabolic steroids on it.</entitydescription.ekutility_label_steroids>
+  <entityname.ekutility_label_hyperzine>Hyperzine Label</entityname.ekutility_label_hyperzine>
+  <entitydescription.ekutility_label_hyperzine>A label card with a picture of hyperzine on it.</entitydescription.ekutility_label_hyperzine>
+  <entityname.ekutility_label_liquidoxygenite>Liquid Oxygenite Label</entityname.ekutility_label_liquidoxygenite>
+  <entitydescription.ekutility_label_liquidoxygenite>A label card with a picture of liquid oxygenite on it.</entitydescription.ekutility_label_liquidoxygenite>
+  <entityname.ekutility_label_antibiotics>Broad-spectrum Antibiotics Label</entityname.ekutility_label_antibiotics>
+  <entitydescription.ekutility_label_antibiotics>A label card with a picture of broad-spectrum antibiotics on it.</entitydescription.ekutility_label_antibiotics>
+  <entityname.ekutility_label_chloralhydrate>Chloral Hydrate Label</entityname.ekutility_label_chloralhydrate>
+  <entitydescription.ekutility_label_chloralhydrate>A label card with a picture of chloral hydrate on it.</entitydescription.ekutility_label_chloralhydrate>
+  <entityname.ekutility_label_calyxanide>Calyxanide Label</entityname.ekutility_label_calyxanide>
+  <entitydescription.ekutility_label_calyxanide>A label card with a picture of calyxanide on it.</entitydescription.ekutility_label_calyxanide>
+  <entityname.ekutility_label_raptorbaneextract>Raptorbane Extract Label</entityname.ekutility_label_raptorbaneextract>
+  <entitydescription.ekutility_label_raptorbaneextract>A label card with a picture of raptorbane extract on it.</entitydescription.ekutility_label_raptorbaneextract>
+  <entityname.ekutility_label_pomegrenadeextract>Pomegrenade Extract Label</entityname.ekutility_label_pomegrenadeextract>
+  <entitydescription.ekutility_label_pomegrenadeextract>A label card with a picture of pomegrenade extract on it.</entitydescription.ekutility_label_pomegrenadeextract>
+  <entityname.ekutility_label_cyanide>Cyanide Label</entityname.ekutility_label_cyanide>
+  <entitydescription.ekutility_label_cyanide>A label card with a picture of cyanide on it.</entitydescription.ekutility_label_cyanide>
+  <entityname.ekutility_label_cyanideantidote>Cyanide Antidote Label</entityname.ekutility_label_cyanideantidote>
+  <entitydescription.ekutility_label_cyanideantidote>A label card with a picture of cyanide antidote on it.</entitydescription.ekutility_label_cyanideantidote>
+  <entityname.ekutility_label_sufforin>Sufforin Label</entityname.ekutility_label_sufforin>
+  <entitydescription.ekutility_label_sufforin>A label card with a picture of sufforin on it.</entitydescription.ekutility_label_sufforin>
+  <entityname.ekutility_label_sufforinantidote>Sufforin Antidote Label</entityname.ekutility_label_sufforinantidote>
+  <entitydescription.ekutility_label_sufforinantidote>A label card with a picture of sufforin antidote on it.</entitydescription.ekutility_label_sufforinantidote>
+  <entityname.ekutility_label_morbusine>Morbusine Label</entityname.ekutility_label_morbusine>
+  <entitydescription.ekutility_label_morbusine>A label card with a picture of morbusine on it.</entitydescription.ekutility_label_morbusine>
+  <entityname.ekutility_label_morbusineantidote>Morbusine Antidote Label</entityname.ekutility_label_morbusineantidote>
+  <entitydescription.ekutility_label_morbusineantidote>A label card with a picture of morbusine antidote on it.</entitydescription.ekutility_label_morbusineantidote>
+  <entityname.ekutility_label_radiotoxin>Radiotoxin Label</entityname.ekutility_label_radiotoxin>
+  <entitydescription.ekutility_label_radiotoxin>A label card with a picture of radiotoxinon it.</entitydescription.ekutility_label_radiotoxin>
+  <entityname.ekutility_label_antirad>Antirad Label</entityname.ekutility_label_antirad>
+  <entitydescription.ekutility_label_antirad>A label card with a picture of antirad on it.</entitydescription.ekutility_label_antirad>
+  <entityname.ekutility_label_deliriumine>Deliriumine Label</entityname.ekutility_label_deliriumine>
+  <entitydescription.ekutility_label_deliriumine>A label card with a picture of deliriumine on it.</entitydescription.ekutility_label_deliriumine>
+  <entityname.ekutility_label_deliriumineantidote>Deliriumine Antidote Label</entityname.ekutility_label_deliriumineantidote>
+  <entitydescription.ekutility_label_deliriumineantidote>A label card with a picture of deliriumine antidote on it.</entitydescription.ekutility_label_deliriumineantidote>
+  <entityname.ekutility_label_paralyzant>Paralyzant Label</entityname.ekutility_label_paralyzant>
+  <entitydescription.ekutility_label_paralyzant>A label card with a picture of paralyzant on it.</entitydescription.ekutility_label_paralyzant>
+  <entityname.ekutility_label_antiparalysis>Anaparalyzant Label</entityname.ekutility_label_antiparalysis>
+  <entitydescription.ekutility_label_antiparalysis>A label card with a picture of anaparalyzant on it.</entitydescription.ekutility_label_antiparalysis>
+  <entityname.ekutility_label_reactorfuel>Fuel Rod Label</entityname.ekutility_label_reactorfuel>
+  <entitydescription.ekutility_label_reactorfuel>A label card with a picture of a welding fuel tank on it.</entitydescription.ekutility_label_reactorfuel>
+  <entityname.ekutility_label_wrench>Wrench Label</entityname.ekutility_label_wrench>
+  <entitydescription.ekutility_label_wrench>A label card with a picture of a wrench on it.</entitydescription.ekutility_label_wrench>
+  <entityname.ekutility_label_screwdriver>Screwdriver Label</entityname.ekutility_label_screwdriver>
+  <entitydescription.ekutility_label_screwdriver>A label card with a picture of a screwdriver on it.</entitydescription.ekutility_label_screwdriver>
+  <entityname.ekutility_label_crowbar>Crowbar Label</entityname.ekutility_label_crowbar>
+  <entitydescription.ekutility_label_crowbar>A label card with a picture of a crowbar on it.</entitydescription.ekutility_label_crowbar>
+  <entityname.ekutility_label_weldingtool>Welding Tool Label</entityname.ekutility_label_weldingtool>
+  <entitydescription.ekutility_label_weldingtool>A label card with a picture of a welding tool on it.</entitydescription.ekutility_label_weldingtool>
+  <entityname.ekutility_label_plasmacutter>Plasma Cutter Label</entityname.ekutility_label_plasmacutter>
+  <entitydescription.ekutility_label_plasmacutter>A label card with a picture of a plasma cutter on it.</entitydescription.ekutility_label_plasmacutter>
+  <entityname.ekutility_label_flamer>Flamer Label</entityname.ekutility_label_flamer>
+  <entitydescription.ekutility_label_flamer>A label card with a picture of a flamer on it.</entitydescription.ekutility_label_flamer>
+  <entityname.ekutility_label_fireextinguisher>Fire Extinguisher Label</entityname.ekutility_label_fireextinguisher>
+  <entitydescription.ekutility_label_fireextinguisher>A label card with a picture of a fire extinguisher on it.</entitydescription.ekutility_label_fireextinguisher>
+  <entityname.ekutility_label_flare>Flare Label</entityname.ekutility_label_flare>
+  <entitydescription.ekutility_label_flare>A label card with a picture of a flare on it.</entitydescription.ekutility_label_flare>
+  <entityname.ekutility_label_flashlight>Flashlight Label</entityname.ekutility_label_flashlight>
+  <entitydescription.ekutility_label_flashlight>A label card with a picture of a flashlight on it.</entitydescription.ekutility_label_flashlight>
+  <entityname.ekutility_label_oxygentank>Oxygen Tank Label</entityname.ekutility_label_oxygentank>
+  <entitydescription.ekutility_label_oxygentank>A label card with a picture of an oxygen tank on it.</entitydescription.ekutility_label_oxygentank>
+  <entityname.ekutility_label_weldingfueltank>Welding Fuel Tank Label</entityname.ekutility_label_weldingfueltank>
+  <entitydescription.ekutility_label_weldingfueltank>A label card with a picture of a welding fuel tank on it.</entitydescription.ekutility_label_weldingfueltank>
+  <entityname.ekutility_label_batterycell>Battery Cell Label</entityname.ekutility_label_batterycell>
+  <entitydescription.ekutility_label_batterycell>A label card with a picture of a battery cell on it.</entitydescription.ekutility_label_batterycell>
+  <entityname.ekutility_label_fulguriumbatterycell>Fulgurium Battery Cell Label</entityname.ekutility_label_fulguriumbatterycell>
+  <entitydescription.ekutility_label_fulguriumbatterycell>A label card with a picture of a fulgurium battery cell on it.</entitydescription.ekutility_label_fulguriumbatterycell>
+  <entityname.ekutility_label_headset>Headset Label</entityname.ekutility_label_headset>
+  <entitydescription.ekutility_label_headset>A label card with a picture of a headset on it.</entitydescription.ekutility_label_headset>
+  <entityname.ekutility_label_divingmask>Diving Mask Label</entityname.ekutility_label_divingmask>
+  <entitydescription.ekutility_label_divingmask>A label card with a picture of a diving mask on it.</entitydescription.ekutility_label_divingmask>
+  <entityname.ekutility_label_underwaterscooter>Underwater Scooter Label</entityname.ekutility_label_underwaterscooter>
+  <entitydescription.ekutility_label_underwaterscooter>A label card with a picture of an underwater scooter on it.</entitydescription.ekutility_label_underwaterscooter>
+  <entityname.ekutility_label_handheldsonar>Handheld Sonar Label</entityname.ekutility_label_handheldsonar>
+  <entitydescription.ekutility_label_handheldsonar>A label card with a picture of a handheld sonar on it.</entitydescription.ekutility_label_handheldsonar>
+  <entityname.ekutility_label_sonarbeacon>Sonar Beacon Label</entityname.ekutility_label_sonarbeacon>
+  <entitydescription.ekutility_label_sonarbeacon>A label card with a picture of a sonar beacon sonar on it.</entitydescription.ekutility_label_sonarbeacon>
+  <entityname.ekutility_label_miningdrill>Electric Drill Label</entityname.ekutility_label_miningdrill>
+  <entitydescription.ekutility_label_miningdrill>A label card with a picture of an electric drill on it.</entitydescription.ekutility_label_miningdrill>
+  <entityname.ekutility_label_metalfoam_tank>Metallic Foam Canister Label</entityname.ekutility_label_metalfoam_tank>
+  <entitydescription.ekutility_label_metalfoam_tank>A label card with a picture of a metallic foam canister on it.</entitydescription.ekutility_label_metalfoam_tank>
+  <entityname.ekutility_label_metalfoam_gun>Metallic Foam Sprayer Label</entityname.ekutility_label_metalfoam_gun>
+  <entitydescription.ekutility_label_metalfoam_gun>A label card with a picture of a metallic foam sprayer on it.</entitydescription.ekutility_label_metalfoam_gun>
+  <entityname.ekutility_label_pulsecutter>Ion Pulse Cutter Label</entityname.ekutility_label_pulsecutter>
+  <entitydescription.ekutility_label_pulsecutter>A label card with a picture of an ion pulse cutter on it.</entitydescription.ekutility_label_pulsecutter>
+  <entityname.ekutility_label_laserdrill>Laser Bore Label</entityname.ekutility_label_laserdrill>
+  <entitydescription.ekutility_label_laserdrill>A label card with a picture of a laser bore on it.</entitydescription.ekutility_label_laserdrill>
+  <entityname.ekutility_label_arcwelder>Arc Welder Label</entityname.ekutility_label_arcwelder>
+  <entitydescription.ekutility_label_arcwelder>A label card with a picture of an arc welder on it.</entitydescription.ekutility_label_arcwelder>
+  <entityname.ekutility_labelprinter>Label Printer</entityname.ekutility_labelprinter>
+  <entitydescription.ekutility_labelprinter>A quartermaster's best friend. This handheld device can scan and print sorting labels for most common cargo items.</entitydescription.ekutility_labelprinter>
+  <!-- ekutility_divinggear.xml -->
+  <entityname.ekutility_reinforcedtank_oxygen>Reinforced Oxygen Tank</entityname.ekutility_reinforcedtank_oxygen>
+  <entitydescription.ekutility_reinforcedtank_oxygen>High-pressure composite tank, resistant to puncture and heat.</entitydescription.ekutility_reinforcedtank_oxygen>
+  <entityname.ekutility_reinforcedtank_oxygenite>Reinforced Oxygenite Tank</entityname.ekutility_reinforcedtank_oxygenite>
+  <entitydescription.ekutility_reinforcedtank_oxygenite>High-pressure composite tank, resistant to puncture and heat.</entitydescription.ekutility_reinforcedtank_oxygenite>
+  <entityname.ekutility_rebreatherunit>Rebreather Unit</entityname.ekutility_rebreatherunit>
+  <entitydescription.ekutility_rebreatherunit>Experimental self-contained rebreather unit, its connections are designed to be compatible with most standard coalition diving equipment. Requires batteries and internal oxygen storage to function.</entitydescription.ekutility_rebreatherunit>
+  <entityname.ekutility_jetscooter>Jetscooter</entityname.ekutility_jetscooter>
+  <entitydescription.ekutility_jetscooter>Advanced underwater propulsion device. Features improved battery lifetime and a built-in sonar navigation system.</entitydescription.ekutility_jetscooter>
+  <entityname.ekutility_advancedsonarbeacon>Advanced Sonar Beacon</entityname.ekutility_advancedsonarbeacon>
+  <entitydescription.ekutility_advancedsonarbeacon>A handheld positional beacon transmitter, an invaluable tool for extravehicular operations.</entitydescription.ekutility_advancedsonarbeacon>
+  <entityname.ekutility_Utility_hardsuit>Utility Mk-I Hardsuit</entityname.ekutility_Utility_hardsuit>
+  <entitydescription.ekutility_Utility_hardsuit>A rugged pressure suit designed for shipyard construction, mining, and salvage operations. The suit provides moderate insulation from electrical and thermal hazards, while manipulator gloves allow the wearer to operate tools and equiptment as normal. [ Rated 6000m ]</entitydescription.ekutility_Utility_hardsuit>
+  <entityname.ekutility_utility_hardsuit_paintmechanic>Utility Mk-I Hardsuit (Mechanic)</entityname.ekutility_utility_hardsuit_paintmechanic>
+  <entitydescription.ekutility_utility_hardsuit_paintmechanic>A rugged pressure suit designed for shipyard construction, mining, and salvage operations. The suit provides moderate insulation from electrical and thermal hazards, while manipulator gloves allow the wearer to operate tools and equiptment as normal. [ Rated 6000m ]</entitydescription.ekutility_utility_hardsuit_paintmechanic>
+  <entityname.ekutility_oxygencell1>Oxygen Cell Mk-I</entityname.ekutility_oxygencell1>
+  <entitydescription.ekutility_oxygencell1>Hardsuit non-rechargable oxygen supply which utilizes chemical reagents to produce a large density of oxygen. Produces a minimum of 40 minutes of air.</entitydescription.ekutility_oxygencell1>
+  <entityname.ekutility_oxygencell2>Oxygen Cell Mk-II</entityname.ekutility_oxygencell2>
+  <entitydescription.ekutility_oxygencell2>Hardsuit non-rechargable oxygen supply which utilizes chemical reagents to produce a large density of oxygen. Produces a minimum of 55 minutes of air.</entitydescription.ekutility_oxygencell2>
+  <!-- ekutility_densifiedmaterials.xml -->
+  <entityname.ekutility_densifiedmaterial_iron>Crate of Iron</entityname.ekutility_densifiedmaterial_iron>
+  <entitydescription.ekutility_densifiedmaterial_iron>A bulk storage/transportation container of raw iron. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_iron>
+  <entityname.ekutility_densifiedmaterial_aluminium>Crate of Aluminium</entityname.ekutility_densifiedmaterial_aluminium>
+  <entitydescription.ekutility_densifiedmaterial_aluminium>A bulk storage/transportation container of raw aluminium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_aluminium>
+  <entityname.ekutility_densifiedmaterial_copper>Crate of Copper</entityname.ekutility_densifiedmaterial_copper>
+  <entitydescription.ekutility_densifiedmaterial_copper>A bulk storage/transportation container of raw copper. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_copper>
+  <entityname.ekutility_densifiedmaterial_titanium>Crate of Titanium</entityname.ekutility_densifiedmaterial_titanium>
+  <entitydescription.ekutility_densifiedmaterial_titanium>A bulk storage/transportation container of raw titanium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_titanium>
+  <entityname.ekutility_densifiedmaterial_carbon>Crate of Carbon</entityname.ekutility_densifiedmaterial_carbon>
+  <entitydescription.ekutility_densifiedmaterial_carbon>A bulk storage/transportation container of raw carbon. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_carbon>
+  <entityname.ekutility_densifiedmaterial_lead>Crate of Lead</entityname.ekutility_densifiedmaterial_lead>
+  <entitydescription.ekutility_densifiedmaterial_lead>A bulk storage/transportation container of raw lead. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_lead>
+  <entityname.ekutility_densifiedmaterial_tin>Crate of Tin</entityname.ekutility_densifiedmaterial_tin>
+  <entitydescription.ekutility_densifiedmaterial_tin>A bulk storage/transportation container of raw tin. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_tin>
+  <entityname.ekutility_densifiedmaterial_zinc>Crate of Zinc</entityname.ekutility_densifiedmaterial_zinc>
+  <entitydescription.ekutility_densifiedmaterial_zinc>A bulk storage/transportation container of raw zinc. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_zinc>
+  <entityname.ekutility_densifiedmaterial_silicon>Crate of Silicon</entityname.ekutility_densifiedmaterial_silicon>
+  <entitydescription.ekutility_densifiedmaterial_silicon>A bulk storage/transportation container of raw silicon. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_silicon>
+  <entityname.ekutility_densifiedmaterial_steel>Crate of Steel Bars</entityname.ekutility_densifiedmaterial_steel>
+  <entitydescription.ekutility_densifiedmaterial_steel>A bulk storage/transportation container of steel bars. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_steel>
+  <entityname.ekutility_densifiedmaterial_titaniumaluminiumalloy>Crate of Titanium Alloy Bars</entityname.ekutility_densifiedmaterial_titaniumaluminiumalloy>
+  <entitydescription.ekutility_densifiedmaterial_titaniumaluminiumalloy>A bulk storage/transportation container of titanium-aluminium alloy bars. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_titaniumaluminiumalloy>
+  <entityname.ekutility_densifiedmaterial_plastic>Crate of Plastic</entityname.ekutility_densifiedmaterial_plastic>
+  <entitydescription.ekutility_densifiedmaterial_plastic>A bulk storage/transportation container of raw plastic. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_plastic>
+  <entityname.ekutility_densifiedmaterial_rubber>Crate of Rubber</entityname.ekutility_densifiedmaterial_rubber>
+  <entitydescription.ekutility_densifiedmaterial_rubber>A bulk storage/transportation container of raw rubber. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_rubber>
+  <entityname.ekutility_densifiedmaterial_fpgacircuit>Crate of FPGA Circuits</entityname.ekutility_densifiedmaterial_fpgacircuit>
+  <entitydescription.ekutility_densifiedmaterial_fpgacircuit>A bulk storage/transportation container of FPGA circuits. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_fpgacircuit>
+  <entityname.ekutility_densifiedmaterial_organicfiber>Crate of Organic Fiber</entityname.ekutility_densifiedmaterial_organicfiber>
+  <entitydescription.ekutility_densifiedmaterial_organicfiber>A bulk storage/transportation container of organic fiber. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_organicfiber>
+  <entityname.ekutility_densifiedmaterial_ballisticfiber>Crate of Ballistic Fiber</entityname.ekutility_densifiedmaterial_ballisticfiber>
+  <entitydescription.ekutility_densifiedmaterial_ballisticfiber>A bulk storage/transportation container of ballistic fiber. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_ballisticfiber>
+  <entityname.ekutility_densifiedmaterial_uranium>Crate of Uranium</entityname.ekutility_densifiedmaterial_uranium>
+  <entitydescription.ekutility_densifiedmaterial_uranium>A bulk storage/transportation container of raw uranium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_uranium>
+  <entityname.ekutility_densifiedmaterial_thorium>Crate of Thorium</entityname.ekutility_densifiedmaterial_thorium>
+  <entitydescription.ekutility_densifiedmaterial_thorium>A bulk storage/transportation container of raw thorium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_thorium>
+  <entityname.ekutility_densifiedmaterial_depleteduranium>Crate of Depleted Uranium</entityname.ekutility_densifiedmaterial_depleteduranium>
+  <entitydescription.ekutility_densifiedmaterial_depleteduranium>A bulk storage/transportation container of depleted uranium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_depleteduranium>
+  <entityname.ekutility_densifiedmaterial_flashpowder>Crate of Flash Powder</entityname.ekutility_densifiedmaterial_flashpowder>
+  <entitydescription.ekutility_densifiedmaterial_flashpowder>A bulk storage/transportation container of flash powder. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_flashpowder>
+  <entityname.ekutility_densifiedmaterial_lithium>Crate of Lithium</entityname.ekutility_densifiedmaterial_lithium>
+  <entitydescription.ekutility_densifiedmaterial_lithium>A bulk storage/transportation container of lithium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_lithium>
+  <entityname.ekutility_densifiedmaterial_sodium>Crate of Sodium</entityname.ekutility_densifiedmaterial_sodium>
+  <entitydescription.ekutility_densifiedmaterial_sodium>A bulk storage/transportation container of sodium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_sodium>
+  <entityname.ekutility_densifiedmaterial_magnesium>Crate of Magnesium</entityname.ekutility_densifiedmaterial_magnesium>
+  <entitydescription.ekutility_densifiedmaterial_magnesium>A bulk storage/transportation container of magnesium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_magnesium>
+  <entityname.ekutility_densifiedmaterial_potassium>Crate of Potassium</entityname.ekutility_densifiedmaterial_potassium>
+  <entitydescription.ekutility_densifiedmaterial_potassium>A bulk storage/transportation container of potassium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_potassium>
+  <entityname.ekutility_densifiedmaterial_chlorine>Crate of Chlorine</entityname.ekutility_densifiedmaterial_chlorine>
+  <entitydescription.ekutility_densifiedmaterial_chlorine>A bulk storage/transportation container of chlorine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_chlorine>
+  <entityname.ekutility_densifiedmaterial_calcium>Crate of Calcium</entityname.ekutility_densifiedmaterial_calcium>
+  <entitydescription.ekutility_densifiedmaterial_calcium>A bulk storage/transportation container of calcium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_calcium>
+  <entityname.ekutility_densifiedmaterial_phosphorus>Crate of Phosphorus</entityname.ekutility_densifiedmaterial_phosphorus>
+  <entitydescription.ekutility_densifiedmaterial_phosphorus>A bulk storage/transportation container of phosphorus. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_phosphorus>
+  <entityname.ekutility_densifiedmaterial_ethanol>Crate of Ethanol</entityname.ekutility_densifiedmaterial_ethanol>
+  <entitydescription.ekutility_densifiedmaterial_ethanol>A bulk storage/transportation container of ethanol. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_ethanol>
+  <entityname.ekutility_densifiedmaterial_sulphuricacid>Crate of Sulphuric Acid</entityname.ekutility_densifiedmaterial_sulphuricacid>
+  <entitydescription.ekutility_densifiedmaterial_sulphuricacid>A bulk storage/transportation container of sulphuric acid. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_sulphuricacid>
+  <entityname.ekutility_densifiedmaterial_uex>Crate of UEX</entityname.ekutility_densifiedmaterial_uex>
+  <entitydescription.ekutility_densifiedmaterial_uex>A bulk storage/transportation container of UEX. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_uex>
+  <entityname.ekutility_densifiedmaterial_c4block>Crate of C-4</entityname.ekutility_densifiedmaterial_c4block>
+  <entitydescription.ekutility_densifiedmaterial_c4block>A bulk storage/transportation container of C-4. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_c4block>
+  <entityname.ekutility_densifiedmaterial_compoundn>Crate of Compound-N</entityname.ekutility_densifiedmaterial_compoundn>
+  <entitydescription.ekutility_densifiedmaterial_compoundn>A bulk storage/transportation container of compound-N. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_compoundn>
+  <entityname.ekutility_densifiedmaterial_ic4block>Crate of IC-4</entityname.ekutility_densifiedmaterial_ic4block>
+  <entitydescription.ekutility_densifiedmaterial_ic4block>A bulk storage/transportation container of IC-4. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_ic4block>
+  <entityname.ekutility_densifiedmaterial_physicorium>Crate of Physicorium</entityname.ekutility_densifiedmaterial_physicorium>
+  <entitydescription.ekutility_densifiedmaterial_physicorium>A bulk storage/transportation container of physicorium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_physicorium>
+  <entityname.ekutility_densifiedmaterial_fulgurium>Crate of Fulgurium</entityname.ekutility_densifiedmaterial_fulgurium>
+  <entitydescription.ekutility_densifiedmaterial_fulgurium>A bulk storage/transportation container of fulgurium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_fulgurium>
+  <entityname.ekutility_densifiedmaterial_sulphuriteshard>Crate of Sulphurite</entityname.ekutility_densifiedmaterial_sulphuriteshard>
+  <entitydescription.ekutility_densifiedmaterial_sulphuriteshard>A bulk storage/transportation container of sulphurite. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_sulphuriteshard>
+  <entityname.ekutility_densifiedmaterial_oxygeniteshard>Crate of Oxygenite</entityname.ekutility_densifiedmaterial_oxygeniteshard>
+  <entitydescription.ekutility_densifiedmaterial_oxygeniteshard>A bulk storage/transportation container of oxygenite. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_oxygeniteshard>
+  <entityname.ekutility_densifiedmaterial_incendium>Crate of Incendium</entityname.ekutility_densifiedmaterial_incendium>
+  <entitydescription.ekutility_densifiedmaterial_incendium>A bulk storage/transportation container of incendium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_incendium>
+  <entityname.ekutility_densifiedmaterial_dementonite>Crate of Dementonite</entityname.ekutility_densifiedmaterial_dementonite>
+  <entitydescription.ekutility_densifiedmaterial_dementonite>A bulk storage/transportation container of dementonite. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_dementonite>
+  <entityname.ekutility_densifiedmaterial_antibleeding1>Crate of Bandages</entityname.ekutility_densifiedmaterial_antibleeding1>
+  <entitydescription.ekutility_densifiedmaterial_antibleeding1>A bulk storage/transportation container of medical bandages. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antibleeding1>
+  <entityname.ekutility_densifiedmaterial_antibleeding2>Crate of Plastiseal</entityname.ekutility_densifiedmaterial_antibleeding2>
+  <entitydescription.ekutility_densifiedmaterial_antibleeding2>A bulk storage/transportation container of plastiseal. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antibleeding2>
+  <entityname.ekutility_densifiedmaterial_antibleeding3>Crate of Antibiotic Glue</entityname.ekutility_densifiedmaterial_antibleeding3>
+  <entitydescription.ekutility_densifiedmaterial_antibleeding3>A bulk storage/transportation container of antibiotic glue. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antibleeding3>
+  <entityname.ekutility_densifiedmaterial_tonicliquid>Crate of Tonic Liquid</entityname.ekutility_densifiedmaterial_tonicliquid>
+  <entitydescription.ekutility_densifiedmaterial_tonicliquid>A bulk storage/transportation container of tonic liquid. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_tonicliquid>
+  <entityname.ekutility_densifiedmaterial_antibloodloss1>Crate of Saline</entityname.ekutility_densifiedmaterial_antibloodloss1>
+  <entitydescription.ekutility_densifiedmaterial_antibloodloss1>A bulk storage/transportation container of medical saline. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antibloodloss1>
+  <entityname.ekutility_densifiedmaterial_antibloodloss2>Crate of Blood Packs</entityname.ekutility_densifiedmaterial_antibloodloss2>
+  <entitydescription.ekutility_densifiedmaterial_antibloodloss2>A medical transport container of blood packs. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antibloodloss2>
+  <entityname.ekutility_densifiedmaterial_adrenaline>Crate of Adrenaline</entityname.ekutility_densifiedmaterial_adrenaline>
+  <entitydescription.ekutility_densifiedmaterial_adrenaline>A bulk storage/transportation container of medical adrenaline. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_adrenaline>
+  <entityname.ekutility_densifiedmaterial_opium>Crate of Opium</entityname.ekutility_densifiedmaterial_opium>
+  <entitydescription.ekutility_densifiedmaterial_opium>A bulk storage/transportation container of opium. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_opium>
+  <entityname.ekutility_densifiedmaterial_elastin>Crate of Elastin</entityname.ekutility_densifiedmaterial_elastin>
+  <entitydescription.ekutility_densifiedmaterial_elastin>A bulk storage/transportation container of elastin. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_elastin>
+  <entityname.ekutility_densifiedmaterial_alienblood>Crate of Alien Blood</entityname.ekutility_densifiedmaterial_alienblood>
+  <entitydescription.ekutility_densifiedmaterial_alienblood>A medical transport container of alien blood samples. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_alienblood>
+  <entityname.ekutility_densifiedmaterial_adrenalinegland>Crate of Adrenaline Glands</entityname.ekutility_densifiedmaterial_adrenalinegland>
+  <entitydescription.ekutility_densifiedmaterial_adrenalinegland>A medical transport container of adrenaline gland samples. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_adrenalinegland>
+  <entityname.ekutility_densifiedmaterial_swimbladder>Crate of Swim Bladder</entityname.ekutility_densifiedmaterial_swimbladder>
+  <entitydescription.ekutility_densifiedmaterial_swimbladder>A medical transport container of swim bladder samples. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_swimbladder>
+  <entityname.ekutility_densifiedmaterial_paralyxis>Crate of Paralyxis</entityname.ekutility_densifiedmaterial_paralyxis>
+  <entitydescription.ekutility_densifiedmaterial_paralyxis>A medical transport container of paralyxis samples. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_paralyxis>
+  <entityname.ekutility_densifiedmaterial_huskeggs>Crate of Velonaceps Calyx</entityname.ekutility_densifiedmaterial_huskeggs>
+  <entitydescription.ekutility_densifiedmaterial_huskeggs>A medical transport container of velonaceps calyx egg samples. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_huskeggs>
+  <entityname.ekutility_densifiedmaterial_stabilozine>Crate of Stabilozine</entityname.ekutility_densifiedmaterial_stabilozine>
+  <entitydescription.ekutility_densifiedmaterial_stabilozine>A bulk storage/transportation container of stabilozine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_stabilozine>
+  <entityname.ekutility_densifiedmaterial_morphine>Crate of Morphine</entityname.ekutility_densifiedmaterial_morphine>
+  <entitydescription.ekutility_densifiedmaterial_morphine>A bulk storage/transportation container of morphine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_morphine>
+  <entityname.ekutility_densifiedmaterial_fentanyl>Crate of Fentanyl</entityname.ekutility_densifiedmaterial_fentanyl>
+  <entitydescription.ekutility_densifiedmaterial_fentanyl>A bulk storage/transportation container of fentanyl. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_fentanyl>
+  <entityname.ekutility_densifiedmaterial_deusizine>Crate of Deusizine</entityname.ekutility_densifiedmaterial_deusizine>
+  <entitydescription.ekutility_densifiedmaterial_deusizine>A bulk storage/transportation container of deusizine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_deusizine>
+  <entityname.ekutility_densifiedmaterial_naloxone>Crate of Naloxone</entityname.ekutility_densifiedmaterial_naloxone>
+  <entitydescription.ekutility_densifiedmaterial_naloxone>A bulk storage/transportation container of naloxone. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_naloxone>
+  <entityname.ekutility_densifiedmaterial_haloperidol>Crate of Haloperidol</entityname.ekutility_densifiedmaterial_haloperidol>
+  <entitydescription.ekutility_densifiedmaterial_haloperidol>A bulk storage/transportation container of haloperidol. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_haloperidol>
+  <entityname.ekutility_densifiedmaterial_meth>Crate of Methamphetamine</entityname.ekutility_densifiedmaterial_meth>
+  <entitydescription.ekutility_densifiedmaterial_meth>A bulk storage/transportation container of methamphetamine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_meth>
+  <entityname.ekutility_densifiedmaterial_steroids>Crate of Anabolic Steroids</entityname.ekutility_densifiedmaterial_steroids>
+  <entitydescription.ekutility_densifiedmaterial_steroids>A bulk storage/transportation container of anabolic steroids. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_steroids>
+  <entityname.ekutility_densifiedmaterial_hyperzine>Crate of Hyperzine</entityname.ekutility_densifiedmaterial_hyperzine>
+  <entitydescription.ekutility_densifiedmaterial_hyperzine>A bulk storage/transportation container of hyperzine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_hyperzine>
+  <entityname.ekutility_densifiedmaterial_liquidoxygenite>Crate of Liquid Oxygenite</entityname.ekutility_densifiedmaterial_liquidoxygenite>
+  <entitydescription.ekutility_densifiedmaterial_liquidoxygenite>A bulk storage/transportation container of liquid oxygenite. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_liquidoxygenite>
+  <entityname.ekutility_densifiedmaterial_antibiotics>Crate of Broad-spectrum Antibiotics</entityname.ekutility_densifiedmaterial_antibiotics>
+  <entitydescription.ekutility_densifiedmaterial_antibiotics>A bulk storage/transportation container of broad-spectrum antibiotics. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antibiotics>
+  <entityname.ekutility_densifiedmaterial_chloralhydrate>Crate of Chloral Hydrate</entityname.ekutility_densifiedmaterial_chloralhydrate>
+  <entitydescription.ekutility_densifiedmaterial_chloralhydrate>A bulk storage/transportation container of chloral hydrate. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_chloralhydrate>
+  <entityname.ekutility_densifiedmaterial_calyxanide>Crate of Calyxanide</entityname.ekutility_densifiedmaterial_calyxanide>
+  <entitydescription.ekutility_densifiedmaterial_calyxanide>A bulk storage/transportation container of Calyxanide. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_calyxanide>
+  <entityname.ekutility_densifiedmaterial_raptorbaneextract>Crate of Raptor Bane Extract</entityname.ekutility_densifiedmaterial_raptorbaneextract>
+  <entitydescription.ekutility_densifiedmaterial_raptorbaneextract>A bulk storage/transportation container of raptor bane extract. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_raptorbaneextract>
+  <entityname.ekutility_densifiedmaterial_pomegrenadeextract>Crate of Pomegrenade Extract</entityname.ekutility_densifiedmaterial_pomegrenadeextract>
+  <entitydescription.ekutility_densifiedmaterial_pomegrenadeextract>A bulk storage/transportation container of pomegrenade extract. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_pomegrenadeextract>
+  <entityname.ekutility_densifiedmaterial_cyanide>Crate of Cyanide</entityname.ekutility_densifiedmaterial_cyanide>
+  <entitydescription.ekutility_densifiedmaterial_cyanide>A bulk storage/transportation container of cyanide. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_cyanide>
+  <entityname.ekutility_densifiedmaterial_cyanideantidote>Crate of Cyanide Antidote</entityname.ekutility_densifiedmaterial_cyanideantidote>
+  <entitydescription.ekutility_densifiedmaterial_cyanideantidote>A bulk storage/transportation container of cyanide antidote. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_cyanideantidote>
+  <entityname.ekutility_densifiedmaterial_sufforin>Crate of Sufforin</entityname.ekutility_densifiedmaterial_sufforin>
+  <entitydescription.ekutility_densifiedmaterial_sufforin>A bulk storage/transportation container of sufforin. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_sufforin>
+  <entityname.ekutility_densifiedmaterial_sufforinantidote>Crate of Sufforin Antidote</entityname.ekutility_densifiedmaterial_sufforinantidote>
+  <entitydescription.ekutility_densifiedmaterial_sufforinantidote>A bulk storage/transportation container of sufforin antidote. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_sufforinantidote>
+  <entityname.ekutility_densifiedmaterial_morbusine>Crate of Morbusine</entityname.ekutility_densifiedmaterial_morbusine>
+  <entitydescription.ekutility_densifiedmaterial_morbusine>A bulk storage/transportation container of morbusine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_morbusine>
+  <entityname.ekutility_densifiedmaterial_morbusineantidote>Crate of Morbusine Antidote</entityname.ekutility_densifiedmaterial_morbusineantidote>
+  <entitydescription.ekutility_densifiedmaterial_morbusineantidote>A bulk storage/transportation container of morbusine antidote. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_morbusineantidote>
+  <entityname.ekutility_densifiedmaterial_radiotoxin>Crate of Radiotoxin</entityname.ekutility_densifiedmaterial_radiotoxin>
+  <entitydescription.ekutility_densifiedmaterial_radiotoxin>A bulk storage/transportation container of radiotoxin. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_radiotoxin>
+  <entityname.ekutility_densifiedmaterial_antirad>Crate of Antirad</entityname.ekutility_densifiedmaterial_antirad>
+  <entitydescription.ekutility_densifiedmaterial_antirad>A bulk storage/transportation container of antirad. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antirad>
+  <entityname.ekutility_densifiedmaterial_deliriumine>Crate of Deliriumine</entityname.ekutility_densifiedmaterial_deliriumine>
+  <entitydescription.ekutility_densifiedmaterial_deliriumine>A bulk storage/transportation container of deliriumine. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_deliriumine>
+  <entityname.ekutility_densifiedmaterial_deliriumineantidote>Crate of Deliriumine Antidote</entityname.ekutility_densifiedmaterial_deliriumineantidote>
+  <entitydescription.ekutility_densifiedmaterial_deliriumineantidote>A bulk storage/transportation container of deliriumine antidote. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_deliriumineantidote>
+  <entityname.ekutility_densifiedmaterial_paralyzant>Crate of Paralyzant</entityname.ekutility_densifiedmaterial_paralyzant>
+  <entitydescription.ekutility_densifiedmaterial_paralyzant>A bulk storage/transportation container of paralyzant. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_paralyzant>
+  <entityname.ekutility_densifiedmaterial_antiparalysis>Crate of Anaparalyzant</entityname.ekutility_densifiedmaterial_antiparalysis>
+  <entitydescription.ekutility_densifiedmaterial_antiparalysis>A bulk storage/transportation container of anaparalyzant. Partial crates can be combined by dragging and dropping. Deconstruct to regain  materials.</entitydescription.ekutility_densifiedmaterial_antiparalysis>
+  <!-- ekutility_placeablemachines.xml -->
+  <entityname.ekutility_divingsuitlocker>Diving Suit Locker</entityname.ekutility_divingsuitlocker>
+  <entitydescription.ekutility_divingsuitlocker>Storage for one diving suit, refills oxygen if powered. ( Place by pressing aim + use )</entitydescription.ekutility_divingsuitlocker>
+  <entityname.ekutility_oxygentankshelf>Oxygen Tank Shelf</entityname.ekutility_oxygentankshelf>
+  <entitydescription.ekutility_oxygentankshelf>Storage for three oxygen tanks, refills oxygen if powered. ( Place by pressing aim + use )</entitydescription.ekutility_oxygentankshelf>
+  <entityname.ekutility_placeabletextdisplay>Text Display</entityname.ekutility_placeabletextdisplay>
+  <entitydescription.ekutility_placeabletextdisplay></entitydescription.ekutility_placeabletextdisplay>
+  <entityname.ekutility_placeabletextdisplaylong>Text Display (Long)</entityname.ekutility_placeabletextdisplaylong>
+  <entitydescription.ekutility_placeabletextdisplaylong></entitydescription.ekutility_placeabletextdisplaylong>
+  <entityname.ekutility_portablespinkler>Water Sprinkler</entityname.ekutility_portablespinkler>
+  <entitydescription.ekutility_portablespinkler>A general-purpose sprinkler system for agricultural use or light fire suppression. Requires electricity. ( Place by pressing aim + use )</entitydescription.ekutility_portablespinkler>
+  <entityname.ekutility_securebuttoncaptain>Secure Button (Captain)</entityname.ekutility_securebuttoncaptain>
+  <entitydescription.ekutility_securebuttoncaptain> A button keyed to Captain ID's.</entitydescription.ekutility_securebuttoncaptain>
+  <entityname.ekutility_securebuttonsecurityofficer>Secure Button (Security Officer)</entityname.ekutility_securebuttonsecurityofficer>
+  <entitydescription.ekutility_securebuttonsecurityofficer> A button keyed to Security ID's.</entitydescription.ekutility_securebuttonsecurityofficer>
+  <entityname.ekutility_securebuttonmedicaldoctor>Secure Button (Medical Doctor)</entityname.ekutility_securebuttonmedicaldoctor>
+  <entitydescription.ekutility_securebuttonmedicaldoctor> A button keyed to Doctor ID's. </entitydescription.ekutility_securebuttonmedicaldoctor>
+  <entityname.ekutility_securebuttonmechanic>Secure Button (Mechanic)</entityname.ekutility_securebuttonmechanic>
+  <entitydescription.ekutility_securebuttonmechanic> A button keyed to Mechanic ID's.</entitydescription.ekutility_securebuttonmechanic>
+  <entityname.ekutility_securebuttonengineer>Secure Button (Engineer)</entityname.ekutility_securebuttonengineer>
+  <entitydescription.ekutility_securebuttonengineer>A button keyed to Engineer ID's.</entitydescription.ekutility_securebuttonengineer>
+  <entityname.ekutility_placeablejunction>Junction Bus</entityname.ekutility_placeablejunction>
+  <entitydescription.ekutility_placeablejunction>A simple wall mounted electrical junction. ( Place by pressing aim + use )</entitydescription.ekutility_placeablejunction>
+  <entityname.ekutility_heavypowerswitch>Heavy Power Switch</entityname.ekutility_heavypowerswitch>
+  <entitydescription.ekutility_heavypowerswitch>An industrial-strength power disconnect, capable of handling a single-pin throughput of up to 5000kw. ( Place by pressing aim + use )</entitydescription.ekutility_heavypowerswitch>
+  <entityname.ekutility_placeablebattery>Battery Assembly</entityname.ekutility_placeablebattery>
+  <entitydescription.ekutility_placeablebattery>Wall mounted heavy battery power stack. 2000kw capacity, 1500kw discharge rate. ( Place by pressing aim + use )</entitydescription.ekutility_placeablebattery>
+  <entityname.ekutility_placeableterminal>Terminal</entityname.ekutility_placeableterminal>
+  <entitydescription.ekutility_placeableterminal>Outputs a user-submitted string.</entitydescription.ekutility_placeableterminal>
+  <entityname.ekutility_placeablesmallpump>Small Pump</entityname.ekutility_placeablesmallpump>
+  <entitydescription.ekutility_placeablesmallpump>Usable device for moving water.</entitydescription.ekutility_placeablesmallpump>
+  <entityname.ekutility_placeablefabricator>Fabricator</entityname.ekutility_placeablefabricator>
+  <entitydescription.ekutility_placeablefabricator>A machine capable of manufacturing a wide range of items out of basic raw materials. ( Place by pressing aim + use )</entitydescription.ekutility_placeablefabricator>
+  <entityname.ekutility_placeablefabricator_adaptive>Fabricator (Adaptive)</entityname.ekutility_placeablefabricator_adaptive>
+  <entitydescription.ekutility_placeablefabricator_adaptive>An improved fabricator unit with adaptive control computer and improved manufacturing tolerances. Lower calibration skill requirements. ( Place by pressing aim + use )</entitydescription.ekutility_placeablefabricator_adaptive>
+  <entityname.ekutility_placeablemedicalfabricator>Medical Fabricator</entityname.ekutility_placeablemedicalfabricator>
+  <entitydescription.ekutility_placeablemedicalfabricator>A machine that can be used to manufacture various medicines. ( Place by pressing aim + use )</entitydescription.ekutility_placeablemedicalfabricator>
+  <entityname.ekutility_placeabledeconstructor>Deconstructor</entityname.ekutility_placeabledeconstructor>
+  <entitydescription.ekutility_placeabledeconstructor>Disassembles and breaks down items to reusable components and material bars. ( Place by pressing aim + use )</entitydescription.ekutility_placeabledeconstructor>
+  <entityname.ekutility_placeablesonarmonitor>Sonar Monitor</entityname.ekutility_placeablesonarmonitor>
+  <entitydescription.ekutility_placeablesonarmonitor>Usable device for observing the sub's sonar. ( Place by pressing aim + use )</entitydescription.ekutility_placeablesonarmonitor>
+  <entityname.ekutility_placeablestatusmonitor>Status Monitor</entityname.ekutility_placeablestatusmonitor>
+  <entitydescription.ekutility_placeablestatusmonitor>Usable device for viewing a schematic of the sub as well as the status of each room. ( Place by pressing aim + use )</entitydescription.ekutility_placeablestatusmonitor>
+  <entityname.ekutility_chargingdock1>Charging Dock</entityname.ekutility_chargingdock1>
+  <entitydescription.ekutility_chargingdock1>A wall-mounted battery cell charging dock. ( Place by pressing aim + use )</entitydescription.ekutility_chargingdock1>
+  <!-- ekutility_tools.xml -->
+  <entityname.ek_hv_battery>Nucleoelectric Battery</entityname.ek_hv_battery>
+  <entitydescription.ek_hv_battery>A rechargable fission-based battery solution for industrial equipment. Only the Honkmother knows how it works.</entitydescription.ek_hv_battery>
+  <entityname.ekutility_reinforcedtank_weldingfuel>Reinforced Welding Fuel Tank</entityname.ekutility_reinforcedtank_weldingfuel>
+  <entitydescription.ekutility_reinforcedtank_weldingfuel>High-pressure composite tank, resistant to puncture and heat.</entitydescription.ekutility_reinforcedtank_weldingfuel>
+  <entityname.ekutility_heavytank_incendium>Reinforced Incendium Fuel Tank</entityname.ekutility_heavytank_incendium>
+  <entitydescription.ekutility_heavytank_incendium>High-pressure composite tank, resistant to puncture and heat.</entitydescription.ekutility_heavytank_incendium>
+  <entityname.ekutility_miningdrill>Electric Drill</entityname.ekutility_miningdrill>
+  <entitydescription.ekutility_miningdrill>Industral strength handheld drill. Used for mining and salvage operations.</entitydescription.ekutility_miningdrill>
+  <entityname.ekutility_metalfoam_tank>Metallic Foam Canister</entityname.ekutility_metalfoam_tank>
+  <entitydescription.ekutility_metalfoam_tank>Contains an advanced metal-catalyst dissolution used to rapidly repair hull damage, for use in the Metallic Foam Sprayer. Danger: Highly toxic, Do not open.</entitydescription.ekutility_metalfoam_tank>
+  <entityname.ekutility_metalfoam_gun>Metallic Foam Sprayer</entityname.ekutility_metalfoam_gun>
+  <entitydescription.ekutility_metalfoam_gun>Advanced hull sealing technology. Utilizes a special chemical-metalloid formula extruded through a heated nozzle to rapidly repair fractured or punctured hull sections.</entitydescription.ekutility_metalfoam_gun>
+  <entityname.ekutility_ioncutter>Ion Pulse Cutter</entityname.ekutility_ioncutter>
+  <entitydescription.ekutility_ioncutter>Heavy cutting tool which utilizes rapid pulses of accelerated charged particles. Effective against a range of materials but suffers from poor power efficiency. Danger: Obstructing the ion beam while active may cause disability or serious injury such as - third degree burns, limb loss, vaporization, and death.</entitydescription.ekutility_ioncutter>
+  <entityname.ekutility_redchemlight>Chemlight (Red)</entityname.ekutility_redchemlight>
+  <entitydescription.ekutility_redchemlight> A red chemlight for use in diving operations. (Press the Use Key (default E) while aiming to activate)</entitydescription.ekutility_redchemlight>
+  <entityname.ekutility_greenchemlight>Chemlight (Green)</entityname.ekutility_greenchemlight>
+  <entitydescription.ekutility_greenchemlight> A green chemlight for use in diving operations. (Press the Use Key (default E) while aiming to activate)</entitydescription.ekutility_greenchemlight>
+  <entityname.ekutility_bluechemlight>Chemlight (Blue)</entityname.ekutility_bluechemlight>
+  <entitydescription.ekutility_bluechemlight>A blue chemlight for use in diving operations. (Press the Use Key (default E) while aiming to activate)</entitydescription.ekutility_bluechemlight>
+  <entityname.ekutility_yellowchemlight>Chemlight (Yellow)</entityname.ekutility_yellowchemlight>
+  <entitydescription.ekutility_yellowchemlight>A yellow chemlight for use in diving operations. (Press the Use Key (default E) while aiming to activate)</entitydescription.ekutility_yellowchemlight>
+  <entityname.ekutility_medicalscanner>Medical Scanner</entityname.ekutility_medicalscanner>
+  <entitydescription.ekutility_medicalscanner>A handheld scanner that displays the health status of individuals.</entitydescription.ekutility_medicalscanner>
+  <entityname.ekutility_guicompass>Gyro-compass</entityname.ekutility_guicompass>
+  <entitydescription.ekutility_guicompass>Self-illuminating handheld compass.</entitydescription.ekutility_guicompass>
+  <entityname.ekutility_grapplegun>Grappling Hook</entityname.ekutility_grapplegun>
+  <entitydescription.ekutility_grapplegun>If you have this, something has gone horribly wrong.</entitydescription.ekutility_grapplegun>
+  <entityname.ekutility_grapplegunprojectile>ekutility_grapplegunprojectile</entityname.ekutility_grapplegunprojectile>
+  <entitydescription.ekutility_grapplegunprojectile>If you have this, something has gone horribly wrong.</entitydescription.ekutility_grapplegunprojectile>
+  <entityname.ekutility_grapplegunprojectile_rappel>ekutility_grapplegunprojectile_rappel</entityname.ekutility_grapplegunprojectile_rappel>
+  <entitydescription.ekutility_grapplegunprojectile_rappel>If you have this, something has gone horribly wrong.</entitydescription.ekutility_grapplegunprojectile_rappel>
+  <entityname.ekutility_jetpack1>Rocketbelt</entityname.ekutility_jetpack1>
+  <entitydescription.ekutility_jetpack1>A novel device once used by explorers of the surface and even worlds beyond. Runs using the same fuel composition as a standard welding tank.</entitydescription.ekutility_jetpack1>
+  <entityname.ekutility_advancedheadset>Engineering Headset</entityname.ekutility_advancedheadset>
+  <entitydescription.ekutility_advancedheadset>A high-powered headset with a sleeve above each earpiece for holding screwdrivers or wrenches. (750m range)</entitydescription.ekutility_advancedheadset>
+  <entityname.ekutility_longrangeradio>Long Range Radio</entityname.ekutility_longrangeradio>
+  <entitydescription.ekutility_longrangeradio>A waterproof high-power radio transmitter pack designed for use by coalition expedition crew. (1500m range)</entitydescription.ekutility_longrangeradio>
+  <entityname.ekutility_sledgehammer>Sledgehammer</entityname.ekutility_sledgehammer>
+  <entitydescription.ekutility_sledgehammer>Low-tech unwanted structure removal solution.</entitydescription.ekutility_sledgehammer>
+  <entityname.ekutility_electroflare>Electro-flare</entityname.ekutility_electroflare>
+  <entitydescription.ekutility_electroflare>A small self-contained lighting unit. Can be recharged at a charging dock.</entitydescription.ekutility_electroflare>
+  <entityname.ekutility_pda>Status PDA</entityname.ekutility_pda>
+  <entitydescription.ekutility_pda>Handheld computer which displays local structural and atmospheric information from the onboard diagnostics network.</entitydescription.ekutility_pda>
+  <entityname.ekutility_pdacargo>Logistics PDA</entityname.ekutility_pdacargo>
+  <entitydescription.ekutility_pdacargo>Handheld computer which displays ship logistics and cargo information from the onboard diagnostics network.</entitydescription.ekutility_pdacargo>
+  <entityname.ekutility_hullrepairkit>Hull Patching Kit</entityname.ekutility_hullrepairkit>
+  <entitydescription.ekutility_hullrepairkit>A low-tech solution for temporary hull repairs. Consumes steel bars to repair structural damage.</entitydescription.ekutility_hullrepairkit>
+  <entityname.ekutility_laserdrill>Laser Bore</entityname.ekutility_laserdrill>
+  <entitydescription.ekutility_laserdrill>Phase-multiplied portable laser unit designed for cutting away ice and rock. Overheats easily due to its compact design.</entitydescription.ekutility_laserdrill>
+  <entityname.ekutility_miningbackpack>Mining Backpack</entityname.ekutility_miningbackpack>
+  <entitydescription.ekutility_miningbackpack>A sturdy backpack with external frame, often used by mining outpost crews.</entitydescription.ekutility_miningbackpack>
+  <entityname.ekutility_medicalbackpack>Medical Backpack</entityname.ekutility_medicalbackpack>
+  <entitydescription.ekutility_medicalbackpack>A simple medical bag designed to be worn as a backpack.</entitydescription.ekutility_medicalbackpack>
+  <entityname.ekutility_arcwelder>Arc Welder</entityname.ekutility_arcwelder>
+  <entitydescription.ekutility_arcwelder>Electrically powered welding tool which utilizes a heavy electrode to create arcs of plasma.</entitydescription.ekutility_arcwelder>
+  <entityname.ekutility_portablepump>Portable Bilge Pump</entityname.ekutility_portablepump>
+  <entitydescription.ekutility_portablepump>debug item</entitydescription.ekutility_portablepump>
+  <entityname.ekutility_incendiumfuelrod>Incendium Fuel Rod</entityname.ekutility_incendiumfuelrod>
+  <entitydescription.ekutility_incendiumfuelrod>A bar of enriched incendium, for use within a reactor. Generates significantly more heat and lasts longer than uranium fuel rods.</entitydescription.ekutility_incendiumfuelrod>
+  <entityname.ekutility_supplypouch>Utility Pouch</entityname.ekutility_supplypouch>
+  <entitydescription.ekutility_supplypouch>A pouch for holding various small items such as tools or medicines.</entitydescription.ekutility_supplypouch>
+</infotexts>

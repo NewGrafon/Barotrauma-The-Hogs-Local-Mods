@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" identifier="smg" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <Price sold="false" baseprice="390" minleveldifficulty="30">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="55" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/GunIcons.png" sourcerect="64,64,64,64" />
+      <Sprite texture="%ModDir%/Guns_enchanced/SMG/SMG.png" sourcerect="0,0,144,67" depth="0.55" origin="0.5,0.5" />
+      <!-- Broken sprites used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/SMG/SMG.png" sourcerect="0,134,144,67" depth="0.55" origin="0.5,0.5" maxcondition="75" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/SMG/SMG.png" sourcerect="0,67,144,67" depth="0.55" origin="0.5,0.5" maxcondition="50" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/SMG/SMG.png" sourcerect="0,0,144,67" depth="0.55" origin="0.5,0.5" maxcondition="0" />
+      <Body width="140" height="60" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="40,-2" handle1="-30,-25" handle2="26,-5" holdangle="-35" msg="ItemMsgPickUpSelect">
+        <!-- Checks the tag and the condition. Dry fire possible if there are no status tags and the port is closed. -->
+        <StatusEffect target="This" type="OnUse" condition="1" delay="0.03" checkconditionalalways="true" setvalue="true" forceplaysounds="true" conditionalComparison="and">
+          <Conditional hasstatustag="neq nodryfire" />
+          <Conditional hasstatustag="neq delaydryfire" />
+          <Conditional condition="eq 100" />
+          <Sound file="%ModDir%/Guns_enchanced/SMG/SMGEjectPortOpen.ogg" type="OnUse" range="1000" />
+          <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+        </StatusEffect>
+      </Holdable>
+      <RangedWeapon reload="0.19" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="true" barrelpos="68,3" spread="10" unskilledspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="255,0,256,256" />
+        <CrosshairPointer texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="0,0,256,256" />
+        <!-- Particles. -->
+        <!-- Visible only on air. -->
+        <ParticleEmitter particle="smallmuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="4,2" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="10,8" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="smallgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" />
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="80" />
+        <!-- Gunfire sounds. -->
+        <Sound file="Content/Items/Weapons/SMGsingleShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot4.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot5.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/SMGsingleShot6.ogg" type="OnUse" range="3000" />
+        <!-- Unskilled high recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 50" />
+          <Explosion range="75.0" force="1.3" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+        </StatusEffect>
+        <!-- Skilled low recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 50" />
+          <Explosion range="150.0" force="0.8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+        </StatusEffect>
+        <!-- Gives the tag to delay dry fire. -->
+        <StatusEffect type="OnUse" target="This" tags="delaydryfire" duration="0.5" setvalue="true" />
+        <!-- Sets condition to 1, which triggers 'animation' via brokensprite, changing the sprite. -->
+        <StatusEffect type="OnUse" target="This" condition="1" setvalue="true">
+          <ParticleEmitter particle="smgammocasing" particleamount="1" anglemin="120" anglemax="150" velocitymin="200" velocitymax="250" CopyEntityAngle="true" />
+        </StatusEffect>
+        <!-- Closes the eject port. -->
+        <StatusEffect type="OnUse" target="This" delay="0.17" condition="100" setvalue="true" />
+        <!--"Use" contained magazine to spawn projectiles.-->
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="smgammo">
+          <Use />
+        </StatusEffect>
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="smgreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="smgreloading" delay="2" condition="100" setvalue="true" />
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+	  Why? Simply turning the light on and off is too slow. -->
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="smgreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdpos="40,-10" aimpos="40,-2" handle1="-30,-25" handle2="26,-5" holdangle="-35" aimangle="0" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" target="This" hideitems="false" setvalue="true" />
+        <!-- Gun requires ammo to use. -->
+        <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <!-- Gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="smgreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="50" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" excludebroken="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" spawnwithid="smgreloading" containedspritedepth="0.56">
+        <Containable items="smgammo" hide="false" itempos="4,-10" rotation="-30" excludebroken="false">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="2.3" setvalue="true" />
+          <!-- Gives the tag to prevent dry fire. -->
+          <StatusEffect type="OnSecondaryUse" target="This" tags="nodryfire" duration="0.5" interval="0.4" stackable="false" setvalue="true">
+            <Conditional TargetContainedItem="true" condition="neq 0" />
+          </StatusEffect>
+          <!-- Makes the magazine invisible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="true" delay="0.01" setvalue="true" />
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with OnRemoved status effects.
+		Pull gun up and put the hand on the magazine. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="20" holdpos="25,-15" handle2="0,-30" aimangle="45" aimpos="25,0" delay="0.01" condition="0" setvalue="true" />
+          <!-- Sets condition back to 1 if it was 1. -->
+          <StatusEffect type="OnInserted" target="This" condition="1" delay="0.1" setvalue="true">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sets hand's position. -->
+          <StatusEffect type="OnInserted" target="This" handle2="26,-5" delay="0.2" setvalue="true" />
+          <!-- Sets the gun's position. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="40" aimangle="20" delay="0.5" setvalue="true" />
+          <!-- Magazine insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.7" handle2="0,-40" setvalue="true">
+            <Sound file="%ModDir%/Guns_enchanced/MachinePistol/MachinePistolMagInsert.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Makes the magazine visible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="false" delay="0.9" setvalue="true">
+            <ParticleEmitter particle="gunbubbles" particleamount="10" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-30" distancemax="30" />
+          </StatusEffect>
+          <!-- Statuseffects below trigger only if the eject port is open. -->
+          <!-- Puts the hand on the charging handle. -->
+          <StatusEffect type="OnInserted" target="This" handle2="26,15" delay="1.1" setvalue="true">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Charges the charging handle. -->
+          <StatusEffect type="OnInserted" target="This" handle2="0,10" delay="1.4" forceplaysounds="true">
+            <Conditional condition="eq 1" />
+            <Sound file="%ModDir%/Guns_enchanced/SMG/SMGEjectPortOpen.ogg" range="1000" volume="1.2" />
+          </StatusEffect>
+          <!-- Mid-movement animation. -->
+          <StatusEffect type="OnInserted" target="This" condition="75" delay="1.5" setvalue="true">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sets hand back to default. -->
+          <StatusEffect type="OnInserted" target="This" handle2="26,-5" condition="100" delay="1.8" setvalue="true" forceplaysounds="true">
+            <Conditional condition="eq 1" />
+            <Sound file="%ModDir%/Guns_enchanced/SMG/SMGEjectPortClose.ogg" range="1000" volume="1.2" />
+          </StatusEffect>
+          <!-- End. Sets everything to default values. -->
+          <StatusEffect type="OnInserted" target="This" handle1="-30,-25" holdangle="-35" holdpos="40,-10" aimangle="0" aimpos="40,-2" delay="1.9" setvalue="true">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Statuseffects below trigger only if the eject port is closed. -->
+          <!-- Sets hand back to default. -->
+          <StatusEffect type="OnInserted" target="This" handle2="26,-5" condition="100" delay="1.4" setvalue="true" forceplaysounds="true">
+            <Conditional condition="neq 1" />
+          </StatusEffect>
+          <!-- End. Sets everything to default values. -->
+          <StatusEffect type="OnInserted" target="This" handle1="-30,-25" holdangle="-35" holdpos="40,-10" aimangle="0" aimpos="40,-2" delay="1.6" setvalue="true">
+            <Conditional condition="neq 1" />
+          </StatusEffect>
+          <!-- If the magazine is removed/swapped, plays the sound. -->
+          <StatusEffect type="OnRemoved" target="This" setvalue="true" forceplaysounds="true" delay="0.01">
+            <Sound file="%ModDir%/Guns_enchanced/MachinePistol/MachinePistolMagDetach.ogg" range="1000" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="22,-1" setactive="true" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="smgreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="smgreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="weapons" level="50" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="smgreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,smgreloading">
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

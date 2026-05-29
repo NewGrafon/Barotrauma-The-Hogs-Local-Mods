@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="shotgununique" HideConditionBar="true" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,provocativetohumanai,mountableweapon" Scale="0.5" hideinmenus="true" impactsoundtag="impact_metal_light" allowasextracargo="true">
+      <Price baseprice="931" sold="false" canbespecial="false" />
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/GunIcons.png" sourcerect="0,128,64,64" />
+      <Sprite texture="%ModDir%/Guns_enchanced/Boomstick/Boomstick.png" sourcerect="0,0,184,66" depth="0.55" origin="0.42,0.16" />
+      <!-- Broken sprite used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Boomstick/Boomstick.png" sourcerect="0,66,184,66" depth="0.55" origin="0.42,0.16" maxcondition="1" />
+      <!-- Default sprite at 0 condition to 'break' the weapon mid reloading without making it look awful. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Boomstick/Boomstick.png" sourcerect="0,0,184,66" depth="0.55" origin="0.42,0.16" maxcondition="0" />
+      <Body width="180" height="45" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-5" aimpos="40,3" handle1="-30,-35" handle2="45,-10" holdangle="-40" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon barrelpos="105,-8" spread="1" unskilledspread="4" combatPriority="80" reload="0.1" drawhudwhenequipped="true" crosshairscale="0.2">
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="256,512,256,256" />
+        <CrosshairPointer texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="0,512,256,256" />
+        <!-- Particles. -->
+        <!-- Visible only on air. -->
+        <ParticleEmitter particle="largemuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="6,4" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="16,12" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="largegunsmoke" particleamount="1" />
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2.5,2.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="6" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="90" />
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+      Why? Simply turning the light on and off is too slow. -->
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,255" setvalue="true">
+          <Conditional InWater="False" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" delay="0.115">
+          <Conditional InWater="False" />
+        </StatusEffect>
+        <!-- Gunfire sounds. -->
+        <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/ShotgunShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/ShotgunShot4.ogg" type="OnUse" range="3000" />
+        <!-- Unskilled high recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 50" />
+          <Explosion range="75.0" force="4" shockwave="false" smoke="false" flames="false" flash="false" underwaterbubble="false" applyfireeffects="false" camerashake="20.0" />
+        </StatusEffect>
+        <!-- Skilled low recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 50" />
+          <Explosion range="150.0" force="2.5" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" applyfireeffects="false" camerashake="8.0" />
+        </StatusEffect>
+        <!-- I use conditions to indicate how much shells were fired, with 100 in the end being no shells fired, 66 being one shell fired, and 33 being both fired. -->
+        <StatusEffect type="OnUse" target="This" condition="66" delay="0.1" setvalue="true">
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="33" delay="0.1" setvalue="true">
+          <Conditional condition="eq 66" />
+        </StatusEffect>
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="boomreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="boomreloading" delay="2.9" condition="100" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" reload="2.0" setvalue="true" delay="0.05" />
+        <StatusEffect type="OnUse" target="This" reload="0.1" setvalue="true" delay="2.0" />
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="boomreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdpos="40,-5" aimpos="40,3" aimangle="0" handle1="-30,-35" handle2="45,-10" holdangle="-40" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <!-- Gun requires ammo to use. -->
+        <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <!-- Gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="boomreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="50" />
+      </RangedWeapon>
+      <ItemContainer capacity="2" maxstacksize="1" hideitems="false" ShowTotalStackCapacityInContainedStateIndicator="true" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+        <Containable items="shotgunammo" hide="true">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="2.4" setvalue="true" />
+          <!-- Reloading animation, setting the conditions to trigger brokensprites, changing aimposes and aimangles and such.
+        Sets condition to 0 also to trigger OnBroken status effect. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="0" holdpos="25,-10" aimpos="25,-10" aimangle="-5" condition="0" handle2="80,-10" setvalue="true" forceplaysounds="true" delay="0.01" />
+          <!-- Hand movement to break open the boomstick. Plays opening sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.4" handle2="70,-40" setvalue="true" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/Boomstick/BoomstickOpen.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <!-- Breaks open the boomstick. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.5" condition="1" setvalue="true" />
+          <!-- Rotates the shotgun to drop the shells. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" holdangle="40" aimangle="40" setvalue="true" />
+          <!-- Based off condition, different number of shells is dropped. -->
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 100" />
+            <Sound file="%ModDir%/Guns_enchanced/Boomstick/BoomstickUnload.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 66" />
+            <ParticleEmitter particle="shotgunshellcasing" particleamount="1" anglemin="170" anglemax="190" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="1" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+            <Sound file="%ModDir%/Guns_enchanced/Boomstick/BoomstickUnload.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 33" />
+            <ParticleEmitter particle="shotgunshellcasing" particleamount="2" anglemin="170" anglemax="190" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+            <Sound file="%ModDir%/Guns_enchanced/Boomstick/BoomstickUnload.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <!-- Rotates the shotgun back. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.6" holdangle="0" aimangle="-5" setvalue="true" />
+          <!-- Hand movement to insert the shells. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.9" handle2="1,-10" setvalue="true" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/Boomstick/BoomstickLoad.ogg" type="OnUse" range="1000" volume="1.5" />
+          </StatusEffect>
+          <!-- Hand movement to close the boomstick. Plays the sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.4" handle2="80,-10" setvalue="true" forceplaysounds="true">
+            <Sound file="%ModDir%/Guns_enchanced/Boomstick/BoomstickClose.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <!-- Closes the boomstick. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.5" condition="100" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This" holdangle="-40" holdpos="40,-5" aimangle="0" aimpos="40,3" delay="2.7" setvalue="true" />
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="5,-15" setactive="true" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="boomreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="boomreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="50" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="boomreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,boomreloading">
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

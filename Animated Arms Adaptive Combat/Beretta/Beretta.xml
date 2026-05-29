@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Беретта 92" HideConditionBar="true" description="Это классический пистолет, надёжный и широко распространённый в Европе, особенно среди частных военных компаний и членов Коалиции. Он использует патроны ‖color:gui.green‖9x19mm‖end‖. Его можно удерживать одной рукой, ‖color:gui.blue‖но под водой он малоэффективен‖end‖." identifier="Beretta-92" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.265" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.9" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.45" />
+      <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.375" />
+      <Price baseprice="170" minleveldifficulty="10">
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="3" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" maxavailable="4" />
+        <Price storeidentifier="merchantcity" sold="true" multiplier="1.25" minavailable="1" maxavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="35">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="plastic" amount="1" />
+        <RequiredItem identifier="rubber" amount="1" />
+        <!-- Рукоятка -->
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="17" displayname="repairweapon">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="Beretta-92" amount="1" />
+        <RequiredItem identifier="aluminium" amount="2" />
+      </Fabricate>
+      <Deconstruct time="12">
+        <Item identifier="steel" amount="1" />
+        <Item identifier="rubber" amount="1" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Beretta/Beretta.png" name="Beretta icon inventory" sourcerect="9,224,98,118" origin="0.5021606,0.4957897" />
+      <Sprite texture="%ModDir%/Beretta/Beretta.png" name="Beretta" sourcerect="33,17,120,82" depth="0.55" origin="0.39753547,0.4993602" />
+      <!-- Broken sprite used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/Beretta/Beretta.png" name="Beretta broken" sourcerect="17,107,136,81" depth="0.55" origin="0.46971896,0.4789293" maxcondition="50" />
+      <Body width="100" height="44" density="25" />
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-32,-7" msg="ItemMsgPickUpSelect">
+        <!-- блокировка выстрела и добавление полу-автомата т.е закликивание-->
+        <StatusEffect type="OnUse" target="This" tags="firing" duration="0.05" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.05" setvalue="true" stackable="false" disabledeltatime="true" conditional="or">
+          <Conditional HasStatusTag="firing" />
+          <Conditional HasStatusTag="cantfire" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.0" setvalue="true" disabledeltatime="true" comparison="and">
+          <Conditional HasStatusTag="neq firing" />
+          <Conditional HasStatusTag="neq cantfire" />
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="cantfire" duration="0.1" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <!-- Checks the tag and the condition. Dry fire possible if there are no status tags and the port is closed. -->
+        <StatusEffect target="This" type="OnUse" condition="1" delay="0.03" interval="0.5" setvalue="true" forceplaysounds="true" conditionalcomparison="and">
+          <Conditional hasstatustag="neq nodryfire" />
+          <Conditional hasstatustag="neq delaydryfire" />
+          <Conditional condition="eq 100" />
+          <Sound file="%ModDir%/Beretta/BerettaEjectPortOpen.ogg" type="OnUse" range="1000" />
+          <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+        </StatusEffect>
+        <!-- Замедление. -->
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.8" ObstructVisionAmount="0.01" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" interval="1" duration="1.1" SpeedMultiplier="1.5" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="laser" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="-0.2" unskilledspread="-0.4" stackable="true" disabledeltatime="true" setvalue="false" comparison="and" interval="0.05">
+          <Conditional Spread="gt 2" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-10" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-5" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This" target="this" tags="suppressed" interval="1" duration="1.1" setvalue="true">
+          <RequiredItem items="suppressor" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="135,25" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="60,25" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="compensator" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="compensator" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="hider" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="hider" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" interval="3" showtexts="false" setvalue="true">
+          <Conditional showtexts="true" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" spritecolor="255,225,210,255">
+          <Conditional HasStatusTag="condition-75" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="0.5" spritecolor="231,204,184,255">
+          <Conditional HasStatusTag="condition-50" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="1" spritecolor="190,140,100,255">
+          <Conditional HasStatusTag="condition-25" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.1" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <TickBox text="On\Off">
+          <StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+        </TickBox>
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="140" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+      </CustomInterface>
+      <RangedWeapon reload="0.2" barrelpos="60,25" spread="2" unskilledspread="4" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.0" DualWieldReloadTimePenaltyMultiplier="1.5" DualWieldAccuracyPenalty="20">
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.15" stackable="false" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnSecondaryUse" target="this" showtexts="true" interval="2" duration="2.1" setvalue="true" comparison="and">
+          <Conditional hasstatustag="med-scan" />
+          <RequiredItems items="med-scan" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="+3" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 13" />
+          <Conditional HasStatusTag="neq compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="+2" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 13" />
+          <Conditional HasStatusTag="compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="1.1" unskilledspread="2.2" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 20" />
+          <Conditional HasStatusTag="hider" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="1.5" unskilledspread="3" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 20" />
+          <Conditional HasStatusTag="neq hider" />
+        </StatusEffect>
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="255,0,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,0,256,256" />
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="neq suppressed" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallmuzzleflash" particleamount="1" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" scalemultiplier="0.5,0.4" distance="15" Angle="12" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="3,1.5" colormultiplier="255,255,100,175" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="8,6" colormultiplier="215,215,215,100" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" CopyEntityAngle="true" distance="15" Angle="12" />
+          <Sound file="%ModDir%/Beretta/beretta.ogg" type="OnUse" range="2000" selectionmode="Random" />
+          <Sound file="%ModDir%/Beretta/beretta-1.ogg" type="OnUse" range="2000" />
+          <Sound file="%ModDir%/Beretta/beretta-2.ogg" type="OnUse" range="2000" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="suppressed" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" distance="35" Angle="12" scalemultiplier="0.5,0.4" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="1,1" distance="35" Angle="12" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" scalemultiplier="0.5,0.5" distance="35" Angle="12" CopyEntityAngle="true" />
+          <Sound file="%ModDir%/Beretta/beretta-sup.ogg" frequencymultiplier="1.2" type="OnUse" range="750" selectionmode="Random" />
+          <Sound file="%ModDir%/Beretta/beretta-1-sup.ogg" frequencymultiplier="1.2" type="OnUse" range="750" />
+          <Sound file="%ModDir%/Beretta/beretta-2-sup.ogg" frequencymultiplier="1.2" type="OnUse" range="750" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="250" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="tinnitus_shot" strength="12" />
+          </Explosion>
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="6" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="40" />
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="7.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          <Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="7.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="1" setvalue="true">
+          <ParticleEmitter particle="beretta" particleamount="1" anglemin="120" anglemax="150" velocitymin="200" velocitymax="250" CopyEntityAngle="true" />
+          <SpawnItem identifier="Berettarounds-casing" spawnposition="This" aimspread="30" rotationtype="Collider" rotation="90" count="1" Impulse="0.03" />
+          <LightComponent range="15" lightcolor="255,255,0,255" IsOn="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="delaydryfire" duration="0.5" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" condition="100" delay="0.20" setvalue="true" />
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="Berettaammo">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Berettareloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Berettareloading" delay="1.2" condition="100" setvalue="true" />
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,255" setvalue="true" />
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" delay="0.115" />
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="Berettareloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" aimpos="70,5" handle1="-32,-7" holdangle="0" holdpos="0,0" aimangle="0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" hideitems="false" setvalue="true" />
+        <RequiredItems items="Berettaammo" type="Contained" />
+        <RequiredItems items="Berettareloading" type="Contained" />
+        <RequiredItems items="repair" type="Contained" />
+        <RequiredSkill identifier="weapons" level="30" />
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-5.355">
+          <Conditional inwater="false" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-13.395">
+          <Conditional inwater="true" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="Contained" targetidentifiers="repair" stackable="false" condition="-7.5" interval="6" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" excludebroken="false" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" spawnwithid="repair" showcontainedstateindicator="false">
+        <SlotIcon slotindex="0" texture="%ModDir%/attachments-2.png" origin="0.5,0.5" />
+        <Containable items="Berettaammo" itempos="-7,-2" excludebroken="false">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="0.9" setvalue="true" />
+          <!-- Gives the tag to prevent dry fire. -->
+          <StatusEffect type="OnSecondaryUse" target="This" tags="nodryfire" duration="0.5" interval="0.4" stackable="false" setvalue="true">
+            <Conditional TargetContainedItem="true" condition="neq 0" />
+          </StatusEffect>
+          <!-- Status effects to trigger only if the eject port is open. -->
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with OnRemoved status effects.
+		Also changes gun position to face up. -->
+          <StatusEffect type="OnInserted" target="This" condition="0" holdpos="55,-20" aimpos="55,0" delay="0.01" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <SpawnItem identifiers="Beretta-handle" spawnposition="SameInventory" spawnifcantbecontained="false" SpawnIfInventoryFull="false" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="1" delay="0.02" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Changes gun's position. -->
+          <StatusEffect type="OnInserted" target="This" aimpos="40,10" delay="0.4" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Triggers magazine insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.3" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <Sound file="%ModDir%/Beretta/BerettaMagInsert.ogg" range="1000" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+          </StatusEffect>
+          <!-- Makes the magazine visible. -->
+          <!-- Changes gun position to face slighty down and handle1 to make the hand close the eject port. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="15" holdpos="45,-20" aimangle="15" handle1="-25,-6" aimpos="45,0" delay="0.6" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+            <Sound file="%ModDir%/Beretta/BerettaEjectPortClose.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Animation frame to close eject port with sounds. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.2" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sets values back to default. End of reloading animation. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="0" holdpos="0,0" aimangle="0" handle1="-32,-7" aimpos="70,5" delay="1.4" DualWieldAccuracyPenalty="10" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="0" holdangle="-10" holdpos="55,-20" aimangle="-10" aimpos="40,0" delay="0.01" setvalue="true" stackable="false">
+            <Conditional condition="eq 100" />
+            <SpawnItem identifiers="Beretta-handle-2" spawnposition="SameInventory" spawnifcantbecontained="false" SpawnIfInventoryFull="false" />
+          </StatusEffect>
+          <!-- Changes gun's position. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="45" holdpos="30,-20" aimangle="45" aimpos="35,10" delay="0.3" setvalue="true" stackable="false">
+            <Conditional condition="eq 100" />
+          </StatusEffect>
+          <!-- Triggers magazine insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.4" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 100" />
+            <Sound file="%ModDir%/Beretta/BerettaMagInsert.ogg" range="1000" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+          </StatusEffect>
+          <!-- Makes the magazine visible. -->
+          <!-- Sets values back to default. End of reloading animation. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="0" holdpos="0,0" aimangle="0" handle1="-32,-7" aimpos="70,5" delay="1" DualWieldAccuracyPenalty="10" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnRemoved" target="This">
+            <Sound file="%ModDir%/Saunds/MagDetach.ogg" frequencymultiplier="1" range="600" volume="0.5" loop="false" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight,flare,alienflare,glowstick" hide="false" itempos="13,3" setactive="true" />
+          <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        </SubContainer>
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" containedspritedepth="0.56" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="suppressor_pistol,compensator_pistol,hider_pistol" hide="false" itempos="27.5,7.5">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" tag="suppressed" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments-1.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="Berettareloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="Berettareloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="30" />
+      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="Berettareloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,Berettareloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name=" " identifier="Berettachamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettachamber">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" SpawnWithId="Berettarounds" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettarounds" />
+        <StatusEffect type="OnUse" target="This" AllowWhenBroken="true">
+          <SpawnItem identifiers="Berettarounds" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name=" " identifier="Beretta-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettareloading">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" delay="0.01" handle2="-20,-20" holdpos="50,-20" aimpos="50,-15" />
+        <StatusEffect type="Always" target="This" delay="0.3" handle2="-15,0" holdpos="50,-10" aimpos="50,0" />
+        <StatusEffect type="Always" target="This" delay="0.7" handle2="-30,0" holdpos="50,-10" aimangle="-25" aimpos="50,0" />
+        <StatusEffect type="Always" target="This" delay="1">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name=" " identifier="Beretta-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettareloading">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" delay="0.1" handle2="-30,-15" holdpos="50,5" aimpos="50,5" />
+        <StatusEffect type="Always" target="This" delay="0.75">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- Магазин для Beretta и glock. -->
+    <Item name="Магазин 9x19мм" identifier="Berettaammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="Beretta-92,Glock" minamount="1" maxamount="1" spawnprobability="1" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.5" />
+      <Price baseprice="70" minleveldifficulty="20" displaynonempty="true">
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="4" maxavailable="8" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="6" maxavailable="12" />
+        <Price storeidentifier="merchantcity" sold="true" multiplier="1.25" minavailable="3" maxavailable="6" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="25" amount="1">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem tag="munition_propulsion" amount="1" />
+        <RequiredItem tag="munition_jacket" amount="1" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" amount="1" />
+        <Item identifier="scrap" amount="1" chance="0.3" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="13" amount="1" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="Berettarounds" amount="20" />
+        <RequiredItem identifier="Berettaammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x19 magazine inventory" sourcerect="242,450,65,58" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="9x19 magazine" depth="0.56" sourcerect="221,52,24,40" origin="0.5,0.5" />
+      <Body width="28" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="Berettarounds" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettarounds" />
+        <StatusEffect type="OnUse" target="This" condition="-5" disabledeltatime="true">
+          <SpawnItem identifiers="Berettarounds" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettarounds" hide="true">
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <Conditional targetcontainer="true" condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <SpawnItem identifiers="Berettarounds" spawnposition="SameInventory" />
+            <Conditional targetcontainer="true" condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="5">
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+            <Conditional condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-5,10" />
+          <StatusEffect type="OnInserted" target="This" handle2="-5,20" delay="0.25" />
+        </Containable>
+        <Containable items="Berettaroundfmj" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="Berettafmjammo" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" handle2="-5,10" holdpos="35,-10" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Remove">
+          <StatusEffect type="OnUse" target="This" condition="-5" disabledeltatime="true">
+            <SpawnItem identifiers="Berettarounds" spawnposition="SameInventory" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" handle2="-5,10" />
+          <StatusEffect type="OnUse" target="This" handle2="-5,20" delay="0.25" />
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Магазин 9x19мм" identifier="Berettafmjammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="Beretta-92,Glock" minamount="1" maxamount="1" spawnprobability="1" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" />
+      <Price baseprice="50" minleveldifficulty="20" displaynonempty="true">
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="4" maxavailable="8" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="6" maxavailable="12" />
+        <Price storeidentifier="merchantcity" sold="true" multiplier="1.25" minavailable="3" maxavailable="6" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="20" amount="1">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <!-- Корпус магазина -->
+        <!-- Компоненты для 20 патронов -->
+        <RequiredItem tag="munition_propulsion" amount="1" />
+        <RequiredItem tag="munition_jacket" amount="1" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" amount="1" />
+        <Item identifier="scrap" amount="1" chance="0.3" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="13" amount="1" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="Berettaroundfmj" amount="20" />
+        <RequiredItem identifier="Berettafmjammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x19 fmj magazine inventory" sourcerect="238,527,65,58" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="9x19 fmj magazine" depth="0.56" sourcerect="188,567,24,40" origin="0.5,0.5" />
+      <Body width="28" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="Berettaroundfmj" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettaroundfmj" />
+        <StatusEffect type="OnUse" target="This" condition="-5" disabledeltatime="true">
+          <SpawnItem identifiers="Berettaroundfmj" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettaroundfmj" hide="true">
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <Conditional targetcontainer="true" condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <SpawnItem identifiers="Berettaroundfmj" spawnposition="SameInventory" />
+            <Conditional targetcontainer="true" condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="5">
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+            <Conditional condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-5,10" />
+          <StatusEffect type="OnInserted" target="This" handle2="-5,20" delay="0.25" />
+        </Containable>
+        <Containable items="Berettarounds" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="Berettaammo" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" handle2="-5,10" holdpos="35,-10" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Remove">
+          <StatusEffect type="OnUse" target="This" condition="-5" disabledeltatime="true">
+            <SpawnItem identifiers="Berettaroundfmj" spawnposition="SameInventory" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" handle2="-5,10" />
+          <StatusEffect type="OnUse" target="This" handle2="-5,20" delay="0.25" />
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Магазин 9x19мм" identifier="Berettabigammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="Beretta-92,Glock" minamount="1" maxamount="1" spawnprobability="0.25" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.2" />
+      <Price baseprice="110" minleveldifficulty="25" displaynonempty="true">
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="4" maxavailable="8" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="6" maxavailable="12" />
+        <Price storeidentifier="merchantcity" sold="true" multiplier="1.25" minavailable="3" maxavailable="6" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="40" amount="1">
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem tag="munition_propulsion" amount="2" />
+        <RequiredItem tag="munition_jacket" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" amount="1" />
+        <Item identifier="scrap" amount="1" chance="0.3" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="20" amount="1" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="Berettarounds" amount="40" />
+        <RequiredItem identifier="Berettabigammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x19 big magazine inventory" sourcerect="141,742,104,95" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="9x19 big magazine" depth="0.56" sourcerect="17,300,27,66" origin="0.5,0.5" />
+      <Body width="28" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="Berettarounds" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettarounds" />
+        <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
+          <SpawnItem identifiers="Berettarounds" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettarounds" hide="true">
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <Conditional targetcontainer="true" condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <SpawnItem identifiers="Berettarounds" spawnposition="SameInventory" />
+            <Conditional targetcontainer="true" condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="2.5">
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+            <Conditional condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-5,10" />
+          <StatusEffect type="OnInserted" target="This" handle2="-5,20" delay="0.25" />
+        </Containable>
+        <Containable items="Berettaroundfmj" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="Berettafmjammo" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" handle2="-5,10" holdpos="35,-10" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Remove">
+          <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
+            <SpawnItem identifiers="Berettarounds" spawnposition="SameInventory" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" handle2="-5,10" />
+          <StatusEffect type="OnUse" target="This" handle2="-5,20" delay="0.25" />
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Beretta патрон" identifier="Berettarounds" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+      <PreferredContainer primary="Ruger" minamount="7" maxamount="7" spawnprobability="1" />
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x19" sourcerect="1321,403,64,67" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="9x19" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="14" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <!-- Обычный крафт -->
+      <Fabricate suitablefabricators="repair" requiredtime="25" amount="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem tag="munition_propulsion" amount="1" />
+        <RequiredItem tag="munition_jacket" amount="1" />
+      </Fabricate>
+      <!-- Крафт с гильзами (время /2, навык -30%) -->
+      <Fabricate suitablefabricators="repair" requiredtime="18" amount="20">
+        <RequiredSkill identifier="weapons" level="17" />
+        <RequiredItem tag="munition_propulsion" amount="1" />
+        <RequiredItem identifier="Berettarounds-casing" amount="20" />
+      </Fabricate>
+      <Projectile characterusable="false" hitscan="true" removeonhit="true" launchimpulse="8">
+        <StatusEffect type="OnActive" target="This" lifetime="0.5">
+          <Conditional inwater="true" />
+          <ParticleEmitter particle="damagebubbles" copyentityangle="true" particlespersecond="20" initialdelay="0.05" colormultiplier="200,200,200,255" scalemin="0.15" scalemax="0.15" lifetime="0.5" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="this" hitscan="false" interval="1" stackable="false" oneshot="true" />
+        <StatusEffect type="NotInWater" target="this" hitscan="true" interval="1" stackable="false" oneshot="true" />
+        <StatusEffect type="OnActive" target="This" delay="0.4">
+          <Remove />
+        </StatusEffect>
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,255,100" scalemultiplier="1,0.5" />
+        <Attack targetforce="7.5" itemdamage="4" severlimbsprobability="0.2" penetration="0.1">
+          <StatusEffect type="OnUse" target="Limb" disabledeltatime="true">
+            <Conditional inwater="false" />
+            <Affliction identifier="gunshotwound" strength="17" penetration="0.1" />
+            <Affliction identifier="bleeding" strength="10" penetration="0.1" />
+            <Affliction identifier="stun" strength="0.03" />
+            <Affliction identifier="spasm_shot" strength="20" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" disabledeltatime="true">
+            <Conditional inwater="true" />
+            <Affliction identifier="blunttrauma" strength="10.5" />
+            <Affliction identifier="bleeding" strength="5" />
+            <Affliction identifier="stun" strength="0.07" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="5" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Beretta патрон" identifier="Berettaroundfmj" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+      <PreferredContainer primary="Ruger" minamount="7" maxamount="7" spawnprobability="1" />
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x19 fmj" sourcerect="1321,476,64,67" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="9x19 fmj" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="14" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <!-- Обычный крафт -->
+      <Fabricate suitablefabricators="repair" requiredtime="25" amount="15">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem tag="munition_propulsion" amount="1" />
+        <RequiredItem tag="munition_jacket" amount="1" />
+      </Fabricate>
+      <!-- Крафт с гильзами (время /2, навык -30%) -->
+      <Fabricate suitablefabricators="repair" requiredtime="18" amount="15">
+        <RequiredSkill identifier="weapons" level="17" />
+        <RequiredItem tag="munition_propulsion" amount="1" />
+        <RequiredItem identifier="Berettarounds-casing" amount="15" />
+      </Fabricate>
+      <Deconstruct time="0.1" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true" launchimpulse="8">
+        <StatusEffect type="OnActive" target="This" lifetime="0.5">
+          <Conditional inwater="true" />
+          <ParticleEmitter particle="damagebubbles" copyentityangle="true" particlespersecond="20" initialdelay="0.05" colormultiplier="200,200,200,255" scalemin="0.15" scalemax="0.15" lifetime="0.5" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="this" hitscan="false" interval="1" stackable="false" oneshot="true" />
+        <StatusEffect type="NotInWater" target="this" hitscan="true" interval="1" stackable="false" oneshot="true" />
+        <StatusEffect type="OnActive" target="This" delay="0.4">
+          <Remove />
+        </StatusEffect>
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,255,100" scalemultiplier="1,0.5" />
+        <Attack targetforce="7.5" itemdamage="4" severlimbsprobability="0.2" penetration="0.1">
+          <StatusEffect type="OnUse" target="Limb" disabledeltatime="true">
+            <Conditional inwater="false" />
+            <Affliction identifier="gunshotwound" strength="8" />
+            <Affliction identifier="bleeding" strength="20" />
+            <Affliction identifier="stun" strength="0.03" />
+            <Affliction identifier="spasm_shot" strength="30" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" disabledeltatime="true">
+            <Conditional inwater="true" />
+            <Affliction identifier="blunttrauma" strength="5" />
+            <Affliction identifier="bleeding" strength="10" />
+            <Affliction identifier="stun" strength="0.07" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="5" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Гильза" identifier="Berettarounds-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.35">
+      <InventoryIcon texture="%ModDir%/casing.png" name="9x19 casing icon" sourcerect="1331,419,49,48" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/casing.png" name="9x19 casing" sourcerect="68,521,8,16" depth="0.4" origin="0.5,0.5" />
+      <Deconstruct time="0.01" />
+      <Body width="6" height="17" density="10" restitution="0.4" />
+      <Throwable slots="Any,LeftHand,RightHand" msg="ItemMsgPickUpSelect" throwforce="3.5" />
+    </Item>
+  </Items>
+</Override>

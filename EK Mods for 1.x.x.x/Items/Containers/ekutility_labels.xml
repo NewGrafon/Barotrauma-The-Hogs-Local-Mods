@@ -1,0 +1,2174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekutility_label_text" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true" HideConditionBar="true">
+    <trigger x="20" y="-10" width="122" height="44" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="302,512,162,64" depth="0.72" origin="0.5,0.5" />
+    <Body width="150" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.2,0.12" anchor="BottomRight" absoluteoffset="40,80" style="ItemUI" />
+      <TextBox text="connection.set_text" propertyname="text" />
+    </CustomInterface>
+    <ItemLabel scrollable="false" padding="0,0,0,0" text=" " textcolor="0,0,0,255" textscale="0.5" pickingtime="0" canbepicked="False" allowingameediting="True" msg="" />
+  </Item>
+  <!-- Raw Resources -->
+  <Item name="" identifier="ekutility_label_iron" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_aluminium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_copper" tags="smallitem" pickdistance="150" scale="0.28" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_titanium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_carbon" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_lead" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="768,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_tin" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_zinc" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_silicon" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,128,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_uranium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="898,192,61,63" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_thorium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Composite Resources -->
+  <Item name="" identifier="ekutility_label_steel" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,128,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_titaniumaluminiumalloy" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_plastic" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,128,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_rubber" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,770,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_fpgacircuit" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,64,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_organicfiber" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_ballisticfiber" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="706,770,62,61" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Alien Resources -->
+  <Item name="" identifier="ekutility_label_physicorium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_fulgurium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_sulphuriteshard" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_oxygeniteshard" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_incendium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_dementonite" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Chemical Resources -->
+  <Item name="" identifier="ekutility_label_flashpowder" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,256,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="64,256,64,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_lithium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_sodium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_magnesium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_potassium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_chlorine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,256,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_calcium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_phosphorus" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,192,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_ethanol" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.9" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_sulphuricacid" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- e a s t e r e g g s i g n a g e -->
+  <!-- Medical Resources -->
+  <Item name="" identifier="ekutility_label_bandage" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_plastiseal" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_antibioticglue" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_tonicliquid" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_saline" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_bloodpack" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_adrenaline" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_opium" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_elastin" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="768,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_alienblood" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,771,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_adrenalinegland" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_swimbladder" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_paralyxis" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_huskeggs" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Plants & Gardening -->
+  <Item name="" identifier="ekutility_label_fiberplant" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_labels_fixed.png" sourcerect="0,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_elastinplant" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_labels_fixed.png" sourcerect="64,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_aquaticpoppy" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_labels_fixed.png" sourcerect="128,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_yeastshroom" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_labels_fixed.png" sourcerect="192,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_slimebacteria" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_labels_fixed.png" sourcerect="0,64,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_creepingorange" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="960,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_tobaccobud" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="896,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_saltbulb" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="960,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_raptorbane" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="960,768,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Medical Products & Toxins -->
+  <Item name="" identifier="ekutility_label_stabilozine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_morphine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_fentanyl" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_deusizine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_naloxone" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_haloperidol" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_methamphetamine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_steroids" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_hyperzine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_liquidoxygenite" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_antibiotics" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_chloralhydrate" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_calyxanide" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,448,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_raptorbaneextract" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,320,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_pomegrenadeextract" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas2.png" sourcerect="0,384,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_cyanide" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_cyanideantidote" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_sufforin" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_sufforinantidote" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_morbusine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_morbusineantidote" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_radiotoxin" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,640,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_antirad" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_deliriumine" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_deliriumineantidote" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_paralyzant" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_antiparalysis" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,704,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Reactor Fuel -->
+  <Item name="" identifier="ekutility_label_reactorfuel" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,64,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Tools -->
+  <Item name="" identifier="ekutility_label_wrench" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_screwdriver" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_crowbar" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_weldingtool" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,64,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_plasmacutter" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_flamer" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,64,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_fireextinguisher" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_flare" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_flashlight" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,320,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_oxygentank" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_weldingfueltank" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_batterycell" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_fulguriumbatterycell" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,832,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_headset" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_divingmask" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,320,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_underwaterscooter" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,128,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_handheldsonar" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_sonarbeacon" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,320,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Modded Tools -->
+  <Item name="" identifier="ekutility_label_miningdrill" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="128,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_metalfoam_tank" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="128,256,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_metalfoam_gun" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="128,608,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_pulsecutter" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="128,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_laserdrill" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="228,576,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_label_arcwelder" tags="smallitem" pickdistance="150" scale="0.26" impactsoundtag="impact_soft" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true" hideinmenus="true">
+    <trigger x="21" y="-16" width="30" height="30" />
+    <Deconstruct time="1" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="832,0,64,64" depth="0.71" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="224,512,72,64" depth="0.72" premultiplyalpha="false" origin="0.5,0.5" offset="0,0" scale="0.85" rotation="0" />
+    <Body width="60" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand,Any" msg="ItemMsgDetachWrench" PickingTime="2.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="Always" target="This" Condition="0.01" setvalue="true">
+        <Conditional Condition="gt 0.1" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Label Printer starts here -->
+  <Item name="" identifier="ekutility_labelprinter" scale="0.32" category="Equipment" tags="mediumitem" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" HideConditionBar="true">
+    <!-- <Price locationtype="Research" buyprice="150" /> -->
+    <Price baseprice="150" soldeverywhere="false" minleveldifficulty="15">
+      <Price locationtype="outpost" multiplier="1.3" sold="false" />
+      <Price locationtype="city" multiplier="1.2" minavailable="1" />
+      <Price locationtype="research" multiplier="1" minavailable="1" />
+      <Price locationtype="military" multiplier="1.25" minavailable="1" />
+      <Price locationtype="mine" multiplier="1" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,256,64,64" origin="0.5,0.5" />-->
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="736,368,160,128" depth="0.6" origin="0.5,0.5" />
+    <Body width="112" height="96" density="25" />
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <Containable items="smallitem,tool,fireextinguisher,weapon" excludeditems="toolbelt,toolbox,mobilecontainer" />
+    </ItemContainer>
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="50,-10" aimpos="70,0" handle1="-20,-16" msg="ItemMsgPickUpSelect">
+      <!--<LightComponent LightColor="255,255,255,200" Flicker="0.25" range="45" powerconsumption="0" IsOn="true">
+        <LightTexture texture="%ModDir%/Lights/biometric_scanner_fixedlight.png" origin="0.5, 0.27" size="0.5,0.5" />
+      </LightComponent>-->
+      <StatusEffect type="OnBroken" target="This" condition="100" disabledeltatime="true" delay="2" />
+      <CustomInterface drawhudwhenequipped="true" canbeselected="false">
+        <GuiFrame style="ItemUI" absoluteoffset="0,150" anchor="BottomCenter" relativesize="0.1,0.15" />
+        <Button text="Text Label">
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_text" spawnposition="This" />
+          </StatusEffect>
+          <!-- Cooldown -->
+          <StatusEffect target="This" type="OnUse" condition="-100" disabledeltatime="true">
+            <Conditional Condition="eq 100" />
+            <Sound file="%ModDir%/Items/Tools/label_printer_button.ogg" type="OnUse" range="250" />
+          </StatusEffect>
+        </Button>
+        <Button text="Print Label">
+          <!--
+		  <StatusEffect target="Contained" type="OnUse" disabledeltatime="true" >
+			<RequiredItem identifiers="iron" type="Contained" />
+			<Remove /> 
+		  </StatusEffect>
+		  -->
+          <!-- Raw Resources -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="iron,ekutility_label_iron" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_iron" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="aluminium,ekutility_label_aluminium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_aluminium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="copper,ekutility_label_copper" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_copper" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="titanium,ekutility_label_titanium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_titanium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="carbon,ekutility_label_carbon" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_carbon" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="lead,ekutility_label_lead" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_lead" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="tin,ekutility_label_tin" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_tin" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="zinc,ekutility_label_zinc" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_zinc" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="silicon,ekutility_label_silicon" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_silicon" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="uranium,ekutility_label_uranium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_uranium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="thorium,ekutility_label_thorium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_thorium" spawnposition="This" />
+          </StatusEffect>
+          <!-- Composite Resources -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="steel,ekutility_label_steel" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_steel" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="titaniumaluminiumalloy,ekutility_label_titaniumaluminiumalloy" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_titaniumaluminiumalloy" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="plastic,ekutility_label_plastic" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_plastic" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="rubber,ekutility_label_rubber" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_rubber" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="fpgacircuit,ekutility_label_fpgacircuit" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_fpgacircuit" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="organicfiber,ekutility_label_organicfiber" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_organicfiber" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ballisticfiber,ekutility_label_ballisticfiber" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" type="OnUse" range="350" />
+            <SpawnItem identifiers="ekutility_label_ballisticfiber" spawnposition="This" />
+          </StatusEffect>
+          <!-- Alien Resources -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="physicorium,ekutility_label_physicorium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_physicorium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="fulgurium,ekutility_label_fulgurium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_fulgurium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="sulphuriteshard,ekutility_label_sulphuriteshard" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_sulphuriteshard" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="oxygeniteshard,ekutility_label_oxygeniteshard" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_oxygeniteshard" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="incendium,ekutility_label_incendium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_incendium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="dementonite,ekutility_label_dementonite" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_dementonite" spawnposition="This" />
+          </StatusEffect>
+          <!-- Chemical Resources -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="flashpowder,ekutility_label_flashpowder" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_flashpowder" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="lithium,ekutility_label_lithium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_lithium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="sodium,ekutility_label_sodium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_sodium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="magnesium,ekutility_label_magnesium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_magnesium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="potassium,ekutility_label_potassium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_potassium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="chlorine,ekutility_label_chlorine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_chlorine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="calcium,ekutility_label_calcium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_calcium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="phosphorus,ekutility_label_phosphorus" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_phosphorus" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ethanol,ekutility_label_ethanol" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_ethanol" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="sulphuricacid,ekutility_label_sulphuricacid" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_sulphuricacid" spawnposition="This" />
+          </StatusEffect>
+          <!-- Medical Resources -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antibleeding1,ekutility_label_bandage" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_bandage" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antibleeding2,ekutility_label_plastiseal" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_plastiseal" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antibleeding3,ekutility_label_antibioticglue" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_antibioticglue" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="tonicliquid,ekutility_label_tonicliquid" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_tonicliquid" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antibloodloss1,ekutility_label_saline" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_saline" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antibloodloss2,ekutility_label_bloodpack" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_bloodpack" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="adrenaline,ekutility_label_adrenaline" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_adrenaline" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="opium,ekutility_label_opium" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_opium" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="elastin,ekutility_label_elastin" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_elastin" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="alienblood,ekutility_label_alienblood" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_alienblood" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="adrenalinegland,ekutility_label_adrenalinegland" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_adrenalinegland" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="swimbladder,ekutility_label_swimbladder" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_swimbladder" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="paralyxis,ekutility_label_paralyxis" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_paralyxis" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="huskeggs,ekutility_label_huskeggs" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_huskeggs" spawnposition="This" />
+          </StatusEffect>
+          <!-- Gardening & Plants -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="fiberplant,ekutility_label_fiberplant" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_fiberplant" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="elastinplant,ekutility_label_elastinplant" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_elastinplant" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="aquaticpoppy,ekutility_label_aquaticpoppy" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_aquaticpoppy" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="yeastshroom,ekutility_label_yeastshroom" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_yeastshroom" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="slimebacteria,ekutility_label_slimebacteria" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_slimebacteria" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="creepingorange,ekutility_label_creepingorange" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_creepingorange" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="tobaccobud,ekutility_label_tobaccobud" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_tobaccobud" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="saltbulb,ekutility_label_saltbulb" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_saltbulb" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="raptorbane,ekutility_label_raptorbane" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_raptorbane" spawnposition="This" />
+          </StatusEffect>
+          <!-- Medical Products & Toxins -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="stabilozine,ekutility_label_stabilozine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_stabilozine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antidama1,ekutility_label_morphine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_morphine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antidama2,ekutility_label_fentanyl" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_fentanyl" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="deusizine,ekutility_label_deusizine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_deusizine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antinarc,ekutility_label_naloxone" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_naloxone" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antipsychosis,ekutility_label_haloperidol" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_haloperidol" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="meth,ekutility_label_methamphetamine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_methamphetamine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="steroids,ekutility_label_steroids" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_steroids" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="hyperzine,ekutility_label_hyperzine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_hyperzine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="liquidoxygenite,ekutility_label_liquidoxygenite" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_liquidoxygenite" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antibiotics,ekutility_label_antibiotics" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_antibiotics" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="chloralhydrate,ekutility_label_chloralhydrate" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_chloralhydrate" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="calyxanide,ekutility_label_calyxanide" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_calyxanide" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="raptorbaneextract,ekutility_label_raptorbaneextract" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_raptorbaneextract" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="pomegrenadeextract,ekutility_label_pomegrenadeextract" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_pomegrenadeextract" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="cyanide,ekutility_label_cyanide" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_cyanide" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="cyanideantidote,ekutility_label_cyanideantidote" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_cyanideantidote" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="sufforin,ekutility_label_sufforin" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_sufforin" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="sufforinantidote,ekutility_label_sufforinantidote" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_sufforinantidote" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="morbusine,ekutility_label_morbusine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_morbusine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="morbusineantidote,ekutility_label_morbusineantidote" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_morbusineantidote" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="radiotoxin,ekutility_label_radiotoxin" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_radiotoxin" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antirad,ekutility_label_antirad" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_antirad" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="deliriumine,ekutility_label_deliriumine" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_deliriumine" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="deliriumineantidote,ekutility_label_deliriumineantidote" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_deliriumineantidote" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="paralyzant,ekutility_label_paralyzant" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_paralyzant" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="antiparalysis,ekutility_label_antiparalysis" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_antiparalysis" spawnposition="This" />
+          </StatusEffect>
+          <!-- Reactor Fuel -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="reactorfuel,ekutility_label_reactorfuel" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_reactorfuel" spawnposition="This" />
+          </StatusEffect>
+          <!-- Tools -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="wrench,ekutility_label_wrench" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_wrench" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="screwdriver,ekutility_label_screwdriver" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_screwdriver" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="crowbar,ekutility_label_crowbar" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_crowbar" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="weldingtool,ekutility_label_weldingtool" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_weldingtool" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="plasmacutter,ekutility_label_plasmacutter" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_plasmacutter" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="flamer,ekutility_label_flamer" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_flamer" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="fireextinguisher,ekutility_label_fireextinguisher" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_fireextinguisher" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="flare,alienflare,ekutility_label_flare,ekutility_electroflare,ek_chemlight" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_flare" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="flashlight,ekutility_label_flashlight" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_flashlight" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="oxygentank,oxygenitetank,ekutility_label_oxygentank" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_oxygentank" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="weldingfueltank,ekutility_label_weldingfueltank" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_weldingfueltank" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="batterycell,ekutility_label_batterycell" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_batterycell" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="fulguriumbatterycell,ekutility_label_fulguriumbatterycell" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_fulguriumbatterycell" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="headset,ekutility_label_headset" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_headset" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="divingmask,ekutility_label_divingmask" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_divingmask" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="underwaterscooter,ekutility_label_underwaterscooter" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_underwaterscooter" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="handheldsonar,ekutility_label_handheldsonar" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_handheldsonar" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="sonarbeacon,ekutility_label_sonarbeacon" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_sonarbeacon" spawnposition="This" />
+          </StatusEffect>
+          <!-- Modded Tools -->
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ekutility_miningdrill,ekutility_label_miningdrill" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_miningdrill" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ekutility_metalfoam_gun,ekutility_label_metalfoam_gun" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_metalfoam_gun" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ekutility_metalfoam_tank,ekutility_label_metalfoam_tank" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_metalfoam_tank" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ekutility_pulsecutter,ekutility_label_pulsecutter" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_pulsecutter" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ekutility_laserdrill,ekutility_label_laserdrill" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_laserdrill" spawnposition="This" />
+          </StatusEffect>
+          <StatusEffect target="This" type="OnUse" disabledeltatime="true" delay="0.05">
+            <Conditional Condition="eq 100" />
+            <RequiredItem identifiers="ekutility_arcwelder,ekutility_label_arcwelder" type="Contained" />
+            <Sound file="%ModDir%/Items/Tools/label_printer.ogg" range="350" />
+            <SpawnItem identifiers="ekutility_label_arcwelder" spawnposition="This" />
+          </StatusEffect>
+          <!-- Cooldown -->
+          <StatusEffect target="This" type="OnUse" condition="-100" disabledeltatime="true">
+            <Conditional Condition="eq 100" />
+            <Sound file="%ModDir%/Items/Tools/label_printer_button.ogg" type="OnUse" range="250" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Holdable>
+  </Item>
+</Items>

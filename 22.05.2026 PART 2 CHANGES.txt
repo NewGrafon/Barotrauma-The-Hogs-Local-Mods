@@ -1,0 +1,1 @@
+1) Increased max stacks of materials and minerals from 32 to 64 in storages and from 8 to 16 in human inventories. Its need for increase performance a little

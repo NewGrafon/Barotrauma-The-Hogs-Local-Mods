@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Advanced Lamp -->
+  <Item name="Advanced Emergency Light" identifier="ekdockyard_emergencylightadvanced" category="Legacy" Tags="smallitem,light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" sourcerect="0,64,96,24" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,0.0,0.0,0.1" range="250.0" IsOn="true" powerconsumption="0" castlights="false">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced1light.png" sourcerect="0,64,96,24" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_vanillalightadvanced01" category="Legacy" Tags="smallitem,light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" sourcerect="0,0,112,64" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced1light.png" sourcerect="0,0,112,64" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_vanillalightadvanced02" category="Legacy" Tags="smallitem,light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" sourcerect="112,0,112,88" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced1light.png" sourcerect="112,0,112,88" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_vanillalightadvanced03" category="Legacy" Tags="smallitem,light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" sourcerect="0,88,64,96" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced1light.png" sourcerect="0,88,64,96" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_vanillalightadvanced04" category="Legacy" Tags="smallitem,light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" sourcerect="64,88,64,96" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced1light.png" sourcerect="64,88,64,96" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_vanillalightadvanced05" category="Legacy" Tags="smallitem,light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" sourcerect="128,88,64,96" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced1light.png" sourcerect="128,88,64,96" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_lightadvanced01" category="Legacy" Tags="smallitem,light" scale="0.25">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced2.png" sourcerect="0,0,128,128" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced2light.png" sourcerect="0,0,128,128" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_lightadvanced02" category="Legacy" Tags="smallitem,light" scale="0.25">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced2.png" sourcerect="0,128,192,64" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced2light.png" sourcerect="0,128,192,64" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_lightadvanced03" category="Legacy" Tags="smallitem,light" scale="0.25">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced2.png" sourcerect="0,192,192,48" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced2light.png" sourcerect="0,192,192,48" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_lightadvanced04" category="Legacy" Tags="smallitem,light" scale="0.25">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced2.png" sourcerect="192,192,96,48" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced2light.png" sourcerect="192,192,96,48" alpha="1.0" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Lamp" identifier="ekdockyard_lightadvanced05" category="Legacy" Tags="smallitem,light" scale="0.25">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced2.png" sourcerect="0,240,288,48" depth="0.8" origin="0.5,0.5" />
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect" />
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" IsOn="true" powerconsumption="5">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_advanced2light.png" sourcerect="0,240,288,48" alpha="1.0" origin="0.5,0.4" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <!-- <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" /> -->
+    </ConnectionPanel>
+  </Item>
+  <!-- Rotating Lights -->
+  <Item name="Rotating Alarm Lamp" identifier="ekdockyard_lightspinner1" tags="light" category="Machine" focusonselected="true" offsetonselected="750" linkable="false" Scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" depth="0.01" sourcerect="0,192,64,64" />
+    <Turret canbeselected="true" linkable="false" barrelpos="32,32" reload="999999999" rotationlimits="180,360" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="5" springdampinghighskill="5" rotationspeedlowskill="0.5" rotationspeedhighskill="0.5">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/lamps_advanced1.png" sourcerect="64,192,32,40" origin="0.5, 0.5" />
+      <LightComponent LightColor="1.0,1.0,1.0,1.0" Flicker="0.0" range="500" IsOn="true" powerconsumption="5" drawbehindsubs="false" ignorecontinuoustoggle="true">
+        <LightTexture texture="%ModDir%/Lights/lightcone_siren.png" origin="0.5,0.5" size="1.0,1.0" />
+      </LightComponent>
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+  </Item>
+  <!-- Custom Indicator Lights -->
+  <Item name="Indicator Light" identifier="ekdockyard_lightindicator1" category="Electrical" Tags="light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_indicators1.png" depth="0.8" sourcerect="0,0,48,48" origin="0.5,0.5" />
+    <LightComponent range="20" canbeselected="true" color="255,255,255,255" castshadows="false">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_indicators1.png" sourcerect="0,48,48,48" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Indicator Light" identifier="ekdockyard_lightindicator2" category="Electrical" Tags="light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_indicators1.png" depth="0.8" sourcerect="48,0,112,48" origin="0.5,0.5" />
+    <LightComponent range="20" canbeselected="true" color="255,255,255,255" castshadows="false">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_indicators1.png" sourcerect="48,48,112,48" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Indicator Light" identifier="ekdockyard_lightindicator3" category="Electrical" Tags="light" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/lamps_indicators1.png" depth="0.8" sourcerect="160,0,48,48" origin="0.5,0.5" />
+    <LightComponent range="20" canbeselected="true" color="255,255,255,255" castshadows="false">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Items/Electricity/lamps_indicators1.png" sourcerect="160,48,48,48" origin="0.5,0.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+  </Item>
+  <!-- Outpost Lights -->
+  <Item name="" identifier="ekdockyard_opdeco_surgicallights" nameidentifier="opdeco_surgicallights" width="272" height="128" texturescale="1.0,1.0" scale="0.5" noninteractable="true" category="Decorative">
+    <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="752,0,272,128" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+    <LightComponent range="0.0" lightcolor="255,255,255,255" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="480,0,272,128" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_opdeco_lighttower" nameidentifier="op_lighttower" width="176" height="352" texturescale="1.0,1.0" scale="0.5" category="Decorative" noninteractable="true">
+    <sprite texture="Content/Map/Outposts/Art/TunnelWalls.png" sourcerect="849,1697,176,352" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+    <LightComponent range="160.0" lightcolor="255,234,181,200" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="Content/Map/Outposts/Art/TunnelWalls.png" sourcerect="671,1697,176,352" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_opdeco_lighttower2" nameidentifier="op_lighttower" width="176" height="352" texturescale="1.0,1.0" scale="0.5" category="Decorative" noninteractable="true">
+    <sprite texture="Content/Map/Outposts/Art/TunnelWalls.png" sourcerect="849,1697,176,52" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+    <LightComponent range="160.0" lightcolor="255,234,181,200" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="Content/Map/Outposts/Art/TunnelWalls.png" sourcerect="671,1697,176,52" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+  </Item>
+</Items>

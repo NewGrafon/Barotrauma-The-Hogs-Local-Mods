@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ek_marine_armor" category="Equipment" tags="smallitem" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft">
+    <Price baseprice="350" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Jobgear/armor_marine_rig_torso.png" sourcerect="0,40,128,176" depth="0.6" origin="0.5,0.5" />
+    <Body radius="45" height="60" density="40" />
+    <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Marine Combat Armor Torso" texture="%ModDir%/Items/Jobgear/armor_marine_rig_torso.png" limb="Torso" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.5,0.54" scale="0.4" />
+      <sprite name="Marine Combat Armor Right Arm" texture="%ModDir%/Items/Jobgear/armor_marine_rig_torso.png" limb="RightArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Marine Combat Armor Left Arm" texture="%ModDir%/Items/Jobgear/armor_marine_rig_torso.png" limb="LeftArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Marine Combat Armor Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_marine_rig_torso.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Marine Combat Armor Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_marine_rig_torso.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Marine Combat Armor Waist" texture="%ModDir%/Items/Jobgear/armor_marine_rig_legs.png" limb="Waist" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,104,90" origin="0.6,0.2" scale="0.5" />
+      <sprite name="Marine Combat Armor Right Thigh" texture="%ModDir%/Items/Jobgear/armor_marine_rig_legs.png" limb="RightThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Marine Combat Armor Left Thigh" texture="%ModDir%/Items/Jobgear/armor_marine_rig_legs.png" limb="LeftThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Marine Combat Armor Right Leg" texture="%ModDir%/Items/Jobgear/armor_marine_rig_legs.png" limb="RightLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Marine Combat Armor Left Leg" texture="%ModDir%/Items/Jobgear/armor_marine_rig_legs.png" limb="LeftLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.85" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.55" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage,organdamage,gunshotwound" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="paralysis" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
+      <StatValue stattype="RangedAttackSpeed" value="0.15" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_marine_armor_uniform" category="Equipment" tags="smallitem,uniform,toolbelt,toolbox,cargoscooter,mobilecontainer" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="180" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="organicfiber" />
+      <Item identifier="plastic" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="organicfiber" />
+      <RequiredItem identifier="plastic" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,384,64,64" />
+    <Sprite texture="ek_armor_clothes.png" sourcerect="0,0,208,96" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="60" density="30" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Marine Combat Undershirt Torso" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_torso.png" limb="Torso" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.5,0.54" scale="0.4" />
+      <sprite name="Marine Combat Undershirt Right Arm" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_torso.png" limb="RightArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Marine Combat Undershirt Left Arm" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_torso.png" limb="LeftArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Marine Combat Undershirt Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_torso.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Marine Combat Undershirt Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_torso.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Marine Combat Undershirt Waist" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_legs.png" limb="Waist" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,104,90" origin="0.6,0.2" scale="0.5" />
+      <sprite name="Marine Combat Undershirt Right Thigh" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_legs.png" limb="RightThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Marine Combat Undershirt Left Thigh" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_legs.png" limb="LeftThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Marine Combat Undershirt Right Leg" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_legs.png" limb="RightLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Marine Combat Undershirt Left Leg" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_legs.png" limb="LeftLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Marine Combat Undershirt Right Shoe" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_legs.png" limb="RightFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <sprite name="Marine Combat Undershirt Left Shoe" texture="%ModDir%/Items/Jobgear/armor_marine_uniform_legs.png" limb="LeftFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.85" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage,organdamage,gunshotwound" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
+      <SkillModifier skillidentifier="weapons" skillvalue="5" />
+      <SkillModifier skillidentifier="helm" skillvalue="10" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
+    </Wearable>
+    <ItemContainer capacity="8" slotsperrow="4" keepopenwhenequipped="false" movableframe="true">
+      <Containable items="smallitem" excludeditems="toolbox,metalcrate,mobilecontainer,rucksack,backpack,waistbelt" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ek_marine_helmet" category="Equipment" tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="200" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,384,64,64" />
+    <Sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" sourcerect="0,0,80,80" depth="0.6" />
+    <Body radius="20" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" limb="Head" inherittexturescale="false" sourcerect="0,0,84,84" origin="0.55,0.5" scale="0.37" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.45" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,explosiondamage" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.25" damagesound="" deflectprojectiles="true" />
+      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_renegade_armor" category="Equipment" tags="smallitem" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft">
+    <Price baseprice="350" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Jobgear/armor_renegade_rig_torso.png" sourcerect="0,40,128,160" depth="0.6" origin="0.5,0.5" />
+    <Body radius="45" height="60" density="40" />
+    <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Renegade Combat Armor Torso" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_torso.png" limb="Torso" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.5,0.54" scale="0.4" />
+      <sprite name="Renegade Combat Armor Right Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_torso.png" limb="RightArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Renegade Combat Armor Left Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_torso.png" limb="LeftArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Renegade Combat Armor Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_torso.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Renegade Combat Armor Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_torso.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Renegade Combat Armor Waist" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_legs.png" limb="Waist" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,104,90" origin="0.6,0.2" scale="0.5" />
+      <sprite name="Renegade Combat Armor Right Thigh" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_legs.png" limb="RightThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Renegade Combat Armor Left Thigh" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_legs.png" limb="LeftThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Renegade Combat Armor Right Leg" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_legs.png" limb="RightLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Renegade Combat Armor Left Leg" texture="%ModDir%/Items/Jobgear/armor_renegade_rig_legs.png" limb="LeftLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.8" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage,organdamage,gunshotwound" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.45" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="paralysis" probabilitymultiplier="0.45" damagesound="LimbArmor" />
+      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      <StatValue stattype="RangedAttackSpeed" value="0.1" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_renegade_armor_uniform" category="Equipment" tags="smallitem,uniform,toolbelt,toolbox,cargoscooter,mobilecontainer" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="180" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="organicfiber" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="organicfiber" />
+      <RequiredItem identifier="rubber" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,384,64,64" />
+    <Sprite texture="ek_armor_clothes.png" sourcerect="0,96,208,96" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="60" density="30" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Renegade Combat Undershirt Torso" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_torso.png" limb="Torso" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.5,0.54" scale="0.4" />
+      <sprite name="Renegade Combat Undershirt Right Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_torso.png" limb="RightArm" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Renegade Combat Undershirt Left Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_torso.png" limb="LeftArm" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Renegade Combat Undershirt Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_torso.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Renegade Combat Undershirt Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_torso.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Renegade Combat Undershirt Waist" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_legs.png" limb="Waist" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,104,90" origin="0.6,0.2" scale="0.5" />
+      <sprite name="Renegade Combat Undershirt Right Thigh" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_legs.png" limb="RightThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Renegade Combat Undershirt Left Thigh" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_legs.png" limb="LeftThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Renegade Combat Undershirt Right Leg" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_legs.png" limb="RightLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Renegade Combat Undershirt Left Leg" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_legs.png" limb="LeftLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Renegade Combat Undershirt Right Shoe" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_legs.png" limb="RightFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <sprite name="Renegade Combat Undershirt Left Shoe" texture="%ModDir%/Items/Jobgear/armor_renegade_uniform_legs.png" limb="LeftFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.55" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.8" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.65" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage,organdamage,gunshotwound" damagemultiplier="0.85" damagesound="LimbArmor" deflectprojectiles="true" />
+      <SkillModifier skillidentifier="mechanical" skillvalue="10" />
+      <SkillModifier skillidentifier="electrical" skillvalue="10" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.92" setvalue="true" />
+    </Wearable>
+    <ItemContainer capacity="8" slotsperrow="4" keepopenwhenequipped="false" movableframe="true">
+      <Containable items="smallitem" excludeditems="toolbox,cargoscooter,mobilecontainer,rucksack,backpack,waistbelt" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ek_renegade_helmet" category="Equipment" tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="200" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,448,64,64" />
+    <Sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" sourcerect="96,0,80,80" depth="0.6" />
+    <Body radius="20" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" limb="Head" inherittexturescale="false" sourcerect="96,0,84,84" origin="0.52,0.51" scale="0.37" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,explosiondamage" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.25" damagesound="" deflectprojectiles="true" />
+      <SkillModifier skillidentifier="medical" skillvalue="10" />
+      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_merc_armor" category="Equipment" tags="smallitem" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_soft">
+    <Price baseprice="400" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_torso.png" sourcerect="0,40,128,160" depth="0.6" origin="0.5,0.5" />
+    <Body radius="45" height="60" density="40" />
+    <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Mercenary Combat Armor Torso" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_torso.png" limb="Torso" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.5,0.54" scale="0.4" />
+      <sprite name="Mercenary Combat Armor Right Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_torso.png" limb="RightArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Mercenary Combat Armor Left Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_torso.png" limb="LeftArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Mercenary Combat Armor Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_torso.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Mercenary Combat Armor Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_torso.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Mercenary Combat Armor Waist" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_legs.png" limb="Waist" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,104,90" origin="0.6,0.2" scale="0.5" />
+      <sprite name="Mercenary Combat Armor Right Thigh" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_legs.png" limb="RightThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Mercenary Combat Armor Left Thigh" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_legs.png" limb="LeftThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Mercenary Combat Armor Right Leg" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_legs.png" limb="RightLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Mercenary Combat Armor Left Leg" texture="%ModDir%/Items/Jobgear/armor_mercenary_rig_legs.png" limb="LeftLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.9" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage,organdamage,gunshotwound" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.55" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="paralysis" probabilitymultiplier="0.55" damagesound="LimbArmor" />
+      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+      <StatValue stattype="RangedAttackSpeed" value="0.1" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_merc_armor_uniform" category="Equipment" tags="smallitem,uniform,toolbelt,toolbox,cargoscooter,mobilecontainer" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="180" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="plastic" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="plastic" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,512,64,64" />
+    <Sprite texture="ek_armor_clothes.png" sourcerect="208,0,208,96" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="60" density="30" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Mercenary Combat Undershirt Torso" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_torso.png" limb="Torso" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.5,0.54" scale="0.4" />
+      <sprite name="Mercenary Combat Undershirt Right Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_torso.png" limb="RightArm" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Mercenary Combat Undershirt Left Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_torso.png" limb="LeftArm" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Mercenary Combat Undershirt Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_torso.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,64" origin="0.5,0.8" scale="0.4" />
+      <sprite name="Mercenary Combat Undershirt Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_torso.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,64" origin="0.5,0.8" scale="0.4" />
+      <sprite name="Mercenary Combat Undershirt Right Hand" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_torso.png" limb="RightHand" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,64,64,64" origin="0.5,0.5" scale="0.4" />
+      <sprite name="Mercenary Combat Undershirt Left Hand" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_torso.png" limb="LeftHand" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,192,64,64" origin="0.5,0.5" scale="0.4" />
+      <sprite name="Mercenary Combat Undershirt Waist" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_legs.png" limb="Waist" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,104,90" origin="0.6,0.2" scale="0.5" />
+      <sprite name="Mercenary Combat Undershirt Right Thigh" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_legs.png" limb="RightThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Mercenary Combat Undershirt Left Thigh" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_legs.png" limb="LeftThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.5,0.5" scale="0.42" />
+      <sprite name="Mercenary Combat Undershirt Right Leg" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_legs.png" limb="RightLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Mercenary Combat Undershirt Left Leg" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_legs.png" limb="LeftLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.5,0.5" scale="0.45" />
+      <sprite name="Mercenary Combat Undershirt Right Shoe" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_legs.png" limb="RightFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <sprite name="Mercenary Combat Undershirt Left Shoe" texture="%ModDir%/Items/Jobgear/armor_mercenary_uniform_legs.png" limb="LeftFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.65" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.9" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds" damagemultiplier="0.55" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage,organdamage,gunshotwound" damagemultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
+      <SkillModifier skillidentifier="medical" skillvalue="5" />
+      <SkillModifier skillidentifier="mechanical" skillvalue="5" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.88" setvalue="true" />
+    </Wearable>
+    <ItemContainer capacity="8" slotsperrow="4" keepopenwhenequipped="false" movableframe="true">
+      <Containable items="smallitem" excludeditems="toolbox,cargoscooter,mobilecontainer,rucksack,backpack,waistbelt" />
+    </ItemContainer>
+  </Item>
+  <!-- ek_merd_helmet is typo? Test or dig. -->
+  <Item name="" identifier="ek_merc_helmet" aliases="ek_merd_helmet" category="Equipment" tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="200" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,512,64,64" />
+    <Sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" sourcerect="96,192,80,80" depth="0.6" />
+    <Body radius="20" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" limb="Head" inherittexturescale="false" sourcerect="96,192,84,84" origin="0.55,0.5" scale="0.37" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,explosiondamage" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.85" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.0" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.25" damagesound="" deflectprojectiles="true" />
+      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_fire_jumpsuit" category="Equipment" tags="smallitem" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+    <Price baseprice="250" soldeverywhere="false">
+      <Price storeidentifier="merchantengineering" multiplier="0.85" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.15" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+    </Price>
+    <Deconstruct time="40">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="lead" />
+      <Item identifier="lead" />
+      <Item identifier="plastic" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="lead" amount="2" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="192,384,64,64" />
+    <Sprite texture="ek_armor_clothes.png" sourcerect="0,192,208,96" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="50" density="30" />
+    <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Fire Jumpsuit Torso" texture="%ModDir%/Items/Jobgear/armor_fire.png" limb="Torso" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.5,0.54" scale="0.4" />
+      <sprite name="Fire Jumpsuit Right Arm" texture="%ModDir%/Items/Jobgear/armor_fire.png" limb="RightArm" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Fire Jumpsuit Left Arm" texture="%ModDir%/Items/Jobgear/armor_fire.png" limb="LeftArm" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.4" />
+      <sprite name="Fire Jumpsuit Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_fire.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Fire Jumpsuit Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_fire.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,128" origin="0.5,0.4" scale="0.4" />
+      <sprite name="Fire Jumpsuit Waist" texture="%ModDir%/Items/Jobgear/armor_fire_legs.png" limb="Waist" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,104,90" origin="0.6,0.2" scale="0.5" />
+      <sprite name="Fire Jumpsuit Right Thigh" texture="%ModDir%/Items/Jobgear/armor_fire_legs.png" limb="RightThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.4,0.5" scale="0.42" />
+      <sprite name="Fire Jumpsuit Left Thigh" texture="%ModDir%/Items/Jobgear/armor_fire_legs.png" limb="LeftThigh" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.4,0.5" scale="0.42" />
+      <sprite name="Fire Jumpsuit Right Leg" texture="%ModDir%/Items/Jobgear/armor_fire_legs.png" limb="RightLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.4,0.5" scale="0.45" />
+      <sprite name="Fire Jumpsuit Left Leg" texture="%ModDir%/Items/Jobgear/armor_fire_legs.png" limb="LeftLeg" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.4,0.5" scale="0.45" />
+      <sprite name="Fire Jumpsuit Right Shoe" texture="%ModDir%/Items/Jobgear/armor_fire_legs.png" limb="RightFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <sprite name="Fire Jumpsuit Left Shoe" texture="%ModDir%/Items/Jobgear/armor_fire_legs.png" limb="LeftFoot" hidelimb="true" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,80,104,112" origin="0.35,0.47" scale="0.35" rotation="90" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.0" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations" damagemultiplier="0.8" bleedingmultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun,explosiondamage,organdamage" damagemultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.05" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" damagemultiplier="0.8" probabilitymultiplier="0.8" damagesound="LimbArmor" />
+      <SkillModifier skillidentifier="mechanical" skillvalue="15" />
+      <SkillModifier skillidentifier="medical" skillvalue="-10" />
+      <SkillModifier skillidentifier="weapons" skillvalue="-10" />
+      <SkillModifier skillidentifier="helm" skillvalue="-10" />
+      <SkillModifier skillidentifier="electrical" skillvalue="15" />
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_fire_helmet" category="Equipment" tags="smallitem" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.45" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="200" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantengineering" multiplier="0.85" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.15" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="divingmask" />
+      <Item identifier="lead" />
+      <Item identifier="lead" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="divingmask" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="lead" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="256,384,64,64" />
+    <Sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" sourcerect="0,80,84,96" depth="0.6" />
+    <Body radius="20" density="50" />
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.0" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.05" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.25" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun,explosiondamage,organdamage" damagemultiplier="0.25" damagesound="LimbArmor" />
+      <sprite texture="%ModDir%/Items/Jobgear/armor_helmets.png" limb="Head" inherittexturescale="false" sourcerect="0,94,84,94" origin="0.5,0.47" scale="0.37" />
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="false" setvalue="true" disabledeltatime="true" />
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.4" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem identifier="oxygentank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.4" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygentank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+        <Conditional IsDead="false" />
+        <RequiredItem identifier="weldingfueltank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+        <RequiredItem identifier="incendiumfueltank" type="Contained" />
+        <Affliction identifier="burn" amount="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.25" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <RequiredItem identifier="oxygeniteshard" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem identifier="oxygenitetank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygenitetank" type="Contained" />
+      </StatusEffect>
+      <!-- We get to define item-side effects for once so might aswell make use of it -->
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem identifier="tag_oxygencell1" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell1" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem identifier="tag_oxygencell2" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell2" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" OxygenAvailable="0.0" UseHullOxygen="true" />
+      <SkillModifier skillidentifier="weapons" skillvalue="-5" />
+      <SkillModifier skillidentifier="helm" skillvalue="-5" />
+    </Wearable>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,96,120,24" />
+      <Containable identifiers="oxygentank,weldingfueltank,oxygeniteshard,oxygenitetank,incendiumfueltank,oxygensource" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ek_mechanic_armor" category="Equipment" tags="smallitem" fireproof="true" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_soft">
+    <Price baseprice="500" minleveldifficulty="40">
+      <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+      <Price storeidentifier="merchantcity" multiplier="1.15" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+    </Price>
+    <Deconstruct time="20">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="mechanical" level="60" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="192,448,64,64" />
+    <Sprite texture="armor_mechanic.png" sourcerect="8,32,112,192" depth="0.6" origin="0.5,0.5" />
+    <Body radius="45" height="60" density="40" />
+    <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Mechanic Armor Uniform Torso" texture="%ModDir%/Items/Jobgear/armor_mechanic.png" limb="Torso" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,32,128,192" origin="0.53,0.6" scale="0.38" />
+      <sprite name="Mechanic Armor Uniform Right Arm" texture="%ModDir%/Items/Jobgear/armor_mechanic.png" limb="RightArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,0,64,128" origin="0.5,0.45" scale="0.38" />
+      <sprite name="Mechanic Armor Uniform Left Arm" texture="%ModDir%/Items/Jobgear/armor_mechanic.png" limb="LeftArm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="128,128,64,128" origin="0.5,0.45" scale="0.38" />
+      <sprite name="Mechanic Armor Uniform Right Lower Arm" texture="%ModDir%/Items/Jobgear/armor_mechanic.png" limb="RightForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,0,64,128" origin="0.5,0.4" scale="0.35" />
+      <sprite name="Mechanic Armor Uniform Left Lower Arm" texture="%ModDir%/Items/Jobgear/armor_mechanic.png" limb="LeftForearm" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="192,128,64,128" origin="0.5,0.4" scale="0.35" />
+      <sprite name="Mechanic Armor Uniform Waist" texture="%ModDir%/Items/Jobgear/armor_mechanic_legs.png" limb="Waist" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="0,0,1,1" origin="0.5,0.5" scale="0.5" />
+      <sprite name="Mechanic Armor Uniform Right Thigh" texture="%ModDir%/Items/Jobgear/armor_mechanic_legs.png" limb="RightThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,0,72,144" origin="0.44,0.5" scale="0.43" />
+      <sprite name="Mechanic Armor Uniform Left Thigh" texture="%ModDir%/Items/Jobgear/armor_mechanic_legs.png" limb="LeftThigh" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,0,72,144" origin="0.44,0.5" scale="0.43" />
+      <sprite name="Mechanic Armor Uniform Right Leg" texture="%ModDir%/Items/Jobgear/armor_mechanic_legs.png" limb="RightLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="104,144,72,112" origin="0.5,0.5" scale="0.43" />
+      <sprite name="Mechanic Armor Uniform Left Leg" texture="%ModDir%/Items/Jobgear/armor_mechanic_legs.png" limb="LeftLeg" hidelimb="false" inherittexturescale="false" inheritorigin="false" inheritsourcerect="false" sourcerect="184,144,72,112" origin="0.5,0.5" scale="0.43" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.42" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="radiationsickness,burn" damagemultiplier="0.5" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,lacerations,bitewounds" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage,organdamage,gunshotwound" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="paralysis" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <SkillModifier skillidentifier="weapons" skillvalue="5" />
+      <SkillModifier skillidentifier="mechanical" skillvalue="10" />
+      <SkillModifier skillidentifier="electrical" skillvalue="10" />
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+    </Wearable>
+    <ItemContainer capacity="4" slotsperrow="2" keepopenwhenequipped="false" movableframe="true">
+      <Containable items="smallitem" excludeditems="toolbox,uniform,mobilecontainer,rucksack,backpack,waistbelt" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ek_security_radio" scale="0.35" category="Equipment" tags="smallitem,headset" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <Price baseprice="200" minleveldifficulty="15">
+      <Price storeidentifier="merchantmine" multiplier="1" minavailable="1" sold="false" />
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <InventoryIcon texture="ek_jobgear.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="ek_jobgear.png" depth="0.6" sourcerect="0,64,48,96" origin="0.5,0.5" />
+    <Body width="35" height="55" density="30" />
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <WifiComponent range="50000.0" channel="0" LinkToChat="true" MinChatMessageInterval="0.0">
+      <RequiredItems items="mobilebattery" type="Contained" />
+    </WifiComponent>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+      <Containable items="mobilebattery" />
+    </ItemContainer>
+    <Wearable limbtype="Head" slots="Any,Headset" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
+      <sprite name="Radio Head" texture="ek_jobgear.png" limb="Head" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="56,136,24,24" origin="0.95,0.55" scale="0.4" />
+      <sprite name="Radio Torso" texture="ek_jobgear.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="48,72,48,64" origin="0.15,1.05" scale="0.4" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_ammobandolier" scale="0.366" category="Equipment" tags="mediumitem,toolbelt,toolbox,cargoscooter,mobilecontainer" aliases="ek_ammobandoiler,bandoiler" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="armcab" />
+    <PreferredContainer primary="armcab" minamount="0" maxamount="1" spawnprobability="0.25" />
+    <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.06" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.06" />
+    <Price baseprice="60">
+      <Price storeidentifier="merchantmine" multiplier="1" minavailable="1" sold="false" />
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+      <Item identifier="plastic" outcondition="0.5" />
+      <Item identifier="copper" outcondition="0.5" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="organicfiber" />
+      <RequiredItem identifier="plastic" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="copper" mincondition="0.5" usecondition="true" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Jobgear/ek_armor_accessories.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Jobgear/ek_armor_accessories.png" depth="0.6" sourcerect="0,272,96,48" origin="0.5,0.5" />
+    <Body width="80" height="40" density="12" />
+    <ItemContainer capacity="12" depth="0.5">
+      <Containable items="smallitem,smallarmsammo,ek_microtorpedo,ek_rocketammo,harpoonammo" excludeditems="toolbelt,toolbox,uniform,mobilecontainer,rucksack,backpack,waistbelt" />
+    </ItemContainer>
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false" />
+    <Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
+      <sprite name="Backpack Wearable" texture="%ModDir%/Items/Jobgear/ek_armor_accessories.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="0,128,112,144" origin="0.5,0.65" scale="0.35" />
+      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+    </Wearable>
+  </Item>
+  <Item name="" identifier="ek_tacticalbackpack" scale="0.32" category="Equipment" tags="mediumitem,toolbelt,toolbox,cargoscooter,mobilecontainer" waterproof="true" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="armcab" />
+    <PreferredContainer primary="armcab" minamount="0" maxamount="1" spawnprobability="0.25" />
+    <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.06" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.06" />
+    <Price baseprice="90" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantmine" multiplier="1" minavailable="1" sold="false" />
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1" />
+    </Price>
+    <InventoryIcon texture="%ModDir%/Items/Jobgear/ek_armor_accessories.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Jobgear/ek_armor_accessories.png" depth="0.6" sourcerect="128,128,160,176" origin="0.5,0.5" />
+    <Body width="100" height="100" density="15" />
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+      <!-- 42 -->
+      <Item identifier="plastic" />
+      <!-- 45 -->
+      <Item identifier="organicfiber" />
+      <!-- 30 -->
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="organicfiber" />
+    </Fabricate>
+    <ItemContainer capacity="24" depth="0.5">
+      <Containable items="smallitem,smallarmsammo,ek_microtorpedo,ek_rocketammo,explosive,harpoonammo" excludeditems="toolbelt,toolbox,cargoscooter,mobilecontainer,rucksack,backpack,waistbelt" />
+    </ItemContainer>
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false" />
+    <Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
+      <sprite name="Backpack Wearable" texture="%ModDir%/Items/Jobgear/ek_armor_accessories.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="128,128,160,176" origin="0.6,0.66" scale="0.32" />
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="0.85" setvalue="true" disabledeltatime="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.9" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="damage" damagemultiplier="0.8" bleedingmultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
+    </Wearable>
+  </Item>
+</Items>

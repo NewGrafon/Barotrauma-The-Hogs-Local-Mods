@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ek_hatchet" aliases="ek hatchet" scale="0.32" category="Equipment,Weapon" tags="smallitem,weapon" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="120" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="0.9" />
+      <Price storeidentifier="merchantcity" multiplier=".85" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" minavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.2" sold="true" minavailable="2" />
+    </Price>
+    <Deconstruct time="7">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="titanium" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredSkill identifier="weapons" level="45" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="titanium" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Weapons/melee_ek.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/melee_ek.png" sourcerect="0,128,224,80" depth="0.55" origin="0.5,0.35" />
+    <Body width="225" height="32" density="45" />
+    <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" holdpos="16,-50" aimpos="50,0" handle1="-20,-3" handle2="15,3" holdangle="35" reload="1.25" range="50" combatPriority="35" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="6" severlimbsprobability="0.4" structuredamage="15" itemdamage="20" penetration="0.5">
+        <Affliction identifier="blunttrauma" strength="13" />
+        <Affliction identifier="lacerations" strength="22" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="stun" strength="0.2" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+    </MeleeWeapon>
+    <!-- MeleeWeapon does not support OnUse, so use a light component as a workaround -->
+    <LightComponent AllowInGameEditing="false" lightcolor="0,0,0,0" canbeselected="false" range="10.0" IsOn="true" castshadows="false">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="false" targettype="This" IsOn="false">
+        <Conditional IsOn="eq True" targetitemcomponent="LightComponent" />
+        <Explosion range="160.0" ballastfloradamage="20" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" applyFireEffects="false" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="false" targettype="This" IsOn="true" delay="1.3" stackable="false" checkconditionalalways="true">
+        <Conditional IsOn="eq False" targetitemcomponent="LightComponent" />
+      </StatusEffect>
+    </LightComponent>
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_captains_sabre" aliases="captains sabre,ek captain's sabre,ek captains sabre,ek sabre,sabre" scale="0.32" category="Equipment,Weapon" tags="smallitem,weapon" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="100" sold="false" minleveldifficulty="20">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" minavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.2" sold="true" minavailable="2" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="copper" outcondition="0.5" />
+      <Item identifier="tin" outcondition="0.5" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="25" />
+      <RequiredSkill identifier="helm" level="40" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="copper" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="tin" mincondition="0.5" usecondition="true" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Weapons/melee_ek.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/melee_ek.png" sourcerect="0,208,320,64" depth="0.55" origin="0.5,0.35" />
+    <Body width="305" height="32" density="45" />
+    <MeleeWeapon slots="RightHand,Any" controlpose="true" holdpos="60,-40" aimpos="50,0" handle1="-36,-5" holdangle="30" reload="0.75" range="50" combatPriority="40" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="20" penetration="0.25">
+        <Affliction identifier="internaldamage" strength="8" />
+        <Affliction identifier="lacerations" strength="24" />
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="stun" strength="0.1" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+    </MeleeWeapon>
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.15" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_tonfa" aliases="ek baton,tonfa,ek tonfa" scale="0.32" category="Equipment,Weapon" tags="smallitem,stunner,weapon" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="35" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="0.9" />
+      <Price storeidentifier="merchantcity" multiplier=".85" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" minavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.2" sold="true" minavailable="2" />
+    </Price>
+    <Deconstruct time="7">
+      <Item identifier="aluminium" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Weapons/melee_ek.png" sourcerect="128,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/melee_ek.png" sourcerect="0,272,224,64" depth="0.55" origin="0.5,0.75" />
+    <Body width="224" height="28" density="20" />
+    <MeleeWeapon slots="RightHand,Any" controlpose="true" holdpos="35,-40" aimpos="45,10" handle1="-22,-3" holdangle="40" reload="0.8" range="50" combatPriority="30" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="3" severlimbsprobability="0" itemdamage="0">
+        <Affliction identifier="blunttrauma" strength="7" />
+        <Affliction identifier="ek_stun_threshold" strength="8" />
+        <Sound file="Content/Items/Weapons/Smack1.ogg" range="800" />
+      </Attack>
+    </MeleeWeapon>
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.25" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="ek_throwingknife" aliases="throwing knife,ek throwing knife,ek throwing knives" scale="0.22" category="Equipment,Weapon" tags="smallitem,weapon" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" HideConditionBar="true" maxstacksize="6">
+    <Price baseprice="12" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="0.9" />
+      <Price storeidentifier="merchantcity" multiplier=".85" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" minavailable="24" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1.2" sold="true" minavailable="12" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" outcondition="0.25" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20" amount="8">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Weapons/melee_ek.png" sourcerect="320,128,128,32" depth="0.55" origin="0.5,0.5" />
+    <Body width="128" height="32" density="40" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="30,40" aimpos="25,40" handle1="22,-6" holdangle="-45" aimangle="0" msg="ItemMsgPickUpSelect" canBeCombined="true">
+      <StatusEffect type="OnActive" target="This">
+        <SpawnItem identifiers="ek_throwingknife" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </Holdable>
+    <RangedWeapon barrelpos="10,5" spread="1" unskilledspread="20" reload="0.65" combatPriority="25" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Items/Weapons/ek_throwingknife.ogg" type="OnUse" range="800" />
+      <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+        <Explosion range="25" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" delay="0.06" disabledeltatime="true" stackable="false" checkconditionalalways="true">
+        <Remove />
+      </StatusEffect>
+      <RequiredSkill identifier="weapons" level="45" />
+    </RangedWeapon>
+    <Projectile characterusable="false" launchimpulse="13.5" sticktocharacters="true">
+      <Attack targetimpulse="1.3" severlimbsprobability="0" itemdamage="10">
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="lacerations" strength="17" />
+        <Affliction identifier="stun" strength="0.1" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" setvalue="true" condition="100" disabledeltatime="true" />
+      <StatusEffect type="OnActive" target="This">
+        <SpawnItem identifiers="ek_throwingknife" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </Projectile>
+    <ItemContainer itempos="0,0" autofill="False" hideitems="true" capacity="1" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true">
+      <Containable items="ek_throwingknife" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,0,1,1" />
+    </ItemContainer>
+  </Item>
+</Items>

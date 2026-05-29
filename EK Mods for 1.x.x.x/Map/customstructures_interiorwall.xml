@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <!-- Custom Large Interior Walls -->
+  <structure name="" identifier="ekdockyard_largeinsidewall_horiz_style1" description="" width="1024" height="96" resizehorizontal="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="0,0,1024,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="0,0,1024,96" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_horiz_style2" description="" width="1024" height="96" resizehorizontal="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="0,112,1024,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="0,0,1024,96" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_horiz_style3" description="" width="1024" height="96" resizehorizontal="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="0,224,1024,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="0,0,1024,96" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_horiz_style4" description="" width="1024" height="96" resizehorizontal="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="0,336,1024,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="0,0,1024,96" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_horiz_style5" description="" width="1024" height="96" resizehorizontal="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="0,448,1024,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="0,0,1024,96" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_vert_style1" description="" width="96" height="1024" resizevertical="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="0,0,96,1024" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="928,272,96,1024" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_vert_style2" description="" width="96" height="1024" resizevertical="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="112,0,96,1024" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="928,272,96,1024" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_vert_style3" description="" width="96" height="1024" resizevertical="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="224,0,96,1024" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="928,272,96,1024" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  <!--
+  <structure name="Large Vertical Inside Wall" identifier="ekdockyard_largeinsidewall_vert_style4" description="" width="96" height="1024" resizevertical="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="336,0,96,1024" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="928,272,96,1024" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  
+  <structure name="Large Vertical Inside Wall" identifier="ekdockyard_largeinsidewall_vert_style5" description="" width="96" height="1024" resizevertical="true" body="true" castshadow="true" health="75" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="448,0,96,1024" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/LargeInsideWalls.png" depth="0.85" sourcerect="928,272,96,1024" color="60,60,60,255" origin="0.5,0.5" />
+  </structure>
+  -->
+  <!-- Custom Armor Walls -->
+  <structure name="" identifier="ekdockyard_legacyheavywall_horiz_style1" description="" width="480" height="96" resizehorizontal="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="0,560,480,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="197,446,480,96" depth="0.85" />
+  </structure>
+  <structure name="" identifier="ekdockyard_legacyheavywall_horiz_style2" description="" width="480" height="96" resizehorizontal="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="512,560,480,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="197,446,480,96" depth="0.85" />
+  </structure>
+  <structure name="" identifier="ekdockyard_legacyheavywall_horiz_style3" description="" width="480" height="96" resizehorizontal="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="0,672,480,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="197,446,480,96" depth="0.85" />
+  </structure>
+  <structure name="" identifier="ekdockyard_legacyheavywall_horiz_style4" description="" width="480" height="96" resizehorizontal="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.06" sourcerect="512,672,480,96" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="197,446,480,96" depth="0.85" />
+  </structure>
+  <structure name="" identifier="ekdockyard_legacyheavywall_vert_style1" description="" width="96" height="480" resizevertical="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="560,0,96,480" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="98,546,96,384" depth="0.85" />
+  </structure>
+  <structure name="" identifier="ekdockyard_legacyheavywall_vert_style2" description="" width="96" height="480" resizevertical="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="560,512,96,480" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="98,546,96,384" depth="0.85" />
+  </structure>
+  <structure name="" identifier="ekdockyard_legacyheavywall_vert_style3" description="" width="96" height="480" resizevertical="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="672,0,96,480" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="98,546,96,384" depth="0.85" />
+  </structure>
+  <structure name="" identifier="ekdockyard_legacyheavywall_vert_style4" description="" width="96" height="480" resizevertical="true" body="true" castshadow="true" health="200" scale="0.5" tags="inner">
+    <sprite texture="%ModDir%/Map/customwalls1.png" depth="0.06" sourcerect="672,512,96,480" origin="0.5,0.5" />
+    <backgroundsprite texture="Content/Map/testroom.png" sourcerect="98,546,96,384" depth="0.85" />
+  </structure>
+  <!-- Improved Endcaps -->
+  <structure name="" identifier="ekdockyard_largeinsidewall_caph1" description="" body="false" castshadow="false" noaitarget="true" scale="0.5">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.03" sourcerect="0,784,64,96" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_caph2" description="" body="false" castshadow="false" noaitarget="true" scale="0.5">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.03" sourcerect="80,784,112,96" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_caph3" description="" body="false" castshadow="false" noaitarget="true" scale="0.5">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.03" sourcerect="208,784,96,112" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_capy1" description="" body="false" castshadow="false" noaitarget="true" scale="0.5">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.03" sourcerect="0,912,96,64" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_capy2" description="" body="false" castshadow="false" noaitarget="true" scale="0.5">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.03" sourcerect="112,912,96,112" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_largeinsidewall_capy3" description="" body="false" castshadow="false" noaitarget="true" scale="0.5">
+    <sprite texture="%ModDir%/Map/customfloors1.png" depth="0.03" sourcerect="224,912,112,96" origin="0.5,0.5" />
+  </structure>
+</prefabs>

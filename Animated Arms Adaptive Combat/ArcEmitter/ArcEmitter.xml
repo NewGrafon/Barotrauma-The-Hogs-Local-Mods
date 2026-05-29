@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" identifier="arcemitter" tags="mediumitem,weapon,gun,mountableweapon,provocativetohumanai" category="Weapon" isshootable="true" Scale="0.5">
+      <Price baseprice="740" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="true">
+        <RequiredSkill identifier="electrical" level="65" />
+        <RequiredItem identifier="fulgurium" amount="2" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+        <RequiredItem identifier="copper" />
+      </Fabricate>
+      <Deconstruct time="35">
+        <Item identifier="fulgurium" amount="2" />
+        <Item identifier="titaniumaluminiumalloy" amount="2" />
+        <Item identifier="copper" />
+      </Deconstruct>
+      <!-- Just one sprite. I initially planned for it to have an opening animation, but...
+	Either way, just a square hole where squar- I mean battery comes in. -->
+      <Sprite texture="%ModDir%/ArcEmitter/ArcEmitter.png" sourcerect="0,0,132,60" depth="0.55" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ArcEmitter/ArcEmitter.png" sourcerect="9,89,91,97" depth="0.55" origin="0.5,0.5" />
+      <ElectricalDischarger duration="0.15" reload="5.0" ignoreuser="true" characterusable="true" raycastrange="500" range="150" rangemultiplierinwalls="1.25" outdoorsonly="false" powerconsumption="100" pickkey="Select">
+        <!-- Damage. -->
+        <Attack targetimpulse="50">
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="20" />
+          <Affliction identifier="electricshock" strength="80" />
+        </Attack>
+        <!-- Effects. -->
+        <StatusEffect target="This" type="OnUse" forceplaysounds="true">
+          <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" frequencymultiplier="1.3" range="20000" selectionmode="random" />
+          <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" frequencymultiplier="1.3" range="20000" />
+          <Explosion range="500.0" camerashake="15" stun="0" force="0.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        </StatusEffect>
+        <!-- Recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Explosion range="75.0" force="2" shockwave="false" smoke="false" flash="true" flames="false" sparks="false" underwaterbubble="false" camerashake="17.0" />
+        </StatusEffect>
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+      Why? Simply turning the light on and off is too slow. -->
+        <StatusEffect type="OnUse" target="This" targetitemcomponent="lightcomponent" lightcolor="0,255,255,255" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" targetitemcomponent="lightcomponent" lightcolor="0,255,255,0" delay="0.2" setvalue="true" />
+        <!-- Lowers battery's condition. -->
+        <StatusEffect type="OnUse" target="Contained" Condition="-25" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <!-- Battery required for using the emitter.
+	  Now, I initially planned for it to have a proxy item, but there is no animation, so I can just break the gun, a.k.a lower its condition to 0. -->
+        <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+      </ElectricalDischarger>
+      <!-- I am using ranged weapon purely for crosshairs and particles. -->
+      <RangedWeapon reload="5.0" barrelpos="68,14" combatPriority="80" spread="30" drawhudwhenequipped="true" crosshairscale="0.225">
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="256,512,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,512,256,256" />
+        <!-- Particles. -->
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="60" />
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="This" holdpos="60,-15" aimpos="60,-7" handle1="-50,-5" handle2="10,-7" holdangle="-25" aimangle="0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="0,255,255,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" hideitems="false" setvalue="true" />
+      </RangedWeapon>
+      <!-- Gun's muzzle which works like a light component. -->
+      <LightComponent range="34.0" isOn="true" lightcolor="0,255,255,0">
+        <LightTexture texture="%ModDir%/ArcEmitter/ArcEmitterMuzzle.png" origin="0.5,0.46" size="1.0,1.0" />
+      </LightComponent>
+      <Body width="130" height="55" density="25" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="60,-7" handle1="-50,-5" handle2="10,-7" holdangle="-25">
+        <StatusEffect type="OnSecondaryUse" target="Character" ObstructVisionAmount="0.01" SpeedMultiplier="0.65" setvalue="true" disabledeltatime="true"></StatusEffect>
+      </Holdable>
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Arc Emitter Worn" texture="%ModDir%/ArcEmitter/ArcEmitter.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,132,60" limb="Torso" scale="0.5" origin="0.5,0.9" />
+      </Wearable>
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Arc Emitter Worn" texture="%ModDir%/ArcEmitter/ArcEmitter.png" canbehiddenbyotherwearables="false" rotation="100" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,132,60" limb="Torso" scale="0.5" origin="0.5,0.9" />
+      </Wearable>
+      <ItemContainer itemrotation="90" capacity="1" maxstacksize="1" hideitems="false" itempos="-24,15" containedspritedepth="0.56" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="1.8" setvalue="true" />
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="1.8" setvalue="true" />
+          <!-- Sets the gun's and hand's position to detach the battery.
+		Also hides the battery. -->
+          <StatusEffect type="OnInserted" target="This" condition="0" hideitems="true" holdpos="40,-15" aimpos="40,-7" aimangle="-5" holdangle="-5" handle2="-65,-50" setvalue="true" stackable="false" />
+          <!-- Sound. -->
+          <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/ArcEmitter/ArcEmitterUnload.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <!-- Sets the hand's position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.7" handle2="-24,40" setvalue="true" stackable="false" />
+          <!-- Sets the hand's position to insert the battery. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" handle2="-24,20" setvalue="true" stackable="false">
+            <Sound file="%ModDir%/ArcEmitter/ArcEmitterload.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <!-- Explosion, particles and a sound.
+		Also shows the battery. -->
+          <StatusEffect type="OnInserted" offset="0,5" target="This" delay="1" setvalue="true" hideitems="false" stackable="false">
+            <Explosion range="75.0" force="2" shockwave="false" smoke="false" flash="false" flames="false" sparks="false" underwaterbubble="false" camerashake="0.0" />
+            <ParticleEmitter particle="gunbubbles" particleamount="6" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-30" distancemax="30" />
+          </StatusEffect>
+          <!-- Sets everything to default. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.7" holdpos="60,-15" aimpos="60,-7" handle1="-50,-5" handle2="10,-7" holdangle="-25" aimangle="0" setvalue="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="1.8" condition="100" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+      <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item identifier="pepperspray" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
+      <PreferredContainer primary="crewcab" spawnprobability="0.02" />
+      <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.01" />
+      <PreferredContainer secondary="locker" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.8" minavailable="3" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator,repair" requiredtime="20">
+        <RequiredSkill identifier="medical" level="30" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="raptorbane" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/pepper/pepper.png" sourcerect="82,9,60,67" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/pepper/pepper.png" sourcerect="28,2,26,77" depth="0.6" origin="0.29206127,0.49931508" />
+      <Body width="24" height="50" density="9" />
+      <RangedWeapon reload="1" holdtrigger="true" />
+      <Holdable aimable="true" slots="Any,RightHand,LeftHand" controlpose="true" aimpos="50,0" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <RepairTool structurefixamount="0.0" usablein="Air" range="300" barrelpos="-30,9" fireprobability="0.0" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatPriority="36" spread="30" unskilledspread="30">
+        <ParticleEmitter particle="steamspray" particlespersecond="80" anglemin="0" anglemax="0" scalemin="0.1" scalemax="0.2" velocitymin="400" velocitymax="600" highqualitycollisiondetection="true" colormultiplier="255,165,120,160" />
+        <ParticleEmitter particle="bubbles" particlespersecond="10" anglemin="-10" anglemax="10" scalemin="0.1" scalemax="0.2" velocitymin="5" velocitymax="100" copyentityangle="true" />
+        <sound file="Content/Items/Tools/Sprayer.ogg" type="OnUse" range="500.0" frequencymultiplier="3" loop="true" />
+        <StatusEffect type="OnFailure" target="UseTarget">
+          <ParticleEmitter particle="bubbles" particlespersecond="10" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="5" velocitymax="100" copyentityangle="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" condition="-10" />
+        <StatusEffect type="OnSuccess" target="Limb" targetLimbs="Head" disabledeltatime="true" comparison="and">
+          <Affliction identifier="pepper" amount="5" />
+          <Conditional ishuman="true" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="Limb" targetLimbs="Head" disabledeltatime="true" comparison="and">
+          <Affliction identifier="pepper" amount="5" />
+          <Conditional InWater="false" />
+          <Conditional speciesgroup="mudraptor" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="Limb" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.02" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" noninteractable="true">
+          <dropitem />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" delay="60">
+          <removeitem />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="2" />
+    </Item>
+    <Item identifier="pepperspray-big" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
+      <PreferredContainer primary="crewcab" spawnprobability="0.01" />
+      <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.01" />
+      <Price baseprice="600">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.8" minavailable="3" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator,repair" requiresrecipe="true" requiredtime="40">
+        <RequiredSkill identifier="medical" level="50" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="raptorbane" amount="4" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/pepper/pepper.png" name="pepper big icon" sourcerect="256,4,81,89" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/pepper/pepper.png" name="pepper big" sourcerect="159,2,54,93" depth="0.6" origin="0.43058676,0.40131822" />
+      <Body width="24" height="75" density="9" />
+      <RangedWeapon reload="1" holdtrigger="true" />
+      <Holdable aimable="true" slots="Any,RightHand,LeftHand" controlpose="true" aimpos="50,0" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <RepairTool structurefixamount="0.0" usablein="Both" range="650" barrelpos="-30,9" fireprobability="0.0" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatPriority="37" spread="1" unskilledspread="1">
+        <ParticleEmitter particle="steamspray" particlespersecond="100" anglemin="-2" anglemax="2" scalemin="0.15" scalemax="0.3" velocitymin="1000" velocitymax="1250" highqualitycollisiondetection="true" colormultiplier="255,165,120,160" />
+        <ParticleEmitter particle="bubbles" particlespersecond="50" anglemin="-10" anglemax="10" scalemin="0.1" scalemax="0.2" velocitymin="1000" velocitymax="1250" copyentityangle="true" colormultiplier="255,165,120,160" />
+        <sound file="Content/Items/Tools/Sprayer.ogg" type="OnUse" range="500.0" frequencymultiplier="3" loop="true" />
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <ParticleEmitter particle="bubbles" particlespersecond="50" anglemin="-2" anglemax="2" scalemin="0.3" scalemax="0.4" velocitymin="500" velocitymax="750" copyentityangle="true" colormultiplier="255,165,120,160" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" condition="-5" />
+        <StatusEffect type="OnSuccess" target="Limb" targetLimbs="Head" disabledeltatime="true">
+          <Affliction identifier="pepper" amount="7.5" />
+          <Conditional ishuman="true" />
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesgroup="crawler" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="Limb" disabledeltatime="true">
+          <Affliction identifier="pepper" amount="5" />
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesgroup="crawler" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="Limb" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.03" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" noninteractable="true">
+          <dropitem />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" delay="60">
+          <removeitem />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="2" />
+    </Item>
+    <Item identifier="neurospray" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
+      <PreferredContainer primary="crewcab" spawnprobability="0.02" />
+      <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.01" />
+      <PreferredContainer secondary="locker" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.8" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator,repair" requiredtime="30" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="medical" level="50" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="paralyxis" />
+        <RequiredItem identifier="chloralhydrate" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/pepper/pepper.png" name="neurospray icon" sourcerect="85,104,64,71" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/pepper/pepper.png" name="neurospray" sourcerect="29,118,27,57" depth="0.6" origin="0.28002068,0.6521589" />
+      <Body width="24" height="35" density="9" />
+      <RangedWeapon reload="1" holdtrigger="true" />
+      <Holdable aimable="true" slots="Any,RightHand,LeftHand" controlpose="true" aimpos="50,0" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <RepairTool structurefixamount="0.0" usablein="Air" range="150" barrelpos="-15,9" fireprobability="0.0" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatPriority="36" spread="50" unskilledspread="50">
+        <ParticleEmitter particle="steamspray" particlespersecond="80" anglemin="0" anglemax="0" scalemin="0.15" scalemax="0.3" velocitymin="300" velocitymax="400" highqualitycollisiondetection="true" colormultiplier="120,165,255,140" />
+        <ParticleEmitter particle="bubbles" particlespersecond="10" anglemin="-10" anglemax="10" scalemin="0.1" scalemax="0.2" velocitymin="5" velocitymax="100" copyentityangle="true" />
+        <sound file="Content/Items/Tools/Sprayer.ogg" type="OnUse" range="500.0" frequencymultiplier="3" loop="true" />
+        <StatusEffect type="OnFailure" target="UseTarget">
+          <ParticleEmitter particle="bubbles" particlespersecond="10" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="5" velocitymax="100" copyentityangle="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" condition="-15" />
+        <StatusEffect type="OnSuccess" target="Limb" targetLimbs="Head" disabledeltatime="true" comparison="and">
+          <Affliction identifier="neuro-gas" amount="2" />
+          <Conditional ishuman="true" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="Limb" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.02" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" noninteractable="true">
+          <dropitem />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" delay="60">
+          <removeitem />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="2" />
+    </Item>
+  </Items>
+</Override>

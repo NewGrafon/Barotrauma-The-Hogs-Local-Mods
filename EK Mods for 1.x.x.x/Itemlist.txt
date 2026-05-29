@@ -1,0 +1,315 @@
+Item name and alias when applicable.
+	
+Revolver Flare :
+	[ revolver flare round ]
+	
+Pipe Rifle : 
+	[ pipegun , pipe gun ]
+	
+	Pipe Rifle (Flashlight)
+	Pipe Rifle (Laser)
+	Pipe Rifle (Suppressed)
+	Pipe Rifle (Suppressed,Flashlight)
+	Pipe Rifle (Suppressed,Laser)
+	
+Pipe Rifle Round :
+	[ piperound , pipe round ]
+	
+	Pipe Rifle Physicorium Round
+	
+Handgun
+	
+	Handgun (Flashlight)
+	Handgun (Laser)
+	Handgun (Suppressed)
+	Handgun (Suppressed,Flashlight)
+	Handgun (Suppressed,Laser)
+	
+9mm Magazine : 
+	[ handgun mag ]
+	
+	9mm Magazine (High-Capacity)
+	Physicorium 9mm Magazine
+	9mm Magazine (Riot)
+	
+Compact SMG : 
+	[ mini smg ]
+	
+	Compact SMG (Flashlight)
+	Compact SMG (Laser)
+	Compact SMG (Suppressed)
+	Compact SMG (Suppressed,Flashlight)
+	Compact SMG (Suppressed,Laser)
+	
+10mm-Auto Magazine : 
+	[ compact smg mag , mini smg mag , 10mm mag ]
+	
+	Physicorium 10mm-Auto Magazine
+	10mm-Auto Magazine (Riot)
+	
+Marine SMG : 
+	
+	Marine SMG (Flashlight)
+	Marine SMG (Laser)
+	Marine SMG (Suppressed)
+	Marine SMG (Suppressed,Flashlight)
+	Marine SMG (Suppressed,Laser)
+	
+5.7x28mm Magazine : 
+	[ smg mag , marine smg mag]
+	
+	Physicorium 5.7x28mm Magazine
+	5.7x28mm Magazine (Riot)
+
+Marine Battle Rifle : 
+	
+	Marine Battle Rifle (Flashlight)
+	Marine Battle Rifle (Laser)
+	Marine Battle Rifle (Suppressed)
+	Marine Battle Rifle (Suppressed,Flashlight)
+	Marine Battle Rifle (Suppressed,Laser)
+	
+5.56x45mm Magazine : 
+	[ battle rifle mag , assault rifle mag , marine battle rifle mag , marine assault rifle mag ]
+	
+	Physicorium 5.56x45mm Magazine
+	5.56x45mm Magazine (Riot)
+
+Drum LMG : 
+	[ machinegun , machine gun , lmg ]
+	
+	Drum LMG (Flashlight)
+	
+5.56x45mm Drum Magazine : 
+	[ drum lmg mag ,lmg mag, lmg drum ]
+	
+	Physicorium 5.56x45mm Drum
+	
+Double-barrel Shotgun :
+	[ double barrel shotgun , shorty ]
+	
+Tactical Shotgun : 
+	[ shotgun ]
+
+	Tactical Shotgun (Flashlight)
+	Tactical Shotgun (Laser)
+	
+12-Guage Shells : 
+	[ shotgun shell box , shotgun shells ]
+	
+	Beanbag Shells
+	Flechette Shells
+	12-Guage Slugs
+	Physicorium Slugs
+	12-Guage Grenades
+	
+Flare Gun :
+	[ flaregun ]
+	
+Flare Shell :
+	[ flare shot , flare round ]
+	
+Tazer Gun :
+	[ stun gun , tazer ]
+	
+Tazer Cartridge :
+	[ tazer mag ]
+	
+Micro Dart Gun :
+	[ mini dart gun , dart pistol ]
+	
+Dart Gun :
+	[ dartgun ]
+
+	Dart (Hemostat)
+	Dart (Stabilozine)
+	Dart (Morphine)
+	Dart (Fentanyl)
+	Dart (Deusizine)
+	Dart (Calyxanide)
+	Dart (Haloperidol)
+	Dart (Oxygenite)
+	Dart (Steroid)
+
+	Dart (Sedative)
+	Dart (Psycosis)
+	Dart (Acid)
+	Dart (Cyanide)
+	Dart (Radiotoxin)
+	Dart (Morbusine)
+	Dart (Sufforin)
+	Dart (Explosive)
+	
+Flamethrower :
+	
+	Flamethrower Fuel Tank
+	Flamethrower Incendium Tank
+	
+Torpedo Rifle :
+	[ torpedorifle ]
+	
+	Torpedo Rifle (Sonarscope)
+	
+Microtorpedo :
+	[ torpedo rifle round ]
+	
+	Microtorpedo (Slug)
+	Microtorpedo (Short Fuse)
+	Microtorpedo (Shock Pulse)
+	Microtorpedo (Physicorium)
+	
+Marine Rocket Launcher :
+	[ rocketlauncher , rocket launcher , ek rocketlauncher , ek rocket launcher , rpg , ek rpg ]
+
+	Marine Rocket Launcher (Sonarscope)
+	
+	Rocket (High Explosive)
+	Rocket (Short Fuse)
+	Rocket (Armor Piercing)
+	Rocket (Physicorium)
+	
+Gauss Pistol :
+	[ coil pistol ]
+	
+	Gauss Pistol (Flashlight)
+	Gauss Pistol (Laser)
+
+Gauss Pistol Magazine :
+	[ gauss pistol mag , coil pistol mag ]
+	
+Gauss Rifle :
+	[ coil rifle ]
+	
+	Gauss Rifle (Flashlight)
+	Gauss Rifle (Laser)
+
+Gauss Rifle Magazine :
+	[ gauss rifle mag , coil rifle mag ]
+	
+Alien Rifle :
+	
+Alien Rifle Cell :
+	[ alien rifle mag ]
+	
+'Beast' SSL :
+	[ beast ssl , beast autocannon ]
+	
+	'Beast' SSL (Flashlight)
+
+30mm-FC Clip :
+	[ 30mm fc clip , ssl mag , beast mag ]
+
+Smoke Grenade :
+	
+Impact Mine :
+	
+Improvised Explosive :
+	[ fuel bomb , improvised bomb ]
+	
+Satchel Charge (UEX) :
+	[ satchel charge uex , uex bomb ]
+	
+Satchel Charge (C-4) :
+	[ satchel charge c4 , c4 bomb ]
+	
+Handcuff Case :
+	
+Weapons Case :
+
+Weapon Components :
+	[ weapon parts ]
+	
+Loading Kit :
+	[ ammo kit ]
+	
+Marine Suppressor : 
+	[ suppressor , silencer ]
+	
+Tactical Light : 
+	[ taclight , light attachment , flashlight attachment ]
+	
+Laser Sight :
+	[ laser attachment , laser sight attachment ]
+	
+Sonar Scope :
+	[ sonar attachment , sonar scope attachment ]
+	
+Improvised Ballistic Armor :
+
+Marine Combat Armor :
+	
+Marine Helmet :
+	
+Renegade Combat Armor :
+	
+Renegade Helmet :
+	
+Mercenary Combat Armor :
+	
+Mercenary Helmet :
+
+Fire Jumpsuit : (Bonus)
+	
+Fire Helmet : (Bonus)
+	
+Military Hardsuit :
+	[ armored hardsuit ]
+	
+Shearclaw Armor : (Bonus)
+	
+Shearclaw Helmet : (Bonus)
+	
+Depth Cargo Shell :
+	[ cargo depth charge ]
+	
+Railgun Sonar Decoy :
+	[ railgun sonar shell , railgun decoy shell , railgun decoy ]
+	
+Railgun Homing Shell :
+	[ homing railgun shell , railgun torpedo ]
+
+Nuclear Sonar Decoy :
+	[ nuclear sonar shell , nuclear decoy shell , nuclear railgun decoy ]
+
+Nuclear Homing Shell :
+	[ nuclear homing shell , homing nuclear shell , nuclear torpedo ]
+
+Railgun Flechette Shell :
+	[ railgun flechette ]
+	
+Railgun Flak Shell :
+	[ flak railgun shell ]
+	
+Railgun Halfshell Frame :
+	[ railgun halfshell holder ]
+	
+Railgun Halfshell :
+	
+Physicorium Railgun Halfshell :
+	[ railgun alien halfshell , railgun halfshell alien ]
+	
+Heavy Ammunition Box :
+	
+Extended Coilgun Ammunition Box :
+	[ extended coilgun ammunition ]
+	
+	Extended Heavy Ammunition Box
+
+	Extended Exploding Ammunition Box
+
+	Extended Piercing Ammunition Box
+
+	Extended Physicorium Ammunition Box
+
+Hybrid Ammunition Box :
+
+	Extended Hybrid Ammunition Box
+	
+Hybrid Flak Ammunition Box :
+
+	Extended Hybrid Flak Ammunition Box
+	
+Hybrid Piercing Ammunition Box :
+
+	Extended Hybrid Piercing Ammunition Box
+	

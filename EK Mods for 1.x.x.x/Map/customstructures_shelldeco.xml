@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <!-- 
+  sub_shelldeco1 
+  Caps, Brackets, and Slopes
+  -->
+  <SubShellDeco1 name="" identifier="ekdockyard_shelldeco1a" scale="1.0">
+    <sprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="0,0,336,160" depth="0.01" origin="0.5,0.5" />
+  </SubShellDeco1>
+  <SubShellDeco1 name="" identifier="ekdockyard_shelldeco1a_solid" scale="1.0" body="true" bodywidth="320" bodyheight="144" bodyrotation="0" bodyoffset="0,0" castshadow="false" health="400">
+    <sprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="0,0,336,160" depth="0.01" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="0,0,336,160" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </SubShellDeco1>
+  <SubShellDeco1 name="" identifier="ekdockyard_shelldeco1b" scale="1.0">
+    <sprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="0,160,320,208" depth="0.01" origin="0.5,0.5" />
+  </SubShellDeco1>
+  <SubShellDeco1 name="" identifier="ekdockyard_shelldeco1b_solid" scale="1.0" body="true" bodywidth="320" bodyheight="96" bodyrotation="-18" bodyoffset="0,0" castshadow="false" health="400">
+    <sprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="0,160,320,208" depth="0.01" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="0,160,320,208" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </SubShellDeco1>
+  <SubShellDeco1 name="" identifier="ekdockyard_shelldeco1c" scale="1.0">
+    <sprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="320,160,208,208" depth="0.01" origin="0.5,0.5" />
+  </SubShellDeco1>
+  <SubShellDeco1 name="" identifier="ekdockyard_shelldeco1c_solid" scale="1.0" body="true" bodywidth="240" bodyheight="64" bodyrotation="45" bodyoffset="0,0" castshadow="false" health="400">
+    <sprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="320,160,208,208" depth="0.01" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/sub_shelldeco1.png" sourcerect="320,160,208,208" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </SubShellDeco1>
+</prefabs>

@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <Item name="" identifier="laser" description="" Indestructible="true" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,flashlight" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.5" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+      <Price baseprice="200" minavailable="2">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="lightcomponent" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem tag="lightcomponent" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="laser sight anim" sourcerect="14,252,49,27" depth="0.56" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="laser sight anim icon" sourcerect="241,271,44,40" depth="0.56" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery" hide="true">
+        <StatusEffect type="OnActive" target="Contained,this" Condition="-0.1">
+          <Conditional HasStatusTag="on" />
+          <RequiredItem items="mobilebattery" hide="true" type="Contained" />
+        </StatusEffect>
+        <!-- Управление включением/выключением через теги on/off -->
+        <StatusEffect type="OnActive" target="This" IsOn="true">
+          <Conditional HasStatusTag="on" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" IsOn="false">
+          <Conditional HasStatusTag="neq on" />
+        </StatusEffect>
+        <LightComponent IsOn="true" range="1000" LightColor="255,0,0,255" powerconsumption="10" ignorecontinuoustoggle="true">
+          <LightTexture texture="%ModDir%/Weapons/laserlight.png" origin="0, 0.5" size="1.0,0.75" alpha="1.0" />
+        </LightComponent>
+      </Holdable>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" interval="2" duration="2.1" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+      <AiTarget sightrange="2000" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="laser-proxy" description="" Indestructible="true" category="Equipment" hideinmenus="true" subcategory="Attachments" Tags="smallitem,tool,provocative,flashlight" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <Sprite texture="%ModDir%/ammunition.png" name="laser sight anim" sourcerect="-187,411,49,271111" depth="0.56" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery" hide="true">
+        <StatusEffect type="OnActive" target="This" IsOn="true">
+          <Conditional HasStatusTag="on" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" IsOn="false">
+          <Conditional HasStatusTag="neq on" />
+        </StatusEffect>
+        <LightComponent IsOn="true" range="1000" LightColor="255,0,0,255" powerconsumption="0" Voltage="1.0" ignorecontinuoustoggle="true">
+          <LightTexture texture="%ModDir%/Weapons/laserlight.png" origin="0, 0.5" size="1.0,0.75" alpha="1.0" />
+          <!-- Добавление тега laser родителю при активации -->
+          <StatusEffect type="OnActive" target="Parent" tags="laser" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true" />
+        </LightComponent>
+      </Holdable>
+      <AiTarget sightrange="2000" />
+    </Item>
+    <Item Indestructible="true" identifier="laserflashlight-flash" Equip="true" subcategory="Attachments" category="Equipment" Tags="smallitem,tool,provocative,flashlight" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <Price baseprice="350" minavailable="1">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredItem identifier="flashlight" amount="1" />
+        <RequiredItem identifier="laser" amount="1" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="fpgacircuit" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="aluminium" />
+        <Item identifier="lightcomponent" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="laserflashlight icon" sourcerect="235,215,56,50" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="laserflashlight" sourcerect="77,251,56,30" depth="0.56" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery" hide="true">
+        <!-- Система расхода энергии -->
+        <StatusEffect type="OnActive" target="Contained,this" Condition="-0.2">
+          <Conditional HasStatusTag="on" />
+          <RequiredItem items="mobilebattery" hide="true" type="Contained" />
+        </StatusEffect>
+        <!-- Управление включением -->
+        <StatusEffect type="OnActive" target="This" IsOn="true">
+          <Conditional HasStatusTag="on" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" IsOn="false">
+          <Conditional HasStatusTag="neq on" />
+        </StatusEffect>
+        <LightComponent IsOn="true" range="1000" LightColor="255,255,255,155" powerconsumption="10" CastShadows="true" ignorecontinuoustoggle="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.5,2.0" />
+          <StatusEffect type="OnActive" target="This" IsOn="true">
+            <Conditional HasStatusTag="neq on" />
+          </StatusEffect>
+        </LightComponent>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.1,0.1" Pivot="Center" absoluteoffset="0,500" />
+          <Button text="Laser-mode">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="laserflashlight-laser" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+              <dropcontaineditems />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Holdable>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" interval="2" duration="2.1" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+      <AiTarget sightrange="3000" />
+    </Item>
+    <Item Indestructible="true" identifier="laserflashlight-laser" subcategory="Attachments" Equip="true" category="Equipment" Tags="smallitem,tool,provocative,flashlight" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <Price baseprice="350" sold="false" minavailable="1">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="aluminium" />
+        <Item identifier="lightcomponent" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="laserflashlight icon" sourcerect="77,251,56,30" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="laserflashlight" sourcerect="77,251,56,30" depth="0.56" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery" hide="true">
+        <!-- Система расхода энергии -->
+        <StatusEffect type="OnActive" target="Contained,this" Condition="-0.1">
+          <Conditional HasStatusTag="on" />
+          <RequiredItem items="mobilebattery" hide="true" type="Contained" />
+        </StatusEffect>
+        <!-- Управление включением -->
+        <StatusEffect type="OnActive" target="This" IsOn="true">
+          <Conditional HasStatusTag="on" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" IsOn="false">
+          <Conditional HasStatusTag="neq on" />
+        </StatusEffect>
+        <!-- Компонент фонарика -->
+        <!-- Компонент лазера -->
+        <LightComponent IsOn="true" range="1000" toggleable="true" LightColor="255,0,0,255" powerconsumption="0">
+          <LightTexture texture="%ModDir%/Weapons/laserlight.png" origin="0, 0.5" size="1.0,1" />
+          <StatusEffect type="OnActive" target="Parent" tags="laser" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true" />
+        </LightComponent>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.1,0.1" Pivot="Center" absoluteoffset="0,500" />
+          <Button text="Flashlight-mode">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="laserflashlight-flash" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <dropcontaineditems />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Holdable>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" interval="2" duration="2.1" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+      <AiTarget sightrange="3000" />
+    </Item>
+    <Item name="" identifier="suppressor_rifle" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,suppressor" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.07" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem identifier="carbon" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="suppressor_rifle anim" sourcerect="817,188,59,12" depth="0.54" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="suppressor_rifle anim icon" sourcerect="808,232,59,58" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="compensator_rifle" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,compensator" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.06" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="titanium" amount="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="25">
+        <RequiredSkill identifier="mechanical" level="35" />
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="titanium" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="compensator_rifle anim" sourcerect="1004,186,59,12" depth="0.54" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="compensator_rifle anim icon" sourcerect="1054,410,67,70" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="hider_rifle" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,hider" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="titanium" amount="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="titanium" amount="2" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="hider_rifle anim" sourcerect="1004,203,59,12" depth="0.54" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="hider_rifle anim icon" sourcerect="967,402,73,72" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="compensator_pistol" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,compensator" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.06" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+      <Price baseprice="300">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="steel" amount="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="35" />
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="steel" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="compensator_pistol anim" sourcerect="1004,165,59,15" depth="0.54" origin="0.49830508,0.3466667" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="compensator_pistol anim icon" sourcerect="1150,419,76,74" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="hider_pistol" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,hider" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.06" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="steel" amount="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="25">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="steel" amount="2" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="hider_pistol anim" sourcerect="933,165,59,13" depth="0.54" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="hider_pistol anim icon" sourcerect="1137,504,81,80" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="suppressor_pistol" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,suppressor" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.07" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="carbon" amount="2" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="suppressor_pistol anim" sourcerect="830,210,45,12" depth="0.54" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="suppressor_pistol anim icon" sourcerect="740,234,59,58" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="suppressor_shotgun" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,suppressor" cargocontaineridentifier="metalcrate" Scale="0.45" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.07" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.01" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem identifier="carbon" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="suppressor_shotgun anim" sourcerect="889,209,68,15" depth="0.54" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="suppressor_shotgun anim icon" sourcerect="973,321,69,69" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="suppressor_sniper" description="" category="Equipment" subcategory="Attachments" Tags="smallitem,tool,provocative,suppressor" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" minamount="1" maxamount="1" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.07" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.15" />
+      <Price baseprice="250">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredSkill identifier="weapons" level="45" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem identifier="carbon" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/ammunition.png" name="suppressor_sniper anim" sourcerect="883,185,97,17" depth="0.54" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="suppressor_sniper anim icon" sourcerect="1057,321,74,71" depth="0.54" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="-20,0" msg="ItemMsgPickUpSelect"></Holdable>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" HideConditionBar="true" identifier="pu_scope" description="" category="Weapon" subcategory="Attachments" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.4" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна -->
+      <PreferredContainer primary="none" amount="1" spawnprobability="0.5" notcampaign="true" notpvp="true" />
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.3" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.03" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="200" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <!-- Деконструкция -->
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <!-- Крафтинг -->
+      <Fabricate suitablefabricators="repair" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="1" />
+        <RequiredItem identifier="quartz" amount="1" />
+      </Fabricate>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="pu_scope-icon" sourcerect="553,662,90,71" depth="0.56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="pu_scope" sourcerect="1142,324,52,28" depth="0.56" origin="0.49922922,0.49643472" />
+      <!-- Физические параметры -->
+      <Body width="100" height="50" density="25" />
+      <Holdable slots="RightHand,LeftHand,Any" controlpose="true" holdpos="27,22" handle1="0,-19" handle2="90,5" cameraaimoffset="800" setvalue="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" tags="active_scope,active_zoom" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true"></StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" HideConditionBar="true" identifier="colim_scope-1" description="" category="Weapon" subcategory="Attachments" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.35" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна -->
+      <PreferredContainer primary="none" amount="1" spawnprobability="0.4" notcampaign="true" notpvp="true" />
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.15" />
+      <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.05" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="250" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <!-- Деконструкция -->
+      <Deconstruct time="15">
+        <Item identifier="aluminium" />
+      </Deconstruct>
+      <!-- Крафтинг -->
+      <Fabricate suitablefabricators="repair" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="pu_scope-icon" sourcerect="852,646,66,90" depth="0.56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="pu_scope" sourcerect="785,299,51,32" depth="0.56" origin="0.50620747,0.34211585" />
+      <!-- Физические параметры -->
+      <Body width="100" height="50" density="25" />
+      <Holdable slots="RightHand,LeftHand,Any" controlpose="true" holdpos="27,22" handle1="0,-19" handle2="90,5" setvalue="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" tags="active_scope,better_view" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true"></StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" HideConditionBar="true" identifier="acog_scope" description="" subcategory="Attachments" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.5" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна -->
+      <PreferredContainer primary="none" amount="1" spawnprobability="0.25" notcampaign="true" notpvp="true" />
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.10" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.05" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="300" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <!-- Деконструкция -->
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <!-- Крафтинг -->
+      <Fabricate suitablefabricators="repair" requiredtime="30">
+        <RequiredSkill identifier="electrical" level="40" />
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="quartz" amount="1" />
+      </Fabricate>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="acog_scope-icon" sourcerect="653,663,86,70" depth="0.56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="acog_scope" sourcerect="1112,286,42,18" depth="0.56" origin="0.49922922,0.49643472" />
+      <!-- Физические параметры -->
+      <Body width="100" height="50" density="25" />
+      <Holdable slots="RightHand,LeftHand,Any" controlpose="true" holdpos="27,22" handle1="0,-19" handle2="90,5" cameraaimoffset="800" setvalue="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" tags="active_scope,active_zoom" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true"></StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" HideConditionBar="true" identifier="colim_scope" description="" subcategory="Attachments" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.4" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна -->
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.1" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="110" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <!-- Деконструкция -->
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <!-- Крафтинг -->
+      <Fabricate suitablefabricators="repair" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="aluminium" amount="1" />
+        <RequiredItem identifier="plastic" amount="1" />
+      </Fabricate>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="colim_scope-icon" sourcerect="756,656,75,79" depth="0.56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="colim_scope" sourcerect="255,169,41,27" depth="0.56" origin="0.495122,0.35185185" />
+      <!-- Физические параметры -->
+      <Body width="50" height="25" density="25" />
+      <Holdable slots="Any" controlpose="true" holdpos="27,22" handle1="0,-19" handle2="90,5" setvalue="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" tags="active_scope,better_view" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true"></StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" description="" identifier="thermal_scope" category="weapon" subcategory="Attachments" Tags="smallitem,tool,thermal" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+      <Price baseprice="1000" minleveldifficulty="40">
+        <Price locationtype="outpost" multiplier="1" sold="false" />
+        <Price locationtype="city" multiplier="0.9" sold="false" />
+        <Price locationtype="research" multiplier="1.25" sold="false" />
+        <Price locationtype="military" multiplier="1.25" sold="false" />
+        <Price locationtype="mine" multiplier="1" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="45" requiresrecipe="true">
+        <RequiredSkill identifier="electrical" level="50" />
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="thermalgoggles" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="fpgacircuit" amount="2" />
+        <RequiredItem identifier="acog_scope" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="titanium" />
+        <Item identifier="acog_scope" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/ammunition.png" name="thermal scope" sourcerect="140,251,72,28" depth="0.56" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="thermal scope" sourcerect="1143,630,102,109" depth="0.56" origin="0.5,0.5" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="RightHand,LeftHand,Any" controlpose="true" holdpos="27,22" handle1="0,-19" handle2="90,5" cameraaimoffset="300" setvalue="true" msg="ItemMsgPickUpSelect">
+        <!-- Расход энергии -->
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.25">
+          <RequiredItem items="mobilebattery" hide="true" type="Contained" />
+        </StatusEffect>
+        <!-- Визуальная индикация -->
+        <StatusEffect type="OnActive" target="Parent" tags="active_scope" duration="0.1" setvalue="true">
+          <RequiredItem items="mobilebattery" hide="true" type="Contained" condition="gt 0" property="charge" />
+        </StatusEffect>
+        <!-- Автоматическое включение термального зрения при взятии -->
+        <StatusEffect type="OnActive" target="Character" thermalgoggles="true" overlaycolor="100,100,100,120" setvalue="true">
+          <RequiredItem items="mobilebattery" hide="true" type="Contained" condition="gt 0" property="charge" />
+        </StatusEffect>
+        <!-- Отключение при разряде батареи -->
+        <StatusEffect type="OnActive" target="Character" thermalgoggles="false" overlaycolor="0,0,0,0" setvalue="true">
+          <RequiredItem items="mobilebattery" hide="true" type="Contained" condition="lte 0" property="charge" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" interval="2" duration="2.1" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+      <StatusHUD drawhudwhenequipped="true" range="3000" thermalgoggles="false" showdeadcharacters="false" overlaycolor="100,100,100,120" showtexts="false" />
+    </Item>
+    <Item name="" HideConditionBar="true" identifier="pso_scope" description="" category="Weapon" subcategory="Attachments" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.4" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна -->
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.05" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="350" minleveldifficulty="30">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <!-- Деконструкция -->
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+        <Item identifier="steel" />
+      </Deconstruct>
+      <!-- Крафтинг -->
+      <Fabricate suitablefabricators="repair" requiredtime="45">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="titanium" amount="1" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="diamond" amount="1" />
+      </Fabricate>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="pso_scope-icon" sourcerect="1034,636,94,98" depth="0.56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="pso_scope" sourcerect="813,134,91,39" depth="0.56" origin="0.49922922,0.49643472" />
+      <!-- Физические параметры -->
+      <Body width="100" height="50" density="25" />
+      <Holdable slots="RightHand,LeftHand,Any" controlpose="true" holdpos="27,22" handle1="0,-19" handle2="90,5" cameraaimoffset="800" setvalue="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" tags="active_scope,active_zoom-1" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true"></StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" HideConditionBar="true" identifier="brite_scope" description="" category="Weapon" subcategory="Attachments" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.4" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна -->
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.05" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="400" minleveldifficulty="35">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+      </Price>
+      <!-- Деконструкция -->
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+        <Item identifier="titanium" />
+      </Deconstruct>
+      <!-- Крафтинг -->
+      <Fabricate suitablefabricators="repair" requiredtime="50">
+        <RequiredSkill identifier="weapons" level="55" />
+        <RequiredItem identifier="steel" amount="1" />
+        <RequiredItem identifier="titanium" amount="2" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="diamond" />
+      </Fabricate>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="brite_scope-icon" sourcerect="932,634,100,100" depth="0.56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="brite_scope" sourcerect="1069,242,79,23" depth="0.56" origin="0.49620253,0.35238096" />
+      <Body width="100" height="50" density="25" />
+      <Holdable slots="RightHand,LeftHand,Any" controlpose="true" holdpos="27,22" handle1="0,-19" handle2="90,5" cameraaimoffset="800" setvalue="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" tags="active_scope,active_zoom-1" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true"></StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="ceramic-plate" category="Equipment" tags="mediumitem,plate" maxstacksize="3" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft" scale="0.4">
+      <Upgrade gameversion="0.9.3.0" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+      <Price baseprice="350">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="silicon" amount="1" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiresrecipe="true" requiredtime="40">
+        <RequiredSkill identifier="weapons" level="45" />
+        <Item identifier="ballisticfiber" amount="1" />
+        <Item identifier="silicon" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="ceramic icon" sourcerect="278,984,102,102" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="ceramic" sourcerect="626,1022,77,49" origin="0.5,0.5" depth="0.6" />
+      <Body width="88" height="24" density="10" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect"></Pickable>
+    </Item>
+    <Item name="" identifier="steel-plate" category="Equipment" tags="mediumitem,plate" maxstacksize="3" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft" scale="0.4">
+      <Upgrade gameversion="0.9.3.0" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+      <Price baseprice="400">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" amount="1" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiresrecipe="true" requiredtime="45">
+        <RequiredSkill identifier="weapons" level="55" />
+        <Item identifier="steel" amount="2" />
+        <Item identifier="titanium" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="steel icon" sourcerect="396,989,90,90" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="steel" sourcerect="536,1021,75,46" origin="0.5,0.5" depth="0.6" />
+      <Body width="88" height="24" density="10" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="" identifier="kevlar-plate" category="Equipment" tags="mediumitem,plate" maxstacksize="3" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft" scale="0.4">
+      <Upgrade gameversion="0.9.3.0" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="silicon" amount="1" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiresrecipe="true" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <Item identifier="organicfiber" amount="3" />
+        <Item identifier="rubber" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="kevlar icon" sourcerect="162,985,107,101" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="kevlar" sourcerect="723,1027,78,45" origin="0.5,0.5" depth="0.6" />
+      <Body width="88" height="24" density="10" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect"></Pickable>
+    </Item>
+    <Item name="" description="" identifier="med-scan" category="weapon" subcategory="Attachments" Tags="smallitem,tool,flashlight" cargocontaineridentifier="metalcrate" Scale="0.35" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="healthscanner" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator,repair" requiredtime="25">
+        <RequiredSkill identifier="medical" level="45" />
+        <RequiredItem identifier="healthscanner" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="carbon" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/ammunition.png" name="med-scanner" sourcerect="26,1013,75,98" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" name="med-scanner" sourcerect="12,950,68,41" depth="0.54" origin="0.5,0.52" />
+      <Body width="48" height="15" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery" hide="true">
+        <LightComponent LightColor="0.5,1,0.5,0.75" Flicker="0.0" range="200" CastShadows="false" powerconsumption="1" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="2.0,2.0" />
+          <StatusEffect type="OnActive" targettype="Contained" target="Contained" Condition="-0.2">
+            <RequiredItem items="mobilebattery" hide="true" excludedidentifiers="fulguriumbatterycell" type="Contained" />
+          </StatusEffect>
+          <StatusEffect type="OnActive" targettype="Contained" target="Contained" Condition="-0.1">
+            <RequiredItem items="fulguriumbatterycell" type="Contained" />
+          </StatusEffect>
+          <StatusEffect type="OnActive" target="Parent" tags="med-scan" duration="0.1" stackable="false" disabledeltatime="true" setvalue="true" />
+        </LightComponent>
+        <StatusEffect type="OnActive" target="This" IsOn="true">
+          <Conditional HasStatusTag="on" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" IsOn="false">
+          <Conditional HasStatusTag="neq on" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <Containable items="mobilebattery" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" target="this" Voltage="1.0" setvalue="true" />
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      </ItemContainer>
+      <StatusHUD drawhudwhenequipped="true" range="2700" thermalgoggles="false" showdeadcharacters="false" showtexts="true" />
+      <Upgrade gameversion="0.10.0.0" Scale="0.45" />
+    </Item>
+  </Override>
+</Items>

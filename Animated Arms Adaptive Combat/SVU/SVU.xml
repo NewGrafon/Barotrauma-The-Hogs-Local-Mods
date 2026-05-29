@@ -1,0 +1,860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="SVU" category="Weapon" subcategory="Animated_arms_weapons" description=" " cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.485" impactsoundtag="impact_metal_light">
+      <!-- Предпочтительные контейнеры для спавна оружия -->
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.055" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.044" />
+      <!-- Система ценообразования в разных магазинах -->
+      <Price baseprice="1045" minleveldifficulty="47">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="1">
+          <Reputation faction="separatists" min="50" />
+        </Price>
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="1.25" minavailable="1">
+          <Reputation faction="separatists" min="50" />
+        </Price>
+      </Price>
+      <!-- Крафтинг оружия -->
+      <Fabricate suitablefabricators="repair" requiredtime="55">
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="mosin" amount="1" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="dementonite" amount="1" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="28" displayname="repairweapon">
+        <RequiredSkill identifier="mechanical" level="65" />
+        <RequiredItem identifier="SVU" amount="1" />
+        <RequiredItem identifier="repairweapon" amount="1" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="rubber" amount="1" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="titaniumaluminiumalloy" amount="1" />
+        <Item identifier="zinc" amount="1" />
+      </Deconstruct>
+      <!-- Иконки и спрайты -->
+      <InventoryIcon texture="%ModDir%/SVU/SVU.png" sourcerect="8,213,108,125" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/SVU/SVU.png" sourcerect="2,0,241,69" depth="0.55" origin="0.4979078,0.2023187" />
+      <!-- Сломанные спрайты для анимации -->
+      <BrokenSprite texture="%ModDir%/SVU/SVU.png" name="SVU Rifle BrokenSprite1" sourcerect="2,69,241,69" depth="0.55" origin="0.49725258,0.19999103" maxcondition="50" />
+      <BrokenSprite texture="%ModDir%/SVU/SVU.png" name="SVU Rifle BrokenSprite2" sourcerect="2,0,241,69" depth="0.55" origin="0.49758628,0.19855376" maxcondition="0" />
+      <!-- Физические параметры -->
+      <Body width="120" height="50" density="25" />
+      <!-- Удержание в руках -->
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="70,-20" aimpos="90,8" handle1="-35,-34" handle2="26,-15" holdangle="-15">
+        <StatusEffect type="OnActive" target="Character" interval="1" duration="1.1" stackable="false" SpeedMultiplier="0.9" setvalue="true" />
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.55" ObstructVisionAmount="10" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" interval="1" duration="1.1" SpeedMultiplier="1.2" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="laser" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="-0.5" unskilledspread="-1" stackable="true" disabledeltatime="true" setvalue="false" comparison="and" interval="0.05">
+          <Conditional Spread="gt 1" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-10" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-5" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This" target="this" tags="suppressed" interval="1" duration="1.1" setvalue="true">
+          <RequiredItem items="suppressor" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="155,-16" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="108,-16" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" cameraaimoffset="450" interval="1" duration="1.1" setvalue="true" comparison="and">
+          <Conditional HasStatusTag="active_zoom" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" cameraaimoffset="650" interval="1" duration="1.1" setvalue="true" comparison="and">
+          <Conditional HasStatusTag="active_zoom-1" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" ObstructVisionAmount="0.01" interval="1" duration="1.1" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="better_view" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="firing" duration="0.05" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.05" setvalue="true" stackable="false" disabledeltatime="true" conditional="or">
+          <Conditional HasStatusTag="firing" />
+          <Conditional HasStatusTag="cantfire" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.0" setvalue="true" disabledeltatime="true" comparison="and">
+          <Conditional HasStatusTag="neq firing" />
+          <Conditional HasStatusTag="neq cantfire" />
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="cantfire" duration="0.1" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" interval="3" showtexts="false" setvalue="true">
+          <Conditional showtexts="true" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" spritecolor="255,225,210,255">
+          <Conditional HasStatusTag="condition-75" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="0.5" spritecolor="231,204,184,255">
+          <Conditional HasStatusTag="condition-50" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="1" spritecolor="190,140,100,255">
+          <Conditional HasStatusTag="condition-25" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.125" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <TickBox text="onoff">
+          <StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+        </TickBox>
+        <Button text="Weapon_up">
+          <StatusEffect type="OnUse" target="This" aimpos="30,60" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" MatchOnEmpty="true" TargetSlot="1,2,3,4,5,6,7" />
+            <SpawnItem identifiers="weapons-up" spawnposition="ThisInventory" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimpos="60,15" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Contained" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="130" aimpos="50,-30" handle1="-20,-20" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This" handle1="-40,-35" aimpos="60,15" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+      </CustomInterface>
+      <!-- Носимый слот (рюкзак) -->
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="SVU Rifle Worn" texture="%ModDir%/SVU/SVU.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="2,0,241,69" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.49038512,0.7579503" />
+      </Wearable>
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="SVU Rifle Worn" texture="%ModDir%/SVU/SVU.png" canbehiddenbyotherwearables="false" rotation="100" depth="0.6" sourcerect="2,0,241,69" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.49038512,0.7579503" />
+      </Wearable>
+      <!-- Параметры стрельбы -->
+      <RangedWeapon reload="0.5" holdtrigger="true" weapondamagemodifier="0.85" chargetime="0.025" barrelpos="108,-16" spread="1" unskilledspread="4" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0" DualWieldAccuracyPenalty="1">
+        <StatusEffect type="OnSecondaryUse" target="this" showtexts="true" interval="2" duration="2.1" setvalue="true" comparison="and">
+          <Conditional hasstatustag="med-scan" />
+          <RequiredItems items="med-scan" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnEating" target="This" aimangle="0" handle1="-40,-35" aimpos="60,15" delay="0.15">
+          <Conditional HasStatusTag="suicide" />
+          <Dropitem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="+6" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 20" />
+          <Conditional HasStatusTag="neq compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="delaydryfire" duration="0.5" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" aimangle="+4" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 20" />
+          <Conditional HasStatusTag="compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="4" unskilledspread="8" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 15" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.25" stackable="false" setvalue="true" disabledeltatime="true" />
+      <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="255,0,256,256" />
+      <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,0,256,256" /><StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true"><Conditional HasStatusTag="neq suppressed" />
+					            <ParticleEmitter particle="mediummuzzleflash" particleamount="1" distance="50" Angle="-9" scalemultiplier="1.25,1.25" CopyEntityAngle="true" />
+			      <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" distance="50" Angle="-9" scalemultiplier="1.25,1.25" colormultiplier="200,200,200,225" />
+			      <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="5,2.5" distance="50" Angle="-9" colormultiplier="255,255,100,175" CopyEntityAngle="true" /><ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="12,10" distance="50" Angle="-9" colormultiplier="215,215,215,100" CopyEntityAngle="true" /><ParticleEmitter particle="mediumgunsmoke" particleamount="1" distance="50" Angle="-9" CopyEntityAngle="true" />
+			        <Sound file="%ModDir%/mosin/mosin.ogg" type="OnUse" range="4000" frequencymultiplier="1.15" selectionmode="Random" />
+			        <Sound file="%ModDir%/mosin/mosin-1.ogg" type="OnUse" range="4000" frequencymultiplier="1.15" /><Sound file="%ModDir%/mosin/mosin-2.ogg" type="OnUse" range="4000" frequencymultiplier="1.15" /></StatusEffect><StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true"><Conditional HasStatusTag="suppressed" /><ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" scalemultiplier="0.75,0.75" colormultiplier="100,100,100,100" distance="75" Angle="-9" /><ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="2.5,1.5" colormultiplier="255,255,100,175" CopyEntityAngle="true" distance="75" Angle="-9" /><ParticleEmitter particle="mediumgunsmoke" particleamount="1" scalemultiplier="0.5,0.5" CopyEntityAngle="true" distance="75" Angle="-9" />
+			        <Sound file="%ModDir%/mosin/mosin-sup.ogg" type="OnUse" range="1750" frequencymultiplier="1.15" selectionmode="Random" />
+			        <Sound file="%ModDir%/mosin/mosin-1-sup.ogg" type="OnUse" range="1750" frequencymultiplier="1.15" /><Sound file="%ModDir%/mosin/mosin-2-sup.ogg" type="OnUse" range="1750" frequencymultiplier="1.15" /></StatusEffect><StatusEffect type="OnUse" target="This"><Conditional HasStatusTag="neq suppressed" /><Explosion range="600" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false"><Affliction identifier="tinnitus_shot" strength="45" /></Explosion></StatusEffect><ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" /><ParticleEmitter particle="muzzlebubbles" particleamount="6" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" /><ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="90" />
+            <StatusEffect type="OnUse" target="Character" targetlimbs="LeftHand,RightHand">
+        <Conditional skillrequirement="true" weapons="lt 60" />
+        <Affliction identifier="blunttrauma" strength="100" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+        <Explosion range="150.0" force="3" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="25.0" />
+      </StatusEffect>
+            <StatusEffect type="OnUse" target="This">
+        <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+        <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
+      </StatusEffect>
+            <StatusEffect type="OnUse" target="This" condition="25" setvalue="true">
+        <SpawnItem identifier="mosinammos-casing" spawnposition="This" aimspread="30" rotationtype="Collider" rotation="90" count="1" Impulse="0.06" />
+      </StatusEffect>
+            <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemComponent" isActive="true">
+        <RequiredItems items="SVUmagazine,SVUapmagazine,SVUfmjmagazine" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.3" condition="100" setvalue="true" />
+      <StatusEffect type="OnUse" target="This" DualWieldAccuracyPenalty="1" condition="50" setvalue="true" />
+      <StatusEffect type="OnUse" target="Contained" targetidentifiers="SVUchamber" condition="0" setvalue="true" />
+      <StatusEffect type="OnBroken" target="Contained" targetidentifiers="SVUreloading" delay="0.01" condition="0" setvalue="true" />
+      <StatusEffect type="OnBroken" target="Contained" targetidentifiers="SVUreloading" delay="2.2" condition="100" setvalue="true" />
+      <StatusEffect type="OnBroken" target="Contained" targetidentifiers="SVUchamber" condition="100" setvalue="true" delay="1.4" />
+      <StatusEffect type="OnBroken" target="Contained" targetidentifiers="SVUchamber" delay="2.2">
+        <Conditional targetcontainer="true" targetitemcomponent="Rangedweapon" DualWieldAccuracyPenalty="eq 2" />
+        <Use />
+      </StatusEffect>
+            <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="SVUreloading" condition="100" setvalue="true" />
+      <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" holdpos="45,-20" aimpos="60,15" handle1="-33,-35" handle2="26,-15" holdangle="-30" aimangle="0" setvalue="true" />
+      <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+      <StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" />
+      <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" hideitems="false" setvalue="true" />
+            
+      
+            <RequiredItems items="SVUchamber" type="Contained" />
+      <RequiredItems items="SVUreloading" type="Contained" /><RequiredItems items="repair" type="Contained" />
+      <RequiredSkill identifier="weapons" level="60" /><StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-5.5"><Use /><Conditional inwater="false" /></StatusEffect><StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-12.25"><Use /><Conditional inwater="true" /></StatusEffect><StatusEffect type="InWater" target="Contained" targetidentifiers="repair" stackable="false" condition="-8.5" interval="6" /></RangedWeapon>
+      <!-- Логика магазина -->
+      <ItemComponent isActive="false">
+        <StatusEffect type="OnActive" target="Contained" delay="0.1" targetidentifiers="SVUchamber">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Contained">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" DualWieldAccuracyPenalty="2" delay="0.1" setvalue="true" />
+        <StatusEffect type="OnActive" target="Contained" targetidentifiers="SVUchamber" condition="100" setvalue="true" />
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" isActive="false" />
+      </ItemComponent>
+      <!-- Контейнер для магазина -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="false" depth="0.54" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56" spawnwithid="repair" showcontainedstateindicator="false">
+        <Containable items="SVUammo" itempos="-31,-18">
+          <StatusEffect type="OnInserted" target="NearbyItems" range="5" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <Remove />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained" conditionalcomparison="and">
+            <Conditional targetcontainer="true" TargetItemComponent="RangedWeapon" DualWieldAccuracyPenalty="eq 1" />
+            <Conditional condition="neq 0" />
+            <Use />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,0" delay="0.01" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" DualWieldAccuracyPenalty="2" setvalue="true" delay="2.5" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontaineditem="true" condition="gt 0" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="2.375" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-65,-70" condition="0" handle1="-33,-35" holdpos="50,0" aimpos="50,1" holdangle="20" aimangle="20" delay="0.01" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+            <Sound file="%ModDir%/SVU/SVUEjectPortOpen.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="0" delay="0.125" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.666" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/SVU/SVUmagin.ogg" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-60,-40" delay="0.834" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.834" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+            <ParticleEmitter particle="gunbubbles" particleamount="5" anglemin="260" anglemax="280" velocitymin="10" velocitymax="20" distancemin="20" distancemax="30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="0.834" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-62,-26" handle2="26,-15" delay="1.500" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-59,-26" delay="1.534" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-56,-26" delay="1.566" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-53,-26" delay="1.584" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-49,-26" delay="1.616" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-46,-26" delay="1.634" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-42,-26" delay="1.666" holdangle="-10" aimangle="-10" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2.166" handle1="-55,-26" setvalue="true" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/SVU/SVUEjectPortClose.ogg" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-42,-26" delay="2.166" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-47,-26" delay="2.250" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-55,-26" delay="2.334" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-63,-26" delay="2.416" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-70,-26" delay="2.466" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-75,-26" delay="2.500" holdangle="0" aimangle="0" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-33,-35" handle2="26,-15" condition="100" holdpos="40,-20" holdangle="-30" aimpos="60,15" aimangle="0" delay="2.834" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="170" anglemax="190" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" DualWieldAccuracyPenalty="2" setvalue="true" delay="2.0" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontaineditem="true" condition="gt 0" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="1.9" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-65,-70" condition="0" handle1="-33,-35" holdpos="50,0" aimpos="50,1" holdangle="20" aimangle="20" delay="0.01" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+            <Sound file="%ModDir%/SVU/SVUEjectPortOpen.ogg" type="OnUse" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="0" delay="0.1" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.533" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/SVU/SVUmagin.ogg" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-60,-40" delay="0.667" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.667" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+            <ParticleEmitter particle="gunbubbles" particleamount="5" anglemin="260" anglemax="280" velocitymin="10" velocitymax="20" distancemin="20" distancemax="30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="0.667" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-62,-26" handle2="26,-15" delay="1.200" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-59,-26" delay="1.227" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-56,-26" delay="1.253" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-53,-26" delay="1.267" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-49,-26" delay="1.293" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-46,-26" delay="1.307" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-42,-26" delay="1.333" holdangle="-10" aimangle="-10" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.733" handle1="-55,-26" setvalue="true" forceplaysounds="true" conditionalcomparison="and">
+            <Sound file="%ModDir%/SVU/SVUEjectPortClose.ogg" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-42,-26" delay="1.733" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-47,-26" delay="1.800" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-55,-26" delay="1.867" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-63,-26" delay="1.933" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-70,-26" delay="1.973" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-75,-26" delay="2.000" holdangle="0" aimangle="0" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle1="-33,-35" handle2="26,-15" condition="100" holdpos="40,-20" holdangle="-30" aimpos="60,15" aimangle="0" delay="2.267" setvalue="true" conditionalcomparison="and">
+            <Conditional DualWieldAccuracyPenalty="eq 1" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="170" anglemax="190" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-65,-70" condition="0" holdpos="55,0" aimpos="60,15" holdangle="20" aimangle="20" delay="0.01" setvalue="true">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.5" forceplaysounds="true">
+            <Sound file="%ModDir%/SVU/SVUmagin-1.ogg" type="OnUse" range="1000" />
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-60,-40" delay="0.875" setvalue="true">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.875" setvalue="true">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+            <ParticleEmitter particle="gunbubbles" particleamount="5" anglemin="260" anglemax="280" velocitymin="10" velocitymax="20" distancemin="20" distancemax="30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="0.875" setvalue="true" conditionalcomparison="and" />
+          <StatusEffect type="OnInserted" target="This" handle2="26,-15" delay="1.625" setvalue="true">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="40,-20" handle1="-33,-35" holdangle="-30" condition="100" aimpos="60,15" aimangle="0" delay="2.125" setvalue="true">
+            <Conditional DualWieldAccuracyPenalty="eq 2" />
+          </StatusEffect>
+          <StatusEffect type="OnRemoved" target="This">
+            <Sound file="%ModDir%/Saunds/MagDetach.ogg" frequencymultiplier="0.75" range="600" volume="0.5" loop="false" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="%ModDir%/attachments-2.png" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight,flare,alienflare,glowstick" hide="false" itempos="14,-12" setactive="true">
+            <SlotIcon slotindex="0" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <!-- анимация фонарика -->
+            <StatusEffect type="OnInserted" target="This" handle1="-10,-30" handle2="30,0" setvalue="true" delay="0.25" />
+            <StatusEffect type="OnInserted" target="This" handle1="-35,-34" handle2="30,-13" setvalue="true" delay="0.75" />
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="pu_scope,colim_scope-1,pso_scope" hide="false" setactive="true" itempos="-7,0">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="1">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,0" delay="0.01" setvalue="true" />
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="1" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" handle2="-10,10" AllowAccess="false" noninteractable="true" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" handle2="26,-17" AllowAccess="true" noninteractable="false" delay="1.5" crosshairscale="0.225" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" setvalue="true" interval="1" />
+            <StatusEffect type="OnRemoved" target="This" crosshairscale="0.0" cameraaimoffset="0" setvalue="true" />
+            <StatusEffect type="OnContaining" target="This,Contained" crosshairscale="0.225" OneShot="true" setvalue="true" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments-3.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="suppressor_sniper" hide="false" itempos="72.5,-7.5">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" handle1="-10,-30" handle2="30,0" setvalue="true" delay="0.25" />
+            <StatusEffect type="OnInserted" target="This" handle1="-35,-34" handle2="30,-13" setvalue="true" delay="0.75" />
+            <StatusEffect type="OnInserted" target="This" tag="suppressed" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments-1.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Контейнеры для прокси-предметов -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="SVUreloading" removecontaineditemsondeconstruct="true">
+        <Containable items="SVUreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="SVUchamber" removecontaineditemsondeconstruct="true">
+        <Containable items="SVUchamber" hide="true" />
+      </ItemContainer>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="weapons-up" hide="true" />
+      </ItemContainer>
+      <!-- Параметры для ИИ -->
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <!-- Качество оружия -->
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
+      <SkillRequirementHint identifier="weapons" level="65" />
+    </Item>
+    <!-- Прокси-элемент для перезарядки -->
+    <Item name=" " identifier="SVUreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,SVUreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <!-- Прокси-элемент для патронника -->
+    <Item name=" " identifier="SVUchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,SVUchamber">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <!-- ДОБАВЛЕН КОНТЕЙНЕР ДЛЯ ПАТРОНОВ -->
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" SpawnWithId="mosinammos" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="mosinammos" />
+        <StatusEffect type="OnUse" target="This" AllowWhenBroken="true">
+          <SpawnItem identifiers="mosinammos" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <!--магазины-->
+    <Item name=" " identifier="SVUmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="SVU" minamount="1" maxamount="1" spawnprobability="1" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" />
+      <Price baseprice="135" minleveldifficulty="30" displaynonempty="true">
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="2" maxavailable="6" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="2" maxavailable="6" />
+        <Price storeidentifier="merchantcity" sold="true" multiplier="1.25" minavailable="1" maxavailable="3" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="25" amount="1">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem tag="munition_core" amount="1" />
+        <RequiredItem identifier="mosinammos" amount="10" />
+        <RequiredItem identifier="titanium" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="20" amount="1" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="45" />
+        <RequiredItem identifier="mosinammos" amount="10" />
+        <RequiredItem identifier="SVUmagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" amount="1" />
+      </Deconstruct>
+      <InventoryIcon name="SVU magazine icon" texture="%ModDir%/Ammunition.png" sourcerect="957,566,47,49" origin="0.5,0.5" />
+      <Sprite name="SVU magazine" texture="%ModDir%/Ammunition.png" depth="0.54" sourcerect="966,503,31,43" origin="0.5,0.5" />
+      <Body width="28" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="mosinammos" drawinventory="false" />
+        <StatusEffect type="OnUse" target="This" condition="-10" disabledeltatime="true">
+          <SpawnItem identifiers="mosinammos" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true">
+        <Containable items="mosinammos" hide="true">
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <Conditional targetcontainer="true" condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <SpawnItem identifiers="mosinammos" spawnposition="SameInventory" />
+            <Conditional targetcontainer="true" condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="10">
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+            <Conditional condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-5,10" />
+          <StatusEffect type="OnInserted" target="This" handle2="-5,20" delay="0.25" />
+        </Containable>
+        <Containable items="mosinammoap" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="SVUapmagazine" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+        <Containable items="mosinammofmj" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="SVUfmjmagazine" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" handle2="-5,10" holdpos="35,-10" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Remove">
+          <StatusEffect type="OnUse" target="This" condition="-10" disabledeltatime="true">
+            <SpawnItem identifiers="mosinammos" spawnposition="SameInventory" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" handle2="-5,10" />
+          <StatusEffect type="OnUse" target="This" handle2="-5,20" delay="0.25" />
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name=" " identifier="SVUapmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="SVU" minamount="1" maxamount="1" spawnprobability="1" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" />
+      <Price baseprice="240" minleveldifficulty="50" displaynonempty="true">
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" maxavailable="3" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="1.0" minavailable="1" maxavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="30" amount="1">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem tag="munition_core" amount="1" />
+        <RequiredItem identifier="mosinammoap" amount="10" />
+        <RequiredItem identifier="titanium" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="25" amount="1" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="45" />
+        <RequiredItem identifier="mosinammoap" amount="10" />
+        <RequiredItem identifier="SVUapmagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" amount="1" />
+        <Item identifier="titanium" amount="0.5" />
+      </Deconstruct>
+      <InventoryIcon name="SVU magazine AP icon" texture="%ModDir%/Ammunition.png" sourcerect="1013,566,47,49" origin="0.5,0.5" />
+      <Sprite name="SVU AP magazine" texture="%ModDir%/Ammunition.png" depth="0.54" sourcerect="1006,503,31,43" origin="0.5,0.5" />
+      <Body width="28" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="mosinammoap" drawinventory="false" />
+        <StatusEffect type="OnUse" target="This" condition="-10" disabledeltatime="true">
+          <SpawnItem identifiers="mosinammoap" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true">
+        <Containable items="mosinammoap" hide="true">
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <Conditional targetcontainer="true" condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <SpawnItem identifiers="mosinammoap" spawnposition="SameInventory" />
+            <Conditional targetcontainer="true" condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="10">
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+            <Conditional condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-5,10" />
+          <StatusEffect type="OnInserted" target="This" handle2="-5,20" delay="0.25" />
+        </Containable>
+        <Containable items="mosinammos" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="SVUmagazine" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+        <Containable items="mosinammofmj" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="SVUfmjmagazine" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" handle2="-5,10" holdpos="35,-10" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Remove">
+          <StatusEffect type="OnUse" target="This" condition="-10" disabledeltatime="true">
+            <SpawnItem identifiers="mosinammoap" spawnposition="SameInventory" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" handle2="-5,10" />
+          <StatusEffect type="OnUse" target="This" handle2="-5,20" delay="0.25" />
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name=" " identifier="SVUfmjmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="SVU" minamount="1" maxamount="1" spawnprobability="1" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" />
+      <Price baseprice="205" minleveldifficulty="50" displaynonempty="true">
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" maxavailable="3" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="1.0" minavailable="1" maxavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="25" amount="1">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem tag="munition_jacket" amount="1" />
+        <RequiredItem identifier="mosinammofmj" amount="10" />
+        <RequiredItem identifier="titanium" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="20" amount="1" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="45" />
+        <RequiredItem tag="munition_jacket" amount="1" />
+        <RequiredItem identifier="mosinammofmj" amount="10" />
+        <RequiredItem identifier="SVUfmjmagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" amount="1" />
+        <Item identifier="titanium" amount="0.5" />
+      </Deconstruct>
+      <InventoryIcon name="SVU magazine fmj icon" texture="%ModDir%/Ammunition.png" sourcerect="1070,566,47,49" origin="0.5,0.5" />
+      <Sprite name="SVU fmj magazine" texture="%ModDir%/Ammunition.png" depth="0.54" sourcerect="1052,503,31,43" origin="0.5,0.5" />
+      <Body width="28" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="mosinammofmj" drawinventory="false" />
+        <StatusEffect type="OnUse" target="This" condition="-10" disabledeltatime="true">
+          <SpawnItem identifiers="mosinammofmj" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true">
+        <Containable items="mosinammofmj" hide="true">
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <Conditional targetcontainer="true" condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <SpawnItem identifiers="mosinammofmj" spawnposition="SameInventory" />
+            <Conditional targetcontainer="true" condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="10">
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+            <Conditional condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-5,10" />
+          <StatusEffect type="OnInserted" target="This" handle2="-5,20" delay="0.25" />
+        </Containable>
+        <Containable items="mosinammos" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="SVUmagazine" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+        <Containable items="mosinammoap" hide="true">
+          <StatusEffect type="OnInserted" target="This">
+            <SpawnItem identifiers="SVUapmagazine" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" Condition="0.033" />
+            <Remove />
+            <Conditional condition="eq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This">
+            <Dropitem />
+            <Conditional condition="gt 0.01" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" handle2="-5,10" holdpos="35,-10" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Remove">
+          <StatusEffect type="OnUse" target="This" condition="-10" disabledeltatime="true">
+            <SpawnItem identifiers="mosinammofmj" spawnposition="SameInventory" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" handle2="-5,10" />
+          <StatusEffect type="OnUse" target="This" handle2="-5,20" delay="0.25" />
+        </Button>
+      </CustomInterface>
+    </Item>
+  </Items>
+</Override>

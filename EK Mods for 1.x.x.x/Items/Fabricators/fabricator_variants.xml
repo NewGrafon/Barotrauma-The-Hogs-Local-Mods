@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekdockyard_fabricator_adaptive" tags="fabricator,donttakeitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker,cabinet,medcabinet,toxcontainer" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" sourcerect="0,0,320,384" depth="0.8" canflipx="false" />
+    <BrokenSprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" sourcerect="384,0,320,384" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" sourcerect="384,448,320,384" depth="0.8" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" depth="0.84" offset="0,88" sourcerect="0,400,304,128" />
+    <!--
+    <DecorativeSprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" sourcerect="0,384,48,80" depth="0.82" origin="0.2,0.97" offset="160,0" offsetanim="Noise" offsetanimspeed="0.8" >
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" sourcerect="48,384,48,80" depth="0.83" origin="-0.4,0.97" offset="-160,0" offsetanim="Noise" offsetanimspeed="0.6" >
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" sourcerect="96,384,32,64" depth="0.81" origin="-0.2,0.97" offset="-180,0" offsetanim="Noise" offsetanimspeed="0.7" >
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+	-->
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.2" Flickerspeed="0.7" alphablend="false">
+      <sprite texture="%ModDir%/Items/Fabricators/fabricator_adaptive.png" depth="0.025" sourcerect="16,544,288,176" origin="0.505,0.9" alpha="1.0" />
+    </LightComponent>
+    <Fabricator canbeselected="true" powerconsumption="750.0" msg="ItemMsgInteractSelect" fabricationspeed="0.8" skillrequirementmultiplier="0.6">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="%ModDir%/Items/Fabricators/fabricator_utility.ogg" type="OnActive" range="1000.0" volumeproperty="RelativeVoltage" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+    </Fabricator>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.40" mindeteriorationdelay="120" maxdeteriorationdelay="240" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+</Items>

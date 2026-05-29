@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <!-- Improved vanilla glass types -->
+  <!-- Legacy vanilla shapes -->
+  <horizontalresizablewindow name="" identifier="ekdockyard_legacyglassshell_horiz" category="Legacy" body="true" resizehorizontal="true" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="16,112,128,64" depth="0.06" />
+  </horizontalresizablewindow>
+  <verticalresizablewindow name="" identifier="ekdockyard_legacyglassshell_vert" category="Legacy" body="true" resizevertical="true" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="112,192,64,128" depth="0.06" />
+  </verticalresizablewindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_quarterverysmall" category="Legacy" body="true" bodywidth="128" bodyheight="48" bodyoffset="-14,-14" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="576,0,96,96" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_quartersmall" category="Legacy" body="true" bodywidth="168" bodyheight="48" bodyoffset="-14,-14" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="592,336,128,128" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_quarter" category="Legacy" body="true" bodywidth="256" bodyheight="48" bodyoffset="-14,-14" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="736,336,192,192" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_eighthsmall1" category="Legacy" body="true" bodywidth="184" bodyheight="48" bodyoffset="-24,0" bodyrotation="25" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="432,528,224,128" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_eighthsmall2" category="Legacy" body="true" bodywidth="48" bodyheight="184" bodyoffset="0,-24" bodyrotation="-25" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="432,656,128,224" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_curve20" category="Legacy" body="true" bodywidth="210" bodyheight="48" bodyoffset="0,4" bodyrotation="22" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="832,640,192,144" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_curve70" category="Legacy" body="true" bodywidth="48" bodyheight="210" bodyoffset="4,0" bodyrotation="-22" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="672,544,144,192" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_diag1" category="Legacy" body="true" bodywidth="68" bodyheight="48" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="576,752,48,112" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_diag2" category="Legacy" body="true" bodywidth="136" bodyheight="48" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="576,752,96,160" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_diag3" category="Legacy" body="true" bodywidth="270" bodyheight="48" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="576,752,192,256" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_diag1b" category="Legacy" body="true" bodywidth="68" bodyheight="48" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="576,816,112,48" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_diag2b" category="Legacy" body="true" bodywidth="136" bodyheight="48" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="576,816,160,96" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_diag3b" category="Legacy" body="true" bodywidth="270" bodyheight="48" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="576,816,256,192" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_straight20" category="Legacy" body="true" bodywidth="120" bodyheight="48" bodyoffset="0,0" bodyrotation="20" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="16,1312,112,104" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_straight20b" category="Legacy" body="true" bodywidth="240" bodyheight="48" bodyoffset="0,0" bodyrotation="20" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="16,1312,224,144" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_straight70" category="Legacy" body="true" bodywidth="48" bodyheight="120" bodyoffset="0,0" bodyrotation="-20" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="848,800,104,112" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <cornerwindow name="" identifier="ekdockyard_legacyglassshell_straight70b" category="Legacy" body="true" bodywidth="48" bodyheight="240" bodyoffset="0,0" bodyrotation="-20" castshadow="false" health="125" tags="glass" spritecolor="150, 150, 150">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="848,800,144,224" depth="0.1" origin="0.5,0.5" />
+  </cornerwindow>
+  <!-- Vanilla shapes -->
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_horiz" category="Legacy" body="true" resizehorizontal="true" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="16,1,384,90" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_vert" category="Legacy" body="true" resizevertical="true" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="3,192,90,384" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_quarterverysmall" category="Legacy" body="true" bodywidth="246" bodyheight="75" bodyoffset="-8,-8" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="592,128,192,192" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_quartersmall" category="Legacy" body="true" bodywidth="336" bodyheight="75" bodyoffset="-8,-8" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="784,0,256,256" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_quarter" category="Legacy" body="true" bodywidth="522" bodyheight="75" bodyoffset="-8,-8" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="192,128,384,384" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_eighthsmall1" category="Legacy" body="true" bodywidth="342" bodyheight="75" bodyoffset="-16,0" bodyrotation="25" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="16,608,400,208" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_eighthsmall2" category="Legacy" body="true" bodywidth="75" bodyheight="342" bodyoffset="0,-16" bodyrotation="-25" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="16,816,208,400" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_curve20" category="Legacy" body="true" bodywidth="420" bodyheight="75" bodyoffset="0,4" bodyrotation="22" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="944,400,384,256" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_curve70" category="Legacy" body="true" bodywidth="75" bodyheight="420" bodyoffset="4,0" bodyrotation="-22" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="1056,0,256,384" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_diag1" category="Legacy" body="true" bodywidth="136" bodyheight="75" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="256,896,96,192" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_diag2" category="Legacy" body="true" bodywidth="270" bodyheight="75" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="256,896,192,288" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_diag3" category="Legacy" body="true" bodywidth="540" bodyheight="75" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="256,896,384,480" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_diag1b" category="Legacy" body="true" bodywidth="136" bodyheight="75" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="256,992,192,96" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_diag2b" category="Legacy" body="true" bodywidth="270" bodyheight="75" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="256,992,288,192" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_diag3b" category="Legacy" body="true" bodywidth="540" bodyheight="75" bodyoffset="0,0" bodyrotation="45" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="256,992,480,384" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_straight20" category="Legacy" body="true" bodywidth="240" bodyheight="75" bodyoffset="0,0" bodyrotation="20" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="1056,672,224,176" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_straight20b" category="Legacy" body="true" bodywidth="480" bodyheight="75" bodyoffset="0,0" bodyrotation="20" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="1056,672,448,256" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_straight70" category="Legacy" body="true" bodywidth="70" bodyheight="240" bodyoffset="0,0" bodyrotation="-20" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="1328,16,176,224" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <sshellA name="" identifier="ekdockyard_vanillaglassshell_straight70b" category="Legacy" body="true" bodywidth="70" bodyheight="480" bodyoffset="0,0" bodyrotation="-20" castshadow="false" health="125" tags="glass" scale="0.5" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_vanilla.png" sourcerect="1328,16,256,448" depth="0.1" origin="0.5,0.5" />
+  </sshellA>
+  <!-- Decorative Reinforcement -->
+  <shellA name="" identifier="ekdockyard_reinforcedglassdeco1_horiz" body="false" resizehorizontal="true" castshadow="true" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="0,0,384,96" depth="0.098" origin="0.5,0.5" />
+  </shellA>
+  <shellA name="" identifier="ekdockyard_reinforcedglassdeco2_horiz" body="false" resizehorizontal="true" castshadow="true" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="0,112,384,96" depth="0.098" origin="0.5,0.5" />
+  </shellA>
+  <shellA name="" identifier="ekdockyard_reinforcedglassdeco1_vert" body="false" resizevertical="true" castshadow="true" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="0,384,96,384" depth="0.098" origin="0.5,0.5" />
+  </shellA>
+  <shellA name="" identifier="ekdockyard_reinforcedglassdeco2_vert" body="false" resizevertical="true" castshadow="true" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="112,384,96,384" depth="0.098" origin="0.5,0.5" />
+  </shellA>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_quarter" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="400,0,384,384" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_quarter" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="800,0,384,384" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_quartersmall" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="400,400,256,256" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_quartersmall" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="672,400,256,256" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_quarterverysmall" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="1216,400,192,192" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_quarterverysmall" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="1424,400,192,192" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_eighthsmall1" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="16,784,400,208" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_eighthsmall2" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="0,992,208,400" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_eighthsmall1" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="432,784,400,208" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_eighthsmall2" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="208,992,208,400" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_curve20" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="0,1408,384,256" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_curve20" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="400,1408,384,256" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_curve70" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="640,1008,256,384" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_curve70" scale="0.5" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements1.png" sourcerect="912,1008,256,384" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_straight20" scale="0.5" resizevertical="true" resizehorizontal="true" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements2.png" sourcerect="16,0,448,256" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_straight20" scale="0.5" resizevertical="true" resizehorizontal="true" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements2.png" sourcerect="496,0,448,256" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_straight70" scale="0.5" resizevertical="true" resizehorizontal="true" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements2.png" sourcerect="0,288,256,448" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_straight70" scale="0.5" resizevertical="true" resizehorizontal="true" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements2.png" sourcerect="272,288,256,448" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco1_straight45" scale="0.5" resizevertical="true" resizehorizontal="true" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements2.png" sourcerect="16,832,448,544" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  <SubDeco name="" identifier="ekdockyard_reinforcedglassdeco2_straight45" scale="0.5" resizevertical="true" resizehorizontal="true" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements2.png" sourcerect="496,832,448,544" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+</prefabs>

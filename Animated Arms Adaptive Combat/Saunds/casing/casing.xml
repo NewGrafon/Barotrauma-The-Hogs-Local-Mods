@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sounds>
+  <!-- Pistol casings -->
+  <pistol_casing identifier="pistol_casing_1_09" file="%ModDir%/Saunds/casing/pistol_casing_1.ogg" range="350" frequencymultiplier="0.9" />
+  <pistol_casing identifier="pistol_casing_1_095" file="%ModDir%/Saunds/casing/pistol_casing_1.ogg" range="350" frequencymultiplier="0.95" />
+  <pistol_casing identifier="pistol_casing_1_10" file="%ModDir%/Saunds/casing/pistol_casing_1.ogg" range="350" frequencymultiplier="1.0" />
+  <pistol_casing identifier="pistol_casing_1_105" file="%ModDir%/Saunds/casing/pistol_casing_1.ogg" range="350" frequencymultiplier="1.05" />
+  <pistol_casing identifier="pistol_casing_1_11" file="%ModDir%/Saunds/casing/pistol_casing_1.ogg" range="350" frequencymultiplier="1.1" />
+  <pistol_casing identifier="pistol_casing_2_09" file="%ModDir%/Saunds/casing/pistol_casing_2.ogg" range="400" frequencymultiplier="0.9" />
+  <pistol_casing identifier="pistol_casing_2_095" file="%ModDir%/Saunds/casing/pistol_casing_2.ogg" range="400" frequencymultiplier="0.95" />
+  <pistol_casing identifier="pistol_casing_2_10" file="%ModDir%/Saunds/casing/pistol_casing_2.ogg" range="400" frequencymultiplier="1.0" />
+  <pistol_casing identifier="pistol_casing_2_105" file="%ModDir%/Saunds/casing/pistol_casing_2.ogg" range="400" frequencymultiplier="1.05" />
+  <pistol_casing identifier="pistol_casing_2_11" file="%ModDir%/Saunds/casing/pistol_casing_2.ogg" range="400" frequencymultiplier="1.1" />
+  <pistol_casing identifier="pistol_casing_3_09" file="%ModDir%/Saunds/casing/pistol_casing_3.ogg" range="450" frequencymultiplier="0.9" />
+  <pistol_casing identifier="pistol_casing_3_095" file="%ModDir%/Saunds/casing/pistol_casing_3.ogg" range="450" frequencymultiplier="0.95" />
+  <pistol_casing identifier="pistol_casing_3_10" file="%ModDir%/Saunds/casing/pistol_casing_3.ogg" range="450" frequencymultiplier="1.0" />
+  <pistol_casing identifier="pistol_casing_3_105" file="%ModDir%/Saunds/casing/pistol_casing_3.ogg" range="450" frequencymultiplier="1.05" />
+  <pistol_casing identifier="pistol_casing_3_11" file="%ModDir%/Saunds/casing/pistol_casing_3.ogg" range="450" frequencymultiplier="1.1" />
+  <!-- Rifle casings -->
+  <rifle_casing identifier="rifle_casing_1_09" file="%ModDir%/Saunds/casing/rifle_casing_1.ogg" range="500" frequencymultiplier="0.9" />
+  <rifle_casing identifier="rifle_casing_1_095" file="%ModDir%/Saunds/casing/rifle_casing_1.ogg" range="500" frequencymultiplier="0.95" />
+  <rifle_casing identifier="rifle_casing_1_10" file="%ModDir%/Saunds/casing/rifle_casing_1.ogg" range="500" frequencymultiplier="1.0" />
+  <rifle_casing identifier="rifle_casing_1_105" file="%ModDir%/Saunds/casing/rifle_casing_1.ogg" range="500" frequencymultiplier="1.05" />
+  <rifle_casing identifier="rifle_casing_1_11" file="%ModDir%/Saunds/casing/rifle_casing_1.ogg" range="500" frequencymultiplier="1.1" />
+  <rifle_casing identifier="rifle_casing_2_09" file="%ModDir%/Saunds/casing/rifle_casing_2.ogg" range="550" frequencymultiplier="0.9" />
+  <rifle_casing identifier="rifle_casing_2_095" file="%ModDir%/Saunds/casing/rifle_casing_2.ogg" range="550" frequencymultiplier="0.95" />
+  <rifle_casing identifier="rifle_casing_2_10" file="%ModDir%/Saunds/casing/rifle_casing_2.ogg" range="550" frequencymultiplier="1.0" />
+  <rifle_casing identifier="rifle_casing_2_105" file="%ModDir%/Saunds/casing/rifle_casing_2.ogg" range="550" frequencymultiplier="1.05" />
+  <rifle_casing identifier="rifle_casing_2_11" file="%ModDir%/Saunds/casing/rifle_casing_2.ogg" range="550" frequencymultiplier="1.1" />
+  <rifle_casing identifier="rifle_casing_3_09" file="%ModDir%/Saunds/casing/rifle_casing_3.ogg" range="600" frequencymultiplier="0.9" />
+  <rifle_casing identifier="rifle_casing_3_095" file="%ModDir%/Saunds/casing/rifle_casing_3.ogg" range="600" frequencymultiplier="0.95" />
+  <rifle_casing identifier="rifle_casing_3_10" file="%ModDir%/Saunds/casing/rifle_casing_3.ogg" range="600" frequencymultiplier="1.0" />
+  <rifle_casing identifier="rifle_casing_3_105" file="%ModDir%/Saunds/casing/rifle_casing_3.ogg" range="600" frequencymultiplier="1.05" />
+  <rifle_casing identifier="rifle_casing_3_11" file="%ModDir%/Saunds/casing/rifle_casing_3.ogg" range="600" frequencymultiplier="1.1" />
+  <!-- Shotgun casings -->
+  <shotgun_casing identifier="shotgun_casing_1_09" file="%ModDir%/Saunds/casing/shotgun_casing_1.ogg" range="650" frequencymultiplier="0.9" />
+  <shotgun_casing identifier="shotgun_casing_1_095" file="%ModDir%/Saunds/casing/shotgun_casing_1.ogg" range="650" frequencymultiplier="0.95" />
+  <shotgun_casing identifier="shotgun_casing_1_10" file="%ModDir%/Saunds/casing/shotgun_casing_1.ogg" range="650" frequencymultiplier="1.0" />
+  <shotgun_casing identifier="shotgun_casing_1_105" file="%ModDir%/Saunds/casing/shotgun_casing_1.ogg" range="650" frequencymultiplier="1.05" />
+  <shotgun_casing identifier="shotgun_casing_1_11" file="%ModDir%/Saunds/casing/shotgun_casing_1.ogg" range="650" frequencymultiplier="1.1" />
+  <shotgun_casing identifier="shotgun_casing_2_09" file="%ModDir%/Saunds/casing/shotgun_casing_2.ogg" range="700" frequencymultiplier="0.9" />
+  <shotgun_casing identifier="shotgun_casing_2_095" file="%ModDir%/Saunds/casing/shotgun_casing_2.ogg" range="700" frequencymultiplier="0.95" />
+  <shotgun_casing identifier="shotgun_casing_2_10" file="%ModDir%/Saunds/casing/shotgun_casing_2.ogg" range="700" frequencymultiplier="1.0" />
+  <shotgun_casing identifier="shotgun_casing_2_105" file="%ModDir%/Saunds/casing/shotgun_casing_2.ogg" range="700" frequencymultiplier="1.05" />
+  <shotgun_casing identifier="shotgun_casing_2_11" file="%ModDir%/Saunds/casing/shotgun_casing_2.ogg" range="700" frequencymultiplier="1.1" />
+  <shotgun_casing identifier="shotgun_casing_3_09" file="%ModDir%/Saunds/casing/shotgun_casing_3.ogg" range="750" frequencymultiplier="0.9" />
+  <shotgun_casing identifier="shotgun_casing_3_095" file="%ModDir%/Saunds/casing/shotgun_casing_3.ogg" range="750" frequencymultiplier="0.95" />
+  <shotgun_casing identifier="shotgun_casing_3_10" file="%ModDir%/Saunds/casing/shotgun_casing_3.ogg" range="750" frequencymultiplier="1.0" />
+  <shotgun_casing identifier="shotgun_casing_3_105" file="%ModDir%/Saunds/casing/shotgun_casing_3.ogg" range="750" frequencymultiplier="1.05" />
+  <shotgun_casing identifier="shotgun_casing_3_11" file="%ModDir%/Saunds/casing/shotgun_casing_3.ogg" range="750" frequencymultiplier="1.1" />
+  <!-- Large casings -->
+  <large_casing identifier="large_casing_1_09" file="%ModDir%/Saunds/casing/large_casing_1.ogg" range="800" frequencymultiplier="0.9" volume="0.050" />
+  <large_casing identifier="large_casing_1_095" file="%ModDir%/Saunds/casing/large_casing_1.ogg" range="800" frequencymultiplier="0.95" volume="0.050" />
+  <large_casing identifier="large_casing_1_10" file="%ModDir%/Saunds/casing/large_casing_1.ogg" range="800" frequencymultiplier="1.0" volume="0.050" />
+  <large_casing identifier="large_casing_1_105" file="%ModDir%/Saunds/casing/large_casing_1.ogg" range="800" frequencymultiplier="1.05" volume="0.050" />
+  <large_casing identifier="large_casing_1_11" file="%ModDir%/Saunds/casing/large_casing_1.ogg" range="800" frequencymultiplier="1.1" volume="0.050" />
+  <large_casing identifier="large_casing_2_09" file="%ModDir%/Saunds/casing/large_casing_2.ogg" range="850" frequencymultiplier="0.9" volume="0.050" />
+  <large_casing identifier="large_casing_2_095" file="%ModDir%/Saunds/casing/large_casing_2.ogg" range="850" frequencymultiplier="0.95" volume="0.050" />
+  <large_casing identifier="large_casing_2_10" file="%ModDir%/Saunds/casing/large_casing_2.ogg" range="850" frequencymultiplier="1.0" volume="0.050" />
+  <large_casing identifier="large_casing_2_105" file="%ModDir%/Saunds/casing/large_casing_2.ogg" range="850" frequencymultiplier="1.05" volume="0.050" />
+  <large_casing identifier="large_casing_2_11" file="%ModDir%/Saunds/casing/large_casing_2.ogg" range="850" frequencymultiplier="1.1" volume="0.050" />
+  <large_casing identifier="large_casing_3_09" file="%ModDir%/Saunds/casing/large_casing_3.ogg" range="900" frequencymultiplier="0.9" volume="0.050" />
+  <large_casing identifier="large_casing_3_095" file="%ModDir%/Saunds/casing/large_casing_3.ogg" range="900" frequencymultiplier="0.95" volume="0.050" />
+  <large_casing identifier="large_casing_3_10" file="%ModDir%/Saunds/casing/large_casing_3.ogg" range="900" frequencymultiplier="1.0" volume="0.050" />
+  <large_casing identifier="large_casing_3_105" file="%ModDir%/Saunds/casing/large_casing_3.ogg" range="900" frequencymultiplier="1.05" volume="0.050" />
+  <large_casing identifier="large_casing_3_11" file="%ModDir%/Saunds/casing/large_casing_3.ogg" range="900" frequencymultiplier="1.1" volume="0.050" />
+</sounds>

@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" identifier="handcannon" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="smallitem,weapon,gun,pistolitem,mountableweapon,provocativetohumanai" Scale="0.5" impactsoundtag="impact_metal_light">
+      <Price baseprice="600" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="70" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+        <RequiredItem identifier="physicorium" />
+      </Fabricate>
+      <Deconstruct time="30">
+        <Item identifier="titaniumaluminiumalloy" amount="2" />
+        <Item identifier="physicorium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/GunIcons.png" sourcerect="64,0,64,64" />
+      <Sprite texture="%ModDir%/Guns_enchanced/Handcannon/Handcannon.png" sourcerect="0,0,107,52" depth="0.55" origin="0.25,0.4" />
+      <!-- Several broken sprites, used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Handcannon/Handcannon.png" sourcerect="0,104,107,52" depth="0.55" origin="0.25,0.4" maxcondition="66" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Handcannon/Handcannon.png" sourcerect="0,52,107,52" depth="0.55" origin="0.25,0.4" maxcondition="33" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Handcannon/Handcannon.png" sourcerect="0,156,107,52" depth="0.55" origin="0.25,0.4" maxcondition="1" />
+      <Body width="106" height="49" density="30" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="100,-5" holdangle="-50" aimpos="90,-2" handle1="-20,-12" handle2="-20,-15" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon reload="1" barrelpos="70,10" spread="0" unskilledspread="8" combatPriority="90" drawhudwhenequipped="true" crosshairscale="0.2">
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="%ModDir%/Guns_enchanced/Crosshairs.png" sourcerect="256,256,256,256" />
+        <!-- Particles. -->
+        <!-- Visible only on air. -->
+        <ParticleEmitter particle="mediummuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="4,2" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="10,8" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="mediumgunsmoke" particleamount="1" />
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="6" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="40" />
+        <!-- Gunfire sounds. -->
+        <Sound file="Content/Items/JobGear/Captain/WEAPONS_handCannon.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/JobGear/Captain/WEAPONS_handCannon_1.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Captain/WEAPONS_handCannon_2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Captain/WEAPONS_handCannon_3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Captain/WEAPONS_handCannon_4.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Captain/WEAPONS_handCannon_5.ogg" type="OnUse" range="3000" />
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+      Why? Simply turning the light on and off is too slow. -->
+        <!-- Unskilled high recoil. -->
+        <StatusEffect type="OnUse" target="Character" targetlimbs="LeftHand,RightHand">
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Affliction identifier="blunttrauma" strength="300" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          <Explosion range="35.0" force="7" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="25.0" />
+        </StatusEffect>
+        <!-- Skilled low recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          <Explosion range="150.0" force="3" shockwave="false" smoke="false" flash="true" flames="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
+        </StatusEffect>
+        <!-- On fire, triggers all status effects, which all trigger one by one, unless bot is firing. -->
+        <!-- First one triggers with a delay to not break some status effects that work based off the condition conditional.
+      Sets condition to the first brokensprite's condition to trigger first animation sprite. -->
+        <StatusEffect type="OnUse" target="This" delay="0.01" condition="33" setvalue="true" forceplaysounds="true" />
+        <!-- Triggers second brokensprite. -->
+        <StatusEffect type="OnUse" target="This" delay="0.3" condition="66" setvalue="true">
+          <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonCylinderRotate.ogg" range="1000" volume="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.7">
+          <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonCylinderClose.ogg" type="OnUse" range="1000" />
+        </StatusEffect>
+        <!-- Now, listen carefully. I use 100-94 to store the information on how many bullets were fired. Do not ask me why.
+      100 - no bullets were fired, 99-94 is 1-6 bullets fired.
+      Checks the condition before it is changed by animation status effects, and sets the number to the same minus one. -->
+        <StatusEffect type="OnUse" target="This" delay="0.85" condition="99" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.85" condition="98" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="99" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.85" condition="97" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="98" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.85" condition="96" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="97" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.85" condition="95" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="96" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.85" condition="94" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="95" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.85" condition="100" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="false" />
+        </StatusEffect>
+        <!-- Sound. -->
+        <StatusEffect type="OnUse" target="This" delay="0.8" handle2="-20,5" forceplaysounds="true">
+          <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonReady.ogg" range="600" volume="1.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.89" handle2="-20,-15" />
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="handreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="handreloading" delay="3.1" condition="100" setvalue="true" />
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="handreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" aimpos="90,-2" handle1="-20,-12" handle2="-20,-15" holdpos="100,-5" holdangle="-50" aimangle="0" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <!-- Gun requires ammo to use. -->
+        <RequiredItems items="handcannonammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <!-- Gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="handreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="60" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="6" hideitems="false" containedstateindicatorstyle="bullet" containedstateindicatorslot="0" spawnwithid="reloading" containedspritedepth="0.56">
+        <Containable items="handcannonammo" hide="true">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="3.1" setvalue="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Reloading animation, with status effects setting the conditions to trigger brokensprites, changing aimposes and aimangles and such. -->
+          <!-- Pull down the revolver. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="-20" holdpos="35,-20" aimangle="-20" aimpos="45,-15" condition="0" setvalue="true" delay="0.01" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Revolver opening sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.3" handle2="-10,5" forceplaysounds="true" allowwhenbroken="true">
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonCylinderOpen.ogg" range="1000" />
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Open the revolver. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.4" condition="1" setvalue="true" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <!-- Pull up the revolver. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="80" handle2="-20,-15" holdpos="20,-40" aimangle="80" aimpos="35,10" setvalue="true" delay="0.7" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- The casings fall. -->
+          <!-- Several status effects with only one triggered.
+	    If condition is 100, first status effect is triggered, with no revolver round ejecting sound nor any casing particles.
+        If condition is 94, the seveth status effect is triggered with revolver round ejecting sound and 6 casing particles. -->
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional condition="eq 100" />
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional condition="eq 99" />
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="handcannonroundcasing" particleamount="1" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 98" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="handcannonroundcasing" particleamount="2" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 97" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="handcannonroundcasing" particleamount="3" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 96" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="handcannonroundcasing" particleamount="4" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 95" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="handcannonroundcasing" particleamount="5" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 94" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="handcannonroundcasing" particleamount="6" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <!-- A failsafe. -->
+          <StatusEffect type="OnInserted" target="This" delay="1" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="lt 94" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonRoundEjecting.ogg" range="600" />
+          </StatusEffect>
+          <!-- Pull down the revolver to insert the rounds. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="-20" holdpos="35,-20" handle1="-5,0" aimangle="-20" aimpos="45,-15" setvalue="true" delay="1.3" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Round insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.5" forceplaysounds="true" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonLoading.ogg" range="600" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" handle1="-20,-12" setvalue="true" forceplaysounds="true" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonCylinderClose.ogg" range="600" />
+          </StatusEffect>
+          <!-- Aim the revolver. -->
+          <StatusEffect type="OnInserted" target="This" holdpos="100,-5" holdangle="-50" aimangle="0" aimpos="70,5" handle2="-20,5" delay="2.6" condition="33" setvalue="true" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Last animation stage. -->
+          <StatusEffect type="OnInserted" target="This" delay="3" handle2="-20,-15" holdpos="100,-5" holdangle="-50" condition="100" setvalue="true" forceplaysounds="true" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Sound file="%ModDir%/Guns_enchanced/Handcannon/HandcannonReady.ogg" range="600" volume="1.5" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="28,0" setactive="true" />
+          <Containable items="scope" hide="false" itempos="24,12">
+            <StatusEffect type="OnContaining" target="This" cameraaimoffset="500" setvalue="true" interval="1" />
+            <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" setvalue="true" />
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="handreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->&gt;
+        <Containable items="handreloading" hide="true"><StatusEffect type="OnRemoved" target="Contained"><Remove /></StatusEffect></Containable></ItemContainer>
+      <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="60" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="handreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,handreloading">
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

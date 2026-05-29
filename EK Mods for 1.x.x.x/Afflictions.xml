@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Affliction name="ek_debug_nostun" identifier="ek_debug_nostun" description="" type="buff" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="1000" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="0" resistancefor="stun" minresistance="1" maxresistance="1">
+      <StatusEffect target="Character" setvalue="true">
+        <ReduceAffliction identifier="stun" amount="1000" />
+        <ReduceAffliction identifier="progressivestun" amount="1000" />
+        <ReduceAffliction identifier="nausea" amount="1000" />
+        <ReduceAffliction identifier="ek_stun_threshold" amount="1000" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Disoriented " identifier="ek_invertcontrols_fixed" description="" type="invertcontrols" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="3">
+    <Effect minstrength="0" maxstrength="3" strengthchange="-1.5">
+      <StatusEffect target="Character" SpeedMultiplier="-0.51" setvalue="true" />
+    </Effect>
+  </Affliction>
+  <Affliction name="Stun " identifier="ek_stun_threshold" description="The patient is dazed and unresponsive." type="damage" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="1000" maxstrength="30">
+    <Effect minstrength="0" maxstrength="10" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="0.0" maxscreenblur="1.0" strengthchange="-1.5">
+      <StatusEffect target="Character" setvalue="true" SpeedMultiplier="0.75" />
+    </Effect>
+    <Effect minstrength="10" maxstrength="20" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="1.0" maxscreenblur="2.0" minscreendistort="0.0" maxscreendistort="0.15" strengthchange="-1.0">
+      <StatusEffect target="Character" setvalue="true" SpeedMultiplier="0.5" />
+    </Effect>
+    <Effect minstrength="20" maxstrength="30" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="2.0" maxscreenblur="4.0" minscreendistort="0.15" maxscreendistort="0.5" strengthchange="-1.0">
+      <StatusEffect target="Character" setvalue="true">
+        <Affliction identifier="stun" amount="1" />
+      </StatusEffect>
+    </Effect>
+    <!--<PeriodicEffect mininterval="3" maxinterval="8" minstrength="8" maxstrength="30">
+      <StatusEffect target="Character" duration="1.5">
+        <Affliction identifier="ek_invertcontrols_fixed" amount="1.5" />
+      </StatusEffect>
+    </PeriodicEffect>-->
+    <PeriodicEffect mininterval="2" maxinterval="8">
+      <StatusEffect target="Character" duration="0.6">
+        <Affliction identifier="ek_invertcontrols_fixed" amount="2.5" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Burning" identifier="ek_burn_threshold" description="The area is blistered and red, and skin is already beginning to peel away in sheets. The patient is in a great deal of pain." type="burn" causeofdeathdescription="Burned to death" selfcauseofdeathdescription="You have burned to death." limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="10">
+    <Effect minstrength="1" maxstrength="10" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-0.75">
+      <StatusEffect target="Character">
+        <Affliction identifier="burn" amount="0.2" />
+      </StatusEffect>
+      <StatusEffect target="Limb">
+        <!--<ParticleEmitter particle="flame" particlespersecond="6" scalemin="0.2" scalemax="0.5" distancemin="0" distancemax="30" />-->
+        <ParticleEmitter particle="ekcharacterburn" particlespersecond="6" scalemin="0.5" scalemax="0.8" distancemin="0" distancemax="30" />
+        <ParticleEmitter particle="smoke" particlespersecond="6" scalemin="2" scalemax="2.5" />
+      </StatusEffect>
+      <!--<StatusEffect target="Limb" disabledeltatime="true" stackable="false" delay="0.15">
+        <Explosion range="125.0" force="0" shockwave="false" smoke="false" flames="true" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>-->
+      <StatusEffect target="Character" type="InWater">
+        <ReduceAffliction identifier="burn" amount="0.2" />
+        <!--<ReduceAffliction identifier="ek_burn_threshold" amount="2" />-->
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Explosive Dart" identifier="ek_explosivedart" type="damage" causeofdeathdescription="Died of internal injuries" selfcauseofdeathdescription="You have succumbed to your internal injuries." limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="25">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="1.5"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="internaldamage" amount="30" />
+        <Affliction identifier="lacerations" amount="40" />
+        <Affliction identifier="burn" amount="10" />
+        <Affliction identifier="bleeding" amount="10" />
+        <Explosion range="200.0" structuredamage="30" itemdamage="15" force="20.0" severlimbsprobability="1" decal="explosion" decalsize="0.05">
+          <Affliction identifier="burn" amount="70" />
+          <Affliction identifier="explosiondamage" amount="50" />
+          <Affliction identifier="stun" amount="5" />
+        </Explosion>
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="1200" />
+        <!--<Affliction identifier="ek_reset_explosivedart" amount="50" />-->
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="106,106,106,255" origin="0,0" />
+  </Affliction>
+  <!--
+  <Affliction
+    name="Pressure Protection"
+    identifier="ek_pressure_threshold"
+    description=" "
+    type="buff"
+    limbspecific="false"
+    activationthreshold="1.0"
+    showiconthreshold="1000"
+    maxstrength="150">
+    <Effect minstrength="1" maxstrength="25"
+      minvitalitydecrease="0"
+      maxvitalitydecrease="0"
+      strengthchange="-25.0" >
+    </Effect>
+    <Effect minstrength="25" maxstrength="50"
+      strengthchange="-50.0" >
+    </Effect>
+    <Effect minstrength="50" maxstrength="75"
+      strengthchange="-75" >
+    </Effect>
+    <Effect minstrength="75" maxstrength="100"
+      strengthchange="-75" >
+      <StatusEffect target="Character" PressureProtection="80.0" />
+    </Effect>
+    <Effect minstrength="100" maxstrength="125"
+      strengthchange="-100" >
+      <StatusEffect target="Character" PressureProtection="100.0" />
+    </Effect>
+    <Effect minstrength="125" maxstrength="150"
+      strengthchange="-125" >
+      <StatusEffect target="Character" PressureProtection="190.0" />
+    </Effect>
+
+    <Effect minstrength="75" maxstrength="125">
+      <StatusEffect target="Character" PressureProtection="110.0" />
+    </Effect>
+
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,896,128,128" color="10,193,114,255" origin="0,0"/>
+  </Affliction>
+-->
+  <!-- Old implementation
+  <Affliction
+    name="Pressure Protection"
+    identifier="ek_pressure_threshold"
+    description=" "
+    type="buff"
+    limbspecific="false"
+    activationthreshold="1.0"
+    showiconthreshold="1000"
+    maxstrength="50">
+    <Effect minstrength="1" maxstrength="25"
+      minvitalitydecrease="0"
+      maxvitalitydecrease="0"
+      strengthchange="-150.0" >
+    </Effect>
+    <Effect minstrength="25" maxstrength="50"
+      strengthchange="-150.0" >
+      <StatusEffect target="Character" PressureProtection="140.0" />
+    </Effect>
+  </Affliction>
+-->
+  <Affliction name="Pressure Protection" identifier="ek_pressure_threshold_10000" description=" " type="buff" limbspecific="false" activationthreshold="1.0" showiconthreshold="1000" maxstrength="50">
+    <Effect minstrength="1" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-150.0">
+      <StatusEffect target="Character" PressureProtection="10000.0" setvalue="true" />
+    </Effect>
+    <Effect minstrength="25" maxstrength="50" strengthchange="-150.0">
+      <StatusEffect target="Character" PressureProtection="10000.0" setvalue="true" />
+    </Effect>
+  </Affliction>
+  <Affliction name=" " description=" " type="buff" identifier="ek_armor_speeddebuff" limbspecific="false" activationthreshold="0.5" showiconthreshold="1000" maxstrength="4">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-2" />
+    <Effect minstrength="2" maxstrength="4" strengthchange="-2">
+      <StatusEffect target="Character" SpeedMultiplier="0.55" setvalue="true" />
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name=" " description=" " type="buff" identifier="ek_shearclaw_speed" limbspecific="false" activationthreshold="0.5" showiconthreshold="1000" maxstrength="4">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-40" />
+    <Effect minstrength="2" maxstrength="4" strengthchange="-40" minspeedmultiplier="2.0" maxspeedmultiplier="2.5">
+      <!--<StatusEffect target="Character" setvalue="true">
+        <Affliction identifier="internaldamage" amount="0.25" />
+      </StatusEffect>-->
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_physicoriumveryweak_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="gunshotwound" strength="5" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="gunshotwound" amount="10" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="gunshotwound" amount="10" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_physicoriumweak_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="gunshotwound" strength="10" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Character" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="gunshotwound" amount="30" />
+      </StatusEffect>
+      <StatusEffect target="Character" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="gunshotwound" amount="30" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_physicorium_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="20" />
+        <Affliction identifier="gunshotwound" strength="20" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="gunshotwound" amount="50" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="gunshotwound" amount="50" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_physicoriumstrong_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="30" />
+        <Affliction identifier="gunshotwound" strength="30" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="gunshotwound" amount="75" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="gunshotwound" amount="75" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_physicoriumverystrong_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="40" />
+        <Affliction identifier="gunshotwound" strength="40" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="gunshotwound" amount="100" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="gunshotwound" amount="100" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_shotgunslug_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="gunshotwound" strength="15" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="gunshotwound" amount="25" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="gunshotwound" amount="25" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_alienshotgunslug_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="25" />
+        <Affliction identifier="gunshotwound" strength="30" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="gunshotwound" amount="50" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="gunshotwound" amount="50" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_coilgun_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="gunshotwound" amount="25" />
+        <Affliction identifier="lacerations" amount="25" />
+        <Affliction identifier="internaldamage" amount="20" />
+        <Affliction identifier="bleeding" amount="20" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="lacerations" amount="50" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="lacerations" amount="50" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_rocket_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="burn" strength="20" />
+        <Affliction identifier="lacerations" amount="100" />
+        <Affliction identifier="internaldamage" amount="50" />
+        <Affliction identifier="bleeding" amount="20" />
+        <Affliction identifier="stun" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ek_piercing_railgun_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="gunshotwound" amount="200" />
+        <Affliction identifier="lacerations" amount="200" />
+        <Affliction identifier="internaldamage" amount="100" />
+        <Affliction identifier="bleeding" amount="40" />
+        <Affliction identifier="stun" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Fusion Warhead Blast" identifier="ek_fusion_railgun_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="explosiondamage" amount="1250" />
+        <Affliction identifier="lacerations" amount="1250" />
+        <Affliction identifier="internaldamage" amount="700" />
+        <Affliction identifier="bleeding" amount="100" />
+        <Affliction identifier="stun" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <!-- Todo: Clean up this affliction code alot -->
+  <Affliction name="Drone Disarm Signal" identifier="ek_drone_disarm" description="" type="buff" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="1000" maxstrength="91">
+    <Effect minstrength="1" maxstrength="15" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+      <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true" />
+    </Effect>
+    <Effect minstrength="15" maxstrength="90" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+      <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true">
+        <Affliction identifier="stun" amount="1000" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="90" maxstrength="91" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+      <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true">
+        <Affliction identifier="stun" amount="1000" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="IFF Disabled" identifier="ek_drone_noiff" description="" type="buff" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="1000" maxstrength="101">
+    <Effect minstrength="1" maxstrength="101" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+      <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true" />
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Future Note: technically this is the flashbang effect -->
+  <Affliction name="Deafened" identifier="ek_deafened" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="20">
+    <Effect minstrength="0" maxstrength="4" strengthchange="-0.6">
+      <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.8" setvalue="true" />
+    </Effect>
+    <Effect minstrength="4" maxstrength="8" strengthchange="-0.6">
+      <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.6" setvalue="true" />
+    </Effect>
+    <Effect minstrength="8" maxstrength="12" strengthchange="-0.6">
+      <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.4" setvalue="true" />
+    </Effect>
+    <Effect minstrength="12" maxstrength="16" strengthchange="-0.6">
+      <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.2" setvalue="true" />
+    </Effect>
+    <Effect minstrength="16" maxstrength="20" strengthchange="-0.6">
+      <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0" setvalue="true" />
+    </Effect>
+  </Affliction>
+  <!-- Effect for smoke grenade -->
+  <Affliction name="Blinded" identifier="ek_blinded" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="20">
+    <Effect minstrength="0" maxstrength="20" strengthchange="-5">
+      <StatusEffect target="Character" ObstructVision="true" setvalue="true" />
+    </Effect>
+  </Affliction>
+  <Affliction name="Poison Cloud" identifier="ek_nearbycharacters_cyanidepoisoning" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="2">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-4">
+      <StatusEffect target="Character">
+        <Conditional ishuman="false" />
+        <Affliction identifier="cyanidepoisoning" strength="1" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="Poison Cloud" identifier="ek_nearbycharacters_paralysis" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="2">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-4">
+      <StatusEffect target="Character">
+        <Conditional ishuman="false" />
+        <Affliction identifier="paralysis" strength="2" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="Poison Cloud" identifier="ek_nearbycharacters_radiationsickness" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="2">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-4">
+      <StatusEffect target="Character">
+        <Conditional ishuman="false" />
+        <Affliction identifier="radiationsickness" strength="8" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <!-- EK Gunnery afflictions-->
+  <InternalDamage name="Shredded Armor" identifier="ekgunnery_piercingeffect_heavyrailgun" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="lacerations" strength="100" />
+        <Affliction identifier="blunttrauma" strength="50" />
+        <Affliction identifier="bleeding" strength="50" />
+        <Affliction identifier="stun" strength="10" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ekgunnery_piercingeffect_weak" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="gunshotwound" strength="10" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+  <InternalDamage name="Shredded Armor" identifier="ekgunnery_piercingeffect_mediumssl" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1">
+    <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect>
+    <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000">
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Affliction identifier="gunshotwound" amount="20" />
+        <Affliction identifier="lacerations" amount="20" />
+        <Affliction identifier="internaldamage" amount="15" />
+        <Affliction identifier="bleeding" amount="15" />
+      </StatusEffect>
+      <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="mudraptor" />
+        <Affliction identifier="lacerations" amount="50" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true">
+        <Conditional speciesname="bonethesher" />
+        <Affliction identifier="lacerations" amount="50" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" />
+  </InternalDamage>
+</Afflictions>

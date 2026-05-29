@@ -1,0 +1,1519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekdockyard_customwire_pipe1" category="Electrical" Tags="smallitem,wire" maxstacksize="8" spritecolor="175,175,175,255" InventoryIconColor="175,175,175,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Price baseprice="13">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <!--
+	22
+	42
+	-->
+    <Deconstruct time="5">
+      <Item identifier="copper" outcondition="0.2" />
+      <Item identifier="aluminium" outcondition="0.2" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="5">
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Electricity/decorativewires1.png" sourcerect="16,8,128,16" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Electricity/decorativewires1.png" depth="0.55" sourcerect="16,8,128,16" origin="0.5,0.5" />
+    <Body radius="14" width="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Wire width="0.5">
+      <WireSprite texture="%ModDir%/Items/Electricity/decorativewires1.png" depth="0.85" sourcerect="16,8,128,16" origin="0.5,0.5" />
+    </Wire>
+  </Item>
+  <Item name="" identifier="ekdockyard_customwire_pipe1red" variantof="ekdockyard_customwire_pipe1" spritecolor="200,50,50,255" InventoryIconColor="200,50,50,255"></Item>
+  <Item name="" identifier="ekdockyard_customwire_pipe1blue" variantof="ekdockyard_customwire_pipe1" spritecolor="50,100,150,255" InventoryIconColor="50,100,150,255"></Item>
+  <!--
+  <Item name="" identifier="ekdockyard_customwire_pipe1navy" variantof="ekdockyard_customwire_pipe1" spritecolor="60,80,125,255" InventoryIconColor="60,80,125,255" >
+  </Item>
+  -->
+  <Item name="" identifier="ekdockyard_customwire_pipe1orange" variantof="ekdockyard_customwire_pipe1" spritecolor="200,125,50,255" InventoryIconColor="200,125,50,255"></Item>
+  <Item name="" identifier="ekdockyard_customwire_pipe1green" variantof="ekdockyard_customwire_pipe1" spritecolor="50,125,100,255" InventoryIconColor="50,125,100,255"></Item>
+  <Item name="" identifier="ekdockyard_customwire_pipe1black" variantof="ekdockyard_customwire_pipe1" spritecolor="75,75,75,255" InventoryIconColor="75,75,75,255"></Item>
+  <Item name="" identifier="ekdockyard_customwire_pipe1bracket" category="Electrical" Tags="smallitem,logic" maxstacksize="8" spritecolor="125,125,125,255" InventoryIconColor="125,125,125,255" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Price baseprice="3">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <!--
+	12
+	-->
+    <Deconstruct time="2">
+      <Item identifier="tin" outcondition="0.25" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="4" amount="4">
+      <RequiredItem identifier="tin" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/Electricity/decorativewires1.png" sourcerect="160,0,32,32" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Electricity/decorativewires1.png" depth="0.8" sourcerect="160,0,32,32" origin="0.5,0.5" />
+    <Body width="31" height="25" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="2.5" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekdockyard_portablesprinkler" aliases="ekdockyard_portablespinkler" category="Equipment" Tags="signal" requireaimtouse="false" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="0,0,96,128" depth="0.55" origin="0.5,0.5" />
+    <RepairTool wateramount="10.0" extinguishamount="30.0" range="350" powerconsumption="25" barrelpos="0,0" barrelrotation="270" spread="45" unskilledspread="45" targetstructures="false" hititems="false" characterusable="false" requireaimtouse="false" usablein="air">
+      <!--
+      <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="700.0" particlespersecond="50" anglemin="-45" anglemax="45" />
+	  -->
+      <ParticleEmitter particle="ekutility_sprinklerdrops" velocitymin="0.0" velocitymax="700.0" particlespersecond="50" anglemin="-45" anglemax="45" />
+      <sound file="%ModDir%/Items/Electricity/sprinkler_loop.ogg" type="OnUse" range="500" loop="true" />
+    </RepairTool>
+    <LightComponent lightcolor="255,255,255,0" range="10.0" powerconsumption="25" IsOn="false" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="This">
+        <UseItem />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_vacuumpumpsmall" category="Equipment" Tags="signal" requireaimtouse="false" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.91" sourcerect="0,128,112,112" />
+    <LightComponent lightcolor="2,2,2,2" range="2.0" minvoltage="0.5" powerconsumption="100" IsOn="false" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="Hull" Oxygen="-10000"></StatusEffect>
+      <StatusEffect type="OnActive" targettype="This">
+        <sound file="%ModDir%/Items/Electricity/vacuumpump_small.ogg" type="OnActive" range="500" loop="true" />
+        <ParticleEmitter particle="ekdockyard_vacuum_small" particlespersecond="18" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_vacuumpumplarge" category="Equipment" Tags="signal" requireaimtouse="false" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.91" sourcerect="0,128,112,112" />
+    <LightComponent lightcolor="2,2,2,2" range="2.0" minvoltage="0.5" powerconsumption="200" IsOn="false" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="Hull" Oxygen="-20000"></StatusEffect>
+      <StatusEffect type="OnActive" targettype="This">
+        <sound file="%ModDir%/Items/Electricity/vacuumpump_large.ogg" type="OnActive" range="750.0" loop="true" />
+        <ParticleEmitter particle="ekdockyard_vacuum_large" particlespersecond="22" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_firejet" category="Equipment" Tags="signal" requireaimtouse="false" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="96,0,96,128" depth="0.55" origin="0.5,0.5" />
+    <!-- Debug
+	<BrokenSprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="96,0,96,112" depth="0.55" maxcondition="75" />
+	<BrokenSprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="96,0,96,96" depth="0.55" maxcondition="50" />
+	<BrokenSprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="96,0,96,80" depth="0.55" maxcondition="25" />
+	<BrokenSprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="96,0,96,64" depth="0.55" maxcondition="0" />
+	-->
+    <ItemComponent>
+      <!-- Strangely, this does actually work to turn the lamp off. But the glow sprite persists for some reason. -->
+      <StatusEffect type="InWater" target="This" condition="0" disabledeltatime="true" setvalue="true" />
+      <!--<StatusEffect type="NotInWater" target="This" condition="100" setvalue="true" allowwhenbroken="true"/>-->
+      <StatusEffect type="Always" target="This" condition="90" allowwhenbroken="true" />
+      <StatusEffect type="Always" target="This" IsOn="false" disabledeltatime="true" setvalue="true">
+        <Conditional condition="lt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <RepairTool firedamage="30.0" range="350" powerconsumption="125" barrelpos="0,0" fireprobability="0.15" barrelrotation="270" spread="35" unskilledspread="35" targetstructures="false" hititems="false" characterusable="false" requireaimtouse="false" usablein="air">
+      <!--
+      <ParticleEmitter particle="flamethrower" particlespersecond="10" anglemin="0" anglemax="0" velocitymin="500" velocitymax="700" highqualitycollisiondetection="true"/>
+      <ParticleEmitter particle="flamethrowersmoke" particlespersecond="10" anglemin="0" anglemax="0" velocitymin="200" velocitymax="500"/>
+	  <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+	  -->
+      <ParticleEmitter particle="ekdockyard_flamejet_glow" particlespersecond="15" copyentityangle="true" anglemin="-10" anglemax="10" velocitymin="750" velocitymax="1250" scalemin="0.4" scalemax="0.6" distancemin="0" distancemax="55" />
+      <ParticleEmitter particle="ekdockyard_flamejet_flame" particlespersecond="20" copyentityangle="true" anglemin="-10" anglemax="10" velocitymin="1000" velocitymax="1500" scalemin="0.3" scalemax="0.4" distancemin="20" distancemax="45" />
+      <sound file="Content/Items/Weapons/FlameThrowerLoop.ogg" type="OnUse" range="1000.0" loop="true" />
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Affliction identifier="burn" amount="2.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Hull" Oxygen="-10000" />
+    </RepairTool>
+    <LightComponent lightcolor="255,125,50,150" range="200.0" flicker="0.6" flickerspeed="0.4" powerconsumption="125" IsOn="false" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="This">
+        <UseItem />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_firejet_radial" category="Equipment" Tags="signal" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="448,128,128,128" depth="0.55" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="InWater" target="This" condition="0" setvalue="true" />
+      <!--<StatusEffect type="NotInWater" target="This" condition="100" setvalue="true" allowwhenbroken="true"/>-->
+      <StatusEffect type="Always" target="This" condition="90" allowwhenbroken="true" />
+      <StatusEffect type="Always" target="This" IsOn="false" disabledeltatime="true" setvalue="true">
+        <Conditional condition="lt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <LightComponent lightcolor="255,125,50,150" range="200.0" flicker="0.6" flickerspeed="0.4" powerconsumption="125" IsOn="false" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_flamejet_radial_glow" particlespersecond="20" anglemin="0" anglemax="360" velocitymin="0" velocitymax="250" scalemin="0.4" scalemax="0.6" distancemin="0" distancemax="25" />
+        <ParticleEmitter particle="ekdockyard_flamejet_radial_flame" particlespersecond="30" anglemin="0" anglemax="360" velocitymin="0" velocitymax="500" scalemin="0.2" scalemax="0.3" distancemin="10" distancemax="35" />
+        <sound file="Content/Items/Weapons/FlameThrowerLoop.ogg" type="OnUse" range="1000.0" loop="true" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion ballastfloradamage="12" range="325.0" structuredamage="0" itemdamage="0" force="0.05" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false">
+          <Affliction identifier="burn" strength="3.5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="6.5" checkconditionalalways="true">
+        <Conditional IsOn="eq True" targetitemcomponent="LightComponent" />
+        <Fire />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Hull" Oxygen="-10000" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_steamjet" category="Equipment" Tags="signal" requireaimtouse="false" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="480,0,96,128" depth="0.55" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="InWater" target="This" condition="0" setvalue="true" />
+      <!--<StatusEffect type="NotInWater" target="This" condition="100" setvalue="true" allowwhenbroken="true"/>-->
+      <StatusEffect type="Always" target="This" condition="90" allowwhenbroken="true" />
+      <StatusEffect type="Always" target="This" IsOn="false" disabledeltatime="true" setvalue="true">
+        <Conditional condition="lt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <RepairTool firedamage="15.0" range="350" powerconsumption="125" barrelpos="0,0" fireprobability="0" barrelrotation="270" spread="35" unskilledspread="35" targetstructures="false" hititems="false" characterusable="false" requireaimtouse="false" usablein="air">
+      <!--
+      <ParticleEmitter particle="flamethrower" particlespersecond="10" anglemin="0" anglemax="0" velocitymin="500" velocitymax="700" highqualitycollisiondetection="true"/>
+      <ParticleEmitter particle="flamethrowersmoke" particlespersecond="10" anglemin="0" anglemax="0" velocitymin="200" velocitymax="500"/>
+	  <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+	  -->
+      <ParticleEmitter particle="ekdockyard_steamjet_spray" particlespersecond="25" copyentityangle="true" anglemin="-20" anglemax="20" velocitymin="500" velocitymax="1000" scalemin="0.07" scalemax="0.1" distancemin="15" distancemax="25" />
+      <ParticleEmitter particle="extinguisher" particlespersecond="30" copyentityangle="true" anglemin="-15" anglemax="15" velocitymin="750.0" velocitymax="1250.0" />
+      <sound file="Content/Items/Tools/Extinguisher.ogg" type="OnUse" range="750.0" loop="true" />
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Affliction identifier="burn" amount="1.25" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character">
+        <ReduceAffliction type="alieninfection" amount="0.75" />
+      </StatusEffect>
+    </RepairTool>
+    <LightComponent lightcolor="255,255,255,0" range="10.0" powerconsumption="125" IsOn="false" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="This">
+        <UseItem />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_steamjet_radial" category="Equipment" Tags="signal" requireaimtouse="false" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="448,256,128,128" depth="0.55" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="InWater" target="This" condition="0" setvalue="true" />
+      <!--<StatusEffect type="NotInWater" target="This" condition="100" setvalue="true" allowwhenbroken="true"/>-->
+      <StatusEffect type="Always" target="This" condition="90" allowwhenbroken="true" />
+      <StatusEffect type="Always" target="This" IsOn="false" disabledeltatime="true" setvalue="true">
+        <Conditional condition="lt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <LightComponent lightcolor="255,255,255,0" range="10.0" powerconsumption="125" IsOn="false" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_steamjet_radial_spray" particlespersecond="20" anglemin="0" anglemax="360" velocitymin="0" velocitymax="500" scalemin="0.4" scalemax="0.5" distancemin="0" distancemax="25" />
+        <ParticleEmitter particle="extinguisher" particlespersecond="30" copyentityangle="true" anglemin="0" anglemax="360" velocitymin="250.0" velocitymax="750.0" />
+        <sound file="Content/Items/Tools/Extinguisher.ogg" type="OnUse" range="750.0" loop="true" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion ballastfloradamage="25" range="325.0" structuredamage="0" itemdamage="0" force="0.05" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false">
+          <Affliction identifier="burn" strength="4" />
+          <ReduceAffliction type="alieninfection" amount="2.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Advanced Vent" identifier="ekdockyard_advancedvent" category="Machine" tags="vent" linkable="true" allowedlinks="oxygenerator" scale="0.5" interactdistance="100" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true">
+    <!-- entitydescription.vent -->
+    <trigger x="40" y="-40" width="32" height="32" />
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.91" sourcerect="112,128,112,112" />
+    <BrokenSprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.91" sourcerect="0,128,112,112" maxcondition="95" />
+    <DecorativeSprite texture="Content/Items/OxygenGenerator/oxygengenerator.png" depth="0.92" sourcerect="852,180,121,121" rotationspeed="360">
+      <AnimationConditional OxygenFlow="gt 10" targetitemcomponent="Vent" />
+    </DecorativeSprite>
+    <!-- Todo: wait for this to work
+	<DecorativeSprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.90" sourcerect="112,128,88,88" >
+      <Conditional target="LightComponent" IsOn="true" />
+    </DecorativeSprite>
+	-->
+    <LightComponent lightcolor="255,255,255,0" range="10.0" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+      <!--<Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.90" sourcerect="112,128,88,88"/>-->
+    </LightComponent>
+    <Vent>
+      <StatusEffect type="Always" target="This" setvalue="true" Condition="90.0">
+        <Conditional target="LightComponent" IsOn="true" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" setvalue="true" Condition="100.0">
+        <Conditional target="LightComponent" IsOn="false" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" oxygenflow="0">
+        <Conditional target="LightComponent" IsOn="false" />
+      </StatusEffect>
+      <sound file="Content/Items/OxygenGenerator/Ventilation.ogg" type="OnActive" range="400.0" volumeproperty="OxygenFlow" volume="0.0005f" loop="true" />
+    </Vent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_looseadvancedvent" category="Machine" tags="vent,hidden" linkable="true" allowedlinks="oxygenerator" pickdistance="150" scale="0.5" interactdistance="100" requirebodyinsidetrigger="false" requirecursorinsidetrigger="true">
+    <!-- entitydescription.loosevent -->
+    <trigger x="40" y="-40" width="32" height="32" />
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.91" sourcerect="112,128,112,112" />
+    <BrokenSprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.91" sourcerect="0,128,112,112" maxcondition="95" />
+    <DecorativeSprite texture="Content/Items/OxygenGenerator/oxygengenerator.png" depth="0.92" sourcerect="852,180,121,121" rotationspeed="360">
+      <AnimationConditional OxygenFlow="gt 10" targetitemcomponent="Vent" />
+    </DecorativeSprite>
+    <!-- Todo: wait for this to work
+	<DecorativeSprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.90" sourcerect="112,128,88,88" >
+      <Conditional target="LightComponent" IsOn="true" />
+    </DecorativeSprite>
+	-->
+    <LightComponent lightcolor="255,255,255,0" range="10.0" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+      <!--<Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.90" sourcerect="112,128,88,88"/>-->
+    </LightComponent>
+    <Vent>
+      <StatusEffect type="Always" target="This" setvalue="true" Condition="90.0">
+        <Conditional target="LightComponent" IsOn="true" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" setvalue="true" Condition="100.0">
+        <Conditional target="LightComponent" IsOn="false" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" oxygenflow="0">
+        <Conditional target="LightComponent" IsOn="false" />
+      </StatusEffect>
+      <sound file="Content/Items/OxygenGenerator/Ventilation.ogg" type="OnActive" range="400.0" volumeproperty="OxygenFlow" volume="0.0005f" loop="true" />
+    </Vent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekdockyard_switchboard" tags="logic,command" scale="0.5" category="Machine" linkable="true" allowedlinks="command">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.8" sourcerect="192,0,96,96" origin="0.5,0.5" />
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="-0.09,0.001" style="ItemUI" />
+      <AlternativeLayout relativesize="0.14,0.18" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.05,0.001" />
+      <Button text="Signal out #1" connection="signal_out1" />
+      <Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />
+    </CustomInterface>
+    <CustomInterface selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="0.09,0.001" style="ItemUI" />
+      <AlternativeLayout relativesize="0.14,0.18" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.19,0.001" />
+      <Button text="Signal out #4" connection="signal_out4" />
+      <Button text="Signal out #5" connection="signal_out5" />
+      <Button text="Signal out #6" connection="signal_out6" />
+    </CustomInterface>
+    <ConnectionPanel selectkey="Select" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+      <output name="signal_out4" displayname="connection.signaloutx~[num]=4" />
+      <output name="signal_out5" displayname="connection.signaloutx~[num]=5" />
+      <output name="signal_out6" displayname="connection.signaloutx~[num]=6" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_switchboard2" tags="logic,command" scale="0.5" category="Machine" linkable="true" allowedlinks="command">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.8" sourcerect="224,96,96,144" origin="0.5,0.5" />
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="-0.09,0.001" style="ItemUI" />
+      <AlternativeLayout relativesize="0.14,0.18" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.05,0.001" />
+      <Button text="Signal out #1" connection="signal_out1" />
+      <Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />
+    </CustomInterface>
+    <CustomInterface selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="0.09,0.001" style="ItemUI" />
+      <AlternativeLayout relativesize="0.14,0.18" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.19,0.001" />
+      <Button text="Signal out #4" connection="signal_out4" />
+      <Button text="Signal out #5" connection="signal_out5" />
+      <Button text="Signal out #6" connection="signal_out6" />
+    </CustomInterface>
+    <ConnectionPanel selectkey="Select" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+      <output name="signal_out4" displayname="connection.signaloutx~[num]=4" />
+      <output name="signal_out5" displayname="connection.signaloutx~[num]=5" />
+      <output name="signal_out6" displayname="connection.signaloutx~[num]=6" />
+    </ConnectionPanel>
+  </Item>
+  <!--
+  <Item name="Secure Switchboard" identifier="ekdockyard_secureswitchboard" tags="logic" scale="0.5" category="Machine"
+  description="A secure-access wired control panel for operating multiple systems." linkable="true" allowedlinks="command" >
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.8" sourcerect="192,0,96,96" origin="0.5,0.5" />
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true" >
+      <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="-0.09,0.001" style="ItemUI" />
+      <Button text="Signal out #1" connection="signal_out1" />
+      <Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />
+    </CustomInterface>
+    <CustomInterface selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="0.09,0.001" style="ItemUI" />
+      <Button text="Signal out #4" connection="signal_out4" />
+      <Button text="Signal out #5" connection="signal_out5" />
+      <Button text="Signal out #6" connection="signal_out6" />
+    </CustomInterface>
+    <ConnectionPanel selectkey="Select" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+      <output name="signal_out4" displayname="connection.signaloutx~[num]=4" />
+      <output name="signal_out5" displayname="connection.signaloutx~[num]=5" />
+      <output name="signal_out6" displayname="connection.signaloutx~[num]=6" />
+    </ConnectionPanel>
+  </Item>
+  -->
+  <Item name="" identifier="ekdockyard_keypad" tags="logic" scale="0.5" category="Machine">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.8" sourcerect="288,0,64,90" origin="0.5,0.5" />
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.08,0.30" anchor="Center" relativeoffset="-0.08,0.001" style="ItemUI" />
+      <Button text="7" connection="signal_out1" signal="7">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="4" connection="signal_out1" signal="4">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="1" connection="signal_out1" signal="1">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="CLEAR" connection="signal_out3">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Button.ogg" type="OnUse" range="500" />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <CustomInterface selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.08,0.30" anchor="Center" relativeoffset="0.0,0.001" style="ItemUI" />
+      <Button text="8" connection="signal_out1" signal="8">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="5" connection="signal_out1" signal="5">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="2" connection="signal_out1" signal="2">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="0" connection="signal_out1" signal="0">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <CustomInterface selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.08,0.30" anchor="Center" relativeoffset="0.08,0.001" style="ItemUI" />
+      <Button text="9" connection="signal_out1" signal="9">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="6" connection="signal_out1" signal="6">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="3" connection="signal_out1" signal="3">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Switch1.ogg" type="OnActive" range="250.0" volume="0.6" />
+        </StatusEffect>
+      </Button>
+      <Button text="ENTER" connection="signal_out2">
+        <StatusEffect type="OnUse" targettype="This" Condition="100" disabledeltatime="true">
+          <sound file="Content\Items\Button\Button.ogg" type="OnUse" range="500" />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <output name="signal_out1" displayname="connection.signalout" />
+      <output name="signal_out2" displayname="connection.activate" />
+      <output name="signal_out3" displayname="reset" />
+      <!--campaigncrew.clear-->
+    </ConnectionPanel>
+  </Item>
+  <Item name="Text Display (Long)" identifier="ekdockyard_textdisplaylong" scale="0.5">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.85" sourcerect="0,424,280,56" />
+    <ItemLabel scrollable="true" padding="10,5,10,12" textcolor="1,1,1,1">
+      <LightComponent range="10.0" lightcolor="1.0,1.0,1.0,0.1" IsOn="true" castshadows="false">
+        <sprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="0,480,280,56" depth="0.025" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </ItemLabel>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="set_text" displayname="connection.set_text" fallbackdisplayname="connection.setoutput" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <input name="set_text_color" displayname="connection.settextcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencysiren_legacy1" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.66" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsiren_legacy1.ogg" type="OnActive" range="2000.0" loop="true" volume="0.75" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencysiren_legacy2" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.0" pulsefrequency="3.5" pulseamount="1" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsiren_legacy2.ogg" type="OnActive" range="2000.0" loop="true" volume="0.75" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencysiren_legacy3" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.76" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsiren_legacy3.ogg" type="OnActive" range="2000.0" loop="true" volume="0.75" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <!-- New siren sounds -->
+  <Item name="" identifier="ekdockyard_emergencysiren_ek1" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.66" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsiren_new1.ogg" type="OnActive" range="2000.0" loop="true" volume="0.75" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencysiren_ek2" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.66" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsiren_new2.ogg" type="OnActive" range="2000.0" loop="true" volume="0.75" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_alarmbuzzer_ek1" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.66" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/alarmbuzzer_new1.ogg" type="OnActive" range="2000.0" loop="true" volume="0.75" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencywarning_ek1" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsingle_new1.ogg" range="2000" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencywarning_ek2" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsingle_new2.ogg" range="2000" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencywarning_ek3" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsingle_new3.ogg" range="2000" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencywarning_ek4" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsingle_new4.ogg" range="2000" volume="1.00" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencywarning_ek5" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsingle_new5.ogg" range="2000" volume="1.00" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_emergencywarning_ek6" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsingle_new6.ogg" range="2000" volume="1.00" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_beepwarning_ek1" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.5" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsmall_new1.ogg" type="OnActive" range="500.0" loop="true" volume="0.5" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsmall_new1.ogg" range="500" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_beepwarning_ek2" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="1" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsmall_new2.ogg" type="OnActive" range="500" loop="true" volume="0.5" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsmall_new2.ogg" range="500" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_beepwarning_ek3" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.5" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsmall_new3.ogg" type="OnActive" range="500" loop="true" volume="0.5" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsmall_new3.ogg" range="500" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_beepwarning_ek4" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="1" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsmall_new4.ogg" type="OnActive" range="500" loop="true" volume="0.5" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsmall_new4.ogg" range="500" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_beepwarning_ek5" category="Electrical" Tags="smallitem,sound" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab,abandonedreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+    <!--
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="191,127,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="222,72,40,62" origin="0.5,0.5" />
+	-->
+    <Body radius="20" height="20" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench" type="Equipped" />
+    </Holdable>
+    <LightComponent canbeselected="false" lightcolor="255,0,0,100" castshadows="false" blinkfrequency="0.5" range="20">
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="302,894,40,62" origin="0.5,0.5" alpha="1.0" />
+      <sound file="%ModDir%/Items/Electricity/warningsmall_new5.ogg" type="OnActive" range="500" loop="true" volume="0.5" />
+      <StatusEffect type="OnContained" target="This" IsActive="false">
+        <Conditional targetitemcomponent="Holdable" IsActive="eq false" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Electricity/warningsmall_new5.ogg" range="500" volume="0.75" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_integraldetonator" category="Equipment" Tags="detonator" Scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.8" sourcerect="352,0,64,64" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.78" sourcerect="416,0,48,80" />
+    <ItemContainer canbeselected="true" capacity="1" maxstacksize="1" itempos="32,-32" hideitems="false" containedstateindicatorstyle="explosive">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <Containable items="explosive" />
+    </ItemContainer>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Remote Operation Terminals -->
+  <Item name="" identifier="ekdockyard_ioterminal_reactor" tags="container" category="Machine" linkable="true" displaysidebysidewhenlinked="false" allowedlinks="reactor,generator" pickdistance="150" scale="0.5" spritecolor="245,240,230,255">
+    <Sprite texture="%ModDir%/Items/Electricity/machineterminals1.png" depth="0.8" sourcerect="0,0,256,160" origin="0.5,0.5" />
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="%ModDir%/Items/Electricity/machineterminals1.png" depth="0.025" sourcerect="259,4,218,104" origin="0.5,0.65" alpha="1.0" />
+    </LightComponent>
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true" alphablend="false">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="0,0.001" style="ItemUI" />
+      <!-- <AlternativeLayout relativesize="0.2725,0.3" pivot="BottomLeft" relativeoffset="0.05,-0.001"/> -->
+      <AlternativeLayout relativesize="0.18,0.22" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.095,-0.225" style="ItemUI" />
+      <Button text="Signal out #1" connection="signal_out1" />
+      <Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />
+    </CustomInterface>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_ioterminal_fabricator" tags="container" category="Machine" linkable="true" displaysidebysidewhenlinked="false" allowedlinks="fabricator,medicalfabricator" pickdistance="150" scale="0.5" spritecolor="200,200,200,255">
+    <Sprite texture="%ModDir%/Items/Electricity/machineterminals1.png" depth="0.8" sourcerect="0,160,256,160" origin="0.5,0.5" />
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" alphablend="false">
+      <sprite texture="%ModDir%/Items/Electricity/machineterminals1.png" depth="0.025" sourcerect="260,164,104,64" origin="1.04,0.92" alpha="1.0" />
+    </LightComponent>
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="0,0.001" style="ItemUI" />
+      <!-- <AlternativeLayout relativesize="0.2725,0.3" pivot="BottomLeft" relativeoffset="0.05,-0.001"/> -->
+      <AlternativeLayout relativesize="0.18,0.22" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.1,-0.225" style="ItemUI" />
+      <Button text="Signal out #1" connection="signal_out1" />
+      <Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />
+    </CustomInterface>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_ioterminal_deconstructor" tags="container" category="Machine" linkable="true" displaysidebysidewhenlinked="false" allowedlinks="deconstructor" pickdistance="150" scale="0.5" spritecolor="190,210,200,255">
+    <Sprite texture="%ModDir%/Items/Electricity/machineterminals1.png" depth="0.8" sourcerect="368,160,144,160" origin="0.5,0.5" />
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" alphablend="false">
+      <sprite texture="%ModDir%/Items/Electricity/machineterminals1.png" depth="0.025" sourcerect="260,236,56,56" origin="0.5,0.4" alpha="1.0" />
+    </LightComponent>
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="0,0.001" style="ItemUI" />
+      <!-- <AlternativeLayout relativesize="0.2725,0.3" pivot="BottomLeft" relativeoffset="0.05,-0.001"/> -->
+      <AlternativeLayout relativesize="0.18,0.22" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.095,-0.225" style="ItemUI" />
+      <Button text="Signal out #1" connection="signal_out1" />
+      <Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />
+    </CustomInterface>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_ioterminal_chair1" tags="chair,command" category="Machine" linkable="true" displaysidebysidewhenlinked="false" allowedlinks="command,navterminal,primarynavterminal,sonarmonitor,statusmonitor,terminal,reactor,generator,fabricator,medicalfabricator,deconstructor" pickdistance="150" scale="0.5" spritecolor="190,210,200,255">
+    <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="570,341,180,267" depth="0.1" premultiplyalpha="false" origin="0.5,0.5" />
+    <Controller UserPos="10,30" direction="Right" hidehud="false" canbeselected="true">
+      <limbposition limb="Head" position="90,15" />
+      <limbposition limb="Torso" position="90,-60" />
+      <limbposition limb="Waist" position="90,-130" />
+      <limbposition limb="RightFoot" position="150,-240" />
+      <limbposition limb="LeftFoot" position="150,-240" />
+      <limbposition limb="RightHand" position="170,-100" allowusinglimb="true" />
+      <limbposition limb="LeftHand" position="170,-100" allowusinglimb="true" />
+    </Controller>
+    <CustomInterface msg="ItemMsgInteractSelect" selectkey="Select" canbeselected="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.18,0.22" anchor="Center" relativeoffset="0,0.001" style="ItemUI" />
+      <!-- <AlternativeLayout relativesize="0.2725,0.3" pivot="BottomLeft" relativeoffset="0.05,-0.001"/> -->
+      <!--<AlternativeLayout relativesize="0.18,0.22" anchor="CenterLeft" pivot="TopLeft" relativeoffset="0.095,-0.225" style="ItemUI" />-->
+      <Button text="Signal out #1" connection="signal_out1" />
+      <!--<Button text="Signal out #2" connection="signal_out2" />
+      <Button text="Signal out #3" connection="signal_out3" />-->
+    </CustomInterface>
+    <!--
+	<ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+      <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+      <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+    </ConnectionPanel>-->
+  </Item>
+  <Item name="" identifier="ekdockyard_navcomputer1" tags="command,navterminal" linkable="false" scale="0.5" category="Machine" disallowedupgrades="increasemaxcondition,decreaselowskillfixduration,decreaserequiredskilllevel,sonarmonitorincreaserange">
+    <Sprite texture="%ModDir%/Items/Electricity/devices2.png" depth="0.8" sourcerect="0,0,144,168" origin="0.5,0.475" />
+    <BrokenSprite texture="%ModDir%/Items/Electricity/devices2.png" sourcerect="272,0,144,168" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.475" />
+    <BrokenSprite texture="%ModDir%/Items/Electricity/devices2.png" sourcerect="416,0,144,168" depth="0.8" maxcondition="0" origin="0.5,0.475" />
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="99,961,28,32" origin="0.5,0.45" />
+    <Steering minvoltage="0" canbeselected="false" powerconsumption="0" linkuitocomponent="Sonar" msg="ItemMsgInteractSelect" allowuioverlap="true" hudlayer="-1">
+      <GuiFrame relativesize="0.55,0.59" anchor="Center" style="OuterGlow" color="0,0,0,0.8" relativeoffset="0.1,-0.05" />
+      <MaintainPosIndicator texture="Content/Items/Command/NavUI.png" sourcerect="50,0,60,61" />
+      <MaintainPosOriginIndicator texture="Content/Items/Command/NavUI.png" sourcerect="0,0,50,54" />
+      <SteeringIndicator texture="Content/Items/Command/NavUI.png" sourcerect="0,135,362,16" origin="0,0.5" />
+      <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" alphablend="false">
+        <sprite texture="%ModDir%/Items/Electricity/devices2.png" depth="0.025" sourcerect="160,16,96,64" origin="0.5,0.8" alpha="1.0" />
+      </LightComponent>
+      <!-- <RequiredSkill identifier="weapons" level="50" /> -->
+    </Steering>
+    <Sonar range="100.0" canbeselected="false" powerconsumption="0" displaybordersize="-0.1" allowuioverlap="true" hudlayer="-2">
+      <GuiFrame relativesize="0.55,0.59" anchor="Center" relativeoffset="0.1,-0.05" />
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5" />
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5" />
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5" />
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5" />
+      <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5" />
+      <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5" />
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5" />
+    </Sonar>
+    <aitarget sightrange="200" soundrange="10000" staticsight="true" fadeouttime="5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="velocity_in" displayname="connection.steeringvelocityin" />
+      <output name="velocity_x_out" displayname="connection.velocityxout" />
+      <output name="velocity_y_out" displayname="connection.velocityyout" />
+      <output name="current_velocity_x" displayname="connection.currentvelocityx" />
+      <output name="current_velocity_y" displayname="connection.currentvelocityy" />
+      <output name="current_position_x" displayname="connection.currentpositionx" />
+      <output name="current_position_y" displayname="connection.currentpositiony" />
+    </ConnectionPanel>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.075" mindeteriorationdelay="320" maxdeteriorationdelay="720" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekdockyard_junctiondata1" tags="junctionbox,logic" category="Electrical" scale="0.5" allowedlinks="gap,door" linkable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" sourcerect="320,96,88,96" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="99,961,28,32" origin="0.5,0.45" />
+    <InfectedSprite texture="Content/Items/Gardening/ballastflora.png" sourcerect="53,640,161,239" origin="0.5,0.5" />
+    <DamagedInfectedSprite texture="Content/Items/Gardening/ballastflora_burned.png" sourcerect="53,640,161,239" origin="0.5,0.5" />
+    <!-- This has to exist for signal propogation code, but no electrical channel is used -->
+    <PowerTransfer canbeselected="false" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.14" minsize="450,160" anchor="Center" style="ItemUI" />
+      <!--minsize="350,160" maxsize="420,190"-->
+    </PowerTransfer>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <output name="signal_0" displayname="connection.signalx~[num]=0" fallbackdisplayname="connection.signalinx~[num]=0" maxwires="10" />
+      <output name="signal_1" displayname="connection.signalx~[num]=1" fallbackdisplayname="connection.signalinx~[num]=1" maxwires="10" />
+      <output name="signal_2" displayname="connection.signalx~[num]=2" fallbackdisplayname="connection.signalinx~[num]=2" maxwires="10" />
+      <output name="signal_3" displayname="connection.signalx~[num]=3" fallbackdisplayname="connection.signalinx~[num]=3" maxwires="10" />
+      <output name="signal_4" displayname="connection.signalx~[num]=4" fallbackdisplayname="connection.signalinx~[num]=4" maxwires="10" />
+    </ConnectionPanel>
+    <!--
+	<Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.1" mindeteriorationdelay="120" maxdeteriorationdelay="720" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="70" anglemax="100" distancemin="-10" distancemax="30" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
+	  <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2"  scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+	-->
+  </Item>
+  <!-- Dummy projectile to prevent crashing onUse -->
+  <!-- P.S. something is horrifically cursed with the current implementation of Tinker code -->
+  <Item name="ekdockyard_dummyprojectile" identifier="ekdockyard_dummyprojectile" tags="" hideinmenus="true" category="Misc" scale="1">
+    <Sprite texture="Content/Items/Weapons/Turrets.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="5" density="1" />
+    <Projectile characterusable="false" launchimpulse="4.0" targetforce="0">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0" />
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.01" stackable="false">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="" identifier="ekdockyard_shockcoil1" category="Equipment" Tags="dischargecoil" requireaimtouse="false" characterusable="false" Scale="0.5" impactsoundtag="impact_metal_light" maxstacksize="1">
+    <Sprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.91" sourcerect="336,192,96,96" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true" SpawnWithId="ekdockyard_dummyprojectile">
+      <Containable items="ekdockyard_dummyprojectile" />
+      <StatusEffect type="Always" target="Contained">
+        <SpawnItem identifier="ekdockyard_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="48,48" rotationlimits="270,270" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="false" recoildistance="0" reload="10" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8">
+      <RailSprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.805" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <BarrelSprite texture="%ModDir%/Items/Electricity/devices1.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="275.0" stun="5" force="5.0" camerashake="50" camerashakerange="325" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" applyfireeffects="false" severlimbsprobability="0" playtinnitus="false">
+          <Affliction identifier="stun" strength="2.5" />
+          <Affliction identifier="burn" strength="5" />
+        </Explosion>
+      </StatusEffect>
+      <sound file="%ModDir%/Items/Electricity/minidischarger1.ogg" range="1000" type="OnUse" volume="0.9" selectionmode="Random" />
+      <sound file="%ModDir%/Items/Electricity/minidischarger2.ogg" range="1000" type="OnUse" volume="0.9" />
+      <sound file="%ModDir%/Items/Electricity/minidischarger3.ogg" range="1000" type="OnUse" volume="0.9" />
+      <sound file="%ModDir%/Items/Electricity/minidischarger4.ogg" range="1000" type="OnUse" volume="0.9" />
+      <ParticleEmitter particle="ekdockyard_shockcoil_arcs" particleamount="3" scalemin="0.75" scalemax="1.25" distancemin="0" distancemax="75" anglemin="0" anglemax="360" velocitymin="0" velocitymax="100" />
+      <ParticleEmitter particle="plasmaspark" particleamount="4" scalemin="0.75" scalemax="1.25" anglemin="0" anglemax="360" velocitymin="200" velocitymax="800" colormultiplier="175,200,255,255" />
+      <ParticleEmitter particle="plasmasmoke" particleamount="3" scalemin="1.0" scalemax="1.5" distancemin="0" distancemax="25" anglemin="0" anglemax="360" velocitymin="10" velocitymax="20" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+    </ConnectionPanel>
+  </Item>
+</Items>

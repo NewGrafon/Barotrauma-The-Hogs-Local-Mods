@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- THIS IS A VERY BAD IDEA BUT I AM DOING IT ANYWAYS -->
+<Override>
+  <Items>
+    <Item name="" description="" identifier="coilgun" Tags="turret" category="Machine" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="true" offsetonselected="900" linkable="true" allowedlinks="coilgunequipment">
+      <Sprite texture="Content/Items/Weapons/Turrets.png" depth="0.01" sourcerect="0,0,256,256" canflipy="false" />
+      <StaticBody width="80" radius="80" />
+      <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="128,88" rotationlimits="180,360" powerconsumption="1000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="50" reload="0.25" springstiffnesslowskill="2" springstiffnesshighskill="50" springdampinglowskill="0.5" springdampinghighskill="10" rotationspeedlowskill="1" rotationspeedhighskill="8">
+        <sound file="Content/Items/Weapons/Coilgun1.ogg" range="10000" type="OnUse" />
+        <sound file="Content/Items/Weapons/Coilgun2.ogg" range="10000" type="OnUse" />
+        <sound file="Content/Items/Weapons/Coilgun3.ogg" range="10000" type="OnUse" />
+        <RailSprite texture="Content/Items/Weapons/Turrets.png" depth="0.011" sourcerect="381,0,120,287" origin="0.64, 0.7" />
+        <BarrelSprite texture="Content/Items/Weapons/Turrets.png" depth="0.012" sourcerect="256,0,125,333" origin="0.6, 0.8" />
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+        <MoveSound file="Content/Items/Weapons/RailgunLoop.ogg" />
+        <StartMoveSound file="Content/Items/Weapons/RailgunStart.ogg" />
+        <EndMoveSound file="Content/Items/Weapons/RailgunStop.ogg" />
+        <RequiredSkill identifier="weapons" level="50" />
+        <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2500" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true">
+          <LightTexture texture="%ModDir%/Lights/lightcone_gigantic.png" origin="0.0, 0.5" size="1.05,1.05" />
+        </LightComponent>
+        <ParticleEmitter particle="muzzleflashcoilgun" particleamount="1" velocitymin="50" velocitymax="100" />
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="1000.0" structuredamage="0" force="0.01" camerashake="5.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+        </StatusEffect>
+      </Turret>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="position_in" displayname="connection.turretaimingin" />
+        <input name="trigger_in" displayname="connection.turrettriggerin" />
+        <input name="toggle_light" displayname="connection.togglelight" />
+      </ConnectionPanel>
+    </Item>
+    <Item name="" identifier="railgun" description="" Tags="turret" category="Machine" interactthroughwalls="true" interactdistance="10" focusonselected="true" offsetonselected="900" linkable="true" allowedlinks="railgunammosource">
+      <Sprite texture="Content/Items/Weapons/Turrets.png" depth="0.01" sourcerect="512,0,256,256" canflipy="false" />
+      <StaticBody width="80" radius="80" />
+      <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="126, 89" rotationlimits="180,360" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="100" springstiffnesslowskill="2" springstiffnesshighskill="50" springdampinglowskill="0.5" springdampinghighskill="10" rotationspeedlowskill="1" rotationspeedhighskill="8">
+        <StatusEffect type="OnUse" target="This">
+          <sound file="Content/Items/Weapons/Railgun1.ogg" range="10000" type="OnUse" />
+          <sound file="Content/Items/Weapons/Railgun2.ogg" range="10000" type="OnUse" />
+          <sound file="Content/Items/Weapons/Railgun3.ogg" range="10000" type="OnUse" />
+          <Explosion range="1000.0" structuredamage="0" force="0.01" camerashake="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+        </StatusEffect>
+        <RailSprite texture="Content/Items/Weapons/Turrets.png" origin="0.52, 0.59" sourcerect="512,256,164,256" depth="0.011" />
+        <BarrelSprite texture="Content/Items/Weapons/Turrets.png" origin="0.5, 0.85" sourcerect="768,0,125,336" depth="0.012" />
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+        <MoveSound file="Content/Items/Weapons/RailgunLoop.ogg" />
+        <StartMoveSound file="Content/Items/Weapons/RailgunStart.ogg" />
+        <EndMoveSound file="Content/Items/Weapons/RailgunStop.ogg" />
+        <RequiredSkill identifier="weapons" level="50" />
+        <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2048" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true">
+          <LightTexture texture="%ModDir%/Lights/lightcone_gigantic.png" origin="0.0, 0.5" size="1.05,1.05" />
+        </LightComponent>
+        <ParticleEmitter particle="muzzleflashrailgun" particleamount="1" velocitymin="50" velocitymax="100" />
+      </Turret>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="position_in" displayname="connection.turretaimingin" />
+        <input name="trigger_in" displayname="connection.turrettriggerin" />
+        <input name="toggle_light" displayname="connection.togglelight" />
+      </ConnectionPanel>
+    </Item>
+  </Items>
+</Override>

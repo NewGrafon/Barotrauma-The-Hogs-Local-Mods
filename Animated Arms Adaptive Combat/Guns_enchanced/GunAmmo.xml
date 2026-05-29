@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="smgmagazine" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo,handheldammo" impactsoundtag="impact_metal_light">
+      <Price sold="false" baseprice="100" displaynonempty="true" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="245,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="16,0,19,42" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="35,0,19,42" origin="0.5,0.5" maxcondition="91" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="54,0,19,42" origin="0.5,0.5" maxcondition="81" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="73,0,19,42" origin="0.5,0.5" maxcondition="72" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="92,0,19,42" origin="0.5,0.5" maxcondition="62" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="111,0,19,42" origin="0.5,0.5" maxcondition="52" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="130,0,19,42" origin="0.5,0.5" maxcondition="43" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="149,0,19,42" origin="0.5,0.5" maxcondition="33" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="168,0,19,42" origin="0.5,0.5" maxcondition="24" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="187,0,19,42" origin="0.5,0.5" maxcondition="15" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="206,0,19,42" origin="0.5,0.5" maxcondition="4" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="225,0,19,42" origin="0.5,0.5" maxcondition="0" />
+      <Body width="14" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="smground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="smground" />
+        <!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
+        <StatusEffect type="OnUse" target="This" condition="-4.8" disabledeltatime="true">
+          <SpawnItem identifiers="smground" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Parent" tags="delaycolduse" duration="0.5" setvalue="true" disabledeltatime="true" />
+      </ItemContainer>
+      <!--Magazines can be combined to raise condition.-->
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="smgmagazinedepletedfuel" variantof="smgmagazine" allowasextracargo="true">
+      <Price baseprice="160" sold="false" />
+      <Deconstruct time="15">
+        <Item identifier="depletedfuel" mincondition="0.95" />
+        <Item identifier="steel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="245,128,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="16,144,19,42" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="35,144,19,42" origin="0.5,0.5" maxcondition="91" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="54,144,19,42" origin="0.5,0.5" maxcondition="81" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="73,144,19,42" origin="0.5,0.5" maxcondition="72" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="92,144,19,42" origin="0.5,0.5" maxcondition="62" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="111,144,19,42" origin="0.5,0.5" maxcondition="52" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="130,144,19,42" origin="0.5,0.5" maxcondition="43" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="149,144,19,42" origin="0.5,0.5" maxcondition="33" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="168,144,19,42" origin="0.5,0.5" maxcondition="24" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="187,144,19,42" origin="0.5,0.5" maxcondition="15" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="206,144,19,42" origin="0.5,0.5" maxcondition="4" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="225,144,19,42" origin="0.5,0.5" maxcondition="0" />
+      <ItemContainer SpawnWithId="smgrounddepletedfuel">
+        <Containable items="smgrounddepletedfuel" />
+        <StatusEffect type="OnUse" target="This" condition="-4.8" disabledeltatime="true">
+          <SpawnItem identifiers="smgrounddepletedfuel" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Parent" tags="delaycolduse" duration="0.5" setvalue="true" disabledeltatime="true" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="assaultriflemagazine" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo" impactsoundtag="impact_metal_light">
+      <Price baseprice="300" sold="false" minleveldifficulty="60" displaynonempty="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="245,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="16,47,33,47" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="49,47,33,47" origin="0.5,0.5" maxcondition="67" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="82,47,33,47" origin="0.5,0.5" maxcondition="60" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="115,47,33,47" origin="0.5,0.5" maxcondition="53" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="148,47,33,47" origin="0.5,0.5" maxcondition="47" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="181,47,33,47" origin="0.5,0.5" maxcondition="40" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="16,95,33,47" origin="0.5,0.5" maxcondition="34" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="49,95,33,47" origin="0.5,0.5" maxcondition="27" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="82,95,33,47" origin="0.5,0.5" maxcondition="20" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="115,95,33,47" origin="0.5,0.5" maxcondition="14" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="148,95,33,47" origin="0.5,0.5" maxcondition="7" />
+      <BrokenSprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="181,95,33,47" origin="0.5,0.5" maxcondition="1" />
+      <Body width="28" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="assaultrifleround" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="assaultrifleround" />
+        <StatusEffect type="OnUse" target="This" condition="-3.3" disabledeltatime="true">
+          <SpawnItem identifiers="assaultrifleround" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="" identifier="hmgmagazine" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,hmgammo,handheldammo" impactsoundtag="impact_metal_light">
+      <Price baseprice="330" sold="true" minleveldifficulty="65" displaynonempty="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Guns_enchanced/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Guns_enchanced/Ammunition.png" depth="0.54" sourcerect="16,187,31,38" origin="0.5,0.5" />
+      <Body width="29" height="37" density="25" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="hmground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="hmground" />
+        <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+          <SpawnItem identifiers="hmground" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Parent" DualWieldReloadTimePenaltyMultiplier="1" setvalue="true">
+          <Conditional targetcontainer="true" hastag="neq gun" />
+        </StatusEffect>
+      </ItemContainer>
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Handgun Skin (Black)" identifier="ek_weaponskin_handgunblack" aliases="handgun skin 1" description="A matte black finish. Sometimes understated is best." category="Misc" tags="smallitem,ek_handgun_skin" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Deconstruct time="2" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="carbon" />
+    </Fabricate>
+    <Sprite texture="weapon_skins_ek.png" sourcerect="0,0,96,64" depth="0.55" />
+    <InventoryIcon texture="weapon_skins_ek.png" sourcerect="128,0,64,64" />
+    <ContainedSprite name="Weapon Skin" allowedcontainertags="weapon" texture="weapon_skins_ek.png" sourcerect="0,128,112,64" />
+    <Body width="92" height="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="0,0" handle1="-5,-5" holdangle="80" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="Handgun Skin (Vintage)" identifier="ek_weaponskin_handgunvintage" aliases="handgun skin 2" description="An early-europan frame and grip assembly." category="Misc" tags="smallitem,ek_handgun_skin" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Deconstruct time="2" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Sprite texture="weapon_skins_ek.png" sourcerect="0,0,96,64" depth="0.55" />
+    <InventoryIcon texture="weapon_skins_ek.png" sourcerect="192,0,64,64" />
+    <ContainedSprite name="Weapon Skin" allowedcontainertags="weapon" texture="weapon_skins_ek.png" sourcerect="112,128,112,64" />
+    <Body width="92" height="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="0,0" handle1="-5,-5" holdangle="80" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="Handgun Skin (Spec-ops)" identifier="ek_weaponskin_handgunspecops" aliases="handgun skin 3" description="A lightweight ergonomic frame." category="Misc" tags="smallitem,ek_handgun_skin" Scale="0.30" impactsoundtag="impact_metal_light">
+    <Deconstruct time="2" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Sprite texture="weapon_skins_ek.png" sourcerect="0,0,96,64" depth="0.55" />
+    <InventoryIcon texture="weapon_skins_ek.png" sourcerect="256,0,64,64" />
+    <ContainedSprite name="Weapon Skin" allowedcontainertags="weapon" texture="weapon_skins_ek.png" sourcerect="224,128,112,64" />
+    <Body width="92" height="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="0,0" handle1="-5,-5" holdangle="80" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="Marine SMG Skin (Black)" identifier="ek_weaponskin_smgblack" aliases="smg skin 1" description="A matte black finish. Sometimes understated is best." category="Misc" tags="smallitem,ek_smg_skin" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Deconstruct time="2" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="carbon" />
+    </Fabricate>
+    <Sprite texture="weapon_skins_ek.png" sourcerect="0,0,96,64" depth="0.55" />
+    <InventoryIcon texture="weapon_skins_ek.png" sourcerect="0,64,64,64" />
+    <ContainedSprite name="Weapon Skin" allowedcontainertags="weapon" texture="weapon_skins_ek.png" sourcerect="0,208,256,96" />
+    <Body width="92" height="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="0,0" handle1="-5,-5" holdangle="80" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="Marine SMG Skin (Mercenary)" identifier="ek_weaponskin_smgmerc" aliases="smg skin 2" description="." category="Misc" tags="smallitem,ek_smg_skin" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Deconstruct time="2" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="copper" />
+    </Fabricate>
+    <Sprite texture="weapon_skins_ek.png" sourcerect="0,0,96,64" depth="0.55" />
+    <InventoryIcon texture="weapon_skins_ek.png" sourcerect="64,64,64,64" />
+    <ContainedSprite name="Weapon Skin" allowedcontainertags="weapon" texture="weapon_skins_ek.png" sourcerect="256,208,256,96" />
+    <Body width="92" height="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="0,0" handle1="-5,-5" holdangle="80" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="Marine Battle Rifle Skin (Black)" identifier="ek_weaponskin_battlerifleblack" aliases="battle rifle skin 1" description="A matte black finish. Sometimes understated is best." category="Misc" tags="smallitem,ek_battlerifle_skin" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Deconstruct time="2" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="carbon" />
+    </Fabricate>
+    <Sprite texture="weapon_skins_ek.png" sourcerect="0,0,96,64" depth="0.55" />
+    <InventoryIcon texture="weapon_skins_ek.png" sourcerect="320,64,64,64" />
+    <ContainedSprite name="Weapon Skin" allowedcontainertags="weapon" texture="weapon_skins_ek.png" sourcerect="0,320,336,112" />
+    <Body width="92" height="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="0,0" handle1="-5,-5" holdangle="80" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="Marine Battle Rifle Skin (Mercenary)" identifier="ek_weaponskin_battleriflemerc" aliases="battle rifle skin 2" description="." category="Misc" tags="smallitem,ek_battlerifle_skin" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Deconstruct time="2" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="copper" />
+    </Fabricate>
+    <Sprite texture="weapon_skins_ek.png" sourcerect="0,0,96,64" depth="0.55" />
+    <InventoryIcon texture="weapon_skins_ek.png" sourcerect="384,64,64,64" />
+    <ContainedSprite name="Weapon Skin" allowedcontainertags="weapon" texture="weapon_skins_ek.png" sourcerect="336,320,336,112" />
+    <Body width="92" height="60" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="0,0" handle1="-5,-5" holdangle="80" msg="ItemMsgPickUpSelect" />
+  </Item>
+</Items>

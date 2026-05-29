@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" identifier="ancientweapon" category="Alien,Weapon" Tags="alien,mediumitem,weapon,mountableweapon,cuttingequipment" scale="0.5" impactsoundtag="impact_metal_light">
+      <Price baseprice="1000" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.9" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="0.9" />
+      </Price>
+      <PreferredContainer primary="ruinstoragelarge" amount="1" spawnprobability="0.025" />
+      <PreferredContainer primary="ruintreasure" amount="1" spawnprobability="0.025" />
+      <Deconstruct time="20">
+        <Item identifier="dementonite" />
+        <Item identifier="dementonite" />
+        <Item identifier="fulgurium" />
+      </Deconstruct>
+      <Sprite texture="AncientWeapon.png" depth="0.55" sourcerect="0,0,188,100" origin="1,0.4" scale="0.5" />
+      <BrokenSprite texture="AncientWeapon.png" depth="0.55" sourcerect="0,100,188,100" origin="1,0.4" scale="0.5" maxcondition="99" />
+      <BrokenSprite texture="AncientWeapon.png" depth="0.55" sourcerect="0,0,188,100" origin="1,0.4" scale="0.5" maxcondition="0" />
+      <InventoryIcon texture="AncientWeapon.png" depth="0.55" sourcerect="0,0,188,100" origin="0.5,0.5" scale="0.5" />
+      <Body radius="30" width="90" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" holdangle="-30" holdpos="90,-20" aimpos="95,3" handle1="-90,20" handle2="-32,-80" msg="ItemMsgPickUpSelect" />
+      <RepairTool structurefixamount="-0.75" range="400" barrelpos="40,0" targetforce="50" repairmultiple="true" repairthroughwalls="true" maxoverlappingwalldist="0.0" repairthroughholes="true" levelwallfixamount="-20.0" combatpriority="50" firedamage="30">
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="0,768,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="256,768,256,256" />
+        <!-- Just a failsafe. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="ancreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdangle="-30" holdpos="90,-20" aimpos="95,3" handle1="-90,20" handle2="-32,-80" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" target="This" hideitems="false" setvalue="true" />
+        <!-- Repair tool shenanigans. -->
+        <Fixable identifier="structure" />
+        <RequiredItems items="alienpowercell" type="Contained" />
+        <StatusEffect type="OnUse" targettype="UseTarget" targets="weldable" Stuck="-80.0" />
+        <StatusEffect type="OnUse" targettype="Contained" Condition="-5.0" />
+        <ParticleEmitter particle="largeplasma" particlespersecond="50" copyentityangle="true" />
+        <ParticleEmitter particle="gunbubbles" particlespersecond="30" anglemin="-5" anglemax="2" velocitymin="200" velocitymax="300" scalemultipler="2,2" />
+        <ParticleEmitter particle="lotbubbles" particlespersecond="10" anglemin="-5" anglemax="5" velocitymin="500" velocitymax="500" scalemultipler="0.7,0.7" />
+        <!-- Damage doors.-->
+        <StatusEffect type="OnUse" targettype="UseTarget" Condition="-24.0" />
+        <ParticleEmitterHitStructure particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+        <ParticleEmitterHitStructure particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="20" />
+        <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+        <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+        <ParticleEmitterHitItem identifiers="ore" particle="iceshards" particlespersecond="5" anglemin="-40" anglemax="40" velocitymin="10" velocitymax="300" scalemin="0.5" scalemax="1.0" />
+        <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+        <StatusEffect type="OnUse" target="Limb" severlimbsprobability="0.025">
+          <Conditional IsHuman="false" />
+          <Affliction identifier="stun" amount="5" probability="0.25" />
+          <Affliction identifier="burn" amount="50" penetration="0.5" />
+        </StatusEffect>
+        <!-- Nerfed effect on humans -->
+        <StatusEffect type="OnUse" target="Limb" severlimbsprobability="0.025">
+          <Conditional IsHuman="true" />
+          <Affliction identifier="burn" amount="40" penetration="0.5" />
+          <Affliction identifier="stun" amount="4" probability="0.15" />
+        </StatusEffect>
+        <sound file="Content/Items/Alien/alienweapon.ogg" type="OnUse" range="1000.0" loop="true" />
+        <!-- Muzzle light. -->
+        <LightComponent LightColor="175,175,255,255" Flicker="0.5" range="47">
+          <LightTexture texture="%ModDir%/AncientWeapon/AncientWeaponMuzzle.png" origin="1,0.555" size="1,1" />
+        </LightComponent>
+        <!-- Another muzzle light. -->
+        <LightComponent AllowInGameEditing="false" LightColor="0.8,0.7,1.0,1.0" Flicker="0.5" range="20">
+          <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+        </LightComponent>
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="ancreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="ancreloading" delay="2.6" condition="100" setvalue="true" />
+        <RequiredItems items="ancreloading" type="Contained" />
+      </RepairTool>
+      <!-- Currently causes issues
+	  <RangedWeapon spread="30" drawhudwhenequipped="true" crosshairscale="0.3" combatpriority="0">
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="0,768,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="256,768,256,256" />
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="ancreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdangle="-30" holdpos="90,-20" aimpos="95,3" handle1="-90,20" handle2="-32,-80" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" target="This" hideitems="false" setvalue="true" />
+        <RequiredItems items="banana" type="Contained" />
+      </RangedWeapon> -->
+      <Propulsion force="-10" usablein="both">
+        <RequiredItems items="alienpowercell" type="Contained" />
+      </Propulsion>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itemrotation="230" itempos="-65,35">
+        <Containable items="alienpowercell" excludebroken="false">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="2.0" setvalue="true" />
+          <!-- Makes the power cell invisible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="true" delay="0.01" setvalue="true" stackable="false" />
+          <!-- Breaks the weapon and rotates the gun and moves hands. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.01" holdangle="0" holdpos="80,-25" aimpos="85,-10" aimangle="20" condition="0" setvalue="true" stackable="false" />
+          <!-- Plays the sound. -->
+          <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/AncientWeapon/AncientWeaponUnload.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Plays the sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/AncientWeapon/AncientWeaponLoad.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Rotates the gun and moves hands. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.1" aimangle="-20" holdangle="-20" aimpos="85,-20" handle2="-65,35" setvalue="true" stackable="false" />
+          <!-- Makes the power cell visible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="false" delay="1.4" setvalue="true" stackable="false" />
+          <!-- Sets condition for animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.5" condition="50" setvalue="true" stackable="false" />
+          <!-- Sets condition for animation frame. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.4" condition="100" setvalue="true" stackable="false" />
+          <!-- Sets everything to default. -->
+          <StatusEffect type="OnInserted" target="This" delay="2.5" holdangle="-30" holdpos="90,-20" aimpos="95,3" aimangle="0" handle1="-90,20" handle2="-32,-80" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="ancreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->&gt;
+        <Containable items="ancreloading" hide="true" /></ItemContainer>
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="ancreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,ancreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

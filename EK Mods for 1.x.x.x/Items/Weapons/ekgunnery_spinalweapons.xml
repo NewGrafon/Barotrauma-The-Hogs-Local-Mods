@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Spinal Mount Weapons -->
+  <Item name="Spinal Hardpoint" identifier="ekgunnery_newspinalhardpoint" description="An empty hull hardpoint special spinal weapons can be installed on." Tags="ekgunnery_spinalturret,turret" category="Machine,Weapon" linkable="true" allowedlinks="turretammosource" interactthroughwalls="true" Scale="1" interactdistance="10" spritecolor="255,255,255,255">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" depth="0.01" sourcerect="0,0,96,224" canflipy="false" />
+    <SwappableItem price="0" origin="8,112" swapidentifier="basicspinal">
+      <SchematicSprite texture="%ModDir%/UI/ekgunnery_spinalschematics1.png" sourcerect="0,0,96,224" />
+      <SwapConnectedItem tag="periscope" swapto="blankperiscope" />
+      <SwapConnectedItem tag="ekgunnery_spinalammosource" swapto="ekgunnery_newspinalblankloader" />
+    </SwappableItem>
+    <UpgradePreviewSprite scale="3.0" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="0,136,72,72" origin="0.5,0.5" />
+    <StaticBody width="80" radius="80" />
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="48,112" rotationlimits="-15,15">
+      <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2560" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true">
+        <LightTexture texture="Content/Lights/alphaOne.png" />
+      </LightComponent>
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+      <input name="toggle_light" displayname="connection.togglelight" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Spinal-Mount Railgun" identifier="ekgunnery_newspinalrailgun" description="A standard railgun mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets." Tags="ekgunnery_spinalturret,turret" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" focusonselected="true" offsetonselected="950" linkable="true" allowedlinks="railgunammosource">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" depth="0.01" sourcerect="96,0,104,224" canflipy="false" />
+    <MinimapIcon name="Command_Weapons_EkGunnery_SpinalRailgun" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="128,0,128,128" />
+    <SwappableItem price="5000" replacementonuninstall="ekgunnery_newspinalhardpoint" origin="20,112" swapidentifier="basicspinal">
+      <SchematicSprite texture="%ModDir%/UI/ekgunnery_spinalschematics1.png" sourcerect="96,0,104,224" />
+      <SwapConnectedItem tag="periscope" swapto="periscope" />
+      <SwapConnectedItem tag="ekgunnery_spinalammosource" swapto="ekgunnery_newspinalrailgunloader" />
+    </SwappableItem>
+    <UpgradePreviewSprite scale="3.0" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="128,136,72,72" origin="0.5,0.5" />
+    <StaticBody width="80" radius="80" />
+    <Turret launchimpulse="80.0" canbeselected="false" characterusable="false" linkable="true" barrelpos="56,112" rotationlimits="-15,15" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="0" reload="3.5" springstiffnesslowskill="25" springstiffnesshighskill="50" springdampinglowskill="5" springdampinghighskill="10" rotationspeedlowskill="4" rotationspeedhighskill="8" firingoffset="0,-88" usefiringoffsetformuzzleflash="false">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_spinal.png" sourcerect="0,0,64,48" origin="0.25, 0.49" />
+      <sound file="Content/Items/Weapons/Railgun1.ogg" range="10000" type="OnUse" />
+      <sound file="Content/Items/Weapons/Railgun2.ogg" range="10000" type="OnUse" />
+      <sound file="Content/Items/Weapons/Railgun3.ogg" range="10000" type="OnUse" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="5000.0" structuredamage="0" force="0.01" camerashake="25.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.011" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.012" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2560" IsOn="true" drawbehindsubs="false" ignorecontinuoustoggle="true">
+        <LightTexture texture="%ModDir%/Lights/lightcone_gigantic.png" origin="0.0, 0.5" size="1.1,1.1" />
+      </LightComponent>
+      <ParticleEmitter particle="muzzleflashrailgun" particleamount="1" velocitymin="50" velocitymax="100" />
+    </Turret>
+    <aitarget maxsightrange="3000" maxsoundrange="10000" fadeouttime="5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+      <input name="toggle_light" displayname="connection.togglelight" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Spinal-Mount Pulse Laser" identifier="ekgunnery_newspinalpulselaser" description="A large pulsed chemical laser mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Inflicts extreme burns on anything it hits." Tags="ekgunnery_spinalturret,turret" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" focusonselected="true" offsetonselected="950" linkable="true" allowedlinks="pulselaserequipment">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" depth="0.01" sourcerect="208,0,106,224" canflipy="false" />
+    <MinimapIcon name="Command_Weapons_EkGunnery_SpinalPulseLaser" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="256,0,128,128" />
+    <SwappableItem price="7500" replacementonuninstall="ekgunnery_newspinalhardpoint" origin="20,112" swapidentifier="basicspinal">
+      <SchematicSprite texture="%ModDir%/UI/ekgunnery_spinalschematics1.png" sourcerect="208,0,112,224" />
+      <SwapConnectedItem tag="periscope" swapto="periscope" />
+      <SwapConnectedItem tag="ekgunnery_spinalammosource" swapto="ekgunnery_newspinalpulselaserloader" />
+    </SwappableItem>
+    <UpgradePreviewSprite scale="3.0" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="256,136,72,72" origin="0.5,0.5" />
+    <StaticBody width="80" radius="80" />
+    <Turret singlechargedshot="true" maxchargetime="1.0" canbeselected="false" characterusable="false" linkable="true" barrelpos="56,112" rotationlimits="-15,15" powerconsumption="1000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="0" reload="0.25" springstiffnesslowskill="25" springstiffnesshighskill="50" springdampinglowskill="5" springdampinghighskill="10" rotationspeedlowskill="4" rotationspeedhighskill="8" firingoffset="0,-42" usefiringoffsetformuzzleflash="true">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_spinal.png" sourcerect="64,0,64,48" origin="0.25, 0.49" />
+      <sound file="Content/Items/Weapons/WEAPONS_laserGunShot1.ogg" range="10000" type="OnUse" />
+      <sound file="Content/Items/Weapons/WEAPONS_laserGunShot2.ogg" range="10000" type="OnUse" />
+      <sound file="Content/Items/Weapons/WEAPONS_laserGunShot3.ogg" range="10000" type="OnUse" />
+      <sound file="Content/Items/Weapons/WEAPONS_laserGunShot4.ogg" range="10000" type="OnUse" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="5000.0" structuredamage="0" force="0.01" camerashake="25.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.011" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.012" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <ChargeSound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" range="10000" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2560" IsOn="true" drawbehindsubs="false" ignorecontinuoustoggle="true">
+        <LightTexture texture="%ModDir%/Lights/lightcone_gigantic.png" origin="0.0, 0.5" size="1.1,1.1" />
+      </LightComponent>
+      <ParticleEmitter particle="FlareBubbles" scalemin="1.4" scalemax="1.8" particleamount="14" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
+      <ParticleEmitter particle="pulselasermist" particleamount="30" anglemin="-10" anglemax="10" scalemin="1" scalemax="1" distancemin="0" distancemax="250" velocitymin="0" velocitymax="100" />
+      <ParticleEmitter particle="GlowDot" scalemin="4.0" scalemax="4.0" particleamount="20" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" colormultiplier="255,0,0,255" />
+      <!--<ParticleEmitter particle="chargepulselaser" particleamount="30" scalemin="2.0" scalemax="2.0"/>-->
+      <ParticleEmitterCharge particle="chargepulselaser" particlespersecond="60" scalemin="1.0" scalemax="1.0" anglemin="0" anglemax="359" />
+    </Turret>
+    <aitarget maxsightrange="3000" maxsoundrange="10000" fadeouttime="5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+      <input name="toggle_light" displayname="connection.togglelight" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Spinal-Mount Heavy Railgun" identifier="ekgunnery_newspinalheavyrailgun" description="A heavy railgun mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Requires an even greater energy supply to fire than a standard railgun." Tags="ekgunnery_spinalturret,turret" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" focusonselected="true" offsetonselected="1200" linkable="true" allowedlinks="ekgunnery_heavyrailgunammosource">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" depth="0.01" sourcerect="320,0,128,224" canflipy="false" />
+    <MinimapIcon name="Command_Weapons_EkGunnery_SpinalRailgun" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="384,0,128,128" />
+    <SwappableItem price="9000" replacementonuninstall="ekgunnery_newspinalhardpoint" origin="20,112" swapidentifier="basicspinal">
+      <SchematicSprite texture="%ModDir%/UI/ekgunnery_spinalschematics1.png" sourcerect="320,0,128,224" />
+      <SwapConnectedItem tag="periscope" swapto="periscope" />
+      <SwapConnectedItem tag="ekgunnery_spinalammosource" swapto="ekgunnery_newspinalheavyrailgunloader" />
+    </SwappableItem>
+    <UpgradePreviewSprite scale="3.0" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="384,136,72,80" origin="0.5,0.5" />
+    <StaticBody width="80" radius="80" />
+    <Turret launchimpulse="80.0" canbeselected="false" characterusable="false" linkable="true" barrelpos="64,112" rotationlimits="-15,15" powerconsumption="35000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="0" reload="4.5" springstiffnesslowskill="25" springstiffnesshighskill="50" springdampinglowskill="5" springdampinghighskill="10" rotationspeedlowskill="4" rotationspeedhighskill="8" firingoffset="0,-88" usefiringoffsetformuzzleflash="true">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_spinal.png" sourcerect="128,0,64,48" origin="0.25, 0.49" />
+      <sound file="%ModDir%/Items/Weapons/railgunheavy1_mono.ogg" range="10000" type="OnUse" />
+      <sound file="%ModDir%/Items/Weapons/railgunheavy2_mono.ogg" range="10000" type="OnUse" />
+      <sound file="%ModDir%/Items/Weapons/railgunheavy3_mono.ogg" range="10000" type="OnUse" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="5000.0" structuredamage="0" force="0.01" camerashake="25.0" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" flashcolor="1.0,0.7,0.6" flashrange="1500" flashduration="0.2" />
+      </StatusEffect>
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.011" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.012" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="5120" IsOn="true" drawbehindsubs="false" ignorecontinuoustoggle="true">
+        <LightTexture texture="%ModDir%/Lights/lightcone_verythin.png" origin="-0.01, 0.5" size="1.0,1.0" />
+      </LightComponent>
+      <ParticleEmitter particle="ekgunnery_newheavyrailgunflash" particleamount="1" velocitymin="50" velocitymax="100" />
+      <ParticleEmitter particle="ekgunnery_newheavyrailgunbreak" particleamount="1" velocitymin="50" velocitymax="100" />
+      <ParticleEmitter particle="ekgunnery_newheavyrailgunglow" particleamount="1" anglemin="-10" anglemax="10" velocitymin="25" velocitymax="30" scalemin="3.0" scalemax="3.5" distancemin="125" distancemax="150" />
+    </Turret>
+    <aitarget maxsightrange="3000" maxsoundrange="10000" fadeouttime="5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+      <input name="toggle_light" displayname="connection.togglelight" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Spinal-Mount Medium SSL" identifier="ekgunnery_newspinalmediumssl" description="A medium SSL battery mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Experimental weapons-system which excels at quickly laying down fire at moderate range." Tags="ekgunnery_spinalturret,turret" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" focusonselected="true" offsetonselected="950" linkable="true" allowedlinks="ekgunnery_mediumsslammosource">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" depth="0.01" sourcerect="0,224,96,224" canflipy="false" />
+    <MinimapIcon name="Command_Weapons_EkGunnery_SpinalMediumSSL" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="0,256,128,128" />
+    <SwappableItem price="9000" replacementonuninstall="ekgunnery_newspinalhardpoint" origin="20,112" swapidentifier="basicspinal">
+      <SchematicSprite texture="%ModDir%/UI/ekgunnery_spinalschematics1.png" sourcerect="0,224,96,224" />
+      <SwapConnectedItem tag="periscope" swapto="periscope" />
+      <SwapConnectedItem tag="ekgunnery_spinalammosource" swapto="ekgunnery_newspinalmediumsslloader" />
+    </SwappableItem>
+    <UpgradePreviewSprite scale="3.0" texture="%ModDir%/UI/ekgunnery_spinalweaponui1.png" sourcerect="0,388,72,72" origin="0.5,0.5" />
+    <StaticBody width="80" radius="80" />
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="56,112" rotationlimits="-15,15" powerconsumption="100.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="0" reload="0.6" springstiffnesslowskill="25" springstiffnesshighskill="50" springdampinglowskill="5" springdampinghighskill="10" rotationspeedlowskill="4" rotationspeedhighskill="8" firingoffset="0,-88" usefiringoffsetformuzzleflash="true">
+      <WeaponIndicator texture="%ModDir%/UI/ekgunnery_statusicons_spinal.png" sourcerect="192,0,64,48" origin="0.25, 0.49" />
+      <sound file="%ModDir%/Items/Weapons/medium_ssl_fire.ogg" range="7500" type="OnUse" />
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.011" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_new_spinalweapons.png" origin="0.5, 0.5" sourcerect="0,0,1,1" depth="0.012" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <MoveSound file="Content/Items/Weapons/RailgunLoop.ogg" />
+      <StartMoveSound file="Content/Items/Weapons/RailgunStart.ogg" />
+      <EndMoveSound file="Content/Items/Weapons/RailgunStop.ogg" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2560" IsOn="true" drawbehindsubs="false" ignorecontinuoustoggle="true">
+        <LightTexture texture="%ModDir%/Lights/lightcone_gigantic.png" origin="0.0, 0.5" size="1.1,1.1" />
+      </LightComponent>
+      <!--
+	  <ParticleEmitter particle="ekgunnerymediumsslflame2" particleamount="1" velocitymin="50" velocitymax="100" />
+      <ParticleEmitter particle="ekgunnerychaingunbubbles" particleamount="3" velocitymin="50" velocitymax="150" scalemin="0.6" scalemax="1.2" distancemin="0" distancemax="500" />
+	  -->
+      <ParticleEmitter particle="ekgunnery_newmediumsslflame" particleamount="1" velocitymin="50" velocitymax="150" />
+      <ParticleEmitter particle="ekgunnery_newmediumsslbreak" particleamount="1" velocitymin="100" velocitymax="200" scalemin="0.6" scalemax="1.2" />
+      <ParticleEmitter particle="ekgunnery_newmediumsslglow" particleamount="1" anglemin="-10" anglemax="10" velocitymin="25" velocitymax="30" scalemin="1.25" scalemax="1.5" distancemin="40" distancemax="60" />
+      <ParticleEmitter particle="ekgunnery_newmediumsslbubbles" particleamount="3" velocitymin="50" velocitymax="300" scalemin="0.7" scalemax="1.1" distancemin="0" distancemax="125" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="500.0" structuredamage="0" force="0.01" camerashake="3.0" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+    </Turret>
+    <aitarget maxsightrange="3000" maxsoundrange="10000" fadeouttime="5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+      <input name="toggle_light" displayname="connection.togglelight" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+  </Item>
+</Items>

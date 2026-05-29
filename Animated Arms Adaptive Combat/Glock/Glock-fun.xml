@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Странный Glock" HideConditionBar="true" description="Что ты сказал про мою маму?" spritecolor="255,155,255,255" identifier="Glock-fun" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.24" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="%ModDir%/Glock/Glock.png" name="Glock icon inventory" sourcerect="3,222,101,123" origin="0.5021606,0.4957897" />
+      <Sprite texture="%ModDir%/Glock/Glock.png" name="Glock" sourcerect="25,18,122,82" depth="0.55" origin="0.39753547,0.4993602" />
+      <!-- Broken sprite used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/Glock/Glock.png" name="Glock broken" sourcerect="13,107,136,81" depth="0.55" origin="0.44021106,0.49158686" maxcondition="50" />
+      <Body width="100" height="44" density="25" />
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-32,-7" msg="ItemMsgPickUpSelect">
+        <!-- блокировка выстрела и добавление полу-автомата т.е закликивание-->
+        <StatusEffect type="OnUse" target="This" tags="firing" duration="0.05" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" reloadtimer="1" delay="0.175" setvalue="true" stackable="false" disabledeltatime="true" conditional="and">
+          <Conditional HasStatusTag="firing" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.0" setvalue="true" disabledeltatime="true" comparison="and">
+          <Conditional HasStatusTag="neq firing" />
+          <Conditional HasStatusTag="neq cantfire" />
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="cantfire" duration="0.1" stackable="false" setvalue="true" comparison="and">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <!-- Checks the tag and the condition. Dry fire possible if there are no status tags and the port is closed. -->
+        <StatusEffect target="This" type="OnUse" condition="1" delay="0.03" interval="0.5" setvalue="true" forceplaysounds="true" conditionalcomparison="and">
+          <Conditional hasstatustag="neq nodryfire" />
+          <Conditional hasstatustag="neq delaydryfire" />
+          <Conditional HasStatusTag="neq single" />
+          <Conditional condition="eq 100" />
+          <Sound file="%ModDir%/Glock/GlockEjectPortOpen.ogg" type="OnUse" range="1000" />
+          <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" interval="1" duration="1.1" stackable="false" SpeedMultiplier="0.9" setvalue="true" />
+        <!-- Замедление. -->
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.8" ObstructVisionAmount="0.01" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character,This" SpeedMultiplier="0.8" duration="0.15" ObstructVisionAmount="0.01" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming-fun.xml" priority="100" />
+          <Sound file="%ModDir%/Saunds/mom.ogg" type="OnUse" volume="2" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir%/Saunds/mom.ogg" frequencymultiplier="1.1" type="OnUse" volume="2" range="1000" />
+          <Sound file="%ModDir%/Saunds/mom.ogg" frequencymultiplier="1.2" type="OnUse" volume="2" range="1000" />
+          <Sound file="%ModDir%/Saunds/mom.ogg" frequencymultiplier="0.9" type="OnUse" volume="2" range="1000" />
+          <Conditional hasstatustag="gangsta" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" interval="1" duration="1.1" SpeedMultiplier="1.2" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="laser" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="-0.2" unskilledspread="-0.4" stackable="true" disabledeltatime="true" setvalue="false" comparison="and" interval="0.05">
+          <Conditional Spread="gt 2" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-10" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-5" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This" target="this" tags="suppressed" interval="1" duration="1.1" setvalue="true">
+          <RequiredItem items="suppressor" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="135,25" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="60,25" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="compensator" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="compensator" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="hider" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="hider" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="1" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.08,0.13" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <TickBox text="On\Off">
+          <StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+        </TickBox>
+        <TickBox text="    [3]">
+          <StatusEffect type="OnUse" target="This" tags="single" duration="0.26" interval="0.25" disabledeltatime="true" />
+        </TickBox>
+        <TickBox text="gangsta">
+          <StatusEffect type="OnUse" target="This" tags="gangsta" duration="0.05" interval="0.05" disabledeltatime="true" />
+        </TickBox>
+      </CustomInterface>
+      <RangedWeapon reload="0.2" barrelpos="60,25" spread="2" unskilledspread="4" weapondamagemodifier="0.9" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.0" DualWieldReloadTimePenaltyMultiplier="1.5" DualWieldAccuracyPenalty="20">
+        <StatusEffect type="OnUse" target="This" aimangle="+3" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 13" />
+          <Conditional HasStatusTag="neq compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" reloadtimer="0.075" setvalue="true" stackable="false" disabledeltatime="true" conditional="and">
+          <Conditional HasStatusTag="single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="+2" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 13" />
+          <Conditional HasStatusTag="compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="1.1" unskilledspread="2.2" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 20" />
+          <Conditional HasStatusTag="hider" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="1.5" unskilledspread="3" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 20" />
+          <Conditional HasStatusTag="neq hider" />
+        </StatusEffect>
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="255,0,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,0,256,256" />
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="neq suppressed" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallmuzzleflash" particleamount="1" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" scalemultiplier="0.5,0.4" distance="15" Angle="12" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="3,1.5" colormultiplier="255,255,100,175" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="8,6" colormultiplier="215,215,215,100" distance="15" Angle="12" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" CopyEntityAngle="true" distance="15" Angle="12" />
+          <Sound file="%ModDir%/Glock/Glock.ogg" type="OnUse" frequencymultiplier="1.1" range="2000" selectionmode="Random" />
+          <Sound file="%ModDir%/Glock/Glock-1.ogg" type="OnUse" frequencymultiplier="1.1" range="2000" />
+          <Sound file="%ModDir%/Glock/Glock-2.ogg" type="OnUse" frequencymultiplier="1.1" range="2000" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="suppressed" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" distance="35" Angle="12" scalemultiplier="0.5,0.4" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="1,1" distance="35" Angle="12" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" scalemultiplier="0.5,0.5" distance="35" Angle="12" CopyEntityAngle="true" />
+          <Sound file="%ModDir%/Glock/Glock-sup.ogg" frequencymultiplier="1.2" type="OnUse" range="750" selectionmode="Random" />
+          <Sound file="%ModDir%/Glock/Glock-1-sup.ogg" frequencymultiplier="1.2" type="OnUse" range="750" />
+          <Sound file="%ModDir%/Glock/Glock-2-sup.ogg" frequencymultiplier="1.2" type="OnUse" range="750" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="250" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="tinnitus_shot" strength="12" />
+          </Explosion>
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="6" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="40" />
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="7.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          <Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="7.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="1" setvalue="true">
+          <ParticleEmitter particle="pistolammocasing" particleamount="1" anglemin="120" anglemax="150" velocitymin="200" velocitymax="250" CopyEntityAngle="true" />
+          <LightComponent range="15" lightcolor="255,255,0,255" IsOn="true"></LightComponent>
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="delaydryfire" duration="0.5" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" condition="100" delay="0.20" setvalue="true" />
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="berettaammo">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Glockreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="Glockreloading" delay="1.2" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="Glockreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" aimpos="70,5" handle1="-32,-7" holdangle="0" holdpos="0,0" aimangle="0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" hideitems="false" setvalue="true" />
+        <RequiredItems items="berettaammo" type="Contained" />
+        <RequiredItems items="Glockreloading" type="Contained" />
+        <RequiredItems items="repair" type="Contained" />
+        <RequiredSkill identifier="weapons" level="30" />
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-5.355">
+          <Conditional inwater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-13.395">
+          <Conditional inwater="true" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="Contained" targetidentifiers="repair" condition="-7.5" interval="6" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" excludebroken="false" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" spawnwithid="repair" showcontainedstateindicator="false">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <Containable items="Berettaammo" itempos="-7,-2" excludebroken="false">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="0.9" setvalue="true" />
+          <!-- Gives the tag to prevent dry fire. -->
+          <StatusEffect type="OnSecondaryUse" target="This" tags="nodryfire" duration="0.5" interval="0.4" stackable="false" setvalue="true">
+            <Conditional TargetContainedItem="true" condition="neq 0" />
+          </StatusEffect>
+          <!-- Status effects to trigger only if the eject port is open. -->
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with OnRemoved status effects.
+		Also changes gun position to face up. -->
+          <StatusEffect type="OnInserted" target="This" condition="0" holdpos="55,-20" aimpos="55,0" delay="0.01" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <SpawnItem identifiers="Glock-handle" spawnposition="SameInventory" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="1" delay="0.02" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Changes gun's position. -->
+          <StatusEffect type="OnInserted" target="This" aimpos="40,10" delay="0.4" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Triggers magazine insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.3" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <Sound file="%ModDir%/Glock/GlockMagInsert.ogg" range="1000" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+          </StatusEffect>
+          <!-- Makes the magazine visible. -->
+          <!-- Changes gun position to face slighty down and handle1 to make the hand close the eject port. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="15" holdpos="45,-20" aimangle="15" handle1="-25,-6" aimpos="45,0" delay="0.6" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+            <Sound file="%ModDir%/Glock/GlockEjectPortClose.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Animation frame to close eject port with sounds. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.2" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sets values back to default. End of reloading animation. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="0" holdpos="0,0" aimangle="0" handle1="-32,-7" aimpos="70,5" delay="1.4" DualWieldAccuracyPenalty="10" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Status effects to trigger only if the eject port is closed. -->
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with OnRemoved status effects.
+		Also changes gun position to face down. -->
+          <StatusEffect type="OnInserted" target="This" condition="0" holdangle="-10" holdpos="55,-20" aimangle="-10" aimpos="40,0" delay="0.01" setvalue="true" stackable="false">
+            <Conditional condition="eq 100" />
+            <SpawnItem identifiers="Glock-handle-2" spawnposition="SameInventory" />
+          </StatusEffect>
+          <!-- Changes gun's position. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="45" holdpos="30,-20" aimangle="45" aimpos="35,10" delay="0.3" setvalue="true" stackable="false">
+            <Conditional condition="eq 100" />
+          </StatusEffect>
+          <!-- Triggers magazine insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.4" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 100" />
+            <Sound file="%ModDir%/Glock/GlockMagInsert.ogg" range="1000" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+          </StatusEffect>
+          <!-- Makes the magazine visible. -->
+          <!-- Sets values back to default. End of reloading animation. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="0" holdpos="0,0" aimangle="0" handle1="-32,-7" aimpos="70,5" delay="1" DualWieldAccuracyPenalty="10" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 100" />
+          </StatusEffect>
+          <!-- If the magazine is removed/swapped, sets the condition to 1. -->
+          <StatusEffect type="OnRemoved" target="This" delay="0.01" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/Glock/GlockMagDetach.ogg" range="1000" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight,flare,alienflare,glowstick" hide="false" itempos="13,3" setactive="true" />
+          <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        </SubContainer>
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" containedspritedepth="0.56" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="suppressor_pistol,compensator_pistol,hider_pistol" hide="false" itempos="27.5,7.5">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnRemoved" target="This" />
+            <Sound file="%ModDir%/Saunds/pistol_unjam.ogg" range="300" volume="0.5" loop="false" />
+            <StatusEffect type="OnInserted" target="This" tag="suppressed"></StatusEffect>
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments-1.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="Glockreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="Glockreloading" hide="true" />
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="30" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="Glockreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name=" " identifier="Glockchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockchamber">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" SpawnWithId="Berettarounds" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="Berettarounds" />
+        <StatusEffect type="OnUse" target="This" AllowWhenBroken="true">
+          <SpawnItem identifiers="Berettarounds" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name=" " identifier="Glock-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" delay="0.01" handle2="-20,-20" holdpos="50,-20" aimpos="50,-15" />
+        <StatusEffect type="Always" target="This" delay="0.3" handle2="-15,0" holdpos="50,-10" aimpos="50,0" />
+        <StatusEffect type="Always" target="This" delay="0.7" handle2="-30,0" holdpos="50,-10" aimangle="-25" aimpos="50,0" />
+        <StatusEffect type="Always" target="This" delay="1">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name=" " identifier="Glock-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" delay="0.1" handle2="-30,-15" holdpos="50,5" aimpos="50,5" />
+        <StatusEffect type="Always" target="This" delay="0.75">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+  </Items>
+</Override>

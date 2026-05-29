@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="IJ-17" description="Эта модификация IJ-17 переработана для надёжности во влажных условиях Европы. ‖color:gui.red‖Для оптимальной работы удалена система самозарядного действия, поэтому после каждого выстрела требуется ручное передёргивание затвора.‖end‖ Использует ‖color:gui.green‖стандартные боеприпасы для дробовика (вмещает 8 патронов)‖end‖. Данная модификация ‖color:gui.blue‖не может стрелять под водой‖end‖." category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,noshootunderwater" Scale="0.45" HideConditionBar="true" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.75" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.3" />
+      <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.075" />
+      <PreferredContainer secondary="armcab" spawnprobability="0.3" />
+      <Price baseprice="170" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="true" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="lead" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="40">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="iron" amount="1" />
+        <RequiredItem identifier="rubber" amount="1" />
+        <RequiredItem identifier="lead" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="15" displayname="repairweapon">
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="IJ-17" amount="1" />
+        <RequiredItem identifier="lead" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/IJ-17/IJ-17.png" sourcerect="416,137,109,112" origin="0.503449,0.49761552" />
+      <Sprite texture="%ModDir%/IJ-17/IJ-17.png" sourcerect="1,0,301,48" depth="0.55" origin="0.17070653,0.5005496" />
+      <!-- Broken sprite used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/IJ-17/IJ-17.png" sourcerect="1,63,279,114" depth="0.55" origin="0.19111738,0.28156427" maxcondition="50" />
+      <!-- Default sprite at 0 condition to 'break' the weapon mid reloading without making it look awful. -->
+      <BrokenSprite texture="%ModDir%/IJ-17/IJ-17.png" sourcerect="1,0,301,48" depth="0.55" origin="0.17192982,0.5" maxcondition="0" />
+      <Body width="180" height="30" density="25" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-5" aimpos="30,-3" handle1="-10,-5" handle2="100,15" holdangle="-40" msg="ItemMsgPickUpSelect">
+        <!-- Замедление. -->
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.5" ObstructVisionAmount="10" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" interval="1" duration="1.1" SpeedMultiplier="1.0" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="laser" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This" target="this" tags="suppressed" interval="1" duration="1.1" setvalue="true">
+          <RequiredItem items="suppressor" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="305,15" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="250,15" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" spritecolor="255,225,210,255">
+          <Conditional HasStatusTag="condition-75" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="0.5" spritecolor="231,204,184,255">
+          <Conditional HasStatusTag="condition-50" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="1" spritecolor="190,140,100,255">
+          <Conditional HasStatusTag="condition-25" />
+        </StatusEffect>
+      </Holdable>
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="IJ-17 bag" texture="%ModDir%/IJ-17/IJ-17.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="1,0,301,48" limb="Torso" depthlimb="LeftArm" Scale="0.425" origin="0.49608254,0.9003222" />
+      </Wearable>
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="IJ-17 bag" texture="%ModDir%/IJ-17/IJ-17.png" canbehiddenbyotherwearables="false" rotation="100" depth="0.6" sourcerect="1,0,301,48" limb="Torso" depthlimb="LeftArm" Scale="0.425" origin="0.49608254,0.9003222" />
+      </Wearable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.08,0.11" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Weapon_up">
+          <StatusEffect type="OnUse" target="This" aimpos="10,35" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" MatchOnEmpty="true" TargetSlot="4" />
+            <SpawnItem identifiers="weapons-up" spawnposition="ThisInventory" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimpos="30,-3" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Contained" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+        <Button text="Suicide ?">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" aimpos="60,-45" handle1="10,0" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This" aimpos="30,-3" handle1="-10,-5" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+      </CustomInterface>
+      <RangedWeapon barrelpos="135,10" weapondamagemodifier="1.5" spread="5" chargetime="0.025" unskilledspread="10" combatPriority="80" reload="0.5" drawhudwhenequipped="true" crosshairscale="0.0">
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.15" stackable="false" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="this" delay="0.01" aimangle="15" condition="99" setvalue="true" allowwhenbroken="true" />
+        <StatusEffect type="OnUse" target="this" delay="0.2" aimangle="10" setvalue="true" allowwhenbroken="true" />
+        <StatusEffect type="OnUse" target="this" delay="0.4" aimangle="5" setvalue="true" allowwhenbroken="true" />
+        <StatusEffect type="OnUse" target="This" delay="0.6" aimangle="0" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="0" aimpos="30,-3" handle1="-10,-5" delay="0.15">
+          <Conditional HasStatusTag="suicide" />
+          <Dropitem />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="riotreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="riotreloading" delay="3" condition="100" setvalue="true" />
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="256,512,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,512,256,256" />
+			        <ParticleEmitter particle="mediummuzzleflash" particleamount="1" CopyEntityAngle="true" />
+			        <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" scalemultiplier="2,2" colormultiplier="200,200,200,225" />
+			        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="6,4" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+			        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="16,12" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+			        <ParticleEmitter particle="largegunsmoke" particleamount="1" CopyEntityAngle="true" /><Sound file="%ModDir%/IJ-17/IJ-17.ogg" type="OnUse" range="3500" selectionmode="Random" /><Sound file="%ModDir%/IJ-17/IJ-17-1.ogg" type="OnUse" range="3500" /><Sound file="%ModDir%/IJ-17/IJ-17-2.ogg" type="OnUse" range="3500" />
+			      <StatusEffect type="OnUse" target="This">
+			        <Conditional HasStatusTag="neq suppressed" />
+			        <Explosion range="900" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+			          <Affliction identifier="tinnitus_shot" strength="65" /></Explosion></StatusEffect><ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2.5,2.5" /><ParticleEmitter particle="muzzlebubbles" particleamount="6" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" /><ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="90" /><StatusEffect type="OnUse" target="This"><Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" /><Explosion range="150.0" force="3" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="30.0" /></StatusEffect><StatusEffect type="OnUse" target="This"><Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" /><Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" /></StatusEffect><StatusEffect type="OnBroken" target="Contained" targetidentifiers="riotreloading" delay="0.01" condition="0" setvalue="true" /><StatusEffect type="OnBroken" target="Contained" targetidentifiers="riotreloading" delay="2.25" condition="100" setvalue="true" /><StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="riotreloading" condition="100" setvalue="true" /><StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" holdpos="40,-5" aimpos="30,-3" handle1="-10,-5" handle2="100,15" holdangle="-40" aimangle="0" setvalue="true" /><StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" /><StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" /><RequiredItems items="shotgunammo" type="Contained" /><RequiredItems items="riotreloading" type="Contained" /><RequiredItems items="repair" type="Contained" /><RequiredSkill identifier="weapons" level="30" /><StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-3.69"><Use /><Conditional inwater="false" /></StatusEffect><StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-8.72"><Use /><Conditional inwater="true" /></StatusEffect><StatusEffect type="InWater" target="Contained" targetidentifiers="repair" stackable="false" condition="-5.5" interval="6" /></RangedWeapon>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56" spawnwithid="repair" showcontainedstateindicator="false">
+        <Containable items="shotgunammo" hide="true">
+          <StatusEffect type="OnInserted" target="NearbyItems" range="5" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <Remove />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true" />
+          <!-- Unlocks the ammunition, allowing the person to add more or remove. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="3" setvalue="true" />
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with some condition-conditional status effects. -->
+          <!-- Sets shotgun's position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.05" holdpos="30,0" aimpos="20,-10" aimangle="-10" setvalue="true" />
+          <!-- Sets hand's position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.55" handle2="100,-10" setvalue="true">
+            <Sound file="%ModDir%/IJ-17/open.ogg" range="800" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.6" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 99" />
+            <ParticleEmitter particle="swirlysmoke" particleamount="1" distance="17" angle="25" CopyEntityAngle="true" scalemultiplier="1,1" colormultiplier="255,255,255,255" />
+            <SpawnItem identifier="shotgunshell-casing" spawnposition="This" aimspread="30" rotationtype="This" rotation="260" count="1" Impulse="0.04" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.7" condition="50" setvalue="true" />
+          <StatusEffect type="OnInserted" target="This" delay="1.35" handle2="33,22" holdangle="-25" aimangle="-25">
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-15" distancemax="15" />
+            <Sound file="%ModDir%/IJ-17/IJ-17ShellInsert.ogg" type="OnUse" range="500" volume="1.5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" condition="100" handle2="100,15" setvalue="true">
+            <Sound file="%ModDir%/IJ-17/open.ogg" range="800" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2.25" holdpos="40,-5" aimpos="30,-3" handle1="-10,-5" handle2="100,15" holdangle="-40" aimangle="0" setvalue="true" />
+          <StatusEffect type="OnRemoved" target="This">
+            <Sound file="%ModDir%/Saunds/BulletDetach.ogg" frequencymultiplier="0.8" range="600" volume="0.5" loop="false" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="%ModDir%/ContainerIndicators-4.png" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Прокси для сообщения. -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="waterjamproxy" removecontaineditemsondeconstruct="true">
+        <Containable items="waterjamproxy" hide="true" />
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="riotreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="riotreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="weapons-up" hide="true" />
+      </ItemContainer>
+      <aitarget sightrange="3000" soundrange="6000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="weapons" level="30" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="riotreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,riotreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name=" " identifier="waterjamproxy" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,waterjamproxy">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

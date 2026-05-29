@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="railgunshellkm1" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1" />
+      <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1" />
+      <!--Ensure that Thalamus always has some railgun shells to use-->
+      <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="2" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.25" />
+      <Price baseprice="275">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="flashpowder" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="titanium" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="shell km1" sourcerect="904,230,66,79" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="shell km1" sourcerect="950,10,234,33" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <!-- slow down the character when holding the item -->
+        <StatValue stattype="MovementSpeed" value="-0.2" />
+        <!-- adjust hold position when swimming -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- revert hold position adjustment when walking -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="50" itemdamage="100" severlimbsprobability="5" penetration="0.4" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="250" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+        </StatusEffect>
+        <!-- Trigger explosions on contained items -->
+        <StatusEffect type="OnBroken" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="weldspark" copyentityangle="true" particleamount="100" anglemin="-2" anglemax="2" velocitymin="10" velocitymax="2500" scalemin="2.5" scalemax="3.5" priority="110" />
+          <SpawnItem identifier="heatshellkm" spawnposition="This" count="1" rotationtype="Collider" rotation="0" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="railgunshellkm2" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <!--Ensure that Thalamus always has some railgun shells to use-->
+      <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="2" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.25" />
+      <Price baseprice="375">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="titanium" />
+        <Item identifier="c4block" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="35">
+        <RequiredSkill identifier="weapons" level="45" />
+        <RequiredItem identifier="titanium" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="ic4block" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="shell km2" sourcerect="978,218,76,90" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="shell km2" sourcerect="917,123,277,33" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <!-- slow down the character when holding the item -->
+        <StatValue stattype="MovementSpeed" value="-0.2" />
+        <!-- adjust hold position when swimming -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- revert hold position adjustment when walking -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="100" itemdamage="100" severlimbsprobability="5" penetration="0.4" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="250" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+        </StatusEffect>
+        <!-- Trigger explosions on contained items -->
+        <StatusEffect type="OnBroken" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="weldspark" copyentityangle="true" particleamount="120" anglemin="-2" anglemax="2" velocitymin="10" velocitymax="3000" scalemin="3" scalemax="3.5" priority="110" />
+          <SpawnItem identifier="heatshellkm2" spawnposition="This" count="1" rotationtype="Collider" rotation="0" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item identifier="heatshellkm" tags="smallitem" category="weapon" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true">
+      <Sprite texture="%ModDir%/Ammunition.png" sourcerect="1015,482,23,11" depth="0.99" origin="0.5,0.5" />
+      <Body width="1" height="1" density="11" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" damagedoors="true" spread="1" maxtargetstohit="100" launchimpulse="15">
+        <Attack structuredamage="50" targetforce="5" severlimbsprobability="0" itemdamage="150" penetration="0.0">
+          <Affliction identifier="burn" strength="100" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <SpawnItem identifier="incendiumemitter" count="1" aimspread="120" rotationtype="Collider" rotation="0" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" stackable="false" delay="0.3">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item identifier="heatshellkm2" tags="smallitem" category="weapon" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true">
+      <Sprite texture="%ModDir%/Ammunition.png" sourcerect="1015,482,23,11" depth="0.99" origin="0.5,0.5" />
+      <Body width="1" height="1" density="11" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" damagedoors="true" spread="1" maxtargetstohit="100" launchimpulse="15">
+        <Attack structuredamage="50" targetforce="5" severlimbsprobability="0" itemdamage="150" penetration="0.0">
+          <Affliction identifier="burn" strength="125" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <SpawnItem identifier="incendiumemitter" count="1" aimspread="120" rotationtype="Collider" rotation="0" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" stackable="false" delay="0.5">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+  </Items>
+</Override>

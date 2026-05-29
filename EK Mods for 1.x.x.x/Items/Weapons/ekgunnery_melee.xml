@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Ramming Prow now suffers from crashing onUse. Dummy projectile container/spawn might fix, might not. Added to TODO. -->
+  <!-- Dummy projectile to prevent crashing onUse -->
+  <!-- P.S. something is horrifically cursed with the current implementation of Tinker code -->
+  <Item name="ekgunnery_dummyprojectile" identifier="ekgunnery_dummyprojectile" tags="" hideinmenus="true" category="Misc" scale="1">
+    <Sprite texture="Content/Items/Weapons/Turrets.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="5" density="1" />
+    <Projectile characterusable="false" launchimpulse="4.0" targetforce="0">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0" />
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.01" stackable="false">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="ekgunnery_acousticpulseeffect" identifier="ekgunnery_acousticpulseeffect" tags="provocative" hideinmenus="true" category="Misc" scale="1" sonarsize="2">
+    <Sprite texture="Content/Items/Weapons/Turrets.png" sourcerect="0,0,2,2" depth="0.55" origin="0.5,0.5" />
+    <AiTarget sightrange="0" maxsoundrange="8000" minsoundrange="0" fadeouttime="5" sonardisruption="0.4" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <Conditional condition="gt 80" />
+        <Explosion range="2000.0" levelwalldamage="60" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" condition="-20" disabledeltatime="true" stackable="false" delay="1">
+        <Conditional condition="lt 80" />
+        <Explosion range="4250.0" levelwalldamage="40" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" condition="-20" disabledeltatime="true" stackable="false" delay="1">
+        <Conditional condition="lt 60" />
+        <Explosion range="6500.0" levelwalldamage="20" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" condition="-8">
+        <ParticleEmitter particle="risingbubbles" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="0" velocitymax="50" scalemin="1" scalemax="6" distancemin="0" distancemax="2000" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_acousticpulse_style1" tags="dischargecoil" category="Machine,Weapon" interactthroughwalls="true" Scale="0.5" interactdistance="10" focusonselected="true" offsetonselected="750" linkable="false">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.01" sourcerect="0,0,448,80" origin="0.5, 0.1" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true" SpawnWithId="ekgunnery_dummyprojectile">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="Always" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="224,40" rotationlimits="270,270" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="false" recoildistance="0" reload="4" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.805" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="2500.0" stun="1.0" force="100.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" applyfireeffects="false" severlimbsprobability="0.25" onlyoutside="true">
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="internaldamage" strength="20" />
+          <Affliction identifier="organdamage" strength="10" />
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="nausea" strength="30" />
+          <Affliction identifier="explosiondamage" strength="20" />
+        </Explosion>
+        <SpawnItem identifier="ekgunnery_acousticpulseeffect" spawnposition="This" />
+      </StatusEffect>
+      <Sound file="%ModDir%/Items/Weapons/audiokinetic_large.ogg" range="6000" type="OnUse" />
+      <particleemitter particle="ekgunnerykineticpulse" particleamount="2" scalemin="25" scalemax="25" />
+      <ParticleEmitter particle="risingbubbles" anglemin="-360" anglemax="360" particleamount="20" velocitymin="50" velocitymax="250" scalemin="1" scalemax="2" />
+      <ParticleEmitter particle="ekgunneryunderwaterexplosiondim" particleamount="1" scalemin="4.0" scalemax="4.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_acousticpulse_style2" tags="dischargecoil" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" focusonselected="true" offsetonselected="750" linkable="false">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.01" sourcerect="0,88,448,104" origin="0.5, 0.25" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true" SpawnWithId="ekgunnery_dummyprojectile">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="Always" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="224,40" rotationlimits="270,270" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="false" recoildistance="0" reload="4" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.805" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="2500.0" stun="1.0" force="50.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" applyfireeffects="false" severlimbsprobability="0.25" onlyoutside="true">
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="internaldamage" strength="30" />
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="nausea" strength="30" />
+          <Affliction identifier="explosiondamage" strength="20" />
+        </Explosion>
+        <SpawnItem identifier="ekgunnery_acousticpulseeffect" spawnposition="This" />
+      </StatusEffect>
+      <Sound file="%ModDir%/Items/Weapons/audiokinetic_large.ogg" range="6000" type="OnUse" />
+      <particleemitter particle="ekgunnerykineticpulse" particleamount="2" scalemin="25" scalemax="25" />
+      <ParticleEmitter particle="risingbubbles" anglemin="-360" anglemax="360" particleamount="20" velocitymin="50" velocitymax="250" scalemin="1" scalemax="2" />
+      <ParticleEmitter particle="ekgunneryunderwaterexplosiondim" particleamount="1" scalemin="4.0" scalemax="4.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_acousticpulse_style3" tags="dischargecoil" category="Legacy" interactthroughwalls="true" Scale="0.5" interactdistance="10" focusonselected="true" offsetonselected="750" linkable="false">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.01" sourcerect="0,200,448,64" origin="0.5, 0.1" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true" SpawnWithId="ekgunnery_dummyprojectile">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="Always" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="224,40" rotationlimits="270,270" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="false" recoildistance="0" reload="4" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.805" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="2500.0" stun="1.0" force="50.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" applyfireeffects="false" severlimbsprobability="0.25" onlyoutside="true">
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="internaldamage" strength="30" />
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="nausea" strength="30" />
+          <Affliction identifier="explosiondamage" strength="20" />
+        </Explosion>
+        <SpawnItem identifier="ekgunnery_acousticpulseeffect" spawnposition="This" />
+      </StatusEffect>
+      <Sound file="%ModDir%/Items/Weapons/audiokinetic_large.ogg" range="6000" type="OnUse" />
+      <particleemitter particle="ekgunnerykineticpulse" particleamount="2" scalemin="25" scalemax="25" />
+      <ParticleEmitter particle="risingbubbles" anglemin="-360" anglemax="360" particleamount="20" velocitymin="50" velocitymax="250" scalemin="1" scalemax="2" />
+      <ParticleEmitter particle="ekgunneryunderwaterexplosiondim" particleamount="1" scalemin="4.0" scalemax="4.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_acousticpulse_style4" tags="dischargecoil" category="Legacy" interactthroughwalls="true" Scale="1.0" interactdistance="10" focusonselected="true" offsetonselected="750" linkable="false">
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.01" sourcerect="0,272,256,64" origin="0.5, 0.1" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true" SpawnWithId="ekgunnery_dummyprojectile">
+      <Containable items="ekgunnery_dummyprojectile" />
+      <StatusEffect type="Always" target="Contained">
+        <SpawnItem identifier="ekgunnery_dummyprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="128,32" rotationlimits="270,270" powerconsumption="20000.0" showchargeindicator="true" showprojectileindicator="false" recoildistance="0" reload="4" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.805" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_audiokineticpulse_style1.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="2500.0" stun="1.0" force="50.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" applyfireeffects="false" severlimbsprobability="0.25" onlyoutside="true">
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="internaldamage" strength="30" />
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="nausea" strength="30" />
+          <Affliction identifier="explosiondamage" strength="20" />
+        </Explosion>
+        <SpawnItem identifier="ekgunnery_acousticpulseeffect" spawnposition="This" />
+      </StatusEffect>
+      <Sound file="%ModDir%/Items/Weapons/audiokinetic_large.ogg" range="6000" type="OnUse" />
+      <particleemitter particle="ekgunnerykineticpulse" particleamount="2" scalemin="25" scalemax="25" />
+      <ParticleEmitter particle="risingbubbles" anglemin="-360" anglemax="360" particleamount="20" velocitymin="50" velocitymax="250" scalemin="1" scalemax="2" />
+      <ParticleEmitter particle="ekgunneryunderwaterexplosiondim" particleamount="1" scalemin="4.0" scalemax="4.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall1" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="0,224,32,208" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,224,32,208" origin="0.5,0.5" offset="0,-72" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall1b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="0,224,32,288" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,224,32,288" origin="0.5,0.5" offset="0,-112" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall2" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="32,224,32,208" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="32,224,32,208" origin="0.5,0.5" offset="0,-72" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall2b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="32,224,32,288" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="32,224,32,288" origin="0.5,0.5" offset="0,-112" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall3" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="64,224,56,208" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,224,56,208" origin="0.5,0.5" offset="0,-72" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall3b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="64,224,56,288" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,224,56,288" origin="0.5,0.5" offset="0,-112" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall4" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="128,224,48,208" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="128,224,48,208" origin="0.5,0.5" offset="0,-72" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall4b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="128,224,48,288" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="128,224,48,288" origin="0.5,0.5" offset="0,-112" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall5" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="0,544,48,208" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,544,48,208" origin="0.5,0.5" offset="0,-72" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall5b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="0,544,48,288" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,544,48,288" origin="0.5,0.5" offset="0,-112" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall6" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="0,864,384,112" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,0,192,192" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,864,384,112" origin="0.5,0.5" offset="0,-32" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="150">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall6b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="0,864,256,112" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="192,0,128,128" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,864,256,112" origin="0.5,0.5" offset="0,-32" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="100">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall6c" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="0,864,128,112" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="0,864,128,112" origin="0.5,0.5" offset="0,-32" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall7" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="64,544,56,208" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,544,56,208" origin="0.5,0.5" offset="0,-72" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikessmall7b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="64,544,56,288" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,544,56,288" origin="0.5,0.5" offset="0,-112" />
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikestogglesmall1" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="192,544,48,288" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.77" sourcerect="128,672,64,160" origin="0.5,0.5" offset="0,-304" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="192,544,48,288" depth="0.78" origin="0.5,0.5" offset="0,-112">
+      <IsActiveConditional targetitemcomponent="LightComponent" IsOn="eq True" />
+    </DecorativeSprite>
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <LightComponent range="2" lightcolor="0,0,0,2" IsOn="true" castshadows="false" allowingameediting="false" flicker="0" flickerspeed="0" pulsefrequency="0" pulseamount="0" />
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <IsActive targetitemcomponent="LightComponent" IsOn="eq True" />
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+    <ConnectionPanel canbeselected="true" hudpriority="10">
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleespikestogglesmall1b" category="Machine,Weapon" tags="" Scale="0.5" spritecolor="150,150,150,255">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="192,544,48,208" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="320,0,96,96" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.77" sourcerect="128,672,64,160" origin="0.5,0.5" offset="0,-224" />
+    <DecorativeSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" sourcerect="192,544,48,208" depth="0.78" origin="0.5,0.5" offset="0,-72">
+      <IsActiveConditional targetitemcomponent="LightComponent" IsOn="eq True" />
+    </DecorativeSprite>
+    <BrokenSprite texture="%ModDir%/Items/Weapons/ekgunnery_hullspikes1.png" depth="0.7" sourcerect="64,64,64,64" origin="0.5,0.5" maxcondition="95" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <LightComponent range="2" lightcolor="0,0,0,2" IsOn="true" castshadows="false" allowingameediting="false" flicker="0" flickerspeed="0" pulsefrequency="0" pulseamount="0" />
+    <TriggerComponent triggeredby="Human, Creature" force="0" radius="75">
+      <IsActive targetitemcomponent="LightComponent" IsOn="eq True" />
+      <Attack>
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+    </TriggerComponent>
+    <ConnectionPanel canbeselected="true" hudpriority="10">
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <!--
+  <Item name="ekgunnery_meleerammingprow1_projectile" identifier="ekgunnery_meleerammingprow1_projectile" tags="" hideinmenus="true" category="Misc" scale="1">
+    <Sprite texture="%ModDir:EK Dockyard%/Items/Engine/thruster_engines.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="96" density="50" />
+    <Projectile characterusable="false" launchimpulse="50.0" sticktostructures="false" maxtargetstohit="4">
+      <Attack targetforce="5" structuredamage="50" itemdamage="125" levelwalldamage="25" severlimbsprobability="1.9" penetration="0.5">
+        <Affliction identifier="blunttrauma" strength="10" />
+        <Affliction identifier="lacerations" strength="7.5" />
+        <Affliction identifier="bleeding" strength="5" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="0.075" />
+      <StatusEffect type="OnImpact" target="This" condition="-25" disabledeltatime="true" />
+      <StatusEffect type="OnImpact" target="This,UseTarget" condition="-100">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <Explosion range="300.0" structuredamage="25" itemdamage="0" levelwalldamage="25" force="0" severlimbsprobability="0" camerashake="100" camerashakerange="2000" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false">
+          <Affliction identifier="blunttrauma" strength="5" />
+          <Affliction identifier="lacerations" strength="2.5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleerammingprow1" Tags="engine" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" sourcerect="0,400,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.8" sourcerect="0,0,192,192" canflipy="false" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true">
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <Containable items="ekgunnery_meleerammingprow1_projectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_meleerammingprow1_projectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="96,96" rotationlimits="0,0" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" recoildistance="0" reload="0" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8" firingoffset="0,-48" usefiringoffsetformuzzleflash="false">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.805" sourcerect="0,192,192,160" origin="0.5, 1.0" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="ekgunnery_meleerammingprow1creatures_projectile" identifier="ekgunnery_meleerammingprow1creatures_projectile" tags="" hideinmenus="true" category="Misc" scale="1">
+    <Sprite texture="%ModDir:EK Dockyard%/Items/Engine/thruster_engines.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="96" density="50" />
+    <Projectile characterusable="false" launchimpulse="50.0" sticktostructures="false" maxtargetstohit="4">
+      <Attack targetforce="5" structuredamage="0" itemdamage="0" levelwalldamage="25" severlimbsprobability="1.9" penetration="0.5">
+        <Affliction identifier="blunttrauma" strength="10" />
+        <Affliction identifier="lacerations" strength="7.5" />
+        <Affliction identifier="bleeding" strength="5" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="0.075" />
+      <StatusEffect type="OnImpact" target="This" condition="-25" disabledeltatime="true" />
+      <StatusEffect type="OnImpact" target="This,UseTarget" condition="-100">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleerammingprow1creatures" Tags="engine" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" sourcerect="0,400,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.8" sourcerect="0,0,192,192" canflipy="false" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true">
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <Containable items="ekgunnery_meleerammingprow1creatures_projectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_meleerammingprow1creatures_projectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="96,96" rotationlimits="0,0" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" recoildistance="0" reload="0" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8" firingoffset="0,-48" usefiringoffsetformuzzleflash="false">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.805" sourcerect="0,192,192,160" origin="0.5, 1.0" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="ekgunnery_meleerammingprow2_projectile" identifier="ekgunnery_meleerammingprow2_projectile" tags="" hideinmenus="true" category="Misc" scale="1">
+    <Sprite texture="%ModDir:EK Dockyard%/Items/Engine/thruster_engines.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="128" density="50" />
+    <Projectile characterusable="false" launchimpulse="50.0" sticktostructures="false" maxtargetstohit="4">
+      <Attack targetforce="5" structuredamage="50" itemdamage="125" levelwalldamage="25" severlimbsprobability="1.9" penetration="0.75">
+        <Affliction identifier="blunttrauma" strength="12.5" />
+        <Affliction identifier="lacerations" strength="10" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="0.1" />
+      <StatusEffect type="OnImpact" target="This" condition="-25" disabledeltatime="true" />
+      <StatusEffect type="OnImpact" target="This,UseTarget" condition="-100">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <Explosion range="350.0" structuredamage="25" itemdamage="0" levelwalldamage="25" force="0" severlimbsprobability="0" camerashake="100" camerashakerange="2500" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false">
+          <Affliction identifier="blunttrauma" strength="7.5" />
+          <Affliction identifier="lacerations" strength="3.75" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleerammingprow2" Tags="engine" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" sourcerect="0,400,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.8" sourcerect="192,0,256,256" canflipy="false" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true">
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <Containable items="ekgunnery_meleerammingprow2_projectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_meleerammingprow2_projectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="128,128" rotationlimits="0,0" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" recoildistance="0" reload="0" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8" firingoffset="0,-64" usefiringoffsetformuzzleflash="false">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.805" sourcerect="192,256,256,192" origin="0.5, 1.0" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="ekgunnery_meleerammingprow2creatures_projectile" identifier="ekgunnery_meleerammingprow2creatures_projectile" tags="" hideinmenus="true" category="Misc" scale="1">
+    <Sprite texture="%ModDir:EK Dockyard%/Items/Engine/thruster_engines.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body radius="128" density="50" />
+    <Projectile characterusable="false" launchimpulse="50.0" sticktostructures="false" maxtargetstohit="4">
+      <Attack targetforce="5" structuredamage="0" itemdamage="0" levelwalldamage="25" severlimbsprobability="1.9" penetration="0.75">
+        <Affliction identifier="blunttrauma" strength="12.5" />
+        <Affliction identifier="lacerations" strength="10" />
+        <Affliction identifier="bleeding" strength="7.5" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="0.1" />
+      <StatusEffect type="OnImpact" target="This" condition="-25" disabledeltatime="true" />
+      <StatusEffect type="OnImpact" target="This,UseTarget" condition="-100">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="" identifier="ekgunnery_meleerammingprow2creatures" Tags="engine" category="Machine,Weapon" interactthroughwalls="true" Scale="1" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="false" linkable="false" invulnerabletodamage="true" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" sourcerect="0,400,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.8" sourcerect="192,0,256,256" canflipy="false" />
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" canbeselected="false" characterusable="true">
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+      <Containable items="ekgunnery_meleerammingprow2creatures_projectile" />
+      <StatusEffect type="OnUse" target="Contained">
+        <SpawnItem identifier="ekgunnery_meleerammingprow2creatures_projectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Turret canbeselected="false" characterusable="false" linkable="true" barrelpos="128,128" rotationlimits="0,0" powerconsumption="0.0" showchargeindicator="false" showprojectileindicator="false" recoildistance="0" reload="0" springstiffnesslowskill="50" springstiffnesshighskill="50" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="8" rotationspeedhighskill="8" firingoffset="0,-64" usefiringoffsetformuzzleflash="false">
+      <RailSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.805" sourcerect="192,256,256,192" origin="0.5, 1.0" />
+      <BarrelSprite texture="%ModDir%/Items/Weapons/ekgunnery_ramminghull.png" depth="0.810" sourcerect="0,0,1,1" origin="0.5, 0.5" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="sp.item.rotation.name" />
+      <input name="trigger_in" displayname="connection.activate" />
+    </ConnectionPanel>
+  </Item>-->
+</Items>

@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" description="" identifier="spp-1" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.25" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.15" />
+      <Price baseprice="500" minleveldifficulty="40">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="25" displayname="repairweapon">
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="spp-1" amount="1" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="rubber" amount="1" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/spp-1/spp-1.png" name="colt icon inventory" sourcerect="2,197,115,145" origin="0.5021606,0.4957897" />
+      <Sprite texture="%ModDir%/spp-1/spp-1.png" name="colt" sourcerect="23,3,148,79" depth="0.55" origin="0.5021203,0.50207555" />
+      <!-- Broken sprite used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/spp-1/spp-1.png" name="colt broken" sourcerect="21,82,150,102" depth="0.55" origin="0.5159069,0.6090873" maxcondition="50" />
+      <Body width="100" height="44" density="10.01" />
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-32,-7" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Contained" interval="1" setvalue="true" hitscan="false" disabledeltatime="true">
+          <Conditional inwater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Contained" interval="1" setvalue="true" hitscan="true" disabledeltatime="true">
+          <Conditional inwater="false" />
+        </StatusEffect>
+        <!-- блокировка выстрела и добавление полу-автомата т.е закликивание-->
+        <StatusEffect type="OnUse" target="This" tags="firing" duration="0.05" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.05" setvalue="true" stackable="false" disabledeltatime="true" conditional="or">
+          <Conditional HasStatusTag="firing" />
+          <Conditional HasStatusTag="cantfire" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" reloadtimer="0.0" setvalue="true" disabledeltatime="true" comparison="and">
+          <Conditional HasStatusTag="neq firing" />
+          <Conditional HasStatusTag="neq cantfire" />
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" tags="cantfire" duration="0.1" stackable="false" setvalue="true">
+          <Conditional IsBot="false" targetcontainer="true" />
+        </StatusEffect>
+        <!-- Замедление. -->
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.8" ObstructVisionAmount="0.01" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" interval="1" duration="1.1" SpeedMultiplier="1.0" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="laser" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="1.75" unskilledspread="3.5" setvalue="true" disabledeltatime="true" comparison="and">
+          <Conditional inwater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="15" unskilledspread="30" setvalue="true" disabledeltatime="true" comparison="and">
+          <Conditional inwater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-10" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 35" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-5" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 35" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" spritecolor="255,225,210,255">
+          <Conditional HasStatusTag="condition-75" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="0.5" spritecolor="231,204,184,255">
+          <Conditional HasStatusTag="condition-50" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="1" spritecolor="190,140,100,255">
+          <Conditional HasStatusTag="condition-25" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.08,0.08" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="140" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+      </CustomInterface>
+      <RangedWeapon reload="0.2" barrelpos="65,25" combatPriority="70" chargetime="0.025" drawhudwhenequipped="true" crosshairscale="0.0" DualWieldReloadTimePenaltyMultiplier="1.5" DualWieldAccuracyPenalty="15">
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.15" stackable="false" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" aimangle="+4" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 15" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="3" unskilledspread="6" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 15" />
+          <Conditional inwater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="-0.3" unskilledspread="-0.6" stackable="true" disabledeltatime="true" setvalue="false" comparison="and" interval="0.05">
+          <Conditional Spread="gt 15" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+          <Conditional inwater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional HasStatusTag="neq suppressed" />
+          <Explosion range="400" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="tinnitus_shot" strength="8" probability="0.25" />
+          </Explosion>
+        </StatusEffect>
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="255,0,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,0,256,256" />
+        <ParticleEmitter particle="smallmuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" scalemultiplier="1,0.5" colormultiplier="200,200,200,225" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="4,2" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="10,8" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="smallgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" />
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="6" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="40" />
+        <Sound file="%ModDir%/spp-1/spp-1.ogg" type="OnUse" range="1500" selectionmode="Random" />
+        <Sound file="%ModDir%/spp-1/spp-1-1.ogg" type="OnUse" range="1500" />
+        <Sound file="%ModDir%/spp-1/spp-1-2.ogg" type="OnUse" range="1500" />
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 35" />
+          <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 35" />
+          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="1911reloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="1911reloading" delay="1.2" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="1911reloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" aimpos="70,5" handle1="-32,-7" holdangle="0" holdpos="0,0" aimangle="0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" hideitems="false" setvalue="true" />
+        <RequiredItems items="spp-1round,spp-1apround,spp-1fmjround" type="Contained" />
+        <RequiredItems items="1911reloading" type="Contained" />
+        <RequiredItems items="repair" type="Contained" />
+        <RequiredSkill identifier="weapons" level="35" />
+        <StatusEffect type="OnUse" target="This" aimangle="0" delay="0.15" condition="99" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="0" delay="0.15" condition="98" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="99" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="0" delay="0.15" condition="97" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="98" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="0" delay="0.15" condition="96" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="97" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-5.355">
+          <Conditional inwater="false" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-3.57">
+          <Conditional inwater="true" />
+          <Use />
+        </StatusEffect>
+      </RangedWeapon>
+      <ItemContainer capacity="4" maxstacksize="1" hideitems="true" hide="true" ShowTotalStackCapacityInContainedStateIndicator="true" spawnwithid="repair" showcontainedstateindicator="false" containedstateindicatorstyle="bullet">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="3" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <Containable items="spp-1round,spp-1apround,spp-1fmjround" hide="true">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+            <Conditional ishuman="true" />
+            <SpawnItem identifiers="spp-1-handle" spawnposition="SameInventory" />
+          </StatusEffect>
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="0.9" setvalue="true" />
+          <!-- Gives the tag to prevent dry fire. -->
+          <StatusEffect type="OnSecondaryUse" target="This" tags="nodryfire" duration="0.5" interval="0.4" stackable="false" setvalue="true">
+            <Conditional TargetContainedItem="true" condition="neq 0" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.5" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 99" />
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Sound file="%ModDir%/Model29/Model29RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="Berettarounds-casing" spawnposition="This" aimspread="20" rotationtype="This" rotation="120" count="1" Impulse="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.5" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 98" />
+            <Sound file="%ModDir%/Model29/Model29RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="spp-1round-casing" spawnposition="This" aimspread="20" rotationtype="This" rotation="120" count="2" Impulse="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.5" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 97" />
+            <Sound file="%ModDir%/Model29/Model29RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="spp-1round-casing" spawnposition="This" aimspread="20" rotationtype="This" rotation="120" count="3" Impulse="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.5" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 96" />
+            <Sound file="%ModDir%/Model29/Model29RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="spp-1round-casing" spawnposition="This" aimspread="20" rotationtype="This" rotation="120" count="4" Impulse="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdangle="-10" holdpos="40,-20" aimangle="-10" aimpos="40,0" delay="0.01" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.02" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Changes gun's position. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="45" holdpos="30,-20" aimangle="45" aimpos="35,10" delay="0.4" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Triggers magazine insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.3" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+            <Sound file="%ModDir%/spp-1/spp-1open.ogg" range="1000" />
+          </StatusEffect>
+          <!-- Makes the magazine visible. -->
+          <!-- Changes gun position to face slighty down and handle1 to make the hand close the eject port. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="-25" holdpos="50,20" aimangle="-25" handle1="-25,-6 " aimpos="40,-5" delay="0.8" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" forceplaysounds="true" stackable="false">
+            <Conditional condition="eq 1" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+          </StatusEffect>
+          <!-- Animation frame to close eject port with sounds. -->
+          <StatusEffect type="OnInserted" target="This" delay="1" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <!-- Sets values back to default. End of reloading animation. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="0" holdpos="0,0" aimangle="0" handle1="-32,-7" aimpos="70,5" delay="1.2" DualWieldAccuracyPenalty="10" condition="100" setvalue="true" stackable="false">
+            <Conditional condition="eq 1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdangle="-10" holdpos="55,-20" aimangle="-10" aimpos="40,0" delay="0.01" setvalue="true" stackable="false"></StatusEffect>
+          <!-- Changes gun's position. -->
+          <StatusEffect type="OnInserted" target="This" condition="0" holdangle="45" holdpos="40,-20" aimangle="45" aimpos="40,10" delay="0.4" setvalue="true" stackable="false">
+            <Sound file="%ModDir%/spp-1/spp-1open.ogg" range="500" />
+          </StatusEffect>
+          <!-- Triggers magazine insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.75" forceplaysounds="true" stackable="false">
+            <Sound file="%ModDir%/spp-1/insert.ogg" range="750" />
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" />
+          </StatusEffect>
+          <!-- Makes the magazine visible. -->
+          <!-- Sets values back to default. End of reloading animation. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="0" holdpos="0,0" aimangle="0" handle1="-32,-7" aimpos="70,5" delay="1.5" DualWieldAccuracyPenalty="10" condition="100" setvalue="true" stackable="false"></StatusEffect>
+          <StatusEffect type="OnRemoved" target="This">
+            <Sound file="%ModDir%/Saunds/BulletDetach.ogg" frequencymultiplier="1.15" range="600" volume="0.5" loop="false" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="1911reloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="1911reloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="50" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="1911reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,1911reloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name=" " identifier="spp-1-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" delay="0.3" holdangle="50" holdpos="35,-9" handle1="-20,-8" aimangle="50" aimpos="30,15" />
+        <StatusEffect type="Always" target="This" delay="1.35">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="spp-1 патрон" identifier="spp-1round" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus,spp-1ammo" impactsoundtag="impact_metal_light" scale="0.5">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="852,1016,58,62" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" sourcerect="18,28,64,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="150" height="1" density="10.01" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <PreferredContainer primary="spp-1" amount="4" spawnprobability="1" />
+      <PreferredContainer primary="armcab" amount="8" spawnprobability="0.1" notpvp="true" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="4" spawnprobability="0.15" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" minamount="1" maxamount="4" spawnprobability="0.2" />
+      <PreferredContainer secondary="secarmcab" spawnprobability="0.2" />
+      <PreferredContainer secondary="respawncontainer_kingofthehull" amount="16" spawnprobability="1" notcampaign="true" />
+      <Price baseprice="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="60" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="60" />
+      </Price>
+      <!-- Обычный крафт -->
+      <Fabricate suitablefabricators="repair" requiredtime="20" amount="18">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="sodium" description="fabricationdescription.munition_propulsion" />
+        <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
+        <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" />
+      </Fabricate>
+      <!-- Крафт с гильзами (время /2, навык -30%) -->
+      <Fabricate suitablefabricators="repair" requiredtime="13" amount="18">
+        <RequiredSkill identifier="weapons" level="21" />
+        <RequiredItem identifier="sodium" description="fabricationdescription.munition_propulsion" />
+        <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
+        <RequiredItem identifier="spp-1round-casing" amount="18" />
+      </Fabricate>
+      <Deconstruct time="0.1" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true" launchimpulse="30">
+        <StatusEffect type="OnActive" target="This" lifetime="0,6">
+          <Conditional inwater="true" />
+          <ParticleEmitter particle="damagebubbles" copyentityangle="true" particlespersecond="20" initialdelay="0.05" colormultiplier="200,200,200,255" scalemin="0.15" scalemax="0.15" lifetime="0,5" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="this" hitscan="false" interval="1" stackable="false" oneshot="true" />
+        <StatusEffect type="NotInWater" target="this" hitscan="true" interval="1" stackable="false" oneshot="true" />
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,255,50" scalemultiplier="1,0.5" />
+        <Attack targetforce="7.5" itemdamage="4" severlimbsprobability="0.2" penetration="0.01">
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.01">
+            <Conditional inwater="false" />
+            <Affliction identifier="stun" strength="0.04" />
+            <Affliction identifier="lacerations" strength="20" />
+            <Affliction identifier="bleeding" strength="20" />
+            <Affliction identifier="spasm_shot" strength="10" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.5">
+            <Conditional inwater="true" />
+            <Affliction identifier="lacerations" strength="40" />
+            <Affliction identifier="bleeding" strength="40" />
+            <Affliction identifier="stun" strength="0.1" />
+            <Affliction identifier="spasm_shot" strength="25" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.6" scalemax="1.2" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="spp-1 патрон" identifier="spp-1apround" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus,spp-1ammo" impactsoundtag="impact_metal_light" scale="0.5">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="spp-1 ap icon" sourcerect="916,1016,58,62" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="spp-1 ap" sourcerect="18,28,64,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="150" height="1" density="10.01" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <PreferredContainer primary="spp-1" amount="4" spawnprobability="0.5" />
+      <PreferredContainer primary="armcab" amount="4" spawnprobability="0.01" notpvp="true" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="4" spawnprobability="0.025" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" minamount="1" maxamount="4" spawnprobability="0.025" />
+      <PreferredContainer secondary="secarmcab" spawnprobability="0.025" />
+      <PreferredContainer secondary="respawncontainer_kingofthehull" amount="16" spawnprobability="1" notcampaign="true" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="60" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="60" />
+      </Price>
+      <!-- Обычный крафт -->
+      <Fabricate suitablefabricators="repair" requiredtime="20" amount="18">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="sodium" description="fabricationdescription.munition_propulsion" />
+        <RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+        <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" />
+      </Fabricate>
+      <!-- Крафт с гильзами (время /2, навык -30%) -->
+      <Fabricate suitablefabricators="repair" requiredtime="13" amount="18">
+        <RequiredSkill identifier="weapons" level="21" />
+        <RequiredItem identifier="sodium" description="fabricationdescription.munition_propulsion" />
+        <RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+        <RequiredItem identifier="spp-1round-casing" amount="18" />
+      </Fabricate>
+      <Deconstruct time="0.1" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true" launchimpulse="30">
+        <StatusEffect type="OnActive" target="This" lifetime="0,6">
+          <Conditional inwater="true" />
+          <ParticleEmitter particle="damagebubbles" copyentityangle="true" particlespersecond="20" initialdelay="0.05" colormultiplier="200,200,200,255" scalemin="0.15" scalemax="0.15" lifetime="0,5" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="this" hitscan="false" interval="1" stackable="false" oneshot="true" />
+        <StatusEffect type="NotInWater" target="this" hitscan="true" interval="1" stackable="false" oneshot="true" />
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,255,50" scalemultiplier="1,0.5" />
+        <Attack targetforce="7.5" itemdamage="4" severlimbsprobability="0.2" penetration="0.01">
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.01">
+            <Conditional inwater="false" />
+            <Affliction identifier="stun" strength="0.04" />
+            <Affliction identifier="lacerations" strength="17" penetration="0.25" />
+            <Affliction identifier="bleeding" strength="17" />
+            <Affliction identifier="spasm_shot" strength="10" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.5">
+            <Conditional inwater="true" />
+            <Affliction identifier="lacerations" strength="34" penetration="0.5" />
+            <Affliction identifier="bleeding" strength="34" penetration="0.5" />
+            <Affliction identifier="stun" strength="0.1" />
+            <Affliction identifier="spasm_shot" strength="25" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.6" scalemax="1.2" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="spp-1 патрон" identifier="spp-1fmjround" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus,spp-1ammo" impactsoundtag="impact_metal_light" scale="0.5">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="spp-1 fmj" sourcerect="845,1098,58,62" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="spp-1 fmj" sourcerect="18,28,64,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="150" height="1" density="10.01" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <PreferredContainer primary="spp-1" amount="4" spawnprobability="1" />
+      <PreferredContainer primary="armcab" amount="8" spawnprobability="0.1" notpvp="true" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="4" spawnprobability="0.1" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" minamount="1" maxamount="4" spawnprobability="0.1" />
+      <PreferredContainer secondary="secarmcab" spawnprobability="0.1" />
+      <PreferredContainer secondary="respawncontainer_kingofthehull" amount="16" spawnprobability="1" notcampaign="true" />
+      <Price baseprice="15">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="60" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="12" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="60" />
+      </Price>
+      <Deconstruct time="0.1" />
+      <!-- Обычный крафт -->
+      <Fabricate suitablefabricators="repair" requiredtime="20" amount="18">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="sodium" description="fabricationdescription.munition_propulsion" />
+        <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
+        <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" />
+      </Fabricate>
+      <!-- Крафт с гильзами (время /2, навык -30%) -->
+      <Fabricate suitablefabricators="repair" requiredtime="14" amount="18">
+        <RequiredSkill identifier="weapons" level="21" />
+        <RequiredItem identifier="sodium" description="fabricationdescription.munition_propulsion" />
+        <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
+        <RequiredItem identifier="spp-1round-casing" amount="18" />
+      </Fabricate>
+      <Projectile characterusable="false" hitscan="true" removeonhit="true" launchimpulse="30">
+        <StatusEffect type="OnActive" target="This" lifetime="0,6">
+          <Conditional inwater="true" />
+          <ParticleEmitter particle="damagebubbles" copyentityangle="true" particlespersecond="20" initialdelay="0.05" colormultiplier="200,200,200,255" scalemin="0.15" scalemax="0.15" lifetime="0,5" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="this" hitscan="false" interval="1" stackable="false" oneshot="true" />
+        <StatusEffect type="NotInWater" target="this" hitscan="true" interval="1" stackable="false" oneshot="true" />
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,255,50" scalemultiplier="1,0.5" />
+        <Attack targetforce="7.5" itemdamage="2" severlimbsprobability="0.1" penetration="0.01">
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.01">
+            <Conditional inwater="false" />
+            <Affliction identifier="stun" strength="0.04" />
+            <Affliction identifier="lacerations" strength="10" />
+            <Affliction identifier="bleeding" strength="30" />
+            <Affliction identifier="spasm_shot" strength="20" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.5">
+            <Conditional inwater="true" />
+            <Affliction identifier="lacerations" strength="20" />
+            <Affliction identifier="bleeding" strength="60" />
+            <Affliction identifier="stun" strength="0.1" />
+            <Affliction identifier="spasm_shot" strength="50" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.6" scalemax="1.2" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Гильза" identifier="spp-1round-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="rifle_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="5.5" hideinmenus="true" scale="0.25">
+      <InventoryIcon texture="%ModDir%/casing.png" name="spp-1 casing icon" sourcerect="1256,112,39,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/casing.png" name="spp-1 casing" sourcerect="24,521,8,42" depth="0.4" origin="0.5,0.5" />
+      <Deconstruct time="0.01" />
+      <Body width="6" height="25" density="15" restitution="0.4" />
+      <Throwable slots="Any,LeftHand,RightHand" msg="ItemMsgPickUpSelect" throwforce="3.5" />
+    </Item>
+  </Items>
+</Override>

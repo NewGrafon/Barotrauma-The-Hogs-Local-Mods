@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" identifier="harpooncoilrifle" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="wreckweaponholder" spawnprobability="0.005" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+      <Price baseprice="270" minleveldifficulty="30">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+        <Item identifier="plastic" />
+        <Item identifier="copper" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+        <RequiredItem identifier="copper" amount="2" />
+      </Fabricate>
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="harpoongun Rifle Worn" texture="%ModDir%/HarpoonCoilRifle/HarpoonCoilRifle.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="262,383,179,49" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.49931395,1.0000004" />
+      </Wearable>
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="harpoongun Rifle Worn" texture="%ModDir%/HarpoonCoilRifle/HarpoonCoilRifle.png" canbehiddenbyotherwearables="false" rotation="100" depth="0.6" sourcerect="262,383,179,49" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.50290656,1.0000001" />
+      </Wearable>
+      <Sprite texture="%ModDir%/HarpoonCoilRifle/HarpoonCoilRifle.png" sourcerect="262,383,179,49" depth="0.55" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/HarpoonCoilRifle/HarpoonCoilRifle.png" sourcerect="55,374,108,110" depth="0.55" origin="0.5,0.5" />
+      <Body width="170" height="44" density="10.01" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,-6" handle1="-20,-6" handle2="30,10" holdangle="-40" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character" ObstructVisionAmount="0.01" SpeedMultiplier="0.65" setvalue="true" disabledeltatime="true"></StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" interval="1" duration="1.1" SpeedMultiplier="1.35" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="laser" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.125" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <TickBox text="On/Off">
+          <StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+        </TickBox>
+        <Button text="Weapon_up">
+          <StatusEffect type="OnUse" target="This" aimpos="45,-6" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" MatchOnEmpty="true" TargetSlot="5" />
+            <SpawnItem identifiers="weapons-up" spawnposition="ThisInventory" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimpos="30,39" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Contained" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="107" aimpos="45,-35" handle1="10,0" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This" holdpos="35,-10" aimpos="45,-6" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+      </CustomInterface>
+      <RangedWeapon launchimpulse="30.0" maxchargetime="0.2" reload="0.5" weapondamagemodifier="1.25" spread="0.2" unskilledspread="5" combatPriority="70" drawhudwhenequipped="true" barrelpos="85,16" crosshairscale="0.0" holdtrigger="true">
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.15" stackable="false" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnSecondaryUse" target="this" showtexts="true" interval="2" duration="2.1" setvalue="true" comparison="and">
+          <Conditional hasstatustag="med-scan" />
+          <RequiredItems items="med-scan" type="Contained" />
+        </StatusEffect>
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="256,256,256,256" />
+        <!-- Particles. -->
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="80" />
+        <!-- Harpoon fire sounds. -->
+        <Sound file="Content/Items/Weapons/WEAPON_harpoonCoilRifleShot1.ogg" type="OnUse" range="2000" />
+        <Sound file="Content/Items/Weapons/WEAPON_harpoonCoilRifleShot2.ogg" type="OnUse" range="2000" />
+        <Sound file="Content/Items/Weapons/WEAPON_harpoonCoilRifleShot3.ogg" type="OnUse" range="2000" />
+        <ChargeSound file="Content/Items/Weapons/WEAPON_harpoonCoilRifleChargeUp.ogg" range="500" />
+        <!-- Unskilled high recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          <Explosion range="75.0" force="2" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
+        </StatusEffect>
+        <!-- Skilled low recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
+        </StatusEffect>
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="coilreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="coilreloading" delay="0.9" condition="100" setvalue="true" />
+        <!-- 12 usages with normal battery -->
+        <StatusEffect type="OnUse" target="Contained" targetslot="1" Condition="-8.3" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        </StatusEffect>
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="coilreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdpos="35,-10" aimpos="45,-6" handle1="-20,-6" handle2="30,10" holdangle="-40" aimangle="0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" target="This" hideitems="false" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" target="This,Character,Contained" delay="1" AllowAccess="true" noninteractable="false" hideitems="false" setvalue="true" />
+        <!-- Launcher requires harpoon and battery to use. -->
+        <RequiredItem items="mobilebattery" type="Contained" TargetSlot="1" msg="ItemMsgBatteryCellRequired" />
+        <RequiredItems items="harpoonammo" type="Contained" msg="ItemMsgSpearRequired" />
+        <!-- Gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="coilreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="30" />
+        <ParticleEmitter particle="plasmaspark" particleamount="20" minangle="-20" maxangle="20" velocitymin="500" velocitymax="1500" CopyEntityAngle="true" scalemultiplier="0.5,0.5" colormultiplier="200,200,200,225" />
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" slotsperrow="2" hideitems="false" itempos="27,15" containedstateindicatorstyle="spear" containedstateindicatorslot="0" containedspritedepth="0.56">
+        <Containable items="harpoonammo" hide="false">
+          <StatusEffect type="OnInserted" target="NearbyItems" range="5" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <Remove />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained,Character" spritecolor="255,255,255,0" delay="0.008" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained,Character" spritecolor="255,255,255,255" delay="0.4" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <!-- === МЕДЛЕННАЯ ПЕРЕЗАРЯДКА (НАВЫК < 30, ЗАМЕДЛЕНИЕ ×2.5) === -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.02" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="20,-15" aimpos="30,-15" handle2="80,20" holdangle="20" aimangle="20" condition="0" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.6" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Sound file="%ModDir%/HarpoonGun/HarpoonGunHarpoonLoad.ogg" frequencymultiplier="0.8" type="OnUse" range="1000" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="20,-15" aimpos="30,-15" handle2="0,5" holdangle="10" aimangle="10" delay="0.8" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained,Character" spritecolor="255,255,255,255" delay="1.0" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.0" setvalue="true" stackable="false" conditionalcomparison="and">
+            <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-40" distancemax="40" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="35,-10" aimpos="45,-6" handle1="-20,-6" handle2="30,10" holdangle="-40" aimangle="0" condition="100" delay="1.6" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="1.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="2.6" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 30" />
+          </StatusEffect>
+          <!-- === СРЕДНЯЯ ПЕРЕЗАРЯДКА (НАВЫК 30-59, ЗАМЕДЛЕНИЕ ×1.75) === -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.014" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="20,-15" aimpos="30,-15" handle2="80,20" holdangle="20" aimangle="20" condition="0" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.42" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Sound file="%ModDir%/HarpoonGun/HarpoonGunHarpoonLoad.ogg" type="OnUse" frequencymultiplier="0.9" range="1000" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="20,-15" aimpos="30,-15" handle2="0,5" holdangle="10" aimangle="10" delay="0.56" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained,Character" spritecolor="255,255,255,255" delay="0.7" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.7" setvalue="true" stackable="false" conditionalcomparison="and">
+            <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-40" distancemax="40" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="35,-10" aimpos="45,-6" handle1="-20,-6" handle2="30,10" holdangle="-40" aimangle="0" condition="100" delay="1.12" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="1.26" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="1.82" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 30" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 60" />
+          </StatusEffect>
+          <!-- === БЫСТРАЯ ПЕРЕЗАРЯДКА (НАВЫК >= 60, ОБЫЧНАЯ СКОРОСТЬ ×1.0) === -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.008" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="20,-15" aimpos="30,-15" handle2="80,20" holdangle="20" aimangle="20" condition="0" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.24" forceplaysounds="true" stackable="false" conditionalcomparison="and">
+            <Sound file="%ModDir%/HarpoonGun/HarpoonGunHarpoonLoad.ogg" type="OnUse" range="1000" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="20,-15" aimpos="30,-15" handle2="0,5" holdangle="10" aimangle="10" delay="0.32" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained,Character" spritecolor="255,255,255,255" delay="0.4" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.4" setvalue="true" stackable="false" conditionalcomparison="and">
+            <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-40" distancemax="40" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="35,-10" aimpos="45,-6" handle1="-20,-6" handle2="30,10" holdangle="-40" aimangle="0" condition="100" delay="0.64" setvalue="true" stackable="false" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="0.72" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="1.04" setvalue="true" conditionalcomparison="and">
+            <Conditional ishuman="true" />
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 60" />
+          </StatusEffect>
+          <StatusEffect type="OnRemoved" target="This">
+            <Sound file="%ModDir%/Saunds/BulletDetach.ogg" frequencymultiplier="0.6" range="600" volume="0.5" loop="false" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="mobilebattery" hide="true" excludebroken="false">
+            <!-- Plays the sound if the battery is removed. -->
+            <StatusEffect type="OnInserted" target="This" delay="0.01" forceplaysounds="true">
+              <Sound file="%ModDir%/HarpoonCoilRifle/BatteryUnload.ogg" type="OnUse" range="1000" />
+            </StatusEffect>
+            <!-- Sets the hand's position to insert the battery. -->
+            <StatusEffect type="OnInserted" target="This" holdpos="30,-20" aimpos="30,-30" handle2="-30,15" holdangle="-30" aimangle="-30" delay="0.01" setvalue="true" />
+            <!-- Sound. -->
+            <StatusEffect type="OnInserted" target="This" delay="0.4" forceplaysounds="true">
+              <Sound file="%ModDir%/HarpoonCoilRifle/BatteryLoad.ogg" type="OnUse" range="1000" />
+            </StatusEffect>
+            <!-- Insertion. -->
+            <StatusEffect type="OnInserted" target="This" handle2="-30,0" delay="0.5" setvalue="true" />
+            <!-- Sets everything to default. -->
+            <StatusEffect type="OnInserted" target="This" holdpos="35,-10" aimpos="45,-6" handle1="-20,-6" handle2="30,10" holdangle="-40" aimangle="0" condition="100" delay="1.2" setvalue="true" stackable="false" />
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight,flare,alienflare,glowstick" hide="false" itempos="27,4" setactive="true" />
+          <Containable items="scope" hide="false" itempos="8,15"></Containable>
+        </SubContainer>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="coilreloading" removecontaineditemsondeconstruct="true">
+        <Containable items="coilreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="weapons-up" hide="true" />
+      </ItemContainer>
+      <aitarget sightrange="0" soundrange="500" fadeouttime="2" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="40" />
+      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="coilreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,coilreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

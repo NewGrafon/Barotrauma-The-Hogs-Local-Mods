@@ -1,0 +1,2458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <Item name="" identifier="divingknife" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True">
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.25" />
+      <PreferredContainer secondary="abandonedstoragecab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Price baseprice="29">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="6" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="8" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="15" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="15" />
+        <Price storeidentifier="merchanthusk" minavailable="0" maxavailable="2" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife icon" sourcerect="498,1330,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="diving knife" sourcerect="498,1429,66,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <!-- Holdable для удержания в руке -->
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimable="true" aimpos="50,0" handle1="-20,-5" holdangle="15" aimangle="20" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnNotContained" target="This" stackable="false">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.75" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+      </Holdable>
+      <!-- RangedWeapon для стрельбы -->
+      <RangedWeapon reload="0.76" weapondamagemodifier="1" penetration="0.25" holdtrigger="false" barrelpos="0,0" spread="0.05" unskilledspread="0.1" combatPriority="25" drawhudwhenequipped="false">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <!-- Спавним projectile не в инвентарь, а на позицию оружия -->
+          <SpawnItem identifier="knife-projectile" spawnposition="ThisInventory" />
+          <!-- Звуки атаки/выстрела -->
+          <Sound file="%ModDir%/Saunds/Fisth.ogg" range="500" frequencymultiplier="1.5" selectionmode="random" />
+          <Sound file="%ModDir%/Saunds/Fisth1.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth2.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth3.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth4.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth5.ogg" range="500" frequencymultiplier="1.5" />
+        </StatusEffect>
+        <!-- Анимация/эффекты при стрельбе -->
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="500" />
+        </StatusEffect>
+        <!-- Ближний урон (если цель близко) -->
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional distance="lte 50" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="0.1" />
+          <Explosion range="40.0" force="4" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+      </RangedWeapon>
+      <!-- ItemContainer для хранения thrust и projectile -->
+      <ItemContainer capacity="3" maxstacksize="2" hideitems="true" spawnwithid="knife-thrust" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="false" containedspritedepth="0.56">
+        <Containable items="knife-thrust,knife-projectile" hide="true" itempos="-65,25" />
+      </ItemContainer>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="Character" interval="2" delay="2" disabledeltatime="true" targetlimbs="LeftForearm">
+            <Affliction identifier="bleeding" strength="15" />
+            <Affliction identifier="lacerations" strength="5" />
+            <Affliction identifier="psychosis" strength="10" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" AllowAccess="false" holdpos="20,-35" aimpos="20,-35" targetlimbs="LeftHand,RightHand">
+            <SpawnItem identifiers="melee-handle" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" delay="1.9" holdpos="30,-35" holdangle="10" setvalue="true" aimpos="30,-35" />
+          <StatusEffect type="OnUse" target="This" interval="2" delay="2" AllowAccess="true" holdangle="30" setvalue="true" noninteractable="false" holdpos="0,0" aimpos="50,0" />
+        </Button>
+        <Button text="Throw">
+          <StatusEffect type="OnUse" target="This">
+            <SpawnItem identifiers="divingknife-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="medical" level="30" />
+    </Item>
+    <Item identifier="knife-thrust" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="45" height="30" density="30" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="this">
+          <Explosion range="80.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item identifier="knife-projectile" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="10" height="10" density="0" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+        <Attack structuredamage="1" itemdamage="2" targetforce="5" severlimbsprobability="0.01">
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="spasm_shot" strength="15" probability="0.5" />
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Waist" disabledeltatime="true">
+            <Affliction identifier="spasm_shot" strength="25" probability="0.5" />
+            <Conditional ismale="true" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="divingknife-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife throw icon" sourcerect="424,1329,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="diving knife throw" sourcerect="418,1429,66,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="10" restitution="0.3" density="25" />
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <Throwable slots="RightHand,LeftHand" controlpose="true" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Stab">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="divingknife" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false" sticktocharacters="true">
+        <Attack>
+          <Affliction identifier="lacerations" strength="17.5" />
+          <Affliction identifier="bleeding" strength="17.5" />
+          <Affliction identifier="spasm_shot" strength="33" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="1000" soundrange="500" fadeouttime="2" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="divingknifedementonite" category="Weapon" descriptionidentifier="dementonitetool" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0" />
+      <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" spawnprobability="0" />
+      <Price baseprice="450" sold="false" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="dementonite" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife icon" sourcerect="498,1330,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="diving knife" sourcerect="498,1429,66,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <!-- Holdable для удержания в руке -->
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimable="true" aimpos="50,0" handle1="-20,-5" holdangle="15" aimangle="20" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnNotContained" target="This" stackable="false">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.75" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+      </Holdable>
+      <!-- RangedWeapon для стрельбы -->
+      <RangedWeapon reload="0.76" weapondamagemodifier="1" penetration="0.25" holdtrigger="false" barrelpos="0,0" spread="0.05" unskilledspread="0.1" combatPriority="25" drawhudwhenequipped="false">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <!-- Спавним projectile не в инвентарь, а на позицию оружия -->
+          <SpawnItem identifier="knife-projectile-dementonite" spawnposition="ThisInventory" />
+          <!-- Звуки атаки/выстрела -->
+          <Sound file="%ModDir%/Saunds/Fisth.ogg" range="500" frequencymultiplier="1.5" selectionmode="random" />
+          <Sound file="%ModDir%/Saunds/Fisth1.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth2.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth3.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth4.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth5.ogg" range="500" frequencymultiplier="1.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="500" />
+        </StatusEffect>
+        <!-- Анимация/эффекты при стрельбе -->
+        <StatusEffect type="OnUse" target="Character">
+          <ApplyAffliction targetlimbs="RightArm,LeftArm" identifier="stun" strength="0.1" />
+          <Affliction identifier="psychosis" strength="5" probability="0.05" />
+          <Sound file="Content/Items/Alien/AlienTurret2.ogg" range="500" />
+        </StatusEffect>
+        <!-- Ближний урон (если цель близко) -->
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional distance="lte 50" />
+          <Affliction identifier="lacerations" strength="10" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="psychosis" strength="5" />
+          <Affliction identifier="stun" strength="0.2" />
+          <Explosion range="40.0" force="4" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+      </RangedWeapon>
+      <!-- ItemContainer для хранения thrust и projectile -->
+      <ItemContainer capacity="3" maxstacksize="2" hideitems="true" spawnwithid="knife-thrust-dementonite" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="false" containedspritedepth="0.56">
+        <Containable items="knife-thrust-dementonite,knife-projectile-dementonite" hide="true" itempos="-65,25" />
+      </ItemContainer>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="Character" interval="2" delay="2" disabledeltatime="true" targetlimbs="LeftForearm">
+            <Affliction identifier="bleeding" strength="15" />
+            <Affliction identifier="lacerations" strength="5" />
+            <Affliction identifier="psychosis" strength="15" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" AllowAccess="false" holdpos="20,-35" aimpos="20,-35" targetlimbs="LeftHand,RightHand">
+            <SpawnItem identifiers="melee-handle" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" delay="1.9" holdpos="30,-35" holdangle="10" setvalue="true" aimpos="30,-35" />
+          <StatusEffect type="OnUse" target="This" interval="2" delay="2" AllowAccess="true" holdangle="30" setvalue="true" noninteractable="false" holdpos="0,0" aimpos="50,0" />
+        </Button>
+        <Button text="Throw">
+          <StatusEffect type="OnUse" target="This">
+            <SpawnItem identifiers="divingknifedementonite-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="medical" level="30" />
+    </Item>
+    <Item identifier="knife-thrust-dementonite" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="136,142,166,255" inventoryiconcolor="136,142,166,255">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="45" height="30" density="30" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="this">
+          <Explosion range="80.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item identifier="knife-projectile-dementonite" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="136,142,166,255" inventoryiconcolor="136,142,166,255">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="10" height="10" density="0" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+        <Attack structuredamage="2" itemdamage="3" targetforce="5" severlimbsprobability="0.01">
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="psychosis" strength="10" />
+          <Affliction identifier="spasm_shot" strength="15" probability="0.5" />
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Waist" disabledeltatime="true">
+            <Affliction identifier="spasm_shot" strength="25" probability="0.5" />
+            <Conditional ismale="true" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="divingknifedementonite-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife throw icon" sourcerect="424,1329,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="diving knife throw" sourcerect="418,1429,66,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="10" restitution="0.3" density="25" />
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <Throwable slots="RightHand,LeftHand" controlpose="true" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Stab">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="divingknifedementonite" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false" DoesStick="true">
+        <Attack>
+          <Affliction identifier="lacerations" strength="17.5" />
+          <Affliction identifier="bleeding" strength="17.5" />
+          <Affliction identifier="spasm_shot" strength="50" />
+          <Affliction identifier="psychosis" strength="15" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="divingknifehardened" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0" />
+      <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" spawnprobability="0" />
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="depletedfuel" amount="2" />
+        <RequiredItem identifier="divingknife" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife icon" sourcerect="498,1330,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="diving knife" sourcerect="498,1429,66,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <!-- Holdable для удержания в руке -->
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimable="true" aimpos="50,0" handle1="-20,-5" holdangle="15" aimangle="20" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnNotContained" target="This" stackable="false">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.75" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+      </Holdable>
+      <!-- RangedWeapon для стрельбы -->
+      <RangedWeapon reload="0.76" weapondamagemodifier="1" penetration="0.5" holdtrigger="false" barrelpos="0,0" spread="0.05" unskilledspread="0.1" combatPriority="25" drawhudwhenequipped="false">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <!-- Спавним projectile не в инвентарь, а на позицию оружия -->
+          <SpawnItem identifier="knife-projectile-hardened" spawnposition="ThisInventory" />
+          <!-- Звуки атаки/выстрела -->
+          <Sound file="%ModDir%/Saunds/Fisth.ogg" range="500" frequencymultiplier="1.5" selectionmode="random" />
+          <Sound file="%ModDir%/Saunds/Fisth1.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth2.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth3.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth4.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth5.ogg" range="500" frequencymultiplier="1.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="500" />
+        </StatusEffect>
+        <!-- Анимация/эффекты при стрельбе -->
+        <StatusEffect type="OnUse" target="Character">
+          <ApplyAffliction targetlimbs="RightArm,LeftArm" identifier="stun" strength="0.1" />
+        </StatusEffect>
+        <!-- Ближний урон (если цель близко) -->
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional distance="lte 50" />
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="bleeding" strength="5" />
+          <Affliction identifier="radiationsickness" strength="1" />
+          <Affliction identifier="stun" strength="0.2" />
+          <Explosion range="40.0" force="4" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+      </RangedWeapon>
+      <!-- ItemContainer для хранения thrust и projectile -->
+      <ItemContainer capacity="3" maxstacksize="2" hideitems="true" spawnwithid="knife-thrust-hardened" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="false" containedspritedepth="0.56">
+        <Containable items="knife-thrust-hardened,knife-projectile-hardened" hide="true" itempos="-65,25" />
+      </ItemContainer>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="Character" interval="2" delay="2" disabledeltatime="true" targetlimbs="LeftForearm">
+            <Affliction identifier="bleeding" strength="15" />
+            <Affliction identifier="lacerations" strength="5" />
+            <Affliction identifier="radiationsickness" strength="5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" AllowAccess="false" holdpos="20,-35" aimpos="20,-35" targetlimbs="LeftHand,RightHand">
+            <SpawnItem identifiers="melee-handle" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" delay="1.9" holdpos="30,-35" holdangle="10" setvalue="true" aimpos="30,-35" />
+          <StatusEffect type="OnUse" target="This" interval="2" delay="2" AllowAccess="true" holdangle="30" setvalue="true" noninteractable="false" holdpos="0,0" aimpos="50,0" />
+        </Button>
+        <Button text="Throw">
+          <StatusEffect type="OnUse" target="This">
+            <SpawnItem identifiers="divingknifehardened-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="medical" level="30" />
+    </Item>
+    <Item identifier="knife-thrust-hardened" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="110,120,110,255" inventoryiconcolor="110,120,110,255">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="45" height="30" density="30" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="this">
+          <Explosion range="80.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item identifier="knife-projectile-hardened" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="110,120,110,255" inventoryiconcolor="110,120,110,255">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="10" height="10" density="0" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+        <Attack structuredamage="2" itemdamage="4" targetforce="5" severlimbsprobability="0.01">
+          <Affliction identifier="lacerations" strength="20" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="radiationsickness" strength="2" />
+          <Affliction identifier="spasm_shot" strength="15" probability="0.5" />
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Waist" disabledeltatime="true">
+            <Affliction identifier="spasm_shot" strength="25" probability="0.5" />
+            <Conditional ismale="true" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Diving Knife Hardened Throw" identifier="divingknifehardened-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife throw icon" sourcerect="424,1329,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="diving knife throw" sourcerect="418,1429,66,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="10" restitution="0.3" density="25" />
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <Throwable slots="RightHand,LeftHand" controlpose="true" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Stab">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="divingknifehardened" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false" DoesStick="true">
+        <Attack>
+          <Affliction identifier="lacerations" strength="20" />
+          <Affliction identifier="bleeding" strength="7.5" />
+          <Affliction identifier="spasm_shot" strength="33" />
+          <Affliction identifier="radiationsickness" strength="2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="wrench" category="Equipment" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True">
+      <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer primary="engcab" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.3" />
+      <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" />
+      <Price baseprice="20" minavailable="10">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" minavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantengineering" minavailable="10" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="wrench icon" sourcerect="594,1275,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="wrench" sourcerect="580,1440,64,20" depth="0.55" origin="0.5,0.5" />
+      <Body width="60" height="15" density="30" />
+      <SuitableTreatment identifier="dislocation1" suitability="50" />
+      <SuitableTreatment identifier="dislocation2" suitability="50" />
+      <SuitableTreatment identifier="dislocation3" suitability="50" />
+      <SuitableTreatment identifier="dislocation4" suitability="50" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-8,0" holdangle="60" reload="1.0" range="50" combatpriority="8" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="12" />
+        </StatusEffect>
+        <Attack structuredamage="0" itemdamage="2" targetimpulse="5">
+          <Affliction identifier="blunttrauma" strength="4" />
+          <Affliction identifier="stun" strength="0.2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="wrench-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="10" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="RepairSpeed" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="medical" level="60" />
+    </Item>
+    <Item name="" identifier="wrench-throw" category="Equipment" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="wrench-throw icon" sourcerect="581,1348,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="wrench-throw" sourcerect="580,1440,64,20" depth="0.55" origin="0.499,0.49924794" />
+      <Body width="50" height="10" restitution="0.3" density="30" />
+      <SuitableTreatment identifier="dislocation1" suitability="50" />
+      <SuitableTreatment identifier="dislocation2" suitability="50" />
+      <SuitableTreatment identifier="dislocation3" suitability="50" />
+      <SuitableTreatment identifier="dislocation4" suitability="50" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-8,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Wrench">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="wrench" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="8" />
+          <Affliction identifier="stun" strength="0.4" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head">
+            <Affliction identifier="concussion" strength="10" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" oneshot="true" delay="1" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-8,0" target="This">
+          <Remove />
+          <SpawnItem identifiers="wrench" spawnposition="This" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="wrenchdementonite" category="Equipment" descriptionidentifier="dementonitetool" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166" addedrepairspeedmultiplier="0.4">
+      <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="0" notcampaign="true" />
+      <PreferredContainer primary="engcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" spawnprobability="0" />
+      <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0" />
+      <PreferredContainer secondary="outposttrashcan" spawnprobability="0" />
+      <Price baseprice="450" sold="false" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="dementonite" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="wrenchdementonite icon" sourcerect="594,1275,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="wrenchdementonite" sourcerect="580,1440,64,20" depth="0.55" origin="0.5,0.5" />
+      <Body width="60" height="15" density="30" />
+      <SuitableTreatment identifier="dislocation1" suitability="50" />
+      <SuitableTreatment identifier="dislocation2" suitability="50" />
+      <SuitableTreatment identifier="dislocation3" suitability="50" />
+      <SuitableTreatment identifier="dislocation4" suitability="50" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-8,0" holdangle="60" reload="1.4" range="50" combatpriority="8" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="0" itemdamage="2" targetimpulse="8">
+          <Affliction identifier="blunttrauma" strength="8.5" />
+          <Affliction identifier="psychosis" strength="5" />
+          <Affliction identifier="stun" strength="0.2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="wrenchdementonite-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+        <StatusEffect type="OnFailure" target="Character">
+          <Sound file="Content/Items/Alien/AlienTurret1.ogg" range="500" />
+          <Affliction identifier="psychosis" strength="10" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="10" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="RepairSpeed" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="medical" level="60" />
+    </Item>
+    <Item name="" identifier="wrenchdementonite-throw" category="Equipment" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="wrenchdementonite-throw icon" sourcerect="581,1348,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="wrenchdementonite-throw" sourcerect="580,1440,64,20" depth="0.55" origin="0.499,0.49924794" />
+      <Body width="50" height="10" restitution="0.3" density="30" />
+      <SuitableTreatment identifier="dislocation1" suitability="50" />
+      <SuitableTreatment identifier="dislocation2" suitability="50" />
+      <SuitableTreatment identifier="dislocation3" suitability="50" />
+      <SuitableTreatment identifier="dislocation4" suitability="50" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-8,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Wrench">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="wrenchdementonite" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="12" />
+          <Affliction identifier="psychosis" strength="8" />
+          <Affliction identifier="stun" strength="0.4" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head">
+            <Affliction identifier="concussion" strength="10" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" oneshot="true" delay="1" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-8,0" target="This">
+          <Remove />
+          <SpawnItem identifiers="wrenchdementonite" spawnposition="This" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="wrenchhardened" category="Equipment" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110" addedrepairspeedmultiplier="0.4">
+      <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="0" notcampaign="true" />
+      <PreferredContainer primary="engcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" spawnprobability="0" />
+      <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0" />
+      <PreferredContainer secondary="outposttrashcan" spawnprobability="0" />
+      <Price baseprice="200" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="depletedfuel" amount="2" />
+        <RequiredItem identifier="wrench" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="wrenchhardened icon" sourcerect="594,1275,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="wrenchhardened" sourcerect="580,1440,64,20" depth="0.55" origin="0.5,0.5" />
+      <Body width="60" height="15" density="30" />
+      <SuitableTreatment identifier="dislocation1" suitability="50" />
+      <SuitableTreatment identifier="dislocation2" suitability="50" />
+      <SuitableTreatment identifier="dislocation3" suitability="50" />
+      <SuitableTreatment identifier="dislocation4" suitability="50" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-8,0" holdangle="60" reload="1.0" range="50" combatpriority="8" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="0" itemdamage="2" targetimpulse="8" penetration="0.25">
+          <Affliction identifier="blunttrauma" strength="8" />
+          <Affliction identifier="radiationsickness" strength="1" />
+          <Affliction identifier="stun" strength="0.3" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="wrenchhardened-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="10" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="RepairSpeed" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="medical" level="60" />
+    </Item>
+    <Item name="" identifier="wrenchhardened-throw" category="Equipment" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="wrenchhardened-throw icon" sourcerect="581,1348,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="wrenchhardened-throw" sourcerect="580,1440,64,20" depth="0.55" origin="0.499,0.49924794" />
+      <Body width="50" height="10" restitution="0.3" density="30" />
+      <SuitableTreatment identifier="dislocation1" suitability="50" />
+      <SuitableTreatment identifier="dislocation2" suitability="50" />
+      <SuitableTreatment identifier="dislocation3" suitability="50" />
+      <SuitableTreatment identifier="dislocation4" suitability="50" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-8,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Wrench">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="wrenchhardened" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="11" />
+          <Affliction identifier="radiationsickness" strength="2" />
+          <Affliction identifier="stun" strength="0.4" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head">
+            <Affliction identifier="concussion" strength="15" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" oneshot="true" delay="1" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-8,0" target="This">
+          <Remove />
+          <SpawnItem identifiers="wrenchhardened" spawnposition="This" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="crowbardementonite" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" allowasextracargo="true" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166" addedpickingspeedmultiplier="0.6">
+      <PreferredContainer secondary="respawncontainer" amount="1" spawnprobability="0" notcampaign="true" />
+      <PreferredContainer primary="engcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" spawnprobability="0" />
+      <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0" />
+      <Price baseprice="450" sold="false" canbespecial="false" />
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="dementonite" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,225,130,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="120" height="20" density="30" />
+      <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="45,10" handle1="-10,0" handle2="0,5" holdangle="60" reload="1.4" range="100" combatpriority="20" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="8" itemdamage="8" targetimpulse="13">
+          <Affliction identifier="blunttrauma" strength="18" />
+          <Affliction identifier="psychosis" strength="5" />
+          <Affliction identifier="stun" strength="0.5" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.3" scalemax="0.6" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="crowbardementonite-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+        <StatusEffect type="OnFailure" target="Character">
+          <Sound file="Content/Items/Alien/AlienTurret1.ogg" range="500" />
+          <Affliction identifier="psychosis" strength="10" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="Character">
+          <Sound file="Content/Items/Alien/AlienTurret2.ogg" range="500" />
+          <Affliction identifier="psychosis" strength="5" probability="0.05" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="15" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="screwdriverdementonite" category="Equipment" Tags="smallitem,simpletool,tool,electricalrepairtool,screwdriveritem,screwdriver" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" allowasextracargo="true" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166" addedrepairspeedmultiplier="0.4">
+      <PreferredContainer secondary="respawncontainer" spawnprobability="0" notcampaign="true" />
+      <PreferredContainer primary="reactorcab,engcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" spawnprobability="0" />
+      <PreferredContainer primary="wreckreactorcab,abandonedreactorcab,piratereactorcab" spawnprobability="0" />
+      <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0" />
+      <PreferredContainer secondary="outposttrashcan" spawnprobability="0" />
+      <Price baseprice="450" sold="false" canbespecial="false" />
+      <Deconstruct time="20">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="dementonite" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,188,64,14" depth="0.55" origin="0.5,0.5" />
+      <Body width="60" height="12" density="25" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-10,0" holdangle="60" reload="1.4" range="50" combatpriority="7" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="0" itemdamage="2" targetimpulse="8">
+          <Affliction identifier="lacerations" strength="7.5" />
+          <Affliction identifier="psychosis" strength="5" />
+          <Affliction identifier="stun" strength="0.05" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="screwdriverdementonite-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+        <StatusEffect type="OnFailure" target="Character">
+          <Sound file="Content/Items/Alien/AlienTurret1.ogg" range="500" />
+          <Affliction identifier="psychosis" strength="10" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="7.5" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <SuitableTreatment identifier="ntc_loosescrews" suitability="50" />
+      <SkillRequirementHint identifier="mechanical" level="40" />
+      <Quality>
+        <QualityStat stattype="RepairSpeed" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="screwdriverhardened" category="Equipment" Tags="smallitem,simpletool,tool,electricalrepairtool,screwdriveritem,screwdriver" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110" addedrepairspeedmultiplier="0.4">
+      <PreferredContainer secondary="respawncontainer" spawnprobability="0" notcampaign="true" />
+      <PreferredContainer primary="reactorcab,engcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" spawnprobability="0" />
+      <PreferredContainer primary="wreckreactorcab,abandonedreactorcab,piratereactorcab" spawnprobability="0" />
+      <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0" />
+      <PreferredContainer secondary="outposttrashcan" spawnprobability="0" />
+      <Price baseprice="200" sold="false" />
+      <Deconstruct time="20">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="depletedfuel" amount="2" />
+        <RequiredItem identifier="screwdriver" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,188,64,14" depth="0.55" origin="0.5,0.5" />
+      <Body width="60" height="12" density="25" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-10,0" holdangle="60" reload="1.0" range="50" combatpriority="7" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="0" itemdamage="2" targetimpulse="8" penetration="0.25">
+          <Affliction identifier="lacerations" strength="7" />
+          <Affliction identifier="radiationsickness" strength="1" />
+          <Affliction identifier="stun" strength="0.08" />
+          <Affliction identifier="bleeding" strength="2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="screwdriverhardened-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="7.5" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <SuitableTreatment identifier="ntc_loosescrews" suitability="50" />
+      <SkillRequirementHint identifier="mechanical" level="40" />
+      <Quality>
+        <QualityStat stattype="RepairSpeed" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="screwdriver" category="Equipment" Tags="smallitem,simpletool,tool,electricalrepairtool,screwdriveritem,screwdriver" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer primary="engcab" secondary="reactorcab" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer primary="wreckreactorcab,abandonedreactorcab,piratereactorcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.3" />
+      <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" />
+      <Price baseprice="10" minavailable="10">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" minavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantengineering" minavailable="10" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,188,64,14" depth="0.55" origin="0.5,0.5" />
+      <Body width="60" height="12" density="25" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-10,0" holdangle="60" reload="1.0" range="50" combatpriority="7" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="0" itemdamage="2" targetimpulse="2">
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="bleeding" strength="2" />
+          <Affliction identifier="stun" strength="0.05" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="screwdriver-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="7.5" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <SuitableTreatment identifier="ntc_loosescrews" suitability="50" />
+      <SkillRequirementHint identifier="mechanical" level="40" />
+      <Quality>
+        <QualityStat stattype="RepairSpeed" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="crowbar" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer primary="engcab" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.2" />
+      <Price baseprice="20" minavailable="10">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="15" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,225,130,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="120" height="20" density="30" />
+      <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="45,10" handle1="-10,0" handle2="0,5" holdangle="60" reload="1.4" range="100" combatpriority="20" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="8" itemdamage="8" targetimpulse="10">
+          <Affliction identifier="blunttrauma" strength="10" />
+          <Affliction identifier="stun" strength="0.5" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.3" scalemax="0.6" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="crowbar-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="15" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="crowbarhardened" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110" addedpickingspeedmultiplier="0.6">
+      <PreferredContainer secondary="respawncontainer" amount="1" spawnprobability="0" notcampaign="true" />
+      <PreferredContainer primary="engcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" spawnprobability="0" />
+      <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0" />
+      <Price baseprice="200" sold="false" />
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="depletedfuel" amount="2" />
+        <RequiredItem identifier="crowbar" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,225,130,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="120" height="20" density="30" />
+      <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="45,10" handle1="-10,0" handle2="0,5" holdangle="60" reload="1" range="100" combatpriority="20" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="8" itemdamage="8" targetimpulse="13" penetration="0.25">
+          <Affliction identifier="blunttrauma" strength="18" />
+          <Affliction identifier="radiationsickness" strength="1" />
+          <Affliction identifier="stun" strength="0.6" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.3" scalemax="0.6" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="crowbarhardened-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="15" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="crowbardementonite-throw" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="crowbardementonite-throw icon" sourcerect="720,1356,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,225,130,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="10" restitution="0.3" density="30" />
+      <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="1500" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Crowbar">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="crowbardementonite" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="25" />
+          <Affliction identifier="psychosis" strength="8" />
+          <Affliction identifier="stun" strength="0.8" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.4" scalemax="0.8" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="screwdriverdementonite-throw" category="Equipment" Tags="smallitem,simpletool,tool,electricalrepairtool,screwdriveritem,screwdriver,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="screwdriverdementonite-throw icon" sourcerect="646,1349,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,188,64,14" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="10" restitution="0.3" density="25" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="750" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Screwdriver">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="screwdriverdementonite" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+        <Attack>
+          <Affliction identifier="lacerations" strength="12" />
+          <Affliction identifier="psychosis" strength="8" />
+          <Affliction identifier="stun" strength="0.1" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="screwdriverhardened-throw" category="Equipment" Tags="smallitem,simpletool,tool,electricalrepairtool,screwdriveritem,screwdriver,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="screwdriverhardened-throw icon" sourcerect="646,1349,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,188,64,14" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="10" restitution="0.3" density="25" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="750" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Screwdriver">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="screwdriverhardened" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false" DoesStick="true">
+        <Attack>
+          <Affliction identifier="lacerations" strength="11" />
+          <Affliction identifier="radiationsickness" strength="2" />
+          <Affliction identifier="stun" strength="0.12" />
+          <Affliction identifier="bleeding" strength="3" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="screwdriver-throw" category="Equipment" Tags="smallitem,simpletool,tool,electricalrepairtool,screwdriveritem,screwdriver,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <Deconstruct time="20">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="screwdriver-throw icon" sourcerect="646,1349,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,188,64,14" depth="0.55" origin="0.5,0.5" />
+      <Body width="80" height="10" restitution="0.3" density="25" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="750" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Screwdriver">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="screwdriver" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+        <Attack>
+          <Affliction identifier="lacerations" strength="8" />
+          <Affliction identifier="bleeding" strength="3" />
+          <Affliction identifier="stun" strength="0.08" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="crowbar-throw" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="crowbar-throw icon" sourcerect="720,1356,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,225,130,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="10" restitution="0.3" density="30" />
+      <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="1500" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Crowbar">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="crowbar" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="15" />
+          <Affliction identifier="stun" strength="0.6" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.4" scalemax="0.8" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="crowbarhardened-throw" category="Equipment" Tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="depletedfuel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="crowbarhardened-throw icon" sourcerect="720,1356,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="227,225,130,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="10" restitution="0.3" density="30" />
+      <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="1500" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Crowbar">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="crowbarhardened" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="22" />
+          <Affliction identifier="radiationsickness" strength="2" />
+          <Affliction identifier="stun" strength="0.8" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="boardingaxe" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Price baseprice="350" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="165,366,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="1,425,164,53" depth="0.55" origin="0.5,0.2" />
+      <Body width="161" height="20" density="25" />
+      <MeleeWeapon slots="Any,RightHand+LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="1.2" range="155" combatPriority="40" msg="ItemMsgPickUpSelect">
+        <Attack targetimpulse="5" severlimbsprobability="7.5" itemdamage="30" structuredamage="15">
+          <Affliction identifier="lacerations" strength="36" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="0.5" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="spark" particleamount="10" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.5" scalemax="1" />
+            <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="boardingaxe-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+      </RepairTool>
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="boardingaxe-throw" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <Deconstruct time="20">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="boardingaxe-throw icon" sourcerect="252,1330,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="1,425,164,53" depth="0.55" origin="0.5,0.2" />
+      <Body width="150" height="10" restitution="0.3" density="25" />
+      <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="60,-35" aimangle="25" holdangle="25" handle1="-22,2" handle2="-32,5" DamageUser="false" throwforce="2.75" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="2000" />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Axe">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="boardingaxe" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false" DoesStick="true">
+        <Attack targetimpulse="5" severlimbsprobability="7.5" itemdamage="30" structuredamage="15">
+          <Affliction identifier="lacerations" strength="36" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="0.5" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" oneshot="true" delay="1" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-22,2" target="This">
+          <Remove />
+          <SpawnItem identifiers="boardingaxe" spawnposition="This" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="10" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="heavywrench" category="Equipment" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon,wrench" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" addedrepairspeedmultiplier="0.4">
+      <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="0" notcampaign="true" />
+      <PreferredContainer primary="engcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0" />
+      <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" spawnprobability="0" />
+      <PreferredContainer secondary="outpostcrewcabinet" spawnprobability="0" />
+      <PreferredContainer secondary="outposttrashcan" spawnprobability="0" />
+      <Price baseprice="190" sold="false" />
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="titanium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="titanium" amount="2" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="heavywrench icon" sourcerect="508,1262,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="157,492,114,20" depth="0.55" origin="0.5,0.5" />
+      <Body width="114" height="20" density="30" />
+      <MeleeWeapon slots="RightHand+LeftHand,Any" range="100" reload="1.1" controlpose="true" aimpos="45,10" handle1="-10,0" handle2="0,5" holdangle="60" combatpriority="20" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnFailure" target="This" reload="1.5" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" reload="1.1" setvalue="true" delay="1.4" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <Attack targetimpulse="15" structuredamage="9" itemdamage="9">
+          <Affliction identifier="blunttrauma" strength="25" />
+          <Affliction identifier="stun" strength="1" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Character">
+            <Conditional skillrequirement="true" mechanical="lt 40" />
+            <Affliction identifier="stun" strength="0.3" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="heavywrench-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="12.5" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="RepairSpeed" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="mechanical" level="40" />
+    </Item>
+    <Item name="" identifier="heavywrench-throw" category="Equipment" Tags="smallitem,tool,simpletool,mechanicalrepairtool,wrenchitem,wrench,mountableweapon,wrench,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="titanium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="heavywrench-throw icon" sourcerect="439,1263,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="157,492,114,20" depth="0.55" origin="0.5,0.5" />
+      <Body width="90" height="10" restitution="0.3" density="30" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="2.8" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="1250" />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Wrench">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="heavywrench" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" DamageUser="false">
+        <Attack>
+          <Affliction identifier="blunttrauma" strength="35" />
+          <Affliction identifier="stun" strength="1.2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head">
+            <Affliction identifier="concussion" strength="20" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="ceremonialsword" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Price baseprice="340" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiresrecipe="true" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="ceremonialsword icon" sourcerect="170,1325,69,70" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="0,484,153,18" depth="0.55" origin="0.5,0.5" />
+      <Body width="153" height="14" density="30" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="35,10" handle1="-28,0" holdangle="30" aimangle="20" reload="0.75" range="75" combatPriority="30" msg="ItemMsgPickUpSelect">
+        <Attack targetimpulse="2" severlimbsprobability="0.55" itemdamage="6" structuredamage="1" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="19" />
+          <Affliction identifier="bleeding" strength="14" />
+          <Affliction identifier="stun" strength="0.25" />
+        </Attack>
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This" reload="0.4" setvalue="true">
+          <Conditional reload="gt 0.4" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="This" reload="1.5" setvalue="true" />
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredSkill identifier="helm" level="50" />
+        <RequiredSkill identifier="electrical" level="50" />
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredSkill identifier="medical" level="50" />
+        <!--Reset the reload speed-->
+        <StatusEffect type="OnUse" target="This" reload="0.75" setvalue="true" delay="1" />
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="ceremonialsword-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="15" />
+        </StatusEffect>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.15" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="50" />
+      <SkillRequirementHint identifier="helm" level="50" />
+      <SkillRequirementHint identifier="electrical" level="50" />
+      <SkillRequirementHint identifier="mechanical" level="50" />
+      <SkillRequirementHint identifier="medical" level="50" />
+    </Item>
+    <Item name="" identifier="ceremonialsword-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <Deconstruct time="10">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="ceremonialsword-throw icon" sourcerect="86,1325,69,70" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="0,484,153,18" depth="0.55" origin="0.5,0.5" />
+      <Body width="120" height="10" restitution="0.3" density="30" />
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-28,0" DamageUser="false" throwforce="3.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="1500" />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Sword">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="ceremonialsword" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false" DoesStick="true">
+        <Attack targetimpulse="2" severlimbsprobability="0.55" itemdamage="6" structuredamage="1" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="19" />
+          <Affliction identifier="bleeding" strength="14" />
+          <Affliction identifier="stun" strength="0.25" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" oneshot="true" delay="1" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-28,0" target="This">
+          <Remove />
+          <SpawnItem identifiers="ceremonialsword" spawnposition="This" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name=" " identifier="melee-handle" maxstacksize="1" scale="0.5" category="Weapon" hideinmenus="true" tags="smallitem">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" oneshot="true" holdpos="70,-25" handle2="0,0" aimpos="70,-25" />
+        <StatusEffect type="Always" target="This" oneshot="true" holdpos="60,-25" handle2="0,0" aimpos="60,-25" delay="2"></StatusEffect>
+        <StatusEffect type="Always" target="This" delay="2">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="stunbaton" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" Scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.25" />
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" spawnprobability="0.5" />
+      <Upgrade gameversion="0.9.2.0" scale="0.5" />
+      <Price baseprice="200">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator,repair" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="770,0,58,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,191,63" depth="0.55" origin="0.4954025,0.7936202" />
+      <Body width="170" height="30" density="20" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,20" handle1="-30,15" holdangle="20" aimangle="30" reload="0.95" range="100" combatPriority="35" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery">
+        <Attack targetimpulse="5" itemdamage="1">
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+          </StatusEffect>
+          <Affliction identifier="blunttrauma" strength="4" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <!-- changed to use electricshock: normal batteries cause 45 points of electricshock. Due to strength change of -5/s we can expect full stun in three consecutive hits -->
+        <!-- keep weight check in place for now (affect targets with mass < 40, humans, mudraptors, etc.) -->
+        <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+          <Conditional mass="lt 40" />
+          <Affliction identifier="stun" strength="0.3" />
+          <Affliction identifier="electricshock" strength="45" />
+          <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+          <RequiredItem items="mobilebattery" ExcludedIdentifiers="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Explosion range="100.0" force="0.1" shockwave="false" flames="false" smoke="false" underwaterbubble="false" camerashake="6.0" />
+          <ParticleEmitter particle="ElectricShock" DistanceMin="5" DistanceMax="20" ParticleAmount="3" ScaleMin="0.07" ScaleMax="0.1" />
+        </StatusEffect>
+        <!-- changed to use electricshock: fulgurium batteries cause 60 points of electricshock -> full stun in two consecutive hits -->
+        <!-- keep weight check in place for now (affect targets with mass < 60, includes veteran mudraptors) -->
+        <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+          <Conditional mass="lt 60" />
+          <Affliction identifier="stun" strength="0.3" />
+          <Affliction identifier="electricshock" strength="60" />
+          <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+          <RequiredItem items="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Explosion range="100.0" force="0.5" shockwave="false" flames="false" smoke="true" underwaterbubble="false" camerashake="6.0" />
+          <ParticleEmitter particle="ElectricShock" DistanceMin="10" DistanceMax="25" ParticleAmount="5" ScaleMin="0.1" ScaleMax="0.12" />
+        </StatusEffect>
+        <!-- 8 usages with normal battery, 16 with fulgurium -->
+        <StatusEffect type="OnUse" target="Contained,UseTarget" Condition="-12.5" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Conditional entitytype="eq Character" />
+          <Conditional HasStatusTag="!equals outpostsecurity" />
+          <!-- TODO ! Security wouldn't need so many batteries if we can prevent their batteries from draining (magically)-->
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Throw">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="stunbaton-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <DropContainedItems />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <RepairTool slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="12.5" />
+        </StatusEffect>
+      </RepairTool>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" />
+      </ItemContainer>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.25" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="stunbaton-throw" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="stunbaton-throw icon" sourcerect="794,1358,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,191,63" depth="0.55" origin="0.4954025,0.7936202" />
+      <Body width="150" height="10" restitution="0.3" density="20" />
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" />
+      </ItemContainer>
+      <Throwable slots="RightHand,LeftHand" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-30,15" DamageUser="false" throwforce="2.8" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="1250" />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Stun Baton">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="stunbaton" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <DropContainedItems />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" DamageUser="false">
+        <Attack targetimpulse="5" itemdamage="1">
+          <Affliction identifier="blunttrauma" strength="4" />
+          <Affliction identifier="stun" strength="0.2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="Contained,UseTarget" Condition="-12.5" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Conditional entitytype="eq Character" />
+          <Conditional HasStatusTag="!equals outpostsecurity" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true">
+          <Conditional mass="lt 40" />
+          <Affliction identifier="stun" strength="0.4" />
+          <Affliction identifier="electricshock" strength="45" />
+          <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+          <RequiredItem items="mobilebattery" ExcludedIdentifiers="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Explosion range="100.0" force="0.1" shockwave="false" flames="false" smoke="false" underwaterbubble="false" camerashake="6.0" />
+          <ParticleEmitter particle="ElectricShock" DistanceMin="5" DistanceMax="20" ParticleAmount="3" ScaleMin="0.07" ScaleMax="0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true">
+          <Conditional mass="lt 60" />
+          <Affliction identifier="stun" strength="0.4" />
+          <Affliction identifier="electricshock" strength="60" />
+          <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+          <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+          <RequiredItem items="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+          <Explosion range="100.0" force="0.5" shockwave="false" flames="false" smoke="true" underwaterbubble="false" camerashake="6.0" />
+          <ParticleEmitter particle="ElectricShock" DistanceMin="10" DistanceMax="25" ParticleAmount="5" ScaleMin="0.1" ScaleMax="0.12" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="divingknifeunique" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" hideinmenus="true" allowasextracargo="true">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" spawnprobability="0.05" />
+      <Price baseprice="770" sold="false" canbespecial="false" />
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="morbusine" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem identifier="morbusine" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="448,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="186,183,63,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <!-- Holdable для удержания в руке -->
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimable="true" aimpos="50,0" handle1="-20,-5" holdangle="15" aimangle="20" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnNotContained" target="This" stackable="false">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.75" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+      </Holdable>
+      <!-- RangedWeapon для стрельбы -->
+      <RangedWeapon reload="0.75" weapondamagemodifier="1" penetration="0.25" holdtrigger="false" barrelpos="0,0" spread="0.05" unskilledspread="0.1" combatPriority="30" drawhudwhenequipped="false">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <!-- Спавним projectile не в инвентарь, а на позицию оружия -->
+          <SpawnItem identifier="knife-projectile-unique" spawnposition="ThisInventory" />
+          <!-- Звуки атаки/выстрела -->
+          <Sound file="%ModDir%/Saunds/Fisth.ogg" range="500" frequencymultiplier="1.5" selectionmode="random" />
+          <Sound file="%ModDir%/Saunds/Fisth1.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth2.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth3.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth4.ogg" range="500" frequencymultiplier="1.5" />
+          <Sound file="%ModDir%/Saunds/Fisth5.ogg" range="500" frequencymultiplier="1.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="500" />
+        </StatusEffect>
+        <!-- Анимация/эффекты при стрельбе -->
+        <StatusEffect type="OnUse" target="Character">
+          <ApplyAffliction targetlimbs="RightArm,LeftArm" identifier="stun" strength="0.1" />
+        </StatusEffect>
+        <!-- Ближний урон (если цель близко) -->
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional distance="lte 50" />
+          <Affliction identifier="lacerations" strength="10" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="0.2" />
+          <Affliction identifier="morbusinepoisoning" strength="4" />
+          <Explosion range="40.0" force="2" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+      </RangedWeapon>
+      <!-- ItemContainer для хранения thrust и projectile -->
+      <ItemContainer capacity="3" maxstacksize="2" hideitems="true" spawnwithid="knife-thrust-unique" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="false" containedspritedepth="0.56">
+        <Containable items="knife-thrust-unique,knife-projectile-unique" hide="true" itempos="-65,25" />
+      </ItemContainer>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="Character" interval="2" delay="2" disabledeltatime="true" targetlimbs="LeftForearm">
+            <Affliction identifier="bleeding" strength="15" />
+            <Affliction identifier="lacerations" strength="5" />
+            <Affliction identifier="morbusinepoisoning" strength="8" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" AllowAccess="false" holdpos="20,-35" aimpos="20,-35" targetlimbs="LeftHand,RightHand">
+            <SpawnItem identifiers="melee-handle" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" interval="2" delay="1.9" holdpos="30,-35" holdangle="10" setvalue="true" aimpos="30,-35" />
+          <StatusEffect type="OnUse" target="This" interval="2" delay="2" AllowAccess="true" holdangle="30" setvalue="true" noninteractable="false" holdpos="0,0" aimpos="50,0" />
+        </Button>
+        <Button text="Throw">
+          <StatusEffect type="OnUse" target="This">
+            <SpawnItem identifiers="divingknifeunique-throw" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="medical" level="30" />
+    </Item>
+    <Item identifier="knife-thrust-unique" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="255,255,255,255" inventoryiconcolor="255,255,255,255">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="45" height="30" density="30" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="this">
+          <Explosion range="80.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item identifier="knife-projectile-unique" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="255,255,255,255" inventoryiconcolor="255,255,255,255">
+      <Sprite texture="%ModDir%/PDA/PDA.png" depth="0.57" sourcerect="0,0,4,4" origin="0,0" />
+      <Body width="10" height="10" density="0" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+        <Attack structuredamage="2" itemdamage="3" targetforce="5" severlimbsprobability="0.01">
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="morbusinepoisoning" strength="3" />
+          <Affliction identifier="spasm_shot" strength="15" probability="0.5" />
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Waist" disabledeltatime="true">
+            <Affliction identifier="spasm_shot" strength="25" probability="0.5" />
+            <Conditional ismale="true" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="divingknifeunique-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" hideinmenus="true">
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="morbusine" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="knifeuniq icon" sourcerect="873,1272,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="186,183,63,16" depth="0.55" origin="0.5,0.5" />
+      <Body width="100" height="10" restitution="0.3" density="25" />
+      <SuitableTreatment identifier="dirtybandage" suitability="50" />
+      <SuitableTreatment identifier="bandaged" suitability="50" />
+      <SuitableTreatment identifier="triagetag_green" suitability="100" />
+      <SuitableTreatment identifier="triagetag_yellow" suitability="100" />
+      <SuitableTreatment identifier="triagetag_red" suitability="100" />
+      <SuitableTreatment identifier="triagetag_black" suitability="100" />
+      <Throwable slots="RightHand,LeftHand" controlpose="true" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-10,0" DamageUser="false" throwforce="3.5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="stamina" targetlimbs="torso" strength="20" />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Stab">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="divingknifeunique" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" LaunchRotation="0" StickDuration="5" DamageUser="false" sticktocharacters="true">
+        <Attack>
+          <Affliction identifier="lacerations" strength="17.5" />
+          <Affliction identifier="bleeding" strength="17.5" />
+          <Affliction identifier="spasm_shot" strength="33" />
+          <Affliction identifier="morbusinepoisoning" strength="6" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="2" selectionmode="random" range="500" />
+            <Sound file="Content/Items/Weapons/Smack2.ogg" frequencymultiplier="2" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" particleamount="7" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.5" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="1000" soundrange="500" fadeouttime="2" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+    </Item>
+    <Item name="" identifier="headbutt" variantof="geneticmaterialcrawler" nameidentifier="geneticmaterial">
+      <Deconstruct>
+        <Item identifier="geneticmaterialmudraptor" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Items/Genetic/Genetic.png" sheetindex="1,3" sheetelementsize="64,64" origin="0.0,0.0" />
+      <Sprite texture="Content/Items/Genetic/Genetic.png" sheetindex="10,0" sheetelementsize="32,32" depth="0.6" origin="0.0,0.0" />
+      <GeneticMaterial nameidentifier="character.mudraptor" effect="naturalmeleeweapon" tooltipvaluemin="20" tooltipvaluemax="60" />
+      <ItemContainer capacity="1" maxstacksize="1" autoinject="true" autoinjectthreshold="Infinity" spawwithid="headbutt" allowswappingcontaineditems="false">
+        <Containable items="geneticmaterial" />
+      </ItemContainer>
+      <Wearable limbtype="Head" slots="Any,HealthInterface" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
+        <sprite name="Gene Splicer Wearable" texture="Content/Items/Genetic/Genetic.png" limb="Head" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.5" hideotherwearables="false" sourcerect="258,131,64,54" origin="0.6,0.0" />
+      </Wearable>
+    </Item>
+    <Item name="" identifier="daki1" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" scale="0.2" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_soft">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Price baseprice="350" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/daki1.png" sourcerect="6,12,187,655" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/daki1.png" sourcerect="6,12,187,655" depth="0.55" origin="0.5012155,0.49786243" />
+      <Body radius="85" height="550" restitution="1.1" density="0.1" />
+      <MeleeWeapon slots="Any,RightHand+LeftHand" aimpos="50,0" handle1="0,0" handle2="-10,5" holdangle="30" aimangle="-90" reload="1.2" range="155" combatPriority="40" msg="ItemMsgPickUpSelect">
+        <Attack targetimpulse="10" severlimbsprobability="0" itemdamage="5" structuredamage="1">
+          <Affliction identifier="blind_anim_2" strength="100" />
+          <Affliction identifier="stun" strength="1" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="%ModDir%/Saunds/squeak1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/squeak2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/squeak3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/squeak4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/squeak5.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Structure" />
+            <Conditional hastag="eq door" />
+            <ParticleEmitter particle="cellgib" particleamount="10" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.7" />
+            <Sound file="%ModDir%/Saunds/squeak1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+            <Sound file="%ModDir%/Saunds/squeak2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/squeak3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/squeak4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+            <Sound file="%ModDir%/Saunds/squeak5.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          </StatusEffect>
+        </Attack>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+          <Button text="Hug">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="daki1-hug" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </MeleeWeapon>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" depth="0.54" hideitems="true" autofill="false">
+        <Containable items="weapon,plate" />
+        <SlotIcon texture="%ModDir%/ContainerIndicators.png" name="heavybodyarmor icon" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      </ItemContainer>
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+    <Item name="" identifier="daki1-hug" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.2" impacttolerance="5.5" impactsoundtag="impact_soft" useinhealthinterface="True">
+      <Deconstruct time="20">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/daki1.png" name="boardingaxe-throw icon" sourcerect="252,1330,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/daki1.png" sourcerect="6,12,187,655" depth="0.55" origin="0.49687973,0.5040517" />
+      <Body radius="85" height="550" restitution="1.1" density="0.1" />
+      <Throwable slots="RightHand+LeftHand" holdpos="0,0" aimpos="60,-35" aimangle="25" holdangle="25" handle1="0,0" handle2="-10,5" DamageUser="false" throwforce="2.75" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.1">
+          <Use />
+        </StatusEffect>
+        <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+          <GuiFrame relativesize="0.09,0.09" anchor="CenterLeft" absoluteoffset="0,50" />
+          <Button text="Axe">
+            <StatusEffect type="OnUse" target="This">
+              <SpawnItem identifiers="daki1" spawnposition="SameInventory" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+              <Remove />
+            </StatusEffect>
+          </Button>
+        </CustomInterface>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="5" LaunchRotation="0" StickDuration="5" DamageUser="false" DoesStick="false">
+        <Attack targetimpulse="10" itemdamage="5" structuredamage="1">
+          <Affliction identifier="blind_anim_2" strength="100" />
+          <Affliction identifier="stun" strength="1" />
+        </Attack>
+        <StatusEffect type="OnImpact" oneshot="true" delay="1" holdpos="0,0" aimpos="40,-25" aimangle="25" handle1="-22,2" target="This">
+          <Remove />
+          <SpawnItem identifiers="daki1" spawnposition="This" SpawnIfInventoryFull="true" SpawnIfCantBeContained="true" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <Conditional entitytype="eq Character" />
+          <ParticleEmitter particle="cellgib" particleamount="10" anglemin="360" anglemax="0" velocitymin="-250" velocitymax="250" scalemin="0.25" scalemax="0.7" />
+          <Sound file="%ModDir%/Saunds/squeak1.ogg" type="OnImpact" range="500" frequencymultiplier="2" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/squeak2.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/squeak3.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/squeak4.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+          <Sound file="%ModDir%/Saunds/squeak5.ogg" type="OnImpact" range="500" frequencymultiplier="2" />
+        </StatusEffect>
+      </Projectile>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+  </Override>
+</Items>

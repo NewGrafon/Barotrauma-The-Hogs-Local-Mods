@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- ekgunnery_command.xml -->
+  <entityname.ekgunnery_periscopesonar_style1>Sonar Fire-Control Computer</entityname.ekgunnery_periscopesonar_style1>
+  <entitydescription.ekgunnery_periscopesonar_style1>Fire-control system linked to the submarine's sonar array. Designed for engaging targets at long-range via sonar instrumentation.</entitydescription.ekgunnery_periscopesonar_style1>
+  <!-- ekgunnery_containers.xml -->
+  <entityname.ekgunnery_magazinestoragesmall>Magazine Storage Small</entityname.ekgunnery_magazinestoragesmall>
+  <entitydescription.ekgunnery_magazinestoragesmall>An armored compartment for storing shells and ammunition boxes.</entitydescription.ekgunnery_magazinestoragesmall>
+  <entityname.ekgunnery_magazinestoragemedium>Magazine Storage Medium</entityname.ekgunnery_magazinestoragemedium>
+  <entitydescription.ekgunnery_magazinestoragemedium>A larger armored compartment for storing shells and ammunition boxes.</entitydescription.ekgunnery_magazinestoragemedium>
+  <entityname.ekgunnery_loadingelevatormedium>Loading Conveyor Medium</entityname.ekgunnery_loadingelevatormedium>
+  <entitydescription.ekgunnery_loadingelevatormedium>A transport system for moving shells and ammunition in bulk between different areas of the submarine. Links to any other conveyors.</entitydescription.ekgunnery_loadingelevatormedium>
+  <entityname.ekgunnery_mediumsslrocket_cargocontainer>Small Shell Handling Truck</entityname.ekgunnery_mediumsslrocket_cargocontainer>
+  <entitydescription.ekgunnery_mediumsslrocket_cargocontainer>A simple hand truck for moving 80mm and 100mm-SSL shells with ease.</entitydescription.ekgunnery_mediumsslrocket_cargocontainer>
+  <entityname.ekgunnery_heavyrailgunshellrack1>Heavy Railgun Shell Rack</entityname.ekgunnery_heavyrailgunshellrack1>
+  <entitydescription.ekgunnery_heavyrailgunshellrack1></entitydescription.ekgunnery_heavyrailgunshellrack1>
+  <entityname.ekgunnery_heavyrailgunshellrack2>Heavy Railgun Shell Rack</entityname.ekgunnery_heavyrailgunshellrack2>
+  <entitydescription.ekgunnery_heavyrailgunshellrack2></entitydescription.ekgunnery_heavyrailgunshellrack2>
+  <!-- ekgunnery_devices.xml -->
+  <entityname.ekgunnery_warheadsmall1>Warhead (UEX)</entityname.ekgunnery_warheadsmall1>
+  <entitydescription.ekgunnery_warheadsmall1>Integral general-purpose explosive payload. Useful as a drone weapon payload or submarine scuttling charge. Can be rearmed at an outpost or using a block of UEX.</entitydescription.ekgunnery_warheadsmall1>
+  <entityname.ekgunnery_warheadsmall2>Warhead (UEX)</entityname.ekgunnery_warheadsmall2>
+  <entitydescription.ekgunnery_warheadsmall2>Integral general-purpose explosive payload. Useful as a drone weapon payload or submarine scuttling charge. Can be rearmed at an outpost or using a block of UEX.</entitydescription.ekgunnery_warheadsmall2>
+  <entityname.ekgunnery_warheadmedium1>Warhead (C-4)</entityname.ekgunnery_warheadmedium1>
+  <entitydescription.ekgunnery_warheadmedium1>Integral general-purpose explosive payload. Useful as a drone weapon payload or submarine scuttling charge. Can be rearmed at an outpost or using a block of C-4.</entitydescription.ekgunnery_warheadmedium1>
+  <entityname.ekgunnery_warheadmedium2>Warhead (C-4)</entityname.ekgunnery_warheadmedium2>
+  <entitydescription.ekgunnery_warheadmedium2>Integral general-purpose explosive payload. Useful as a drone weapon payload or submarine scuttling charge. Can be rearmed at an outpost or using a block of C-4.</entitydescription.ekgunnery_warheadmedium2>
+  <entityname.ekgunnery_warheadnuclear1>Warhead (Nuclear)</entityname.ekgunnery_warheadnuclear1>
+  <entitydescription.ekgunnery_warheadnuclear1>Integral nuclear explosive. Useful as a drone weapon payload or submarine scuttling charge. Can be rearmed at an outpost or using a nuclear depth-charge shell.</entitydescription.ekgunnery_warheadnuclear1>
+  <!-- ekgunnery_ammunition.xml -->
+  <entityname.ekgunnery_smallflare_effect>ekgunnery_smallflare_effect</entityname.ekgunnery_smallflare_effect>
+  <entitydescription.ekgunnery_smallflare_effect></entitydescription.ekgunnery_smallflare_effect>
+  <entityname.ekgunnery_megaflare_effect>ekgunnery_megaflare_effect</entityname.ekgunnery_megaflare_effect>
+  <entitydescription.ekgunnery_megaflare_effect></entitydescription.ekgunnery_megaflare_effect>
+  <entityname.ekgunnery_heavyrailgunshell>Heavy Railgun Shell</entityname.ekgunnery_heavyrailgunshell>
+  <entitydescription.ekgunnery_heavyrailgunshell>Basic shell for a heavy railgun.</entitydescription.ekgunnery_heavyrailgunshell>
+  <entityname.ekgunnery_heavyrailgunflechetteshell>Heavy Railgun Flechette Shell</entityname.ekgunnery_heavyrailgunflechetteshell>
+  <entitydescription.ekgunnery_heavyrailgunflechetteshell>A heavy railgun shell that when fired bursts into multiple large piercing projectiles.</entitydescription.ekgunnery_heavyrailgunflechetteshell>
+  <entityname.ekgunnery_heavyrailgunflechettepellet>ekgunnery_heavyrailgunflechettepellet</entityname.ekgunnery_heavyrailgunflechettepellet>
+  <entitydescription.ekgunnery_heavyrailgunflechettepellet></entitydescription.ekgunnery_heavyrailgunflechettepellet>
+  <entityname.ekgunnery_nuclearaftereffectemitter>ekgunnery_nuclearaftereffectemitter</entityname.ekgunnery_nuclearaftereffectemitter>
+  <entitydescription.ekgunnery_nuclearaftereffectemitter></entitydescription.ekgunnery_nuclearaftereffectemitter>
+  <entityname.ekgunnery_heavyrailgunshellnuclear>Heavy Nuclear Railgun Shell</entityname.ekgunnery_heavyrailgunshellnuclear>
+  <entitydescription.ekgunnery_heavyrailgunshellnuclear>Nuclear shell for a heavy railgun.</entitydescription.ekgunnery_heavyrailgunshellnuclear>
+  <entityname.ekgunnery_chaingunammo>Light Chaingun Ammunition Box</entityname.ekgunnery_chaingunammo>
+  <entitydescription.ekgunnery_chaingunammo>Conventional ammunition for a chaingun turret.</entitydescription.ekgunnery_chaingunammo>
+  <entityname.ekgunnery_chaingunround>Light Chaingun Turret Round</entityname.ekgunnery_chaingunround>
+  <entitydescription.ekgunnery_chaingunround></entitydescription.ekgunnery_chaingunround>
+  <entityname.ekgunnery_chaingunpiercingammo>Piercing Light Chaingun Ammunition Box</entityname.ekgunnery_chaingunpiercingammo>
+  <entitydescription.ekgunnery_chaingunpiercingammo>Conventional ammunition for a chaingun turret.</entitydescription.ekgunnery_chaingunpiercingammo>
+  <entityname.ekgunnery_chaingunpiercinground>Light Chaingun Turret Piercing Round</entityname.ekgunnery_chaingunpiercinground>
+  <entitydescription.ekgunnery_chaingunpiercinground></entitydescription.ekgunnery_chaingunpiercinground>
+  <entityname.ekgunnery_chaingunphysicoriumammo>Physicorium Light Chaingun Ammunition Box</entityname.ekgunnery_chaingunphysicoriumammo>
+  <entitydescription.ekgunnery_chaingunphysicoriumammo>Physicorium alloy ammunition for a chaingun turret.</entitydescription.ekgunnery_chaingunphysicoriumammo>
+  <entityname.ekgunnery_chaingunphysicoriumround>Light Chaingun Turret Physicorium Round</entityname.ekgunnery_chaingunphysicoriumround>
+  <entitydescription.ekgunnery_chaingunphysicoriumround></entitydescription.ekgunnery_chaingunphysicoriumround>
+  <entityname.ekgunnery_chaingunpiercingexplosiveammo>HEFC Light Chaingun Ammunition Box</entityname.ekgunnery_chaingunpiercingexplosiveammo>
+  <entitydescription.ekgunnery_chaingunpiercingexplosiveammo>Advanced fragmentation ammunition for a chaingun turret.</entitydescription.ekgunnery_chaingunpiercingexplosiveammo>
+  <entityname.ekgunnery_chaingunpiercingexplosiveround>Light Chaingun Turret Armor-Piercing Explosive Round</entityname.ekgunnery_chaingunpiercingexplosiveround>
+  <entitydescription.ekgunnery_chaingunpiercingexplosiveround></entitydescription.ekgunnery_chaingunpiercingexplosiveround>
+  <entityname.ekgunnery_autocannonammo>Autocannon Ammunition Box</entityname.ekgunnery_autocannonammo>
+  <entitydescription.ekgunnery_autocannonammo>Conventional ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonammo>
+  <entityname.ekgunnery_autocannonround>Autocannon Turret Round</entityname.ekgunnery_autocannonround>
+  <entitydescription.ekgunnery_autocannonround></entitydescription.ekgunnery_autocannonround>
+  <entityname.ekgunnery_autocannonexplosiveammo>Exploding Autocannon Ammunition Box</entityname.ekgunnery_autocannonexplosiveammo>
+  <entitydescription.ekgunnery_autocannonexplosiveammo>High-explosive ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonexplosiveammo>
+  <entityname.ekgunnery_autocannonexplosiveround>Exploding Autocannon Turret Round</entityname.ekgunnery_autocannonexplosiveround>
+  <entitydescription.ekgunnery_autocannonexplosiveround></entitydescription.ekgunnery_autocannonexplosiveround>
+  <entityname.ekgunnery_autocannonpiercingammo>Piercing Autocannon Ammunition Box</entityname.ekgunnery_autocannonpiercingammo>
+  <entitydescription.ekgunnery_autocannonpiercingammo>Armor piercing ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonpiercingammo>
+  <entityname.ekgunnery_autocannonpiercinground>Piercing Autocannon Turret Round</entityname.ekgunnery_autocannonpiercinground>
+  <entitydescription.ekgunnery_autocannonpiercinground></entitydescription.ekgunnery_autocannonpiercinground>
+  <entityname.ekgunnery_autocannonflechetteammo>Flechette Autocannon Ammunition Box</entityname.ekgunnery_autocannonflechetteammo>
+  <entitydescription.ekgunnery_autocannonflechetteammo>Flechette canister ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonflechetteammo>
+  <entityname.ekgunnery_autocannonflechetteround>Flechette Autocannon Turret Round</entityname.ekgunnery_autocannonflechetteround>
+  <entitydescription.ekgunnery_autocannonflechetteround></entitydescription.ekgunnery_autocannonflechetteround>
+  <entityname.ekgunnery_autocannonflechettepellet>ekgunnery_autocannonflechettepellet</entityname.ekgunnery_autocannonflechettepellet>
+  <entitydescription.ekgunnery_autocannonflechettepellet></entitydescription.ekgunnery_autocannonflechettepellet>
+  <entityname.ekgunnery_autocannonflakammo>Flak Autocannon Ammunition Box</entityname.ekgunnery_autocannonflakammo>
+  <entitydescription.ekgunnery_autocannonflakammo>Flak ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonflakammo>
+  <entityname.ekgunnery_autocannonflakround>Flak Autocannon Turret Round</entityname.ekgunnery_autocannonflakround>
+  <entitydescription.ekgunnery_autocannonflakround></entitydescription.ekgunnery_autocannonflakround>
+  <entityname.ekgunnery_autocannonflakammo_smartfuse>Flak Proximity Autocannon Ammunition Box</entityname.ekgunnery_autocannonflakammo_smartfuse>
+  <entitydescription.ekgunnery_autocannonflakammo_smartfuse>Proximity-fuse flak ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonflakammo_smartfuse>
+  <entityname.ekgunnery_autocannonflakround_smartfuse>Flak Proximity Autocannon Turret Round</entityname.ekgunnery_autocannonflakround_smartfuse>
+  <entitydescription.ekgunnery_autocannonflakround_smartfuse></entitydescription.ekgunnery_autocannonflakround_smartfuse>
+  <entityname.ekgunnery_autocannonphysicoriumammo>Physicorium Autocannon Ammunition Box</entityname.ekgunnery_autocannonphysicoriumammo>
+  <entitydescription.ekgunnery_autocannonphysicoriumammo>Physicorium alloy ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonphysicoriumammo>
+  <entityname.ekgunnery_autocannonphysicoriumround>Physicorium Autocannon Turret Round</entityname.ekgunnery_autocannonphysicoriumround>
+  <entitydescription.ekgunnery_autocannonphysicoriumround></entitydescription.ekgunnery_autocannonphysicoriumround>
+  <entityname.ekgunnery_autocannonarmorpiercingammo>Armor Piercing Explosive Autocannon Ammunition Box</entityname.ekgunnery_autocannonarmorpiercingammo>
+  <entitydescription.ekgunnery_autocannonarmorpiercingammo>Shaped-charge penetrator ammunition for an autocannon turret.</entitydescription.ekgunnery_autocannonarmorpiercingammo>
+  <entityname.ekgunnery_autocannonarmorpiercinground>Armor Piercing Explosive Autocannon Turret Round</entityname.ekgunnery_autocannonarmorpiercinground>
+  <entitydescription.ekgunnery_autocannonarmorpiercinground></entitydescription.ekgunnery_autocannonarmorpiercinground>
+  <entityname.ekgunnery_autocannonflareammo>Flare Autocannon Ammunition Box</entityname.ekgunnery_autocannonflareammo>
+  <entitydescription.ekgunnery_autocannonflareammo>A flare projection solution in autocannon form. When fired, it creates a bright flare for spotting enemies.</entitydescription.ekgunnery_autocannonflareammo>
+  <entityname.ekgunnery_autocannonflareround>Flare Autocannon Turret Round</entityname.ekgunnery_autocannonflareround>
+  <entitydescription.ekgunnery_autocannonflareround></entitydescription.ekgunnery_autocannonflareround>
+  <entityname.ekgunnery_mircosslammo>Micro SSL Ammunition Box</entityname.ekgunnery_mircosslammo>
+  <entitydescription.ekgunnery_mircosslammo>Self-propelled 20mm cartridges for a micro-SSL turret.</entitydescription.ekgunnery_mircosslammo>
+  <entityname.ekgunnery_mircosslround>Micro SSL Turret Round</entityname.ekgunnery_mircosslround>
+  <entitydescription.ekgunnery_mircosslround></entitydescription.ekgunnery_mircosslround>
+  <entityname.ekgunnery_mircosslpiercingammo>Piercing Micro SSL Ammunition Box</entityname.ekgunnery_mircosslpiercingammo>
+  <entitydescription.ekgunnery_mircosslpiercingammo>Self-propelled 20mm cartridges for a micro-SSL turret.</entitydescription.ekgunnery_mircosslpiercingammo>
+  <entityname.ekgunnery_mircosslpiercinground>Micro SSL Turret Piercing Round</entityname.ekgunnery_mircosslpiercinground>
+  <entitydescription.ekgunnery_mircosslpiercinground></entitydescription.ekgunnery_mircosslpiercinground>
+  <entityname.ekgunnery_mircosslphysicoriumammo>Physicorium Micro SSL Ammunition Box</entityname.ekgunnery_mircosslphysicoriumammo>
+  <entitydescription.ekgunnery_mircosslphysicoriumammo>Self-propelled 20mm cartridges for a micro-SSL turret.</entitydescription.ekgunnery_mircosslphysicoriumammo>
+  <entityname.ekgunnery_mircosslpiercingexplosiveammo>HEFC Micro SSL Ammunition Box</entityname.ekgunnery_mircosslpiercingexplosiveammo>
+  <entitydescription.ekgunnery_mircosslpiercingexplosiveammo>Self-propelled 20mm cartridges for a micro-SSL turret.</entitydescription.ekgunnery_mircosslpiercingexplosiveammo>
+  <entityname.ekgunnery_mircosslphysicoriumround>Micro SSL Turret Physicorium Round</entityname.ekgunnery_mircosslphysicoriumround>
+  <entitydescription.ekgunnery_mircosslphysicoriumround></entitydescription.ekgunnery_mircosslphysicoriumround>
+  <entityname.ekgunnery_smallsslammo>Small SSL Ammunition Box</entityname.ekgunnery_smallsslammo>
+  <entitydescription.ekgunnery_smallsslammo>Self-propelled 37mm cartridges for a small-SSL turret.</entitydescription.ekgunnery_smallsslammo>
+  <entityname.ekgunnery_smallsslround>Small SSL Turret Round</entityname.ekgunnery_smallsslround>
+  <entitydescription.ekgunnery_smallsslround></entitydescription.ekgunnery_smallsslround>
+  <entityname.ekgunnery_smallsslpiercingammo>Piercing Small SSL Ammunition Box</entityname.ekgunnery_smallsslpiercingammo>
+  <entitydescription.ekgunnery_smallsslpiercingammo>Self-propelled 37mm cartridges for a small-SSL turret.</entitydescription.ekgunnery_smallsslpiercingammo>
+  <entityname.ekgunnery_smallsslpiercinground>Small SSL Turret Piercing Round</entityname.ekgunnery_smallsslpiercinground>
+  <entitydescription.ekgunnery_smallsslpiercinground></entitydescription.ekgunnery_smallsslpiercinground>
+  <entityname.ekgunnery_smallsslexplosiveammo>Exploding Small SSL Ammunition Box</entityname.ekgunnery_smallsslexplosiveammo>
+  <entitydescription.ekgunnery_smallsslexplosiveammo>Self-propelled 37mm cartridges for a small-SSL turret.</entitydescription.ekgunnery_smallsslexplosiveammo>
+  <entityname.ekgunnery_smallsslexplosiveround>Small SSL Turret Explosive Round</entityname.ekgunnery_smallsslexplosiveround>
+  <entitydescription.ekgunnery_smallsslexplosiveround></entitydescription.ekgunnery_smallsslexplosiveround>
+  <entityname.ekgunnery_smallsslarmorpiercingammo>Armor Piercing Explosive Small SSL Ammunition Box</entityname.ekgunnery_smallsslarmorpiercingammo>
+  <entitydescription.ekgunnery_smallsslarmorpiercingammo>Self-propelled 37mm cartridges for a small-SSL turret.</entitydescription.ekgunnery_smallsslarmorpiercingammo>
+  <entityname.ekgunnery_smallsslarmorpiercinground>Small SSL Turret Armor Piercing Explosive Round</entityname.ekgunnery_smallsslarmorpiercinground>
+  <entitydescription.ekgunnery_smallsslarmorpiercinground></entitydescription.ekgunnery_smallsslarmorpiercinground>
+  <entityname.ekgunnery_smallsslphysicoriumammo>Physicorium Small SSL Ammunition Box</entityname.ekgunnery_smallsslphysicoriumammo>
+  <entitydescription.ekgunnery_smallsslphysicoriumammo>Self-propelled 37mm cartridges for a small-SSL turret.</entitydescription.ekgunnery_smallsslphysicoriumammo>
+  <entityname.ekgunnery_smallsslphysicoriumround>Small SSL Turret Physicorium Round</entityname.ekgunnery_smallsslphysicoriumround>
+  <entitydescription.ekgunnery_smallsslphysicoriumround></entitydescription.ekgunnery_smallsslphysicoriumround>
+  <entityname.ekgunnery_mediumsslrocket_he>Medium SSL Shell (HE)</entityname.ekgunnery_mediumsslrocket_he>
+  <entitydescription.ekgunnery_mediumsslrocket_he>Self-propelled 100x800mm SSL shell equipped with an explosive warhead.</entitydescription.ekgunnery_mediumsslrocket_he>
+  <entityname.ekgunnery_mediumsslrocket_ap>Medium SSL Shell (AP)</entityname.ekgunnery_mediumsslrocket_ap>
+  <entitydescription.ekgunnery_mediumsslrocket_ap>Self-propelled 100x800mm SSL shell equipped with an armor-piercing warhead.</entitydescription.ekgunnery_mediumsslrocket_ap>
+  <entityname.ekgunnery_mediumsslrocket_flak_debug>ekgunnery_mediumsslrocket_flak_debug</entityname.ekgunnery_mediumsslrocket_flak_debug>
+  <entitydescription.ekgunnery_mediumsslrocket_flak_debug>Rocket-propelled 100x800mm SSL shell equipped with a flak warhead.</entitydescription.ekgunnery_mediumsslrocket_flak_debug>
+  <entityname.ekgunnery_mediumsslrocket_flak>Medium SSL Shell (FLAK)</entityname.ekgunnery_mediumsslrocket_flak>
+  <entitydescription.ekgunnery_mediumsslrocket_flak>Rocket-propelled 100x800mm SSL shell equipped with a flak warhead.</entitydescription.ekgunnery_mediumsslrocket_flak>
+  <entityname.ekgunnery_mediumsslrocket_flak_smartfuse>Medium SSL Shell (FLAK-PROX)</entityname.ekgunnery_mediumsslrocket_flak_smartfuse>
+  <entitydescription.ekgunnery_mediumsslrocket_flak_smartfuse>Rocket-propelled 100x800mm SSL shell equipped with a proximity-fused flak warhead.</entitydescription.ekgunnery_mediumsslrocket_flak_smartfuse>
+  <entityname.ekgunnery_80mmshell>Cannon Shell</entityname.ekgunnery_80mmshell>
+  <entitydescription.ekgunnery_80mmshell>Conventional 80mm supercavitating shell with steel core.</entitydescription.ekgunnery_80mmshell>
+  <entityname.ekgunnery_80mmshell_explosive>Explosive Cannon Shell</entityname.ekgunnery_80mmshell_explosive>
+  <entitydescription.ekgunnery_80mmshell_explosive>Conventional 80mm supercavitating shell with explosive warhead.</entitydescription.ekgunnery_80mmshell_explosive>
+  <entityname.ekgunnery_80mmshell_piercing>Piercing Cannon Shell</entityname.ekgunnery_80mmshell_piercing>
+  <entitydescription.ekgunnery_80mmshell_piercing>Conventional 80mm supercavitating shell with armor piercing core.</entitydescription.ekgunnery_80mmshell_piercing>
+  <entityname.ekgunnery_80mmshell_armorpiercingexplosive>Armor Piercing Explosive Cannon Shell</entityname.ekgunnery_80mmshell_armorpiercingexplosive>
+  <entitydescription.ekgunnery_80mmshell_armorpiercingexplosive>Conventional 80mm supercavitating shell with shaped-charge warhead.</entitydescription.ekgunnery_80mmshell_armorpiercingexplosive>
+  <entityname.ekgunnery_80mmshell_flak>Flak Cannon Shell</entityname.ekgunnery_80mmshell_flak>
+  <entitydescription.ekgunnery_80mmshell_flak>Conventional 80mm supercavitating shell with time-fused flak warhead.</entitydescription.ekgunnery_80mmshell_flak>
+  <entityname.ekgunnery_80mmshell_flak_smartfuse>Flak Proximity Cannon Shell</entityname.ekgunnery_80mmshell_flak_smartfuse>
+  <entitydescription.ekgunnery_80mmshell_flak_smartfuse>Conventional 80mm supercavitating shell with proximity-fused flak warhead.</entitydescription.ekgunnery_80mmshell_flak_smartfuse>
+  <entityname.ekgunnery_mininglaserammo>Mining Laser Cell</entityname.ekgunnery_mininglaserammo>
+  <entitydescription.ekgunnery_mininglaserammo>Heavy non-rechargable capacitor which supplies the isolated power modulation needed to drive an acoustic laser system. The casing includes large heatsinks to accommodate the unit's tendancy to heat up during extended use.</entitydescription.ekgunnery_mininglaserammo>
+  <entityname.ekgunnery_mininglaserround>Mining Laser Bolt</entityname.ekgunnery_mininglaserround>
+  <entitydescription.ekgunnery_mininglaserround></entitydescription.ekgunnery_mininglaserround>
+  <entityname.ekgunnery_grapplinghookammo>ekgunnery_grapplinghookammo</entityname.ekgunnery_grapplinghookammo>
+  <entitydescription.ekgunnery_grapplinghookammo></entitydescription.ekgunnery_grapplinghookammo>
+  <!-- ekgunnery_loaders.xml -->
+  <entityname.ekgunnery_newsurpluscoilgunloader>Surplus Coilgun Loader</entityname.ekgunnery_newsurpluscoilgunloader>
+  <entitydescription.ekgunnery_newsurpluscoilgunloader>Feeds coilgun ammunition to a linked coilgun turret.</entitydescription.ekgunnery_newsurpluscoilgunloader>
+  <entityname.ekgunnery_newchaingunloader>Light Chaingun Loader</entityname.ekgunnery_newchaingunloader>
+  <entitydescription.ekgunnery_newchaingunloader>Feeds chaingun ammunition into a linked chaingun turret.</entitydescription.ekgunnery_newchaingunloader>
+  <entityname.ekgunnery_newchaingunloader_double>Light Chaingun Loader (Double)</entityname.ekgunnery_newchaingunloader_double>
+  <entitydescription.ekgunnery_newchaingunloader_double>Feeds chaingun ammunition into a linked chaingun turret.</entitydescription.ekgunnery_newchaingunloader_double>
+  <entityname.ekgunnery_newmicrosslloader>Micro SSL Loader</entityname.ekgunnery_newmicrosslloader>
+  <entitydescription.ekgunnery_newmicrosslloader>Feeds ammunition into a linked SSL turret.</entitydescription.ekgunnery_newmicrosslloader>
+  <entityname.ekgunnery_newsmallsslloader>Small SSL Loader</entityname.ekgunnery_newsmallsslloader>
+  <entitydescription.ekgunnery_newsmallsslloader>Feeds ammunition into a linked SSL turret.</entitydescription.ekgunnery_newsmallsslloader>
+  <entityname.ekgunnery_newautocannonloader>Autocannon Loader</entityname.ekgunnery_newautocannonloader>
+  <entitydescription.ekgunnery_newautocannonloader>Feeds autocannon ammunition into a linked autocannon turret.</entitydescription.ekgunnery_newautocannonloader>
+  <entityname.ekgunnery_newmediumsslloader>Medium SSL Loader</entityname.ekgunnery_newmediumsslloader>
+  <entitydescription.ekgunnery_newmediumsslloader>Feeds ammunition into a linked SSL turret</entitydescription.ekgunnery_newmediumsslloader>
+  <entityname.ekgunnery_new80mmcannonloader>Cannon Loader</entityname.ekgunnery_new80mmcannonloader>
+  <entitydescription.ekgunnery_new80mmcannonloader>Feeds cannon ammunition into a linked cannon turret.</entitydescription.ekgunnery_new80mmcannonloader>
+  <entityname.ekgunnery_newvortexcannonloader>Vortex-Ring Cannon Loader</entityname.ekgunnery_newvortexcannonloader>
+  <entitydescription.ekgunnery_newvortexcannonloader>Supplies pressurized air to a linked vortex-ring cannon</entitydescription.ekgunnery_newvortexcannonloader>
+  <entityname.ekgunnery_newauxiliaryblankloader>Auxiliary Loader Base</entityname.ekgunnery_newauxiliaryblankloader>
+  <entitydescription.ekgunnery_newauxiliaryblankloader></entitydescription.ekgunnery_newauxiliaryblankloader>
+  <entityname.ekgunnery_newauxiliarymediumsslloader>Auxiliary Medium SSL Loader</entityname.ekgunnery_newauxiliarymediumsslloader>
+  <entitydescription.ekgunnery_newauxiliarymediumsslloader>Feeds ammunition into a linked SSL turret</entitydescription.ekgunnery_newauxiliarymediumsslloader>
+  <entityname.ekgunnery_newauxiliarychaingunloader>Auxiliary Light Chaingun Loader</entityname.ekgunnery_newauxiliarychaingunloader>
+  <entitydescription.ekgunnery_newauxiliarychaingunloader>Feeds chaingun ammunition into a linked chaingun turret</entitydescription.ekgunnery_newauxiliarychaingunloader>
+  <entityname.ekgunnery_newauxiliarymininglaserloader>Auxiliary Mining Laser Loader</entityname.ekgunnery_newauxiliarymininglaserloader>
+  <entitydescription.ekgunnery_newauxiliarymininglaserloader>Supplies power connection to a linked mining laser turret.</entitydescription.ekgunnery_newauxiliarymininglaserloader>
+  <entityname.ekgunnery_newheavyblankloader>Heavy Loader Base</entityname.ekgunnery_newheavyblankloader>
+  <entitydescription.ekgunnery_newheavyblankloader></entitydescription.ekgunnery_newheavyblankloader>
+  <entityname.ekgunnery_newheavyrailgunloader>Heavy Railgun Loader</entityname.ekgunnery_newheavyrailgunloader>
+  <entitydescription.ekgunnery_newheavyrailgunloader>Feeds heavy railgun ammunition into a linked railgun turret.</entitydescription.ekgunnery_newheavyrailgunloader>
+  <entityname.ekgunnery_newheavyrailgunloader_large>Heavy Railgun Loader</entityname.ekgunnery_newheavyrailgunloader_large>
+  <entitydescription.ekgunnery_newheavyrailgunloader_large>Feeds heavy railgun ammunition into a linked railgun turret.</entitydescription.ekgunnery_newheavyrailgunloader_large>
+  <entityname.ekgunnery_newheavyautocannonloader>Heavy Autocannon Loader</entityname.ekgunnery_newheavyautocannonloader>
+  <entitydescription.ekgunnery_newheavyautocannonloader>Feeds autocannon ammunition into a linked heavy autocannon turret.</entitydescription.ekgunnery_newheavyautocannonloader>
+  <entityname.ekgunnery_newspinalblankloader>Spinal Loader Base</entityname.ekgunnery_newspinalblankloader>
+  <entitydescription.ekgunnery_newspinalblankloader></entitydescription.ekgunnery_newspinalblankloader>
+  <entityname.ekgunnery_newspinalrailgunloader>Spinal Railgun Loader</entityname.ekgunnery_newspinalrailgunloader>
+  <entitydescription.ekgunnery_newspinalrailgunloader>Feeds railgun ammunition into a linked spinal railgun.</entitydescription.ekgunnery_newspinalrailgunloader>
+  <entityname.ekgunnery_newspinalpulselaserloader>Spinal Pulse Laser Loader</entityname.ekgunnery_newspinalpulselaserloader>
+  <entitydescription.ekgunnery_newspinalpulselaserloader></entitydescription.ekgunnery_newspinalpulselaserloader>
+  <entityname.ekgunnery_newspinalheavyrailgunloader>Spinal Heavy Railgun Loader</entityname.ekgunnery_newspinalheavyrailgunloader>
+  <entitydescription.ekgunnery_newspinalheavyrailgunloader>Feeds heavy railgun ammunition into a linked spinal heavy railgun.</entitydescription.ekgunnery_newspinalheavyrailgunloader>
+  <entityname.ekgunnery_newspinalmediumsslloader>Spinal Medium SSL Loader</entityname.ekgunnery_newspinalmediumsslloader>
+  <entitydescription.ekgunnery_newspinalmediumsslloader>Feeds railgun ammunition into a linked spinal medium SSL.</entitydescription.ekgunnery_newspinalmediumsslloader>
+  <!-- ekgunnery_heavyturrets.xml -->
+  <entityname.ekgunnery_newheavyhardpoint>Heavy Turret Hardpoint</entityname.ekgunnery_newheavyhardpoint>
+  <entitydescription.ekgunnery_newheavyhardpoint>An empty weapon station heavy turrets can be installed on.</entitydescription.ekgunnery_newheavyhardpoint>
+  <entityname.ekgunnery_newheavyrailgunturret>Heavy Railgun</entityname.ekgunnery_newheavyrailgunturret>
+  <entitydescription.ekgunnery_newheavyrailgunturret>Large diameter railgun with formidable stopping power. Requires an even greater energy supply to fire than a standard railgun.</entitydescription.ekgunnery_newheavyrailgunturret>
+  <entityname.ekgunnery_newheavyautocannonturret>Heavy Autocannon</entityname.ekgunnery_newheavyautocannonturret>
+  <entitydescription.ekgunnery_newheavyautocannonturret>Heavy multi-barrel autocannon. Tears apart moderately armored vessels and creatures with overwhelming fire.</entitydescription.ekgunnery_newheavyautocannonturret>
+  <!-- ekgunnery_melee.xml -->
+  <entityname.ekgunnery_acousticpulse_style1>Acoustic-Kinetic Pulse</entityname.ekgunnery_acousticpulse_style1>
+  <entitydescription.ekgunnery_acousticpulse_style1>Heavy sonar-like emitter which produces a powerful sonic shockwave when activated. Only damages creatures.</entitydescription.ekgunnery_acousticpulse_style1>
+  <entityname.ekgunnery_acousticpulse_style2>Acoustic-Kinetic Pulse</entityname.ekgunnery_acousticpulse_style2>
+  <entitydescription.ekgunnery_acousticpulse_style2>Heavy sonar-like emitter which produces a powerful sonic shockwave when activated. Only damages creatures.</entitydescription.ekgunnery_acousticpulse_style2>
+  <entityname.ekgunnery_acousticpulse_style3>Acoustic-Kinetic Pulse</entityname.ekgunnery_acousticpulse_style3>
+  <entitydescription.ekgunnery_acousticpulse_style3>Heavy sonar-like emitter which produces a powerful sonic shockwave when activated. Only damages creatures.</entitydescription.ekgunnery_acousticpulse_style3>
+  <entityname.ekgunnery_acousticpulse_style4>Acoustic-Kinetic Pulse</entityname.ekgunnery_acousticpulse_style4>
+  <entitydescription.ekgunnery_acousticpulse_style4>Heavy sonar-like emitter which produces a powerful sonic shockwave when activated. Only damages creatures.</entitydescription.ekgunnery_acousticpulse_style4>
+  <entityname.ekgunnery_meleespikessmall1>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall1>
+  <entitydescription.ekgunnery_meleespikessmall1>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall1>
+  <entityname.ekgunnery_meleespikessmall1b>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall1b>
+  <entitydescription.ekgunnery_meleespikessmall1b>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall1b>
+  <entityname.ekgunnery_meleespikessmall2>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall2>
+  <entitydescription.ekgunnery_meleespikessmall2>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall2>
+  <entityname.ekgunnery_meleespikessmall2b>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall2b>
+  <entitydescription.ekgunnery_meleespikessmall2b>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall2b>
+  <entityname.ekgunnery_meleespikessmall3>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall3>
+  <entitydescription.ekgunnery_meleespikessmall3>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall3>
+  <entityname.ekgunnery_meleespikessmall3b>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall3b>
+  <entitydescription.ekgunnery_meleespikessmall3b>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall3b>
+  <entityname.ekgunnery_meleespikessmall4>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall4>
+  <entitydescription.ekgunnery_meleespikessmall4>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall4>
+  <entityname.ekgunnery_meleespikessmall4b>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall4b>
+  <entitydescription.ekgunnery_meleespikessmall4b>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall4b>
+  <entityname.ekgunnery_meleespikessmall5>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall5>
+  <entitydescription.ekgunnery_meleespikessmall5>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall5>
+  <entityname.ekgunnery_meleespikessmall5b>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall5b>
+  <entitydescription.ekgunnery_meleespikessmall5b>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall5b>
+  <entityname.ekgunnery_meleespikessmall6>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall6>
+  <entitydescription.ekgunnery_meleespikessmall6>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall6>
+  <entityname.ekgunnery_meleespikessmall6b>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall6b>
+  <entitydescription.ekgunnery_meleespikessmall6b>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall6b>
+  <entityname.ekgunnery_meleespikessmall6c>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall6c>
+  <entitydescription.ekgunnery_meleespikessmall6c>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall6c>
+  <entityname.ekgunnery_meleespikessmall7>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall7>
+  <entitydescription.ekgunnery_meleespikessmall7>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall7>
+  <entityname.ekgunnery_meleespikessmall7b>Shell Spike (Small)</entityname.ekgunnery_meleespikessmall7b>
+  <entitydescription.ekgunnery_meleespikessmall7b>A rugged metal spike attached to the submarine. Crude but effective defensive measure.</entitydescription.ekgunnery_meleespikessmall7b>
+  <entityname.ekgunnery_meleespikestogglesmall1>Shell Toggle Spike (Small)</entityname.ekgunnery_meleespikestogglesmall1>
+  <entitydescription.ekgunnery_meleespikestogglesmall1>A defensive spike that can be extended or retracted on demand. If you have this, something has gone horribly wrong.</entitydescription.ekgunnery_meleespikestogglesmall1>
+  <entityname.ekgunnery_meleespikestogglesmall1b>Shell Toggle Spike (Small)</entityname.ekgunnery_meleespikestogglesmall1b>
+  <entitydescription.ekgunnery_meleespikestogglesmall1b>A defensive spike that can be extended or retracted on demand. If you have this, something has gone horribly wrong.</entitydescription.ekgunnery_meleespikestogglesmall1b>
+  <entityname.ekgunnery_meleerammingprow1>Ramming Prow (Small)</entityname.ekgunnery_meleerammingprow1>
+  <entitydescription.ekgunnery_meleerammingprow1>Damages creatures and structures in front of it when activated. If you have this, something has gone horribly wrong.</entitydescription.ekgunnery_meleerammingprow1>
+  <entityname.ekgunnery_meleerammingprow1creatures>Ramming Prow Creatures (Small)</entityname.ekgunnery_meleerammingprow1creatures>
+  <entitydescription.ekgunnery_meleerammingprow1creatures>Damages only creatures in front of it when activated. If you have this, something has gone horribly wrong.</entitydescription.ekgunnery_meleerammingprow1creatures>
+  <entityname.ekgunnery_meleerammingprow2>Ramming Prow (Medium)</entityname.ekgunnery_meleerammingprow2>
+  <entitydescription.ekgunnery_meleerammingprow2>Damages creatures and structures in front of it when activated. If you have this, something has gone horribly wrong.</entitydescription.ekgunnery_meleerammingprow2>
+  <entityname.ekgunnery_meleerammingprow2creatures>Ramming Prow Creatures (Medium)</entityname.ekgunnery_meleerammingprow2creatures>
+  <entitydescription.ekgunnery_meleerammingprow2creatures>Damages only creatures in front of it when activated. If you have this, something has gone horribly wrong.</entitydescription.ekgunnery_meleerammingprow2creatures>
+  <!-- ekgunnery_turrets.xml -->
+  <entityname.ekgunnery_newsurpluscoilgun>Surplus Coilgun</entityname.ekgunnery_newsurpluscoilgun>
+  <entitydescription.ekgunnery_newsurpluscoilgun>A turret that propels metal bolts using electromagnets. An obsolete design in comparison to current coilgun technology, but this surplus model can be found at a fairly cheap market price.</entitydescription.ekgunnery_newsurpluscoilgun>
+  <entityname.ekgunnery_newchaingunturret>Light Chaingun</entityname.ekgunnery_newchaingunturret>
+  <entitydescription.ekgunnery_newchaingunturret>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_newchaingunturret>
+  <entityname.ekgunnery_newminigunturret>Light Rotary Chaingun</entityname.ekgunnery_newminigunturret>
+  <entitydescription.ekgunnery_newminigunturret>Conventional weapons system with a very high rate of fire utilizing self-propelled cartridges. Has a short windup period.</entitydescription.ekgunnery_newminigunturret>
+  <entityname.ekgunnery_newmicrossl>Micro SSL Turret</entityname.ekgunnery_newmicrossl>
+  <entitydescription.ekgunnery_newmicrossl>Experimental weapons-system with extremely high rate of fire. Very effective against soft targets in short bursts. Fires 20mm supercavitating rounds.</entitydescription.ekgunnery_newmicrossl>
+  <entityname.ekgunnery_newsmallssl>Small SSL Turret</entityname.ekgunnery_newsmallssl>
+  <entitydescription.ekgunnery_newsmallssl>Experimental weapons-system with high rate of fire. However its sustained-fire capability is somewhat limited by ammo capacity. Fires 37mm self-propelled rounds.</entitydescription.ekgunnery_newsmallssl>
+  <entityname.ekgunnery_newautocannonturret>Autocannon</entityname.ekgunnery_newautocannonturret>
+  <entitydescription.ekgunnery_newautocannonturret>Conventional cannon which fires relatively light shells, but does so at a substantially increased fire-rate.</entitydescription.ekgunnery_newautocannonturret>
+  <entityname.ekgunnery_newmediumssl>Medium SSL Turret</entityname.ekgunnery_newmediumssl>
+  <entitydescription.ekgunnery_newmediumssl>Experimental weapons-system which excels at quickly laying down fire at moderate range. Fires 100mm self-propelled shells.</entitydescription.ekgunnery_newmediumssl>
+  <entityname.ekgunnery_80mmcannonturret>Cannon Turret</entityname.ekgunnery_80mmcannonturret>
+  <entitydescription.ekgunnery_80mmcannonturret>Conventional 80mm cannon firing supercavitating ammunition. Distant predecessor to the standard coaliton railgun as a heavy damage dealer.</entitydescription.ekgunnery_80mmcannonturret>
+  <entityname.ekgunnery_vortexcannon>Vortex-Ring Cannon Turret</entityname.ekgunnery_vortexcannon>
+  <entitydescription.ekgunnery_vortexcannon>Directional sonic weapon which utilizes a pneumatically driven hammer to produce a ring-shaped underwater shockwave. Only damages creatures.</entitydescription.ekgunnery_vortexcannon>
+  <!-- ekgunnery_modularmissile.xml -->
+  <entityname.ekgunnery_modularmissile_body1a>Missile Body</entityname.ekgunnery_modularmissile_body1a>
+  <entitydescription.ekgunnery_modularmissile_body1a>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body1a>
+  <entityname.ekgunnery_modularmissile_body1b>Missile Body</entityname.ekgunnery_modularmissile_body1b>
+  <entitydescription.ekgunnery_modularmissile_body1b>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body1b>
+  <entityname.ekgunnery_modularmissile_body2a>Missile Body</entityname.ekgunnery_modularmissile_body2a>
+  <entitydescription.ekgunnery_modularmissile_body2a>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body2a>
+  <entityname.ekgunnery_modularmissile_body2b>Missile Body</entityname.ekgunnery_modularmissile_body2b>
+  <entitydescription.ekgunnery_modularmissile_body2b>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body2b>
+  <entityname.ekgunnery_modularmissile_body2c>Missile Body</entityname.ekgunnery_modularmissile_body2c>
+  <entitydescription.ekgunnery_modularmissile_body2c>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body2c>
+  <entityname.ekgunnery_modularmissile_body3a>Missile Body</entityname.ekgunnery_modularmissile_body3a>
+  <entitydescription.ekgunnery_modularmissile_body3a>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body3a>
+  <entityname.ekgunnery_modularmissile_body3b>Missile Body</entityname.ekgunnery_modularmissile_body3b>
+  <entitydescription.ekgunnery_modularmissile_body3b>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body3b>
+  <entityname.ekgunnery_modularmissile_body3c>Missile Body</entityname.ekgunnery_modularmissile_body3c>
+  <entitydescription.ekgunnery_modularmissile_body3c>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body3c>
+  <entityname.ekgunnery_modularmissile_body3d>Missile Body</entityname.ekgunnery_modularmissile_body3d>
+  <entitydescription.ekgunnery_modularmissile_body3d>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body3d>
+  <entityname.ekgunnery_modularmissile_body4a>Missile Body</entityname.ekgunnery_modularmissile_body4a>
+  <entitydescription.ekgunnery_modularmissile_body4a>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body4a>
+  <entityname.ekgunnery_modularmissile_body4b>Missile Body</entityname.ekgunnery_modularmissile_body4b>
+  <entitydescription.ekgunnery_modularmissile_body4b>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body4b>
+  <entityname.ekgunnery_modularmissile_body4c>Missile Body</entityname.ekgunnery_modularmissile_body4c>
+  <entitydescription.ekgunnery_modularmissile_body4c>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body4c>
+  <entityname.ekgunnery_modularmissile_body5a>Missile Body</entityname.ekgunnery_modularmissile_body5a>
+  <entitydescription.ekgunnery_modularmissile_body5a>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body5a>
+  <entityname.ekgunnery_modularmissile_body5b>Missile Body</entityname.ekgunnery_modularmissile_body5b>
+  <entitydescription.ekgunnery_modularmissile_body5b>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body5b>
+  <entityname.ekgunnery_modularmissile_body5c>Missile Body</entityname.ekgunnery_modularmissile_body5c>
+  <entitydescription.ekgunnery_modularmissile_body5c>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body5c>
+  <entityname.ekgunnery_modularmissile_body5d>Missile Body</entityname.ekgunnery_modularmissile_body5d>
+  <entitydescription.ekgunnery_modularmissile_body5d>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body5d>
+  <entityname.ekgunnery_modularmissile_body5e>Missile Body</entityname.ekgunnery_modularmissile_body5e>
+  <entitydescription.ekgunnery_modularmissile_body5e>Component of modular shuttle-based munitions.</entitydescription.ekgunnery_modularmissile_body5e>
+  <entityname.ekgunnery_modularmissile_soundemitter1>Missile Motor Sound 1</entityname.ekgunnery_modularmissile_soundemitter1>
+  <entitydescription.ekgunnery_modularmissile_soundemitter1>Rocket Motor.</entitydescription.ekgunnery_modularmissile_soundemitter1>
+  <entityname.ekgunnery_modularmissile_soundemitter2>Missile Motor Sound 2</entityname.ekgunnery_modularmissile_soundemitter2>
+  <entitydescription.ekgunnery_modularmissile_soundemitter2>Large Torpedo Motor.</entitydescription.ekgunnery_modularmissile_soundemitter2>
+  <entityname.ekgunnery_modularmissile_engine1>Missile Engine</entityname.ekgunnery_modularmissile_engine1>
+  <entitydescription.ekgunnery_modularmissile_engine1>Component of modular shuttle-based munitions. Applies force on the horizontal plane.</entitydescription.ekgunnery_modularmissile_engine1>
+  <entityname.ekgunnery_modularmissile_pump1>Missile Pump</entityname.ekgunnery_modularmissile_pump1>
+  <entitydescription.ekgunnery_modularmissile_pump1>Component of modular shuttle-based munitions. Buoyancy control.</entitydescription.ekgunnery_modularmissile_pump1>
+  <entityname.ekgunnery_modularmissile_transducer1>Missile Transducer 1</entityname.ekgunnery_modularmissile_transducer1>
+  <entitydescription.ekgunnery_modularmissile_transducer1>Component of modular shuttle-based munitions. Remote camera and sonar data feed.</entitydescription.ekgunnery_modularmissile_transducer1>
+  <entityname.ekgunnery_modularmissile_transducer2>Missile Transducer 2</entityname.ekgunnery_modularmissile_transducer2>
+  <entitydescription.ekgunnery_modularmissile_transducer2>Component of modular shuttle-based munitions. Remote camera and sonar data feed.</entitydescription.ekgunnery_modularmissile_transducer2>
+  <entityname.ekgunnery_modularmissile_navcomputer1>Missile Navigation Computer</entityname.ekgunnery_modularmissile_navcomputer1>
+  <entitydescription.ekgunnery_modularmissile_navcomputer1>Component of modular shuttle-based munitions. Internal positioning and guidance system.</entitydescription.ekgunnery_modularmissile_navcomputer1>
+  <entityname.ekgunnery_modularmissile_dockingporty>Missile Docking Clamp</entityname.ekgunnery_modularmissile_dockingporty>
+  <entitydescription.ekgunnery_modularmissile_dockingporty>Component of modular shuttle-based munitions. Coupling Device.</entitydescription.ekgunnery_modularmissile_dockingporty>
+  <entityname.ekgunnery_modularmissile_dockingportshorty>Missile Docking Clamp (Short Gap)</entityname.ekgunnery_modularmissile_dockingportshorty>
+  <entitydescription.ekgunnery_modularmissile_dockingportshorty>Component of modular shuttle-based munitions. Coupling Device.</entitydescription.ekgunnery_modularmissile_dockingportshorty>
+  <entityname.ekgunnery_modularmissile_dockingportx>Missile Docking Clamp</entityname.ekgunnery_modularmissile_dockingportx>
+  <entitydescription.ekgunnery_modularmissile_dockingportx>Component of modular shuttle-based munitions. Coupling Device.</entitydescription.ekgunnery_modularmissile_dockingportx>
+  <entityname.ekgunnery_modularmissile_dockingportshortx>Missile Docking Clamp (Short Gap)</entityname.ekgunnery_modularmissile_dockingportshortx>
+  <entitydescription.ekgunnery_modularmissile_dockingportshortx>Component of modular shuttle-based munitions. Coupling Device.</entitydescription.ekgunnery_modularmissile_dockingportshortx>
+  <entityname.ekgunnery_modularmissile_thruster100>Missile Thruster 100kw</entityname.ekgunnery_modularmissile_thruster100>
+  <entitydescription.ekgunnery_modularmissile_thruster100>Component of modular shuttle-based munitions. Applies force on the vertical plane.</entitydescription.ekgunnery_modularmissile_thruster100>
+  <entityname.ekgunnery_modularmissile_thruster050>Missile Thruster 50kw</entityname.ekgunnery_modularmissile_thruster050>
+  <entitydescription.ekgunnery_modularmissile_thruster050>Component of modular shuttle-based munitions. Applies force on the vertical plane.</entitydescription.ekgunnery_modularmissile_thruster050>
+  <!-- ekgunnery_uniqueturrets.xml -->
+  <!-- ekgunnery_uniqueammo.xml -->
+  <!-- ekgunnery_spinalweapons.xml -->
+  <entityname.ekgunnery_newspinalhardpoint>Spinal Hardpoint</entityname.ekgunnery_newspinalhardpoint>
+  <entitydescription.ekgunnery_newspinalhardpoint>An empty hull hardpoint special spinal weapons can be installed on.</entitydescription.ekgunnery_newspinalhardpoint>
+  <entityname.ekgunnery_newspinalrailgun>Spinal-Mount Railgun</entityname.ekgunnery_newspinalrailgun>
+  <entitydescription.ekgunnery_newspinalrailgun>A standard railgun mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets.</entitydescription.ekgunnery_newspinalrailgun>
+  <entityname.ekgunnery_newspinalpulselaser>Spinal-Mount Pulse Laser</entityname.ekgunnery_newspinalpulselaser>
+  <entitydescription.ekgunnery_newspinalpulselaser>A large pulsed chemical laser mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Inflicts extreme burns on anything it hits.</entitydescription.ekgunnery_newspinalpulselaser>
+  <entityname.ekgunnery_newspinalheavyrailgun>Spinal-Mount Heavy Railgun</entityname.ekgunnery_newspinalheavyrailgun>
+  <entitydescription.ekgunnery_newspinalheavyrailgun>A heavy railgun mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Requires an even greater energy supply to fire than a standard railgun.</entitydescription.ekgunnery_newspinalheavyrailgun>
+  <entityname.ekgunnery_newspinalmediumssl>Spinal-Mount Medium SSL</entityname.ekgunnery_newspinalmediumssl>
+  <entitydescription.ekgunnery_newspinalmediumssl>A medium SSL battery mounted directly to the hull of the vessel for greatly decreased mechanical complexity but limited angle of fire. Experimental weapons-system which excels at quickly laying down fire at moderate range.</entitydescription.ekgunnery_newspinalmediumssl>
+  <!-- ekgunnery_auxiliary.xml -->
+  <entityname.ekgunnery_newauxiliaryhardpoint>Auxiliary Turret Hardpoint</entityname.ekgunnery_newauxiliaryhardpoint>
+  <entitydescription.ekgunnery_newauxiliaryhardpoint>An empty turret mount for specialized equipment and small weapons.</entitydescription.ekgunnery_newauxiliaryhardpoint>
+  <entityname.ekgunnery_newauxiliarychaingunturret>Auxiliary Light Chaingun</entityname.ekgunnery_newauxiliarychaingunturret>
+  <entitydescription.ekgunnery_newauxiliarychaingunturret>Light chaingun on an auxiliary turret for point defense or coaxial firing. Fire rate is slightly reduced due to autoloader size constraints.</entitydescription.ekgunnery_newauxiliarychaingunturret>
+  <entityname.ekgunnery_newauxiliarymediumssl>Auxiliary Medium SSL Turret</entityname.ekgunnery_newauxiliarymediumssl>
+  <entitydescription.ekgunnery_newauxiliarymediumssl>4x medium SSL battery on an auxiliary turret. Fires 100mm self-propelled shells.</entitydescription.ekgunnery_newauxiliarymediumssl>
+  <entityname.ekgunnery_newauxiliarymininglaserturret>Auxiliary Mining Laser</entityname.ekgunnery_newauxiliarymininglaserturret>
+  <entitydescription.ekgunnery_newauxiliarymininglaserturret>Acoustic-resonance laser system designed to break apart ice and soft minerals while leaving valuable ore intact.</entitydescription.ekgunnery_newauxiliarymininglaserturret>
+  <!-- ekgunnery_turrets_legacy.xml -->
+  <entityname.ekgunnery_railgun_style1>Railgun B</entityname.ekgunnery_railgun_style1>
+  <entitydescription.ekgunnery_railgun_style1>A heavy turret that uses electromagnetic force to launch shells at very high velocities. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets.</entitydescription.ekgunnery_railgun_style1>
+  <entityname.ekgunnery_railgun_style2>Railgun C</entityname.ekgunnery_railgun_style2>
+  <entitydescription.ekgunnery_railgun_style2>A heavy turret that uses electromagnetic force to launch shells at very high velocities. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets.</entitydescription.ekgunnery_railgun_style2>
+  <entityname.ekgunnery_spinalrailgun>Spinal-Mount Railgun A</entityname.ekgunnery_spinalrailgun>
+  <entitydescription.ekgunnery_spinalrailgun>A standard railgun mounted directly to the hull of the vessel for decreased mechanical complexity but limited angle of fire. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets.</entitydescription.ekgunnery_spinalrailgun>
+  <entityname.ekgunnery_spinalrailgun_style1>Spinal-Mount Railgun B</entityname.ekgunnery_spinalrailgun_style1>
+  <entitydescription.ekgunnery_spinalrailgun_style1>A standard railgun mounted directly to the hull of the vessel for decreased mechanical complexity but limited angle of fire. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets.</entitydescription.ekgunnery_spinalrailgun_style1>
+  <entityname.ekgunnery_spinalrailgun_style2>Spinal-Mount Railgun C</entityname.ekgunnery_spinalrailgun_style2>
+  <entitydescription.ekgunnery_spinalrailgun_style2>A standard railgun mounted directly to the hull of the vessel for decreased mechanical complexity but limited angle of fire. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets.</entitydescription.ekgunnery_spinalrailgun_style2>
+  <entityname.ekgunnery_heavyrailgun_style1>Heavy Railgun A</entityname.ekgunnery_heavyrailgun_style1>
+  <entitydescription.ekgunnery_heavyrailgun_style1>Large diameter railgun with formidable stopping power. Requires an even greater energy supply to fire.</entitydescription.ekgunnery_heavyrailgun_style1>
+  <entityname.ekgunnery_heavyrailgun_style2>Heavy Railgun B</entityname.ekgunnery_heavyrailgun_style2>
+  <entitydescription.ekgunnery_heavyrailgun_style2>Large diameter railgun with formidable stopping power. Requires an even greater energy supply to fire.</entitydescription.ekgunnery_heavyrailgun_style2>
+  <entityname.ekgunnery_heavyrailgun_style3>Heavy Railgun C</entityname.ekgunnery_heavyrailgun_style3>
+  <entitydescription.ekgunnery_heavyrailgun_style3>Large diameter railgun with formidable stopping power. Requires an even greater energy supply to fire.</entitydescription.ekgunnery_heavyrailgun_style3>
+  <entityname.ekgunnery_spinalheavyrailgun>Spinal-Mount Heavy Railgun A</entityname.ekgunnery_spinalheavyrailgun>
+  <entitydescription.ekgunnery_spinalheavyrailgun>A heavy railgun mounted directly to the hull of the vessel for decreased mechanical complexity but limited angle of fire. Requires very large surges of power (usually supplied by supercapacitors) and has a low rate of fire, and as such it's most often used against large and heavily armored targets.</entitydescription.ekgunnery_spinalheavyrailgun>
+  <entityname.ekgunnery_coilgun_legacy>Coilgun (Legacy)</entityname.ekgunnery_coilgun_legacy>
+  <entitydescription.ekgunnery_coilgun_legacy>A rapid-firing turret that propels metal bolts using electromagnets. Generally not very effective against large or heavily armored targets, but ideal for taking down smaller enemies.</entitydescription.ekgunnery_coilgun_legacy>
+  <entityname.ekgunnery_coilgun_style2>Coilgun B</entityname.ekgunnery_coilgun_style2>
+  <entitydescription.ekgunnery_coilgun_style2>A rapid-firing turret that propels metal bolts using electromagnets. Generally not very effective against large or heavily armored targets, but ideal for taking down smaller enemies.</entitydescription.ekgunnery_coilgun_style2>
+  <entityname.ekgunnery_chaingun_turret>Light Chaingun Turret A</entityname.ekgunnery_chaingun_turret>
+  <entitydescription.ekgunnery_chaingun_turret>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_chaingun_turret>
+  <entityname.ekgunnery_chaingun_turret_style2>Light Chaingun Turret B</entityname.ekgunnery_chaingun_turret_style2>
+  <entitydescription.ekgunnery_chaingun_turret_style2>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_chaingun_turret_style2>
+  <entityname.ekgunnery_chaingun_turret_style3>Light Chaingun Turret C</entityname.ekgunnery_chaingun_turret_style3>
+  <entitydescription.ekgunnery_chaingun_turret_style3>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_chaingun_turret_style3>
+  <entityname.ekgunnery_chaingun_turret_style4>Light Chaingun Turret D</entityname.ekgunnery_chaingun_turret_style4>
+  <entitydescription.ekgunnery_chaingun_turret_style4>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_chaingun_turret_style4>
+  <entityname.ekgunnery_chaingun_turret_style5>Light Chaingun Turret E</entityname.ekgunnery_chaingun_turret_style5>
+  <entitydescription.ekgunnery_chaingun_turret_style5>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_chaingun_turret_style5>
+  <entityname.ekgunnery_chaingun_turret_style6>Light Chaingun Turret F</entityname.ekgunnery_chaingun_turret_style6>
+  <entitydescription.ekgunnery_chaingun_turret_style6>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_chaingun_turret_style6>
+  <entityname.ekgunnery_chaingun_turret_style7>Light Chaingun Turret G</entityname.ekgunnery_chaingun_turret_style7>
+  <entitydescription.ekgunnery_chaingun_turret_style7>Conventional weapons system with a high rate of fire utilizing self-propelled cartridges. Effective against small, fast targets.</entitydescription.ekgunnery_chaingun_turret_style7>
+  <entityname.ekgunnery_autocannon_turret_style1>Autocannon Turret A</entityname.ekgunnery_autocannon_turret_style1>
+  <entitydescription.ekgunnery_autocannon_turret_style1>Conventional cannon which fires relatively light supercavitating shells, but does so at a substantially increased fire-rate.</entitydescription.ekgunnery_autocannon_turret_style1>
+  <entityname.ekgunnery_autocannon_turret_style2>Autocannon Turret B</entityname.ekgunnery_autocannon_turret_style2>
+  <entitydescription.ekgunnery_autocannon_turret_style2>Conventional cannon which fires relatively light supercavitating shells, but does so at a substantially increased fire-rate.</entitydescription.ekgunnery_autocannon_turret_style2>
+  <entityname.ekgunnery_autocannon_turret_style3>Autocannon Turret C</entityname.ekgunnery_autocannon_turret_style3>
+  <entitydescription.ekgunnery_autocannon_turret_style3>Conventional cannon which fires relatively light supercavitating shells, but does so at a substantially increased fire-rate.</entitydescription.ekgunnery_autocannon_turret_style3>
+  <entityname.ekgunnery_micro_ssl>Micro SSL Turret A</entityname.ekgunnery_micro_ssl>
+  <entitydescription.ekgunnery_micro_ssl>Experimental weapons-system with extremely high rate of fire. Very effective against soft targets in short bursts.</entitydescription.ekgunnery_micro_ssl>
+  <entityname.ekgunnery_medium_ssl>Medium SSL Turret A</entityname.ekgunnery_medium_ssl>
+  <entitydescription.ekgunnery_medium_ssl>Experimental weapons-system which excels at quickly laying down fire at moderate range.</entitydescription.ekgunnery_medium_ssl>
+  <entityname.ekgunnery_medium_ssl_style2>Medium SSL Turret B</entityname.ekgunnery_medium_ssl_style2>
+  <entitydescription.ekgunnery_medium_ssl_style2>Experimental weapons-system which excels at quickly laying down fire at moderate range.</entitydescription.ekgunnery_medium_ssl_style2>
+  <!-- ekgunnery_loaders_legacy.xml -->
+  <entityname.ekgunnery_coilgunloader_single>Short Coilgun Loader</entityname.ekgunnery_coilgunloader_single>
+  <entitydescription.ekgunnery_coilgunloader_single>Feeds coilgun ammunition into a linked coilgun. Incompatible with larger ammunition boxes due to its size.</entitydescription.ekgunnery_coilgunloader_single>
+  <entityname.ekgunnery_chaingunloader_single>Light Chaingun Loader</entityname.ekgunnery_chaingunloader_single>
+  <entitydescription.ekgunnery_chaingunloader_single>Feeds chaingun ammunition into a linked chaingun turret.</entitydescription.ekgunnery_chaingunloader_single>
+  <entityname.ekgunnery_autocannonloader_single>Autocannon Loader</entityname.ekgunnery_autocannonloader_single>
+  <entitydescription.ekgunnery_autocannonloader_single>Feeds autocannon ammunition into a linked autocannon turret.</entitydescription.ekgunnery_autocannonloader_single>
+  <entityname.ekgunnery_microsslloader>Micro SSL Loader</entityname.ekgunnery_microsslloader>
+  <entitydescription.ekgunnery_microsslloader>Feeds ammunition into a linked SSL turret.</entitydescription.ekgunnery_microsslloader>
+  <entityname.ekgunnery_medium_ssl_loaderhorizontal>Medium SSL Loader Horizontal</entityname.ekgunnery_medium_ssl_loaderhorizontal>
+  <entitydescription.ekgunnery_medium_ssl_loaderhorizontal>Feeds ammunition into a linked SSL turret.</entitydescription.ekgunnery_medium_ssl_loaderhorizontal>
+  <entityname.ekgunnery_medium_ssl_loadercompact1>Medium SSL Loader Compact A</entityname.ekgunnery_medium_ssl_loadercompact1>
+  <entitydescription.ekgunnery_medium_ssl_loadercompact1>Feeds ammunition into a linked SSL turret.</entitydescription.ekgunnery_medium_ssl_loadercompact1>
+  <entityname.ekgunnery_medium_ssl_loadercompact2>Medium SSL Loader Compact B</entityname.ekgunnery_medium_ssl_loadercompact2>
+  <entitydescription.ekgunnery_medium_ssl_loadercompact2>Feeds ammunition into a linked SSL turret.</entitydescription.ekgunnery_medium_ssl_loadercompact2>
+  <entityname.ekgunnery_medium_ssl_loadercompact3>Medium SSL Loader Compact C</entityname.ekgunnery_medium_ssl_loadercompact3>
+  <entitydescription.ekgunnery_medium_ssl_loadercompact3>Feeds ammunition into a linked SSL turret.</entitydescription.ekgunnery_medium_ssl_loadercompact3>
+  <entityname.ekgunnery_heavyrailgunloader>Heavy Railgun Loader</entityname.ekgunnery_heavyrailgunloader>
+  <entitydescription.ekgunnery_heavyrailgunloader>Feeds shells into a linked heavy railgun.</entitydescription.ekgunnery_heavyrailgunloader>
+  <entityname.ekgunnery_heavyrailgunloader_single>Heavy Railgun Loader Single</entityname.ekgunnery_heavyrailgunloader_single>
+  <entitydescription.ekgunnery_heavyrailgunloader_single>Feeds shells into a linked heavy railgun.</entitydescription.ekgunnery_heavyrailgunloader_single>
+</infotexts>

@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- Crate contents - FULLY REPLACED WITH MOD WEAPONS -->
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- TIER 1 - Наземное оружие (пистолеты, револьверы) -->
+    <Item name="" identifier="weapondroptier1_1" tags="crate,weapondrop,weapondroptier1" nameidentifier="weapondrop" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true" spritecolor="255,242,100,255">
+      <Deconstruct time="0.5" />
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="407,376,152,89" origin="0.5,0.5" />
+      <Body width="150" height="75" density="25" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+      <ItemContainer capacity="20" maxstacksize="32" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+        <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter,largemobilecontainer" />
+        <StatusEffect type="OnSpawn" target="this">
+          <SpawnItem identifier="PB" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="PBammo" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <!-- Магазины, а не патроны -->
+          <SpawnItem identifiers="ballistichelmet2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier1" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" Condition="-1" />
+        <StatusEffect type="OnBroken" target="this">
+          <Remove />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="157,1,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="weapondroptier1_2" variantof="weapondroptier1_1">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="PM" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="PBammo" spawnposition="ThisInventory" mincount="4" maxcount="6" />
+          <!-- Магазины ПМ/ПБ совместимы -->
+          <SpawnItem identifiers="ballistichelmet2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="divingknife-throw" spawnposition="ThisInventory" mincount="2" maxcount="4" probability="0.3" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier1_3" variantof="weapondroptier1_1">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="Reck" spawnposition="ThisInventory" count="1" />
+          <!-- Револьвер Вольт (наземный) -->
+          <SpawnItem identifier=".38" spawnposition="ThisInventory" mincount="18" maxcount="36" />
+          <!-- Для револьверов патроны отдельно -->
+          <SpawnItem identifiers="ballistichelmet2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier1" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier1_4" variantof="weapondroptier1_1">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="R8" spawnposition="ThisInventory" count="1" />
+          <!-- Револьвер Тактик -->
+          <SpawnItem identifier=".38" spawnposition="ThisInventory" mincount="12" maxcount="24" />
+          <SpawnItem identifiers="ballistichelmet2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier1" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier1_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier1_special">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="colt-1911" spawnposition="ThisInventory" count="1" />
+          <!-- Кольт Гидра -->
+          <SpawnItem identifier="1911ammo" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <!-- Магазины .45 ACP -->
+          <SpawnItem identifier="1911bigammo" spawnposition="ThisInventory" mincount="1" maxcount="2" probability="0.3" />
+          <SpawnItem identifier="chitinhelmet" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier1" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- TIER 1 RUIN - Немного подводного оружия -->
+    <Item name="" identifier="weapondroptier1_ruin_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier1_ruin_special">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="Revolver" spawnposition="ThisInventory" count="1" />
+          <!-- Подводный револьвер Грауз -->
+          <SpawnItem identifier="mapleround" spawnposition="ThisInventory" mincount="12" maxcount="24" />
+          <!-- Патроны 6.8x48мм -->
+          <SpawnItem identifier="chitinhelmet" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="alientrinket1" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- TIER 2 - Наземное оружие (ПП, дробовики, карабины) -->
+    <Item name="" identifier="weapondroptier2_1" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="Kedr" spawnposition="ThisInventory" count="1" />
+          <!-- ПП Кедр -->
+          <SpawnItem identifier="PBammo-big" spawnposition="ThisInventory" mincount="2" maxcount="4" />
+          <!-- Расширенные магазины 9x18мм -->
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="thermalgoggles" spawnposition="ThisInventory" probability="0.2" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_2" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="Model870" spawnposition="ThisInventory" count="1" />
+          <!-- Remington 870 -->
+          <SpawnItem identifier="shotgunshell" spawnposition="ThisInventory" mincount="12" maxcount="24" />
+          <!-- Патроны для дробовика -->
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="bodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" mincount="1" maxcount="3" />
+          <SpawnItem identifier="boardingaxe" spawnposition="ThisInventory" probability="0.2" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_3" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="UMP45" spawnposition="ThisInventory" count="1" />
+          <!-- UMP45 Урбан -->
+          <SpawnItem identifier="UMP45magazine-anim" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="UMP45fmjmagazine-anim" spawnposition="ThisInventory" mincount="1" maxcount="2" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="colim_scope" spawnposition="ThisInventory" probability="0.3" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_4" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="mosin-obrez" spawnposition="ThisInventory" count="1" />
+          <!-- Обрез Мосина -->
+          <SpawnItem identifier="mosinammos" spawnposition="ThisInventory" mincount="20" maxcount="40" />
+          <SpawnItem identifier="pu_scope" spawnposition="ThisInventory" probability="0.2" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" mincount="1" maxcount="3" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_5" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="SKS" spawnposition="ThisInventory" count="1" />
+          <!-- СКС Прибой -->
+          <SpawnItem identifier="SKSammos" spawnposition="ThisInventory" mincount="30" maxcount="60" />
+          <SpawnItem identifier="pso_scope" spawnposition="ThisInventory" probability="0.2" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2_special" spritecolor="255,128,0,255">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="MP5-anim" spawnposition="ThisInventory" count="1" />
+          <!-- MP5 Служебный -->
+          <SpawnItem identifier="MP5magazine-anim" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="MP5bigmagazine-anim" spawnposition="ThisInventory" mincount="1" maxcount="2" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="colim_scope" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="boardingaxe" spawnposition="ThisInventory" />
+          <SpawnItem identifiers="piratehelmet" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- TIER 2 RUIN - Смесь наземного и подводного -->
+    <Item name="" identifier="weapondroptier2_1_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2_ruin" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="Glock" spawnposition="ThisInventory" count="1" />
+          <!-- Наземный Glock -->
+          <SpawnItem identifier="Berettabigammo" spawnposition="ThisInventory" mincount="2" maxcount="4" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="laser" spawnposition="ThisInventory" probability="0.3" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="alientrinket2" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_2_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2_ruin" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="p-11" spawnposition="ThisInventory" count="1" />
+          <!-- Подводный P-11 Нерей -->
+          <SpawnItem identifier="P-11magazine" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="P-11apmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="stungrenade" spawnposition="ThisInventory" count="2" probability="0.5" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_3_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2_ruin" spritecolor="255,128,0,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="Shotgun" spawnposition="ThisInventory" count="1" />
+          <!-- Подводный дробовик Бездонный -->
+          <SpawnItem identifier="shotgunshellap" spawnposition="ThisInventory" mincount="18" maxcount="36" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" mincount="1" maxcount="3" />
+          <SpawnItem identifier="antibiotics" spawnposition="ThisInventory" count="2" probability="0.5" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier2_ruin_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier2_ruin_special" spritecolor="255,128,0,255">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="spp-1" spawnposition="ThisInventory" count="1" />
+          <!-- Подводный СПП-1 -->
+          <SpawnItem identifier="spp-1round" spawnposition="ThisInventory" mincount="12" maxcount="24" />
+          <SpawnItem identifier="spp-1apround" spawnposition="ThisInventory" mincount="6" maxcount="12" />
+          <SpawnItem identifier="medicinebelt_tier2" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="piratehelmet" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="genesplicer" spawnposition="ThisInventory" probability="0.2" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- TIER 3 - Наземное оружие (штурмовые винтовки) -->
+    <Item name="" identifier="weapondroptier3_1" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3" spritecolor="237,28,36,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="AK-74" spawnposition="ThisInventory" count="1" />
+          <!-- АК-74 Водолаз (наземный с возможностью стрельбы под водой) -->
+          <SpawnItem identifier="akmagazine" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="akbigmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="piratebodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="morbusine" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="2" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier3_2" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3" spritecolor="237,28,36,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="HK416-anim" spawnposition="ThisInventory" count="1" />
+          <!-- Европа-Р7 -->
+          <SpawnItem identifier="HK416magazine-anim" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="HK416apmagazine-anim" spawnposition="ThisInventory" mincount="1" maxcount="2" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="piratebodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="acog_scope" spawnposition="ThisInventory" probability="0.3" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="2" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier3_3" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3" spritecolor="237,28,36,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="M4-anim" spawnposition="ThisInventory" count="1" />
+          <!-- M4A1 Скорстрел -->
+          <SpawnItem identifier="HK416magazine-anim" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="colim_scope" spawnposition="ThisInventory" probability="0.4" />
+          <SpawnItem identifier="laserflashlight" spawnposition="ThisInventory" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="piratebodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="2" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier3_4" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3" spritecolor="237,28,36,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="AN-94" spawnposition="ThisInventory" count="1" />
+          <!-- АН-94 Николаич -->
+          <SpawnItem identifier="akmagazine" spawnposition="ThisInventory" mincount="3" maxcount="4" />
+          <SpawnItem identifier="akapmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" />
+          <SpawnItem identifier="pso_scope" spawnposition="ThisInventory" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="piratebodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="2" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier3_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3_special" spritecolor="237,28,36,255">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="G36-anim" spawnposition="ThisInventory" count="1" />
+          <!-- G-36M АкваЛазер -->
+          <SpawnItem identifier="HK416magazine-anim" spawnposition="ThisInventory" mincount="3" maxcount="4" />
+          <SpawnItem identifier="HK416apmagazine-anim" spawnposition="ThisInventory" mincount="1" maxcount="2" />
+          <SpawnItem identifier="thermal_scope" spawnposition="ThisInventory" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" mincount="2" maxcount="4" />
+          <SpawnItem identifier="ballistichelmet5" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- TIER 3 RUIN - Много подводного оружия -->
+    <Item name="" identifier="weapondroptier3_1_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3_ruin" spritecolor="237,28,36,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="APS" spawnposition="ThisInventory" count="1" />
+          <!-- Подводный автомат АПС -->
+          <SpawnItem identifier="apsmagazine" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="apsapmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="morbusine" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="2" />
+          <SpawnItem identifier="alientrinket3" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier3_2_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3_ruin" spritecolor="237,28,36,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="ASM-DT" spawnposition="ThisInventory" count="1" />
+          <!-- Гибридный АСМ-ДТ Дуэт -->
+          <SpawnItem identifier="akmagazine" spawnposition="ThisInventory" mincount="2" maxcount="4" />
+          <!-- Для 5.45 -->
+          <SpawnItem identifier="apsmagazine" spawnposition="ThisInventory" mincount="1" maxcount="3" />
+          <!-- Для стреловидных -->
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="cyanide" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="2" />
+          <SpawnItem identifier="stabilozine" spawnposition="ThisInventory" count="1" probability="0.5" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier3_3_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3_ruin" spritecolor="237,28,36,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="harpooncoilrifle" spawnposition="ThisInventory" count="1" />
+          <!-- Подводная винтовка -->
+          <SpawnItem identifier="spear" spawnposition="ThisInventory" mincount="24" maxcount="48" />
+          <SpawnItem identifier="alienspear" spawnposition="ThisInventory" mincount="6" maxcount="12" probability="0.3" />
+          <SpawnItem identifier="batterycell" spawnposition="ThisInventory" mincount="2" maxcount="4" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet1" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="radiotoxin" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="stungrenade" spawnposition="ThisInventory" count="2" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier3_ruin_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier3_ruin_special" spritecolor="237,28,36,255">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="KS-23" spawnposition="ThisInventory" count="1" />
+          <!-- КС-23 Комбат (наземный) -->
+          <SpawnItem identifier="ks-23shell" spawnposition="ThisInventory" mincount="12" maxcount="24" />
+          <SpawnItem identifier="ks-23apshell" spawnposition="ThisInventory" mincount="6" maxcount="12" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="heavybodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="genesplicer" spawnposition="ThisInventory" probability="0.5" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- TIER 4 - Элитное наземное оружие -->
+    <Item name="" identifier="weapondroptier4_1" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier4" spritecolor="157,13,535,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="SCAR" spawnposition="ThisInventory" count="1" />
+          <!-- SCAR Водный Шквал -->
+          <SpawnItem identifier="SCARmagazine" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="SCARapmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" />
+          <SpawnItem identifier="brite_scope" spawnposition="ThisInventory" probability="0.4" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="heavybodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet4" spawnposition="ThisInventory" count="1" />
+          <!-- Шлем Посейдон в Tier 4 -->
+          <SpawnItem identifier="steroids" spawnposition="ThisInventory" count="2" probability="0.25" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="4" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier4_2" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier4" spritecolor="157,13,535,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="ASH-12" spawnposition="ThisInventory" count="1" />
+          <!-- АШ-12 Гроза -->
+          <SpawnItem identifier="ASH-12magazine" spawnposition="ThisInventory" mincount="3" maxcount="4" />
+          <SpawnItem identifier="ASH-12apmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" />
+          <SpawnItem identifier="thermal_scope" spawnposition="ThisInventory" probability="0.3" />
+          <SpawnItem identifier="suppressor_sniper" spawnposition="ThisInventory" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="heavybodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet4" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="4" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier4_3" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier4" spritecolor="157,13,535,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="BFG-50" spawnposition="ThisInventory" count="1" />
+          <!-- BFG-50 Громовержец -->
+          <SpawnItem identifier="BFG-50ammo" spawnposition="ThisInventory" mincount="15" maxcount="25" />
+          <SpawnItem identifier="BFG-50ammoap" spawnposition="ThisInventory" mincount="5" maxcount="15" />
+          <SpawnItem identifier="brite_scope" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="heavybodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet4" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier4_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier4_special" spritecolor="157,13,535,255">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="M249" spawnposition="ThisInventory" count="1" />
+          <!-- M249 Компактный Ураган -->
+          <SpawnItem identifier="M249magazine" spawnposition="ThisInventory" mincount="2" maxcount="3" />
+          <SpawnItem identifier="acog_scope" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="compensator_rifle" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="heavybodyarmor" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet4" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="2" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- TIER 4 RUIN - Экстремальное подводное оружие -->
+    <Item name="" identifier="weapondroptier4_1_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier4_ruin" spritecolor="157,13,535,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="maple" spawnposition="ThisInventory" count="1" />
+          <!-- Винтовка Клён (подводная) -->
+          <SpawnItem identifier="maplemagazine" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="mapleapmagazine" spawnposition="ThisInventory" mincount="1" maxcount="3" />
+          <SpawnItem identifier="maplefmjmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" probability="0.3" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet4" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="steroids" spawnposition="ThisInventory" count="2" probability="0.25" />
+          <SpawnItem identifier="fraggrenade" spawnposition="ThisInventory" count="4" />
+          <SpawnItem identifier="alientrinket3" spawnposition="ThisInventory" count="1" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier4_2_ruin" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier4_ruin" spritecolor="157,13,535,255">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="assaultrifle" spawnposition="ThisInventory" count="1" />
+          <!-- Абиссальный Кнут -->
+          <SpawnItem identifier="assaultriflemagazine" spawnposition="ThisInventory" mincount="3" maxcount="5" />
+          <SpawnItem identifier="assaultrifleapmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" />
+          <SpawnItem identifier="assaultriflefmjmagazine" spawnposition="ThisInventory" mincount="1" maxcount="2" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet4" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="stungrenade" spawnposition="ThisInventory" count="4" />
+          <SpawnItem identifier="stabilozine" spawnposition="ThisInventory" count="1" probability="0.5" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="weapondroptier4_ruin_special" nameidentifier="weapondropspecial" variantof="weapondroptier1_1" tags="crate,weapondrop,weapondroptier4_ruin_special" spritecolor="157,13,535,255">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="RPG" spawnposition="ThisInventory" count="1" />
+          <!-- РПГ Гидроудар -->
+          <SpawnItem identifier="RPGround" spawnposition="ThisInventory" mincount="2" maxcount="4" />
+          <SpawnItem identifier="RPGroundap" spawnposition="ThisInventory" mincount="1" maxcount="3" />
+          <SpawnItem identifier="thermal_scope" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="medicinebelt_tier3" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifiers="ballistichelmet4" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="antibiotics" spawnposition="ThisInventory" count="2" />
+          <SpawnItem identifier="stabilozine" spawnposition="ThisInventory" count="1" />
+          <SpawnItem identifier="huskeggs" spawnposition="ThisInventory" count="2" />
+        </StatusEffect>
+      </ItemContainer>
+      <LightComponent range="120.0" lightcolor="255,224,0,80" alphablend="true" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulseamount="0.5" pulsefrequency="0.2">
+        <Sprite texture="Content/Items/Containers/containers2.png" depth="0.53" sourcerect="311,0,152,89" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- Medicine belts (Keep as is) -->
+    <!-- ****************************************************************************************************************************************************** -->
+    <Item name="" identifier="medicinebelt_tier1" nameidentifier="toolbelt" hideinmenus="true" category="Equipment" tags="mediumitem,mobilecontainer,tool" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_soft">
+      <PreferredContainer primary="engcab" />
+      <Price baseprice="65" sold="false"></Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="256,102,112,54" depth="0.6" />
+      <Body width="100" height="45" density="15" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="ToolBelt" texture="Content/Items/Tools/tools.png" sourcerect="256,102,112,54" limb="Torso" inherittexturescale="true" origin="0.5,-0.2" />
+      </Wearable>
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+      <ItemContainer capacity="6" maxstacksize="32" depth="0.5">
+        <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier" />
+        <StatusEffect type="OnSpawn" target="this">
+          <SpawnItem identifier="antibleeding1" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+          <SpawnItem identifier="antibloodloss1" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+          <SpawnItem identifier="opium" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="medicinebelt_tier2" nameidentifier="toolbelt" hideinmenus="true" variantof="medicinebelt_tier1">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="antibleeding2" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+          <SpawnItem identifier="antibloodloss2" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+          <SpawnItem identifier="antidama1" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="medicinebelt_tier3" nameidentifier="toolbelt" hideinmenus="true" variantof="medicinebelt_tier1">
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="antibleeding2" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+          <SpawnItem identifier="antibloodloss2" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+          <SpawnItem identifier="antidama1" spawnposition="ThisInventory" mincount="4" maxcount="8" />
+          <SpawnItem identifier="hyperzine" spawnposition="ThisInventory" count="1" probability="0.25" />
+          <SpawnItem identifier="deusizine" spawnposition="ThisInventory" count="1" probability="0.25" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <!-- ****************************************************************************************************************************************************** -->
+    <!-- Underwater scooters (Keep as is) -->
+    <!-- ****************************************************************************************************************************************************** -->
+    <Item name="" nameidentifier="underwaterscooter" identifier="scooter_tier2and3" hideinmenus="true" variantof="underwaterscooter">
+      <ClearAll>
+        <Fabricate />
+        <Price />
+        <PreferredContainer />
+      </ClearAll>
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="batterycell" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" nameidentifier="underwaterscooter" identifier="scooter_tier4" hideinmenus="true" variantof="underwaterscooter">
+      <ClearAll>
+        <Fabricate />
+        <Price />
+        <PreferredContainer />
+      </ClearAll>
+      <ItemContainer>
+        <StatusEffect type="OnSpawn" target="this">
+          <Clear />
+          <SpawnItem identifier="fulguriumbatterycell" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <!-- Biome Walls (Flat) -->
+  <structure name="" identifier="ekdockyard_biomeice_wall" description="" width="2048" height="192" bodyheight="128" resizehorizontal="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="0,32,2048,192" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="0,32,2048,192" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomeice_wall90" description="" width="192" height="2048" bodywidth="128" resizevertical="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="2080,0,192,2048" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="2080,0,192,2048" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomerock_wall" description="" width="2048" height="192" bodyheight="128" resizehorizontal="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="0,256,2048,192" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="0,256,2048,192" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomerock_wall90" description="" width="192" height="2048" bodywidth="128" resizevertical="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="2304,0,192,2048" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="2304,0,192,2048" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomemushroom_wall" description="" width="2048" height="192" bodyheight="128" resizehorizontal="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="0,480,2048,192" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="0,480,2048,192" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomemushroom_wall90" description="" width="192" height="2048" bodywidth="128" resizevertical="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="2528,0,192,2048" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="2528,0,192,2048" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomevolcanic_wall" description="" width="2048" height="192" bodyheight="128" resizehorizontal="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="0,704,2048,192" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="0,704,2048,192" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomevolcanic_wall90" description="" width="192" height="2048" bodywidth="128" resizevertical="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="2752,0,192,2048" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="2752,0,192,2048" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomeforest_wall" description="" width="2048" height="192" bodyheight="128" resizehorizontal="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="0,928,2048,192" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="0,928,2048,192" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomeforest_wall90" description="" width="192" height="2048" bodywidth="128" resizevertical="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="2976,0,192,2048" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="2976,0,192,2048" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomeaphotic_wall" description="" width="2048" height="256" bodyheight="128" resizehorizontal="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="0,1120,2048,256" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="0,1120,2048,256" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <structure name="" identifier="ekdockyard_biomeaphotic_wall90" description="" width="256" height="2048" bodywidth="128" resizevertical="true" body="true" castshadow="true" minhealth="200" health="350" tags="inner" Scale="0.5" indestructibleinoutposts="false" spritecolor="200, 200, 200">
+    <sprite texture="%ModDir%/Map/natural_walls1_flat.png" depth="0.06" sourcerect="3168,0,256,2048" origin="0.5,0.5" />
+    <backgroundsprite texture="%ModDir%/Map/natural_walls1_flat.png" sourcerect="3168,0,256,2048" color="60,60,60,255" depth="0.9" origin="0.5,0.5" />
+  </structure>
+  <!-- Biome Walls (Angled) -->
+</prefabs>

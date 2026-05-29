@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <Item name="" identifier="mediumsteelcabinet" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.5" GrabWhenSelected="true">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.84" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Content/Items/EI-ItemsAtlas.png" sourcerect="468,15,96,247" depth="0.839" origin="0.51,0.463">
+        <Conditional HasStatusTag="opened" />
+      </DecorativeSprite>
+      <DecorativeSprite texture="%ModDir%/Content/Items/EI-ItemsAtlas.png" sourcerect="565,0,54,281" depth="0.838" origin="-0.85,0.46">
+        <Conditional HasStatusTag="opened" />
+      </DecorativeSprite>
+      <!-- ItemComponent is only used as a workaround to play a sound if someone stopped interacting with the container since that can't really be done otherwise other than with "Always" StatusEffects which drain performance nonstop instead of only when interaction is happening. -->
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false" IsActive="false">
+        <!-- play a closing sound and disable the ItemComponent, stopping to execute the check for the "opened" tag which gets applied while someone is interacting with the container -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="false" setvalue="true">
+          <Conditional HasStatusTag="neq opened" />
+          <Sound file="%ModDir%/Content/Items/Containers/locker_open2.ogg" volume="2" range="250" selectionmode="Random" />
+        </StatusEffect>
+      </ItemComponent>
+      <Controller UserPos="0,0" direction="Right" canbeselected="true" selectkey="Use" drawuserbehind="true" msg="itemmsggoinside">
+        <StatusEffect type="OnActive" targettype="Character" delay="0.25" LowPassMultiplier="0.2" stackable="true" indetectable="true" DisableFocusingOnEntities="true" invisibletimer="0.1" PressureProtection="6500.0" setvalue="true" />
+        <StatusEffect type="OnActive" target="this" range="1">
+          <Conditional HasStatusTag="neq hiden" />
+          <Sound file="%ModDir%/Content/Items/Containers/hide.ogg" volume="2" range="500" frequencymultiplier="0.8" selectionmode="Random" />
+        </StatusEffect>
+        <!-- tag the container with "opened" if the controller is active, meaning someone is interacting with it -->
+        <StatusEffect type="OnActive" target="This" range="1" tags="hiden" duration="0.1" />
+        <StatusEffect type="OnUse" target="This" range="1" tags="opened" duration="0.3" />
+      </Controller>
+      <Controller canbeselected="true" selectkey="Select" InheritParentIsActive="false" hidehud="false" drawuserbehind="false" allowingameediting="false" drawhudwhenequipped="false">
+        <!-- play an opening sound when starting to interact with the container -->
+        <StatusEffect type="OnActive" target="this,NearbyCharacters" range="1" comparison="and">
+          <Conditional HasStatusTag="neq opened" />
+          <Conditional HasStatusTag="neq hiden" />
+          <Affliction identifier="stun" amount="0.01" />
+          <Sound file="%ModDir%/Content/Items/Containers/locker_open1.ogg" volume="2" range="250" selectionmode="Random" />
+        </StatusEffect>
+        <!-- tag the container with "opened" if the controller is active, meaning someone is interacting with it -->
+        <StatusEffect type="OnActive" target="This" tags="opened" duration="0.1" />
+        <!-- turn the ItemComponent on so we can play a sound when the user stops interacting with the container. Would otherwise require an "Always" check which would always run and thus impact performance. -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="true" setvalue="true" />
+        <!-- prevent allowing to configure an output for the controller to hide the controller UI. This StatusEffect only executes once per round -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="Controller" allowingameediting="false" setvalue="true" oneshot="true" />
+      </Controller>
+      <ItemContainer capacity="20" slotsperrow="5" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,mediumitem" excludedidentifiers="mobilecontainer" />
+        <SubContainer capacity="3" maxstacksize="1">
+          <SlotIcon texture="Content/UI/CommandUIAtlas.png" sourcerect="639,926,128,80" origin="0.5,0.5" />
+          <Containable items="mobilecontainer" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- backwards compatibility for older versions in which mobile containers like storage containers were containable in any cabinet -->
+      <Upgrade gameversion="1.1.0.0" campaignsaveonly="true">
+        <ItemContainer>
+          <Containable items="smallitem,mediumitem" />
+          <ClearSubContainerRestrictions />
+        </ItemContainer>
+      </Upgrade>
+    </Item>
+  </Override>
+  <Override>
+    <Item name="" identifier="steelcabinet" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.5" GrabWhenSelected="true">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.84" sourcerect="348,2,364,373" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Content/Items/EI-ItemsAtlas.png" sourcerect="771,15,88,247" depth="0.839" origin="0.49,0.456">
+        <Conditional HasStatusTag="opened" />
+      </DecorativeSprite>
+      <DecorativeSprite texture="%ModDir%/Content/Items/EI-ItemsAtlas.png" sourcerect="860,0,53,282" depth="0.838" origin="-0.84,0.46">
+        <Conditional HasStatusTag="opened" />
+      </DecorativeSprite>
+      <!-- ItemComponent is only used as a workaround to play a sound if someone stopped interacting with the container since that can't really be done otherwise other than with "Always" StatusEffects which drain performance nonstop instead of only when interaction is happening. -->
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false" IsActive="false">
+        <!-- play a closing sound and disable the ItemComponent, stopping to execute the check for the "opened" tag which gets applied while someone is interacting with the container -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="false" setvalue="true">
+          <Conditional HasStatusTag="neq opened" />
+          <Sound file="%ModDir%/Content/Items/Containers/locker_open2.ogg" volume="2" range="250" selectionmode="Random" />
+        </StatusEffect>
+      </ItemComponent>
+      <!-- Controller to check if someone is interacting with the container -->
+      <Controller UserPos="0,0" direction="Right" canbeselected="true" selectkey="Use" drawuserbehind="true" msg="itemmsggoinside">
+        <StatusEffect type="OnActive" targettype="Character" delay="0.25" LowPassMultiplier="0.2" stackable="true" indetectable="true" DisableFocusingOnEntities="true" invisibletimer="0.1" PressureProtection="6500.0" setvalue="true" />
+        <StatusEffect type="OnActive" target="this" range="1">
+          <Conditional HasStatusTag="neq hiden" />
+          <Sound file="%ModDir%/Content/Items/Containers/hide.ogg" volume="2" range="500" frequencymultiplier="0.8" selectionmode="Random" />
+        </StatusEffect>
+        <!-- tag the container with "opened" if the controller is active, meaning someone is interacting with it -->
+        <StatusEffect type="OnActive" target="This" range="1" tags="hiden" duration="0.1" />
+        <StatusEffect type="OnUse" target="This" range="1" tags="opened" duration="0.3" />
+      </Controller>
+      <Controller canbeselected="true" selectkey="Select" InheritParentIsActive="false" hidehud="false" drawuserbehind="false" allowingameediting="false" drawhudwhenequipped="false">
+        <!-- play an opening sound when starting to interact with the container -->
+        <StatusEffect type="OnActive" target="this,NearbyCharacters" range="1" comparison="and">
+          <Conditional HasStatusTag="neq opened" />
+          <Conditional HasStatusTag="neq hiden" />
+          <Affliction identifier="stun" amount="0.01" />
+          <Sound file="%ModDir%/Content/Items/Containers/locker_open1.ogg" volume="2" range="250" selectionmode="Random" />
+        </StatusEffect>
+        <!-- tag the container with "opened" if the controller is active, meaning someone is interacting with it -->
+        <StatusEffect type="OnActive" target="This" tags="opened" duration="0.1" />
+        <!-- turn the ItemComponent on so we can play a sound when the user stops interacting with the container. Would otherwise require an "Always" check which would always run and thus impact performance. -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="true" setvalue="true" />
+        <!-- prevent allowing to configure an output for the controller to hide the controller UI. This StatusEffect only executes once per round -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="Controller" allowingameediting="false" setvalue="true" oneshot="true" />
+      </Controller>
+      <ItemContainer capacity="35" slotsperrow="7" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.28,0.48" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,mediumitem" excludedidentifiers="mobilecontainer" />
+        <SubContainer capacity="5" maxstacksize="1">
+          <SlotIcon texture="Content/UI/CommandUIAtlas.png" sourcerect="639,926,128,80" origin="0.5,0.5" />
+          <Containable items="mobilecontainer" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- backwards compatibility for older versions in which mobile containers like storage containers were containable in any cabinet -->
+      <Upgrade gameversion="1.1.0.0" campaignsaveonly="true">
+        <ItemContainer>
+          <Containable items="smallitem,mediumitem" />
+          <ClearSubContainerRestrictions />
+        </ItemContainer>
+      </Upgrade>
+    </Item>
+  </Override>
+  <Override>
+    <Item name="" aliases="Diving Gear Cabinet" identifier="mediumwindowedsteelcabinet" category="Diving" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.5" GrabWhenSelected="true">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.84" sourcerect="178,1,168,377" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Content/Items/EI-ItemsAtlas.png" sourcerect="620,16,96,247" depth="0.839" origin="0.54,0.465">
+        <Conditional HasStatusTag="opened" />
+      </DecorativeSprite>
+      <DecorativeSprite texture="%ModDir%/Content/Items/EI-ItemsAtlas.png" sourcerect="717,0,53,282" depth="0.838" origin="-0.84,0.46">
+        <Conditional HasStatusTag="opened" />
+      </DecorativeSprite>
+      <!-- ItemComponent is only used as a workaround to play a sound if someone stopped interacting with the container since that can't really be done otherwise other than with "Always" StatusEffects which drain performance nonstop instead of only when interaction is happening. -->
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false" IsActive="false">
+        <!-- play a closing sound and disable the ItemComponent, stopping to execute the check for the "opened" tag which gets applied while someone is interacting with the container -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="false" setvalue="true" forceplaysounds="true">
+          <Conditional HasStatusTag="neq opened" />
+          <Sound file="%ModDir%/Content/Items/Containers/locker_open2.ogg" volume="2" range="250" selectionmode="Random" />
+        </StatusEffect>
+      </ItemComponent>
+      <!-- Controller to check if someone is interacting with the container -->
+      <Controller UserPos="0,0" direction="Right" canbeselected="true" selectkey="Use" drawuserbehind="true" msg="itemmsggoinside">
+        <StatusEffect type="OnActive" targettype="Character" delay="0.25" LowPassMultiplier="0.2" stackable="true" indetectable="true" DisableFocusingOnEntities="true" invisibletimer="0.1" PressureProtection="6500.0" setvalue="true" />
+        <StatusEffect type="OnActive" target="this" range="1">
+          <Conditional HasStatusTag="neq hiden" />
+          <Sound file="%ModDir%/Content/Items/Containers/hide.ogg" volume="2" range="500" frequencymultiplier="0.8" selectionmode="Random" />
+        </StatusEffect>
+        <!-- tag the container with "opened" if the controller is active, meaning someone is interacting with it -->
+        <StatusEffect type="OnActive" target="This" range="1" tags="hiden" duration="0.1" />
+        <StatusEffect type="OnUse" target="This" range="1" tags="opened" duration="0.3" />
+      </Controller>
+      <Controller canbeselected="true" selectkey="Select" InheritParentIsActive="false" hidehud="false" drawuserbehind="false" allowingameediting="false" drawhudwhenequipped="false">
+        <!-- play an opening sound when starting to interact with the container -->
+        <StatusEffect type="OnActive" target="this,NearbyCharacters" range="1" comparison="and">
+          <Conditional HasStatusTag="neq opened" />
+          <Conditional HasStatusTag="neq hiden" />
+          <Affliction identifier="stun" amount="0.01" />
+          <Sound file="%ModDir%/Content/Items/Containers/locker_open1.ogg" volume="2" range="250" selectionmode="Random" />
+        </StatusEffect>
+        <!-- tag the container with "opened" if the controller is active, meaning someone is interacting with it -->
+        <StatusEffect type="OnActive" target="This" tags="opened" duration="0.1" />
+        <!-- turn the ItemComponent on so we can play a sound when the user stops interacting with the container. Would otherwise require an "Always" check which would always run and thus impact performance. -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="true" setvalue="true" />
+        <!-- prevent allowing to configure an output for the controller to hide the controller UI. This StatusEffect only executes once per round -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="Controller" allowingameediting="false" setvalue="true" oneshot="true" />
+      </Controller>
+      <ItemContainer capacity="20" slotsperrow="5" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,mediumitem" excludedidentifiers="mobilecontainer" />
+        <SubContainer capacity="3" maxstacksize="1">
+          <SlotIcon texture="Content/UI/CommandUIAtlas.png" sourcerect="639,926,128,80" origin="0.5,0.5" />
+          <Containable items="mobilecontainer" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- backwards compatibility for older versions in which mobile containers like storage containers were containable in any cabinet -->
+      <Upgrade gameversion="1.1.0.0" campaignsaveonly="true">
+        <ItemContainer>
+          <Containable items="smallitem,mediumitem" />
+          <ClearSubContainerRestrictions />
+        </ItemContainer>
+      </Upgrade>
+    </Item>
+  </Override>
+</Items>

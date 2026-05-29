@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style>
+  <!-- Todo: Wait for UI styles to work -->
+  <override>
+    <ek_gyrocompass color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255">
+      <Sprite texture="%ModDir%/Items/Tools/gui_compass.png" sourcerect="0,0,768,768" tile="false" />
+    </ek_gyrocompass>
+  </override>
+</style>

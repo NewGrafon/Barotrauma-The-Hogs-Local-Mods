@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WalkerdroneSwimSlow animationtype="SwimSlow" usesinemovement="False" flip="False" flipcooldown="1" flipdelay="0.5" mirror="True" mirrorlerp="True" waveamplitude="5" wavelength="10" rotatetowardsmovement="True" torsotorque="1" headtorque="1" tailtorque="0" tailtorquemultiplier="1" foottorque="0" footangles="4: 0,7: 0" tailangle="NaN" steertorque="1" movementspeed="0.2" cyclespeed="1" headangle="90" torsoangle="90" />

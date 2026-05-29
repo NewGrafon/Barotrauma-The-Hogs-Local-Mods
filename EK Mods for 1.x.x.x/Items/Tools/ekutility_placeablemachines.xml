@@ -1,0 +1,1396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekutility_divingsuitlocker" tags="container,divingsuitcontainer,divingsuitcontainerwindow" pickdistance="150" scale="0.5" HideConditionBar="true">
+    <Price baseprice="110" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" depth="0.69" canflipx="false" sourcerect="544,384,112,272" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="656,384,112,272" depth="0.65" origin="0.5,0.5" />
+    <Body width="102" height="258" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" holdpos="50,-30" handle1="-15,15" handle2="-15,15" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <Powered powerconsumption="10" currpowerconsumption="10" isactive="true">
+      <GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
+    </Powered>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="20" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/Weapons/ElectricalDischarger.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particleburstinterval="1.05" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <input name="power_in" displayname="connection.powerin" />
+    </ConnectionPanel>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="1" itempos="6,-10" iteminterval="0,0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <!-- Thanks to lazy tagging consistency this has to be hardcoded for every future diving suit -->
+      <Containable items="divingsuit,abyssdivingsuit,combatdivingsuit,pucs,slipsuit" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_oxygentankshelf" nameidentifier="oxygentankshelf" tags="container,oxygentankcontainer" pickdistance="50" scale="0.5" HideConditionBar="true">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+      <Item identifier="plastic" />
+      <Item identifier="zinc" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="zinc" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" depth="0.7" canflipx="false" sourcerect="704,288,112,96" origin="0.5,0.5" />
+    <Body width="102" height="84" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" holdpos="50,-30" handle1="-15,15" handle2="-15,15" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <Powered powerconsumption="30" currpowerconsumption="30" isactive="true">
+      <GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
+    </Powered>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="20" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/Weapons/ElectricalDischarger.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particleburstinterval="1.05" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <input name="power_in" displayname="connection.powerin" />
+    </ConnectionPanel>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" slotsperrow="3" itempos="33,-50" iteminterval="22.5,0" itemrotation="0" canbeselected="true" containedspritedepth="0.69" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.16,0.18" anchor="Center" style="ItemUI" />
+      <Containable items="oxygensource,weldingfuel" excludeditems="oxygeniteshard" excludebroken="false">
+        <StatusEffect type="OnContaining" targettype="Contained" Condition="1.0" Comparison="And">
+          <Conditional Voltage="gt 0.1" targetcontainer="true" targetitemcomponent="Powered" />
+          <Conditional HasTag="refillableoxygensource" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_placeabletextdisplay" scale="0.5">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" depth="0.82" canflipx="false" sourcerect="0,288,144,64" />
+    <Body width="128" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+    </Holdable>
+    <ItemLabel scrollable="true" padding="14,5,14,12" textcolor="1,1,1,1">
+      <LightComponent range="10.0" lightcolor="1.0,1.0,1.0,0.1" IsOn="true" castshadows="false" alphablend="false">
+        <sprite texture="Content/Items/Labels/labels.png" sourcerect="0,48,126,48" depth="0.025" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </ItemLabel>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="set_text" displayname="connection.set_text" fallbackdisplayname="connection.setoutput" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <input name="set_text_color" displayname="connection.settextcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekutility_placeabletextdisplaylong" scale="0.5">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" depth="0.82" canflipx="false" sourcerect="144,288,288,64" />
+    <Body width="272" height="50" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+    </Holdable>
+    <ItemLabel scrollable="true" padding="14,5,14,12" textcolor="1,1,1,1">
+      <LightComponent range="10.0" lightcolor="1.0,1.0,1.0,0.1" IsOn="true" castshadows="false" alphablend="false">
+        <sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="432,288,272,48" depth="0.025" origin="0.497,0.56" alpha="1.0" />
+      </LightComponent>
+    </ItemLabel>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="set_text" displayname="connection.set_text" fallbackdisplayname="connection.setoutput" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <input name="set_text_color" displayname="connection.settextcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekutility_portablespinkler" category="Equipment" Tags="smallitem,tool,signal" cargocontaineridentifier="metalcrate" requireaimtouse="true" characterusable="false" Scale="0.32" impactsoundtag="impact_metal_light" maxstacksize="2">
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_tools.png" sourcerect="704,496,104,128" depth="0.55" canflipx="false" origin="0.38,0.5" />
+    <Price baseprice="85" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Body width="121" height="96" density="40" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="30" amount="2">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="plastic" outcondition="0.5" />
+      <RequiredItem identifier="fpgacircuit" outcondition="0.5" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+    </Holdable>
+    <RepairTool wateramount="10.0" extinguishamount="30.0" range="350" powerconsumption="25" barrelpos="0,-10" barrelrotation="270" spread="40" unskilledspread="40" targetstructures="false" hititems="false" characterusable="false" requireaimtouse="false" usablein="air">
+      <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="700.0" particlespersecond="50" anglemin="-45" anglemax="45" />
+      <!-- Performance saver? -->
+      <!--<ParticleEmitterHitStructure particle="mist" particlespersecond="20" anglemin="-360" anglemax="360" velocitymin="-100" velocitymax="100" />
+      <ParticleEmitterHitCharacter particle="mist" particlespersecond="20" anglemin="-360" anglemax="360" velocitymin="-100" velocitymax="100" />-->
+      <sound file="%ModDir%/Items/Tools/sprinkler_loop.ogg" type="OnUse" range="500.0" loop="true" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" requireaimtouse="false" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" requireaimtouse="true" />
+    </RepairTool>
+    <LightComponent lightcolor="255,255,255,0" range="10.0" powerconsumption="25" IsOn="true" castshadows="false" allowingameediting="false">
+      <StatusEffect type="OnActive" target="This">
+        <UseItem />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <!-- Todo: wait for this to work - Test in 1.08.0???
+  <Item name="Water Sprinkler Timer" identifier="ekutility_portablespinkler_timerbox" category="Equipment" Tags="smallitem,tool,signal" cargocontaineridentifier="metalcrate"
+  description="A small electro-mechanical switch which can be used to turn sprinklers on and off on timed intervals. ( Place by pressing aim + use )" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="122,68,36,36" origin="0.5,0.5" />
+    <Price baseprice="120" >
+      <Price locationtype="outpost" multiplier="1" minavailable="2" />
+      <Price locationtype="city" multiplier="1.2" minavailable="2" />
+      <Price locationtype="research" multiplier="0.9" minavailable="4" />
+      <Price locationtype="military" multiplier="1.2" sold="false" />
+      <Price locationtype="mine" multiplier="0.75" sold="false" />
+    </Price>
+    <Body width="121" height="96" density="40" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="30" >
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" outcondition="0.5" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+	  <StatusEffect type="Always" target="This" condition="50"/>
+	  <StatusEffect type="OnBroken" target="This" condition="100" disabledeltatime="true" stackable="false"/>
+	</Holdable>
+    <LightComponent lightcolor="255,255,255,0" range="10.0" powerconsumption="15" IsOn="false" castshadows="false" allowingameediting="false" >
+      <StatusEffect type="OnActive" target="This" condition="-60"/>
+    </LightComponent>
+    <SignalCheckComponent output="1" falseoutput="1" canbeselected="false" >
+	  <StatusEffect type="Always" target="This" targetitemcomponent="SignalCheckComponent" setvalue="true" output="0" falseoutput="0">
+	    <Conditional Condition="gt 20" />
+	  </StatusEffect>
+	  <StatusEffect type="Always" target="This" targetitemcomponent="SignalCheckComponent" setvalue="true" output="1" falseoutput="1">
+	    <Conditional Condition="lt 20" />
+	  </StatusEffect>
+	</SignalCheckComponent>
+	<ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+-->
+  <Item name="" identifier="ekutility_securebuttoncaptain" category="Electrical" tags="smallitem,button" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="8">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,384,40,56" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Body width="36" height="40" density="40" />
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <RequiredItem identifier="id_captain,com,master,jobid:captain" type="Picked" msg="ItemMsgUnauthorizedAccess" />
+      <sound file="Content/Items/Button/Button.ogg" type="OnUse" range="500.0" />
+    </Controller>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriver" type="Equipped" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgForceOpenCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_securebuttonsecurityofficer" category="Electrical" tags="smallitem,button" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="8">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,440,40,56" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Body width="36" height="40" density="40" />
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <RequiredItem identifier="id_security,id_captain,sec,com,master,jobid:securityofficer,jobid:captain" type="Picked" msg="ItemMsgUnauthorizedAccess" />
+      <sound file="Content/Items/Button/Button.ogg" type="OnUse" range="500.0" />
+    </Controller>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriver" type="Equipped" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgForceOpenCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_securebuttonmedicaldoctor" category="Electrical" tags="smallitem,button" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="8">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,496,40,56" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Body width="36" height="40" density="40" />
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <RequiredItem identifier="id_medical,med,jobid:medicaldoctor" type="Picked" msg="ItemMsgUnauthorizedAccess" />
+      <sound file="Content/Items/Button/Button.ogg" type="OnUse" range="500.0" />
+    </Controller>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriver" type="Equipped" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgForceOpenCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_securebuttonmechanic" category="Electrical" tags="smallitem,button" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="8">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,552,40,56" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Body width="36" height="40" density="40" />
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <RequiredItem identifier="id_mechanic,mechanic,mech,jobid:mechanic" type="Picked" msg="ItemMsgUnauthorizedAccess" />
+      <sound file="Content/Items/Button/Button.ogg" type="OnUse" range="500.0" />
+    </Controller>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriver" type="Equipped" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgForceOpenCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_securebuttonengineer" category="Electrical" tags="smallitem,button" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="8">
+    <Price baseprice="125" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,608,40,56" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Body width="36" height="40" density="40" />
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <RequiredItem identifier="id_engineer,engineer,eng,jobid:engineer" type="Picked" msg="ItemMsgUnauthorizedAccess" />
+      <sound file="Content/Items/Button/Button.ogg" type="OnUse" range="500.0" />
+    </Controller>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriver" type="Equipped" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgForceOpenCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+    </Holdable>
+  </Item>
+  <Item name="" identifier="ekutility_placeablejunction" tags="junctionbox" category="Electrical" aliases="auxiliary power bus" scale="0.25" linkable="false" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="175" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+      <Item identifier="copper" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="99,961,28,32" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="0,0,224,136" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="224,0,224,136" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="448,0,224,136" depth="0.8" maxcondition="5" />
+    <InfectedSprite texture="Content/Items/Gardening/ballastflora.png" sourcerect="53,640,161,239" origin="0.5,0.5" />
+    <DamagedInfectedSprite texture="Content/Items/Gardening/ballastflora_burned.png" sourcerect="53,640,161,239" origin="0.5,0.5" />
+    <Body width="205" height="120" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
+    </Holdable>
+    <PowerTransfer canbeselected="true" msg="ItemMsgInteractSelect" overloadvoltage="3" fireprobability="0.05">
+      <GuiFrame relativesize="0.2,0.14" minsize="450,160" anchor="Center" style="ItemUI" />
+      <!--minsize="350,160" maxsize="420,190"-->
+      <StatusEffect type="InWater" target="This" condition="-0.25">
+        <Conditional currPowerConsumption="lt -10" />
+      </StatusEffect>
+    </PowerTransfer>
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="1" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.4" Flickerspeed="0.3" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="512,136,64,64" depth="0.1" origin="1.45,1.3" alpha="1.0" />
+      <IsActive targetitemcomponent="PowerTransfer" overload="eq False" />
+    </LightComponent>
+    <LightComponent range="10.0" lightcolor="255,255,225,0" powerconsumption="1" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="3">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="576,136,64,64" depth="0.1" origin="1.05,1.3" alpha="1.0" />
+      <IsActive targetitemcomponent="PowerTransfer" overload="eq True" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="35" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <output name="power" displayname="connection.power" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.06" mindeteriorationdelay="240" maxdeteriorationdelay="720" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="15" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekutility_heavypowerswitch" category="Electrical" Tags="smallitem,signal,logic" maxstacksize="2" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="165" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="0,136,96,136" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <Body width="80" height="122" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+    </Holdable>
+    <RelayComponent maxpower="5000" ison="True" canbeselected="true" vulnerabletoemp="false" canbeoverloaded="false">
+      <GuiFrame relativesize="0.2,0.14" minsize="450,160" anchor="Center" style="ItemUI" />
+    </RelayComponent>
+    <LightComponent range="10.0" lightcolor="150,125,100,0" powerconsumption="1" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.3" Flickerspeed="0.2" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="96,136,40,24" depth="0.1" origin="0.5,1.9" alpha="1.0" />
+      <IsActive targetitemcomponent="RelayComponent" ison="eq True" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" maxwires="1" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="power_out" displayname="connection.powerout" maxwires="1" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekutility_placeablebattery" tags="battery,batterycellrecharger" category="Electrical" scale="0.5" linkable="false" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="650" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ekutility_heavypowerswitch" />
+      <Item identifier="batterycell" />
+      <Item identifier="batterycell" />
+      <Item identifier="batterycell" />
+      <Item identifier="batterycell" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="ekutility_heavypowerswitch" />
+      <RequiredItem identifier="batterycell" />
+      <RequiredItem identifier="batterycell" />
+      <RequiredItem identifier="batterycell" />
+      <RequiredItem identifier="batterycell" />
+    </Fabricate>
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="144,136,120,152" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="264,136,120,152" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="384,136,120,152" depth="0.8" maxcondition="5" />
+    <Body width="110" height="140" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <PowerContainer capacity="2000.0" maxrechargespeed="1500.0" maxoutput="1500.0" canbeselected="true" indicatorposition="36,27" indicatorsize="48,13" ishorizontal="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.23" minsize="350,200" anchor="Center" style="ItemUI" />
+      <!--minsize="350,250" maxsize="420,300"-->
+      <StatusEffect type="InWater" target="This" condition="-0.25">
+        <Conditional ChargePercentage="gt 0.01" targetcontainer="true" targetitemcomponent="PowerContainer" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" targettype="Contained" targets="loadable" Condition="2.0">
+        <Conditional ChargePercentage="gt 0.01" targetcontainer="true" targetitemcomponent="PowerContainer" />
+      </StatusEffect>
+    </PowerContainer>
+    <LightComponent range="10.0" lightcolor="175,175,175,0" powerconsumption="1" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.3" Flickerspeed="0.2" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="96,160,48,16" depth="0.1" origin="0.5,3.2" alpha="1.0" />
+      <IsActive targetitemcomponent="PowerContainer" ChargePercentage="gt 0.01" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="35" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <output name="power_out" displayname="connection.powerout" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="set_rate" displayname="connection.batterysetrechargespeed" />
+      <output name="charge" displayname="connection.batterychargestatusout" />
+      <output name="charge_%" displayname="connection.batterychargepercentage" />
+      <output name="charge_rate" displayname="connection.batteryrechargespeedout" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <ItemContainer capacity="2" maxstacksize="1" canbeselected="true" hideitems="true" hudpos="0.5,0.6" uilabel="ChargingDock">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" relativeoffset="0,0.2" style="ItemUI" />
+      <Containable items="loadable" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.06" mindeteriorationdelay="360" maxdeteriorationdelay="720" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="15" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+  </Item>
+  <!-- Test in 1.08.0???
+  <Item name="Planter Cloche" identifier="ekutility_placeablegreenhouse" category="Material" Tags="planter,mediumitem" scale="0.5" isshootable="true">
+    <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="896,384,128,128" depth="0.75" premultiplyalpha="false" origin="0.5,0.5" />
+    <Body width="95" height="106" density="40" />
+    <Price baseprice="120" >
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="1.2" minavailable="1" />
+      <Price locationtype="research" multiplier="0.9" minavailable="2" />
+      <Price locationtype="military" multiplier="1.2" sold="false" />
+      <Price locationtype="mine" multiplier="0.75" sold="false" />
+    </Price>
+    <PreferredContainer primary="storagecab" />
+    <PreferredContainer primary="wreckstoragecab" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="30">
+      <Item identifier="steel" copycondition="true" mincondition="0.1" />
+      <Item identifier="steel" copycondition="true" mincondition="0.1" />
+      <Item identifier="plastic" copycondition="true" mincondition="0.1" />
+    </Deconstruct>
+    <ItemContainer capacity="1" hideitems="true" drawinventory="false" uilabel="" allowuioverlap="true" allowdraganddrop="false" showcontainedstateindicator="false">
+      <Containable items="seed" />
+    </ItemContainer>
+    <LightComponent range="10.0" lightcolor="255,255,255,0" minvoltage="0.5" powerconsumption="250" IsOn="true" castshadows="false" allowingameediting="false">
+      <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.025" sourcerect="896,512,128,128" origin="0.5,0.5" alpha="1.0" />
+	  <StatusEffect type="OnActive" target="This" targetitemcomponent="Planter" setvalue="true" fertilizer="100" />
+	  <StatusEffect type="OnActive" target="Contained" targetitemcomponent="Growable" setvalue="true" condition="100" Hardiness="0.1" maxhealth="9000" />
+	  <StatusEffect type="Always" target="This" targetitemcomponent="Planter" setvalue="true" fertilizer="100" >
+        <Conditional voltage="lt 0.2" targetitemcomponent="LightComponent"/>
+	  </StatusEffect>
+	  <StatusEffect type="Always" target="Contained" targetitemcomponent="Growable" setvalue="true" Hardiness="1" maxhealth="100" >
+        <Conditional voltage="lt 0.2" targetitemcomponent="LightComponent"/>
+	  </StatusEffect>
+    </LightComponent>
+    <Planter selectkey="Select" canbepicked="true" pickingtime="5.0" msg="ItemMsgPlantSeed">
+      <PlantSlot slot="0" offset="0,32" size="0.25" />
+      <SuitableFertilizer items="fertilizer" />
+      <SuitableSeed items="seed" />
+    </Planter>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+    </ConnectionPanel>
+  </Item>
+  -->
+  <Item name="" identifier="ekutility_placeableterminal" category="Electrical" Tags="smallitem,logic,terminal" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="0,352,120,128" depth="0.78" canflipx="false" origin="0.5,0.5" />
+    <Price baseprice="165" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="aluminium" />
+      <Item identifier="plastic" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Body width="115" height="115" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false">
+      <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+    </Terminal>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriver" type="Equipped" />
+      <input name="signal_in" displayname="connection.signalin" />
+      <output name="signal_out" displayname="connection.signalout" />
+      <input name="set_text_color" displayname="connection.settextcolor" />
+      <input name="clear_text" displayname="connection.cleartext" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekutility_placeablesmallpump" tags="pump" linkable="false" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" hideinmenus="false">
+    <Price baseprice="250" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="rubber" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="rubber" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="448,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" depth="0.8" canflipx="false" sourcerect="128,352,144,80" origin="0.5,0.5" />
+    <InfectedSprite texture="Content/Items/Pump/Pumps.png" sourcerect="528,723,219,132" origin="0.5,0.5" />
+    <DamagedInfectedSprite texture="Content/Items/Gardening/ballastflora_burned.png" sourcerect="273,708,219,132" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="272,352,144,80" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="416,352,144,80" depth="0.8" maxcondition="0" />
+    <Body width="120" height="78" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Pump canbeselected="true" maxflow="250" PowerConsumption="125.0" MinVoltage="0.3" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true" />
+      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
+      <PumpInEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="0.6" />
+      <PumpInEmitter particle="watersplash" particlespersecond="50" position="7,-51" anglemin="180" anglemax="180" velocitymin="200" velocitymax="400" scalemin="0.5" scalemax="0.6" />
+      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+    </Pump>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_active" displayname="connection.setstate" />
+      <input name="set_speed" displayname="connection.setpumpingspeed" />
+      <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
+    </ConnectionPanel>
+    <!-- Pump GUI appears to eat detachment input regardless of selection key so repairing it is impossible - Still true? Test.
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.1" mindeteriorationdelay="120" maxdeteriorationdelay="240" MinDeteriorationCondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgDetach" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="crowbar" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+	-->
+  </Item>
+  <Item name="" identifier="ekutility_placeablefabricator" tags="fabricator,donttakeitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="400" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredItem identifier="toolbox" />
+      <RequiredItem identifier="weldingtool" />
+      <RequiredItem identifier="sprayer" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="toolbox" />
+      <Item identifier="weldingtool" />
+      <Item identifier="sprayer" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="0,0,256,176" depth="0.8" canflipx="false" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="256,0,256,176" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="0,192,256,176" depth="0.8" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" depth="0.84" offset="38,24" sourcerect="256,288,144,88" />
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="0,384,128,64" depth="0.82" origin="0.5,0.97" offset="140,0" offsetanim="Noise" offsetanimspeed="0.75">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="128,384,144,64" depth="0.83" origin="0.5,0.97" offset="-140,0" offsetanim="Noise" offsetanimspeed="0.6">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <Body width="225" height="150" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.2" Flickerspeed="0.7" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" depth="0.025" sourcerect="264,200,208,80" origin="0.5,0.92" alpha="1.0" />
+    </LightComponent>
+    <Fabricator canbeselected="true" powerconsumption="350.0" msg="ItemMsgInteractSelect" fabricationspeed="0.6">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="%ModDir%/Items/Tools/fabricator_utility.ogg" type="OnActive" range="1000.0" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+    </Fabricator>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.40" mindeteriorationdelay="120" maxdeteriorationdelay="240" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_placeablefabricator_adaptive" tags="fabricator,donttakeitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="850" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredItem identifier="ekutility_placeablefabricator" />
+      <RequiredItem identifier="ekutility_arcwelder" />
+      <RequiredItem identifier="oxygentank" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="ekutility_placeablefabricator" />
+      <Item identifier="ekutility_arcwelder" />
+      <Item identifier="oxygentank" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" sourcerect="0,0,256,176" depth="0.8" canflipx="false" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" sourcerect="256,0,256,176" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" sourcerect="0,192,256,176" depth="0.8" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" depth="0.84" offset="38,24" sourcerect="128,384,144,96" />
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" sourcerect="0,384,48,80" depth="0.82" origin="0.2,0.97" offset="160,0" offsetanim="Noise" offsetanimspeed="0.8">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" sourcerect="48,384,48,80" depth="0.83" origin="-0.4,0.97" offset="-160,0" offsetanim="Noise" offsetanimspeed="0.6">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" sourcerect="96,384,32,64" depth="0.81" origin="-0.2,0.97" offset="-180,0" offsetanim="Noise" offsetanimspeed="0.7">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <Body width="225" height="150" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.2" Flickerspeed="0.7" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator_adaptive.png" depth="0.025" sourcerect="264,200,240,160" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <Fabricator canbeselected="true" powerconsumption="750.0" msg="ItemMsgInteractSelect" fabricationspeed="0.8" skillrequirementmultiplier="0.6">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="%ModDir%/Items/Tools/fabricator_utility.ogg" type="OnActive" range="1000.0" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+    </Fabricator>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.40" mindeteriorationdelay="120" maxdeteriorationdelay="240" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_placeablemedicalfabricator" tags="medicalfabricator,donttakeitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="550" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="healthscanner" />
+      <RequiredItem identifier="syringegun" />
+      <RequiredItem identifier="sprayer" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="healthscanner" />
+      <Item identifier="syringegun" />
+      <Item identifier="sprayer" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="0,448,256,224" depth="0.8" canflipx="false" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="256,448,256,224" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="0,672,256,224" depth="0.8" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" depth="0.84" offset="0,28" sourcerect="256,672,96,96" />
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="256,768,96,32" depth="0.82" origin="0.5,0" offset="0,5" offsetanim="Sine" offsetanimspeed="5">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="256,800,32,80" depth="0.83" origin="0.5,0.95" offset="140,0" offsetanim="Noise" offsetanimspeed="0.15">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <Body width="225" height="150" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.2" Flickerspeed="0.7" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" depth="0.025" sourcerect="264,200,208,80" origin="0.5,0.92" alpha="1.0" />
+    </LightComponent>
+    <Fabricator canbeselected="true" powerconsumption="350.0" msg="ItemMsgInteractSelect" fabricationspeed="0.6">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="%ModDir%/Items/Tools/fabricator_utility.ogg" type="OnActive" range="1000.0" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+    </Fabricator>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.40" mindeteriorationdelay="120" maxdeteriorationdelay="240" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_placeabledeconstructor" tags="deconstructor,donttakeitems" category="Machine" linkable="true" allowedlinks="deconstructor,locker" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="350" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="toolbox" />
+      <RequiredItem identifier="plasmacutter" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="toolbox" />
+      <Item identifier="plasmacutter" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="steel" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="320,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" depth="0.8" canflipx="false" sourcerect="512,0,176,208" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="688,0,176,208" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" sourcerect="512,208,176,208" depth="0.8" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Items/Tools/ekutility_placeablefabricator.png" depth="0.84" offset="0,18" sourcerect="692,212,72,40" />
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" depth="0.81" offset="-20,0" sourcerect="800,532,64,64" origin="0.5,0.5" rotationspeed="-720">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" depth="0.81" offset="23,0" sourcerect="800,532,64,64" origin="0.5,0.5" rotationspeed=" 720">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <Body width="160" height="190" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    <Deconstructor canbeselected="true" powerconsumption="350.0" msg="ItemMsgInteractSelect" deconstructionspeed="0.6">
+      <GuiFrame relativesize="0.25,0.25" style="ItemUI" anchor="Center" />
+      <sound file="Content/Items/Fabricators/Deconstructor.ogg" type="OnActive" range="1000.0" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight3.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </Deconstructor>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.40" mindeteriorationdelay="120" maxdeteriorationdelay="240" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5, 0.4" slotsperrow="3" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" hudpos="0.5, 0.8" slotsperrow="5" uilabel="" allowuioverlap="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_placeablesonarmonitor" tags="command,sonarmonitor" category="Machine" linkable="true" allowedlinks="statusmonitor" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="340" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredSkill identifier="helm" level="40" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="wificomponent" />
+      <RequiredItem identifier="wificomponent" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+      <Item identifier="wificomponent" />
+      <Item identifier="wificomponent" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" sourcerect="0,0,192,224" depth="0.8" canflipx="false" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" sourcerect="192,0,192,224" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" sourcerect="192,224,192,224" depth="0.8" maxcondition="0" />
+    <Body width="160" height="200" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.2" Flickerspeed="0.7" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" depth="0.025" sourcerect="16,240,160,160" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <aitarget sightrange="200" soundrange="10000" staticsight="true" fadeouttime="5" />
+    <Sonar range="10000.0" canbeselected="true" powerconsumption="100" displaybordersize="-0.1" allowuioverlap="true" hasmineralscanner="true">
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+      <GuiFrame relativesize="0.5,0.5" anchor="Center" relativeoffset="0,-0.05" />
+      <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" />
+      <sound file="Content/Items/Command/SonarPing2.ogg" type="OnUse" range="1000.0" />
+      <StatusEffect type="OnUse">
+        <sound file="Content/Items/Command/SonarPingFar.ogg" type="OnUse" range="6000.0" volume="0.8" />
+        <sound file="Content/Items/Command/SonarPingFar2.ogg" type="OnUse" range="6000.0" volume="0.8" />
+      </StatusEffect>
+      <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+      <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+      <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+      <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+      <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+      <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+      <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+      <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+      <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5" />
+      <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5" />
+      <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5" />
+      <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5" />
+      <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5" />
+      <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5" />
+      <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5" />
+      <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5" />
+    </Sonar>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <!-- "UseTransducers" property not usable in-game - Still true?
+	  <input name="transducer_in" displayname="connection.sonartransducerin" />
+	  -->
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="electricalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekutility_placeablestatusmonitor" tags="command,statusmonitor" category="Machine" linkable="true" allowedlinks="navterminal" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Price baseprice="390" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredSkill identifier="helm" level="40" />
+      <RequiredItem identifier="handheldsonar" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="wificomponent" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="handheldsonar" />
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+      <Item identifier="wificomponent" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" sourcerect="384,0,192,192" depth="0.8" canflipx="false" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" sourcerect="576,0,192,192" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" sourcerect="384,192,192,192" depth="0.8" maxcondition="0" />
+    <Body width="160" height="160" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.2" Flickerspeed="0.7" alphablend="false">
+      <sprite texture="%ModDir%/Items/Tools/ekutility_placeableconsoles.png" depth="0.025" sourcerect="592,208,160,160" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <MiniMap requirewaterdetectors="False" requireoxygendetectors="False" showhullintegrity="True" MinVoltage="0.5" PowerConsumption="100" canbeselected="true" msg="ItemMsgInteractSelect" allowuioverlap="true">
+      <GuiFrame relativesize="0.5,0.5" anchor="CenterLeft" style="ItemUI" />
+      <AlternativeLayout relativesize="0.2725,0.3" pivot="BottomLeft" relativeoffset="0.05,-0.001" />
+      <poweronsound file="Content/Items/PowerOnLight3.ogg" range="1000" loop="false" />
+    </MiniMap>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <!-- Data inputs are apparently commented out for sake of convenience regarding mid-round wiring. -->
+      <!-- <input name="water_data_in" displayname="connection.waterdatain" />
+      <input name="oxygen_data_in" displayname="connection.oxygendatain" /> -->
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="electricalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekutility_chargingdock1" tags="chargingdock,batterycellrecharger" category="Electrical" scale="0.5">
+    <Price baseprice="175" sold="false" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredSkill identifier="helm" level="40" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="copper" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+      <Item identifier="copper" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Tools/ekutility_placeablemachines.png" sourcerect="130,434,140,44" depth="0.8" canflipx="false" />
+    <Body width="130" height="40" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+    </Holdable>
+    <Powered powerconsumption="200" currpowerconsumption="200" isactive="true">
+      <GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
+      <StatusEffect type="OnActive" targettype="Contained" targets="loadable" Condition="2.0">
+        <Conditional Voltage="gt 0.01" targetcontainer="true" targetitemcomponent="Powered" />
+      </StatusEffect>
+    </Powered>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="10" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <input name="power_in" displayname="connection.powerin" />
+    </ConnectionPanel>
+    <ItemContainer capacity="4" maxstacksize="1" canbeselected="true" hideitems="false" itempos="38.5,5" iteminterval="22,0" itemrotation="-90" uilabel="ChargingDock" containedspritedepth="0.81">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="loadable" />
+    </ItemContainer>
+  </Item>
+</Items>

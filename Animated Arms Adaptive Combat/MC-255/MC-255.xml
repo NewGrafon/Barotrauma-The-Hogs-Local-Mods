@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Револьвер MC-255" description="Мощный револьвер, часто встречающийся в руках наёмников и охотников на просторах Европы, использующий патроны ‖color:gui.green‖.44 Magnum‖end‖. Его можно держать одной рукой,‖color:gui.blue‖ но под водой он почти бесполезен‖end‖" allowsellingwhenbroken="true" identifier="MC-255" HideConditionBar="true" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,pistolitem,provocativetohumanai,gunsmith,mountableweapon" Scale="0.27" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.125" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.062" />
+      <Price baseprice="495">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="2">
+          <Reputation faction="separatists" min="35" />
+        </Price>
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="1.5" minavailable="2">
+          <Reputation faction="separatists" min="40" />
+        </Price>
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="titaniumaluminiumalloy" amount="1" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="repair" requiredtime="60">
+        <RequiredSkill identifier="weapons" level="45" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+        <RequiredItem identifier="aluminium" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="30" displayname="repairweapon">
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredItem identifier="MC-255" amount="1" />
+        <RequiredItem identifier="repairweapon" amount="1" />
+        <RequiredItem identifier="carbon" amount="1" />
+        <RequiredItem identifier="steel" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/MC-255/MC-255.png" sourcerect="8,439,135,157" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/MC-255/MC-255.png" sourcerect="18,2,188,87" depth="0.55" origin="0.35450265,0.55024517" />
+      <BrokenSprite texture="%ModDir%/MC-255/MC-255.png" sourcerect="18,204,188,87" depth="0.55" origin="0.35048506,0.5521327" maxcondition="66" />
+      <BrokenSprite texture="%ModDir%/MC-255/MC-255.png" sourcerect="18,103,188,87" depth="0.55" origin="0.35268855,0.54928863" maxcondition="33" />
+      <BrokenSprite texture="%ModDir%/MC-255/MC-255.png" sourcerect="14,319,188,87" depth="0.55" origin="0.34829956,0.5479925" maxcondition="1" />
+      <BrokenSprite texture="%ModDir%/MC-255/MC-255.png" sourcerect="18,2,188,87" depth="0.55" origin="0.35165748,0.5510252" maxcondition="0" />
+      <Body width="72" height="40" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" holdpos="70,0" handle1="-35,-8" handle2="0,10" msg="ItemMsgPickUpSelect">
+        <!-- Замедление. -->
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.5" ObstructVisionAmount="0.05" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming-2.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" cameraaimoffset="450" interval="1" duration="1.1" setvalue="true" comparison="and">
+          <Conditional HasStatusTag="active_zoom" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" cameraaimoffset="650" interval="1" duration="1.1" setvalue="true" comparison="and">
+          <Conditional HasStatusTag="active_zoom-1" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" ObstructVisionAmount="0.00" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="better_view" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" thermalgoggles="false" overlaycolor="0,0,0,0" disabledeltatime="true" setvalue="true">
+          <Conditional hasstatustag="neq thermal" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="this" thermalgoggles="true" overlaycolor="100,100,100,120" setvalue="true">
+          <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" condition="gt 0" property="charge" />
+          <RequiredItem items="thermal_scope" type="Contained" />
+          <Sound file="%ModDir%/Saunds/Thermal-on.ogg" range="150" loop="true" volume="0.25" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Contained" Condition="-0.15" interval="1.0">
+          <RequiredItem items="thermal_scope" type="Contained" />
+          <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" />
+          <Conditional hasstatustag="thermal" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="this" tags="thermal" duration="0.05" setvalue="true">
+          <RequiredItem items="thermal_scope" type="Contained">
+            <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" condition="gt 0" property="charge" />
+          </RequiredItem>
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="-0.15" unskilledspread="-0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and" interval="0.05">
+          <Conditional Spread="gt 5" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-10" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-5" interval="0.25" duration="0.26" stackable="false" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This" target="this" tags="suppressed" interval="1" duration="1.1" setvalue="true">
+          <RequiredItem items="suppressor" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="225,35" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" interval="1" barrelpos="115,35" stackable="false" setvalue="true">
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" interval="3" showtexts="false" setvalue="true">
+          <Conditional showtexts="true" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" spritecolor="255,225,210,255">
+          <Conditional HasStatusTag="condition-75" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="0.5" spritecolor="231,204,184,255">
+          <Conditional HasStatusTag="condition-50" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="1" spritecolor="190,140,100,255">
+          <Conditional HasStatusTag="condition-25" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.08,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <TickBox text="onoff">
+          <StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+        </TickBox>
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="135" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+        <Button text="Spin">
+          <!-- 1-2 фаза: прямое вращение (2 оборота) - немного быстрее -->
+          <StatusEffect type="OnUse" target="This" aimangle="30" aimpos="60,-5" AllowAccess="false" noninteractable="true" setvalue="true" delay="0.243" allowwhenbroken="true" stackable="false">
+            <Sound file="%ModDir%/Big-Iron/flip-1.ogg" frequencymultiplier="0.7475" range="750" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimangle="60" setvalue="true" delay="0.2835" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="90" setvalue="true" delay="0.324" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" setvalue="true" delay="0.3645" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="150" setvalue="true" delay="0.3915" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="180" setvalue="true" delay="0.432" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="210" setvalue="true" delay="0.4725" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="240" setvalue="true" delay="0.4995" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="270" setvalue="true" delay="0.54" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="300" setvalue="true" delay="0.5805" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="330" setvalue="true" delay="0.6075" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="360" setvalue="true" delay="0.648" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="30" setvalue="true" delay="0.783" aimpos="50,-10" allowwhenbroken="true" stackable="false">
+            <Sound file="%ModDir%/Big-Iron/flip-1.ogg" frequencymultiplier="0.78" range="750" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimangle="60" setvalue="true" delay="0.837" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="90" setvalue="true" delay="0.8775" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" setvalue="true" delay="0.918" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="150" setvalue="true" delay="0.972" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="180" setvalue="true" delay="1.0125" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="210" setvalue="true" delay="1.053" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="240" setvalue="true" delay="1.107" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="270" setvalue="true" delay="1.1475" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="300" setvalue="true" delay="1.188" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="330" setvalue="true" delay="1.242" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="360" setvalue="true" delay="1.2825" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="330" setvalue="true" delay="1.4175" aimpos="50,-15" allowwhenbroken="true" stackable="false">
+            <Sound file="%ModDir%/Big-Iron/flip-1.ogg" frequencymultiplier="0.715" range="750" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimangle="300" setvalue="true" delay="1.485" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="270" setvalue="true" delay="1.5525" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="240" setvalue="true" delay="1.62" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="210" setvalue="true" delay="1.674" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="180" setvalue="true" delay="1.7415" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="150" setvalue="true" delay="1.809" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" setvalue="true" delay="1.863" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="90" setvalue="true" delay="1.9305" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="60" setvalue="true" delay="1.998" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="30" setvalue="true" delay="2.052" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="0" setvalue="true" delay="2.1195" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="330" setvalue="true" delay="2.2545" aimpos="50,-20" allowwhenbroken="true" stackable="false">
+            <Sound file="%ModDir%/Big-Iron/flip-1.ogg" frequencymultiplier="0.767" range="750" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimangle="300" setvalue="true" delay="2.322" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="270" setvalue="true" delay="2.3895" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="240" setvalue="true" delay="2.457" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="210" setvalue="true" delay="2.511" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="180" setvalue="true" delay="2.5785" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="150" setvalue="true" delay="2.646" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" setvalue="true" delay="2.7" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="90" setvalue="true" delay="2.7675" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="60" setvalue="true" delay="2.835" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="30" setvalue="true" delay="2.889" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="0" setvalue="true" delay="2.9565" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="30" setvalue="true" delay="3.0915" aimpos="50,-25" allowwhenbroken="true" stackable="false">
+            <Sound file="%ModDir%/Big-Iron/flip-1.ogg" frequencymultiplier="0.8125" range="750" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimangle="60" setvalue="true" delay="3.1455" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="90" setvalue="true" delay="3.186" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" setvalue="true" delay="3.2265" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="150" setvalue="true" delay="3.267" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="180" setvalue="true" delay="3.3075" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="210" setvalue="true" delay="3.348" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="240" setvalue="true" delay="3.3885" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="270" setvalue="true" delay="3.429" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="300" setvalue="true" delay="3.4695" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="330" setvalue="true" delay="3.51" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="360" setvalue="true" delay="3.5505" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="30" setvalue="true" delay="3.6855" aimpos="50,-20" allowwhenbroken="true" stackable="false">
+            <Sound file="%ModDir%/Big-Iron/flip-1.ogg" frequencymultiplier="0.793" range="750" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimangle="60" setvalue="true" delay="3.7395" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="90" setvalue="true" delay="3.7935" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" setvalue="true" delay="3.8475" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="150" setvalue="true" delay="3.9015" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="180" setvalue="true" delay="3.9555" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="210" setvalue="true" delay="4.0095" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="240" setvalue="true" delay="4.0635" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="270" setvalue="true" delay="4.1175" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="300" setvalue="true" delay="4.1715" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="330" setvalue="true" delay="4.2255" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="360" setvalue="true" delay="4.2795" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="330" setvalue="true" delay="4.4145" aimpos="50,-15" allowwhenbroken="true" stackable="false">
+            <Sound file="%ModDir%/Big-Iron/flip-1.ogg" frequencymultiplier="0.702" range="750" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimangle="300" setvalue="true" delay="4.482" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="270" setvalue="true" delay="4.5495" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="240" setvalue="true" delay="4.617" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="210" setvalue="true" delay="4.6845" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="180" setvalue="true" delay="4.752" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="150" setvalue="true" delay="4.8195" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This,Character" aimangle="120" setvalue="true" delay="4.887" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="90" setvalue="true" delay="4.9545" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="60" setvalue="true" delay="5.022" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="30" setvalue="true" delay="5.0895" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnUse" target="This" aimangle="0" AllowAccess="true" aimpos="70,0" noninteractable="false" setvalue="true" delay="5.157" allowwhenbroken="true" stackable="false" />
+        </Button>
+      </CustomInterface>
+      <RangedWeapon barrelpos="90,30" spread="5" unskilledspread="10" holdtrigger="true" weapondamagemodifier="0.75" maxchargetime="0.6" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0" reloadskillrequirement="0" reload="2" DualWieldReloadTimePenaltyMultiplier="1.75" DualWieldAccuracyPenalty="30">
+        <StatusEffect type="OnSecondaryUse" target="this" showtexts="true" interval="2" duration="2.1" setvalue="true" comparison="and">
+          <Conditional hasstatustag="med-scan" />
+          <RequiredItems items="med-scan" type="Contained" />
+        </StatusEffect>
+        <ChargeSound file="%ModDir%/MC-255/doubleaction.ogg" frequencymultiplier="0.75" />
+        <StatusEffect type="OnUse" target="This" aimangle="+17.5" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.15" stackable="false" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="this" spread="5" unskilledspread="10" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 20" />
+        </StatusEffect>
+        <StatusEffect type="OnDeath" target="This" aimangle="0" delay="0.15" condition="66" handle2="-45,11" setvalue="true" forceplaysounds="true" />
+        <StatusEffect type="OnUse" target="This" delay="0.75" condition="66" setvalue="true" />
+        <StatusEffect type="OnUse" target="This" delay="1.5" condition="100" handle2="0,10" setvalue="true">
+          <Sound file="%ModDir%/MC-255/Ready.ogg" range="1000" frequencymultiplier="0.75" volume="1.5" />
+        </StatusEffect>
+        <Crosshair texture="%ModDir%/Crosshairs-2.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs-2.png" sourcerect="256,256,256,256" />
+        <StatusEffect type="OnUse" target="Character" targetlimbs="LeftHand,RightHand">
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Affliction identifier="blunttrauma" strength="300" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="neq suppressed" />
+          <ParticleEmitter particle="mediumgunsmoke" particleamount="1" distance="20" Angle="11" CopyEntityAngle="true" />
+          <ParticleEmitter particle="mediummuzzleflash" particleamount="1" distance="20" Angle="11" CopyEntityAngle="true" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" scalemultiplier="2.5,2.5" distance="20" Angle="11" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="10,8" colormultiplier="255,255,100,175" distance="20" Angle="11" CopyEntityAngle="true" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="16,12" colormultiplier="215,215,215,100" distance="20" Angle="11" CopyEntityAngle="true" />
+          <ParticleEmitter particle="mediumgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" CopyEntityAngle="true" distance="20" Angle="11" />
+          <Sound file="%ModDir%/TOZ-34/TOZ-34.ogg" type="OnUse" range="3000" frequencymultiplier="1.2" selectionmode="Random" />
+          <Sound file="%ModDir%/TOZ-34/TOZ-34-1.ogg" type="OnUse" range="3000" frequencymultiplier="1.2" />
+          <Sound file="%ModDir%/TOZ-34/TOZ-34-2.ogg" type="OnUse" range="3000" frequencymultiplier="1.2" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="suppressed" />
+          <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" distance="60" Angle="11" scalemultiplier="2.5,2.5" colormultiplier="200,200,200,225" />
+          <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="3,2" distance="60" Angle="11" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+          <ParticleEmitter particle="smallgunsmoke" particleamount="1" scalemultiplier="1,1" distance="60" Angle="11" CopyEntityAngle="true" />
+          <Sound file="%ModDir%/TOZ-34/TOZ-34-sup.ogg" type="OnUse" range="1000" frequencymultiplier="1.4" selectionmode="Random" />
+          <Sound file="%ModDir%/TOZ-34/TOZ-34-1-sup.ogg" type="OnUse" range="1000" frequencymultiplier="1.4" />
+          <Sound file="%ModDir%/TOZ-34/TOZ-34-2-sup.ogg" type="OnUse" range="1000" frequencymultiplier="1.4" />
+        </StatusEffect>
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="6" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="40" />
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="800" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="tinnitus_shot" strength="50" />
+          </Explosion>
+          <Conditional HasStatusTag="neq suppressed" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" offset="25,0">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 50" />
+          <Explosion range="150.0" force="6" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="20.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" offset="25,0">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 50" />
+          <Explosion range="150.0" force="3" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="33" delay="0.01" setvalue="true" forceplaysounds="true">
+          <Sound file="%ModDir%/MC-255/MC-255CylinderRotate.ogg" range="600" volume="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="1.55" condition="99" setvalue="true" conditionalcomparison="and">
+          <Conditional condition="100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="1.55" condition="98" setvalue="true" conditionalcomparison="and">
+          <Conditional condition="99" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="1.55" condition="97" setvalue="true" conditionalcomparison="and">
+          <Conditional condition="98" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="1.55" condition="96" setvalue="true" conditionalcomparison="and">
+          <Conditional condition="97" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="1.55" condition="95" setvalue="true" conditionalcomparison="and">
+          <Conditional condition="96" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="1.55" condition="100" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="revreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="revreloading" delay="4" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="revreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" aimpos="60,0" handle1="-35,-8" aimangle="0" holdpos="80,-20" holdangle="-40" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" />
+        <RequiredItems items="shotgunammo" type="Contained" />
+        <RequiredItems items="revreloading" type="Contained" />
+        <RequiredItems items="repair" type="Contained" />
+        <RequiredSkill identifier="weapons" level="55" />
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-3">
+          <Conditional inwater="false" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-10">
+          <Conditional inwater="true" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="Contained" targetidentifiers="repair" stackable="false" condition="-7.5" interval="6" />
+      </RangedWeapon>
+      <ItemContainer capacity="5" maxstacksize="1" slotsperrow="2" hideitems="false" ShowTotalStackCapacityInContainedStateIndicator="true" spawnwithid="repair" itempos="100000,100000" showcontainedstateindicator="false" containedstateindicatorstyle="bullet">
+        <SlotIcon slotindex="0" texture="%ModDir%/ContainerIndicators-4.png" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="%ModDir%/ContainerIndicators-4.png" origin="0.5,0.5" />
+        <SlotIcon slotindex="2" texture="%ModDir%/ContainerIndicators-4.png" origin="0.5,0.5" />
+        <SlotIcon slotindex="3" texture="%ModDir%/ContainerIndicators-4.png" origin="0.5,0.5" />
+        <SlotIcon slotindex="4" texture="%ModDir%/ContainerIndicators-4.png" origin="0.5,0.5" />
+        <SlotIcon slotindex="5" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <Containable items="shotgunammo">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character" AllowAccess="false" noninteractable="true" delay="0.0125" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="5" setvalue="true" />
+          <!-- Reloading animation, with status effects setting the conditions to trigger brokensprites, changing aimposes and aimangles and such. -->
+          <!-- Pull down the MC-255. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="-20" holdpos="35,-20" aimangle="-20" aimpos="45,-15" condition="0" setvalue="true" delay="0.025" allowwhenbroken="true" stackable="false" />
+          <!-- Open the MC-255. -->
+          <StatusEffect type="OnInserted" target="This" delay="1" handle2="0,13" condition="1" setvalue="true" allowwhenbroken="true" stackable="false">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <!-- MC-255 opening sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.75" forceplaysounds="true" allowwhenbroken="true">
+            <Sound file="%ModDir%/MC-255/MC-255CylinderRotate.ogg" range="1000" volume="1" />
+          </StatusEffect>
+          <!-- Pull up the MC-255. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="30" holdpos="20,-40" aimangle="40" aimpos="35,10" setvalue="true" delay="1.125" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" holdangle="60" holdpos="20,-40" aimangle="60" aimpos="35,10" setvalue="true" delay="1.75" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 100" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 99" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="shotgunshell-casing" spawnposition="This" aimspread="30" rotationtype="This" rotation="-150" count="1" Impulse="0.03" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 98" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="shotgunshell-casing" spawnposition="This" aimspread="30" rotationtype="This" rotation="-150" count="2" Impulse="0.03" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 97" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="shotgunshell-casing" spawnposition="This" aimspread="30" rotationtype="This" rotation="-150" count="3" Impulse="0.03" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 96" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="shotgunshell-casing" spawnposition="This" aimspread="30" rotationtype="This" rotation="-150" count="4" Impulse="0.03" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 95" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="shotgunshell-casing" spawnposition="This" aimspread="30" rotationtype="This" rotation="-150" count="5" Impulse="0.03" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 94" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+            <SpawnItem identifier="shotgunshell-casing" spawnposition="This" aimspread="30" rotationtype="This" rotation="-150" count="6" Impulse="0.03" />
+          </StatusEffect>
+          <!-- A failsafe. -->
+          <StatusEffect type="OnInserted" target="This" delay="2" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="lt 94" />
+            <Sound file="%ModDir%/MC-255/MC-255RoundEjecting.ogg" range="600" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdangle="40" holdpos="20,-40" aimangle="30" aimpos="45,-15" setvalue="true" delay="0" allowwhenbroken="true" stackable="false" />
+          <!-- Pull down the MC-255 to insert the rounds. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="-20" holdpos="55,-10" handle2="-125,-35" aimangle="-20" aimpos="45,-15" setvalue="true" delay="2.75" allowwhenbroken="true" stackable="false" />
+          <!-- Round insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="4.375" forceplaysounds="true" allowwhenbroken="true" stackable="false">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-30" distancemax="30" stackable="false" />
+            <Sound file="%ModDir%/MC-255/MC-255Loading.ogg" range="600" />
+          </StatusEffect>
+          <!-- Aim the MC-255. -->
+          <StatusEffect type="OnInserted" target="This" delay="4.0625" handle2="-15,-5" setvalue="true" allowwhenbroken="true" forceplaysounds="true" stackable="false" />
+          <!-- Last animation stage. -->
+          <StatusEffect type="OnInserted" target="This" delay="5.3125" aimangle="0" holdpos="80,-20" holdangle="-40" condition="100" aimpos="60,0" setvalue="true" allowwhenbroken="true" stackable="false" />
+          <StatusEffect type="OnRemoved" target="This">
+            <Sound file="%ModDir%/Saunds/BulletDetach.ogg" frequencymultiplier="0.8" range="600" volume="0.5" loop="false" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="suppressor_shotgun" hide="false" itempos="46,8.5">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="This" handle2="75,10" holdpos="25,0" setvalue="true" delay="0.1" />
+            <StatusEffect type="OnInserted" target="This" handle2="-60,-25" holdpos="80,-20" holdangle="-40" setvalue="true" delay="1" />
+            <StatusEffect type="OnInserted" target="This" tag="suppressed" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments-1.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="acog_scope,thermal_scope,colim_scope,brite_scope" hide="false" setactive="true" itempos="10,16">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="1">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,0" delay="0.01" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" handle2="-10,10" AllowAccess="false" noninteractable="true" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" handle2="26,-17" AllowAccess="true" noninteractable="false" delay="1.5" crosshairscale="0.225" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" setvalue="true" interval="1" />
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="1" setvalue="true" />
+            <StatusEffect type="OnRemoved" target="This" crosshairscale="0.0" cameraaimoffset="0" setvalue="true" />
+            <StatusEffect type="OnContaining" target="This,Contained" crosshairscale="0.225" OneShot="true" setvalue="true" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hide="true" drawinventory="false" spawnwithid="revreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="revreloading" hide="true">
+          <StatusEffect type="OnRemoved" target="Contained">
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="weapons" level="50" />
+      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

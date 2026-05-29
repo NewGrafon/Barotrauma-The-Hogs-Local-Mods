@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekdockyard_function_icebreaker1" category="Machine" tags="" Scale="2" spritecolor="154,213,163,255" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Electricity/functionboundingbox1.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Electricity/functionboundingbox1.png" depth="0.55" sourcerect="0,128,256,256" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/functionboundingbox1.png" sourcerect="0,0,128,128" offset="0,0" depth="0.551" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <LightComponent range="2" lightcolor="0,0,0,2" IsOn="true" castshadows="false" allowingameediting="false" flicker="0" flickerspeed="0" pulsefrequency="0" pulseamount="0">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="350.0" levelwalldamage="75" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel canbeselected="true" hudpriority="10">
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="350.0" levelwalldamage="75" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+        </StatusEffect>
+      </input>
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_function_icebreaker2" category="Machine" tags="" Scale="2" spritecolor="154,213,163,255" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Electricity/functionboundingbox1.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Electricity/functionboundingbox1.png" depth="0.55" sourcerect="0,384,320,320" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/functionboundingbox1.png" sourcerect="0,0,128,128" offset="0,0" depth="0.551" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <LightComponent range="2" lightcolor="0,0,0,2" IsOn="true" castshadows="false" allowingameediting="false" flicker="0" flickerspeed="0" pulsefrequency="0" pulseamount="0">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="475.0" levelwalldamage="100" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel canbeselected="true" hudpriority="10">
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="475.0" levelwalldamage="100" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+        </StatusEffect>
+      </input>
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_function_icebreaker3" category="Machine" tags="" Scale="2" spritecolor="154,213,163,255" hiddeningame="true">
+    <InventoryIcon texture="%ModDir%/Items/Electricity/functionboundingbox1.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/Electricity/functionboundingbox1.png" depth="0.55" sourcerect="320,128,384,384" canflipy="false" />
+    <DecorativeSprite texture="%ModDir%/Items/Electricity/functionboundingbox1.png" sourcerect="0,0,128,128" offset="0,0" depth="0.551" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" Condition="-10.0" disabledeltatime="true">
+        <Conditional Condition="gt 90" />
+      </StatusEffect>
+    </ItemComponent>
+    <LightComponent range="2" lightcolor="0,0,0,2" IsOn="true" castshadows="false" allowingameediting="false" flicker="0" flickerspeed="0" pulsefrequency="0" pulseamount="0">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="600.0" levelwalldamage="125" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel canbeselected="true" hudpriority="10">
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="600.0" levelwalldamage="125" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" applyfireeffects="false"></Explosion>
+        </StatusEffect>
+      </input>
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+</Items>

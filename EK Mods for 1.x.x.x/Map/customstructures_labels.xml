@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <!-- Custom Labels -->
+  <label name="" identifier="ekdockyard_labelsshapecircle" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="0,0,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallshapecircle" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="0,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsshapehex" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="256,0,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallshapehex" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="64,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsshapetri1" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="512,0,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallshapetri1" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="128,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsshapetri2" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="768,0,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallshapetri2" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="192,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsshapetri3" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1024,0,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallshapetri3" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="256,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsshapediamond" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1280,0,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallshapediamond" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="320,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelspatternhazard" scale="0.25" resizehorizontal="true" resizevertical="true" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1600,64,128,128" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallpatternhazard" scale="0.25" resizehorizontal="true" resizevertical="true" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="400,912,32,32" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelspatterncheck" scale="0.25" resizehorizontal="true" resizevertical="true" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1856,64,128,128" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallpatterncheck" scale="0.25" resizehorizontal="true" resizevertical="true" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="464,912,32,32" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <!--  -->
+  <label name="" identifier="ekdockyard_labelsiconexclamation" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="0,256,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconexclamation" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="512,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsiconbiohazard" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="256,256,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconbiohazard" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="576,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsiconfire" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="512,256,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconfire" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="640,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsiconradioactive" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="768,256,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconradioactive" aliases="ekdockyard_labelssmalliconadioactive" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="704,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <!-- -->
+  <label name="" identifier="ekdockyard_labelsiconequipment" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="0,512,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconequipment" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1024,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsicontools" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="256,512,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallicontools" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1088,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsicontank" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="512,512,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmallicontank" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1152,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsiconshell" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="768,512,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconshell" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1216,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsiconmagazine" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1024,512,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconmagazine" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1280,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsiconsubmarine" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1280,512,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconsubmarine" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1344,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelsiconshuttle" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1536,512,256,256" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <label name="" identifier="ekdockyard_labelssmalliconshuttle" scale="0.25" category="Decorative">
+    <sprite texture="%ModDir%/Map/customlabels1.png" sourcerect="1408,896,64,64" depth="0.85" origin="0.5,0.5" />
+  </label>
+  <!--
+  <SubDeco name="Shell Glass Decoration 2 Slope" identifier="ekdockyard_reinforcedglassdeco2_straight45" description="Submarine deco" scale="0.25" resizevertical="true" resizehorizontal="true" category="Decorative" spritecolor="175, 175, 175">
+    <sprite texture="%ModDir%/Map/glass_shells_reinforcements2.png" sourcerect="496,832,448,544" depth="0.098" origin="0.5,0.5" />
+  </SubDeco>
+  -->
+</prefabs>

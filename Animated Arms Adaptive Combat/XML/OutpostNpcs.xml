@@ -1,0 +1,2294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <npcsets>
+    <npcset identifier="outpostnpcs1">
+      <npc identifier="captain" job="captain" commonness="1" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="admin,adminmodule">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="captainscap1" equip="true" />
+          <Item identifier="captainsuniform1" equip="true" />
+          <Item identifier="Beretta-92" equip="false">
+            <Item identifier="Berettaammo" amount="1" />
+          </Item>
+          <Item identifier="captainspipe" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="captainscap2" equip="true" />
+          <Item identifier="captainsuniform2" equip="true" />
+          <Item identifier="Model29" equip="false">
+            <Item identifier="Model29ammo" amount="6" />
+          </Item>
+          <Item identifier="steroids" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="outpostmanagercoalition" job="outpostmanager" tags="outpostmanager" spawnpointtags="admin" behavior="StayInHull" preferredoutpostmoduletypes="admin,adminmodule">
+        <ItemSet commonness="1">
+          <Item identifier="administratorclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="pepperspray" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="Beretta-92" equip="false">
+            <Item identifier="Berettaammo" amount="1" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="outpostmanagerseparatists" job="outpostmanager" tags="outpostmanager" spawnpointtags="admin" behavior="StayInHull" preferredoutpostmoduletypes="admin,adminmodule">
+        <ItemSet commonness="1">
+          <Item identifier="piratecaptainhat" equip="true" />
+          <Item identifier="separatistcommoner3" equip="true" outfit="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="PB" equip="false">
+            <Item identifier="PBammo" amount="1" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="PBammo" amount="1" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ (администратор) -->
+        </ItemSet>
+      </npc>
+      <npc identifier="outpostmanager" job="outpostmanager" tags="outpostmanager" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="admin,adminmodule">
+        <ItemSet commonness="1">
+          <Item identifier="administratorclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="Beretta-92" equip="false">
+            <Item identifier="Berettaammo" amount="2" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hrmanager" job="watchman" spawnpointtags="hr" healthmultiplier="1.1" campaigninteractiontype="Crew" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="quartermasterclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="colt-1911" equip="false">
+            <Item identifier="1911ammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="weldingtool" equip="false">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="reactoroperator" job="engineer" commonness="1" spawnpointtags="engineering" healthmultiplier="1.1" behavior="Passive" preferredoutpostmoduletypes="engineeringmodule">
+        <ItemSet commonness="1">
+          <Item identifier="orangejumpsuit2" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="subupgradenpc" job="mechanic" commonness="1" spawnpointtags="engineering" healthmultiplier="1.1" campaigninteractiontype="Upgrade" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="toolbelt" equip="true">
+            <Item identifier="weldingfueltank" />
+            <Item identifier="aluminium" />
+            <Item identifier="weldingtool">
+              <Item identifier="weldingfueltank" />
+            </Item>
+          </Item>
+          <Item identifier="commonerclothes5" equip="true" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="colt-1911" equip="false">
+            <Item identifier="1911ammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="subsalesnpc" job="mechanic" commonness="1" spawnpointtags="engineering" healthmultiplier="1.1" campaigninteractiontype="PurchaseSub" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="toolbelt" equip="true">
+            <Item identifier="weldingfueltank" />
+            <Item identifier="aluminium" />
+            <Item identifier="weldingtool">
+              <Item identifier="weldingfueltank" />
+            </Item>
+          </Item>
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="bluejumpsuit1" equip="true" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantoutpost" job="watchman" spawnpointtags="shop" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantcity" job="watchman" spawnpointtags="shop" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantmine" job="watchman" spawnpointtags="shop" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantresearch" job="watchman" spawnpointtags="shop" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantmilitary" job="watchman" spawnpointtags="shop" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantarmory" job="watchman" spawnpointtags="armory" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="0.7">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="HK416-anim" equip="true">
+            <Item identifier="HK416magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="Lightbodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="HK416-anim" equip="true">
+            <Item identifier="HK416magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantmedical" job="watchman" spawnpointtags="medical" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="medicalofficerclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="antibloodloss1" />
+          <Item identifier="antibloodloss1" />
+          <Item identifier="antidama1" />
+          <Item identifier="antidama1" />
+          <Item identifier="colt-1911" equip="false">
+            <Item identifier="1911ammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantengineering" job="watchman" spawnpointtags="engineering" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="orangejumpsuit1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantnightclub" spawnpointtags="nightclubcounter" RequireSpawnPointTag="true" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="vipclothes1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="Model870">
+            <Item identifier="shotgunshell" amount="6" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="securitynpccoalition" job="outpostsecurityofficer" tags="securitynpc" spawnpointtags="security" healthmultiplier="1.2" behavior="Patrol">
+        <ItemSet commonness="0.7">
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="HK416-anim" equip="true">
+            <Item identifier="HK416magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="ballistichelmet1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник коалициитравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="G36-anim" equip="true">
+            <Item identifier="HK416apmagazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="heavybodyarmor" equip="true" />
+          <Item identifier="ballistichelmet5" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник коалициитравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.7">
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="P90-anim" equip="true">
+            <Item identifier="P90magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="Lightbodyarmor" equip="true" />
+          <Item identifier="ballistichelmet3" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник коалициитравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="P90-anim" equip="true">
+            <Item identifier="P90magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="heavybodyarmor" equip="true" />
+          <Item identifier="ballistichelmet3" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник коалициитравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.7">
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="spas-13" equip="false">
+            <Item identifier="shotgunshell" amount="8" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="antibleeding1" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="ballistichelmet2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник коалициитравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="spas-13" equip="false">
+            <Item identifier="shotgunshell" amount="8" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="antibleeding1" />
+          <Item identifier="heavybodyarmor" equip="true" />
+          <Item identifier="ballistichelmet2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник коалициитравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="armsdealer" job="watchman" spawnpointtags="shop" healthmultiplier="1.1" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="0.7">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="pepperspray" />
+          <Item identifier="colt-1911">
+            <Item identifier="1911ammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="antibleeding1" />
+          <Item identifier="Lightbodyarmor" equip="true" />
+          <Item identifier="ballistichelmet2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crewchiefclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="pepperspray" />
+          <Item identifier="colt-1911">
+            <Item identifier="1911ammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="antibleeding1" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="ballistichelmet2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="securitynpcseparatists" job="outpostsecurityofficer" tags="securitynpc" spawnpointtags="security" healthmultiplier="1.2" behavior="Patrol">
+        <ItemSet commonness="0.7">
+          <Item identifier="securityseparatistsuniform1" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="neurospray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="Kedr">
+            <Item identifier="PBammo-big" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="PBammo-big" />
+          <Item identifier="piratehelmet1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="securityseparatistsuniform1" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="neurospray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="AK-47">
+            <Item identifier="ak47fmjmagazine-anim" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="piratehelmet1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.7">
+          <Item identifier="securityseparatistsuniform2" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="neurospray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="handcuffs" />
+          <Item identifier="mosin-obrez">
+            <Item identifier="mosinammofmj" amount="10" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="antibleeding1" />
+          <Item identifier="piratehelmet3" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="securityseparatistsuniform2" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="neurospray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="handcuffs" />
+          <Item identifier="SCARfmjmagazine" />
+          <Item identifier="TOZ-104" equip="true">
+            <Item identifier="SCARfmjmagazine" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="antibleeding1" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.1">
+          <Item identifier="securityseparatistsuniform3" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="neurospray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="IJ-17-obrez" equip="false">
+            <Item identifier="shotgunshell" amount="1" />
+            <Item identifier="repair-very-broken" />
+            <Item identifier="laser">
+              <Item identifier="batterycell" />
+            </Item>
+          </Item>
+          <Item identifier="shotgunshell" amount="5" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="piratehelmet1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратист40мм граната для элиты и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="40mmneurogrenade-handgrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.3">
+          <Item identifier="securityseparatistsuniform3" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="neurospray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="Model870" equip="false">
+            <Item identifier="shotgunshell" amount="4" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="piratehelmet2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="cargomissiongiver" job="mechanic" moduleflags="none" behavior="Passive">
+        <ItemSet>
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="ballistichelmet1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="commonerclothes3" equip="true" />
+          <Item identifier="ballistichelmet1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="commonerclothes3" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="salvagemissiongiver" job="medicaldoctor" moduleflags="none" behavior="Passive">
+        <ItemSet commonness="1">
+          <Item identifier="doctorsuniform1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="doctorsuniform2" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="outpostdoctor" job="medicaldoctor" campaigninteractiontype="MedicalClinic" moduleflags="MedicalModule" behavior="Passive">
+        <ItemSet commonness="1">
+          <Item identifier="medicalofficerclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="antibloodloss1" />
+          <Item identifier="antibloodloss1" />
+          <Item identifier="antidama1" />
+          <Item identifier="antidama1" />
+          <Item identifier="colt-1911" equip="false">
+            <Item identifier="1911ammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="watchman" job="watchman" spawnpointtags="unlockpath" healthmultiplier="1.1" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="watchmanclothes" equip="true" />
+          <Item identifier="captainscap1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="Beretta-92" equip="false">
+            <Item identifier="Berettaammo" amount="2" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="watchmanseparatist" job="watchman" spawnpointtags="unlockpath" healthmultiplier="1.1" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="watchmanclothes" equip="true" />
+          <Item identifier="piratecaptainhat" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="PB" equip="false">
+            <Item identifier="PBammo" amount="2" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="commoner" commonness="0" moduleflags="none" job="mechanic" behavior="Passive" healthmultiplier="0.75" preferredoutpostmoduletypes="crewmodule,seccrewmodule">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="screwdriver" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="screwdriver" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="screwdriver" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="pepperspray" />
+          <Item identifier="wrench" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes3" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="commonerclothes3" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="screwdriver" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes4" equip="true" />
+          <Item identifier="PM">
+            <Item identifier="PBammo" />
+          </Item>
+          <Item identifier="hiddenarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="commonerclothes4" equip="true" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" />
+          </Item>
+          <Item identifier="hiddenarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="researcher" commonness="0" job="medicaldoctor" tags="researchernpc" behavior="Passive" healthmultiplier="0.75" ModuleFlags="ResearchModule" preferredoutpostmoduletypes="researchmodule,crewmodule">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="researcherclothes" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="miner" commonness="0" moduleflags="none" job="mechanic" behavior="Passive" healthmultiplier="0.75" preferredoutpostmoduletypes="crewmodule">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="minerclothes" equip="true" />
+          <Item identifier="screwdriver" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="minerclothes" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="minerclothes" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hardhatman" commonness="0" moduleflags="none" job="mechanic" behavior="Passive" preferredoutpostmoduletypes="crewmodule">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="ballistichelmet2" equip="true" />
+          <Item identifier="minerclothes" equip="true" />
+          <Item identifier="crowbar" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="clown" commonness="0" faction="clowns" moduleflags="clownmodule" job="assistant" behavior="Passive" preferredoutpostmoduletypes="clownmodule" spawnpointtags="clown">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="clowncostume" equip="true" />
+          <Item identifier="bikehorn" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="bikehorn" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="commonerclothes3" equip="true" />
+          <Item identifier="bikehorn" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="clowncostume" equip="true" />
+          <Item identifier="bikehorn" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="vipclothes1" equip="true" />
+          <Item identifier="toyhammer" equip="false"></Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchantclown" commonness="0" faction="clowns" moduleflags="clownmodule" job="assistant" behavior="Passive" preferredoutpostmoduletypes="clownmodule" campaigninteractiontype="Store" spawnpointtags="clown">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="vipclothes1" equip="true" />
+          <Item identifier="toyhammer" equip="false"></Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="huskcultist" tags="huskcultist" faction="huskcult" commonness="0" moduleflags="huskmodule" job="assistant" behavior="Passive" healthmultiplier="0.5" preferredoutpostmoduletypes="huskmodule" spawnpointtags="husk">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="piratebandana" equip="true" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="huskcultecclesiast" faction="huskcult" tags="" commonness="0" moduleflags="huskmodule" job="assistant" behavior="Passive" healthmultiplier="2.0" preferredoutpostmoduletypes="huskmodule" spawnpointtags="husk">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="divingknifeunique" equip="false" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="merchanthusk" faction="huskcult" commonness="0" moduleflags="huskmodule" job="assistant" behavior="Passive" preferredoutpostmoduletypes="huskmodule" campaigninteractiontype="Store" spawnpointtags="clown">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="piratebandana" equip="true" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionsecurityofficer" job="securityofficer" tags="securitynpc" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="batterycell" />
+          <Item identifier="handcuffs" />
+          <Item identifier="HK416-anim" equip="true">
+            <Item identifier="HK416magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="ballistichelmet5" equip="true" />
+          <!-- Нанимаемый охранниктравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionsecurityofficerveteran" job="securityofficer" tags="securitynpc" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="securitypatrolclothes" equip="true" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="batterycell" />
+          <Item identifier="handcuffs" />
+          <Item identifier="maple" equip="true">
+            <Item identifier="maplemagazine" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="bandolier" equip="true" />
+          <Item identifier="ballistichelmet5" equip="true" />
+          <!-- Нанимаемый ветерантравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionengineer" job="engineer" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="orangejumpsuit2" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="crowbar" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionengineerveteran" job="engineer" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="orangejumpsuit2" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="crowbar" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionmechanic" job="mechanic" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="bluejumpsuit2" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionmechanicveteran" job="mechanic" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="bluejumpsuit2" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionmedic" job="medicaldoctor" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="doctorsuniform1" equip="true" />
+          <Item identifier="healthscanner" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="syringegun" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="antidama1" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionmedicveteran" job="medicaldoctor" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="doctorsuniform2" equip="true" />
+          <Item identifier="healthscanner" />
+          <Item identifier="autoinjectorheadset" equip="true" />
+          <Item identifier="syringegun" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="antidama1" />
+          <Item identifier="pressurestabilizer" />
+          <Item identifier="genesplicer" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistsecurityofficer" job="securityofficer" tags="securitynpc" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="securityseparatistsuniform1" equip="true" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="batterycell" />
+          <Item identifier="handcuffs" />
+          <Item identifier="AK-74">
+            <Item identifier="akapmagazine" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="piratehelmet3" equip="true" />
+          <!-- Нанимаемый сепаратистнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistsecurityofficerveteran" job="securityofficer" tags="securitynpc" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="securityseparatistsuniform2" equip="true" />
+          <Item identifier="nvg-anim" equip="true" />
+          <Item identifier="bandolier" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="batterycell" />
+          <Item identifier="handcuffs" />
+          <Item identifier="AK-12">
+            <Item identifier="akapmagazine" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="piratehelmet2" equip="true" />
+          <!-- Нанимаемый ветеран-сепаратистнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistengineer" job="engineer" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="engineerseparatistsuniform1" equip="true" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="crowbar" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistengineerveteran" job="engineer" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="engineerseparatistsuniform2" equip="true" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="crowbar" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistmechanic" job="mechanic" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="mechanicseparatistsuniform1" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistmechanicveteran" job="mechanic" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="mechanicseparatistsuniform2" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistmedic" job="medicaldoctor" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="medicseparatistsuniform1" equip="true" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="healthscanner" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="syringegun" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="antidama1" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistmedicveteran" job="medicaldoctor" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="medicseparatistsuniform2" equip="true" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="healthscanner" />
+          <Item identifier="autoinjectorheadset" equip="true" />
+          <Item identifier="syringegun" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="antidama1" />
+          <Item identifier="pressurestabilizer" />
+          <Item identifier="genesplicer" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistcaptain" job="captain" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="separatistcaptainclothes" equip="true" />
+          <Item identifier="piratecaptainhat" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="2" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistcaptainveteran" job="captain" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="separatistcaptainclothes" equip="true" />
+          <Item identifier="piratecaptainhat" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="2" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="antibleeding1" />
+          <Item identifier="antidama1" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitioncaptain" job="captain" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="captainsuniform1" equip="true" />
+          <Item identifier="captainscap1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="Deagle" equip="false">
+            <Item identifier="Deagleammo" amount="1" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="captainspipe" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitioncaptainveteran" job="captain" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="captainsuniform1" equip="true" />
+          <Item identifier="captainscap2" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="Deagle" equip="false">
+            <Item identifier="Deagleammo" amount="1" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="captainspipe" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistassistant" job="assistant" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="separatistassistantuniform1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="pipe" equip="false" />
+          <Item identifier="divingknife" equip="false" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableseparatistassistantveteran" job="assistant" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="separatistassistantuniform1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="pipe" equip="false" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="syringegun" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionassistant" job="assistant" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="pipe" equip="false" />
+          <Item identifier="divingknife" equip="false" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablecoalitionassistantveteran" job="assistant" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet>
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="pipe" equip="false" />
+          <Item identifier="syringegun" />
+          <Item identifier="divingknife" equip="false" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+    </npcset>
+    <npcset identifier="outpostnpcs2">
+      <npc identifier="outpostguard" job="securityofficer" tags="securitynpc" spawnpointtags="security" healthmultiplier="1.2" behavior="Patrol" preferredoutpostmoduletypes="securitymodule">
+        <ItemSet commonness="0.5">
+          <Item identifier="securityguarduniform1" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="Lightbodyarmor" equip="true" />
+          <Item identifier="ballistichelmet2" equip="true" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="HK416-anim" equip="true">
+            <Item identifier="HK416magazine-anim" />
+            <Item identifier="repair-broken" />
+            <Item identifier="glowstick" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник аванпостатравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="securityguarduniform2" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="Lightbodyarmor" equip="true" />
+          <Item identifier="ballistichelmet3" equip="true" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="G36-anim" equip="true">
+            <Item identifier="HK416apmagazine-anim" />
+            <Item identifier="repair-broken" />
+            <Item identifier="flashlight" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник аванпостатравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="securityguarduniform3" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="Lightbodyarmor" equip="true" />
+          <Item identifier="ballistichelmet1" equip="true" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="P90-anim" equip="true">
+            <Item identifier="P90magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="divingknife" equip="false"></Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Охранник аванпостатравматическая граната -->
+          <Item identifier="stinggrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="securitychief" job="securityofficer" tags="securitynpc" spawnpointtags="security" healthmultiplier="1.2" behavior="Patrol" preferredoutpostmoduletypes="securitymodule">
+        <ItemSet commonness="1">
+          <Item identifier="securitychiefuniform" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="heavybodyarmor" equip="true" />
+          <Item identifier="ballistichelmet5" equip="true" />
+          <Item identifier="neurospray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="shocker">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="maple" equip="true">
+            <Item identifier="maplemagazine" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Начальник охраныперцовая граната и противогаз (для защиты от своих же) -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="peppergrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="securityseparatist" job="securityofficer" tags="securitynpc" spawnpointtags="security" healthmultiplier="1.2" behavior="Patrol" preferredoutpostmoduletypes="securitymodule">
+        <ItemSet commonness="0.5">
+          <Item identifier="securityseparatistsuniform1" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="piratehelmet3" equip="true" />
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="pepperspray" />
+          <Item identifier="handcuffs" />
+          <Item identifier="AK-47">
+            <Item identifier="ak47fmjmagazine-anim" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистский охранникнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="securityseparatistsuniform2" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="piratehelmet2" equip="true" />
+          <Item identifier="pepperspray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="PB">
+            <Item identifier="PBammo" amount="2" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистский охранникнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="securityseparatistsuniform3" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="pepperspray" />
+          <Item identifier="piratehelmet1" equip="true" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="AK-12">
+            <Item identifier="akapmagazine" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Сепаратистский охранникнейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="securityseparatist_leader" tags="securitynpc" spawnpointtags="security" healthmultiplier="1.2" behavior="Patrol" preferredoutpostmoduletypes="securitymodule">
+        <ItemSet commonness="1">
+          <Item identifier="securityseparatistsuniform2" equip="true" />
+          <Item identifier="idcard" equip="true" tags="id_outpostsecurity" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="piratehelmet2" equip="true" />
+          <Item identifier="neurospray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="stunbaton">
+            <Item identifier="batterycell" />
+          </Item>
+          <Item identifier="AK-47">
+            <Item identifier="ak47fmjmagazine-anim" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="handcuffs" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- Лидер сепаратистов40мм нейро граната и противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="40mmneurogrenade-handgrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="huskextremist" tags="huskcultist" group="husk" commonness="0" moduleflags="crewmodule,researchmodule" job="assistant" behavior="Passive" healthmultiplier="1.3" healthmultiplierinmultiplayer="1.6" aimspeed="1.2" aimaccuracy="0.85" reportrange="750" findweaponsrange="0">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="neurospray" />
+          <Item identifier="stungun">
+            <Item identifier="stungundart" />
+          </Item>
+          <Item identifier="huskstinger" equip="false" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="huskeggs" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ (культисты не охранники) -->
+        </ItemSet>
+      </npc>
+      <npc identifier="huskextremist_leader" tags="huskcultist" group="husk" commonness="0" moduleflags="crewmodule,researchmodule" job="medicaldoctor" behavior="Passive" healthmultiplier="1" healthmultiplierinmultiplayer="1.3" aimspeed="0.8" aimaccuracy="0.75" reportrange="750" findweaponsrange="0">
+        <ItemSet commonness="10">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="neurospray" />
+          <Item identifier="huskstinger" equip="true"></Item>
+          <Item identifier="syringegun" equip="false">
+            <Item identifier="huskeggs" amount="2" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="divingknifeunique" equip="false" />
+          <Item identifier="syringegun" equip="false">
+            <Item identifier="huskeggs" amount="2" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+    </npcset>
+    <npcset identifier="abandonedoutpostnpcs">
+      <npc identifier="bandit" commonness="0" tags="bandit" moduleflags="crewmodule,engineeringmodule" job="structuredefender" behavior="Passive" healthmultiplier="0.75" aimspeed="0.8" aimaccuracy="0.25" reportrange="500" hearing="1.0" findweaponsrange="1000">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="wrench" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="toolbelt" equip="true" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="PB">
+            <Item identifier="PBammo" amount="6" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crowbar" equip="false" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="crowbar" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="colt-1911">
+            <Item identifier="1911ammo" amount="6" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="bandit_heavy" commonness="0" tags="bandit" moduleflags="crewmodule,engineeringmodule" job="structuredefender" behavior="Passive" healthmultiplier="0.8" aimspeed="0.85" aimaccuracy="0.45" reportrange="550" hearing="1.0" findweaponsrange="1000">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <!-- Заменил на открытый шлем -->
+          <Item identifier="piratehelmet-open" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="AK-74" equip="true">
+            <Item identifier="akmagazine" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="toolbelt" equip="true" />
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="piratehelmet-open" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="SCARfmjmagazine" />
+          <Item identifier="TOZ-104" equip="true">
+            <Item identifier="SCARfmjmagazine" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <!-- Светошумовая граната -->
+          <Item identifier="StunGrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="piratehelmet-open" equip="true" />
+          <Item identifier="banditclothes2" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crowbar" equip="false" />
+          <Item identifier="Model870">
+            <Item identifier="shotgunshell" amount="6" />
+            <Item identifier="repair-broken" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes2" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="Deagle" equip="true">
+            <Item identifier="Deagleammo" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <!-- Перцовая граната + противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="peppergrenade-bots" />
+        </ItemSet>
+      </npc>
+      <npc identifier="bandit_elite" commonness="0" tags="bandit" moduleflags="crewmodule,engineeringmodule" job="structuredefender" behavior="Passive" aimspeed="0.9" aimaccuracy="0.65" reportrange="600" hearing="1.0" findweaponsrange="1000">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <!-- Заменил на открытый шлем -->
+          <Item identifier="piratehelmet-open" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="akmagazine" amount="2" />
+          <Item identifier="AK-47" equip="true">
+            <Item identifier="ak47fmjmagazine-anim" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="toolbelt" equip="true" />
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes1" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="piratehelmet-open" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="Model29ammo" amount="6" />
+          <Item identifier="Model29" equip="true">
+            <Item identifier="Model29ammo" amount="6" />
+          </Item>
+          <!-- Нейро граната + противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="neurogrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="banditclothes2" equip="true" />
+          <Item identifier="piratebodyarmor" equip="true" />
+          <Item identifier="piratehelmet-open" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="baseballcap" equip="true" />
+          <Item identifier="crowbar" equip="false" />
+          <Item identifier="shotgunshell" amount="6" />
+          <Item identifier="spas-13">
+            <Item identifier="shotgunshell" amount="6" />
+            <Item identifier="repair-broken" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="banditleader" commonness="0" tags="bandit" moduleflags="adminmodule,securitymodule" spawnpointtags="banditleader" job="structuredefender" behavior="Passive" aimspeed="0.8" aimaccuracy="0.75" reportrange="750" hearing="1.0" findweaponsrange="1000">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainscap2" equip="true" />
+          <Item identifier="captainsuniform2" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="steroids" />
+          <Item identifier="steroids" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="SAIGA">
+            <Item identifier="SAIGAmagazine" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <!-- Тяжелая фраг граната -->
+          <Item identifier="heavyfraggrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="wrench" />
+          <Item identifier="captainscap2" equip="true" />
+          <Item identifier="captainsuniform2" equip="true" />
+          <Item identifier="bodyarmor" equip="true" />
+          <Item identifier="steroids" />
+          <Item identifier="steroids" />
+          <Item identifier="toolbelt" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="P90-anim">
+            <Item identifier="P90magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="banditleader_heavy" commonness="0" tags="bandit" moduleflags="adminmodule,securitymodule" spawnpointtags="banditleader" job="structuredefender" behavior="Passive" aimspeed="0.85" aimaccuracy="0.75" reportrange="750" hearing="1.0" findweaponsrange="1000">
+        <ItemSet commonness="0.8">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="heavybodyarmor" equip="true">
+            <Item identifier="steel-plate" />
+          </Item>
+          <Item identifier="steroids" />
+          <Item identifier="steroids" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="KS-23">
+            <Item identifier="ks-23shell" amount="6" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <!-- 40мм нейро граната + противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="40mmneurogrenade-handgrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="wrench" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="heavybodyarmor" equip="true">
+            <Item identifier="kevlar-plate" />
+          </Item>
+          <Item identifier="steroids" />
+          <Item identifier="steroids" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="AK-12">
+            <Item identifier="akapmagazine" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <!-- 40мм химическая граната + противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="40mmchemgrenade-handgrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.2">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="heavybodyarmor" equip="true">
+            <Item identifier="ceramic-plate" />
+          </Item>
+          <Item identifier="steroids" />
+          <Item identifier="steroids" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="SCAR">
+            <Item identifier="SCARapmagazine" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <Item identifier="SCARapmagazine" amount="4" />
+          <!-- 40мм ядерная граната (редкая) + противогаз -->
+          <Item identifier="gasmask" equip="true" />
+          <Item identifier="40mmnuke-handgrenade-bots" />
+        </ItemSet>
+        <ItemSet commonness="0.2">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="heavybodyarmor" equip="true" />
+          <Item identifier="steroids" />
+          <Item identifier="steroids" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="weldingtool">
+            <Item identifier="weldingfueltank" />
+          </Item>
+          <Item identifier="PKP" equip="true">
+            <Item identifier="PKPmagazine" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="0.2">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="captainsuniform3" equip="true" />
+          <Item identifier="heavybodyarmor" equip="true" />
+          <Item identifier="steroids" />
+          <Item identifier="steroids" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="RPG">
+            <Item identifier="RPGroundkm1" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+        </ItemSet>
+      </npc>
+      <npc identifier="hostage" tags="hostage,prisoner" job="assistant" moduleflags="none" behavior="Passive" AllowDraggingIndefinitely="true">
+        <ItemSet>
+          <Item identifier="commonerclothes1" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="commonerclothes2" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="commonerclothes3" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hostageseparatists" tags="hostage,prisoner" job="assistant" moduleflags="none" faction="separatists" behavior="Passive" AllowDraggingIndefinitely="true">
+        <ItemSet>
+          <Item identifier="separatistcommoner2" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="separatistcommoner1" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hostagecoalition" tags="hostage,prisoner" job="assistant" moduleflags="none" faction="coalition" behavior="Passive" AllowDraggingIndefinitely="true">
+        <ItemSet>
+          <Item identifier="bluejumpsuit2" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet>
+          <Item identifier="orangejumpsuit2" equip="true" />
+          <Item identifier="handcuffs" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="psychoclown" commonness="0" moduleflags="none" job="killer" behavior="Passive" healthmultiplier="1.5" healthmultiplierinmultiplayer="3" aimspeed="1" aimaccuracy="1" reportrange="500" findweaponsrange="0">
+        <ItemSet commonness="99">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clowncostume" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="clowndivingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="oxygentank" />
+          <Item identifier="pressurestabilizer" />
+          <Item identifier="divingknife" equip="true" />
+          <Item identifier="bikehorn" equip="true" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownsuitunique" equip="true" />
+          <Item identifier="clownmaskunique" equip="true" />
+          <Item identifier="clowndivingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <Item identifier="oxygentank" />
+          <Item identifier="pressurestabilizer" />
+          <Item identifier="IJ-17" equip="true">
+            <Item identifier="shotgunshell" amount="6" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="bikehorn" equip="true" />
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="huskextremist" commonness="0" tags="huskcultist" group="husk" moduleflags="crewmodule,researchmodule" job="killer" behavior="Passive" healthmultiplier="0.5" healthmultiplierinmultiplayer="1.5" aimspeed="0.8" aimaccuracy="0.25" reportrange="500" findweaponsrange="0">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="huskstinger" equip="false" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="huskstinger" equip="false" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="huskstinger" equip="false" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="PB">
+            <Item identifier="PBammo" amount="6" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="huskextremist_leader" tags="huskcultist" group="husk" commonness="0" moduleflags="crewmodule,researchmodule" job="medicaldoctor" behavior="Passive" healthmultiplier="1" healthmultiplierinmultiplayer="1.3" aimspeed="0.8" aimaccuracy="0.75" reportrange="750" findweaponsrange="0">
+        <ItemSet commonness="10">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="huskstinger" equip="true" />
+          <Item identifier="syringegun" equip="false">
+            <Item identifier="huskeggs" amount="2" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="divingknifeunique" equip="false" />
+          <Item identifier="AK-74" equip="false">
+            <Item identifier="akmagazine" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <Item identifier="syringegun" equip="false">
+            <Item identifier="huskeggs" amount="2" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+    </npcset>
+    <!-- Additional Hireable NPCs -->
+    <npcset identifier="additionalhireablenpcs">
+      <npc identifier="hireablehuskcultist" job="assistant" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="PB">
+            <Item identifier="PBammo" amount="6" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="cultistrobes" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="colt-1911">
+            <Item identifier="1911ammo" amount="6" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireablehuskcultistveteran" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="rituallantern" equip="true" />
+          <Item identifier="syringegun" equip="false">
+            <Item identifier="huskeggs" amount="2" />
+          </Item>
+          <Item identifier="headset" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="AK-47">
+            <Item identifier="ak47fmjmagazine-anim" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="zealotrobes" equip="true" />
+          <Item identifier="divingknife" equip="false" />
+          <Item identifier="piratebandana" equip="true" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="huskstinger" equip="true" />
+          <Item identifier="syringegun" equip="false">
+            <Item identifier="huskeggs" amount="2" />
+          </Item>
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="Deagle">
+            <Item identifier="Deagleammo" amount="1" />
+            <Item identifier="repair-very-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableclown" job="assistant" skillmultiplier="1.5" experiencepoints="2850" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="clowncostume" equip="true" />
+          <Item identifier="bikehorn" equip="false" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="wrench" />
+          <Item identifier="screwdriver" />
+          <Item identifier="Beretta-92">
+            <Item identifier="Berettaammo" amount="6" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="hireableclownveteran" job="assistant" skillmultiplier="2.0" experiencepoints="7000" BaseSalary="500" SkillSalaryMultiplier="0.75">
+        <ItemSet commonness="1">
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="clownmask" equip="true" />
+          <Item identifier="clowncostume" equip="true" />
+          <Item identifier="cymbals" equip="false" />
+          <Item identifier="headset" equip="true" />
+          <Item identifier="bananapeel" amount="8" />
+          <Item identifier="toyhammer" />
+          <Item identifier="honkmotherianscriptures1" />
+          <Item identifier="P90-anim">
+            <Item identifier="P90magazine-anim" />
+            <Item identifier="repair-broken" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="prisonerseparatists" tags="hostage,prisoner" job="assistant" moduleflags="none" faction="separatists" behavior="Passive" AllowDraggingIndefinitely="true">
+        <ItemSet>
+          <Item identifier="prisonerclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+      <npc identifier="prisonercoalition" tags="hostage,prisoner" job="assistant" moduleflags="none" faction="coalition" behavior="Passive" AllowDraggingIndefinitely="true">
+        <ItemSet>
+          <Item identifier="prisonerclothes" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+          <!-- БЕЗ ГРАНАТ -->
+        </ItemSet>
+      </npc>
+    </npcset>
+  </npcsets>
+</Override>

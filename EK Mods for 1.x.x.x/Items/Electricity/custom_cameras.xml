@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekdockyard_camerasmall1" category="Electrical" tags="camera" focusonselected="true" offsetonselected="750" linkable="true" Scale="0.5" spritecolor="150,150,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.8" sourcerect="0,0,88,88" origin="0.5, 0.42" />
+    <Turret canbeselected="true" linkable="true" barrelpos="44,44" reload="999999999" rotationlimits="-180,180" powerconsumption="0.0" showchargeindicator="true" showprojectileindicator="true" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.805" sourcerect="88,0,48,80" origin="0.5, 0.65" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_cameradeco_sensor1" category="Electrical" tags="command,camera,sonartransducer" focusonselected="true" offsetonselected="1250" linkable="true" Scale="0.75" spritecolor="150,150,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.8" sourcerect="0,88,128,128" origin="0.5, 0.46" />
+    <SonarTransducer MinVoltage="0.5" PowerConsumption="100" canbeselected="true" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="control_in" displayname="connection.controlin" />
+      <output name="data_out" displayname="connection.sonardataout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_cameradeco_sensor2" category="Electrical" tags="command,camera,sonartransducer" focusonselected="true" offsetonselected="1250" linkable="true" Scale="0.5" spritecolor="150,150,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.8" sourcerect="128,88,128,128" origin="0.5, 0.46" />
+    <SonarTransducer MinVoltage="0.5" PowerConsumption="100" canbeselected="true" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="control_in" displayname="connection.controlin" />
+      <output name="data_out" displayname="connection.sonardataout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_cameradeco_sensor3" category="Electrical" tags="command,camera,sonartransducer" focusonselected="true" offsetonselected="1250" linkable="true" Scale="0.75" spritecolor="150,150,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.8" sourcerect="256,0,128,128" origin="0.5, 0.5" />
+    <Turret canbeselected="true" linkable="true" barrelpos="64,31" reload="999999999" rotationlimits="-180,180" powerconsumption="0.0" showchargeindicator="true" showprojectileindicator="true" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="10" springdampinghighskill="10" rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.805" sourcerect="256,128,160,128" origin="0.6, 0.6" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+    </Turret>
+    <SonarTransducer MinVoltage="0.5" PowerConsumption="100" canbeselected="true" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <output name="data_out" displayname="connection.sonardataout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <!-- Turrets cannot be manually controlled.
+  <Item name="Telescope" identifier="ekdockyard_cameradeco_manual1" category="Electrical" 
+  description="Basic magnification optic for manual spotting and rangefinding, or simply enjoying the view."
+  tags="camera,periscope" focusonselected="true" offsetonselected="750" linkable="false" Scale="0.5" spritecolor="150,150,150,255" 
+  disableitemusagewhenselected="true"isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false">
+    <Sprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.8" sourcerect="0,0,88,88" origin="0.5, 0.42" />
+    <Controller UserPos="-35.0, -50.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
+      <limbposition limb="Torso" position="-25,-200" />
+      <limbposition limb="LeftHand" position="67,-170" />
+      <limbposition limb="RightHand" position="67,-170" />
+    </Controller>
+    <Turret canbeselected="true" linkable="false" barrelpos="44,44" reload="999999999"
+      rotationlimits="-180,180"
+      powerconsumption="0.0"
+      showchargeindicator="false"
+      showprojectileindicator="false"
+      springstiffnesslowskill="25" springstiffnesshighskill="25"
+      springdampinglowskill="10" springdampinghighskill="10"
+      rotationspeedlowskill="90" rotationspeedhighskill="90">
+      <BarrelSprite texture="%ModDir%/Items/Electricity/cameras_advanced1.png" depth="0.805" sourcerect="88,0,48,80" origin="0.5, 0.65" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+    </Turret>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <output name="position_out" displayname="connection.turretaimingout" fallbackdisplayname="inputtype.aim" />
+      <output name="trigger_out" displayname="connection.turrettriggerout" fallbackdisplayname="inputtype.shoot" />
+    </ConnectionPanel>
+  </Item>
+  -->
+  <Item name="" identifier="ekdockyard_transducer_sonardome1" category="Electrical" tags="command,sonartransducer" focusonselected="true" offsetonselected="1250" linkable="true" Scale="0.75" spritecolor="150,150,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/transducers_advanced1.png" depth="0.8" sourcerect="0,0,128,160" origin="0.5, 0.5" />
+    <SonarTransducer MinVoltage="0.5" PowerConsumption="100" canbeselected="true" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="data_out" displayname="connection.sonardataout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="ekdockyard_transducer_sonardome2" category="Electrical" tags="command,sonartransducer" focusonselected="true" offsetonselected="1250" linkable="true" Scale="0.75" spritecolor="150,150,150,255">
+    <Sprite texture="%ModDir%/Items/Electricity/transducers_advanced1.png" depth="0.8" sourcerect="0,192,256,320" origin="0.5, 0.5" />
+    <SonarTransducer MinVoltage="0.5" PowerConsumption="100" canbeselected="true" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="data_out" displayname="connection.sonardataout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+  </Item>
+</Items>

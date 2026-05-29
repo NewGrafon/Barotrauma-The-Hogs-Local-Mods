@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="ek_characterflameemitter" identifier="ek_characterflameemitter" tags="" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This" condition="-10" Condition="-100">
+        <ParticleEmitter particle="ekcharacterburn" particlespersecond="15" scalemin="0.6" scalemax="1.4" distancemin="0" distancemax="25" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+</Items>

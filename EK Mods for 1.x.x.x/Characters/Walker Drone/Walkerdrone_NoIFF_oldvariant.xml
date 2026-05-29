@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Charactervariant inherit="Walkerdrone" speciesname="Walkerdrone_noiff" displayname="Walkerdrone" humanoid="False" group="human" tags="ek_drone,ek_allied_drone,ek_recoverable_drone" husk="False" needsair="False" canspeak="False" noise="250" visibility="300" blooddecal="">
+  <health vitality="100" doesbleed="True" crushdepth="-Infinity" usehealthwindow="False" bleedingreduction="0.9" constanthealthregeneration="0" healthregenerationwheneating="0" />
+  <ai combatstrength="200" attackpriorityrooms="0" attackpriorityhumans="0" sight="3" hearing="2" aggressionhurt="25" infiltrate="true" aggressiongreed="0" fleehealththreshold="0" attackonlywhenprovoked="False" retaliatewhentakingdamage="True">
+    <!--
+    <targetpriority tag="stronger" state="Attack" priority="300" reactdistance="7500" />
+    <targetpriority tag="weaker" state="Attack" priority="275" reactdistance="5000" />
+
+	<targetpriority tag="Ekdronerallybeacon" state="Attack" priority="250" reactdistance="50000" attackdistance="2" />
+    <targetpriority tag="human" state="Idle" priority="200" reactdistance="50000" />
+	-->
+    <!--<target tag="owner" state="Follow" priority="150" reactdistance="50" attackdistance="0" timer="0" />-->
+    <target tag="owner" state="Protect" priority="200" reactdistance="50" attackdistance="0" timer="0" />
+    <target tag="Ekdroneattackbeacon" state="Attack" priority="300" reactdistance="5000" attackdistance="0" timer="0" />
+    <target tag="Ekdronerallybeacon" state="Follow" priority="250" reactdistance="200" attackdistance="0" timer="0" />
+    <target tag="stronger" state="Attack" priority="400" reactdistance="1000" attackdistance="0" timer="0" />
+    <target tag="weaker" state="Attack" priority="300" reactdistance="1000" attackdistance="0" timer="0" />
+    <target tag="human" state="Follow" priority="50" reactdistance="1500" attackdistance="0" timer="0" />
+    <petbehavior maxhappiness="100" happinessdecreaserate="0" hungerincreaserate="0" playforce="0" />
+  </ai>
+  <damageemitter particle="shrapnel" drawontop="True" particleamount="5" velocitymin="50" velocitymax="300" anglemin="0" anglemax="360" scalemin="1" scalemax="2" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <damageemitter particle="weldspark" drawontop="True" particleamount="5" velocitymin="50" velocitymax="600" anglemin="0" anglemax="360" scalemin="1.5" scalemax="2" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <bloodemitter particle="blackwaterblood" anglemin="1" anglemax="2" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" emitinterval="0" particlespersecond="0" particleamount="10" highqualitycollisiondetection="False" copyentityangle="False" />
+  <bloodemitter particle="weldspark" drawontop="True" particleamount="5" velocitymin="50" velocitymax="600" anglemin="0" anglemax="360" scalemin="1.5" scalemax="2" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <StatusEffect type="Always" target="Character">
+    <ReduceAffliction identifier="organdamage" amount="200" />
+    <ReduceAffliction identifier="bloodloss" amount="200" />
+    <ReduceAffliction identifier="stun" amount="100" />
+    <ReduceAffliction identifier="radiationsickness" amount="200" />
+    <ReduceAffliction identifier="poison" amount="200" />
+  </StatusEffect>
+  <!--<StatusEffect type="OnDeath">
+    <Explosion range="200.0" structuredamage="10" itemdamage="35" stun="1" force="15.0" severlimbsprobability="0">
+	  <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" type="OnUse" range="2500" selectionmode="All" />
+	  <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" type="OnUse" range="2000" />
+    </Explosion>
+  </StatusEffect>-->
+  <StatusEffect type="OnDeath" target="This" disabledeltatime="true" stackable="false" delay="0.15">
+    <Explosion range="200.0" structuredamage="10" itemdamage="35" stun="1" force="15.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
+      <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" type="OnUse" range="2500" selectionmode="All" />
+      <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" type="OnUse" range="2000" />
+      <Affliction identifier="burn" strength="75" />
+      <Affliction identifier="internaldamage" strength="140" />
+      <Affliction identifier="bleeding" strength="25" />
+    </Explosion>
+    <SpawnItem identifier="ek_walkerdrone_wreck" spawnposition="This" />
+    <RemoveCharacter />
+  </StatusEffect>
+  <!--
+  <StatusEffect type="Always" targettype="This" comparison="or">
+    <Conditional hastag="ek_drone_disarm_tag"/>
+    <Conditional hasStatusTag="ek_drone_disarm_tag"/>
+    <Conditional HasStatusEffect="ek_drone_disarm" />
+    <Sound file="%ModDir%/Items/Weapons/ek_impactmine_disarmed.ogg" range="1500" />
+    <SpawnItem identifier="ek_gundrone" spawnposition="This"/>
+    <RemoveCharacter />
+  </StatusEffect>-->
+  <!-- Recover drones using status-effect | Todo: Wait for this to work -->
+  <StatusEffect type="Always" target="Character">
+    <Conditional ek_drone_disarm="gte 10" />
+    <Affliction identifier="stun" strength="300" />
+  </StatusEffect>
+  <StatusEffect type="Always" target="Character">
+    <Conditional ek_drone_disarm="gte 90" />
+    <Sound file="%ModDir%/Items/Weapons/ek_drone_disarm.ogg" range="1500" />
+    <SpawnItem identifier="ek_walkerdrone" spawnposition="This" />
+    <RemoveCharacter />
+  </StatusEffect>
+</Charactervariant>

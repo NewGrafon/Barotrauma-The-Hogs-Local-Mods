@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ekutility_smallshelf" tags="cabinet" pickdistance="150" scale="0.5" HideConditionBar="true">
+    <!--<Price storeidentifier="merchantCity" buyprice="40" />
+    <Price storeidentifier="merchantOutpost" buyprice="50" />
+    <Price storeidentifier="merchantMilitary" buyprice="50" />
+    <Price storeidentifier="merchantResearch" buyprice="50" />-->
+    <Price baseprice="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="iron" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="208,208,160,96" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="208,304,160,112" origin="0.5,0.57" maxcondition="90" />
+    <Body width="144" height="80" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="12" slotsperrow="6" canbeselected="true" hideitems="true">
+      <GuiFrame relativesize="0.25,0.22" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_mediumshelf" aliases="medium shelf" tags="cabinet" pickdistance="150" scale="0.5" HideConditionBar="true">
+    <!--<Price storeidentifier="merchantCity" buyprice="75" />
+    <Price storeidentifier="merchantOutpost" buyprice="80" />
+    <Price storeidentifier="merchantMilitary" buyprice="80" />
+    <Price storeidentifier="merchantResearch" buyprice="80" />-->
+    <Price baseprice="60" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="iron" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="0,208,208,128" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="0,336,208,128" origin="0.5,0.5" maxcondition="90" />
+    <Body width="192" height="128" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.4" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="21" slotsperrow="7" canbeselected="true" hideitems="true">
+      <GuiFrame relativesize="0.28,0.28" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_shellrack" tags="cabinet" pickdistance="150" scale="0.5">
+    <!--<Price storeidentifier="merchantCity" buyprice="50" />
+    <Price storeidentifier="merchantOutpost" buyprice="60" />
+    <Price storeidentifier="merchantMilitary" buyprice="40" />-->
+    <Price baseprice="50">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="5" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="iron" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="0,0,224,208" origin="0.5,0.5" />
+    <Body width="216" height="192" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.55" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="6" maxstacksize="1" slotsperrow="6" itempos="33,-96" iteminterval="31.75,0" itemrotation="90" containedspritedepth="0.8" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.22" anchor="Center" style="ItemUI" />
+      <Containable identifiers="railgunshell,nuclearshell,railgunammo,ek_railguncontainable" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_shellrack_huge" tags="cabinet" pickdistance="150" scale="0.5">
+    <!--<Price storeidentifier="merchantCity" buyprice="50" />
+    <Price storeidentifier="merchantOutpost" buyprice="60" />
+    <Price storeidentifier="merchantMilitary" buyprice="40" />-->
+    <Price baseprice="120" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="5" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <!-- 20 -->
+      <Item identifier="steel" />
+      <Item identifier="aluminium" />
+      <!--42-->
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="224,576,240,240" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" sourcerect="464,568,232,248" depth="0.69" origin="0.5,0.53" />
+    <Body width="216" height="192" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.35" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="12" maxstacksize="1" slotsperrow="6" itempos="124,-212" iteminterval="0,18.5" itemrotation="0" containedspritedepth="0.78" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
+      <Containable identifiers="railgunshell,nuclearshell,railgunammo,ek_railguncontainable" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_craterack" tags="container,crateshelf,coilgunammoshelf,coilgunammocontainer,cargocontainer,ammocontainer" pickdistance="150" scale="0.5">
+    <!--<Price storeidentifier="merchantCity" buyprice="50" />
+    <Price storeidentifier="merchantOutpost" buyprice="60" />
+    <Price storeidentifier="merchantMilitary" buyprice="40" />-->
+    <Price baseprice="50">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <!--20-->
+      <Item identifier="steel" outcondition="0.5" />
+      <!--20 (10)-->
+      <Item identifier="rubber" outcondition="0.75" />
+      <!--20 (15)-->
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" mincondition="1" usecondition="true" />
+      <RequiredItem identifier="steel" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="rubber" mincondition="0.75" usecondition="true" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" depth="0.65" sourcerect="0,0,176,288" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="192,8,144,272" depth="0.69" origin="0.5,0.5" />
+    <Body width="160" height="280" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.55" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" itempos="88,-238" iteminterval="0,90" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
+      <Containable identifiers="crate,ek_ammocrate_small,coilgunammobox,coilgunammo,chaingunammo,pulselaserammo,ammobox,depthchargeammo,ita_cratebulk,duffelbag,ita_duffelbag1,ek_densifiedresource" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_craterack_tall" tags="container,crateshelf,coilgunammoshelf,coilgunammocontainer,cargocontainer,ammocontainer" pickdistance="150" scale="0.5">
+    <!--<Price storeidentifier="merchantCity" buyprice="50" />
+    <Price storeidentifier="merchantOutpost" buyprice="60" />
+    <Price storeidentifier="merchantMilitary" buyprice="40" />-->
+    <Price baseprice="65" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <!--20-->
+      <Item identifier="steel" />
+      <!--20 -->
+      <Item identifier="rubber" />
+      <!--20-->
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" depth="0.65" sourcerect="352,0,176,384" origin="0.5,0.53" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="544,8,144,368" depth="0.69" origin="0.5,0.53" />
+    <Body width="160" height="384" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.55" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="4" maxstacksize="1" itempos="88,-322" iteminterval="0,92" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" />
+      <Containable identifiers="crate,ek_ammocrate_small,coilgunammobox,coilgunammo,chaingunammo,pulselaserammo,ammobox,depthchargeammo,ita_cratebulk,duffelbag,ita_duffelbag1,ek_densifiedresource" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_craterack_freezer" tags="container,crateshelf,coilgunammoshelf,coilgunammocontainer,cargocontainer,ek_cratefreezer,ammocontainer" pickdistance="150" scale="0.5" fireproof="true" waterproof="true">
+    <!--<Price storeidentifier="merchantCity" buyprice="50" />
+    <Price storeidentifier="merchantOutpost" buyprice="60" />
+    <Price storeidentifier="merchantMilitary" buyprice="40" />-->
+    <Price baseprice="160" soldeverywhere="false" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" sold="false" />
+      <Price storeidentifier="merchantmine" sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <!--20-->
+      <Item identifier="steel" />
+      <!--20-->
+      <Item identifier="copper" />
+      <!--22-->
+      <Item identifier="rubber" />
+      <!--20-->
+      <Item identifier="fpgacircuit" />
+      <!--80-->
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="electrical" level="20" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="rubber" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" depth="0.64" sourcerect="0,296,176,360" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="336,392,144,272" depth="0.65" origin="0.5,0.37" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" depth="0.645" sourcerect="484,396,56,56" rotationspeed="360" offset="-24,142">
+      <AnimationConditional IsActive="True" targetitemcomponent="LightComponent" />
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="LightComponent" />
+    </DecorativeSprite>
+    <Body width="160" height="280" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.3" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" itempos="88,-312" iteminterval="0,90" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepth="0.845">
+      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
+      <Containable identifiers="crate,ita_cratebulk,cratetall,ita_eggcrate,ita_eggcrate2,ek_crateperishable" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+      <StatusEffect type="Always" targettype="Contained" targets="ita_eggcrate2" Condition="12.5" />
+    </ItemContainer>
+    <LightComponent range="10.0" lightcolor="175,175,175,0" powerconsumption="250" IsOn="true" castshadows="false" allowingameediting="false" Flicker="0.2" Flickerspeed="0.4">
+      <sprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" depth="0.025" sourcerect="184,304,144,344" origin="0.5,0.5" alpha="1.0" />
+      <StatusEffect type="OnActive" targettype="Contained" targets="ek_crateperishable,ita_eggcrate" Condition="0.15" />
+      <StatusEffect type="OnActive" targettype="Contained" targets="ita_eggcrate2" Condition="2.55" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power" displayname="connection.power" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="240" maxdeteriorationdelay="750" mindeteriorationcondition="0" RepairThreshold="90" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="burn" strength="15" />
+        <Affliction identifier="stun" strength="2" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="" identifier="ekutility_chemlightboxred" category="Equipment" aliases="glowstick box (red),chemlight box red,glowstick box red" tags="mediumitem,ekutility_smallbox,toolbox" scale="0.4" pickdistance="150" impactsoundtag="impact_metal_light" HideConditionBar="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="6" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="6" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="8" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" minavailable="10" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="0,464,112,80" origin="0.5,0.5" />
+    <Body width="100" height="68" density="12" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="10,-70" handle1="0,-20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer autofill="False" capacity="6" slotsperrow="3" maxstacksize="1" canbeselected="false" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="1,240,112,16" />
+      <Containable identifiers="ek_chemlight,flare,smallarmsammo" excludeditems="toolbox" />
+    </ItemContainer>
+    <LightComponent characterusable="false" LightColor="0,0,0,0" range="50" IsOn="true">
+      <StatusEffect type="OnActive" target="This" targetitemcomponent="LightComponent" IsOn="false" delay="0.3" />
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" Condition="-30.0" delay="0.01" stackable="false">
+        <Conditional Condition="gt 71" />
+        <SpawnItem identifiers="ekutility_redchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_redchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_redchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_redchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_redchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_redchemlight" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </LightComponent>
+  </Item>
+  <Item name="" identifier="ekutility_chemlightboxgreen" category="Equipment" aliases="glowstick box (green),chemlight box green,glowstick box green" tags="mediumitem,ekutility_smallbox,toolbox" scale="0.4" pickdistance="150" impactsoundtag="impact_metal_light" HideConditionBar="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="6" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="6" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="8" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" minavailable="10" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="112,464,112,80" origin="0.5,0.5" />
+    <Body width="100" height="68" density="12" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="10,-70" handle1="0,-20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer autofill="False" capacity="6" slotsperrow="3" maxstacksize="1" canbeselected="false" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="1,240,112,16" />
+      <Containable identifiers="ek_chemlight,flare,smallarmsammo" excludeditems="toolbox" />
+    </ItemContainer>
+    <LightComponent characterusable="false" LightColor="0,0,0,0" range="50" IsOn="true">
+      <StatusEffect type="OnActive" target="This" targetitemcomponent="LightComponent" IsOn="false" delay="0.3" />
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" Condition="-30.0" delay="0.01" stackable="false">
+        <Conditional Condition="gt 71" />
+        <SpawnItem identifiers="ekutility_greenchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_greenchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_greenchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_greenchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_greenchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_greenchemlight" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </LightComponent>
+  </Item>
+  <Item name="" identifier="ekutility_chemlightboxblue" category="Equipment" aliases="glowstick box (blue),chemlight box blue,glowstick box blue" tags="mediumitem,ekutility_smallbox,toolbox" scale="0.4" pickdistance="150" impactsoundtag="impact_metal_light" HideConditionBar="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="6" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="6" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="8" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" minavailable="10" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="0,544,112,80" origin="0.5,0.5" />
+    <Body width="100" height="68" density="12" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="10,-70" handle1="0,-20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer autofill="False" capacity="6" slotsperrow="3" maxstacksize="1" canbeselected="false" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="1,240,112,16" />
+      <Containable identifiers="ek_chemlight,flare,smallarmsammo" excludeditems="toolbox" />
+    </ItemContainer>
+    <LightComponent characterusable="false" LightColor="0,0,0,0" range="50" IsOn="true">
+      <StatusEffect type="OnActive" target="This" targetitemcomponent="LightComponent" IsOn="false" delay="0.3" />
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" Condition="-30.0" delay="0.01" stackable="false">
+        <Conditional Condition="gt 71" />
+        <SpawnItem identifiers="ekutility_bluechemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_bluechemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_bluechemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_bluechemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_bluechemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_bluechemlight" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </LightComponent>
+  </Item>
+  <Item name="" identifier="ekutility_chemlightboxyellow" category="Equipment" aliases="glowstick box (yellow),chemlight box yellow,glowstick box yellow" tags="mediumitem,ekutility_smallbox,toolbox" scale="0.4" pickdistance="150" impactsoundtag="impact_metal_light" HideConditionBar="true">
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="6" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="6" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="8" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" minavailable="10" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="112,544,112,80" origin="0.5,0.5" />
+    <Body width="100" height="68" density="12" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="10,-70" handle1="0,-20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer autofill="False" capacity="6" slotsperrow="3" maxstacksize="1" canbeselected="false" hideitems="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="1,240,112,16" />
+      <Containable identifiers="ek_chemlight,flare,smallarmsammo" excludeditems="toolbox" />
+    </ItemContainer>
+    <LightComponent characterusable="false" LightColor="0,0,0,0" range="50" IsOn="true">
+      <StatusEffect type="OnActive" target="This" targetitemcomponent="LightComponent" IsOn="false" delay="0.3" />
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" Condition="-30.0" delay="0.01" stackable="false">
+        <Conditional Condition="gt 71" />
+        <SpawnItem identifiers="ekutility_yellowchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_yellowchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_yellowchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_yellowchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_yellowchemlight" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ekutility_yellowchemlight" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </LightComponent>
+  </Item>
+  <Item name="" identifier="ekutility_cart_depthcharge" tags="coilgunammoshelf,container,coilgunammocontainer,ammocontainer" pickdistance="75" scale="0.6">
+    <Price baseprice="75" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="2" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="aluminium" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.525" sourcerect="680,0,240,176" origin="0.5,0.5" />
+    <Body width="182" height="157" density="25" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="80,-70" holdangle="2" handle1="-108,76" handle2="-108,76" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="4" slotsperrow="2" maxstacksize="1" itempos="-40,16" iteminterval="80,1" itemrotation="90" itemsperrow="2" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+      <!--<GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" /> containedspritedepth="0.58"-->
+      <Containable identifiers="depthchargeammo,crate,metalcrate,ek_ammocrate_small,coilgunammobox,coilgunammo,chaingunammo,pulselaserammo,ammobox,divingsuit,combatdivingsuit,abyssdivingsuit,pucs,slipsuit,ita_cratebulk,duffelbag,ita_duffelbag1,ek_densifiedresource,ekgunnery_mediumsslammo" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_handtruck" pickdistance="75" scale="0.6">
+    <Price baseprice="75" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="aluminium" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="224,0,112,192" origin="0.5,0.5" />
+    <Body width="96" height="178" density="25" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-88" holdangle="25" handle1="-40,82" handle2="-40,82" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="6" slotsperrow="3" maxstacksize="1" itempos="-6,-2" iteminterval="21,1" itemsperrow="3" itemrotation="90" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+      <!--<GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />-->
+      <Containable identifiers="railgunshell,nuclearshell,railgunammo,ek_railguncontainable,ekgunnery_mediumsslammo">
+        <!--<StatusEffect type="OnContaining" target="Character" SpeedMultiplier="0.5" setvalue="true" />-->
+      </Containable>
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_handtruck_reactorfuel" category="Equipment" Tags="reactor,ekutility_compatiblefuelstorage" pickdistance="75" scale="0.6">
+    <Price baseprice="100">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+      <!--42-->
+      <Item identifier="lead" />
+      <!--18-->
+      <Item identifier="potassium" />
+      <!--10-->
+      <Item identifier="rubber" />
+      <!--20-->
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="potassium" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="0,624,160,224" origin="0.5,0.5" />
+    <Body width="136" height="208" density="25" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="52,-82" holdangle="25" handle1="-54,86" handle2="-54,86" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" hideitems="true" drawinventory="true" capacity="3" slotsperrow="3" maxstacksize="1" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+      <Containable identifiers="smallitem,fuelrod,reactorfuel" />
+    </ItemContainer>
+  </Item>
+  <!-- Sprite issue due to artifact override maybe? Only affects Nasonov and EMP Artifact.-->
+  <Item name="" identifier="ekutility_artifactbox" aliases="artifact crate,artifact box" tags="mobilecontainer,artifactcontainer" scale="0.4" sonarsize="3" fireproof="true" waterproof="true" pickdistance="60" impactsoundtag="impact_metal_heavy" HideConditionBar="true">
+    <Price baseprice="180" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.6" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+    </Price>
+    <Deconstruct time="20">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="steel" />
+      <Item identifier="lead" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,128,64,64" />-->
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="384,0,288,256" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="384,256,288,256" origin="0.5,0.5" maxcondition="99" />
+    <Body width="172" height="240" density="10" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="55,-20" handle1="-25,33" handle2="-25,33" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.4" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="1" slotsperrow="1" maxstacksize="1" canbeselected="false" hideitems="true" msg="ItemMsgInteractSelect">
+      <Containable identifiers="alienartifact">
+        <StatusEffect type="OnContaining" target="This" Condition="-5.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+        <!-- Legacy behavior maintained for old artifact mods. -->
+        <StatusEffect type="OnContaining" targettype="Contained" targets="ekutility_compatibleartifact" Condition="0" setvalue="true" />
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="5.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 95" />
+      </StatusEffect>
+    </ItemContainer>
+    <LightComponent LightColor="250,220,190,100" range="125" IsOn="true" />
+  </Item>
+  <Item name="" identifier="ekutility_storagecrate" tags="crate" scale="0.5" fireproof="true" waterproof="true" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="110" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.25" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="1.6" minavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+    </Price>
+    <Deconstruct time="20">
+      <Item identifier="aluminium" />
+      <Item identifier="rubber" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="rubber" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,128,64,64" />-->
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="224,416,160,96" origin="0.5,0.5" />
+    <Body width="150" height="85" density="10" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="30" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_crateblocker" tags="mediumitem,crate" scale="0.5" fireproof="true" waterproof="true" maxstacksize="4" pickdistance="150" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.25" minavailable="5" />
+      <Price storeidentifier="merchantcity" multiplier="1.6" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="4" />
+    </Price>
+    <Deconstruct time="5">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,128,64,64" />-->
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.54" sourcerect="704,656,152,88" origin="0.5,0.5" />
+    <Body width="150" height="85" density="10" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="ekutility_materiallocker" tags="cabinet" pickdistance="150" scale="0.5" HideConditionBar="true">
+    <Price baseprice="120" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <!-- 20 -->
+      <Item identifier="steel" />
+      <Item identifier="aluminium" />
+      <!-- 42 -->
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.75" sourcerect="928,0,256,224" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.75" sourcerect="928,224,256,224" origin="0.5,0.5" maxcondition="90" />
+    <Body width="256" height="224" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.4" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="35" slotsperrow="7" canbeselected="true" hideitems="true">
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <!-- 150 -->
+  <!-- 80 -->
+  <!-- 20 -->
+  <!-- 42 -->
+  <!-- 42 -->
+  <!-- Old Crate Transport Mule -->
+  <Item name="" identifier="ekutility_mulecargo" category="Equipment,Diving" Tags="container,provocative" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <Price baseprice="400" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="1" />
+    </Price>
+    <!--
+	150
+	150
+	20
+	42
+	42
+	-->
+    <Deconstruct time="25">
+      <Item identifier="underwaterscooter" />
+      <Item identifier="sonarbeacon" />
+      <Item identifier="steel" />
+      <Item identifier="aluminium" />
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="40">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredItem identifier="underwaterscooter" />
+      <RequiredItem identifier="sonarbeacon" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.575" sourcerect="224,824,480,168" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.525" sourcerect="224,992,352,96" origin="0.5,0.533" />
+    <Body width="400" height="140" density="10" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="145,-45" aimpos="155,0" holdangle="-15" handle1="-180,35" handle2="-180,35" aimable="true" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.4" setvalue="true" />
+    </Holdable>
+    <AiTarget soundrange="2500" sonarlabel="Crate Transport Mule" />
+    <Propulsion force="140" usablein="water" particles="bubbles">
+      <sound file="%ModDir%/Items/Containers/mulescooterloop.ogg" type="OnUse" range="500.0" loop="true" />
+      <LightComponent LightColor="255,200,150,150" range="1000" Flicker="0.2" Flickerspeed="0.4" AllowInGameEditing="false">
+        <LightTexture texture="Content/Lights/lightcone.png" origin="0.05, 0.5" size="1.0,1.0" />
+      </LightComponent>
+    </Propulsion>
+    <LightComponent LightColor="255,200,150,100" range="600" powerconsumption="0" Flicker="0.2" Flickerspeed="0.4" IsOn="false" castshadows="true" canbeselected="false" AllowInGameEditing="false" />
+    <!--
+	<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
+      <TickBox text="sonarbeacon.beaconactive">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+      </TickBox>
+    </CustomInterface>
+	-->
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.16,0.15" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+      <TickBox text="sonarbeacon.beaconactive">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+      </TickBox>
+      <TextBox text="Crate Transport Mule" propertyname="SonarLabel" />
+    </CustomInterface>
+    <ItemContainer autofill="False" hideitems="false" drawinventory="true" capacity="4" slotsperrow="2" maxstacksize="1" itempos="-74,8" iteminterval="152,1" itemrotation="0" itemsperrow="2" canbeselected="true" msg="ItemMsgInteractSelect" keepopenwhenequipped="true" movableframe="true">
+      <!--<Containable identifiers="depthchargeammo,crate,ek_ammocrate_small,coilgunammobox,coilgunammo,divingsuit,ita_cratebulk,duffelbag,ita_duffelbag1,ek_densifiedresource" />-->
+      <Containable identifiers="depthchargeammo,crate,metalcrate,ek_ammocrate_small,coilgunammobox,coilgunammo,chaingunammo,pulselaserammo,ammobox,divingsuit,combatdivingsuit,abyssdivingsuit,pucs,slipsuit,ita_cratebulk,duffelbag,ita_duffelbag1,ek_densifiedresource" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_securelockercaptain" tags="cabinet" pickdistance="150" scale="0.5" fireproof="true" waterproof="true" HideConditionBar="true">
+    <Price baseprice="120">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <!-- 
+	20
+	20
+	80
+	-->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="872,448,208,160" origin="0.5,0.5" canflipx="false" />
+    <!-- 384 + 28 = 412 -->
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,412,40,20" depth="0.645" origin="-0.35,-0.2" canflipx="false" />
+    <Body width="196" height="148" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="15" canbeselected="true" hideitems="true">
+      <RequiredItem identifier="id_captain,com,master,jobid:captain" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_securelockersecurityofficer" tags="cabinet" pickdistance="150" scale="0.5" fireproof="true" waterproof="true" HideConditionBar="true">
+    <Price baseprice="120">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <!-- 
+	20
+	20
+	80
+	-->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="872,448,208,160" origin="0.5,0.5" canflipx="false" />
+    <!-- 384 + 28 = 412 -->
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,468,40,20" depth="0.645" origin="-0.35,-0.2" canflipx="false" />
+    <Body width="196" height="148" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="15" canbeselected="true" hideitems="true">
+      <RequiredItem identifier="id_security,id_captain,sec,com,master,jobid:securityofficer,jobid:captain" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_securelockermedicaldoctor" tags="cabinet" pickdistance="150" scale="0.5" fireproof="true" waterproof="true" HideConditionBar="true">
+    <Price baseprice="140">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <!-- 
+	20
+	20
+	20
+	80
+	-->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="872,448,208,160" origin="0.5,0.5" canflipx="false" />
+    <!-- 384 + 28 = 412 -->
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,524,40,20" depth="0.645" origin="-0.35,-0.2" canflipx="false" />
+    <Body width="196" height="148" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="15" canbeselected="true" hideitems="true">
+      <RequiredItem identifier="id_medical,med,jobid:medicaldoctor" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_securelockermechanic" tags="cabinet" pickdistance="150" scale="0.5" fireproof="true" waterproof="true" HideConditionBar="true">
+    <Price baseprice="140">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <!-- 
+	20
+	20
+	20
+	80
+	-->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="872,448,208,160" origin="0.5,0.5" canflipx="false" />
+    <!-- 384 + 28 = 412 -->
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,580,40,20" depth="0.645" origin="-0.35,-0.2" canflipx="false" />
+    <Body width="196" height="148" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="15" canbeselected="true" hideitems="true">
+      <RequiredItem identifier="id_mechanic,mechanic,mech,jobid:mechanic" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="ekutility_securelockerengineer" tags="cabinet" pickdistance="150" scale="0.5" fireproof="true" waterproof="true" HideConditionBar="true">
+    <Price baseprice="140">
+      <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantmine" multiplier="1.3" minavailable="1" />
+    </Price>
+    <!-- 
+	20
+	20
+	20
+	80
+	-->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="fpgacircuit" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Containers/ekutility_containers.png" depth="0.65" sourcerect="872,448,208,160" origin="0.5,0.5" canflipx="false" />
+    <!-- 384 + 28 = 412 -->
+    <DecorativeSprite texture="%ModDir%/Items/Containers/ekutility_containers2.png" sourcerect="768,636,40,20" depth="0.645" origin="-0.35,-0.2" canflipx="false" />
+    <Body width="196" height="148" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ItemContainer autofill="False" capacity="15" canbeselected="true" hideitems="true">
+      <RequiredItem identifier="id_engineer,engineer,eng,jobid:engineer" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+      <Containable identifiers="smallitem,mediumitem">
+        <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
+          <Conditional Condition="eq 100" />
+        </StatusEffect>
+      </Containable>
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
+    </ItemContainer>
+  </Item>
+</Items>

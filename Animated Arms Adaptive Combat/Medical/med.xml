@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="Atropini" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,chem" description="" cargocontaineridentifier="mediccrate" scale="0.5" useinhealthinterface="true" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer secondary="abandonedmedcab,piratemedcab,wreckmedcab" minamount="1" maxamount="2" spawnprobability="0.25" />
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" spawnprobability="0.1" />
+      <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" />
+      <Price baseprice="80">
+        <Price storeidentifier="merchantoutpost" minavailable="4" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="6" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="8" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="8" />
+        <Price storeidentifier="merchantnightclub" minavailable="4" />
+      </Price>
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+        <RequiredSkill identifier="medical" level="40" />
+        <RequiredItem identifier="chlorine" count="1" />
+        <RequiredItem identifier="carbon" />
+      </Fabricate>
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="80" fabricationlimitmin="1" fabricationlimitmax="5" />
+      <SuitableTreatment type="neuro-gas" suitability="125" />
+      <SuitableTreatment identifier="chemaddiction" suitability="15" />
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="Atropini icon" sourcerect="644,1126,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="Atropini" sourcerect="718,1117,38,68" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="60" density="15" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <RequiredSkill identifier="medical" level="35" />
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget" duration="10">
+          <ReduceAffliction identifier="neuro-gas" amount="8" />
+          <Affliction identifier="chemaddiction" amount="2" />
+          <Affliction identifier="hallucinating" amount="7.5" />
+        </StatusEffect>
+        <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget" duration="15">
+          <ReduceAffliction identifier="neuro-gas" amount="4" />
+          <Affliction identifier="chemaddiction" amount="3" />
+          <Affliction identifier="hallucinating" amount="12.5" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <SkillRequirementHint identifier="medical" level="35" />
+    </Item>
+    <Item name="" identifier="neuro-syringe" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="toxcab" secondary="toxcontainer" />
+      <PreferredContainer primary="wrecktoxcab,abandonedtoxcab,piratetoxcab" spawnprobability="0.05" />
+      <Price baseprice="250" minavailable="1">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.1" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+      </Price>
+      <Fabricate suitablefabricators="medicalfabricator" requirerecipe="true" requiredtime="40">
+        <RequiredSkill identifier="medical" level="35" />
+        <RequiredItem identifier="chlorine" />
+        <RequiredItem identifier="paralyxis" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="paralyxis" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Ammunition.png" name="neuro-syringe icon" sourcerect="644,1196,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Ammunition.png" name="neuro-syringe" sourcerect="756,1118,38,68" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <RequiredSkill identifier="medical" level="50" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect type="OnSuccess" target="UseTarget" duration="10" multiplyafflictionsbymaxvitality="true">
+          <Conditional ishuman="true" />
+          <Affliction identifier="neuro-gas" amount="13" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget" duration="10" multiplyafflictionsbymaxvitality="true">
+          <Conditional ishuman="false" />
+          <Affliction identifier="neuro-gas" amount="10" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="UseTarget" duration="10" multiplyafflictionsbymaxvitality="true">
+          <!--Single dose always wears off.-->
+          <Affliction identifier="neuro-gas" amount="9" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+          <Affliction identifier="stun" amount="0.1" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+      <SkillRequirementHint identifier="medical" level="50" />
+    </Item>
+  </Items>
+</Override>

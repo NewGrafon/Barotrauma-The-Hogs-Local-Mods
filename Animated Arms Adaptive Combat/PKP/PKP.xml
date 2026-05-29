@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" condition="10" identifier="PKP" category="Weapon" HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" subcategory="Animated_arms_weapons" Scale="0.35" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="wrecksecarmcab,piratesecarmcab" amount="1" spawnprobability="0.008" />
+      <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.008" />
+      <Price baseprice="1285" sold="true" minleveldifficulty="70">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.0" minavailable="1">
+          <Reputation faction="separatists" min="75" />
+        </Price>
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiredtime="50" displayname="repairweapon" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="80" />
+        <RequiredItem identifier="PKP" amount="1" />
+        <RequiredItem identifier="repairweapon" amount="2" />
+        <RequiredItem identifier="rubber" amount="1" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="aliencircuitry" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="100" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="85" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="aliencircuitry" amount="2" />
+        <RequiredItem identifier="physicorium" amount="2" />
+        <RequiredItem identifier="rubber" amount="1" />
+        <RequiredItem identifier="carbon" amount="1" />
+        <RequiredItem identifier="plastic" amount="2" />
+        <RequiredItem identifier="aluminium" amount="2" />
+      </Fabricate>
+      <Deconstruct time="35">
+        <Item identifier="physicorium" amount="1" />
+        <Item identifier="aliencircuitry" amount="1" />
+        <Item identifier="titaniumaluminiumalloy" amount="1" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/PKP/PKP.png" sourcerect="9,839,166,189" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/PKP/PKP.png" sourcerect="6,592,284,111" depth="0.56" origin="0.6498457,0.23811562" />
+      <BrokenSprite texture="%ModDir%/PKP/PKP.png" name="PKP 80 процентов" sourcerect="5,109,284,111" depth="0.56" origin="0.6622723,0.20923796" maxcondition="80" />
+      <!-- Top cover opened. -->
+      <BrokenSprite texture="%ModDir%/PKP/PKP.png" name="PKP 70 процентов" sourcerect="9,225,285,140" depth="0.56" origin="0.6497691,0.3766732" maxcondition="70" />
+      <!-- Belt inserted. -->
+      <BrokenSprite texture="%ModDir%/PKP/PKP.png" name="PKP 60 процентов" sourcerect="304,340,285,140" depth="0.56" origin="0.6454027,0.39148483" maxcondition="60" />
+      <!-- Sight pulled. -->
+      <BrokenSprite texture="%ModDir%/PKP/PKP.png" name="PKP 50 процентов" sourcerect="6,465,284,111" depth="0.56" origin="0.64982086,0.23723084" maxcondition="50" />
+      <!-- Empty. No magazine inserted. -->
+      <BrokenSprite texture="%ModDir%/PKP/PKP.png" sourcerect="5,5,283,99" depth="0.56" origin="0.6472786,0.3395578" maxcondition="10" />
+      <Body width="220" height="60" density="30" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="75,-10" aimpos="70,5" handle1="-95,-50" handle2="-15,-35" holdangle="-30">
+        <Conditional recoilstabilized="lte 0" />
+        <StatusEffect type="OnActive" target="Character" interval="1" duration="1.1" SpeedMultiplier="0.75" setvalue="true" />
+        <StatusEffect type="OnWearing" target="Character" interval="1" duration="1.1" SpeedMultiplier="0.75" setvalue="true" />
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.20" ObstructVisionAmount="10" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" path="%ModDir%/Animations/WalkAiming.xml" priority="11" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" interval="1" duration="1.1" SpeedMultiplier="1.25" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="laser" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" cameraaimoffset="450" interval="1" duration="1.1" setvalue="true" comparison="and">
+          <Conditional HasStatusTag="active_zoom" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" cameraaimoffset="650" interval="1" duration="1.1" setvalue="true" comparison="and">
+          <Conditional HasStatusTag="active_zoom-1" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character,This" ObstructVisionAmount="0.01" interval="1" duration="1.1" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="better_view" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" thermalgoggles="false" overlaycolor="0,0,0,0" disabledeltatime="true" setvalue="true">
+          <Conditional hasstatustag="neq thermal" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="this" thermalgoggles="true" overlaycolor="100,100,100,120" setvalue="true">
+          <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" condition="gt 0" property="charge" />
+          <RequiredItem items="thermal_scope" type="Contained" />
+          <Sound file="%ModDir%/Saunds/Thermal-on.ogg" range="150" loop="true" volume="0.25" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Contained" Condition="-0.15" interval="1.0">
+          <RequiredItem items="thermal_scope" type="Contained" />
+          <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" />
+          <Conditional hasstatustag="thermal" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="this" tags="thermal" duration="0.05" setvalue="true">
+          <RequiredItem items="thermal_scope" type="Contained">
+            <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" condition="gt 0" property="charge" />
+          </RequiredItem>
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" spread="-0.5" unskilledspread="-1" stackable="true" disabledeltatime="true" setvalue="false" comparison="and" interval="0.05">
+          <Conditional Spread="gt 4" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-15" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 65" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This, Character" aimangle="-7" comparison="and">
+          <Conditional Aimangle="gt 0" />
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 65" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="compensator" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="compensator" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" target="this" tags="hider" interval="1" duration="1.05" setvalue="true">
+          <RequiredItem items="hider" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-1.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.8" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.9" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="0.95" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.0" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.05" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.1" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.15" type="OnUse" range="500" />
+          <Sound file="%ModDir%/Saunds/use-2.ogg" frequencymultiplier="1.2" type="OnUse" range="500" />
+          <Conditional HasStatusTag="neq recoil_lock" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="this" interval="3" showtexts="false" setvalue="true">
+          <Conditional showtexts="true" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" spritecolor="255,225,210,255">
+          <Conditional HasStatusTag="condition-75" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="0.5" spritecolor="231,204,184,255">
+          <Conditional HasStatusTag="condition-50" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" interval="20" oneshot="true" setvalue="true" OneShot="true" delay="1" spritecolor="190,140,100,255">
+          <Conditional HasStatusTag="condition-25" />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.125" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <TickBox text="onoff">
+          <StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+        </TickBox>
+        <Button text="Weapon_up">
+          <StatusEffect type="OnUse" target="This" aimpos="35,50" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" MatchOnEmpty="true" TargetSlot="1,2,3,4,5,6,7" />
+            <SpawnItem identifiers="weapons-up" spawnposition="ThisInventory" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" aimpos="65,5" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="Contained" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <RequiredItems items="weapons-up" type="Contained" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+        <Button text="Suicide">
+          <StatusEffect type="OnUse" target="This,Character" aimangle="125" aimpos="40,-25" handle1="50,-20" tags="suicide" duration="5" setvalue="true" DamageUser="true" disabledeltatime="true">
+            <Affliction identifier="suicide-damage" strength="10000" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="true" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This,Contained,NearbyItems" range="50" DamageUser="false" delay="5.1" setvalue="true" disabledeltatime="true" />
+          <StatusEffect type="OnUse" target="This" aimpos="65,5" handle1="-95,-50" aimangle="0" setvalue="true" DamageUser="false" disabledeltatime="true" delay="5.1" />
+        </Button>
+      </CustomInterface>
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="PKP Worn" texture="%ModDir%/PKP/PKP.png" sourcerect="5,5,283,99" canbehiddenbyotherwearables="false" rotation="90" depth="0.55" limb="Torso" depthlimb="LeftArm" scale="0.35" origin="0.5,0.8" />
+      </Wearable>
+      <RangedWeapon reload="0.125" weapondamagemodifier="0.5" holdtrigger="true" barrelpos="93,-2.5" spread="4" unskilledspread="12" combatPriority="90" drawhudwhenequipped="true" crosshairscale="0" DualWieldReloadTimePenaltyMultiplier="1" DualWieldAccuracyPenalty="1">
+        <StatusEffect type="OnSecondaryUse" target="this" showtexts="true" interval="2" duration="2.1" setvalue="true" comparison="and">
+          <Conditional hasstatustag="med-scan" />
+          <RequiredItems items="med-scan" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnDeath" target="This" aimangle="0" aimpos="65,5" handle1="-95,-50" delay="0.15">
+          <Conditional HasStatusTag="suicide" />
+          <Dropitem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="800" structuredamage="0" itemdamage="0" smoke="false" flames="false" force="0" sparks="false" shockwave="false" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="tinnitus_shot" strength="33" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" tags="recoil_lock" duration="0.3" stackable="false" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" aimangle="+2.4" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 25" />
+          <Conditional HasStatusTag="compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" aimangle="+3" disabledeltatime="true" comparison="and">
+          <Conditional Aimangle="lt 20" />
+          <Conditional HasStatusTag="neq compensator" />
+          <Conditional HasStatusTag="neq single" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="1.25" unskilledspread="2.5" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 20" />
+          <Conditional HasStatusTag="neq hider" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="this" spread="0.8" unskilledspread="1.6" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+          <Conditional Spread="lt 25" />
+          <Conditional HasStatusTag="hider" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" Condition="0" delay="5" SetValue="true" comparison="and">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <Crosshair texture="%ModDir%/Crosshairs-2.png" sourcerect="255,0,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs-2.png" sourcerect="0,0,256,256" />
+        <ParticleEmitter particle="mediummuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="swirlysmoke" particleamount="1" CopyEntityAngle="true" minsize="2" maxsize="2.5" colormultiplier="200,200,200,225" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="7,5" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="12,9" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="mediumgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" />
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="80" />
+			        <Sound file="%ModDir%/mosin/mosin.ogg" type="OnUse" range="5500" selectionmode="Random" />
+			        <Sound file="%ModDir%/mosin/mosin-1.ogg" type="OnUse" range="5500" /><Sound file="%ModDir%/mosin/mosin-2.ogg" type="OnUse" range="5500" /><StatusEffect type="OnUse" offset="-25,0" target="This" condition="25" setvalue="true"><Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="12.5" /></StatusEffect><StatusEffect type="OnUse" target="This" setvalue="true"><SpawnItem identifier="mosinammos-casing" spawnposition="This" aimspread="30" rotationtype="Collider" rotation="90" count="1" Impulse="0.04" /></StatusEffect><StatusEffect type="OnActive" offset="-25,0" target="Character" disabledeltatime="true" comparison="and"><Conditional skillrequirement="true" weapons="lt 90" /><Conditional recoilstabilized="lte 0" /><Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="15.0" /></StatusEffect><StatusEffect type="OnUse" offset="-25,0" target="Character" disabledeltatime="true" comparison="and"><Conditional skillrequirement="true" weapons="lt 70" /><Conditional recoilstabilized="lte 0" /><Affliction identifier="stun" strength="0.1" probability="0.05" /><Explosion range="150.0" force="1.25" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="17.0" /></StatusEffect><StatusEffect type="OnUse" offset="-25,0" target="Character" disabledeltatime="true" comparison="and"><Conditional skillrequirement="true" weapons="lt 50" /><Conditional recoilstabilized="lte 0" /><Affliction identifier="stun" strength="0.2" probability="0.1" /><Affliction identifier="blunttrauma" strength="0.3" target="lefthand,righthand" probability="0.3" /><Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="20.0" /></StatusEffect><StatusEffect type="OnUse" target="This" delay="0.08" condition="100" setvalue="true" /><StatusEffect type="OnUse" target="Contained" targetidentifiers="PKPmagazine"><Use /></StatusEffect><StatusEffect type="OnBroken" target="Contained" targetidentifiers="PKPreloading" delay="0.01" condition="0" setvalue="true" /><StatusEffect type="OnBroken" target="Contained" targetidentifiers="PKPreloading" delay="8.5" condition="100" setvalue="true" /><StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" delay="0.08" /><StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="PKPreloading" condition="100" setvalue="true" /><StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" holdpos="75,-10" aimpos="70,5" handle1="-95,-50" handle2="-15,-35" holdangle="-30" aimangle="0" setvalue="true" /><StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" condition="100" setvalue="true"><RequiredItems items="PKPmagazine" type="Contained" /></StatusEffect><StatusEffect Type="Always" OneShot="True" target="This,Contained" noninteractable="false" condition="10" setvalue="true"><RequiredItems items="PKPmagazine" type="Contained" requireempty="true" /></StatusEffect><StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" /><StatusEffect Type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" delay="0.05" AllowAccess="true" noninteractable="false" setvalue="true" /><RequiredItems items="PKPmagazine" type="Contained" /><RequiredItems items="PKPreloading" type="Contained" /><RequiredItems items="repair" type="Contained" /><RequiredSkill identifier="weapons" level="75" /><StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-2.875"><Conditional inwater="false" /><Use /></StatusEffect><StatusEffect type="OnUse" target="Contained" targetidentifiers="repair" condition="-6.69"><Conditional inwater="true" /><Use /></StatusEffect><StatusEffect type="InWater" target="Contained" targetidentifiers="repair" stackable="false" condition="-7.5" interval="6" /></RangedWeapon>
+      <Propulsion force="-25" usablein="both" ApplyToHands="false">
+        <RequiredItems items="PKPreloading" type="Contained" />
+        <RequiredItems items="repair" type="Contained" />
+        <RequiredItems items="PKPmagazine" type="Contained" />
+      </Propulsion>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" spawnwithid="repair" showcontainedstateindicator="false" containedstateindicatorstyle="bullet">
+        <Containable items="PKPmagazine" hide="true" excludebroken="false">
+          <StatusEffect type="OnInserted" target="NearbyItems" range="5" targetidentifiers="weapons-up" Stackable="false" setvalue="true" disabledeltatime="true">
+            <Remove />
+          </StatusEffect>
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="false" noninteractable="true" delay="0.01" setvalue="true">
+            <Conditional ishuman="true" />
+          </StatusEffect>
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This,Character,Contained" AllowAccess="true" noninteractable="false" delay="6.9" setvalue="true" />
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with OnRemoved status effects.
+		Also changes gun and hand position. -->
+          <!-- Низкий навык (<75) - медленная перезарядка -->
+          <StatusEffect type="OnInserted" target="This" delay="0.013" handle1="-95,-50" handle2="-15,-35" holdpos="75,0" aimpos="60,0" holdangle="15" aimangle="15" condition="0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.3" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPMagAttach.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.352" handle1="-89,-50" holdpos="75,-1" aimpos="60,-1" holdangle="14.5" aimangle="14.5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.404" handle1="-82,-51" holdpos="75,-2" aimpos="60,-2" holdangle="14" aimangle="14" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.456" handle1="-75,-52" holdpos="75,-3" aimpos="60,-3" holdangle="13.5" aimangle="13.5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.508" handle1="-68,-53" holdpos="75,-4" aimpos="60,-4" holdangle="13.25" aimangle="13.25" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="75,-10" aimpos="60,-5" delay="1.56" handle1="-55,-55" holdangle="13" aimangle="13" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.56" condition="80" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.64" handle1="-58,-55" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.692" handle1="-62,-54" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.744" handle1="-68,-53" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.796" handle1="-75,-52" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.848" handle1="-82,-51" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.9" handle1="-88,-50" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.952" handle1="-95,-50" aimangle="0" holdangle="0" holdpos="75,5" aimpos="75,5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="4.68" handle2="-100,-10" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.72" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPCoverOpen.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.98" handle1="-95,-50" handle2="-100,25" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="6.24" condition="70" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.28" handle1="-95,-50" handle2="-50,-20" holdpos="45,0" aimpos="45,0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.332" handle1="-93,-49.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.384" handle1="-91,-49.2" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.436" handle1="-89,-48.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.488" handle1="-87,-48.4" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.54" handle1="-82,-47" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.592" handle1="-75,-46" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.644" handle1="-71,-45" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.696" handle1="-65,-42" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.748" handle1="-60,-40" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.8" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPBeltInsert.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.852" holdpos="50,0" aimpos="50,0" handle1="-60,-40" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="9.1" condition="59" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.192" handle1="-62,-40.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.244" handle1="-65,-41.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.296" handle1="-79.8,-42.4" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.348" handle1="-81.4,-43.2" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.4" handle1="-83.0,-44.0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.452" handle1="-84.6,-44.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.504" handle1="-86.2,-45.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.556" handle1="-87.8,-46.4" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.608" handle1="-89.4,-47.2" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.66" handle1="-91.0,-48.0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.712" handle1="-92.6,-48.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.764" handle1="-94.2,-49.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="10.92" handle1="-95,-50" handle2="-110,15" aimangle="0" holdangle="0" holdpos="75,10" aimpos="75,0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="11.96" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPCoverClose.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="12.22" handle2="-110,-20" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="12.48" condition="100" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="13.78" handle2="13,-25" aimangle="-10" holdangle="-10" holdpos="75,-10" aimpos="75,-5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="15.08" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPEjectPortOpen.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="15.34" handle2="-13,-25" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="15.6" condition="50" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="16.64" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPEjectPortClose.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="16.9" handle2="13,-25" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="17.16" condition="100" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="17.68" holdpos="75,-10" aimpos="70,5" handle1="-95,-50" handle2="-15,-35" holdangle="-30" aimangle="0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.013" handle1="-95,-50" handle2="-15,-35" holdpos="75,0" aimpos="60,0" holdangle="15" aimangle="15" condition="0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.65" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPMagAttach.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.676" handle1="-89,-50" holdpos="75,-1" aimpos="60,-1" holdangle="14.5" aimangle="14.5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.702" handle1="-82,-51" holdpos="75,-2" aimpos="60,-2" holdangle="14" aimangle="14" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.728" handle1="-75,-52" holdpos="75,-3" aimpos="60,-3" holdangle="13.5" aimangle="13.5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.754" handle1="-68,-53" holdpos="75,-4" aimpos="60,-4" holdangle="13.25" aimangle="13.25" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" holdpos="75,-10" aimpos="60,-5" delay="0.78" handle1="-55,-55" holdangle="13" aimangle="13" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.78" condition="80" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.82" handle1="-58,-55" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.846" handle1="-62,-54" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.872" handle1="-68,-53" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.898" handle1="-75,-52" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.924" handle1="-82,-51" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.95" handle1="-88,-50" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="1.976" handle1="-95,-50" aimangle="0" holdangle="0" holdpos="75,5" aimpos="75,5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2.34" handle2="-100,-10" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2.86" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPCoverOpen.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="2.99" handle1="-95,-50" handle2="-100,25" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.12" condition="70" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.64" handle1="-95,-50" handle2="-50,-20" holdpos="45,0" aimpos="45,0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.666" handle1="-93,-49.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.692" handle1="-91,-49.2" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.718" handle1="-89,-48.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.744" handle1="-87,-48.4" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.77" handle1="-82,-47" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.796" handle1="-75,-46" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.822" handle1="-71,-45" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.848" handle1="-65,-42" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.874" handle1="-60,-40" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.9" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPBeltInsert.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="3.926" holdpos="50,0" aimpos="50,0" handle1="-60,-40" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="4.55" condition="59" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-5" distancemax="5" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.096" handle1="-62,-40.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.122" handle1="-65,-41.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.148" handle1="-79.8,-42.4" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.174" handle1="-81.4,-43.2" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.2" handle1="-83.0,-44.0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.226" handle1="-84.6,-44.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.252" handle1="-86.2,-45.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.278" handle1="-87.8,-46.4" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.304" handle1="-89.4,-47.2" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.33" handle1="-91.0,-48.0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.356" handle1="-92.6,-48.8" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.382" handle1="-94.2,-49.6" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.46" handle1="-95,-50" handle2="-110,15" aimangle="0" holdangle="0" holdpos="75,10" aimpos="75,0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="5.98" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPCoverClose.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="6.11" handle2="-110,-20" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="6.24" condition="100" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="6.89" handle2="13,-25" aimangle="-10" holdangle="-10" holdpos="75,-10" aimpos="75,-5" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.54" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPEjectPortOpen.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.67" handle2="-13,-25" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="7.8" condition="50" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="8.32" forceplaysounds="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+            <Sound file="%ModDir%/PKP/PKPEjectPortClose.ogg" range="1000" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="8.45" handle2="-15,-35" holdpos="75,-10" aimpos="70,5" holdangle="-30" aimangle="0" setvalue="true" conditionalcomparison="and">
+            <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+            <Conditional targetcontainer="true" />
+          </StatusEffect>
+          <!-- If the magazine is removed/swapped, plays the sound. -->
+          <StatusEffect type="OnRemoved" target="This" delay="0.1" condition="10" setvalue="true" forceplaysounds="true">
+            <Sound file="%ModDir%/PKP/PKPMagDetach.ogg" range="1000" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="%ModDir%/attachments-4.png" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight,flare,alienflare,glowstick" hide="false" itempos="10,-8" setactive="true">
+            <SlotIcon slotindex="0" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <!-- анимация фонарика -->
+            <StatusEffect type="OnInserted" target="This" handle1="-95,-50" setvalue="true" delay="0" />
+            <StatusEffect type="OnInserted" target="This" handle1="-91.4,-49.1" setvalue="true" delay="0.03" />
+            <StatusEffect type="OnInserted" target="This" handle1="-87.8,-48.2" setvalue="true" delay="0.06" />
+            <StatusEffect type="OnInserted" target="This" handle1="-84.2,-47.3" setvalue="true" delay="0.09" />
+            <StatusEffect type="OnInserted" target="This" handle1="-80.6,-46.4" setvalue="true" delay="0.12" />
+            <StatusEffect type="OnInserted" target="This" handle1="-77,-45.5" setvalue="true" delay="0.15" />
+            <StatusEffect type="OnInserted" target="This" handle1="-73.4,-44.6" setvalue="true" delay="0.18" />
+            <StatusEffect type="OnInserted" target="This" handle1="-69.8,-43.7" setvalue="true" delay="0.21" />
+            <StatusEffect type="OnInserted" target="This" handle1="-66.2,-42.8" setvalue="true" delay="0.24" />
+            <StatusEffect type="OnInserted" target="This" handle1="-50,-40" setvalue="true" delay="0.25" />
+            <StatusEffect type="OnInserted" target="This" handle1="-45.2,-38.8" setvalue="true" delay="0.28" />
+            <StatusEffect type="OnInserted" target="This" handle1="-40.4,-37.6" setvalue="true" delay="0.31" />
+            <StatusEffect type="OnInserted" target="This" handle1="-35.6,-36.4" setvalue="true" delay="0.34" />
+            <StatusEffect type="OnInserted" target="This" handle1="-30.8,-35.2" setvalue="true" delay="0.37" />
+            <StatusEffect type="OnInserted" target="This" handle1="-26,-34" setvalue="true" delay="0.40" />
+            <StatusEffect type="OnInserted" target="This" handle1="-21.2,-32.8" setvalue="true" delay="0.43" />
+            <StatusEffect type="OnInserted" target="This" handle1="-16.4,-31.6" setvalue="true" delay="0.46" />
+            <StatusEffect type="OnInserted" target="This" handle1="-11.6,-30.4" setvalue="true" delay="0.49" />
+            <StatusEffect type="OnInserted" target="This" handle1="0,-30" setvalue="true" delay="0.50" />
+            <StatusEffect type="OnInserted" target="This" handle1="-15.2,-31.2" setvalue="true" delay="0.53" />
+            <StatusEffect type="OnInserted" target="This" handle1="-11.4,-32.4" setvalue="true" delay="0.56" />
+            <StatusEffect type="OnInserted" target="This" handle1="-25.6,-33.6" setvalue="true" delay="0.59" />
+            <StatusEffect type="OnInserted" target="This" handle1="-30.8,-34.8" setvalue="true" delay="0.62" />
+            <StatusEffect type="OnInserted" target="This" handle1="-36,-36" setvalue="true" delay="0.65" />
+            <StatusEffect type="OnInserted" target="This" handle1="-41.2,-37.2" setvalue="true" delay="0.68" />
+            <StatusEffect type="OnInserted" target="This" handle1="-46.4,-38.4" setvalue="true" delay="0.71" />
+            <StatusEffect type="OnInserted" target="This" handle1="-51.6,-39.6" setvalue="true" delay="0.74" />
+            <StatusEffect type="OnInserted" target="This" handle1="-50,-40" setvalue="true" delay="0.75" />
+            <StatusEffect type="OnInserted" target="This" handle1="-55.5,-41.25" setvalue="true" delay="0.78" />
+            <StatusEffect type="OnInserted" target="This" handle1="-61,-42.5" setvalue="true" delay="0.81" />
+            <StatusEffect type="OnInserted" target="This" handle1="-66.5,-43.75" setvalue="true" delay="0.84" />
+            <StatusEffect type="OnInserted" target="This" handle1="-72,-45" setvalue="true" delay="0.87" />
+            <StatusEffect type="OnInserted" target="This" handle1="-77.5,-46.25" setvalue="true" delay="0.90" />
+            <StatusEffect type="OnInserted" target="This" handle1="-83,-47.5" setvalue="true" delay="0.93" />
+            <StatusEffect type="OnInserted" target="This" handle1="-88.5,-48.75" setvalue="true" delay="0.96" />
+            <StatusEffect type="OnInserted" target="This" handle1="-94,-50" setvalue="true" delay="0.99" />
+            <StatusEffect type="OnInserted" target="This" handle1="-95,-50" setvalue="true" delay="1.0" />
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="compensator_rifle,hider_rifle" hide="false" itempos="40,-0.6">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="0.5">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <!-- анимация фонарика -->
+            <StatusEffect type="OnInserted" target="This" handle1="-95,-50" setvalue="true" delay="0" />
+            <StatusEffect type="OnInserted" target="This" handle1="-91.4,-49.1" setvalue="true" delay="0.03" />
+            <StatusEffect type="OnInserted" target="This" handle1="-87.8,-48.2" setvalue="true" delay="0.06" />
+            <StatusEffect type="OnInserted" target="This" handle1="-84.2,-47.3" setvalue="true" delay="0.09" />
+            <StatusEffect type="OnInserted" target="This" handle1="-80.6,-46.4" setvalue="true" delay="0.12" />
+            <StatusEffect type="OnInserted" target="This" handle1="-77,-45.5" setvalue="true" delay="0.15" />
+            <StatusEffect type="OnInserted" target="This" handle1="-73.4,-44.6" setvalue="true" delay="0.18" />
+            <StatusEffect type="OnInserted" target="This" handle1="-69.8,-43.7" setvalue="true" delay="0.21" />
+            <StatusEffect type="OnInserted" target="This" handle1="-66.2,-42.8" setvalue="true" delay="0.24" />
+            <StatusEffect type="OnInserted" target="This" handle1="-50,-40" setvalue="true" delay="0.25" />
+            <StatusEffect type="OnInserted" target="This" handle1="-45.2,-38.8" setvalue="true" delay="0.28" />
+            <StatusEffect type="OnInserted" target="This" handle1="-40.4,-37.6" setvalue="true" delay="0.31" />
+            <StatusEffect type="OnInserted" target="This" handle1="-35.6,-36.4" setvalue="true" delay="0.34" />
+            <StatusEffect type="OnInserted" target="This" handle1="-30.8,-35.2" setvalue="true" delay="0.37" />
+            <StatusEffect type="OnInserted" target="This" handle1="-26,-34" setvalue="true" delay="0.40" />
+            <StatusEffect type="OnInserted" target="This" handle1="-21.2,-32.8" setvalue="true" delay="0.43" />
+            <StatusEffect type="OnInserted" target="This" handle1="-16.4,-31.6" setvalue="true" delay="0.46" />
+            <StatusEffect type="OnInserted" target="This" handle1="-11.6,-30.4" setvalue="true" delay="0.49" />
+            <StatusEffect type="OnInserted" target="This" handle1="0,-30" setvalue="true" delay="0.50" />
+            <StatusEffect type="OnInserted" target="This" handle1="-15.2,-31.2" setvalue="true" delay="0.53" />
+            <StatusEffect type="OnInserted" target="This" handle1="-11.4,-32.4" setvalue="true" delay="0.56" />
+            <StatusEffect type="OnInserted" target="This" handle1="-25.6,-33.6" setvalue="true" delay="0.59" />
+            <StatusEffect type="OnInserted" target="This" handle1="-30.8,-34.8" setvalue="true" delay="0.62" />
+            <StatusEffect type="OnInserted" target="This" handle1="-36,-36" setvalue="true" delay="0.65" />
+            <StatusEffect type="OnInserted" target="This" handle1="-41.2,-37.2" setvalue="true" delay="0.68" />
+            <StatusEffect type="OnInserted" target="This" handle1="-46.4,-38.4" setvalue="true" delay="0.71" />
+            <StatusEffect type="OnInserted" target="This" handle1="-51.6,-39.6" setvalue="true" delay="0.74" />
+            <StatusEffect type="OnInserted" target="This" handle1="-50,-40" setvalue="true" delay="0.75" />
+            <StatusEffect type="OnInserted" target="This" handle1="-55.5,-41.25" setvalue="true" delay="0.78" />
+            <StatusEffect type="OnInserted" target="This" handle1="-61,-42.5" setvalue="true" delay="0.81" />
+            <StatusEffect type="OnInserted" target="This" handle1="-66.5,-43.75" setvalue="true" delay="0.84" />
+            <StatusEffect type="OnInserted" target="This" handle1="-72,-45" setvalue="true" delay="0.87" />
+            <StatusEffect type="OnInserted" target="This" handle1="-77.5,-46.25" setvalue="true" delay="0.90" />
+            <StatusEffect type="OnInserted" target="This" handle1="-83,-47.5" setvalue="true" delay="0.93" />
+            <StatusEffect type="OnInserted" target="This" handle1="-88.5,-48.75" setvalue="true" delay="0.96" />
+            <StatusEffect type="OnInserted" target="This" handle1="-94,-50" setvalue="true" delay="0.99" />
+            <StatusEffect type="OnInserted" target="This" handle1="-95,-50" setvalue="true" delay="1.0" />
+            <StatusEffect type="OnInserted" target="This" tag="suppressed" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments-1.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="acog_scope,thermal_scope,colim_scope,brite_scope" hide="false" setactive="true" itempos="-12,11.5">
+            <StatusEffect type="OnInserted" forceplaysounds="true" target="Contained" delay="1">
+              <Sound file="%ModDir%/Saunds/attach.ogg" range="300" volume="0.5" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,0" delay="0.01" setvalue="true" />
+            <StatusEffect type="OnInserted" target="This" handle1="-95,-50" setvalue="true" delay="0" />
+            <StatusEffect type="OnInserted" target="This" handle1="-91.4,-49.1" setvalue="true" delay="0.03" />
+            <StatusEffect type="OnInserted" target="This" handle1="-87.8,-48.2" setvalue="true" delay="0.06" />
+            <StatusEffect type="OnInserted" target="This" handle1="-84.2,-47.3" setvalue="true" delay="0.09" />
+            <StatusEffect type="OnInserted" target="This" handle1="-80.6,-46.4" setvalue="true" delay="0.12" />
+            <StatusEffect type="OnInserted" target="This" handle1="-77,-45.5" setvalue="true" delay="0.15" />
+            <StatusEffect type="OnInserted" target="This" handle1="-73.4,-44.6" setvalue="true" delay="0.18" />
+            <StatusEffect type="OnInserted" target="This" handle1="-69.8,-43.7" setvalue="true" delay="0.21" />
+            <StatusEffect type="OnInserted" target="This" handle1="-66.2,-42.8" setvalue="true" delay="0.24" />
+            <StatusEffect type="OnInserted" target="This" handle1="-50,-40" setvalue="true" delay="0.25" />
+            <StatusEffect type="OnInserted" target="This" handle1="-45.2,-38.8" setvalue="true" delay="0.28" />
+            <StatusEffect type="OnInserted" target="This" handle1="-40.4,-37.6" setvalue="true" delay="0.31" />
+            <StatusEffect type="OnInserted" target="This" handle1="-35.6,-36.4" setvalue="true" delay="0.34" />
+            <StatusEffect type="OnInserted" target="This" handle1="-30.8,-35.2" setvalue="true" delay="0.37" />
+            <StatusEffect type="OnInserted" target="This" handle1="-26,-34" setvalue="true" delay="0.40" />
+            <StatusEffect type="OnInserted" target="This" handle1="-21.2,-32.8" setvalue="true" delay="0.43" />
+            <StatusEffect type="OnInserted" target="This" handle1="-16.4,-31.6" setvalue="true" delay="0.46" />
+            <StatusEffect type="OnInserted" target="This" handle1="-11.6,-30.4" setvalue="true" delay="0.49" />
+            <StatusEffect type="OnInserted" target="This" handle1="0,-30" setvalue="true" delay="0.50" />
+            <StatusEffect type="OnInserted" target="This" handle1="-15.2,-31.2" setvalue="true" delay="0.53" />
+            <StatusEffect type="OnInserted" target="This" handle1="-11.4,-32.4" setvalue="true" delay="0.56" />
+            <StatusEffect type="OnInserted" target="This" handle1="-25.6,-33.6" setvalue="true" delay="0.59" />
+            <StatusEffect type="OnInserted" target="This" handle1="-30.8,-34.8" setvalue="true" delay="0.62" />
+            <StatusEffect type="OnInserted" target="This" handle1="-36,-36" setvalue="true" delay="0.65" />
+            <StatusEffect type="OnInserted" target="This" handle1="-41.2,-37.2" setvalue="true" delay="0.68" />
+            <StatusEffect type="OnInserted" target="This" handle1="-46.4,-38.4" setvalue="true" delay="0.71" />
+            <StatusEffect type="OnInserted" target="This" handle1="-51.6,-39.6" setvalue="true" delay="0.74" />
+            <StatusEffect type="OnInserted" target="This" handle1="-50,-40" setvalue="true" delay="0.75" />
+            <StatusEffect type="OnInserted" target="This" handle1="-55.5,-41.25" setvalue="true" delay="0.78" />
+            <StatusEffect type="OnInserted" target="This" handle1="-61,-42.5" setvalue="true" delay="0.81" />
+            <StatusEffect type="OnInserted" target="This" handle1="-66.5,-43.75" setvalue="true" delay="0.84" />
+            <StatusEffect type="OnInserted" target="This" handle1="-72,-45" setvalue="true" delay="0.87" />
+            <StatusEffect type="OnInserted" target="This" handle1="-77.5,-46.25" setvalue="true" delay="0.90" />
+            <StatusEffect type="OnInserted" target="This" handle1="-83,-47.5" setvalue="true" delay="0.93" />
+            <StatusEffect type="OnInserted" target="This" handle1="-88.5,-48.75" setvalue="true" delay="0.96" />
+            <StatusEffect type="OnInserted" target="This" handle1="-94,-50" setvalue="true" delay="0.99" />
+            <StatusEffect type="OnInserted" target="This" handle1="-95,-50" setvalue="true" crosshairscale="0.225" delay="1.0" />
+            <StatusEffect type="OnInserted" target="Contained" spritecolor="255,255,255,255" delay="1" setvalue="true" />
+            <StatusEffect type="OnRemoved" target="This" crosshairscale="0.0" cameraaimoffset="0" setvalue="true" />
+            <StatusEffect type="OnContaining" target="This,Contained" crosshairscale="0.225" OneShot="true" setvalue="true" />
+          </Containable>
+          <SlotIcon slotindex="0" texture="%ModDir%/attachments.png" origin="0.5,0.5" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" hideinmenus="true">
+          <Containable items="repair" hide="true">
+            <StatusEffect type="OnRemoved" target="Contained">
+              <Remove />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="PKPreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->&gt;
+        <Containable items="PKPreloading" hide="true"><StatusEffect type="OnRemoved" target="Contained"><Remove /></StatusEffect></Containable></ItemContainer>
+      <ItemContainer capacity="1" slotsperrow="1" maxstacksize="1" hideitems="true" drawinventory="false" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+        <Containable items="weapons-up" hide="true" />
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <SkillRequirementHint identifier="weapons" level="75" />
+      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="PKPreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,PKPreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/ammunition.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="" identifier="PKPmagazine" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.4" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="mediumitem,PKPammo,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="PKP" minamount="1" maxamount="1" spawnprobability="1" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.01" />
+      <Price baseprice="345" sold="true" minleveldifficulty="65" displaynonempty="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+      </Price>
+      <Fabricate suitablefabricators="repair" requiresrecipe="true" requiredtime="45">
+        <RequiredSkill identifier="weapons" level="80" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="mosinammos" amount="100" />
+        <RequiredItem identifier="physicorium" />
+      </Fabricate>
+      <Fabricate suitablefabricators="repair" requiredtime="23" requiresrecipe="true" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="mosinammos" amount="100" />
+        <RequiredItem identifier="PKPmagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Ammunition.png" sourcerect="557,771,32,57" depth="0.55" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="620,770,61,59" origin="0.5,0.5" />
+      <Body width="29" height="37" density="25" />
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" drawinventory="false" spawnwithid="mosinammos" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="mosinammos" drawinventory="false" />
+        <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+          <SpawnItem identifiers="mosinammos" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true">
+        <Containable items="mosinammos" hide="true">
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <Conditional targetcontainer="true" condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="Contained">
+            <Remove />
+            <SpawnItem identifiers="mosinammos" spawnposition="SameInventory" />
+            <Conditional targetcontainer="true" condition="eq 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" condition="1">
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+            <Conditional condition="lt 100" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" handle2="-5,10" />
+          <StatusEffect type="OnInserted" target="This" handle2="-5,20" delay="0.25" />
+        </Containable>
+      </ItemContainer>
+      <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" handle2="-5,10" holdpos="35,-10" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.1,0.12" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0.02,0" />
+        <Button text="Remove">
+          <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+            <SpawnItem identifiers="mosinammos" spawnposition="SameInventory" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.5" frequencymultiplier="1.5" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.45" frequencymultiplier="1.6" loop="false" />
+            <Sound file="%ModDir%/Saunds/magout_57.ogg" range="500" volume="0.55" frequencymultiplier="1.4" loop="false" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" handle2="-5,10" />
+          <StatusEffect type="OnUse" target="This" handle2="-5,20" delay="0.25" />
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="" identifier="PKPround" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="17" height="6" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,175,200" scalemultiplier="1,0.8" />
+        <StatusEffect type="InWater" target="this" hitscan="false" interval="1" stackable="false" oneshot="true" launchimpulse="8" />
+        <StatusEffect type="NotInWater" target="this" hitscan="true" interval="1" stackable="false" oneshot="true" />
+        <!-- Эффекты для воды -->
+        <StatusEffect type="OnActive" target="This" lifetime="0.3">
+          <Conditional inwater="true" />
+          <ParticleEmitter particle="damagebubbles" copyentityangle="true" particlespersecond="7" initialdelay="0.03" colormultiplier="180,220,255,255" scalemin="0.2" scalemax="0.3" />
+        </StatusEffect>
+        <Attack targetforce="8" itemdamage="4" severlimbsprobability="0.35" penetration="0.5">
+          <!-- Урон на суше (огнестрельные ранения) -->
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.5">
+            <Conditional inwater="false" />
+            <Affliction identifier="gunshotwound" strength="40" penetration="0.5" />
+            <Affliction identifier="bleeding" strength="15" penetration="0.5" />
+            <Affliction identifier="stun" strength="0.06" />
+            <Affliction identifier="spasm_shot" strength="50" />
+            <Affliction identifier="gunshotwound" strength="0.01" />
+          </StatusEffect>
+          <!-- Урон в воде (blunt trauma) -->
+          <StatusEffect type="OnUse" target="Limb" targetLimbs="Head,Torso,Waist,LeftLeg,RightLeg,RightThigh,LeftThigh,Tail,RightFoot,LeftFoot,RightHand,LeftHand,LeftArm,RightArm,LeftForearm,RightForearm,Jaw" disabledeltatime="true" penetration="0.0">
+            <Conditional inwater="true" />
+            <Affliction identifier="blunttrauma" strength="10" />
+            <!-- -30% от 20 -->
+            <Affliction identifier="bleeding" strength="3" />
+            <!-- /2 от 8 -->
+            <Affliction identifier="stun" strength="0.1" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+          <Sound file="%ModDir%/Saunds/Impact1.ogg" type="OnImpact" range="1000" selectionmode="Random" />
+          <Sound file="%ModDir%/Saunds/Impact2.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact3.ogg" type="OnImpact" range="1000" />
+          <Sound file="%ModDir%/Saunds/Impact4.ogg" type="OnImpact" range="1000" />
+        </StatusEffect>
+        <!-- PKP rounds should not exist outside magazines -->
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <style>
+    <TitleText color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" pressedcolor="255,255,255,255">
+      <Sprite texture="%ModDir%/Logo.png" sourcerect="67,66,773,301" tile="true" maintainaspectratio="true" origin="0.5,0.5"></Sprite>
+    </TitleText>
+    <MainMenuBackground color="255,255,255,255">
+      <Sprite texture="%ModDir%/menu.png" sourcerect="0,0,1920,779" premultiplyalpha="false" origin="0.5,0.5" />
+    </MainMenuBackground>
+    <ContainedStateIndicator.PDA>
+      <Sprite name="ContainedStateIndicator.Repair.None" texture="%ModDir%/ContainerIndicators-9.png" sourcerect="7,4,131,44" state="None" origin="0.5,0.5" />
+      <Sprite name="ContainedStateIndicator.Repair.Hover" texture="%ModDir%/ContainerIndicators-9.png" sourcerect="174,4,131,44" state="Hover" origin="0.5,0.5" />
+    </ContainedStateIndicator.PDA>
+    <kolya color="255,255,255,245" textcolor="0,0,0,255">
+      <Sprite name="kolya" texture="%ModDir%/png/kolya.png" sourcerect="0,0,506,319" maintainaspectratio="true" tile="false" origin="0.5,0.5" compress="false" />
+    </kolya>
+  </style>
+</Override>
