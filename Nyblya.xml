@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mods name="Nyblya6-7">
+  <Vanilla />
+  <Workshop name="LuaCsForBarotrauma" id="2559634234" />
+  <Workshop name="CsForBarotrauma" id="2795927223" />
+  <Workshop name="Half Life Scientist Sounds" id="3662701629" />
+  <Local name="NetworkTweaks" />
+  <Workshop name="PerformanceEnhancement" id="3618710101" />
+  <Workshop name="ShadowCulling" id="3621263586" />
+  <Workshop name="Enhanced Loading" id="3623124595" />
+  <Workshop name="Neurotrauma" id="3190189044" />
+  <Workshop name="NT Pharmacy" id="3247838390" />
+  <Workshop name="NT Surgery Plus" id="3478084070" />
+  <Workshop name="NT Cybernetics Enhanced" id="3324062208" />
+  <Workshop name="NT Lobotomy" id="3326291860" />
+  <Workshop name="NT Symbiote" id="3478666406" />
+  <Local name="Animated arms + Dynamic Europe PATCH" />
+  <Workshop name="DynamicEuropa" id="2532991202" />
+  <Local name="Animated Arms Adaptive Combat" />
+  <Workshop name="Soundproof Walls 2.0" id="3153737715" />
+  <Workshop name="Beacons Extended" id="2389600483" />
+  <Workshop name="Shipwrecks Extended" id="2095211492" />
+  <Workshop name="Wreck Locator" id="2767049553" />
+  <Workshop name="BaroCraftables (No Limits)" id="2764140582" />
+  <Workshop name="A Bit More Turrets" id="3046745287" />
+  <Local name="EK Mods for 1.x.x.x" />
+  <Workshop name="Barotraumatic" id="2518816103" />
+  <Workshop name="Nuke Shell Reskin" id="3281778895" />
+  <Workshop name="Combinable Ammo Revived (Again)" id="3304148621" />
+  <Workshop name="Chimera Remake" id="3368559590" />
+  <Workshop name="Bullet Collision Fix" id="3728965716" />
+  <Workshop name="Remove All" id="3043340865" />
+  <Workshop name="GM Menu" id="3699710631" />
+</mods>
