@@ -2,6 +2,7 @@
 
 <H1>Моды Последователей Авгурианства</H1>
 
+<H3>
 Что нужно для установки:
 1. Подписаться на коллекцию модов в Steam -> https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 
@@ -31,6 +32,7 @@
 8. В Стиме нажимаете ПКМ по Баготравме -> Свойства -> Параметры запуска -> Вставляете вот енто:
 
 cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Nyblya.xml ModLists\Nyblya.xml && powershell -ExecutionPolicy Bypass -File UpdateMods.ps1 && %command%"
+</H3>
 
 Пофикшеные моды (по крайней мере документно зафиксированные фиксы):
 1. Гильзы -> https://claude.ai/share/3c83e9f1-904b-4eed-94ea-2e25ae5b8c69
