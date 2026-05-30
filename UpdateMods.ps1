@@ -1,35 +1,36 @@
-# UpdateMods.ps1
-# Синхронизирует <contentpackages> в config_player.xml по данным из Nyblya.xml.
-# Всё остальное в config_player.xml (графика, звук, клавиши и т.д.) НЕ трогается.
+﻿# UpdateMods.ps1
+# Syncs the <contentpackages> block in config_player.xml using data from Nyblya.xml.
+# Everything else in config_player.xml (graphics, sound, keybinds, etc.) is left untouched.
 #
-# Размещение: папка игры Barotrauma (рядом с config_player.xml).
-# Запуск:     powershell -ExecutionPolicy Bypass -File UpdateMods.ps1
-#             или через UpdateMods.bat (см. инструкцию).
+# Location: this script lives in the LocalMods folder of the Barotrauma game directory.
+# Run:      powershell -NoProfile -ExecutionPolicy Bypass -File LocalMods\UpdateMods.ps1
+#           (usually launched from update.bat via Steam launch options).
 
 $ErrorActionPreference = "Stop"
 
-# ─── Пути ─────────────────────────────────────────────────────────────────────
+# --- Paths -------------------------------------------------------------------
 
-$gameDir      = $PSScriptRoot                             # папка, где лежит этот скрипт
-$nyblyaFile   = "$gameDir\ModLists\Nyblya.xml"            # источник истины — список модов
-$configFile   = "$gameDir\config_player.xml"              # файл настроек игры
-$workshopBase = ($env:LOCALAPPDATA -replace '\\', '/') +  # папка с Workshop-модами
+$scriptDir    = $PSScriptRoot                            # folder of this script (LocalMods)
+$gameDir      = Split-Path -Parent $scriptDir            # Barotrauma game root (parent of LocalMods)
+$nyblyaFile   = Join-Path $gameDir 'ModLists\Nyblya.xml' # source of truth - the mod list
+$configFile   = Join-Path $gameDir 'config_player.xml'   # game settings file
+$workshopBase = ($env:LOCALAPPDATA -replace '\\', '/') + # folder with Workshop mods
                 "/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed"
 
-# ─── Чтение ───────────────────────────────────────────────────────────────────
+# --- Read --------------------------------------------------------------------
 
-if (-not (Test-Path $nyblyaFile))  { Write-Error "Не найден: $nyblyaFile";  exit 1 }
-if (-not (Test-Path $configFile))  { Write-Error "Не найден: $configFile";  exit 1 }
+if (-not (Test-Path $nyblyaFile))  { Write-Error "Not found: $nyblyaFile";  exit 1 }
+if (-not (Test-Path $configFile))  { Write-Error "Not found: $configFile";  exit 1 }
 
 [xml]$nyblya   = Get-Content -LiteralPath $nyblyaFile -Encoding UTF8
 $configText    = [System.IO.File]::ReadAllText($configFile)
 
 if ($configText -notmatch '(?s)<contentpackages>.*?</contentpackages>') {
-    Write-Error "Блок <contentpackages> не найден в $configFile"
+    Write-Error "Block <contentpackages> not found in $configFile"
     exit 1
 }
 
-# ─── Сборка нового блока <contentpackages> ────────────────────────────────────
+# --- Build the new <contentpackages> block -----------------------------------
 
 $lines = [System.Collections.Generic.List[string]]::new()
 $lines.Add('  <contentpackages>')
@@ -43,7 +44,7 @@ $count = 0
 foreach ($mod in $nyblya.mods.ChildNodes) {
 
     $tag = $mod.LocalName
-    if ($tag -in '#comment', 'Vanilla') { continue }   # Vanilla — это corepackage, пропускаем
+    if ($tag -in '#comment', 'Vanilla') { continue }   # Vanilla is the corepackage, skip it
 
     $modName = $mod.GetAttribute('name')
 
@@ -65,16 +66,16 @@ $lines.Add('  </contentpackages>')
 
 $newBlock = $lines -join "`r`n"
 
-# ─── Замена только блока <contentpackages> ────────────────────────────────────
+# --- Replace only the <contentpackages> block --------------------------------
 
 $newConfigText = $configText -replace '(?s)<contentpackages>.*?</contentpackages>', $newBlock
 
-# ─── Сохранение (UTF-8 с BOM — как оригинальный файл) ────────────────────────
+# --- Save (UTF-8 with BOM, same as the original file) ------------------------
 
 [System.IO.File]::WriteAllText(
     $configFile,
     $newConfigText,
-    [System.Text.UTF8Encoding]::new($true)   # $true = с BOM
+    [System.Text.UTF8Encoding]::new($true)   # $true = with BOM
 )
 
 Write-Host "OK: contentpackages updated ($count packages)." -ForegroundColor Green
