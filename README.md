@@ -1,4 +1,6 @@
-<img width="2560" height="1392" alt="image" src="https://github.com/user-attachments/assets/ae7bde1a-dd4a-47d1-b92a-e5b9933aadc5" /><H1>Моды Последователей Авгурианства</H1>
+<img width="500" height="312" alt="negr wanna chokolate" src="https://github.com/user-attachments/assets/dc1bc031-57bc-4244-8088-8cfc5cbb9e4c" />
+
+<H1>Моды Последователей Авгурианства</H1>
 
 Что нужно для установки:
 1) Git -> https://git-scm.com/ -> Install For Windows
