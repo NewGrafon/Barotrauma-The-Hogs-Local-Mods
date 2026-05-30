@@ -63,6 +63,8 @@ cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Ny
 
 После, мотните наверх и нажмите Save Current Config (ЭТО ОБЯЗАТЕЛЬНО)
 
+11. КОНЕЦ!!!
+
 </H4>
 
 <hr>
