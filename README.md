@@ -30,7 +30,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 
 Если путь слева (перед полем ввода команды путь файловый) не изменился то введите букву диска и ":" где находится Баготравма
 
-<img width="626" height="122" alt="image" src="https://github.com/user-attachments/assets/91a92084-f47e-4321-a750-81aac745b66d" />
+<img width="703" height="105" alt="image" src="https://github.com/user-attachments/assets/10e92a33-9cb6-4a3f-82f7-6bdcb8b16ee3" />
 
 7. Вводите в консоль команду " git clone https://github.com/NewGrafon/Barotrauma-The-Hogs-Local-Mods.git . " (без ковычек)
 8. В Стиме нажимаете ПКМ по Баготравме -> Свойства -> Параметры запуска -> Вставляете вот енто:
