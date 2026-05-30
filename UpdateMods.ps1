@@ -77,4 +77,4 @@ $newConfigText = $configText -replace '(?s)<contentpackages>.*?</contentpackages
     [System.Text.UTF8Encoding]::new($true)   # $true = с BOM
 )
 
-Write-Host "OK: contentpackages обновлён, $count пакетов." -ForegroundColor Green
+Write-Host "OK: contentpackages updated ($count packages)." -ForegroundColor Green
