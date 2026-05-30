@@ -30,7 +30,7 @@
 7. Вводите в консоль команду " git clone https://github.com/NewGrafon/Barotrauma-The-Hogs-Local-Mods.git . " (без ковычек)
 8. В Стиме нажимаете ПКМ по Баготравме -> Свойства -> Параметры запуска -> Вставляете вот енто:
 
-cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Nyblya.xml ModLists\Nyblya.xml && powershell -ExecutionPolicy Bypass -File UpdateMods.ps1"
+cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Nyblya.xml ModLists\Nyblya.xml && powershell -ExecutionPolicy Bypass -File UpdateMods.ps1 && %command%"
 
 Пофикшеные моды (по крайней мере документно зафиксированные фиксы):
 1. Гильзы -> https://claude.ai/share/3c83e9f1-904b-4eed-94ea-2e25ae5b8c69
