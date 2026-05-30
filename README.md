@@ -4,7 +4,9 @@
 
 <H3>
 Что нужно для установки:
-1. Подписаться на коллекцию модов в Steam -> https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
+1. Подписаться на коллекцию модов в Steam -> 
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 
 <img width="639" height="357" alt="image" src="https://github.com/user-attachments/assets/a897a45f-0326-4bc4-983e-aa34bd553cc3" />
 
@@ -14,6 +16,7 @@
 3. При установке гита сделайте так:
 
 3.1 Нажимаете Next пока не дойдете до окна где пункты будут совпадать с теми что на скрине ниже
+
 <img width="598" height="464" alt="image" src="https://github.com/user-attachments/assets/677244d1-5093-4f62-9840-480cc115d376" />
 
 3.2 Убираете галки с пунктов из красной зоны
