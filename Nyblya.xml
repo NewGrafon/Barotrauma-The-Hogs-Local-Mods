@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <mods name="Nyblya">
   <Vanilla />
-  <Workshop name="LuaCsForBarotrauma" id="2559634234" />
+  <Local name="LuaCsForBarotrauma" />
   <Workshop name="CsForBarotrauma" id="2795927223" />
   <Workshop name="Half Life Scientist Sounds" id="3662701629" />
   <Local name="NetworkTweaks" />
