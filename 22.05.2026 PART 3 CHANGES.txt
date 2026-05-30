@@ -1,2 +1,0 @@
-1) Increased casings count in world from 5 to 10
-2) Fix deleting casings from invertories

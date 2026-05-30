@@ -1,7 +1,0 @@
-1) Reduced maximum ammo casing count to 5 (because of trash server lags when a lot of casings), but its disappear even in inventories (idk how to fix this, but me and my team don't need casings with AAC)
-
-2) Fix 5.56 ammo in Scout weapon crash, but maybe Scout can spawn without ammo in loot container and in NPCs
-
-3) Fix MeleeWeapon.RestoreCollision() crash, i made this fix with AI and partially save throwable logic to material and minerals items
-
-This is very hard mod to play, but it very hard because of bugs, lol :VGRUMPY:
