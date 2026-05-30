@@ -2,7 +2,7 @@
 
 <H1>Моды Последователей Авгурианства</H1>
 
-<H3>
+<H4>
 Что нужно для установки:
 
 1. Подписаться на коллекцию модов в Steam -> 
@@ -37,8 +37,31 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 
 cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Nyblya.xml ModLists\Nyblya.xml && powershell -ExecutionPolicy Bypass -File UpdateMods.ps1 && start /b %command%"
 
-9. Зайдя в игру
-   </H3>
+9. Зайдя в игру, зайдите в настройки, а потом в Mod Gameplay Settings
+
+<img width="260" height="678" alt="image" src="https://github.com/user-attachments/assets/9683d1ed-5f1a-44c5-98e8-3d6cd96fa7fc" />
+
+После, выставьте такие же настройки как на скрине
+
+<img width="905" height="647" alt="image" src="https://github.com/user-attachments/assets/49b9ef93-9065-4ee4-ad0f-e57c4261535c" />
+
+После, нажмите Применить
+
+10. Зайдя в лобби/матч/раунд, нажмите ESC -> Performance Enhancement
+
+<img width="328" height="429" alt="image" src="https://github.com/user-attachments/assets/adbc2213-d915-4a1b-a78f-cd219fae01cb" />
+
+После, выберите Preset Config "Balanced" -> После промотайте немного вниз до раздела "-- Update Control --" -> Включаете пункты:
+
+"WARNING: Skip container item updates"
+
+"WARNING: Skip passive world item updates"
+
+"WARNING: Skip offscreen character updates"
+
+"Throttle client afflication Lua events"
+
+</H4>
 
 <hr>
 
