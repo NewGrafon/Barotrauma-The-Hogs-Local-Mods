@@ -79,4 +79,4 @@ cmd /c "LocalMods\UpdateMods.bat & %command%"
 7. Fix 5.56 ammo in Scout weapon crash, but maybe Scout can spawn without ammo in loot container and in NPCs
 8. Increased max stacks of materials and minerals from 32 to 64 in storages and from 8 to 16 in human inventories. Its need for increase performance a little
 
-Как создались скрипты для апдейта модов -> https://claude.ai/share/74fe9631-945f-4cc3-b8df-15286535653a
+Как создались скрипты для апдейта модов -> https://claude.ai/share/74fe9631-945f-4cc3-b8df-15286535653a + https://claude.ai/share/4bd1756e-17fe-4945-a292-b658adec5bad
