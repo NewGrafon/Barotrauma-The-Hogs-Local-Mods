@@ -37,7 +37,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 
 cmd /c "LocalMods\UpdateMods.bat & %command%"
 
-9. Зайдя в игру, зайдите в настройки, а потом в Mod Gameplay Settings
+9. Зайдя в игру, зайдите в настройки, а потом в Mod Gameplay Settings (ЕСЛИ ЭТОГО РАЗДЕЛА В НАСТРЙОКАХ НЕТ ТО ПРОПУСТИТЕ ПУНКТ)
 
 <img width="260" height="678" alt="image" src="https://github.com/user-attachments/assets/9683d1ed-5f1a-44c5-98e8-3d6cd96fa7fc" />
 
