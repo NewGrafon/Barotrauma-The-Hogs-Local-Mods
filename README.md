@@ -5,6 +5,7 @@
 Что нужно для установки:
 1) Git -> https://git-scm.com/ -> Install For Windows
 2) При установке гита сделайте так:
+ 
  2.1) Нажимаете Next пока не дойдете до окна где пункты будут совпадать с теми что на скрине ниже
  <img width="598" height="464" alt="image" src="https://github.com/user-attachments/assets/677244d1-5093-4f62-9840-480cc115d376" />
  
