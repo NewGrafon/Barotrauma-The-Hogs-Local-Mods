@@ -61,6 +61,8 @@ cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Ny
 
 "Throttle client afflication Lua events"
 
+После, мотните наверх и нажмите Save Current Config (ЭТО ОБЯЗАТЕЛЬНО)
+
 </H4>
 
 <hr>
