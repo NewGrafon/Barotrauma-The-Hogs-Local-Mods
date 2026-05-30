@@ -2,29 +2,41 @@
 
 <H1>Моды Последователей Авгурианства</H1>
 
+<H3>
 Что нужно для установки:
-1. Git -> https://git-scm.com/ -> Install For Windows
-2. При установке гита сделайте так:
- 
- 2.1 Нажимаете Next пока не дойдете до окна где пункты будут совпадать с теми что на скрине ниже
- <img width="598" height="464" alt="image" src="https://github.com/user-attachments/assets/677244d1-5093-4f62-9840-480cc115d376" />
- 
- 2.2 Убираете галки с пунктов из красной зоны
- 
- 2.3 И дальше жмете Next до упора пока не установится
+1. Подписаться на коллекцию модов в Steam -> https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 
-3. Заходите в папку Баготравмы (в Стиме ПКМ по игре -> Управление -> Локальные файлы)
-4. Создаете папку LocalMods, если её нет, заходите в нее, копируйте путь до этой папки в буфер обмена
-5. Открываете терминал/cmd/повершел/powershell -> вводите cd "" -> в кавычки вставляете скопированный путь до папки -> нажимаете Enter
+<img width="639" height="357" alt="image" src="https://github.com/user-attachments/assets/a897a45f-0326-4bc4-983e-aa34bd553cc3" />
+
+<img width="1476" height="204" alt="image" src="https://github.com/user-attachments/assets/487c5169-3f50-426d-a097-5dfc9cc241cd" />
+
+2. Git -> https://git-scm.com/ -> Install For Windows
+3. При установке гита сделайте так:
+
+3.1 Нажимаете Next пока не дойдете до окна где пункты будут совпадать с теми что на скрине ниже
+<img width="598" height="464" alt="image" src="https://github.com/user-attachments/assets/677244d1-5093-4f62-9840-480cc115d376" />
+
+3.2 Убираете галки с пунктов из красной зоны
+
+3.3 И дальше жмете Next до упора пока не установится
+
+4. Заходите в папку Баготравмы (в Стиме ПКМ по игре -> Управление -> Локальные файлы)
+5. Создаете папку LocalMods, если её нет, заходите в нее, копируйте путь до этой папки в буфер обмена
+6. Открываете терминал/cmd/повершел/powershell -> вводите cd "" -> в кавычки вставляете скопированный путь до папки -> нажимаете Enter
 
 Если путь слева (перед полем ввода команды путь файловый) не изменился то введите букву диска и ":" где находится Баготравма
 
 <img width="626" height="122" alt="image" src="https://github.com/user-attachments/assets/91a92084-f47e-4321-a750-81aac745b66d" />
 
-6. Вводите в консоль команду " git clone https://github.com/NewGrafon/Barotrauma-The-Hogs-Local-Mods.git . " (без ковычек)
-7. В Стиме нажимаете ПКМ по Баготравме -> Свойства -> Параметры запуска -> Вставляете вот енто:
+7. Вводите в консоль команду " git clone https://github.com/NewGrafon/Barotrauma-The-Hogs-Local-Mods.git . " (без ковычек)
+8. В Стиме нажимаете ПКМ по Баготравме -> Свойства -> Параметры запуска -> Вставляете вот енто:
 
-cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Nyblya.xml ModLists\Nyblya.xml && powershell -ExecutionPolicy Bypass -File UpdateMods.ps1"
+cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Nyblya.xml ModLists\Nyblya.xml && powershell -ExecutionPolicy Bypass -File UpdateMods.ps1 && start /b %command%"
+
+9. Зайдя в игру
+   </H3>
+
+<hr>
 
 Пофикшеные моды (по крайней мере документно зафиксированные фиксы):
 1. Гильзы -> https://claude.ai/share/3c83e9f1-904b-4eed-94ea-2e25ae5b8c69
