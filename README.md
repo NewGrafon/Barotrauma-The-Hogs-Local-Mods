@@ -35,7 +35,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 7. Вводите в консоль команду " git clone https://github.com/NewGrafon/Barotrauma-The-Hogs-Local-Mods.git . " (без ковычек)
 8. В Стиме нажимаете ПКМ по Баготравме -> Свойства -> Параметры запуска -> Вставляете вот енто:
 
-cmd /c "cd LocalMods && git pull && copy /Y Nyblya.xml .. && cd .. && move /Y Nyblya.xml ModLists\Nyblya.xml && powershell -ExecutionPolicy Bypass -File UpdateMods.ps1 && start /b %command%"
+cmd /c "LocalMods\UpdateMods.bat & %command%"
 
 9. Зайдя в игру, зайдите в настройки, а потом в Mod Gameplay Settings
 
