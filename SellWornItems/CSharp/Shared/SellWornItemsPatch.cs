@@ -44,6 +44,7 @@ namespace SellWornItems
                 {
                     _harmony.Patch(isSellable,
                         transpiler: new HarmonyMethod(typeof(SellWornItemsPlugin), nameof(IsItemSellable_Transpiler)));
+                    Log("CargoManager.IsItemSellable найден — порог изменён.", Color.Green);
                 }
                 else
                 {
