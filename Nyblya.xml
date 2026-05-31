@@ -3,11 +3,11 @@
   <Vanilla />
   <Local name="LuaCsForBarotrauma" />
   <Workshop name="CsForBarotrauma" id="2795927223" />
+  <Local name="Sell Worn Items (condition threshold)" />
   <Workshop name="Half Life Scientist Sounds" id="3662701629" />
   <Local name="NetworkTweaks" />
   <Workshop name="PerformanceEnhancement" id="3618710101" />
   <Workshop name="ShadowCulling" id="3621263586" />
-  <Workshop name="Enhanced Loading" id="3623124595" />
   <Workshop name="Neurotrauma" id="3190189044" />
   <Workshop name="NT Pharmacy" id="3247838390" />
   <Workshop name="NT Surgery Plus" id="3478084070" />
