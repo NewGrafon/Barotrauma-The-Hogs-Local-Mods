@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" identifier="Model870" HideConditionBar="true" description="Эта модификация Model870 переработана для надёжности во влажных условиях Европы. ‖color:gui.red‖Для оптимальной работы удалена система самозарядного действия, поэтому после каждого выстрела требуется ручное передёргивание затвора.‖end‖ Использует ‖color:gui.green‖стандартные боеприпасы для дробовика (вмещает 8 патронов)‖end‖. Данная модификация ‖color:gui.blue‖не может стрелять под водой‖end‖." category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,noshootunderwater" Scale="0.425" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="Model870" HideConditionBar="true" description="Эта модификация Model870 переработана для надёжности во влажных условиях Европы. ‖color:gui.red‖Для оптимальной работы удалена система самозарядного действия, поэтому после каждого выстрела требуется ручное передёргивание затвора.‖end‖ Использует ‖color:gui.green‖стандартные боеприпасы для дробовика (вмещает 8 патронов)‖end‖. Данная модификация ‖color:gui.blue‖не может стрелять под водой‖end‖." category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,noshootunderwater" Scale="0.425" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.438" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.188" />
       <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.037" />
@@ -293,13 +293,13 @@
       <SkillRequirementHint identifier="weapons" level="40" />
     </Item>
     <!-- Proxy item. -->
-    <Item name=" " identifier="riotreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,riotreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="riotreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,riotreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name=" " identifier="waterjamproxy" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,waterjamproxy">
+    <Item allowsellingwhenbroken="true" name=" " identifier="waterjamproxy" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,waterjamproxy">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />

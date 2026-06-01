@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <Override>
-    <Item name="" identifier="divingknife" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknife" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True">
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.25" />
       <PreferredContainer secondary="abandonedstoragecab" amount="1" spawnprobability="0.05" />
       <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0.05" />
@@ -138,7 +138,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="" identifier="divingknife-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknife-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife throw icon" sourcerect="424,1329,64,64" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="diving knife throw" sourcerect="418,1429,66,16" depth="0.55" origin="0.5,0.5" />
       <Body width="100" height="10" restitution="0.3" density="25" />
@@ -194,7 +194,7 @@
         <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
       </Quality>
     </Item>
-    <Item name="" identifier="divingknifedementonite" category="Weapon" descriptionidentifier="dementonitetool" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknifedementonite" category="Weapon" descriptionidentifier="dementonitetool" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0" />
       <PreferredContainer secondary="abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0" />
       <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0" />
@@ -338,7 +338,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="" identifier="divingknifedementonite-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknifedementonite-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="136,142,166,255" spritecolor="136,142,166">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife throw icon" sourcerect="424,1329,64,64" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="diving knife throw" sourcerect="418,1429,66,16" depth="0.55" origin="0.5,0.5" />
       <Body width="100" height="10" restitution="0.3" density="25" />
@@ -393,7 +393,7 @@
       </Projectile>
       <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
     </Item>
-    <Item name="" identifier="divingknifehardened" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknifehardened" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0" />
       <PreferredContainer secondary="abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0" />
       <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0" />
@@ -528,7 +528,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="Diving Knife Hardened Throw" identifier="divingknifehardened-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+    <Item allowsellingwhenbroken="true" name="Diving Knife Hardened Throw" identifier="divingknifehardened-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
       <Deconstruct time="10">
         <Item identifier="iron" />
         <Item identifier="depletedfuel" />
@@ -1612,7 +1612,7 @@
       </Projectile>
       <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
     </Item>
-    <Item name="" identifier="boardingaxe" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="boardingaxe" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="secarmcab" secondary="armcab" />
       <Price baseprice="350" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="1.25" />
@@ -1675,7 +1675,7 @@
       </Quality>
       <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
     </Item>
-    <Item name="" identifier="boardingaxe-throw" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="boardingaxe-throw" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
       <Deconstruct time="20">
         <Item identifier="titaniumaluminiumalloy" />
       </Deconstruct>
@@ -1834,7 +1834,7 @@
       </Projectile>
       <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
     </Item>
-    <Item name="" identifier="ceremonialsword" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="ceremonialsword" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
       <PreferredContainer primary="secarmcab" secondary="armcab" />
       <Price baseprice="340" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" />
@@ -1905,7 +1905,7 @@
       <SkillRequirementHint identifier="mechanical" level="50" />
       <SkillRequirementHint identifier="medical" level="50" />
     </Item>
-    <Item name="" identifier="ceremonialsword-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="ceremonialsword-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
       <Deconstruct time="10">
         <Item identifier="titaniumaluminiumalloy" />
       </Deconstruct>
@@ -1956,7 +1956,7 @@
       </Projectile>
       <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
     </Item>
-    <Item name=" " identifier="melee-handle" maxstacksize="1" scale="0.5" category="Weapon" hideinmenus="true" tags="smallitem">
+    <Item allowsellingwhenbroken="true" name=" " identifier="melee-handle" maxstacksize="1" scale="0.5" category="Weapon" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -1967,7 +1967,7 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item name="" identifier="stunbaton" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" Scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="stunbaton" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" Scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" RequireAimToUse="True">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.25" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.05" />
       <PreferredContainer primary="secarmcab" secondary="armcab" spawnprobability="0.5" />
@@ -2062,7 +2062,7 @@
         <QualityStat stattype="StrikingPowerMultiplier" value="0.25" />
       </Quality>
     </Item>
-    <Item name="" identifier="stunbaton-throw" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="stunbaton-throw" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True">
       <Deconstruct time="10">
         <Item identifier="steel" />
         <Item identifier="plastic" />
@@ -2143,7 +2143,7 @@
       </Projectile>
       <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
     </Item>
-    <Item name="" identifier="divingknifeunique" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" hideinmenus="true" allowasextracargo="true">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknifeunique" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" useinhealthinterface="True" hideinmenus="true" allowasextracargo="true">
       <PreferredContainer primary="secarmcab" secondary="armcab" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" spawnprobability="0.05" />
       <Price baseprice="770" sold="false" canbespecial="false" />
@@ -2277,7 +2277,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="" identifier="divingknifeunique-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" hideinmenus="true">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknifeunique-throw" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="5.5" useinhealthinterface="True" hideinmenus="true">
       <Deconstruct time="10">
         <Item identifier="iron" />
         <Item identifier="morbusine" />
@@ -2349,7 +2349,7 @@
         <sprite name="Gene Splicer Wearable" texture="Content/Items/Genetic/Genetic.png" limb="Head" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.5" hideotherwearables="false" sourcerect="258,131,64,54" origin="0.6,0.0" />
       </Wearable>
     </Item>
-    <Item name="" identifier="daki1" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" scale="0.2" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_soft">
+    <Item allowsellingwhenbroken="true" name="" identifier="daki1" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" scale="0.2" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_soft">
       <PreferredContainer primary="secarmcab" secondary="armcab" />
       <Price baseprice="350" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="1.25" />
@@ -2410,7 +2410,7 @@
       </Quality>
       <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
     </Item>
-    <Item name="" identifier="daki1-hug" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.2" impacttolerance="5.5" impactsoundtag="impact_soft" useinhealthinterface="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="daki1-hug" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.2" impacttolerance="5.5" impactsoundtag="impact_soft" useinhealthinterface="True">
       <Deconstruct time="20">
         <Item identifier="titaniumaluminiumalloy" />
       </Deconstruct>

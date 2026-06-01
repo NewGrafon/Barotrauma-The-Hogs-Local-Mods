@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" identifier="ASH-12" category="Weapon" subcategory="Animated_arms_weapons" description=" " cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="ASH-12" category="Weapon" subcategory="Animated_arms_weapons" description=" " cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.008" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.008" />
@@ -573,14 +573,14 @@
       <SkillRequirementHint identifier="weapons" level="65" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
-    <Item name=" " identifier="ASH-12reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,ASH-12reloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="ASH-12reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,ASH-12reloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
-    <Item name=" " identifier="ASH-12chamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,ASH-12chamber">
+    <Item allowsellingwhenbroken="true" name=" " identifier="ASH-12chamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,ASH-12chamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -594,7 +594,7 @@
       </ItemContainer>
     </Item>
     <!--магазины-->
-    <Item name="" identifier="ASH-12magazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.35" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,ASH-12ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="ASH-12magazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.35" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,ASH-12ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ASH-12" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.01" />
       <Price baseprice="525" minleveldifficulty="30" displaynonempty="true">
@@ -690,7 +690,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="Бронебойный магазин 5.45x39мм" identifier="ASH-12apmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.35" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,ASH-12ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Бронебойный магазин 5.45x39мм" identifier="ASH-12apmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.35" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,ASH-12ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ASH-12" minamount="1" maxamount="1" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.001" />
       <Price baseprice="680" minleveldifficulty="40" displaynonempty="true">
@@ -786,7 +786,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="ASH-12fmjmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.35" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,ASH-12ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="ASH-12fmjmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.35" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,ASH-12ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ASH-12" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.0025" />
       <Price baseprice="420" minleveldifficulty="25" displaynonempty="true">

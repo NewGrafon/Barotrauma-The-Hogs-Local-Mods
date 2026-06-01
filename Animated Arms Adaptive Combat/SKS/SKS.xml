@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" HideConditionBar="true" identifier="SKS" description="Эта простая, но чрезвычайно надежная винтовка, разработанная в конце 19 века, не нуждается в представлении. Она использует ‖color:gui.green‖устаревшие, но мощные патроны 7.62x39 SKSR‖end‖. Несмотря на свой возраст, &quot;Мосинка&quot; ‖color:gui.blue‖эффективна как на поверхности, так и под водой за счёт огромной скорости снаряда‖end‖, а ее ‖color:gui.red‖небольшая скорострельность компенсируется высоким уроном‖end‖." category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.4" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" HideConditionBar="true" identifier="SKS" description="Эта простая, но чрезвычайно надежная винтовка, разработанная в конце 19 века, не нуждается в представлении. Она использует ‖color:gui.green‖устаревшие, но мощные патроны 7.62x39 SKSR‖end‖. Несмотря на свой возраст, &quot;Мосинка&quot; ‖color:gui.blue‖эффективна как на поверхности, так и под водой за счёт огромной скорости снаряда‖end‖, а ее ‖color:gui.red‖небольшая скорострельность компенсируется высоким уроном‖end‖." category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.4" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.125" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.075" />
@@ -366,13 +366,13 @@
       </ItemContainer>
     </Item>
     <!-- Прокси-предмет для перезарядки -->
-    <Item name=" " identifier="rifreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,rifreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="rifreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,rifreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name="" identifier="SKSammos" category="Weapon" maxstacksize="30" maxstacksizecharacterinventory="15" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,SKSammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="SKSammos" category="Weapon" maxstacksize="30" maxstacksizecharacterinventory="15" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,SKSammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="SKS" amount="10" spawnprobability="1" />
       <PreferredContainer primary="armcab" amount="5" spawnprobability="0.15" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="10" spawnprobability="0.15" />
@@ -443,7 +443,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
-    <Item name="" identifier="SKSammoap" category="Weapon" maxstacksize="30" maxstacksizecharacterinventory="15" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,SKSammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="SKSammoap" category="Weapon" maxstacksize="30" maxstacksizecharacterinventory="15" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,SKSammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="SKS" amount="10" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" minamount="1" maxamount="3" spawnprobability="0.25" />
@@ -513,7 +513,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
-    <Item name="" identifier="SKSammofmj" category="Weapon" maxstacksize="30" maxstacksizecharacterinventory="15" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,SKSammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="SKSammofmj" category="Weapon" maxstacksize="30" maxstacksizecharacterinventory="15" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,SKSammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="SKS" amount="10" spawnprobability="1" />
       <PreferredContainer primary="armcab" amount="10" spawnprobability="1" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="9" spawnprobability="0.25" />

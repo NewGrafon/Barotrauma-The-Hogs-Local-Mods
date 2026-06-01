@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="Винтовка scout" HideConditionBar="true" identifier="scout" description="Эта простая, но чрезвычайно надежная винтовка, разработанная в конце 19 века, не нуждается в представлении. Она использует ‖color:gui.green‖устаревшие, но мощные патроны 7.62x54R‖end‖. Несмотря на свой возраст, &quot;Мосинка&quot; ‖color:gui.blue‖эффективна как на поверхности, так и под водой за счёт огромной скорости снаряда‖end‖, а ее ‖color:gui.red‖небольшая скорострельность компенсируется высоким уроном‖end‖." category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.4" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Винтовка scout" HideConditionBar="true" identifier="scout" description="Эта простая, но чрезвычайно надежная винтовка, разработанная в конце 19 века, не нуждается в представлении. Она использует ‖color:gui.green‖устаревшие, но мощные патроны 7.62x54R‖end‖. Несмотря на свой возраст, &quot;Мосинка&quot; ‖color:gui.blue‖эффективна как на поверхности, так и под водой за счёт огромной скорости снаряда‖end‖, а ее ‖color:gui.red‖небольшая скорострельность компенсируется высоким уроном‖end‖." category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.4" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.75" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.3" />
@@ -401,13 +401,13 @@
       <SkillRequirementHint identifier="weapons" level="35" />
     </Item>
     <!-- Прокси-предмет для перезарядки -->
-    <Item name=" " identifier="rifreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,rifreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="rifreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,rifreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name="Патрон 5.56" identifier="scoutround" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.1" tags="smallitem,HK416ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Патрон 5.56" identifier="scoutround" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.1" tags="smallitem,HK416ammo,handheldammo" impactsoundtag="impact_metal_light">
       <Price baseprice="18" minleveldifficulty="18">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" sold="true" multiplier="1.25" minavailable="4" maxavailable="10" />
@@ -463,7 +463,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
-    <Item name="Бронебойный патрон 5.56" identifier="scoutroundap" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.1" tags="smallitem,HK416ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Бронебойный патрон 5.56" identifier="scoutroundap" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.1" tags="smallitem,HK416ammo,handheldammo" impactsoundtag="impact_metal_light">
       <Price baseprice="30" minleveldifficulty="26">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" sold="false" multiplier="1.25" />
@@ -520,7 +520,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
     </Item>
-    <Item name="Патрон 5.56 FMJ" identifier="scoutroundfmj" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.1" tags="smallitem,HK416ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Патрон 5.56 FMJ" identifier="scoutroundfmj" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.1" tags="smallitem,HK416ammo,handheldammo" impactsoundtag="impact_metal_light">
       <Price baseprice="17" minleveldifficulty="20">
         <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
         <Price storeidentifier="merchantcity" sold="true" multiplier="1.25" minavailable="3" maxavailable="8" />

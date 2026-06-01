@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" HideConditionBar="true" description="" identifier="p-11" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.25" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" HideConditionBar="true" description="" identifier="p-11" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.25" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab,secarmcab" amount="1" spawnprobability="0.2" />
       <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.75" />
@@ -230,7 +230,7 @@
       </Quality>
       <SkillRequirementHint identifier="weapons" level="35" />
     </Item>
-    <Item name=" " identifier="p-11-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
+    <Item allowsellingwhenbroken="true" name=" " identifier="p-11-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -240,7 +240,7 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item name="" identifier="P-11magazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="P-11magazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="p-11" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="85" minleveldifficulty="30" displaynonempty="true">
@@ -275,7 +275,7 @@
       </ItemContainer>
       <Holdable canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name="" identifier="P-11apmagazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="P-11apmagazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="p-11" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="85" minleveldifficulty="30" displaynonempty="true">
@@ -310,7 +310,7 @@
       </ItemContainer>
       <Holdable canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name="" identifier="P-11blankmagazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="P-11blankmagazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="p-11" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="85" minleveldifficulty="30" displaynonempty="true">
@@ -345,7 +345,7 @@
       </ItemContainer>
       <Holdable canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name="" identifier="P-11peppermagazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="P-11peppermagazine" maxstacksize="6" description="Вмещает 6 патронов" maxstacksizecharacterinventory="3" scale="0.275" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,p-11ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="p-11" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="75" minleveldifficulty="20" displaynonempty="true">
@@ -382,7 +382,7 @@
       <Holdable canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!--Патрон-->
-    <Item name="" identifier="p-11blankround" category="Weapon" interactthroughwalls="true" tags="smallitem,riflemanbonus" hideinmenus="true" noninteractable="true" impactsoundtag="impact_soft" scale="0.6">
+    <Item allowsellingwhenbroken="true" name="" identifier="p-11blankround" category="Weapon" interactthroughwalls="true" tags="smallitem,riflemanbonus" hideinmenus="true" noninteractable="true" impactsoundtag="impact_soft" scale="0.6">
       <Sprite texture="%ModDir%/Ammunition.png" name="p-11 blank round" sourcerect="128,28,24,6" depth="0.55" origin="0.5,0.5" />
       <Body width="20" height="2" density="10.01" />
       <Projectile characterusable="false" hitscan="false" launchimpulse="20">
@@ -419,7 +419,7 @@
         </Attack>
       </Projectile>
     </Item>
-    <Item name="" identifier="p-11pepperround" category="Weapon" interactthroughwalls="true" tags="smallitem,riflemanbonus" hideinmenus="true" noninteractable="true" impactsoundtag="impact_soft" scale="0.6">
+    <Item allowsellingwhenbroken="true" name="" identifier="p-11pepperround" category="Weapon" interactthroughwalls="true" tags="smallitem,riflemanbonus" hideinmenus="true" noninteractable="true" impactsoundtag="impact_soft" scale="0.6">
       <Sprite texture="%ModDir%/Ammunition.png" name="p-11 blank round" sourcerect="128,28,24,6" depth="0.55" origin="0.5,0.5" />
       <Body width="30" height="1" density="10.01" />
       <Projectile characterusable="false" hitscan="false" launchimpulse="20" LaunchRotation="0" removeonhit="true">
@@ -454,7 +454,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="" identifier="p-11apround" category="Weapon" interactthroughwalls="true" hideinmenus="true" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item allowsellingwhenbroken="true" name="" identifier="p-11apround" category="Weapon" interactthroughwalls="true" hideinmenus="true" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <Sprite texture="%ModDir%/Ammunition.png" sourcerect="90,26,31,9" depth="0.55" origin="0.5,0.5" />
       <Body width="150" height="1" density="10.01" />
       <Projectile characterusable="false" hitscan="true" removeonhit="true" launchimpulse="25">
@@ -503,7 +503,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="" identifier="p-11round" category="Weapon" interactthroughwalls="true" hideinmenus="true" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item allowsellingwhenbroken="true" name="" identifier="p-11round" category="Weapon" interactthroughwalls="true" hideinmenus="true" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <Sprite texture="%ModDir%/Ammunition.png" sourcerect="90,26,31,9" depth="0.55" origin="0.5,0.5" />
       <Body width="150" height="1" density="10.01" />
       <Projectile characterusable="false" hitscan="true" removeonhit="true" launchimpulse="25">

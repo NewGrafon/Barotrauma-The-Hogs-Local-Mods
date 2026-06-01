@@ -2,7 +2,7 @@
 <Override>
   <Items>
     <!--Автоматы-->
-    <Item name="" identifier="AK-74M" category="Weapon" damagedbyexplosions="true" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="AK-74M" category="Weapon" damagedbyexplosions="true" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.088" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.037" />

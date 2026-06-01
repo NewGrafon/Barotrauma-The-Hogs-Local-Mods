@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="PB-пистолет" HideConditionBar="true" description="Модифицированный и водозащищенный PB &quot;Гидра&quot; под патроны ‖color:gui.green‖.45 ACP‖end‖ — это надёжный одноручный пистолет, способный ‖color:gui.blue‖стрелять под водой но с пониженной эффективностью‖end‖." identifier="PB" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.275" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="PB-пистолет" HideConditionBar="true" description="Модифицированный и водозащищенный PB &quot;Гидра&quot; под патроны ‖color:gui.green‖.45 ACP‖end‖ — это надёжный одноручный пистолет, способный ‖color:gui.blue‖стрелять под водой но с пониженной эффективностью‖end‖." identifier="PB" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.275" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.225" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab,secarmcab" amount="1" spawnprobability="0.225" />
       <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.375" />
@@ -317,13 +317,13 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item name=" " identifier="PBreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,PBreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="PBreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,PBreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name=" " identifier="PBchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,PBchamber">
+    <Item allowsellingwhenbroken="true" name=" " identifier="PBchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,PBchamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -335,7 +335,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item name=" " identifier="PB-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="PB-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -347,7 +347,7 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item name=" " identifier="PB-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="PB-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -358,7 +358,7 @@
       </Holdable>
     </Item>
     <!-- Магазин для PB. -->
-    <Item name="Магазин 9x18" identifier="PBammo" description="Вмещает 8 патронов" maxstacksize="8" maxstacksizecharacterinventory="4" scale="0.45" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,PBammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Магазин 9x18" identifier="PBammo" description="Вмещает 8 патронов" maxstacksize="8" maxstacksizecharacterinventory="4" scale="0.45" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,PBammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="PB,PM" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="Kedr" minamount="1" maxamount="1" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
@@ -431,7 +431,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="Магазин 9x18" identifier="PBammo-big" description="Вмещает 8 патронов" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.45" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,PBammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Магазин 9x18" identifier="PBammo-big" description="Вмещает 8 патронов" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.45" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,PBammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="PB,PM" minamount="1" maxamount="1" spawnprobability="0.25" />
       <PreferredContainer primary="Kedr" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
@@ -506,7 +506,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="PB патрон" identifier="PBround" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <Item allowsellingwhenbroken="true" name="PB патрон" identifier="PBround" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x18" sourcerect="1321,324,71,70" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="9x18" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="14" density="30" />
@@ -558,7 +558,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="Гильза" identifier="PBround-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.35">
+    <Item allowsellingwhenbroken="true" name="Гильза" identifier="PBround-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.35">
       <InventoryIcon texture="%ModDir%/casing.png" name="9x18 casing icon" sourcerect="1336,342,49,48" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name="9x18 casing" sourcerect="68,521,8,16" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />

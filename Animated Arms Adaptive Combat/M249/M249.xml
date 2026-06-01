@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" condition="10" identifier="M249" category="Weapon" HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" subcategory="Animated_arms_weapons" Scale="0.35" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" condition="10" identifier="M249" category="Weapon" HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" subcategory="Animated_arms_weapons" Scale="0.35" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="none" amount="1" spawnprobability="0.12" notcampaign="true" notpvp="true" />
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.016" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.016" />
@@ -878,13 +878,13 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item name=" " identifier="M249reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,M249reloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="M249reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,M249reloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/ammunition.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name="НОЖЕМЁТ - ТЫЩ ТЫ ДЫШ" spritecolor="255,155,155,255" identifier="M249magazine" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="mediumitem,M249ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="НОЖЕМЁТ - ТЫЩ ТЫ ДЫШ" spritecolor="255,155,155,255" identifier="M249magazine" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="mediumitem,M249ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="M249" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.01" />
       <Price baseprice="420" sold="true" minleveldifficulty="65" displaynonempty="true">
@@ -954,7 +954,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="M249magazine-knife" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="mediumitem,M249ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="M249magazine-knife" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="mediumitem,M249ammo,handheldammo" impactsoundtag="impact_metal_light">
       <Sprite texture="%ModDir%/Ammunition.png" sourcerect="259,8,29,36" depth="0.55" origin="0.5,0.5" />
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="389,438,68,69" origin="0.5,0.5" />
       <Body width="29" height="37" density="25" />
@@ -1000,7 +1000,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="divingknife-throw-fun" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
+    <Item allowsellingwhenbroken="true" name="" identifier="divingknife-throw-fun" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,sharptool" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="diving knife throw icon" sourcerect="424,1329,64,64" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="diving knife throw" sourcerect="418,1429,66,16" depth="0.55" origin="0.5,0.5" />
       <Body width="100" height="2" restitution="0.3" density="25" />

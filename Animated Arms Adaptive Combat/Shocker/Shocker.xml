@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" identifier="Shocker" category="Equipment" HideConditionBar="true" scale="0.25" linkable="true" Tags="smallitem,shocker" impactsoundtag="impact_metal_light" cargocontaineridentifier="metalcrate">
+    <Item name="" identifier="Shocker" allowsellingwhenbroken="true" category="Equipment" HideConditionBar="true" scale="0.25" linkable="true" Tags="smallitem,shocker" impactsoundtag="impact_metal_light" cargocontaineridentifier="metalcrate">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.3" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.05" />
       <PreferredContainer primary="secarmcab" secondary="armcab" />

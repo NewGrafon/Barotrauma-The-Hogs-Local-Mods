@@ -2,7 +2,7 @@
 <Override>
   <Items>
     <!--Автоматы-->
-    <Item name="UMP45 Береговой" identifier="UMP45" category="Weapon" subcategory="Animated_arms_weapons" description="Это штурмовая винтовка, модифицированная для использования в специфических условиях. Она использует ‖color:gui.green‖стандартные патроны 5.56x45мм‖end‖. HRUMP45 ‖color:gui.blue‖малоэффективна под водой‖end‖. ‖color:gui.red‖Винтовка предназначена для ношения исключительно на спине‖end‖." HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.27" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="UMP45 Береговой" identifier="UMP45" category="Weapon" subcategory="Animated_arms_weapons" description="Это штурмовая винтовка, модифицированная для использования в специфических условиях. Она использует ‖color:gui.green‖стандартные патроны 5.56x45мм‖end‖. HRUMP45 ‖color:gui.blue‖малоэффективна под водой‖end‖. ‖color:gui.red‖Винтовка предназначена для ношения исключительно на спине‖end‖." HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.27" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.031" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.031" />
@@ -620,14 +620,14 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
-    <Item name=" " identifier="UMP45reloading" maxstacksize="1" scale="0.3" damagedbyexplosions="true" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,UMP45reloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="UMP45reloading" maxstacksize="1" scale="0.3" damagedbyexplosions="true" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,UMP45reloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="71,343,52,59" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
-    <Item name=" " identifier="UMP45chamber" maxstacksize="1" scale="0.3" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,UMP45chamber">
+    <Item allowsellingwhenbroken="true" name=" " identifier="UMP45chamber" maxstacksize="1" scale="0.3" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,UMP45chamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -639,7 +639,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item name="" identifier="UMP45magazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="UMP45magazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="UMP45" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.1" />
       <Price baseprice="170" minleveldifficulty="40" displaynonempty="true">
@@ -730,7 +730,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="UMP45bigmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="UMP45bigmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="UMP45" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.07" />
       <Price baseprice="270" minleveldifficulty="50" displaynonempty="true">
@@ -821,7 +821,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="UMP45bigfmjmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="UMP45bigfmjmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="UMP45" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.07" />
       <Price baseprice="225" minleveldifficulty="40" displaynonempty="true">
@@ -912,7 +912,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="UMP45fmjmagazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="UMP45fmjmagazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,UMP45ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="UMP45" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.07" />
       <Price baseprice="130" minleveldifficulty="35" displaynonempty="true">

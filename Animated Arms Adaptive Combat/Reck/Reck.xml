@@ -438,13 +438,13 @@
       <SkillRequirementHint identifier="weapons" level="25" />
     </Item>
     <!-- Proxy item. -->
-    <Item name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name=" " identifier="reck-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
+    <Item allowsellingwhenbroken="true" name=" " identifier="reck-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -454,14 +454,14 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item name="Гильза" identifier=".38-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.375">
+    <Item allowsellingwhenbroken="true" name="Гильза" identifier=".38-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.375">
       <InventoryIcon texture="%ModDir%/casing.png" name=".38 casing icon" sourcerect="389,209,52,53" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name=".38 casing" sourcerect="68,521,8,16" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />
       <Body width="6" height="17" density="10" restitution="0.4" />
       <Throwable slots="Any,LeftHand,RightHand" msg="ItemMsgPickUpSelect" throwforce="3.5"></Throwable>
     </Item>
-    <Item name="" identifier=".38" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="16" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier=".38" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="16" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Reck" amount="5" spawnprobability="1" />
       <PreferredContainer primary="R8" amount="8" spawnprobability="1" />
       <PreferredContainer primary="armcab" amount="12" spawnprobability="1" notpvp="true" />
@@ -529,7 +529,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" Scale="0.25" />
     </Item>
-    <Item name=" " identifier=".38ap" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name=" " identifier=".38ap" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Reck" amount="5" spawnprobability="0.5" />
       <PreferredContainer primary="R8" amount="8" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" amount="6" spawnprobability="0.25" notpvp="true" />
@@ -598,7 +598,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="" identifier=".38fmj" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="16" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier=".38fmj" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="16" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Reck" amount="5" spawnprobability="0.5" />
       <PreferredContainer primary="R8" amount="8" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" amount="12" spawnprobability="1" notpvp="true" />
@@ -666,14 +666,14 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" Scale="0.25" />
     </Item>
-    <Item name="Гильза" identifier=".38-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.375">
+    <Item allowsellingwhenbroken="true" name="Гильза" identifier=".38-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.375">
       <InventoryIcon texture="%ModDir%/casing.png" name=".38 casing icon" sourcerect="389,209,52,53" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name=".38 casing" sourcerect="68,521,8,16" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />
       <Body width="6" height="17" density="10" restitution="0.4" />
       <Throwable slots="Any,LeftHand,RightHand" msg="ItemMsgPickUpSelect" throwforce="3.5" />
     </Item>
-    <Item name="" identifier="revolverround" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="16" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="revolverround" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="16" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.25" tags="smallitem,revolverammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="38 round icon" sourcerect="381,200,58,62" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="38 round" sourcerect="16,42,14,4" depth="0.55" origin="0.5,0.5" />
       <Body width="29" height="10" density="30" />

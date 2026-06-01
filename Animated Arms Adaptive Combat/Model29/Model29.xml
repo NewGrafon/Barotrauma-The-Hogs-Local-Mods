@@ -451,13 +451,13 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name=" " identifier="Model29-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
+    <Item allowsellingwhenbroken="true" name=" " identifier="Model29-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -467,7 +467,7 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item name="Патрон .44 Magnum" identifier="Model29ammo" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.15" tags="smallitem,Model29ammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Патрон .44 Magnum" identifier="Model29ammo" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.15" tags="smallitem,Model29ammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Model29" amount="6" spawnprobability="1" />
       <PreferredContainer primary="armcab" amount="6" spawnprobability="0.2" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
@@ -530,7 +530,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.15" />
     </Item>
-    <Item name="Бронебойный патрон .44 Magnum" identifier="Model29ammoap" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.15" tags="smallitem,Model29ammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Бронебойный патрон .44 Magnum" identifier="Model29ammoap" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.15" tags="smallitem,Model29ammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Model29" amount="6" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" amount="6" spawnprobability="0.15" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.1" />
@@ -598,7 +598,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item name="Патрон .44 Magnum" identifier="Model29ammofmj" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.15" tags="smallitem,Model29ammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Патрон .44 Magnum" identifier="Model29ammofmj" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.15" tags="smallitem,Model29ammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Model29" amount="6" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" amount="6" spawnprobability="0.2" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.15" />
@@ -661,7 +661,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.15" />
     </Item>
-    <Item name="Гильза" identifier="Model29ammo-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
+    <Item allowsellingwhenbroken="true" name="Гильза" identifier="Model29ammo-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
       <InventoryIcon texture="%ModDir%/casing.png" name=".44 casing icon" sourcerect="317,15,48,49" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name=".44 casing" sourcerect="68,521,8,16" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />

@@ -2,7 +2,7 @@
 <Override>
   <Items>
     <!--Автоматы-->
-    <Item name="" identifier="AK-74" impacttolerance="0.1" category="Weapon" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="AK-74" impacttolerance="0.1" category="Weapon" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.188" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.075" />
@@ -687,7 +687,7 @@
       <SkillRequirementHint identifier="weapons" level="35" />
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
-    <Item name="ак-12" identifier="AK-12" category="Weapon" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="ак-12" identifier="AK-12" category="Weapon" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.15" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.05" />
@@ -1429,26 +1429,26 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
-    <Item name=" " identifier="akreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,akreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="akreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,akreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name=" " identifier="weapons-up" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,weapons-up">
+    <Item allowsellingwhenbroken="true" name=" " identifier="weapons-up" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,weapons-up">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
-    <Item name=" " identifier="akchamber" maxstacksize="1" scale="0.5" condition="100" damagedbyexplosions="true" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,akchamber">
+    <Item allowsellingwhenbroken="true" name=" " identifier="akchamber" maxstacksize="1" scale="0.5" condition="100" damagedbyexplosions="true" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,akchamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item name=" " identifier="repair" maxstacksize="1" scale="0.1" HideConditionBar="true" noninteractable="true" condition="200" category="Weapon" tags="repair">
+    <Item allowsellingwhenbroken="true" name=" " identifier="repair" maxstacksize="1" scale="0.1" HideConditionBar="true" noninteractable="true" condition="200" category="Weapon" tags="repair">
       <Sprite texture="%ModDir%/repair-1.png" origin="0.5,0.5" sourcerect="0,0,0,0" />
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
@@ -1484,7 +1484,7 @@
         <Containable items="repair-proxy-3" />
       </ItemContainer>
     </Item>
-    <Item name=" " identifier="repair-proxy" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
+    <Item allowsellingwhenbroken="true" name=" " identifier="repair-proxy" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
       <Sprite texture="%ModDir%/repair-1.png" origin="0.5,0.5" sourcerect="0,0,0,0" />
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
@@ -1506,7 +1506,7 @@
         <StatusEffect type="Always" target="NearbyItems" range="1" duration="9999" setvalue="true" tags="condition-50" />
       </Holdable>
     </Item>
-    <Item name=" " identifier="repair-proxy-2" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
+    <Item allowsellingwhenbroken="true" name=" " identifier="repair-proxy-2" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
       <Sprite texture="%ModDir%/repair-1.png" origin="0.5,0.5" sourcerect="0,0,0,0" />
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
@@ -1525,7 +1525,7 @@
         <StatusEffect type="Always" target="NearbyItems" range="1" duration="9999" setvalue="true" tags="condition-25" />
       </Holdable>
     </Item>
-    <Item name=" " identifier="repair-proxy-3" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
+    <Item allowsellingwhenbroken="true" name=" " identifier="repair-proxy-3" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
       <Sprite texture="%ModDir%/repair-1.png" origin="0.5,0.5" sourcerect="0,0,0,0" />
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
@@ -1539,7 +1539,7 @@
         <StatusEffect type="OnBroken" target="NearbyItems" range="1" OneShot="true" duration="9999" setvalue="true" tags="condition-75" />
       </Holdable>
     </Item>
-    <Item name="repair-broken" identifier="repair-broken" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
+    <Item allowsellingwhenbroken="true" name="repair-broken" identifier="repair-broken" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
       <Sprite texture="%ModDir%/repair-1.png" origin="0.5,0.5" sourcerect="0,0,0,0" />
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
@@ -1574,7 +1574,7 @@
         <Containable items="repair-proxy-3" />
       </ItemContainer>
     </Item>
-    <Item name="repair-very-broken" identifier="repair-very-broken" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
+    <Item allowsellingwhenbroken="true" name="repair-very-broken" identifier="repair-very-broken" maxstacksize="1" scale="0.01" HideConditionBar="true" hideinmenus="true" noninteractable="true" condition="200" category="Weapon" tags="smallitem,repair">
       <Sprite texture="%ModDir%/repair-1.png" origin="0.5,0.5" sourcerect="0,0,0,0" />
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
@@ -1610,7 +1610,7 @@
       </ItemContainer>
     </Item>
     <!--магазины-->
-    <Item name="" identifier="akmagazine" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="akmagazine" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.15" />
       <Price baseprice="100" minleveldifficulty="30" displaynonempty="true">
@@ -1707,7 +1707,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="Бронебойный магазин 5.45x39мм" identifier="akapmagazine" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="Бронебойный магазин 5.45x39мм" identifier="akapmagazine" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="1" maxamount="1" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.05" />
       <Price baseprice="180" minleveldifficulty="40" displaynonempty="true">
@@ -1803,7 +1803,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="akfmjmagazine" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="akfmjmagazine" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.1" />
       <Price baseprice="85" minleveldifficulty="25" displaynonempty="true">
@@ -1900,7 +1900,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="akbigmagazine" maxstacksize="2" description="Вмещает 60 патрон" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="akbigmagazine" maxstacksize="2" description="Вмещает 60 патрон" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="1" maxamount="1" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.05" />
       <Price baseprice="280" minleveldifficulty="35" displaynonempty="true">
@@ -1991,7 +1991,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="akbigapmagazine" maxstacksize="2" description="Вмещает 60 патрон" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="akbigapmagazine" maxstacksize="2" description="Вмещает 60 патрон" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="1" maxamount="1" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.05" />
       <Price baseprice="280" minleveldifficulty="35" displaynonempty="true">
@@ -2082,7 +2082,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="akbigfmjmagazine" maxstacksize="2" description="Вмещает 60 патрон" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="akbigfmjmagazine" maxstacksize="2" description="Вмещает 60 патрон" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,akammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="1" maxamount="1" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.05" />
       <Price baseprice="280" minleveldifficulty="35" displaynonempty="true">
@@ -2173,7 +2173,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="Гильза" identifier="akround-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="rifle_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.275">
+    <Item allowsellingwhenbroken="true" name="Гильза" identifier="akround-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="rifle_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.275">
       <InventoryIcon texture="%ModDir%/casing.png" name="5.45 casing icon" sourcerect="1254,17,49,48" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name="5.45 casing" sourcerect="24,521,8,42" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />
@@ -2181,7 +2181,7 @@
       <Throwable slots="Any,LeftHand,RightHand" msg="ItemMsgPickUpSelect" throwforce="3.5"></Throwable>
     </Item>
     <!-- AK Патрон (обычный) -->
-    <Item name="AK Патрон" identifier="akround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item allowsellingwhenbroken="true" name="AK Патрон" identifier="akround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="10" maxamount="20" spawnprobability="1" />
       <PreferredContainer primary="armcab" minamount="8" maxamount="16" spawnprobability="0.45" notpvp="true" />
       <PreferredContainer secondary="outpostsecarmcab" minamount="4" maxamount="10" spawnprobability="0.45" />
@@ -2250,7 +2250,7 @@
       </Projectile>
     </Item>
     <!-- AK Патрон БП (бронебойный) -->
-    <Item name="AK Патрон БП" identifier="akapround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item allowsellingwhenbroken="true" name="AK Патрон БП" identifier="akapround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="8" maxamount="14" spawnprobability="0.45" />
       <PreferredContainer secondary="outpostsecarmcab" minamount="3" maxamount="8" spawnprobability="0.18" />
       <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,piratearmcab,abandonedsecarmcab,piratesecarmcab" minamount="2" maxamount="8" spawnprobability="0.12" />
@@ -2320,7 +2320,7 @@
       </Projectile>
     </Item>
     <!-- AK Патрон FMJ -->
-    <Item name="AK Патрон FMJ" identifier="akfmjround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item allowsellingwhenbroken="true" name="AK Патрон FMJ" identifier="akfmjround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <PreferredContainer primary="ak-74,ak-74m,ak-12,ASM-DT,an-94" minamount="10" maxamount="18" spawnprobability="0.8" />
       <PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="0.2" notpvp="true" />
       <PreferredContainer secondary="outpostsecarmcab" minamount="3" maxamount="8" spawnprobability="0.2" />

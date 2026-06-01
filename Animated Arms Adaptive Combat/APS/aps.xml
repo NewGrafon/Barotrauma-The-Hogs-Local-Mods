@@ -2,7 +2,7 @@
 <Override>
   <Items>
     <!--Автоматы-->
-    <Item name="" identifier="APS" category="Weapon" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="APS" category="Weapon" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.188" />
@@ -467,14 +467,14 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
-    <Item name=" " identifier="apsreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,apsreloading">
+    <Item allowsellingwhenbroken="true" name=" " identifier="apsreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,apsreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
-    <Item name=" " identifier="apschamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,apschamber">
+    <Item allowsellingwhenbroken="true" name=" " identifier="apschamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,apschamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -487,7 +487,7 @@
       </ItemContainer>
     </Item>
     <!--магазины-->
-    <Item name="" identifier="apsmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" Scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,apsammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="apsmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" Scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,apsammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="aps" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.15" />
       <Price baseprice="100" minleveldifficulty="30" displaynonempty="true">
@@ -578,7 +578,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="apsapmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,apsammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="apsapmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,apsammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="aps" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.1" />
       <Price baseprice="180" minleveldifficulty="50" displaynonempty="true">
@@ -669,7 +669,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item name="" identifier="apsfmjmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,apsammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item allowsellingwhenbroken="true" name="" identifier="apsfmjmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,apsammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="aps" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.15" />
       <Price baseprice="85" minleveldifficulty="50" displaynonempty="true">
