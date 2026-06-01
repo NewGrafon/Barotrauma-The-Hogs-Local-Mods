@@ -5819,7 +5819,7 @@
       </Projectile>
     </Item>
     
-    <Item name="" identifier="fulgurium" category="Weapon,Alien" Tags="smallitem,ore" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="fulgurium" category="Weapon,Alien" Tags="smallitem,ore" maxstacksize="12" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="328,833,51,63" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Alien/AlienMaterials.png" sourcerect="186,351,59,67" depth="0.55" origin="0.5,0.5" />
       <Body radius="25" density="20" />
@@ -5963,7 +5963,7 @@
       </Projectile>
     </Item>
     
-    <Item name="" identifier="dementonite" category="Weapon,Alien" Tags="smallitem,ore" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="dementonite" category="Weapon,Alien" Tags="smallitem,ore" maxstacksize="12" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,830,64,64" />
       <Sprite texture="Content/Items/Alien/AlienMaterials.png" sourcerect="15,356,60,54" depth="0.55" origin="0.5,0.5" />
       <Body radius="25" density="20" />
