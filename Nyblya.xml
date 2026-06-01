@@ -2,9 +2,9 @@
 <mods name="Nyblya">
   <Vanilla />
   <Local name="LuaCsForBarotrauma" />
-  <Workshop name="CsForBarotrauma" id="2795927223" />
-  <Local name="Sell Worn Items (condition threshold)" />
   <Workshop name="Half Life Scientist Sounds" id="3662701629" />
+  <Workshop name="GM Menu" id="3699710631" />
+  <Workshop name="EntityDisableDistance" id="3617551399" />
   <Local name="NetworkTweaks" />
   <Workshop name="PerformanceEnhancement" id="3618710101" />
   <Workshop name="ShadowCulling" id="3621263586" />
@@ -30,5 +30,4 @@
   <Workshop name="Chimera Remake" id="3368559590" />
   <Workshop name="Bullet Collision Fix" id="3728965716" />
   <Workshop name="Remove All" id="3043340865" />
-  <Workshop name="GM Menu" id="3699710631" />
 </mods>
