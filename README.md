@@ -11,7 +11,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3730869790
 
 <img width="639" height="357" alt="image" src="https://github.com/user-attachments/assets/a897a45f-0326-4bc4-983e-aa34bd553cc3" />
 
-<img width="1476" height="204" alt="image" src="https://github.com/user-attachments/assets/487c5169-3f50-426d-a097-5dfc9cc241cd" />
+<img width="1469" height="194" alt="image" src="https://github.com/user-attachments/assets/a2f8ad61-18bf-4724-9c78-5eb6d527cf4e" />
 
 2. Git -> https://git-scm.com/ -> Install For Windows
 3. При установке гита сделайте так:
