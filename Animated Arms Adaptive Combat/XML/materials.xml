@@ -5891,11 +5891,11 @@
       </Projectile>
     </Item>
     
-    <Item name="" identifier="physicorium" category="Weapon,Alien" Tags="smallitem,ore" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="physicorium" category="Weapon,Alien" Tags="smallitem,ore" maxstacksize="12" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="70,835,52,59" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Alien/AlienMaterials.png" sourcerect="97,349,58,71" depth="0.55" origin="0.5,0.5" />
       <Body radius="25" density="20" />
-      <Price baseprice="200" sold="false" minleveldifficulty="35">
+      <Price baseprice="240" sold="false" minleveldifficulty="35">
         <Price storeidentifier="merchantoutpost" multiplier="1.25" />
         <Price storeidentifier="merchantcity" multiplier="1.15" />
         <Price storeidentifier="merchantresearch" sold="true" />
