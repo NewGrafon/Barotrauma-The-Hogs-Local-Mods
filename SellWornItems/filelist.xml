@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Sell Worn Items (condition threshold)" modversion="1.0.0" corepackage="False" gameversion="1.12.7.0">
-  <Other file="%ModDir%/CSharp/Shared/SellWornItemsPatch.cs" />
-</contentpackage>
