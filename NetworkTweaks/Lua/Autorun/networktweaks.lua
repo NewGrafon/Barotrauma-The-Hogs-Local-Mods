@@ -60,13 +60,9 @@ local settingsDesc = Descriptors["Barotrauma.Networking.ServerSettings"]
 -- Применяем настройки для NetConfig (через нашу защиту)
 forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 2)
 forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 1)
-forceSet(netConfigDesc, NetConfig, "MaxEventPacketsPerUpdate", 8)
-forceSet(netConfigDesc, NetConfig, "RoundStartSyncDuration", 60)
-forceSet(netConfigDesc, NetConfig, "EventRemovalTime", 20)
-forceSet(netConfigDesc, NetConfig, "OldReceivedEventKickTime", 30)
-forceSet(netConfigDesc, NetConfig, "OldEventKickTime", 50)
-forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 2)
-forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 0.2)
+forceSet(netConfigDesc, NetConfig, "MaxEventPacketsPerUpdate", 6)
+forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 4)
+forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 0.4)
 
 -- Применяем настройки для ServerSettings
 if Game.ServerSettings then
