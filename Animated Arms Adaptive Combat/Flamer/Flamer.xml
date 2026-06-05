@@ -1296,7 +1296,7 @@
       </Items>
     </Override>
     <Items>
-      <Item allowsellingwhenbroken="true" name="" identifier="syringegun" category="Equipment,Medical,Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,gun,mountableweapon" scale="0.5" impactsoundtag="impact_metal_light">
+      <Item name="" identifier="syringegun" category="Equipment,Medical,Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,gun,mountableweapon" scale="0.5" impactsoundtag="impact_metal_light">
         <Upgrade gameversion="0.10.0.0" scale="0.5" />
         <PreferredContainer primary="armcab" amount="1" spawnprobability="0.2" notcampaign="true" notpvp="true" />
         <PreferredContainer secondary="secarmcab,weaponholder" />
@@ -1398,7 +1398,7 @@
         <SkillRequirementHint identifier="medical" level="30" />
       </Item>
       <!-- Syringe Gun Melee Mode -->
-      <Item allowsellingwhenbroken="true" name="" identifier="syringegun-melee" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Item name="" identifier="syringegun-melee" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
         <Deconstruct time="10">
           <Item identifier="aluminium" />
           <Item identifier="plastic" />
@@ -1456,7 +1456,7 @@
         <Upgrade gameversion="0.10.0.0" scale="0.5" />
       </Item>
       <!-- Syringe Gun Throw Mode -->
-      <Item allowsellingwhenbroken="true" name="" identifier="syringegun-throw" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
+      <Item name="" identifier="syringegun-throw" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
         <Deconstruct time="10">
           <Item identifier="aluminium" />
           <Item identifier="plastic" />
@@ -1614,7 +1614,7 @@
         <SkillRequirementHint identifier="medical" level="50" />
       </Item>
       <!-- Advanced Syringe Gun Melee Mode -->
-      <Item allowsellingwhenbroken="true" name="" identifier="advancedsyringegun-melee" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Item name="" identifier="advancedsyringegun-melee" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
         <Deconstruct time="10">
           <Item identifier="titaniumaluminiumalloy" />
           <Item identifier="plastic" />
@@ -1671,7 +1671,7 @@
         <Upgrade gameversion="0.10.0.0" scale="0.5" />
       </Item>
       <!-- Advanced Syringe Gun Throw Mode -->
-      <Item allowsellingwhenbroken="true" name="" identifier="advancedsyringegun-throw" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
+      <Item name="" identifier="advancedsyringegun-throw" category="Equipment,Medical,Weapon" tags="smallitem,tool,simpletool,dooropeningtool,crowbaritem,mountableweapon,throwable" cargocontaineridentifier="metalcrate" scale="0.5" impacttolerance="4" useinhealthinterface="True">
         <Deconstruct time="10">
           <Item identifier="titaniumaluminiumalloy" />
           <Item identifier="plastic" />

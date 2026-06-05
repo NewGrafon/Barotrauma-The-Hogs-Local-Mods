@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="" HideConditionBar="true" identifier="alienpistol" category="Weapon,Alien" tags="smallitem,weapon,alien,mountableweapon,pistolitem" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" HideConditionBar="true" identifier="alienpistol" category="Weapon,Alien" tags="smallitem,weapon,alien,mountableweapon,pistolitem" Scale="0.5" impactsoundtag="impact_metal_light">
       <Price baseprice="500" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="0.9" />
         <Price storeidentifier="merchantcity" multiplier="0.9" />
@@ -118,13 +118,13 @@
       <SkillRequirementHint identifier="weapons" level="40" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="alpreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,alpreloading">
+    <Item name=" " identifier="alpreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,alpreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="alien-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item name=" " identifier="alien-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">

@@ -417,13 +417,13 @@
       <SkillRequirementHint identifier="weapons" level="60" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
+    <Item name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable slots="Any,RightHand+LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name="Патрон .45 Colt" identifier="Big-Ironammo" category="Weapon" maxstacksize="40" maxstacksizecharacterinventory="20" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.03" tags="smallitem,Big-Ironammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item name="Патрон .45 Colt" identifier="Big-Ironammo" category="Weapon" maxstacksize="40" maxstacksizecharacterinventory="20" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.03" tags="smallitem,Big-Ironammo,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Big-Iron" amount="6" spawnprobability="1" />
       <PreferredContainer primary="armcab" amount="6" spawnprobability="1" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
@@ -492,7 +492,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.15" />
     </Item>
-    <Item allowsellingwhenbroken="true" name="Гильза" identifier="Big-Ironammo-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
+    <Item name="Гильза" identifier="Big-Ironammo-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
       <InventoryIcon texture="%ModDir%/casing.png" name="45 colt casing icon" sourcerect="321,78,48,47" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name="45 colt casing" sourcerect="78,521,8,15" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />

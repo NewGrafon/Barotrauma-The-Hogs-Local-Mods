@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="" HideConditionBar="true" condition="0" identifier="RPG" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" subcategory="Animated_arms_weapons" Scale="0.375" impactsoundtag="impact_metal_light">
+    <Item name="" HideConditionBar="true" condition="0" identifier="RPG" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" subcategory="Animated_arms_weapons" Scale="0.375" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.008" />
       <Price baseprice="1925" sold="false" minleveldifficulty="70">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
@@ -400,13 +400,13 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="RPGreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,RPGreloading">
+    <Item name=" " identifier="RPGreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,RPGreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/ammunition.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="RPGround" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
+    <Item name="" identifier="RPGround" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.03" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.05" />
       <InventoryIcon name="RPG round" texture="%ModDir%/Ammunition.png" sourcerect="512,551,87,96" origin="0.5,0.5" />
@@ -461,7 +461,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="RPGroundap" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
+    <Item name="" identifier="RPGroundap" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.02" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.04" />
       <InventoryIcon name="RPG round AP" texture="%ModDir%/Ammunition.png" sourcerect="599,554,87,91" origin="0.5,0.5" />
@@ -516,7 +516,7 @@
         <StatusEffect type="OnActive" target="This" delay="0.6" Condition="-1000" />
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="RPGroundkm1" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
+    <Item name="" identifier="RPGroundkm1" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.03" />
       <PreferredContainer primary="RPG" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.05" />
@@ -576,7 +576,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="RPGroundkm2" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
+    <Item name="" identifier="RPGroundkm2" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.02" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.03" />
       <InventoryIcon name="RPG round km2" texture="%ModDir%/Ammunition.png" sourcerect="808,547,96,97" origin="0.5,0.5" />
@@ -635,7 +635,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="RPGroundpol" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
+    <Item name="" identifier="RPGroundpol" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,rpgammo,handheldammo" impactsoundtag="impact_metal_light" scale="0.65">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.03" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.1" />
       <InventoryIcon name="RPG round pol" texture="%ModDir%/Ammunition.png" sourcerect="1121,1104,107,109" origin="0.5,0.5" />

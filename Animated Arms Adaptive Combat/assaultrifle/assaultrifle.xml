@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="Винтовка Клён" identifier="assaultrifle" category="Weapon" HideConditionBar="true" subcategory="Animated_arms_weapons" description="Это надёжная штурмовая винтовка, разработанная для использования в суровых условиях Европы, особенно ценимая среди членов Коалиции. Она использует специально разработанные патроны ‖color:gui.green‖6.5x45мм Шторм‖end‖, оптимизированные для ‖color:gui.blue‖эффективной стрельбы в водной среде без потери убойной силы также сама винтовка обладает нейтральной плавучестью‖end‖. ‖color:gui.red‖Винтовка громоздка и тяжела, поэтому её можно носить только на спине.‖end‖" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.46" impactsoundtag="impact_metal_light">
+    <Item name="Винтовка Клён" identifier="assaultrifle" category="Weapon" HideConditionBar="true" subcategory="Animated_arms_weapons" description="Это надёжная штурмовая винтовка, разработанная для использования в суровых условиях Европы, особенно ценимая среди членов Коалиции. Она использует специально разработанные патроны ‖color:gui.green‖6.5x45мм Шторм‖end‖, оптимизированные для ‖color:gui.blue‖эффективной стрельбы в водной среде без потери убойной силы также сама винтовка обладает нейтральной плавучестью‖end‖. ‖color:gui.red‖Винтовка громоздка и тяжела, поэтому её можно носить только на спине.‖end‖" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.46" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.011" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.011" />
       <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.011" />
@@ -642,13 +642,13 @@
       <SkillRequirementHint identifier="weapons" level="65" />
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="assaultriflereloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,assaultriflereloading">
+    <Item name=" " identifier="assaultriflereloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,assaultriflereloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="381,2,60,66" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="assaultriflechamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,assaultriflechamber">
+    <Item name=" " identifier="assaultriflechamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,assaultriflechamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -660,7 +660,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="assaultriflemagazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="assaultriflemagazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="assaultrifle" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="300" sold="false" minleveldifficulty="60" displaynonempty="true">
@@ -776,7 +776,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="assaultriflefmjmagazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="assaultriflefmjmagazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="assaultrifle" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="300" sold="false" minleveldifficulty="60" displaynonempty="true">
@@ -892,7 +892,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="assaultrifleapmagazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="assaultrifleapmagazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="assaultrifle" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="300" sold="false" minleveldifficulty="60" displaynonempty="true">
@@ -1008,7 +1008,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Клён Патрон" identifier="assaultrifleround" category="Weapon" interactthroughwalls="true" maxstacksize="20" maxstacksizecharacterinventory="10" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="Клён Патрон" identifier="assaultrifleround" category="Weapon" interactthroughwalls="true" maxstacksize="20" maxstacksizecharacterinventory="10" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="6.8" sourcerect="1315,570,77,77" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="6.8" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="14" density="10.01" />
@@ -1037,7 +1037,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Клён БП патрон" identifier="assaultrifleapround" category="Weapon" interactthroughwalls="true" maxstacksize="20" maxstacksizecharacterinventory="10" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="Клён БП патрон" identifier="assaultrifleapround" category="Weapon" interactthroughwalls="true" maxstacksize="20" maxstacksizecharacterinventory="10" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="6.8 ap" sourcerect="1315,673,77,77" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="6.8 ap" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="14" density="10.01" />
@@ -1068,7 +1068,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Клён Патрон" identifier="assaultriflefmjround" category="Weapon" interactthroughwalls="true" maxstacksize="20" maxstacksizecharacterinventory="10" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="Клён Патрон" identifier="assaultriflefmjround" category="Weapon" interactthroughwalls="true" maxstacksize="20" maxstacksizecharacterinventory="10" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="6.8" sourcerect="1315,570,77,77" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="6.8" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="14" density="10.01" />

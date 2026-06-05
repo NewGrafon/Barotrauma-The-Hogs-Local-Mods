@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="Беретта 92" HideConditionBar="true" description="Это классический пистолет, надёжный и широко распространённый в Европе, особенно среди частных военных компаний и членов Коалиции. Он использует патроны ‖color:gui.green‖9x19mm‖end‖. Его можно удерживать одной рукой, ‖color:gui.blue‖но под водой он малоэффективен‖end‖." identifier="Glock" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.24" impactsoundtag="impact_metal_light">
+    <Item name="Беретта 92" HideConditionBar="true" description="Это классический пистолет, надёжный и широко распространённый в Европе, особенно среди частных военных компаний и членов Коалиции. Он использует патроны ‖color:gui.green‖9x19mm‖end‖. Его можно удерживать одной рукой, ‖color:gui.blue‖но под водой он малоэффективен‖end‖." identifier="Glock" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.24" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.45" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.225" />
       <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.375" />
@@ -363,13 +363,13 @@
       <SkillRequirementHint identifier="weapons" level="30" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="Glockreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item name=" " identifier="Glockreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,Glockreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="Glockchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockchamber">
+    <Item name=" " identifier="Glockchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockchamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -381,7 +381,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="Glock-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item name=" " identifier="Glock-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -393,7 +393,7 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="Glock-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item name=" " identifier="Glock-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">

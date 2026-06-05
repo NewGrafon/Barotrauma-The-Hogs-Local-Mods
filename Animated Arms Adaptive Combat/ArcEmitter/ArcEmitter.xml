@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="" HideConditionBar="true" identifier="arcemitter" tags="mediumitem,weapon,gun,mountableweapon,provocativetohumanai" category="Weapon" isshootable="true" Scale="0.5">
+    <Item name="" HideConditionBar="true" identifier="arcemitter" tags="mediumitem,weapon,gun,mountableweapon,provocativetohumanai" category="Weapon" isshootable="true" Scale="0.5">
       <Price baseprice="740" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="1.5" />
         <Price storeidentifier="merchantcity" multiplier="1.25" />

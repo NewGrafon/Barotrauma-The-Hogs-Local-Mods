@@ -2,7 +2,7 @@
 <Override>
   <Items>
     <!--Автоматы-->
-    <Item allowsellingwhenbroken="true" name="MP5 Береговой" identifier="MP5-anim" category="Weapon" subcategory="Animated_arms_weapons" description="Это штурмовая винтовка, модифицированная для использования в специфических условиях. Она использует ‖color:gui.green‖стандартные патроны 5.56x45мм‖end‖. HRMP5 ‖color:gui.blue‖малоэффективна под водой‖end‖. ‖color:gui.red‖Винтовка предназначена для ношения исключительно на спине‖end‖." HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.28" impactsoundtag="impact_metal_light">
+    <Item name="MP5 Береговой" identifier="MP5-anim" category="Weapon" subcategory="Animated_arms_weapons" description="Это штурмовая винтовка, модифицированная для использования в специфических условиях. Она использует ‖color:gui.green‖стандартные патроны 5.56x45мм‖end‖. HRMP5 ‖color:gui.blue‖малоэффективна под водой‖end‖. ‖color:gui.red‖Винтовка предназначена для ношения исключительно на спине‖end‖." HideConditionBar="true" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.28" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.312" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.156" />
@@ -620,14 +620,14 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="MP5reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,MP5reloading">
+    <Item name=" " identifier="MP5reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,MP5reloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="71,343,52,59" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="MP5chamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,MP5chamber">
+    <Item name=" " identifier="MP5chamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,MP5chamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -639,7 +639,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="MP5magazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="MP5magazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="MP5-anim" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.15" />
       <Price baseprice="105" minleveldifficulty="15" displaynonempty="true">
@@ -730,7 +730,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="MP5bigmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="MP5bigmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="MP5-anim" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.1" />
       <Price baseprice="200" minleveldifficulty="20" displaynonempty="true">
@@ -815,7 +815,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="MP5bigfmjmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="MP5bigfmjmagazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="MP5-anim" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.1" />
       <Price baseprice="200" minleveldifficulty="20" displaynonempty="true">
@@ -900,7 +900,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="" identifier="MP5fmjmagazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="MP5fmjmagazine-anim" maxstacksize="4" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.3" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,MP5ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="MP5-anim" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.1" />
       <Price baseprice="85" minleveldifficulty="10" displaynonempty="true">

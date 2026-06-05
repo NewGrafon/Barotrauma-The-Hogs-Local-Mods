@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="" identifier="SVU" category="Weapon" subcategory="Animated_arms_weapons" description=" " cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.485" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="SVU" category="Weapon" subcategory="Animated_arms_weapons" description=" " cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.485" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.055" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.044" />
@@ -567,14 +567,14 @@
       <SkillRequirementHint identifier="weapons" level="65" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="SVUreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,SVUreloading">
+    <Item name=" " identifier="SVUreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,SVUreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="SVUchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,SVUchamber">
+    <Item name=" " identifier="SVUchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,SVUchamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -588,7 +588,7 @@
       </ItemContainer>
     </Item>
     <!--магазины-->
-    <Item allowsellingwhenbroken="true" name=" " identifier="SVUmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name=" " identifier="SVUmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="SVU" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="135" minleveldifficulty="30" displaynonempty="true">
@@ -677,7 +677,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="SVUapmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name=" " identifier="SVUapmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="SVU" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="240" minleveldifficulty="50" displaynonempty="true">
@@ -766,7 +766,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="SVUfmjmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name=" " identifier="SVUfmjmagazine" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,SVUammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="SVU" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="205" minleveldifficulty="50" displaynonempty="true">

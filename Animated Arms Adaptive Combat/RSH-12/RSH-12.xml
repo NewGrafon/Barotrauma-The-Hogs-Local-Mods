@@ -474,13 +474,13 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
+    <Item name=" " identifier="revreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,revreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name="Патрон 12.7x55" identifier="RSH-12ammos" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.45" tags="smallitem,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item name="Патрон 12.7x55" identifier="RSH-12ammos" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.45" tags="smallitem,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="RSH-12" amount="5" spawnprobability="1" />
       <PreferredContainer primary="armcab" amount="5" spawnprobability="0.1" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.1" />
@@ -543,7 +543,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.15" />
     </Item>
-    <Item allowsellingwhenbroken="true" name="Бронебойный патрон 12.7x55" identifier="RSH-12ammoap" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.45" tags="smallitem,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item name="Бронебойный патрон 12.7x55" identifier="RSH-12ammoap" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.45" tags="smallitem,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="RSH-12" amount="5" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" amount="5" spawnprobability="0.1" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.05" />
@@ -611,7 +611,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Патрон 12.7x55" identifier="RSH-12ammofmj" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.45" tags="smallitem,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
+    <Item name="Патрон 12.7x55" identifier="RSH-12ammofmj" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.45" tags="smallitem,handheldammo,pistolammoitem" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="RSH-12" amount="5" spawnprobability="0.5" />
       <PreferredContainer primary="armcab" amount="5" spawnprobability="0.1" notpvp="true" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" minamount="1" maxamount="6" spawnprobability="0.1" />
@@ -674,7 +674,7 @@
       </Projectile>
       <Upgrade gameversion="0.10.0.0" scale="0.15" />
     </Item>
-    <Item allowsellingwhenbroken="true" name="Гильза" identifier="RSH-12ammos-casing" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="large_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
+    <Item name="Гильза" identifier="RSH-12ammos-casing" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="large_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
       <InventoryIcon texture="%ModDir%/casing.png" name="12.7x55 round icon" sourcerect="278,776,55,55" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name="12.7x55 round casing" sourcerect="24,521,8,42" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />

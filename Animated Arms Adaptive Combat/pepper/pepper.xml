@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" identifier="pepperspray" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
+    <Item identifier="pepperspray" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
       <PreferredContainer primary="crewcab" spawnprobability="0.02" />
       <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.01" />
       <PreferredContainer secondary="locker" />
@@ -55,7 +55,7 @@
       </RepairTool>
       <aitarget sightrange="500" soundrange="500" fadeouttime="2" />
     </Item>
-    <Item allowsellingwhenbroken="true" identifier="pepperspray-big" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
+    <Item identifier="pepperspray-big" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
       <PreferredContainer primary="crewcab" spawnprobability="0.01" />
       <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.01" />
       <Price baseprice="600">
@@ -109,7 +109,7 @@
       </RepairTool>
       <aitarget sightrange="500" soundrange="500" fadeouttime="2" />
     </Item>
-    <Item allowsellingwhenbroken="true" identifier="neurospray" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
+    <Item identifier="neurospray" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.325" impactsoundtag="impact_metal_light" isshootable="true">
       <PreferredContainer primary="crewcab" spawnprobability="0.02" />
       <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.01" />
       <PreferredContainer secondary="locker" />

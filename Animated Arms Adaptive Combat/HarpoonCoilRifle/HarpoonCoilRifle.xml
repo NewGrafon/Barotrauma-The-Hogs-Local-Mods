@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="" HideConditionBar="true" identifier="harpooncoilrifle" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" HideConditionBar="true" identifier="harpooncoilrifle" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="wreckweaponholder" spawnprobability="0.005" />
       <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.01" />
       <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
@@ -314,7 +314,7 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="coilreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,coilreloading">
+    <Item name=" " identifier="coilreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,coilreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />

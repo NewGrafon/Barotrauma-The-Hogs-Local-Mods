@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="Беретта 92" HideConditionBar="true" description="Это классический пистолет, надёжный и широко распространённый в Европе, особенно среди частных военных компаний и членов Коалиции. Он использует патроны ‖color:gui.green‖9x19mm‖end‖. Его можно удерживать одной рукой, ‖color:gui.blue‖но под водой он малоэффективен‖end‖." identifier="Beretta-92" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.265" impactsoundtag="impact_metal_light">
+    <Item name="Беретта 92" HideConditionBar="true" description="Это классический пистолет, надёжный и широко распространённый в Европе, особенно среди частных военных компаний и членов Коалиции. Он использует патроны ‖color:gui.green‖9x19mm‖end‖. Его можно удерживать одной рукой, ‖color:gui.blue‖но под водой он малоэффективен‖end‖." identifier="Beretta-92" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.265" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.9" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.45" />
       <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.375" />
@@ -336,13 +336,13 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="Berettareloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,Berettareloading">
+    <Item name=" " identifier="Berettareloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,Berettareloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="Berettachamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettachamber">
+    <Item name=" " identifier="Berettachamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettachamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -354,7 +354,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="Beretta-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettareloading">
+    <Item name=" " identifier="Beretta-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettareloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -366,7 +366,7 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="Beretta-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettareloading">
+    <Item name=" " identifier="Beretta-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettareloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -377,7 +377,7 @@
       </Holdable>
     </Item>
     <!-- Магазин для Beretta и glock. -->
-    <Item allowsellingwhenbroken="true" name="Магазин 9x19мм" identifier="Berettaammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="Магазин 9x19мм" identifier="Berettaammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Beretta-92,Glock" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.5" />
       <Price baseprice="70" minleveldifficulty="20" displaynonempty="true">
@@ -456,7 +456,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Магазин 9x19мм" identifier="Berettafmjammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="Магазин 9x19мм" identifier="Berettafmjammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Beretta-92,Glock" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="50" minleveldifficulty="20" displaynonempty="true">
@@ -537,7 +537,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Магазин 9x19мм" identifier="Berettabigammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="Магазин 9x19мм" identifier="Berettabigammo" description="Вмещает 20 патронов" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Berettaammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Beretta-92,Glock" minamount="1" maxamount="1" spawnprobability="0.25" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.2" />
       <Price baseprice="110" minleveldifficulty="25" displaynonempty="true">
@@ -616,7 +616,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Beretta патрон" identifier="Berettarounds" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="Beretta патрон" identifier="Berettarounds" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <PreferredContainer primary="Ruger" minamount="7" maxamount="7" spawnprobability="1" />
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x19" sourcerect="1321,403,64,67" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="9x19" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
@@ -671,7 +671,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Beretta патрон" identifier="Berettaroundfmj" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="Beretta патрон" identifier="Berettaroundfmj" category="Weapon" interactthroughwalls="true" maxstacksize="40" maxstacksizecharacterinventory="20" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <PreferredContainer primary="Ruger" minamount="7" maxamount="7" spawnprobability="1" />
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="9x19 fmj" sourcerect="1321,476,64,67" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="9x19 fmj" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
@@ -727,7 +727,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Гильза" identifier="Berettarounds-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.35">
+    <Item name="Гильза" identifier="Berettarounds-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.35">
       <InventoryIcon texture="%ModDir%/casing.png" name="9x19 casing icon" sourcerect="1331,419,49,48" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name="9x19 casing" sourcerect="68,521,8,16" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />

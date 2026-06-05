@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="Кольт Deagle Гидра" HideConditionBar="true" description="Модифицированный и водозащищенный Deagle &quot;Гидра&quot; под патроны ‖color:gui.green‖.45 ACP‖end‖ — это надёжный одноручный пистолет, способный ‖color:gui.blue‖стрелять под водой но с пониженной эффективностью‖end‖." identifier="Deagle" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist,mediumitem" Scale="0.265" impactsoundtag="impact_metal_light">
+    <Item name="Кольт Deagle Гидра" HideConditionBar="true" description="Модифицированный и водозащищенный Deagle &quot;Гидра&quot; под патроны ‖color:gui.green‖.45 ACP‖end‖ — это надёжный одноручный пистолет, способный ‖color:gui.blue‖стрелять под водой но с пониженной эффективностью‖end‖." identifier="Deagle" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist,mediumitem" Scale="0.265" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.1" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.07" />
       <Price baseprice="500" minleveldifficulty="15">
@@ -363,13 +363,13 @@
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="Deaglereloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,Deaglereloading">
+    <Item name=" " identifier="Deaglereloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,Deaglereloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="Deaglechamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Deaglechamber">
+    <Item name=" " identifier="Deaglechamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Deaglechamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -382,7 +382,7 @@
       </ItemContainer>
     </Item>
     <!-- Магазин для Deagle. -->
-    <Item allowsellingwhenbroken="true" name="Магазин .50" identifier="Deagleammo" description="Вмещает 7 патронов" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Deagleammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="Магазин .50" identifier="Deagleammo" description="Вмещает 7 патронов" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,Deagleammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="Deagle" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="85" sold="false" minleveldifficulty="60" displaynonempty="true">
@@ -452,7 +452,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Deagle патрон" identifier="Deagleround" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="Deagle патрон" identifier="Deagleround" category="Weapon" maxstacksize="20" maxstacksizecharacterinventory="10" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="12.7x33" sourcerect="1324,248,64,64" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="12.7x33" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="14" density="30" />
@@ -504,7 +504,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Гильза" identifier="Deagleround-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.6">
+    <Item name="Гильза" identifier="Deagleround-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.6">
       <InventoryIcon texture="%ModDir%/casing.png" name=".50 colt casing icon" sourcerect="1336,260,49,49" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name=".50 colt casing" sourcerect="46,521,8,21" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />

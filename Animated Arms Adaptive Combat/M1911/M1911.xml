@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item allowsellingwhenbroken="true" name="Кольт M1911 Гидра" HideConditionBar="true" description="Модифицированный и водозащищенный M1911 &quot;Гидра&quot; под патроны ‖color:gui.green‖.45 ACP‖end‖ — это надёжный одноручный пистолет, способный ‖color:gui.blue‖стрелять под водой но с пониженной эффективностью‖end‖." identifier="colt-1911" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.285" impactsoundtag="impact_metal_light">
+    <Item name="Кольт M1911 Гидра" HideConditionBar="true" description="Модифицированный и водозащищенный M1911 &quot;Гидра&quot; под патроны ‖color:gui.green‖.45 ACP‖end‖ — это надёжный одноручный пистолет, способный ‖color:gui.blue‖стрелять под водой но с пониженной эффективностью‖end‖." identifier="colt-1911" category="Weapon" subcategory="Animated_arms_weapons" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,machpist" Scale="0.285" impactsoundtag="impact_metal_light">
       <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.3" />
       <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.225" />
       <PreferredContainer secondary="armcab,weaponholder" spawnprobability="0.3" />
@@ -366,7 +366,7 @@
       <SkillRequirementHint identifier="weapons" level="35" />
       <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="M1911-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item name=" " identifier="M1911-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -378,7 +378,7 @@
         </StatusEffect>
       </Holdable>
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="M1911-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
+    <Item name=" " identifier="M1911-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
@@ -389,13 +389,13 @@
       </Holdable>
     </Item>
     <!-- Proxy item. -->
-    <Item allowsellingwhenbroken="true" name=" " identifier="1911reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,1911reloading">
+    <Item name=" " identifier="1911reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,1911reloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
-    <Item allowsellingwhenbroken="true" name=" " identifier="1911chamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,1911chamber">
+    <Item name=" " identifier="1911chamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,1911chamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
       <Body width="5" height="5" density="25" />
@@ -408,7 +408,7 @@
       </ItemContainer>
     </Item>
     <!-- Магазин для M1911. -->
-    <Item allowsellingwhenbroken="true" name="Магазин .45 ACP" identifier="1911ammo" description="Вмещает 7 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,1911ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="Магазин .45 ACP" identifier="1911ammo" description="Вмещает 7 патронов" maxstacksize="6" maxstacksizecharacterinventory="3" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,1911ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="colt-1911" minamount="1" maxamount="1" spawnprobability="1" />
       <PreferredContainer primary="armcab" secondary="secarmcab" />
       <Price baseprice="85" sold="false" minleveldifficulty="60" displaynonempty="true">
@@ -480,7 +480,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Магазин .45 ACP" identifier="1911bigammo" description="Вмещает 7 патронов" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,1911ammo,handheldammo" impactsoundtag="impact_metal_light">
+    <Item name="Магазин .45 ACP" identifier="1911bigammo" description="Вмещает 7 патронов" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,1911ammo,handheldammo" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="colt-1911" minamount="1" maxamount="1" spawnprobability="0.25" />
       <PreferredContainer primary="armcab" secondary="secarmcab" spawnprobability="0.2" />
       <Price baseprice="85" sold="false" minleveldifficulty="60" displaynonempty="true">
@@ -552,7 +552,7 @@
         </Button>
       </CustomInterface>
     </Item>
-    <Item allowsellingwhenbroken="true" name="M1911 патрон" identifier="1911round" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="M1911 патрон" identifier="1911round" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="45 acp" sourcerect="1308,763,77,79" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="45 acp" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="14" density="30" />
@@ -604,7 +604,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="M1911 патрон" identifier="1911fmjround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
+    <Item name="M1911 патрон" identifier="1911fmjround" category="Weapon" interactthroughwalls="true" maxstacksize="30" maxstacksizecharacterinventory="15" cargocontaineridentifier="metalcrate" tags="smallitem,riflemanbonus" impactsoundtag="impact_metal_light" scale="0.5">
       <InventoryIcon texture="%ModDir%/Ammunition.png" name="45 acp fmj" sourcerect="1309,851,77,79" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Ammunition.png" name="45 acp fmj" sourcerect="0,36,16,7" depth="0.55" origin="0.5,0.5" />
       <Body width="40" height="14" density="30" />
@@ -656,7 +656,7 @@
         </StatusEffect>
       </Projectile>
     </Item>
-    <Item allowsellingwhenbroken="true" name="Гильза" identifier="1911round-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
+    <Item name="Гильза" identifier="1911round-casing" category="Weapon" interactthroughwalls="true" maxstacksize="90" maxstacksizecharacterinventory="45" cargocontaineridentifier="metalcrate" tags="smallitem,casing" impactsoundtag="pistol_casing" damagedbyexplosions="false" InvulnerableToDamage="true" impacttolerance="0.5" hideinmenus="true" scale="0.4">
       <InventoryIcon texture="%ModDir%/casing.png" name="45 acp casing icon" sourcerect="1319,780,58,59" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/casing.png" name="45 acp casing" sourcerect="68,521,8,16" depth="0.4" origin="0.5,0.5" />
       <Deconstruct time="0.01" />
