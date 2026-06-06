@@ -25,8 +25,14 @@ if (-not (Test-Path $configFile))  { Write-Error "Not found: $configFile";  exit
 [xml]$nyblya   = Get-Content -LiteralPath $nyblyaFile -Encoding UTF8
 $configText    = [System.IO.File]::ReadAllText($configFile)
 
-if ($configText -notmatch '(?s)<contentpackages>.*?</contentpackages>') {
-    Write-Error "Block <contentpackages> not found in $configFile"
+# config_player.xml stores enabled packages in one of two forms:
+#   1) a full "<contentpackages>...</contentpackages>" block  (when any mods are configured), or
+#   2) a single self-closing "<core path=... />" element       (fresh config / vanilla only, no mods).
+$packagesRegex = '(?s)<contentpackages>.*?</contentpackages>'
+$coreRegex     = '<core\b[^>]*?/>'
+
+if ($configText -notmatch $packagesRegex -and $configText -notmatch $coreRegex) {
+    Write-Error "Neither <contentpackages> block nor <core .../> element found in $configFile"
     exit 1
 }
 
@@ -68,7 +74,14 @@ $newBlock = $lines -join "`r`n"
 
 # --- Replace only the <contentpackages> block --------------------------------
 
-$newConfigText = $configText -replace '(?s)<contentpackages>.*?</contentpackages>', $newBlock
+if ($configText -match $packagesRegex) {
+    # existing full block -> replace it
+    $newConfigText = $configText -replace $packagesRegex, $newBlock
+}
+else {
+    # fresh config with only "<core .../>" -> swap that single element for the full block
+    $newConfigText = $configText -replace $coreRegex, $newBlock
+}
 
 # --- Save (UTF-8 with BOM, same as the original file) ------------------------
 
