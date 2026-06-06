@@ -2,6 +2,7 @@
 <mods name="Nyblya">
   <Vanilla />
   <Local name="LuaCsForBarotrauma" />
+  <Local name="NG Net Event Logger" />
   <Local name="NG Sell Worn Items" />
   <Local name="NG Combine Materials" />
   <Workshop name="Half Life Scientist Sounds" id="3662701629" />
