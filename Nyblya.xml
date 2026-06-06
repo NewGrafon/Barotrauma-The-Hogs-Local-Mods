@@ -2,7 +2,7 @@
 <mods name="Nyblya">
   <Vanilla />
   <Local name="LuaCsForBarotrauma" />
-  <Local name="[NG] Sell Worn Items" />
+  <Local name="NG Sell Worn Items" />
   <Workshop name="Half Life Scientist Sounds" id="3662701629" />
   <Workshop name="GM Menu" id="3699710631" />
   <Workshop name="EntityDisableDistance" id="3617551399" />
