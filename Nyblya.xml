@@ -16,7 +16,7 @@
   <Workshop name="NT Surgery Plus" id="3478084070" />
   <Workshop name="NT Cybernetics Enhanced" id="3324062208" />
   <Workshop name="NT Lobotomy" id="3326291860" />
-  <Workshop name="NT Symbiote" id="3478666406" />
+  <Local name="NT Symbiote" />
   <Local name="Animated arms + Dynamic Europe PATCH" />
   <Workshop name="DynamicEuropa" id="2532991202" />
   <Local name="Animated Arms Adaptive Combat" />
