@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="NT Symbiote" steamworkshopid="3478666406" corepackage="false" modversion="1.0.0" gameversion="1.8.8.1" installtime="1746815170" expectedhash="BC21C0FC2692865FEF9EE6F38CDF4B45">
+  <Other file="%ModDir%/Images/AfflictionIcons.png" />
+  <Afflictions file="%ModDir%/Xml/Afflictions.xml" />
+  <Item file="%ModDir%/Xml/items.xml" />
+  <Text file="%ModDir%/Localization/English/English.xml" />
+  <Text file="%ModDir%/Localization/SimplifiedChinese/SimplifiedChinese.xml" />
+  <Other file="%ModDir%/Lua/Autorun/init.lua" />
+  <Text file="%ModDir%/Localization/German/German.xml" />
+  <Other file="%ModDir%/Lua/Scripts/humanupdate.lua" />
+  <Other file="%ModDir%/Lua/Scripts/helperfunctions.lua" />
+  <Other file="%ModDir%/Lua/Scripts/items.lua" />
+  <Other file="%ModDir%/Lua/Scripts/testing.lua" />
+</contentpackage>
