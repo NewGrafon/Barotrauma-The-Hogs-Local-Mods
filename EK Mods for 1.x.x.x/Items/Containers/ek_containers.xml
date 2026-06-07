@@ -316,8 +316,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -357,8 +360,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -398,8 +404,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -439,8 +448,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -480,8 +492,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -507,8 +522,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
     </ItemContainer>
   </Item>
   <!-- Magazines -->
@@ -764,8 +782,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -800,8 +821,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -1368,7 +1392,10 @@
       <StatusEffect type="OnActive" target="This" Condition="-10.0" disabledeltatime="true">
         <Conditional Condition="eq 100" />
       </StatusEffect>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
+      <!-- NG: restored the original reset-to-100. This is a HELD case (not a shelf): OnActive drops to 90 ("carried/open" sprite) while held; this Always resets to 100 ("closed") once set down. Kept continuous because it's a held item - it only oscillates while actively carried (negligible, same call as the repair kit). -->
+      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
+        <Conditional Condition="eq 90" />
+      </StatusEffect>
     </Holdable>
     <ItemContainer autofill="False" capacity="3" maxstacksize="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
       <Containable identifiers="smallitem,mediumitem,weapon" />
@@ -1519,10 +1546,11 @@
         </StatusEffect>
         <!-- Legacy behavior maintained for old artifact mods. -->
         <StatusEffect type="OnContaining" targettype="Contained" targets="ekutility_compatibleartifact" Condition="0" setvalue="true" />
+        <!-- NG: reset to 100 (empty sprite) when the artifact is removed. Replaces the old continuous Always+5/eq95 oscillation that spammed network events the entire time an artifact was inside. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="5.0" disabledeltatime="true">
+          <Conditional Condition="eq 95" />
+        </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="5.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 95" />
-      </StatusEffect>
     </ItemContainer>
     <LightComponent LightColor="250,220,190,100" range="125" IsOn="true" />
   </Item>
@@ -1609,8 +1637,11 @@
         <StatusEffect type="OnContaining" target="This" Condition="-10.0" disabledeltatime="true">
           <Conditional Condition="eq 100" />
         </StatusEffect>
+        <!-- NG: keep the "filled vs empty" sprite WITHOUT the old spam. OnContaining holds condition at 90 (filled sprite) while items are inside; OnRemoved resets to 100 (empty sprite) when an item leaves (if items remain, OnContaining drops back to 90 next frame). Event-driven on insert/remove only -> no oscillation/network spam. -->
+        <StatusEffect type="OnRemoved" target="This" Condition="10.0" disabledeltatime="true">
+          <Conditional Condition="eq 90" />
+        </StatusEffect>
       </Containable>
-      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
