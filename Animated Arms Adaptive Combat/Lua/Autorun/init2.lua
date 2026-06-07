@@ -4,6 +4,10 @@ if Game.IsMultiplayer and CLIENT then return end
 
 function AnalogCom.SetChannel(item,channel)
     local wifi = item.GetComponentString("WifiComponent")
+    -- NG fix: не шлём лишнее сетевое событие, если канал уже нужный.
+    -- Хук SetNumber.xmlhook звал SetChannel ~4 раза/сек на каждом лежащем PDA,
+    -- и CreateEntityEvent ниже срабатывал вхолостую -> спам сети. Теперь только при реальной смене канала.
+    if wifi == nil or wifi.Channel == channel then return end
     wifi.Channel = channel
 
     if SERVER then
