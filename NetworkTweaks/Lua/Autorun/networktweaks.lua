@@ -58,15 +58,15 @@ local netConfigDesc = Descriptors["Barotrauma.Networking.NetConfig"]
 local settingsDesc = Descriptors["Barotrauma.Networking.ServerSettings"]
 
 -- Применяем настройки для NetConfig (через нашу защиту)
-forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 2)
-forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 1)
-forceSet(netConfigDesc, NetConfig, "MaxEventPacketsPerUpdate", 6)
-forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 4)
-forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 0.4)
+forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 1)
+forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 0.5)
+forceSet(netConfigDesc, NetConfig, "MaxEventPacketsPerUpdate", 12)
+forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 2)
+forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 0.25)
 
 -- Применяем настройки для ServerSettings
 if Game.ServerSettings then
-    forceSet(settingsDesc, Game.ServerSettings, "MinimumMidRoundSyncTimeout", 100)
+    forceSet(settingsDesc, Game.ServerSettings, "MinimumMidRoundSyncTimeout", 120)
 end
 
 -- Отчет в консоль при старте раунда
