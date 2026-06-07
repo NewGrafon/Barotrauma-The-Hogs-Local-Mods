@@ -317,9 +317,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -360,9 +358,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -403,9 +399,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -446,9 +440,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -489,9 +481,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -518,9 +508,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
     </ItemContainer>
   </Item>
   <!-- Magazines -->
@@ -777,9 +765,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -815,9 +801,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
@@ -1384,9 +1368,7 @@
       <StatusEffect type="OnActive" target="This" Condition="-10.0" disabledeltatime="true">
         <Conditional Condition="eq 100" />
       </StatusEffect>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
     </Holdable>
     <ItemContainer autofill="False" capacity="3" maxstacksize="1" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
       <Containable identifiers="smallitem,mediumitem,weapon" />
@@ -1628,9 +1610,7 @@
           <Conditional Condition="eq 100" />
         </StatusEffect>
       </Containable>
-      <StatusEffect type="Always" target="This" Condition="10.0" disabledeltatime="true" delay="0.5">
-        <Conditional Condition="eq 90" />
-      </StatusEffect>
+      <!-- NG fix: removed Condition 90/100 oscillation StatusEffect (it ran forever while the container held items, spamming MP network condition-events). OnContaining now drops condition to 90 once when filled, keeping the "filled" sprite, with no ongoing events. -->
       <StatusEffect type="OnContained" target="This" setvalue="true" drawinventory="false" />
       <StatusEffect type="OnNotContained" target="This" setvalue="true" drawinventory="true" />
     </ItemContainer>
