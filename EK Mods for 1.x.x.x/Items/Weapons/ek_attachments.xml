@@ -335,7 +335,7 @@
       <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_handgun_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -391,7 +391,7 @@
       <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_handgun_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -449,7 +449,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_handgun.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -499,7 +499,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_handgun.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -559,7 +559,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_handgun.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -615,7 +615,7 @@
       <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_microsmg_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -668,7 +668,7 @@
       <ParticleEmitter particle="ekmuzzleflamepistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_microsmg_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -721,7 +721,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_microsmg_mono.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -766,7 +766,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_microsmg_mono.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -821,7 +821,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_microsmg_mono.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -874,7 +874,7 @@
       <ParticleEmitter particle="ekmuzzleflamesmg" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksmg" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_marine_smg_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -930,7 +930,7 @@
       <ParticleEmitter particle="ekmuzzleflamesmg" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksmg" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_marine_smg_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -986,7 +986,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_smg.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1034,7 +1034,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_smg.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1092,7 +1092,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_smg.ogg" type="OnUse" range="800" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1148,7 +1148,7 @@
       <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_shotgun_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_shotgun_shells,shotgunshell,shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -1197,7 +1197,7 @@
       <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_shotgun_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_shotgun_shells,shotgunshell,shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -1246,7 +1246,7 @@
       <sound file="%ModDir%/Items/Weapons/ek_tazer1.ogg" type="OnUse" selectionmode="random" range="1000" />
       <sound file="%ModDir%/Items/Weapons/ek_tazer2.ogg" type="OnUse" range="1000" />
       <sound file="%ModDir%/Items/Weapons/ek_tazer3.ogg" type="OnUse" range="1000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1296,7 +1296,7 @@
       <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_drum_lmg_mono.ogg" type="OnUse" range="4500" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="180.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1389,7 +1389,7 @@
       <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_gausspistol_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-1.5" disabledeltatime="true" />
@@ -1443,7 +1443,7 @@
       <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_gausspistol_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-1.5" disabledeltatime="true" />
@@ -1497,7 +1497,7 @@
       <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_gaussrifle_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-1.0" disabledeltatime="true" />
@@ -1551,7 +1551,7 @@
       <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_gaussrifle_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-1.0" disabledeltatime="true" />
@@ -1605,7 +1605,7 @@
       <ParticleEmitter particle="ekmuzzleflamelauncher" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaklauncher" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_torpedo_rifle_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="180.0" force="3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="9.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_microtorpedo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -1674,7 +1674,7 @@
       <ParticleEmitter particle="ekmuzzleflamelauncher" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaklauncher" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_rocket_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="180.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="9.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_rocketammo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -1742,7 +1742,7 @@
       <ParticleEmitter particle="ekmuzzleflamelauncher" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaklauncher" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_beastfire.ogg" type="OnUse" range="5500" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="100.0" force="1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="8.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1795,7 +1795,7 @@
       <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_battlerifle.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1851,7 +1851,7 @@
       <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_battlerifle.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1904,7 +1904,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_battlerifle.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flash="false" flames="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -1952,7 +1952,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_battlerifle.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flash="false" flames="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -2010,7 +2010,7 @@
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_battlerifle.ogg" type="OnUse" range="3000" />
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flash="false" flames="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -2067,7 +2067,7 @@
       <ParticleEmitter particle="ekmuzzleflamelaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaklaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_laserpistol_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="2.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -2122,7 +2122,7 @@
       <ParticleEmitter particle="ekmuzzleflamelaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaklaserpistol" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_laserpistol_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="2.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -2177,7 +2177,7 @@
       <ParticleEmitter particle="ekmuzzleflamelaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaklaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_laserrifle_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -2232,7 +2232,7 @@
       <ParticleEmitter particle="ekmuzzleflamelaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaklaserrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_laserrifle_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="0.3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Contained">
@@ -2286,7 +2286,7 @@
       <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_revolver_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -2362,7 +2362,7 @@
       <ParticleEmitter particle="ekmuzzleflameshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakshotgun" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_revolver_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -2438,7 +2438,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -2506,7 +2506,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -2584,7 +2584,7 @@
       <ParticleEmitter particle="ekmuzzleflamesuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreaksuppressed" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_suppressed_pipegun_mono.ogg" type="OnUse" range="3000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
       </StatusEffect>
       <RequiredItems identifier="ek_revolverammo,ek_ammotag357,revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />

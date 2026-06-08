@@ -16,7 +16,7 @@
       <GuiFrame relativesize="0.55,0.59" anchor="Center" relativeoffset="0.1,-0.05" />
       <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" />
       <sound file="Content/Items/Command/SonarPing2.ogg" type="OnUse" range="1000.0" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <sound file="Content/Items/Command/SonarPingFar.ogg" type="OnUse" range="6000.0" volume="0.8" />
         <sound file="Content/Items/Command/SonarPingFar2.ogg" type="OnUse" range="6000.0" volume="0.8" />
       </StatusEffect>

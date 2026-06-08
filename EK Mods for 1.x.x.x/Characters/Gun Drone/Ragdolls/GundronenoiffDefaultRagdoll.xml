@@ -6,7 +6,7 @@
       <!--<StatusEffect type="OnDeath" target="This" setvalue="true" sourcerect="288,0,288,160" />-->
     </sprite>
     <damagemodifier armorsector="0,360" afflictiontypes="damage" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="True" afflictionidentifiers="" probabilitymultiplier="1" />
-    <damagemodifier armorsector="0,360" afflictiontypes="poison,bleeding,medical" damagemultiplier="0" damagesound="LimbArmor" deflectprojectiles="True" afflictionidentifiers="" probabilitymultiplier="0" />
+    <damagemodifier armorsector="0,360" afflictiontypes="poison,bleeding" damagemultiplier="0" damagesound="LimbArmor" deflectprojectiles="True" afflictionidentifiers="" probabilitymultiplier="0" />
     <damagemodifier armorsector="0,360" afflictionidentifiers="ek_drone_disarm" damagemultiplier="15" />
     <lightsource color="255,255,255,125" range="450">
       <lighttexture texture="%ModDir%/Characters/Gun Drone/gun_drone_lightmask.png" origin="0.5,0.5" size="1,1" />

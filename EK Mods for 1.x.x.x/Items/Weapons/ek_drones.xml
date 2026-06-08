@@ -258,7 +258,7 @@
       <ParticleEmitter particle="ekmuzzleflamerifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <ParticleEmitter particle="ekmuzzlebreakrifle" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="%ModDir%/Items/Weapons/ek_battlerifle.ogg" type="OnUse" range="2000" />
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
       </StatusEffect>
       <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
