@@ -58,13 +58,13 @@ local netConfigDesc = Descriptors["Barotrauma.Networking.NetConfig"]
 local settingsDesc = Descriptors["Barotrauma.Networking.ServerSettings"]
 
 -- Применяем настройки для NetConfig (через нашу защиту)
-forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 1)
-forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 0.5)
-forceSet(netConfigDesc, NetConfig, "MaxEventPacketsPerUpdate", 20)
-forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 2)
-forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 0.25)
+forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 1.515151)
+forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 0.666666)
+forceSet(netConfigDesc, NetConfig, "MaxEventPacketsPerUpdate", 24)
+forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 3.030303)
+forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 0.333333)
 forceSet(netConfigDesc, NetConfig, "HighPrioCharacterPositionUpdateDistance", 2000)
-forceSet(netConfigDesc, NetConfig, "ItemConditionUpdateInterval", 0.0625)
+forceSet(netConfigDesc, NetConfig, "ItemConditionUpdateInterval", 0.111111)
 
 -- Применяем настройки для ServerSettings
 if Game.ServerSettings then
