@@ -97,7 +97,31 @@ namespace NetEventLogger
 
         internal static void Log(string text, Color color)
         {
-            try { DebugConsole.NewMessage("[NetEventLogger] " + text, color); } catch { }
+            string line = "[NetEventLogger] " + text;
+
+            // 1) Консоль самого серверного процесса.
+            //    Отдельный DedicatedServer.exe пишет это в своё консольное окно (stdout) — видно сразу.
+            try { DebugConsole.NewMessage(line, color); } catch { }
+
+            // 2) При хосте "через игру" сервер запускается ОТДЕЛЬНЫМ дочерним процессом, и его stdout
+            //    не отображается во внутриигровой консоли клиента-хоста. Поэтому дублируем сообщение
+            //    напрямую в консоль владельца сервера (хоста) через серверный канал.
+            try
+            {
+                var server = GameMain.Server;
+                if (server != null && server.OwnerConnection != null)
+                {
+                    foreach (var c in server.ConnectedClients)
+                    {
+                        if (c != null && c.Connection == server.OwnerConnection)
+                        {
+                            server.SendConsoleMessage(line, c, color);
+                            break;
+                        }
+                    }
+                }
+            }
+            catch { }
         }
     }
 
