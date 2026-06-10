@@ -61,6 +61,7 @@ namespace NetEventLogger
         {
             try { _harmony?.UnpatchSelf(); } catch { }
             _harmony = null;
+            try { ItemProfiler.Disable(); } catch { }
             try { ClientPerf.UnregisterCommands(); } catch { }
         }
     }
@@ -359,7 +360,7 @@ namespace NetEventLogger
         // ----------------------------------------------------------------------------------
         //  Утилиты
         // ----------------------------------------------------------------------------------
-        private static string Pad(string s, int len) => s.Length >= len ? s : s + new string(' ', len - s.Length);
+        internal static string Pad(string s, int len) => s.Length >= len ? s : s + new string(' ', len - s.Length);
 
         private static Color FpsColor(double fps) => fps >= 50 ? Color.LightGreen : (fps >= 30 ? Color.Yellow : Color.OrangeRed);
         private static Color MsColor(double ms)   => ms >= 3.0 ? Color.OrangeRed : (ms >= 1.0 ? Color.Orange : Color.LightGray);
@@ -373,5 +374,110 @@ namespace NetEventLogger
     public static class ClientPerfPatch
     {
         public static void Update_Postfix() => ClientPerf.Tick();
+    }
+
+    // ==========================================================================================
+    //  Пер-предметный замер: кто из предметов/модов ест время в Item.Update.
+    //  Включается командой `clientperf items on` (тогда ставится Harmony-патч на Item.Update).
+    //  Пока выключено — патча нет, накладные нулевые (baseline не искажается).
+    // ==========================================================================================
+    public static class ItemProfiler
+    {
+        private static Harmony _h;
+        public static bool Enabled => _h != null;
+
+        private sealed class Stat { public long Ticks; public long Calls; public string Pkg; }
+        private static readonly Dictionary<string, Stat> _stats = new Dictionary<string, Stat>();
+
+        public static void Enable()
+        {
+            if (_h != null) { return; }
+            try
+            {
+                Harmony h = new Harmony("com.ng.clientperflogger.items");
+                MethodInfo m = AccessTools.Method(typeof(Item), "Update", new[] { typeof(float), typeof(Camera) });
+                if (m == null) { ClientPerf.Log("Item.Update не найден — замер недоступен.", Color.Orange); return; }
+                h.Patch(m,
+                    prefix:  new HarmonyMethod(typeof(ItemUpdatePatch).GetMethod(nameof(ItemUpdatePatch.Prefix),  BindingFlags.Static | BindingFlags.Public)),
+                    postfix: new HarmonyMethod(typeof(ItemUpdatePatch).GetMethod(nameof(ItemUpdatePatch.Postfix), BindingFlags.Static | BindingFlags.Public)));
+                _h = h;
+            }
+            catch (Exception ex) { ClientPerf.Log("Не удалось включить замер: " + ex.Message, Color.Red); _h = null; }
+        }
+
+        public static void Disable()
+        {
+            try { _h?.UnpatchSelf(); } catch { }
+            _h = null;
+        }
+
+        public static void ResetStats() { _stats.Clear(); }
+
+        public static void Record(Item item, long ticks)
+        {
+            try
+            {
+                if (item?.Prefab == null) { return; }
+                string id = item.Prefab.Identifier.Value;
+                if (!_stats.TryGetValue(id, out Stat s))
+                {
+                    s = new Stat { Pkg = item.Prefab.ContentPackage?.Name ?? "?" };
+                    _stats[id] = s;
+                }
+                s.Ticks += ticks;
+                s.Calls++;
+            }
+            catch { }
+        }
+
+        public static void Report(int topN)
+        {
+            if (_stats.Count == 0)
+            {
+                ClientPerf.Log("Нет данных. Включи замер: clientperf items on — поиграй — потом clientperf items.", Color.Orange);
+                return;
+            }
+            double freq = Stopwatch.Frequency;
+            long grandTicks = _stats.Values.Sum(x => x.Ticks);
+            long grandCalls = _stats.Values.Sum(x => x.Calls);
+            double grandMs = grandTicks * 1000.0 / freq;
+
+            ClientPerf.Log($"===== ТОП предметов по суммарному Item.Update (замерено {grandMs:F0} мс / {grandCalls:N0} вызовов; замер {(Enabled ? "ВКЛ" : "ВЫКЛ")}) =====", Color.Cyan);
+
+            int i = 1;
+            foreach (var kvp in _stats.OrderByDescending(k => k.Value.Ticks).Take(topN))
+            {
+                Stat s = kvp.Value;
+                double ms  = s.Ticks * 1000.0 / freq;
+                double us  = s.Calls > 0 ? s.Ticks * 1000000.0 / freq / s.Calls : 0;
+                double pct = grandTicks > 0 ? s.Ticks * 100.0 / grandTicks : 0;
+                ClientPerf.Log($"  {i,2}. {ClientPerf.Pad(kvp.Key, 28)} {ms,8:F1}мс {pct,5:F1}%  {us,7:F2}µs/вызов  [{s.Pkg}]",
+                    pct >= 15 ? Color.OrangeRed : (pct >= 5 ? Color.Orange : Color.LightGray));
+                i++;
+            }
+
+            ClientPerf.Log("--- По МОДАМ (суммарно Item.Update) ---", Color.White);
+            foreach (var mod in _stats.GroupBy(k => k.Value.Pkg)
+                                      .Select(g => new { Pkg = g.Key, Ticks = g.Sum(x => x.Value.Ticks) })
+                                      .OrderByDescending(x => x.Ticks).Take(12))
+            {
+                double ms  = mod.Ticks * 1000.0 / freq;
+                double pct = grandTicks > 0 ? mod.Ticks * 100.0 / grandTicks : 0;
+                ClientPerf.Log($"   {ClientPerf.Pad(mod.Pkg, 34)} {ms,8:F1}мс {pct,5:F1}%", pct >= 25 ? Color.Orange : Color.LightGray);
+            }
+            ClientPerf.Log("Высокий µs/вызов у предмета = у него дорогой Update (тяжёлый Always-эффект/компонент) — чинить тот мод.", Color.Gray);
+        }
+    }
+
+    public static class ItemUpdatePatch
+    {
+        // out __state — старт замера. <=0 в постфиксе => пропускаем (если другой мод-префикс пропустил оригинал, __state останется 0).
+        public static void Prefix(out long __state) { __state = Stopwatch.GetTimestamp(); }
+
+        public static void Postfix(Item __instance, long __state)
+        {
+            if (__state <= 0) { return; }
+            ItemProfiler.Record(__instance, Stopwatch.GetTimestamp() - __state);
+        }
     }
 }
