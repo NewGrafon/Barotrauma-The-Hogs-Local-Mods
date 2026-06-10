@@ -328,7 +328,6 @@
         <QualityStat stattype="FirepowerMultiplier" value="0.1" />
       </Quality>
       <SkillRequirementHint identifier="weapons" level="50" />
-      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
   </Items>
 </Override>

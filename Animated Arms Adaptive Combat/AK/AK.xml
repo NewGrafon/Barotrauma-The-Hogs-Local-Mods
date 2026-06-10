@@ -685,7 +685,6 @@
         <QualityStat stattype="FirepowerMultiplier" value="0.1" />
       </Quality>
       <SkillRequirementHint identifier="weapons" level="35" />
-      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <Item name="ак-12" identifier="AK-12" category="Weapon" subcategory="Animated_arms_weapons" description="Это модифицированная версия легендарного АК-74, разработанная сепаратистами. Оружие использует ‖color:gui.green‖стандартные патроны 5.45x39мм‖end‖. Благодаря специализированным доработкам, АК-74 &quot;Водолаз&quot; ‖color:gui.blue‖может вести огонь под водой, хотя и с меньшей эффективностью‖end‖. ‖color:gui.red‖Винтовка значительно тяжелее стандартной и предназначена для ношения исключительно на спине‖end‖." cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.375" impactsoundtag="impact_metal_light">
       <!-- Предпочтительные контейнеры для спавна оружия -->
@@ -1426,7 +1425,6 @@
         <QualityStat stattype="FirepowerMultiplier" value="0.1" />
       </Quality>
       <SkillRequirementHint identifier="weapons" level="40" />
-      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
     <Item name=" " identifier="akreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,akreloading">

@@ -563,7 +563,6 @@
       <Quality>
         <QualityStat stattype="FirepowerMultiplier" value="0.1" />
       </Quality>
-      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
       <SkillRequirementHint identifier="weapons" level="65" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->

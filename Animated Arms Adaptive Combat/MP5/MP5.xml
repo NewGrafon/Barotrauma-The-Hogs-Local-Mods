@@ -617,7 +617,6 @@
         <QualityStat stattype="FirepowerMultiplier" value="0.1" />
       </Quality>
       <SkillRequirementHint identifier="weapons" level="30" />
-      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!-- Прокси-элемент для перезарядки -->
     <Item name=" " identifier="MP5reloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,MP5reloading">

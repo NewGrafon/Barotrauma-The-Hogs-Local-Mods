@@ -634,7 +634,6 @@
         <QualityStat stattype="FirepowerMultiplier" value="0.1" />
       </Quality>
       <SkillRequirementHint identifier="weapons" level="45" />
-      <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
     </Item>
     <!--магазины-->
     <Item identifier="ak47magazine-anim" maxstacksize="2" description="Вмещает 30 патронов" maxstacksizecharacterinventory="2" scale="0.375" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,ak47ammo,handheldammo" impactsoundtag="impact_metal_light">

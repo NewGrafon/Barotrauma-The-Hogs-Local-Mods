@@ -105,7 +105,6 @@
             <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" condition="gt 0" property="charge" />
           </RequiredItem>
         </StatusEffect>
-        <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="100,100,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
         <StatusEffect type="OnUse" target="This" stackable="false" interval="0.51" disabledeltatime="true">
           <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.8" type="OnUse" range="500" selectionmode="Random" />
           <Sound file="%ModDir%/Saunds/use.ogg" frequencymultiplier="0.85" type="OnUse" range="500" />

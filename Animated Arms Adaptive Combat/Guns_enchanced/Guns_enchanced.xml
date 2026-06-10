@@ -3681,7 +3681,6 @@
           <RequiredItem identifier="earplugs" type="Contained" />
           <ReduceAffliction identifier="tinnitus_shot" strength="1000" />
         </StatusEffect>
-        <StatusHUD drawhudwhenequipped="true" range="3000" overlaycolor="0,35,100,0" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
       </Wearable>
       <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorslot="0" containedstateindicatorstyle="battery">
         <Containable items="mobilebattery"></Containable>
@@ -4289,7 +4288,6 @@
           </StatusEffect>
         </TickBox>
       </CustomInterface>
-      <StatusHUD drawhudwhenequipped="true" range="1000" thermalgoggles="false" overlaycolor="0,0,0,0" showdeadcharacters="false" showtexts="false" />
       <Turret HudTint="0,0,0,0" drawhudwhenequipped="true">
         <StatusEffect type="OnActive" target="this" HudTint="0,0,0,225" disabledeltatime="true" setvalue="true">
           <RequiredItem items="mobilebattery" type="Contained" />
