@@ -1,9 +1,12 @@
 -- NG Combine Materials
--- Материалы/минералы (категория Material) с НЕПОЛНОЙ прочностью можно объединять:
--- перетащи один предмет на другой того же типа в инвентаре -> их прочности сложатся
--- (две половинки -> одна целая). Аналог Combinable Ammo, но для материалов.
+-- Materials/minerals (Material category) with PARTIAL condition can be combined:
+-- drag one item onto another of the same type in the inventory -> their conditions add up
+-- (two halves -> one whole). Like Combinable Ammo, but for materials.
+-- RUS: Материалы/минералы (категория Material) с НЕПОЛНОЙ прочностью можно объединять:
+-- RUS: перетащи один предмет на другой того же типа в инвентаре -> их прочности сложатся
+-- RUS: (две половинки -> одна целая). Аналог Combinable Ammo, но для материалов.
 
-print("[NGCM] загружен")
+print("[NG] [Combine Materials] loaded")
 
 -- В Lua категория приходит ЧИСЛОМ (флаги MapEntityCategory). Material = 1024.
 local MATERIAL_BIT = 1024
@@ -45,10 +48,10 @@ local function applyToAllExisting()
             makeCombinable(value)
             n = n + 1
         end
-        print("[NGCM] обработано существующих предметов: " .. tostring(n))
+        print("[NG] [Combine Materials] processed existing items: " .. tostring(n))
     end)
     if not ok then
-        print("[NGCM] ошибка обработки существующих предметов: " .. tostring(err))
+        print("[NG] [Combine Materials] error processing existing items: " .. tostring(err))
     end
 end
 
