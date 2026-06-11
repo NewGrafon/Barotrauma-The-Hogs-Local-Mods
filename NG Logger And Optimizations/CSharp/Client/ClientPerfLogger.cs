@@ -57,7 +57,8 @@ namespace NetEventLogger
                 }
 
                 ClientPerf.RegisterCommands();
-                ClientPerf.Log("=== Клиентский профайлер загружен. Команда: clientperf (см. clientperf help) ===", Color.LightGreen);
+                OptConfig.Init(); // load saved fix states + apply   // RUS: загрузить сохранённые состояния фиксов + применить
+                ClientPerf.Log(Loc.T("=== Клиентский профайлер загружен. Команда: clientperf (см. clientperf help) ===", "=== Client profiler loaded. Command: clientperf (see clientperf help) ==="), Color.LightGreen);
             }
             catch (Exception ex)
             {
@@ -135,6 +136,7 @@ namespace NetEventLogger
                 // бенчмарк — КАЖДЫЙ кадр (а не только в раунде).
                 // Отрисовку/ввод окна меню (ClientPerfMenu.Update) делаем в префиксе GUI.Update (GuiUpdatePatch).
                 Benchmark.Tick(safeDelta, inRound);
+                OptConfig.Tick(safeDelta, inRound); // re-apply fixes ~3s after each round start (after PE)   // RUS: переприменить фиксы через ~3с после старта раунда (после PE)
 
                 // сэмплинг профайлера — только в раунде и при нормальном кадре
                 if (safeDelta <= 0 || !inRound) { return; }

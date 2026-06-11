@@ -173,7 +173,7 @@ namespace NetEventLogger
         private static void ToggleFix()
         {
             bool now = !NGContainerOpt.ContainedEffectsOptPlugin.Enabled;
-            NGContainerOpt.ContainedEffectsOptPlugin.SetEnabled(now);
+            OptConfig.SetFix1(now); // apply + persist to config   // RUS: применить + сохранить в конфиг
             if (_fixBtn != null) { _fixBtn.Text = FixLabel(); }
             if (_status != null)
             {
@@ -188,7 +188,7 @@ namespace NetEventLogger
         private static void ToggleFix2()
         {
             bool now = !NGNearbyOpt.NearbyTargetsOptPlugin.Enabled;
-            NGNearbyOpt.NearbyTargetsOptPlugin.SetEnabled(now);
+            OptConfig.SetFix2(now); // apply + persist to config   // RUS: применить + сохранить в конфиг
             if (_fix2Btn != null) { _fix2Btn.Text = Fix2Label(); }
             if (_status != null)
             {
