@@ -3,7 +3,7 @@
   <Vanilla />
   <Local name="LuaCsForBarotrauma" />
   <Local name="NG Logger And Optimizations" />
-  <Workshop name="NG Network Tweaks" id="3742709838" />
+  <Local name="NG Network Tweaks" />
   <Local name="NG Sell Worn Items" />
   <Local name="NG Combine Materials" />
   <Workshop name="Total Russian Translation (TRT)" id="2986079116" />
