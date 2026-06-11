@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="CsForBarotraumaNG" modversion="1.0.0" corepackage="False" gameversion="1.12.6.2">
-  <Other file="%ModDir%/CSharp/Server/NetEventLogger.cs" />
-</contentpackage>
