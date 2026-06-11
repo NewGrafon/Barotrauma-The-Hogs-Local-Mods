@@ -1423,7 +1423,6 @@
     </Item>
     <Item name=" " identifier="Dynamo-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Berettareloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" delay="0.01" handle2="-20,-20" holdpos="45,15" aimpos="45,0" />
         <StatusEffect type="Always" target="This" delay="0.7" handle2="-15,0" holdpos="45,15" aimpos="45,0" />
@@ -1497,7 +1496,6 @@
     </Item>
     <Item name=" " identifier="pda-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" handle2="-45,-20" holdpos="50,10" aimpos="55,0" msg="ItemMsgPickUpSelect">
         <StatusEffect AllowWhenBroken="true" type="Always" target="This" delay="0.3" handle2="-45,-20" holdpos="55,10" aimpos="60,0" oneshot="true" />
         <StatusEffect AllowWhenBroken="true" type="Always" target="This" delay="0.6" handle2="-45,-20" holdpos="50,10" aimpos="55,0" oneshot="true" />
@@ -1594,7 +1592,6 @@
     </Item>
     <Item name=" " identifier="pda-proxy-fabricator-blank" maxstacksize="1" scale="0.00" HideConditionBar="true" hideinmenus="true" noninteractable="false" condition="200" category="Weapon" tags="smallitem">
       <Sprite texture="%ModDir%/fabricator-worse.png" origin="0.5,0.5" sourcerect="0,0,0,0" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any" aimpos="45,0" holdpos="35,15" handle1="0,-45" handle2="0,-30" msg="ItemMsgPickUpSelect" />
     </Item>
     <Item name="" identifier="PDA-anim-craft-proxy-better" category="Equipment" scale="0.0" InvulnerableToDamage="true" Tags="fabricator" cargocontaineridentifier="metalcrate">

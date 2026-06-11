@@ -1430,20 +1430,17 @@
     <Item name=" " identifier="akreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,akreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <Item name=" " identifier="weapons-up" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,weapons-up">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
     <Item name=" " identifier="akchamber" maxstacksize="1" scale="0.5" condition="100" damagedbyexplosions="true" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,akchamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <Item name=" " identifier="repair" maxstacksize="1" scale="0.1" HideConditionBar="true" noninteractable="true" condition="200" category="Weapon" tags="repair">
@@ -1452,7 +1449,6 @@
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
       <BrokenSprite texture="%ModDir%/repair-4.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="25" />
       <BrokenSprite texture="%ModDir%/repair-5.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="0" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" OneShot="true" setvalue="true" noninteractable="true" duration="1" />
         <StatusEffect type="OnNotContained" target="This" interval="0.0001">
@@ -1487,7 +1483,6 @@
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
       <BrokenSprite texture="%ModDir%/repair-4.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="25" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" delay="2">
           <Remove />
@@ -1509,7 +1504,6 @@
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
       <BrokenSprite texture="%ModDir%/repair-4.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="25" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" delay="2">
           <Remove />
@@ -1528,7 +1522,6 @@
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
       <BrokenSprite texture="%ModDir%/repair-4.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="25" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" delay="0.5">
           <Remove />
@@ -1542,7 +1535,6 @@
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
       <BrokenSprite texture="%ModDir%/repair-4.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="25" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" OneShot="true" setvalue="true" noninteractable="true" duration="1" />
         <StatusEffect type="OnNotContained" target="This" interval="0.0001">
@@ -1577,7 +1569,6 @@
       <BrokenSprite texture="%ModDir%/repair-2.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="75" />
       <BrokenSprite texture="%ModDir%/repair-3.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="50" />
       <BrokenSprite texture="%ModDir%/repair-4.png" origin="0.5,0.5" sourcerect="0,0,0,0" maxcondition="25" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" OneShot="true" setvalue="true" noninteractable="true" duration="1" />
         <StatusEffect type="OnNotContained" target="This" interval="0.0001">

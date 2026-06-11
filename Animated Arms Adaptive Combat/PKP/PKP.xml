@@ -880,7 +880,6 @@
     <Item name=" " identifier="PKPreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,PKPreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/ammunition.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <Item name="" identifier="PKPmagazine" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.4" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="mediumitem,PKPammo,handheldammo" impactsoundtag="impact_metal_light">

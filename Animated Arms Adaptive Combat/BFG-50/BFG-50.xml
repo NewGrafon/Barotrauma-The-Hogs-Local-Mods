@@ -396,7 +396,6 @@
     <Item name=" " identifier="rifreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,rifreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <Item name="Патрон 12.7x99R" identifier="BFG-50ammo" category="Weapon" maxstacksize="10" maxstacksizecharacterinventory="5" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,BFG-50ammo,handheldammo" impactsoundtag="impact_metal_light">

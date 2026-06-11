@@ -121,12 +121,10 @@
     <Item name=" " identifier="alpreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,alpreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <Item name=" " identifier="alien-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" handle2="-40,-10" delay="1.2" holdpos="50,-18" aimpos="50,-18" />
         <StatusEffect type="Always" target="This" delay="2.2">

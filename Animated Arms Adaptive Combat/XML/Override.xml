@@ -4646,7 +4646,6 @@
     </Item>
     <Item name=" " identifier="stun-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,Glockreloading">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" delay="0.01" handle2="-45,-20" holdpos="70,35" aimpos="70,35" oneshot="true" />
         <StatusEffect type="Always" target="This" delay="0.7" handle2="-45,-20" holdpos="64,31" aimpos="64,31" oneshot="true" />
@@ -5326,7 +5325,6 @@
     </Item>
     <Item name=" " identifier="helmet-handle-down" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" oneshot="true" holdpos="15,25" handle2="0,0" aimpos="20,20" />
         <StatusEffect type="Always" target="This" oneshot="true" holdpos="20,10" handle2="0,0" aimpos="20,10" delay="0.75">
@@ -5339,7 +5337,6 @@
     </Item>
     <Item name=" " identifier="helmet-handle-up" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This,Character" oneshot="true" holdpos="15,25" handle2="0,0" aimpos="20,20" delay="0.75">
           <Sound file="%ModDir%/Saunds/up.ogg" frequencymultiplier="1.2" range="400" />
@@ -5352,7 +5349,6 @@
     </Item>
     <Item name=" " identifier="armor-handle" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" oneshot="true" holdpos="15,-15" handle2="0,0" aimpos="15,-15" />
         <StatusEffect type="Always" target="This" oneshot="true" holdpos="15,-20" handle2="0,0" aimpos="15,-20" delay="0.75">
@@ -5365,7 +5361,6 @@
     </Item>
     <Item name=" " identifier="armor-handle-2" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="Always" target="This" oneshot="true" holdpos="15,-20" handle2="0,0" aimpos="15,-20" />
         <StatusEffect type="Always" target="This" oneshot="true" holdpos="15,-15" handle2="0,0" aimpos="15,-15" delay="0.75">
@@ -7714,7 +7709,6 @@
     </Item>
     <Item name=" " identifier="vomit-proxy" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem">
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1950,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="LeftHand+RightHand" msg="ItemMsgPickUpSelect">
         <StatusEffect type="OnContained" target="This" oneshot="true" holdpos="25,7" handle2="0,0" aimpos="25,20" />
         <StatusEffect type="OnContained" target="This,Character" oneshot="true" holdpos="15,7" handle2="0,0" aimpos="15,20" delay="0.5">

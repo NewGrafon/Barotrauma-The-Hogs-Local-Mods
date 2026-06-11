@@ -569,14 +569,12 @@
     <Item name=" " identifier="SVUreloading" maxstacksize="1" scale="0.5" damagedbyexplosions="true" category="Weapon" NonInteractable="Fasle" hideinmenus="true" tags="smallitem,SVUreloading">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <!-- Прокси-элемент для патронника -->
     <Item name=" " identifier="SVUchamber" maxstacksize="1" scale="0.5" condition="100" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,SVUchamber">
       <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
-      <Body width="5" height="5" density="25" />
       <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
       <!-- ДОБАВЛЕН КОНТЕЙНЕР ДЛЯ ПАТРОНОВ -->
       <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" SpawnWithId="mosinammos" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
