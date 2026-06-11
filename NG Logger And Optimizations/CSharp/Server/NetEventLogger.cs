@@ -9,6 +9,12 @@ using Microsoft.Xna.Framework;
 
 namespace NetEventLogger
 {
+    // ==========================================================================================
+    //  SERVER-side diagnostic: periodically logs the entity-event queue health (size/span/rate,
+    //  per-client backlog, top event sources, probable cause). Helps find progressive net lag.
+    //  RUS: СЕРВЕРНАЯ диагностика: периодически пишет здоровье очереди entity-событий (размер/span/
+    //  RUS: скорость, отставание по клиентам, топ источников, вероятная причина). Ищет прогрессирующий лаг.
+    // ==========================================================================================
     public sealed class NetEventLoggerPlugin : IAssemblyPlugin
     {
         private static Harmony _harmony;
@@ -35,23 +41,23 @@ namespace NetEventLogger
         public void Initialize()
         {
             _activeInstance = this;
-            Log("Initialize() вызван...", Color.Yellow);
+            Log(Loc.T("Initialize() вызван…", "Initialize() called…"), Color.Yellow);
 
             try
             {
                 if (_harmony != null)
                 {
-                    Log("Уже инициализирован.", Color.Orange);
+                    Log(Loc.T("Уже инициализирован.", "Already initialized."), Color.Orange);
                     return;
                 }
 
                 _harmony = new Harmony("com.debug.neteventlogger");
                 PatchMethod("Update", null, "Update_Postfix", "Update");
-                Log("=== NetEventLogger загружен ===", Color.LightGreen);
+                Log(Loc.T("=== Логгер событий загружен ===", "=== Event logger loaded ==="), Color.LightGreen);
             }
             catch (Exception ex)
             {
-                Log("ОШИБКА при инициализации: " + ex.Message, Color.Red);
+                Log(Loc.T("ОШИБКА при инициализации: ", "Init ERROR: ") + ex.Message, Color.Red);
             }
         }
 
@@ -62,28 +68,28 @@ namespace NetEventLogger
                 var original = typeof(ServerEntityEventManager)
                     .GetMethod(methodName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 
-                if (original == null) { Log("Метод " + label + " не найден!", Color.OrangeRed); return; }
+                if (original == null) { Log(Loc.T($"Метод {label} не найден!", $"Method {label} not found!"), Color.OrangeRed); return; }
 
                 HarmonyMethod prefix  = prefixName  != null ? new HarmonyMethod(typeof(Patches).GetMethod(prefixName,  BindingFlags.Static | BindingFlags.Public)) : null;
                 HarmonyMethod postfix = postfixName != null ? new HarmonyMethod(typeof(Patches).GetMethod(postfixName, BindingFlags.Static | BindingFlags.Public)) : null;
 
                 _harmony.Patch(original, prefix: prefix, postfix: postfix);
-                Log("Патч " + label + " установлен.", Color.LightGreen);
+                Log(Loc.T($"Патч {label} установлен.", $"Patch {label} installed."), Color.LightGreen);
             }
             catch (Exception ex)
             {
-                Log("Ошибка патча " + label + ": " + ex.Message, Color.Red);
+                Log(Loc.T($"Ошибка патча {label}: ", $"Patch error {label}: ") + ex.Message, Color.Red);
             }
         }
 
-        public void OnLoadCompleted() { Log("OnLoadCompleted() — готов.", Color.LightGreen); }
+        public void OnLoadCompleted() { Log(Loc.T("OnLoadCompleted() — готов.", "OnLoadCompleted() — ready."), Color.LightGreen); }
 
         public void Dispose()
         {
             try { _harmony?.UnpatchSelf(); } catch { }
             _harmony = null;
             if (ReferenceEquals(_activeInstance, this)) _activeInstance = null;
-            Log("Выгружен.", Color.Gray);
+            Log(Loc.T("Выгружен.", "Unloaded."), Color.Gray);
         }
 
         internal static List<ServerEntityEvent> GetEvents(object instance)
@@ -97,15 +103,20 @@ namespace NetEventLogger
 
         internal static void Log(string text, Color color)
         {
-            string line = "[NetEventLogger] " + text;
+            string line = Loc.Tag + text;
 
-            // 1) Консоль самого серверного процесса.
-            //    Отдельный DedicatedServer.exe пишет это в своё консольное окно (stdout) — видно сразу.
+            // 1) The server process's own console. A standalone DedicatedServer.exe shows this in its
+            //    console window (stdout) immediately.
+            //    RUS: Консоль самого серверного процесса. Отдельный DedicatedServer.exe пишет это в своё
+            //    RUS: консольное окно (stdout) — видно сразу.
             try { DebugConsole.NewMessage(line, color); } catch { }
 
-            // 2) При хосте "через игру" сервер запускается ОТДЕЛЬНЫМ дочерним процессом, и его stdout
-            //    не отображается во внутриигровой консоли клиента-хоста. Поэтому дублируем сообщение
-            //    напрямую в консоль владельца сервера (хоста) через серверный канал.
+            // 2) When hosting "through the game", the server runs as a SEPARATE child process whose stdout
+            //    is NOT shown in the host client's in-game console. So we also push the line straight to the
+            //    server owner's (host's) console via the server channel.
+            //    RUS: При хосте «через игру» сервер запускается ОТДЕЛЬНЫМ дочерним процессом, и его stdout
+            //    RUS: не виден во внутриигровой консоли клиента-хоста. Поэтому дублируем сообщение прямо в
+            //    RUS: консоль владельца сервера (хоста) через серверный канал.
             try
             {
                 var server = GameMain.Server;
@@ -127,14 +138,15 @@ namespace NetEventLogger
 
     public static class Patches
     {
-        private const double INTERVAL    = 10.0;   // как часто писать статус, сек
-        private const int    DANGER_ZONE = 30000;  // span, при котором близко переполнение UInt16
+        private const double INTERVAL    = 10.0;   // how often to print status, seconds   // RUS: как часто писать статус, сек
+        private const int    DANGER_ZONE = 30000;  // span where UInt16 overflow is near    // RUS: span, при котором близко переполнение UInt16
 
         private static DateTime _lastLog = DateTime.MinValue;
         private static int      _prevID  = -1;
         private static bool     _warnedDanger = false;
 
-        // --- доступ к полям Client через рефлексию (безопасно при любой видимости) ---
+        // --- access to Client fields via reflection (safe regardless of visibility) ---
+        // RUS: --- доступ к полям Client через рефлексию (безопасно при любой видимости) ---
         private static bool _clientResolved = false;
         private static PropertyInfo _piLastRecv; private static FieldInfo _fiLastRecv;
         private static PropertyInfo _piInGame;   private static FieldInfo _fiInGame;
@@ -168,12 +180,13 @@ namespace NetEventLogger
             try
             {
                 object v = _piInGame != null ? _piInGame.GetValue(c) : _fiInGame?.GetValue(c);
-                return !(v is bool b) || b; // если не смогли определить — считаем, что в игре
+                return !(v is bool b) || b; // if undeterminable — assume in-game   // RUS: если не смогли определить — считаем, что в игре
             }
             catch { return true; }
         }
 
-        // круговая разница ushort: на сколько ahead впереди behind (0..65535)
+        // circular ushort difference: how far 'ahead' leads 'behind' (0..65535)
+        // RUS: круговая разница ushort: на сколько 'ahead' впереди 'behind' (0..65535)
         private static int Circular(ushort ahead, ushort behind)
         {
             int d = (int)ahead - (int)behind;
@@ -218,17 +231,20 @@ namespace NetEventLogger
                 ushort firstID       = count > 0 ? events[0].ID : currentID;
                 int    span          = Circular(currentID, firstID);
 
-                // скорость генерации событий (соб/сек) по приросту ID
+                // event generation rate (events/sec) from the ID increment
+                // RUS: скорость генерации событий (соб/сек) по приросту ID
                 double rate = 0;
                 if (_prevID >= 0 && elapsed > 0) { rate = Circular(currentID, (ushort)_prevID) / elapsed; }
                 _prevID = currentID;
 
                 NetEventLoggerPlugin.Log(
-                    "[СТАТУС] очередь=" + count + " | span=" + span + "/65535 | скорость~" + rate.ToString("F0") +
-                    " соб/с | ID=" + currentID + " lastSentToAll=" + lastSentToAll,
+                    Loc.Ru
+                        ? "[СТАТУС] очередь=" + count + " | span=" + span + "/65535 | скорость~" + rate.ToString("F0") + " соб/с | ID=" + currentID + " lastSentToAll=" + lastSentToAll
+                        : "[STATUS] queue=" + count + " | span=" + span + "/65535 | rate~" + rate.ToString("F0") + " ev/s | ID=" + currentID + " lastSentToAll=" + lastSentToAll,
                     span > 20000 ? Color.Orange : Color.LightBlue);
 
-                // --- отставание по клиентам (кто тормозит очередь) ---
+                // --- per-client backlog (who's holding the queue back) ---
+                // RUS: --- отставание по клиентам (кто тормозит очередь) ---
                 string worstName = null; int worstBehind = -1;
                 if (clients != null)
                 {
@@ -239,13 +255,14 @@ namespace NetEventLogger
                         if (behind > worstBehind) { worstBehind = behind; worstName = c.Name; }
                         if (behind > 1000)
                         {
-                            NetEventLoggerPlugin.Log("  клиент '" + c.Name + "' отстаёт на " + behind + " событий",
+                            NetEventLoggerPlugin.Log(Loc.Ru ? $"  клиент '{c.Name}' отстаёт на {behind} событий" : $"  client '{c.Name}' is behind by {behind} events",
                                 behind > 10000 ? Color.Red : Color.Orange);
                         }
                     }
                 }
 
-                // --- топ источников в очереди ---
+                // --- top sources in the queue ---
+                // RUS: --- топ источников в очереди ---
                 List<KeyValuePair<string, int>> top = null;
                 if (count > 0)
                 {
@@ -259,7 +276,7 @@ namespace NetEventLogger
 
                     if (count > 2000 || span > 10000)
                     {
-                        NetEventLoggerPlugin.Log("Топ источников в очереди:", Color.Orange);
+                        NetEventLoggerPlugin.Log(Loc.T("Топ источников в очереди:", "Top sources in queue:"), Color.Orange);
                         foreach (var entry in top)
                         {
                             NetEventLoggerPlugin.Log("  " + entry.Value + "x  " + entry.Key, Color.Orange);
@@ -267,30 +284,36 @@ namespace NetEventLogger
                     }
                 }
 
-                // --- авто-вывод вероятной причины ---
+                // --- auto probable-cause line ---
+                // RUS: --- авто-вывод вероятной причины ---
                 if (worstBehind > 10000)
                 {
-                    NetEventLoggerPlugin.Log("ВЕРОЯТНО: клиент '" + worstName + "' (отстаёт на " + worstBehind +
-                        ") держит очередь -> откаты у всех. Проверь его пинг/соединение/ПК.", Color.Yellow);
+                    NetEventLoggerPlugin.Log(Loc.Ru
+                        ? $"ВЕРОЯТНО: клиент '{worstName}' (отстаёт на {worstBehind}) держит очередь -> откаты у всех. Проверь его пинг/соединение/ПК."
+                        : $"LIKELY: client '{worstName}' (behind by {worstBehind}) holds the queue -> rollbacks for everyone. Check their ping/connection/PC.", Color.Yellow);
                 }
                 else if (top != null && top.Count > 0 && count > 2000 && (top[0].Value * 100 / Math.Max(count, 1)) >= 40)
                 {
-                    NetEventLoggerPlugin.Log("ВЕРОЯТНО: источник '" + top[0].Key + "' даёт " +
-                        (top[0].Value * 100 / Math.Max(count, 1)) + "% событий — спамит сеть. Чинить этот мод/предмет.", Color.Yellow);
+                    int pct = top[0].Value * 100 / Math.Max(count, 1);
+                    NetEventLoggerPlugin.Log(Loc.Ru
+                        ? $"ВЕРОЯТНО: источник '{top[0].Key}' даёт {pct}% событий — спамит сеть. Чинить этот мод/предмет."
+                        : $"LIKELY: source '{top[0].Key}' produces {pct}% of events — spamming the network. Fix that mod/item.", Color.Yellow);
                 }
 
-                // --- опасная зона по span ---
+                // --- span danger zone ---
+                // RUS: --- опасная зона по span ---
                 if (span > DANGER_ZONE && !_warnedDanger)
                 {
                     _warnedDanger = true;
-                    NetEventLoggerPlugin.Log("!!! ОПАСНО: span=" + span +
-                        " близко к 32768 — скоро массовые кики/откаты (переполнение UInt16).", Color.Red);
+                    NetEventLoggerPlugin.Log(Loc.Ru
+                        ? $"!!! ОПАСНО: span={span} близко к 32768 — скоро массовые кики/откаты (переполнение UInt16)."
+                        : $"!!! DANGER: span={span} is near 32768 — mass kicks/rollbacks soon (UInt16 overflow).", Color.Red);
                 }
                 if (span <= DANGER_ZONE) { _warnedDanger = false; }
             }
             catch (Exception ex)
             {
-                NetEventLoggerPlugin.Log("Update_Postfix ошибка: " + ex.Message, Color.Red);
+                NetEventLoggerPlugin.Log("Update_Postfix error: " + ex.Message, Color.Red);
             }
         }
     }
