@@ -2,14 +2,14 @@
 <mods name="Nyblya">
   <Vanilla />
   <Local name="LuaCsForBarotrauma" />
-  <Local name="NG Net Event Logger" />
+  <Local name="NG Logger And Optimizations" />
   <Local name="NG Sell Worn Items" />
   <Local name="NG Combine Materials" />
+  <Local name="NG Network Tweaks" />
   <Workshop name="Total Russian Translation (TRT)" id="2986079116" />
   <Workshop name="Half Life Scientist Sounds" id="3662701629" />
   <Workshop name="GM Menu" id="3699710631" />
   <Workshop name="EntityDisableDistance" id="3617551399" />
-  <Local name="NetworkTweaks" />
   <Workshop name="PerformanceEnhancement" id="3618710101" />
   <Workshop name="ShadowCulling" id="3621263586" />
   <Workshop name="Neurotrauma" id="3190189044" />
