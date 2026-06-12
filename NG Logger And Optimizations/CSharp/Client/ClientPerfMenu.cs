@@ -7,20 +7,27 @@ using Microsoft.Xna.Framework;
 namespace NetEventLogger
 {
     // ==========================================================================================
-    //  КЛИЕНТСКОЕ окно-меню (NG Logger & Optimizations).
-    //  Открывается хоткеем F7 или командой `clientperf menu`. Отдельное окно на GUI.Canvas — НЕ
-    //  ставит игру на паузу (важно: бенчмарк должен мерить реальную нагрузку, окно при этом открыто).
-    //  Кнопки: «Бенчмарк 60с» (off->reset->on->60с->off->отчёт->reset), «Копировать результат»
-    //  (в буфер обмена, чтобы кидать текстом), тумблер «Fix #3» (оптимизация контейнеров, на лету).
-    //  Клиентский файл (CSharp/Client) — компилируется только в клиентскую сборку (GUI там).
+    //  CLIENT window/menu (NG Logger And Optimizations).
+    //  Opened with the `clientperf menu` (alias `ngperf menu`) command. A standalone window on
+    //  GUI.Canvas — it does NOT pause the game (important: the benchmark must measure real load with
+    //  the window open). Buttons: "Benchmark 60s", "Copy result" (to the clipboard, for sharing as
+    //  text), and the fix toggles (split into Client/Server/Shared tabs).
+    //  Client file (CSharp/Client) — compiled only into the client assembly (the GUI lives there).
+    //
+    //  RUS: КЛИЕНТСКОЕ окно-меню (NG Logger And Optimizations).
+    //  RUS: Открывается командой `clientperf menu` (алиас `ngperf menu`). Отдельное окно на GUI.Canvas —
+    //  RUS: НЕ ставит игру на паузу (важно: бенчмарк должен мерить реальную нагрузку с открытым окном).
+    //  RUS: Кнопки: «Бенчмарк 60с», «Копировать результат» (в буфер обмена, чтобы кидать текстом),
+    //  RUS: и тумблеры фиксов (вкладки Клиентские/Серверные/Общие).
+    //  RUS: Клиентский файл (CSharp/Client) — компилируется только в клиентскую сборку (GUI там).
     // ==========================================================================================
     public static class ClientPerfMenu
     {
         private static GUIFrame      _frame;
         private static GUITextBlock  _status;
         private static GUIButton     _benchBtn;
-        private static GUIButton     _fixBtn;   // фикс 1 — оптимизация контейнеров   // RUS: fix 1 — container optimization
-        private static GUIButton     _fix2Btn;  // фикс 2 — оптимизация поиска предметов рядом   // RUS: fix 2 — nearby-item search optimization
+        private static GUIButton     _fixBtn;   // fix 1 — container optimization   // RUS: фикс 1 — оптимизация контейнеров
+        private static GUIButton     _fix2Btn;  // fix 2 — nearby-item search optimization   // RUS: фикс 2 — оптимизация поиска предметов рядом
         private static GUIListBox    _resultList;
 
         // Fix categories shown as 3 tabs. The current fixes are all Shared.
@@ -48,8 +55,10 @@ namespace NetEventLogger
                 if (_frame != null) { return; }
                 if (GUI.Canvas == null) { return; }
 
-                // style:null + явный непрозрачный цвет = гарантированно видимая тёмная панель
-                // (стиль по умолчанию у GUIFrame может быть прозрачным).
+                // style:null + an explicit opaque color = a guaranteed-visible dark panel
+                // (the default GUIFrame style can be transparent).
+                // RUS: style:null + явный непрозрачный цвет = гарантированно видимая тёмная панель
+                // RUS: (стиль по умолчанию у GUIFrame может быть прозрачным).
                 _frame = new GUIFrame(new RectTransform(new Vector2(0.34f, 0.66f), GUI.Canvas, Anchor.CenterLeft,
                     minSize: new Point(380, 430)) { RelativeOffset = new Vector2(0.012f, 0f) },
                     style: null, color: new Color(14, 17, 24, 245));
@@ -66,7 +75,8 @@ namespace NetEventLogger
                 _status = new GUITextBlock(new RectTransform(new Vector2(1f, 0.07f), col.RectTransform),
                     Benchmark.StatusText, font: GUIStyle.SmallFont, textAlignment: Alignment.Center, wrap: true);
 
-                // ряд 1: бенчмарк + копировать
+                // row 1: benchmark + copy
+                // RUS: ряд 1: бенчмарк + копировать
                 var row1 = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.07f), col.RectTransform), isHorizontal: true)
                 { Stretch = true, RelativeSpacing = 0.02f };
                 _benchBtn = new GUIButton(new RectTransform(new Vector2(0.5f, 1f), row1.RectTransform), BenchLabel(), style: "GUIButtonSmall");
@@ -75,8 +85,8 @@ namespace NetEventLogger
                     Loc.T("Копировать результат", "Copy result"), style: "GUIButtonSmall");
                 copyBtn.OnClicked = (b, o) => { CopyResults(); return true; };
 
-                // ряд 2: ВКЛАДКИ фиксов (Клиентские / Серверные / Общие)
-                // RUS: row 2: fix TABS (Client / Server / Shared)
+                // row 2: fix TABS (Client / Server / Shared)
+                // RUS: ряд 2: ВКЛАДКИ фиксов (Клиентские / Серверные / Общие)
                 var tabRow = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.06f), col.RectTransform), isHorizontal: true)
                 { Stretch = true, RelativeSpacing = 0.01f };
                 _tabClientBtn = new GUIButton(new RectTransform(new Vector2(0.34f, 1f), tabRow.RectTransform), Loc.T("Клиентские", "Client"), style: "GUIButtonSmall");
@@ -86,36 +96,41 @@ namespace NetEventLogger
                 _tabSharedBtn = new GUIButton(new RectTransform(new Vector2(0.33f, 1f), tabRow.RectTransform), Loc.T("Общие", "Shared"), style: "GUIButtonSmall");
                 _tabSharedBtn.OnClicked = (b, o) => { SelectTab(Tab.Shared); return true; };
 
-                // контейнер тумблеров активной вкладки   // RUS: container for the active tab's toggles
+                // container for the active tab's toggles   // RUS: контейнер тумблеров активной вкладки
                 var tabFrame = new GUIFrame(new RectTransform(new Vector2(1f, 0.12f), col.RectTransform), style: null, color: new Color(0, 0, 0, 70));
                 _tabContent = new GUILayoutGroup(new RectTransform(new Vector2(0.98f, 0.9f), tabFrame.RectTransform, Anchor.Center))
                 { Stretch = true, RelativeSpacing = 0.05f };
                 SelectTab(_activeTab);
 
-                // ряд 3: закрыть
+                // row 3: close
+                // RUS: ряд 3: закрыть
                 var row3 = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.06f), col.RectTransform), isHorizontal: true)
                 { Stretch = true };
                 var closeBtn = new GUIButton(new RectTransform(new Vector2(1f, 1f), row3.RectTransform),
                     Loc.T("Закрыть", "Close"), style: "GUIButtonSmall");
                 closeBtn.OnClicked = (b, o) => { Close(); return true; };
 
-                // область результата (скролл, моноширинный шрифт для ровных столбцов)
+                // result area (scrollable, monospaced font for aligned columns)
+                // RUS: область результата (скролл, моноширинный шрифт для ровных столбцов)
                 _resultList = new GUIListBox(new RectTransform(new Vector2(1f, 0.6f), col.RectTransform));
 
                 RefreshResult();
                 ClientPerf.Log(Loc.T("Меню открыто.", "Menu opened."), Color.LightGreen);
             }
-            catch (Exception ex) { ClientPerf.Log("Не удалось открыть меню: " + ex, Color.Red); _frame = null; }
+            catch (Exception ex) { ClientPerf.Log(Loc.T("Не удалось открыть меню: ", "Failed to open the menu: ") + ex, Color.Red); _frame = null; }
         }
 
-        // Зовётся каждый кадр из ClientPerf.Tick: пока окно открыто — обновляем статус/кнопки/результат.
+        // Called every frame from ClientPerf.Tick: while the window is open, refresh status/buttons/result.
+        // RUS: Зовётся каждый кадр из ClientPerf.Tick: пока окно открыто — обновляем статус/кнопки/результат.
         public static void Update()
         {
             if (_frame == null) { return; }
             try
             {
-                // БЕЗ этого окно не рисуется: компонент на GUI.Canvas нужно каждый кадр заносить
-                // в список отрисовки GUI (движок чистит его каждый кадр).
+                // WITHOUT this the window isn't drawn: a component on GUI.Canvas must be added to the
+                // GUI update list every frame (the engine clears that list each frame).
+                // RUS: БЕЗ этого окно не рисуется: компонент на GUI.Canvas нужно каждый кадр заносить
+                // RUS: в список отрисовки GUI (движок чистит его каждый кадр).
                 _frame.AddToGUIUpdateList();
 
                 if (_status != null)   { _status.Text = Benchmark.StatusText; }
@@ -214,7 +229,8 @@ namespace NetEventLogger
                 { CanBeFocused = false };
                 return;
             }
-            // каждая строка своим цветом (как в консоли), шрифт моноширинный и на ~20% мельче (TextScale 0.8)
+            // each line in its own color (like the console), monospaced font ~20% smaller (TextScale 0.8)
+            // RUS: каждая строка своим цветом (как в консоли), шрифт моноширинный и на ~20% мельче (TextScale 0.8)
             foreach (var ln in lines)
             {
                 new GUITextBlock(new RectTransform(new Vector2(1f, 0.031f), _resultList.Content.RectTransform),
@@ -238,7 +254,8 @@ namespace NetEventLogger
             ClientPerf.Log(ok ? Loc.T("Результат бенчмарка скопирован в буфер обмена.", "Benchmark result copied to clipboard.") : Loc.T("Копирование не удалось.", "Copy failed."), ok ? Color.LightGreen : Color.Orange);
         }
 
-        // --- буфер обмена (как в GM Menu): Barotrauma.Clipboard.SetText через рефлексию + фоллбэк скрытым GUITextBox ---
+        // --- clipboard (like GM Menu): Barotrauma.Clipboard.SetText via reflection + a hidden-GUITextBox fallback ---
+        // RUS: --- буфер обмена (как в GM Menu): Barotrauma.Clipboard.SetText через рефлексию + фоллбэк скрытым GUITextBox ---
         private static MethodInfo _clipboardSetText;
         private static bool       _clipboardSearched;
 
@@ -250,7 +267,8 @@ namespace NetEventLogger
                 if (m != null) { m.Invoke(null, new object[] { text }); return true; }
             }
             catch { }
-            // фоллбэк: скрытый GUITextBox далеко за экраном + его внутренний CopySelectedText()
+            // fallback: a hidden GUITextBox far off-screen + its internal CopySelectedText()
+            // RUS: фоллбэк: скрытый GUITextBox далеко за экраном + его внутренний CopySelectedText()
             try
             {
                 if (GUI.Canvas != null)

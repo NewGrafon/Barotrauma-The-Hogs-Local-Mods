@@ -11,14 +11,21 @@ using Microsoft.Xna.Framework;
 namespace NetEventLogger
 {
     // ==========================================================================================
-    //  КЛИЕНТСКИЙ профайлер ФПС (грузится у КАЖДОГО участника: хост + все клиенты).
-    //  Источник данных — встроенный Barotrauma.GameMain.PerformanceCounter:
-    //    * AverageFramesPerSecond — средний FPS;
-    //    * GetSavedIdentifiers / GetAverageElapsedMillisecs(id) — стоимость подсистем кадра
+    //  CLIENT FPS profiler (loaded on EVERY participant: host + all clients).
+    //  Data source — the built-in Barotrauma.GameMain.PerformanceCounter:
+    //    * AverageFramesPerSecond — average FPS;
+    //    * GetSavedIdentifiers / GetAverageElapsedMillisecs(id) — per-subsystem frame cost
     //      (Update:Character/Particles/Physics/StatusEffects/Ragdolls/MapEntity:Items/Power…,
     //       Draw:Map:Lighting/FrontParticles/BackCharactersItems/HUD/PostProcess…).
-    //  Раз в 60с (игрового времени в раунде) пишет в консоль средний FPS + топ-10 операций
-    //  и копит каждое окно в памяти ВСЕЙ СЕССИИ. Команда `clientperf` строит портрет сессии.
+    //  Every 60s (of in-round time) it prints avg FPS + the top-10 operations and keeps every window
+    //  in memory for the WHOLE SESSION. The `clientperf` command builds a session portrait.
+    //
+    //  RUS: КЛИЕНТСКИЙ профайлер ФПС (грузится у КАЖДОГО участника: хост + все клиенты).
+    //  RUS: Источник данных — встроенный Barotrauma.GameMain.PerformanceCounter:
+    //  RUS:   * AverageFramesPerSecond — средний FPS;
+    //  RUS:   * GetSavedIdentifiers / GetAverageElapsedMillisecs(id) — стоимость подсистем кадра.
+    //  RUS: Раз в 60с (игрового времени в раунде) пишет в консоль средний FPS + топ-10 операций
+    //  RUS: и копит каждое окно в памяти ВСЕЙ СЕССИИ. Команда `clientperf` строит портрет сессии.
     // ==========================================================================================
     public sealed class ClientPerfLoggerPlugin : IAssemblyPlugin
     {
@@ -28,13 +35,14 @@ namespace NetEventLogger
 
         public void Initialize()
         {
-            ClientPerf.Log("Инициализация клиентского профайлера…", Color.Yellow);
+            ClientPerf.Log(Loc.T("Инициализация клиентского профайлера…", "Initializing the client profiler…"), Color.Yellow);
             try
             {
                 if (_harmony == null)
                 {
                     _harmony = new Harmony("com.ng.clientperflogger");
-                    // Покадровый тик: постфикс на клиентский GameMain.Update(GameTime).
+                    // Per-frame tick: postfix on the client GameMain.Update(GameTime).
+                    // RUS: Покадровый тик: постфикс на клиентский GameMain.Update(GameTime).
                     MethodInfo update = AccessTools.Method(typeof(GameMain), "Update", new[] { typeof(GameTime) });
                     if (update != null)
                     {
@@ -43,11 +51,13 @@ namespace NetEventLogger
                     }
                     else
                     {
-                        ClientPerf.Log("НЕ найден GameMain.Update — профайлер не сможет тикать!", Color.Red);
+                        ClientPerf.Log(Loc.T("НЕ найден GameMain.Update — профайлер не сможет тикать!", "GameMain.Update NOT found — the profiler can't tick!"), Color.Red);
                     }
 
-                    // Префикс на клиентский GUI.Update(float): заносим окно меню в GUI-список ДО обработки
-                    // ввода и отрисовки (без этого окно либо не рисуется, либо не ловит клики).
+                    // Prefix on the client GUI.Update(float): add the menu window to the GUI list BEFORE
+                    // input handling and drawing (without this the window isn't drawn or doesn't catch clicks).
+                    // RUS: Префикс на клиентский GUI.Update(float): заносим окно меню в GUI-список ДО обработки
+                    // RUS: ввода и отрисовки (без этого окно либо не рисуется, либо не ловит клики).
                     MethodInfo guiUpdate = AccessTools.Method(typeof(GUI), "Update", new[] { typeof(float) });
                     if (guiUpdate != null)
                     {
@@ -62,7 +72,7 @@ namespace NetEventLogger
             }
             catch (Exception ex)
             {
-                ClientPerf.Log("ОШИБКА инициализации: " + ex, Color.Red);
+                ClientPerf.Log(Loc.T("ОШИБКА инициализации: ", "Init ERROR: ") + ex, Color.Red);
             }
         }
 
@@ -84,16 +94,16 @@ namespace NetEventLogger
 
     public static class ClientPerf
     {
-        // --- настройки ---
-        private const double SampleIntervalSec = 1.0;   // как часто снимать пробу (раз в секунду)
-        private const double WindowSec         = 60.0;  // длина окна
-        private const int    TopWindow         = 10;    // топ операций в авто-выводе окна
-        private const int    TopSession        = 20;    // топ операций в отчёте сессии
-        private const int    MaxWindows        = 20000; // страховка от безграничного роста памяти
+        // --- settings ---   // RUS: настройки
+        private const double SampleIntervalSec = 1.0;   // how often to sample (once a second)   // RUS: как часто снимать пробу
+        private const double WindowSec         = 60.0;  // window length   // RUS: длина окна
+        private const int    TopWindow         = 10;    // top ops in the auto window summary   // RUS: топ операций в авто-выводе окна
+        private const int    TopSession        = 20;    // top ops in the session report   // RUS: топ операций в отчёте сессии
+        private const int    MaxWindows        = 20000; // guard against unbounded memory growth   // RUS: страховка от безграничного роста памяти
 
-        public static bool AutoLog = true;              // печатать сводку каждые 60с
+        public static bool AutoLog = true;              // print a summary every 60s   // RUS: печатать сводку каждые 60с
 
-        // --- часы и накопители текущего окна ---
+        // --- clock and current-window accumulators ---   // RUS: часы и накопители текущего окна
         private static readonly Stopwatch _clock = Stopwatch.StartNew();
         private static double _lastTickSec = 0;
         private static double _sampleElapsed = 0;
@@ -105,7 +115,7 @@ namespace NetEventLogger
         private static double _fpsMin = double.MaxValue;
         private static int    _windowIndex = 0;
 
-        // --- память сессии ---
+        // --- session memory ---   // RUS: память сессии
         public sealed class Window
         {
             public int    Index;
@@ -114,12 +124,13 @@ namespace NetEventLogger
             public double UpdateMs;
             public double DrawMs;
             public int    Samples;
-            public Dictionary<string, double> OpMs; // средние мс/кадр по каждому идентификатору
+            public Dictionary<string, double> OpMs; // average ms/frame per identifier   // RUS: средние мс/кадр по каждому идентификатору
         }
         private static readonly List<Window> _session = new List<Window>();
 
         // ----------------------------------------------------------------------------------
-        //  Покадровый тик (зовётся из Harmony-постфикса GameMain.Update).
+        //  Per-frame tick (called from the Harmony postfix of GameMain.Update).
+        //  RUS: Покадровый тик (зовётся из Harmony-постфикса GameMain.Update).
         // ----------------------------------------------------------------------------------
         public static void Tick()
         {
@@ -128,17 +139,20 @@ namespace NetEventLogger
                 double now = _clock.Elapsed.TotalSeconds;
                 double delta = now - _lastTickSec;
                 _lastTickSec = now;
-                // нормальный кадр? (отбрасываем первый кадр и большие провалы: загрузка/пауза/сворачивание)
+                // a normal frame? (discard the first frame and big gaps: loading/pause/minimized)
+                // RUS: нормальный кадр? (отбрасываем первый кадр и большие провалы: загрузка/пауза/сворачивание)
                 double safeDelta = (delta > 0 && delta <= 1.0) ? delta : 0;
 
                 bool inRound = GameMain.GameScreen != null && Screen.Selected == GameMain.GameScreen;
 
-                // бенчмарк — КАЖДЫЙ кадр (а не только в раунде).
-                // Отрисовку/ввод окна меню (ClientPerfMenu.Update) делаем в префиксе GUI.Update (GuiUpdatePatch).
+                // benchmark — EVERY frame (not only in a round).
+                // The menu window's draw/input (ClientPerfMenu.Update) is done in the GUI.Update prefix (GuiUpdatePatch).
+                // RUS: бенчмарк — КАЖДЫЙ кадр (а не только в раунде). Отрисовку/ввод окна меню — в префиксе GUI.Update.
                 Benchmark.Tick(safeDelta, inRound);
-                OptConfig.Tick(safeDelta, inRound); // re-apply fixes ~3s after each round start (after PE)   // RUS: переприменить фиксы через ~3с после старта раунда (после PE)
+                OptConfig.Tick(safeDelta, inRound); // re-apply fixes after PE activates each round   // RUS: переприменить фиксы после активации PE на старте раунда
 
-                // сэмплинг профайлера — только в раунде и при нормальном кадре
+                // profiler sampling — only in a round and on a normal frame
+                // RUS: сэмплинг профайлера — только в раунде и при нормальном кадре
                 if (safeDelta <= 0 || !inRound) { return; }
                 PerformanceCounter pc = GameMain.PerformanceCounter;
                 if (pc == null) { return; }
@@ -200,8 +214,10 @@ namespace NetEventLogger
         }
 
         // ----------------------------------------------------------------------------------
-        //  Топ ЛИСТОВЫХ операций (исключаем родителей-агрегаты, чтобы не было двойного учёта:
-        //  "Update" и "Draw" — это суммы своих под-веток, их показываем отдельной строкой-итогом).
+        //  Top LEAF operations (exclude aggregate parents to avoid double-counting:
+        //  "Update" and "Draw" are sums of their own sub-branches, shown as a separate total line).
+        //  RUS: Топ ЛИСТОВЫХ операций (исключаем родителей-агрегаты, чтобы не было двойного учёта:
+        //  RUS: "Update" и "Draw" — это суммы своих под-веток, их показываем отдельной строкой-итогом).
         // ----------------------------------------------------------------------------------
         private static List<KeyValuePair<string, double>> TopLeafOps(Dictionary<string, double> op, int n)
         {
@@ -226,11 +242,13 @@ namespace NetEventLogger
         }
 
         // ----------------------------------------------------------------------------------
-        //  Отчёт по всей сессии: топ-20 за сессию + 3 снапшота (худший/типичный/лучший FPS).
+        //  Whole-session report: session top-20 + 3 snapshots (worst/typical/best FPS).
+        //  RUS: Отчёт по всей сессии: топ-20 за сессию + 3 снапшота (худший/типичный/лучший FPS).
         // ----------------------------------------------------------------------------------
         public static void PrintSessionReport()
         {
-            // если текущее окно ещё не закрылось, но в нём уже есть данные — учтём его «на лету»
+            // the current window hasn't closed yet but already has data — count it "on the fly"
+            // RUS: если текущее окно ещё не закрылось, но в нём уже есть данные — учтём его «на лету»
             FlushPartialWindowIfAny();
 
             if (_session.Count == 0)
@@ -247,7 +265,8 @@ namespace NetEventLogger
             Log(Loc.Ru ? $"   Средний FPS по сессии: {sessFpsMean:F1} | худшая секунда: {sessFpsLow:F0} FPS"
                        : $"   Session average FPS: {sessFpsMean:F1} | worst second: {sessFpsLow:F0} FPS", Color.Cyan);
 
-            // --- агрегированный топ операций за всю сессию (среднее от оконных средних) ---
+            // --- aggregated top operations over the whole session (mean of per-window means) ---
+            // RUS: агрегированный топ операций за всю сессию (среднее от оконных средних)
             var sum = new Dictionary<string, double>();
             var cnt = new Dictionary<string, int>();
             foreach (var w in _session)
@@ -266,11 +285,13 @@ namespace NetEventLogger
             int i = 1;
             foreach (var kvp in topSess) { Log($"  {i,2}. {Pad(kvp.Key, 34)} {kvp.Value,7:F3} {Loc.Ms}", MsColor(kvp.Value)); i++; }
 
-            // --- 3 характерных снапшота ---
+            // --- 3 representative snapshots ---
+            // RUS: 3 характерных снапшота
             var byFps = _session.OrderBy(x => x.AvgFps).ToList();
             Window worst  = byFps.First();
             Window best   = byFps.Last();
-            // «самое среднее среднее»: окно с avgFps ближе всего к среднему по сессии
+            // the "most average average": the window whose avgFps is closest to the session mean
+            // RUS: «самое среднее среднее»: окно с avgFps ближе всего к среднему по сессии
             Window typical = _session.OrderBy(x => Math.Abs(x.AvgFps - sessFpsMean)).First();
 
             PrintSnapshot(Loc.T("ХУДШИЙ FPS (тут искать виновника)", "WORST FPS (look for the culprit here)"), worst);
@@ -293,7 +314,8 @@ namespace NetEventLogger
             foreach (var kvp in top) { Log($"       {i,2}. {Pad(kvp.Key, 34)} {kvp.Value,7:F3} {Loc.Ms}", MsColor(kvp.Value)); i++; }
         }
 
-        // снять снимок текущего (ещё не закрытого) окна, не очищая накопители, и временно добавить в сессию
+        // snapshot the current (not-yet-closed) window without clearing accumulators, and add it to the session temporarily
+        // RUS: снять снимок текущего (ещё не закрытого) окна, не очищая накопители, и временно добавить в сессию
         private static void FlushPartialWindowIfAny()
         {
             if (_sampleCount <= 0) { return; }
@@ -309,7 +331,8 @@ namespace NetEventLogger
                 Samples  = _sampleCount,
                 OpMs     = op
             });
-            // помечаем, что текущее окно уже учтено: закрываем его, чтобы не задвоить при следующем закрытии
+            // mark the current window as already counted: close it so the next close doesn't double it
+            // RUS: помечаем, что текущее окно уже учтено: закрываем его, чтобы не задвоить при следующем закрытии
             _windowElapsed = 0;
             ResetWindow();
         }
@@ -340,18 +363,20 @@ namespace NetEventLogger
             ResetWindow();
             _windowElapsed = 0;
             ItemProfiler.ResetStats();
-            Log("Память сессии и пер-предметный замер очищены.", Color.Yellow);
+            Log(Loc.T("Память сессии и пер-предметный замер очищены.", "Session memory and per-item profiling cleared."), Color.Yellow);
         }
 
         // ----------------------------------------------------------------------------------
-        //  Консольная команда
+        //  Console command
+        //  RUS: Консольная команда
         // ----------------------------------------------------------------------------------
         public static void RegisterCommands()
         {
             UnregisterCommands();
             DebugConsole.Commands.Add(new DebugConsole.Command(
                 "clientperf|ngperf",
-                "NG клиентский профайлер ФПС. Без аргументов — отчёт сессии. Аргументы: menu | now | items | reset | auto | help",
+                Loc.T("NG клиентский профайлер ФПС. Без аргументов — отчёт сессии. Аргументы: menu | now | items | reset | auto | help",
+                      "NG client FPS profiler. No args — session report. Args: menu | now | items | reset | auto | help"),
                 args =>
                 {
                     string a = args != null && args.Length > 0 ? args[0].ToLowerInvariant() : "";
@@ -361,29 +386,37 @@ namespace NetEventLogger
                         case "reset": ResetSession(); break;
                         case "auto":
                             AutoLog = !AutoLog;
-                            Log("Авто-вывод каждые 60с: " + (AutoLog ? "ВКЛ" : "ВЫКЛ"), AutoLog ? Color.LightGreen : Color.Gray);
+                            Log(Loc.T("Авто-вывод каждые 60с: ", "Auto-print every 60s: ") + (AutoLog ? Loc.On : Loc.Off), AutoLog ? Color.LightGreen : Color.Gray);
                             break;
                         case "items":
                         {
                             string sub  = args != null && args.Length > 1 ? args[1] : "";
                             string subl = sub.ToLowerInvariant();
                             if (subl == "on")         { ItemProfiler.Enable(); }
-                            else if (subl == "off")   { ItemProfiler.Disable(); Log("Пер-предметный замер ВЫКЛ (патч снят, накладных нет).", Color.Gray); }
-                            else if (subl == "reset") { ItemProfiler.ResetStats(); Log("Пер-предметный накопитель очищен.", Color.Yellow); }
+                            else if (subl == "off")   { ItemProfiler.Disable(); Log(Loc.T("Пер-предметный замер ВЫКЛ (патч снят, накладных нет).", "Per-item profiling OFF (patch removed, no overhead)."), Color.Gray); }
+                            else if (subl == "reset") { ItemProfiler.ResetStats(); Log(Loc.T("Пер-предметный накопитель очищен.", "Per-item accumulator cleared."), Color.Yellow); }
                             else if (sub != "")       { ItemProfiler.ReportPrefab(sub); }   // clientperf items spas-13
                             else                      { ItemProfiler.Report(10); }
                             break;
                         }
                         case "menu":  ClientPerfMenu.Toggle(); break;
                         case "help":
-                            Log("clientperf menu     — открыть/закрыть окно NG Logger&Optimizations", Color.LightGreen);
-                            Log("clientperf          — портрет сессии: топ-20 операций + 3 снапшота (худший/типичный/лучший FPS)", Color.White);
-                            Log("clientperf now      — топ операций за текущее (ещё не закрытое) окно", Color.White);
-                            Log("clientperf items    — топ ПРЕДМЕТОВ/МОДОВ по времени Item.Update (сначала: clientperf items on)", Color.White);
-                            Log("clientperf items <предмет> — РАЗБИВКА предмета по компонентам/эффектам (напр. clientperf items spas-13)", Color.White);
-                            Log("clientperf items on|off|reset — вкл/выкл/очистить пер-предметный замер", Color.White);
-                            Log("clientperf reset    — очистить память сессии (и предметов)", Color.White);
-                            Log("clientperf auto     — вкл/выкл авто-вывод сводки каждые 60с", Color.White);
+                            Log(Loc.T("clientperf menu     — открыть/закрыть окно NG Logger&Optimizations",
+                                      "clientperf menu     — open/close the NG Logger&Optimizations window"), Color.LightGreen);
+                            Log(Loc.T("clientperf          — портрет сессии: топ-20 операций + 3 снапшота (худший/типичный/лучший FPS)",
+                                      "clientperf          — session portrait: top-20 operations + 3 snapshots (worst/typical/best FPS)"), Color.White);
+                            Log(Loc.T("clientperf now      — топ операций за текущее (ещё не закрытое) окно",
+                                      "clientperf now      — top operations for the current (not-yet-closed) window"), Color.White);
+                            Log(Loc.T("clientperf items    — топ ПРЕДМЕТОВ/МОДОВ по времени Item.Update (сначала: clientperf items on)",
+                                      "clientperf items    — top ITEMS/MODS by Item.Update time (first: clientperf items on)"), Color.White);
+                            Log(Loc.T("clientperf items <предмет> — РАЗБИВКА предмета по компонентам/эффектам (напр. clientperf items spas-13)",
+                                      "clientperf items <item> — item BREAKDOWN by components/effects (e.g. clientperf items spas-13)"), Color.White);
+                            Log(Loc.T("clientperf items on|off|reset — вкл/выкл/очистить пер-предметный замер",
+                                      "clientperf items on|off|reset — enable/disable/clear per-item profiling"), Color.White);
+                            Log(Loc.T("clientperf reset    — очистить память сессии (и предметов)",
+                                      "clientperf reset    — clear session memory (and items)"), Color.White);
+                            Log(Loc.T("clientperf auto     — вкл/выкл авто-вывод сводки каждые 60с",
+                                      "clientperf auto     — toggle auto-printing the summary every 60s"), Color.White);
                             break;
                         default: PrintSessionReport(); break;
                     }
@@ -397,7 +430,8 @@ namespace NetEventLogger
         }
 
         // ----------------------------------------------------------------------------------
-        //  Утилиты
+        //  Utilities
+        //  RUS: Утилиты
         // ----------------------------------------------------------------------------------
         internal static string Pad(string s, int len) => s.Length >= len ? s : s + new string(' ', len - s.Length);
 
@@ -417,14 +451,18 @@ namespace NetEventLogger
 
     public static class GuiUpdatePatch
     {
-        // Префикс GUI.Update: заносим окно меню в GUI-список ровно перед обработкой ввода + отрисовкой.
+        // GUI.Update prefix: insert the menu window into the GUI list right before input handling + drawing.
+        // RUS: Префикс GUI.Update: заносим окно меню в GUI-список ровно перед обработкой ввода + отрисовкой.
         public static void Prefix() => ClientPerfMenu.Update();
     }
 
     // ==========================================================================================
-    //  Пер-предметный замер: кто из предметов/модов ест время в Item.Update.
-    //  Включается командой `clientperf items on` (тогда ставится Harmony-патч на Item.Update).
-    //  Пока выключено — патча нет, накладные нулевые (baseline не искажается).
+    //  Per-item profiling: which items/mods eat time in Item.Update.
+    //  Enabled via `clientperf items on` (then a Harmony patch is placed on Item.Update).
+    //  While off — no patch, zero overhead (the baseline isn't distorted).
+    //  RUS: Пер-предметный замер: кто из предметов/модов ест время в Item.Update.
+    //  RUS: Включается командой `clientperf items on` (тогда ставится Harmony-патч на Item.Update).
+    //  RUS: Пока выключено — патча нет, накладные нулевые (baseline не искажается).
     // ==========================================================================================
     public static class ItemProfiler
     {
@@ -433,7 +471,7 @@ namespace NetEventLogger
 
         private sealed class Stat { public long Ticks; public long Calls; public string Pkg; }
         private static readonly Dictionary<string, Stat> _stats = new Dictionary<string, Stat>();
-        private static readonly Dictionary<string, Stat> _parts = new Dictionary<string, Stat>(); // prefab :: часть (Comp:Тип / [StatusEffects] / [Sounds])
+        private static readonly Dictionary<string, Stat> _parts = new Dictionary<string, Stat>(); // prefab :: part (Comp:Type / [StatusEffects] / [Sounds])   // RUS: prefab :: часть (Comp:Тип / [StatusEffects] / [Sounds])
 
         public static void Enable()
         {
@@ -443,14 +481,16 @@ namespace NetEventLogger
                 Harmony h = new Harmony("com.ng.clientperflogger.items");
                 BindingFlags sp = BindingFlags.Static | BindingFlags.Public;
 
-                // 1) Item.Update — суммарное время предмета (для топа и для "всего" в разбивке).
+                // 1) Item.Update — total time of the item (for the top list and for "total" in the breakdown).
+                // RUS: 1) Item.Update — суммарное время предмета (для топа и для "всего" в разбивке).
                 MethodInfo m = AccessTools.Method(typeof(Item), "Update", new[] { typeof(float), typeof(Camera) });
                 if (m == null) { ClientPerf.Log(Loc.T("Item.Update не найден — замер недоступен.", "Item.Update not found — profiling unavailable."), Color.Orange); return; }
                 h.Patch(m,
                     prefix:  new HarmonyMethod(typeof(ItemUpdatePatch).GetMethod(nameof(ItemUpdatePatch.Prefix),  sp)),
                     postfix: new HarmonyMethod(typeof(ItemUpdatePatch).GetMethod(nameof(ItemUpdatePatch.Postfix), sp)));
 
-                // 2) Item.ApplyStatusEffects — время статус-эффектов предмета (часть [StatusEffects]).
+                // 2) Item.ApplyStatusEffects — time of the item's status effects (the [StatusEffects] part).
+                // RUS: 2) Item.ApplyStatusEffects — время статус-эффектов предмета (часть [StatusEffects]).
                 MethodInfo se = AccessTools.Method(typeof(Item), "ApplyStatusEffects",
                     new[] { typeof(ActionType), typeof(float), typeof(Character), typeof(Limb), typeof(Entity), typeof(bool), typeof(Vector2?) });
                 if (se != null)
@@ -460,7 +500,8 @@ namespace NetEventLogger
                         postfix: new HarmonyMethod(typeof(StatusFxPatch).GetMethod(nameof(StatusFxPatch.Postfix), sp)));
                 }
 
-                // 3) ItemComponent.UpdateSounds — клиентское обновление звуков (вызов в цикле Item.Update; часть [Sounds]).
+                // 3) ItemComponent.UpdateSounds — client-side sound update (called in the Item.Update loop; the [Sounds] part).
+                // RUS: 3) ItemComponent.UpdateSounds — клиентское обновление звуков (вызов в цикле Item.Update; часть [Sounds]).
                 MethodInfo us = AccessTools.Method(typeof(ItemComponent), "UpdateSounds");
                 if (us != null)
                 {
@@ -469,7 +510,8 @@ namespace NetEventLogger
                         postfix: new HarmonyMethod(typeof(SoundsPatch).GetMethod(nameof(SoundsPatch.Postfix), sp)));
                 }
 
-                // 4) Все override-ы ItemComponent.Update(float,Camera) — время по ТИПУ компонента (части Comp:Тип).
+                // 4) All ItemComponent.Update(float,Camera) overrides — time per component TYPE (the Comp:Type parts).
+                // RUS: 4) Все override-ы ItemComponent.Update(float,Camera) — время по ТИПУ компонента (части Comp:Тип).
                 HarmonyMethod cpre  = new HarmonyMethod(typeof(CompUpdatePatch).GetMethod(nameof(CompUpdatePatch.Prefix),  sp));
                 HarmonyMethod cpost = new HarmonyMethod(typeof(CompUpdatePatch).GetMethod(nameof(CompUpdatePatch.Postfix), sp));
                 Type[] types;
@@ -491,7 +533,7 @@ namespace NetEventLogger
                     ? $"Пер-предметный замер ВКЛ (компонентов запатчено: {patched}). Поиграй, потом: clientperf items / clientperf items <предмет>"
                     : $"Per-item profiling ON (components patched: {patched}). Play, then: clientperf items / clientperf items <item>", Color.LightGreen);
             }
-            catch (Exception ex) { ClientPerf.Log("Не удалось включить замер: " + ex.Message, Color.Red); _h = null; }
+            catch (Exception ex) { ClientPerf.Log(Loc.T("Не удалось включить замер: ", "Failed to enable profiling: ") + ex.Message, Color.Red); _h = null; }
         }
 
         public static void Disable()
@@ -519,7 +561,8 @@ namespace NetEventLogger
             catch { }
         }
 
-        // Топ предметов: строит строки (текст + цвет) и заодно возвращает упорядоченный список prefab-id (для бенчмарка).
+        // Top items: builds lines (text + color) and also returns the ordered list of prefab-ids (for the benchmark).
+        // RUS: Топ предметов: строит строки (текст + цвет) и заодно возвращает упорядоченный список prefab-id (для бенчмарка).
         public static List<(string Text, Color Color)> ItemsReportLines(int topN, out List<string> topPrefabs)
         {
             var lines = new List<(string Text, Color Color)>();
@@ -570,7 +613,8 @@ namespace NetEventLogger
             if (_stats.Count > 0) { ClientPerf.Log(Loc.T("Высокий µs/вызов у предмета = у него дорогой Update (тяжёлый Always-эффект/компонент) — чинить тот мод.", "High µs/call = expensive Update for that item (heavy Always effect/component) — fix that mod."), Color.Gray); }
         }
 
-        // Тот же отчёт обычным текстом (для окна бенчмарка / копирования).
+        // The same report as plain text (for the benchmark window / copying).
+        // RUS: Тот же отчёт обычным текстом (для окна бенчмарка / копирования).
         public static string BuildItemsReportText(int topN, out List<string> topPrefabs)
         {
             var sb = new System.Text.StringBuilder();
@@ -596,11 +640,13 @@ namespace NetEventLogger
             RecordPart(ic.Item, "Comp:" + ic.GetType().Name, ticks);
         }
 
-        // Разбивка КОНКРЕТНОГО предмета по частям (компоненты / статус-эффекты / звуки / прочее).
+        // Breakdown of a SPECIFIC item by parts (components / status effects / sounds / other).
+        // RUS: Разбивка КОНКРЕТНОГО предмета по частям (компоненты / статус-эффекты / звуки / прочее).
         public static List<(string Text, Color Color)> PrefabReportLines(string filter)
         {
             var lines = new List<(string Text, Color Color)>();
-            // точное совпадение (бенчмарк передаёт готовый prefab-id) -> иначе подстрока (топ-3 по времени)
+            // exact match (the benchmark passes a ready prefab-id) -> otherwise substring (top-3 by time)
+            // RUS: точное совпадение (бенчмарк передаёт готовый prefab-id) -> иначе подстрока (топ-3 по времени)
             string exact = _stats.Keys.FirstOrDefault(k => k.Equals(filter, StringComparison.OrdinalIgnoreCase));
             List<string> matches = exact != null
                 ? new List<string> { exact }
@@ -660,24 +706,28 @@ namespace NetEventLogger
     }
 
     // ==========================================================================================
-    //  БЕНЧМАРК: одной кнопкой прогоняет последовательность замера и собирает результат в текст.
-    //  Последовательность: items off -> reset -> on -> ЖДАТЬ 60с (в раунде) -> off ->
-    //  общий отчёт (топ-10 + топ-5 модов) -> разбивка топ-3 предметов -> reset. Покадрово из ClientPerf.Tick.
+    //  BENCHMARK: one button runs the whole profiling sequence and collects the result into text.
+    //  Sequence: items off -> reset -> on -> WAIT 60s (in a round) -> off ->
+    //  overall report (top-10 + top-5 mods) -> breakdown of top-3 items -> reset. Driven frame-by-frame from ClientPerf.Tick.
+    //  RUS: БЕНЧМАРК: одной кнопкой прогоняет последовательность замера и собирает результат в текст.
+    //  RUS: Последовательность: items off -> reset -> on -> ЖДАТЬ 60с (в раунде) -> off ->
+    //  RUS: общий отчёт (топ-10 + топ-5 модов) -> разбивка топ-3 предметов -> reset. Покадрово из ClientPerf.Tick.
     // ==========================================================================================
     public static class Benchmark
     {
         public enum Phase { Idle, Measuring, Done }
         public static Phase State { get; private set; } = Phase.Idle;
         public static string StatusText { get; private set; }
-        public static string ResultText { get; private set; } = "";                  // plain-text для копирования
-        public static List<(string Text, Color Color)> ResultLines { get; private set; } = new List<(string Text, Color Color)>(); // цветные строки для окна
-        public static bool ResultIsNew;   // флаг для GUI: появился свежий результат — пора перерисовать
+        public static string ResultText { get; private set; } = "";                  // plain text for copying   // RUS: plain-text для копирования
+        public static List<(string Text, Color Color)> ResultLines { get; private set; } = new List<(string Text, Color Color)>(); // colored lines for the window   // RUS: цветные строки для окна
+        public static bool ResultIsNew;   // GUI flag: a fresh result appeared — time to redraw   // RUS: флаг для GUI: появился свежий результат — пора перерисовать
 
         static Benchmark() { StatusText = Loc.T("Готов. Нажми «Бенчмарк 60с».", "Ready. Click «Benchmark 60s»."); }
 
         private const double DurationSec = 60.0;
         private static double _left;
-        // времена КАЖДОГО кадра за замер -> точные средний FPS и 1% Low (среднее худшего 1% кадров)
+        // times of EVERY frame during the measurement -> exact average FPS and 1% Low (mean of the worst 1% of frames)
+        // RUS: времена КАЖДОГО кадра за замер -> точные средний FPS и 1% Low (среднее худшего 1% кадров)
         private static readonly List<double> _frameTimes = new List<double>(16384);
 
         public static bool Running => State == Phase.Measuring;
@@ -716,7 +766,7 @@ namespace NetEventLogger
             if (!inRound) { StatusText = Loc.T("Пауза замера (не в раунде)…", "Benchmark paused (not in a round)…"); return; }
             if (delta <= 0) { return; }
 
-            _frameTimes.Add(delta); // время этого кадра (для среднего FPS и 1% Low)
+            _frameTimes.Add(delta); // this frame's time (for average FPS and 1% Low)   // RUS: время этого кадра (для среднего FPS и 1% Low)
 
             _left -= delta;
             if (_left <= 0) { Finish(); return; }
@@ -729,7 +779,7 @@ namespace NetEventLogger
         {
             try
             {
-                ItemProfiler.Disable();   // off (данные сохраняются)
+                ItemProfiler.Disable();   // off (data is kept)   // RUS: off (данные сохраняются)
 
                 double avgFps = 0, lowFps = 0;
                 if (_frameTimes.Count > 0)
@@ -737,7 +787,8 @@ namespace NetEventLogger
                     double total = 0;
                     foreach (double ft in _frameTimes) { total += ft; }
                     avgFps = total > 0 ? _frameTimes.Count / total : 0;
-                    // 1% Low = средний FPS худшего 1% кадров (по самым долгим временам кадра)
+                    // 1% Low = average FPS of the worst 1% of frames (by the longest frame times)
+                    // RUS: 1% Low = средний FPS худшего 1% кадров (по самым долгим временам кадра)
                     var slowest = _frameTimes.OrderByDescending(x => x).ToList();
                     int n = Math.Max(1, (int)(slowest.Count * 0.01));
                     double worst = 0;
@@ -781,7 +832,8 @@ namespace NetEventLogger
 
     public static class ItemUpdatePatch
     {
-        // out __state — старт замера. <=0 в постфиксе => пропускаем (если другой мод-префикс пропустил оригинал, __state останется 0).
+        // out __state — measurement start. <=0 in the postfix => skip (if another mod prefix skipped the original, __state stays 0).
+        // RUS: out __state — старт замера. <=0 в постфиксе => пропускаем (если другой мод-префикс пропустил оригинал, __state останется 0).
         public static void Prefix(out long __state) { __state = Stopwatch.GetTimestamp(); }
 
         public static void Postfix(Item __instance, long __state)

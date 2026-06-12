@@ -9,29 +9,45 @@ using Microsoft.Xna.Framework;
 namespace NGNearbyOpt
 {
     // ==========================================================================================
-    //  ФИКС 2: пропускать пустые NearbyItems-сканы (поиск предметов рядом).
+    //  FIX 2: skip empty NearbyItems scans (searching for items "nearby").
     //
-    //  Проблема (профайлер: PDA-mech-anim Comp:CustomInterface ~419µs/кадр; та же семья — AK-74):
-    //  StatusEffect с target="NearbyItems" зовёт StatusEffect.AddNearbyTargets, который в общем
-    //  случае (targetidentifiers НЕ powered/junctionbox/relaycomponent) ПЕРЕБИРАЕТ ВЕСЬ Item.ItemList
-    //  (десятки тысяч предметов) — O(N) скан мира. У континуальных TickBox'ов (PDA: Fabricator/
-    //  Deconstruct/Recipes) cleanup-эффект NearbyItems на спавн-прокси гоняет этот скан раз в секунду,
-    //  даже когда прокси НЕТ. Усредняется профайлером в сотни µs/кадр и РАСТЁТ с числом предметов.
+    //  Problem (profiler: PDA-mech-anim Comp:CustomInterface ~419µs/frame; same family as AK-74):
+    //  a StatusEffect with target="NearbyItems" calls StatusEffect.AddNearbyTargets, which in the
+    //  general case (targetidentifiers NOT powered/junctionbox/relaycomponent) ITERATES THE WHOLE
+    //  Item.ItemList (tens of thousands of items) — an O(N) world scan. Continuous TickBoxes (PDA:
+    //  Fabricator/Deconstruct/Recipes) run a NearbyItems cleanup effect on a spawn-proxy once a second
+    //  even when the proxy is ABSENT. The profiler averages it to hundreds of µs/frame, and it GROWS
+    //  with the item count.
     //
-    //  Решение (поведение идентично): ведём индекс присутствующих в мире identifier/тегов. Если у
-    //  эффекта таргет ТОЛЬКО NearbyItems, заданы targetidentifiers, нет wildcard "item", и НИ один из
-    //  id сейчас не присутствует в мире — целей-предметов точно нет → пропускаем полный скан. Когда
-    //  цель есть (прокси заспавнен) — отрабатывает оригинал как обычно. Скан персонажей (NearbyCharacters)
-    //  не трогаем (он по Character.CharacterList, обычно мал).
+    //  Solution (behavior-identical): keep an index of identifiers/tags present in the world. If an
+    //  effect targets ONLY NearbyItems, has targetidentifiers, no "item" wildcard, and NONE of those
+    //  ids are currently present in the world — there are definitely no item targets, so we skip the
+    //  full scan. When a target exists (proxy spawned) the original runs as usual. The character scan
+    //  (NearbyCharacters) is left alone (it iterates Character.CharacterList, usually small).
     //
-    //  Индекс:
-    //   _staticCounts — refcount prefab-identifier + prefab-тегов присутствующих предметов (статично,
-    //                   ведётся на создании/удалении предмета: ctor с ItemList.Add / Item.Remove);
-    //   _dynamicEver  — множество КОГДА-ЛИБО добавленных динамических тегов (только растёт = консервативно;
-    //                   ведётся на AddTag/ReplaceTag + сидинг инстанс-тегов при создании/загрузке).
-    //  Консервативность: если сомневаемся — НЕ пропускаем (false-negative исключён, лишний скан безвреден).
-    //  MP-safe: индекс выводится из того же мира предметов на клиенте и сервере → одинаковое решение.
-    //  По умолчанию ВКЛ; клиентское меню умеет переключать на лету (SetEnabled — мгновенно, без состояния).
+    //  Index:
+    //   _staticCounts — refcount of prefab-identifier + prefab-tags of present items (static, maintained
+    //                   on item create/remove: ctor with ItemList.Add / Item.Remove);
+    //   _dynamicEver  — set of EVER-added dynamic tags (only grows = conservative; maintained on
+    //                   AddTag/ReplaceTag + seeding instance tags on create/load).
+    //  Conservative: when in doubt we DON'T skip (false-negatives impossible; an extra scan is harmless).
+    //  MP-safe: the index is derived from the same item world on client and server -> identical decision.
+    //  ON by default; the client menu can toggle it live (SetEnabled — instant, no state to restore).
+    //
+    //  RUS: ФИКС 2: пропускать пустые NearbyItems-сканы (поиск предметов рядом).
+    //  RUS: Проблема (профайлер: PDA-mech-anim Comp:CustomInterface ~419µs/кадр; та же семья — AK-74):
+    //  RUS: StatusEffect с target="NearbyItems" зовёт StatusEffect.AddNearbyTargets, который в общем
+    //  RUS: случае (targetidentifiers НЕ powered/junctionbox/relaycomponent) ПЕРЕБИРАЕТ ВЕСЬ Item.ItemList
+    //  RUS: (десятки тысяч предметов) — O(N) скан мира. У континуальных TickBox'ов (PDA: Fabricator/
+    //  RUS: Deconstruct/Recipes) cleanup-эффект NearbyItems на спавн-прокси гоняет этот скан раз в секунду,
+    //  RUS: даже когда прокси НЕТ. Усредняется профайлером в сотни µs/кадр и РАСТЁТ с числом предметов.
+    //  RUS: Решение (поведение идентично): ведём индекс присутствующих в мире identifier/тегов. Если у
+    //  RUS: эффекта таргет ТОЛЬКО NearbyItems, заданы targetidentifiers, нет wildcard "item", и НИ один
+    //  RUS: из id сейчас не присутствует в мире — целей точно нет, пропускаем полный скан. Когда цель есть
+    //  RUS: (прокси заспавнен) — отрабатывает оригинал. Скан персонажей (NearbyCharacters) не трогаем.
+    //  RUS: Индекс: _staticCounts — refcount prefab-identifier + prefab-тегов присутствующих предметов
+    //  RUS: (на создании/удалении); _dynamicEver — множество КОГДА-ЛИБО добавленных динам. тегов (растёт).
+    //  RUS: Консервативно: если сомневаемся — НЕ пропускаем. MP-safe. По умолчанию ВКЛ; меню умеет на лету.
     // ==========================================================================================
     public sealed class NearbyTargetsOptPlugin : IAssemblyPlugin
     {
@@ -56,7 +72,8 @@ namespace NGNearbyOpt
                 }
                 _h.Patch(addNearby, prefix: new HarmonyMethod(typeof(NearbyTargetsPatch).GetMethod(nameof(NearbyTargetsPatch.Prefix), sp)));
 
-                // Учёт создания предмета — постфикс на конструктор с ItemList.Add (Item.cs:1182; ctor 1167 делегирует в него).
+                // Item-creation accounting — postfix on the constructor with ItemList.Add (Item.cs:1182; ctor 1167 delegates to it).
+                // RUS: Учёт создания предмета — постфикс на конструктор с ItemList.Add (Item.cs:1182; ctor 1167 делегирует в него).
                 ConstructorInfo ctor = AccessTools.Constructor(typeof(Item),
                     new[] { typeof(Rectangle), typeof(ItemPrefab), typeof(Submarine), typeof(bool), typeof(ushort) });
                 if (ctor != null)
@@ -82,7 +99,7 @@ namespace NGNearbyOpt
                     _h.Patch(replaceTag, postfix: new HarmonyMethod(typeof(NearbyTargetsIndex).GetMethod(nameof(NearbyTargetsIndex.TagReplaced), sp)));
                 }
 
-                NearbyTargetsIndex.PopulateExisting(); // существующие предметы (важно для reloadcs)
+                NearbyTargetsIndex.PopulateExisting(); // existing items (important for reloadcs)   // RUS: существующие предметы (важно для reloadcs)
                 DebugConsole.NewMessage(NetEventLogger.Loc.Tag + NetEventLogger.Loc.T("Оптимизация поиска предметов рядом активна: пустые NearbyItems-сканы пропускаются.", "Nearby-item search optimization active: empty NearbyItems scans are skipped."), Color.LightGreen);
             }
             catch (Exception ex)
@@ -101,8 +118,10 @@ namespace NGNearbyOpt
             NearbyTargetsIndex.Clear();
         }
 
-        // Переключение на лету (зовётся из клиентского меню). Мгновенно: префикс сразу уважает флаг,
-        // индекс ведётся всегда (без состояния для восстановления).
+        // Live toggle (called from the client menu). Instant: the prefix respects the flag immediately,
+        // the index is always maintained (no state to restore).
+        // RUS: Переключение на лету (зовётся из клиентского меню). Мгновенно: префикс сразу уважает флаг,
+        // RUS: индекс ведётся всегда (без состояния для восстановления).
         public static void SetEnabled(bool on) { Enabled = on; }
     }
 
@@ -114,10 +133,11 @@ namespace NGNearbyOpt
         private static FieldInfo _tagsField;
         private static bool _failed;
 
-        // true -> хоть один из id может присутствовать в мире (нельзя пропускать скан).
+        // true -> at least one of the ids may be present in the world (must NOT skip the scan).
+        // RUS: true -> хоть один из id может присутствовать в мире (нельзя пропускать скан).
         public static bool MaybePresent(ImmutableHashSet<Identifier> ids)
         {
-            if (_failed) { return true; } // индекс сломан -> консервативно: всегда полный скан (поведение оригинала)
+            if (_failed) { return true; } // index broken -> conservative: always full scan (original behavior)   // RUS: индекс сломан -> консервативно: всегда полный скан
             foreach (Identifier id in ids)
             {
                 if (_staticCounts.ContainsKey(id) || _dynamicEver.Contains(id)) { return true; }
@@ -142,7 +162,8 @@ namespace NGNearbyOpt
             }
         }
 
-        // Засеять динамические (инстанс-специфичные) теги предмета в _dynamicEver (через приватное поле tags).
+        // Seed the item's dynamic (instance-specific) tags into _dynamicEver (via the private 'tags' field).
+        // RUS: Засеять динамические (инстанс-специфичные) теги предмета в _dynamicEver (через приватное поле tags).
         private static void SeedInstanceTags(Item item)
         {
             try
@@ -162,7 +183,7 @@ namespace NGNearbyOpt
             try
             {
                 if (_registered.Add(__instance)) { RegisterStatic(__instance, +1); }
-                SeedInstanceTags(__instance); // начальные инстанс-теги (из саб-файла и т.п.)
+                SeedInstanceTags(__instance); // initial instance tags (from the sub file, etc.)   // RUS: начальные инстанс-теги (из саб-файла и т.п.)
             }
             catch { _failed = true; }
         }
@@ -208,24 +229,26 @@ namespace NGNearbyOpt
     {
         private static readonly Identifier ItemWildcard = "item".ToIdentifier();
 
-        // true -> выполнить оригинал; false -> пропустить (целей-предметов в мире точно нет).
+        // true -> run the original; false -> skip (there are definitely no item targets in the world).
+        // RUS: true -> выполнить оригинал; false -> пропустить (целей-предметов в мире точно нет).
         public static bool Prefix(StatusEffect __instance, List<ISerializableEntity> targets)
         {
             if (!NearbyTargetsOptPlugin.Enabled) { return true; }
             try
             {
                 if (!__instance.HasTargetType(StatusEffect.TargetType.NearbyItems)) { return true; }
-                // если есть ещё и скан персонажей — не вмешиваемся (его не оптимизируем).
+                // if it ALSO scans characters — don't interfere (we don't optimize that).
+                // RUS: если есть ещё и скан персонажей — не вмешиваемся (его не оптимизируем).
                 if (__instance.HasTargetType(StatusEffect.TargetType.NearbyCharacters)) { return true; }
 
                 ImmutableHashSet<Identifier> ids = __instance.TargetIdentifiers;
-                if (ids == null || ids.Count == 0) { return true; }    // null = матчит любой предмет
-                if (ids.Contains(ItemWildcard)) { return true; }       // "item" = матчит любой предмет
-                if (NearbyTargetsIndex.MaybePresent(ids)) { return true; } // подходящая цель может быть в мире
+                if (ids == null || ids.Count == 0) { return true; }    // null = matches any item   // RUS: матчит любой предмет
+                if (ids.Contains(ItemWildcard)) { return true; }       // "item" = matches any item   // RUS: матчит любой предмет
+                if (NearbyTargetsIndex.MaybePresent(ids)) { return true; } // a matching target may be in the world   // RUS: подходящая цель может быть в мире
 
-                return false; // ни одного подходящего предмета в мире -> полный скан Item.ItemList не нужен
+                return false; // no matching item in the world -> the full Item.ItemList scan isn't needed   // RUS: подходящего предмета нет -> полный скан не нужен
             }
-            catch { return true; } // fail-safe: при любой ошибке отдаём управление оригиналу
+            catch { return true; } // fail-safe: on any error, defer to the original   // RUS: при любой ошибке отдаём управление оригиналу
         }
     }
 }
