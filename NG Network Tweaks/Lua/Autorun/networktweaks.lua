@@ -72,11 +72,11 @@ local function applyTweaks()
 
     -- Intervals in seconds = (number of ticks) / tickrate:
     -- RUS: Интервалы в секундах = (сколько тиков) / тикрейт:
-    forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 80 / tickrate)                 -- once per 80 ticks   -- RUS: раз в 80 тиков
-    forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 40 / tickrate)  -- once per 40 ticks   -- RUS: раз в 40 тиков
-    forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 100 / tickrate)               -- once per 100 ticks  -- RUS: раз в 100 тиков
-    forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 20 / tickrate)                      -- once per 20 ticks   -- RUS: раз в 20 тика
-    forceSet(netConfigDesc, NetConfig, "ItemConditionUpdateInterval", 5 / tickrate)              -- once per 5 ticks    -- RUS: раз в 5 тиков
+    forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 40 / tickrate)                 -- once per 40 ticks   -- RUS: раз в 40 тиков
+    forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 20 / tickrate)  -- once per 20 ticks   -- RUS: раз в 20 тиков
+    forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 80 / tickrate)                -- once per 80 ticks   -- RUS: раз в 80 тиков
+    forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 10 / tickrate)                      -- once per 10 ticks   -- RUS: раз в 10 тиков
+    forceSet(netConfigDesc, NetConfig, "ItemConditionUpdateInterval", 2 / tickrate)              -- once per 2 ticks    -- RUS: раз в 2 тика
 
     -- Event packet limit: up to 800/sec -> 800/tickrate, rounded, clamped to [5, 60]:
     -- RUS: Лимит пакетов событий: до 800/сек -> 800/тикрейт, округлить до целого, зажать в [5, 60]:
