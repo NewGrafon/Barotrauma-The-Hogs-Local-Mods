@@ -134,7 +134,16 @@ local function scheduleInjectPoll()
     Timer.Wait(function()
         local ok = pcall(function()
             buildTargetTable()
-            Helper.SpawnWiresForPreexistingLinks()
+            -- Wire ENTITY creation must be server-authoritative. Never create entities on a
+            -- multiplayer CLIENT — local new Item() takes an ID from the client's pool and desyncs
+            -- it from the server (causes "ID is taken" spawn errors). Clients receive the resulting
+            -- linkedTo via the net sync below, so they don't need to spawn the wire themselves.
+            -- RUS: Создание сущности-провода — только на сервере. На MP-клиенте new Item() берёт ID из
+            -- RUS: локального пула и рассинхронит с сервером (ошибки "ID занят"). Клиент получит связь
+            -- RUS: по сети (ниже), сам провод ему создавать не нужно.
+            if not (Game ~= nil and Game.IsMultiplayer and not SERVER) then
+                Helper.SpawnWiresForPreexistingLinks()
+            end
         end)
         if not ok then injectPollErrors = injectPollErrors + 1 end
         scheduleInjectPoll()

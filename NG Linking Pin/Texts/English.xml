@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
   <connection.inventory_link>Link Items</connection.inventory_link>
+  <connection.share_containers>Share Containers</connection.share_containers>
 </infotexts>

@@ -39,6 +39,12 @@ namespace NGLinkingPin
     public sealed class LinkingPinHelper : IAssemblyPlugin
     {
         public const string PIN = "inventory_link";
+        // Second pin, fabricators/deconstructors only: wiring two of these shares one machine's
+        // inventory_link containers with the other, so several fabricators can craft from one pool
+        // of containers via a single wire each (no side-by-side UI — pure ingredient sharing).
+        // RUS: Второй пин (только фабрикаторы/деструкторы): соединение двух таких пинов даёт одному
+        // RUS: фабрикатору доступ к контейнерам другого — общий пул для крафта одним проводом.
+        public const string SHARE_PIN = "share_containers";
         private const int MAX_WIRES = 200;
         private const string WIRE_PREFAB = "wire";
         private const string Tag = "[NG] [Linking Pin] ";
@@ -144,6 +150,26 @@ namespace NGLinkingPin
         {
             var ids = GetWiredPartnerIds(item);
             return ids.Count == 0 ? "" : string.Join(",", ids);
+        }
+
+        // Machines wired to this item through the share_containers pin (read live; no linkedTo).
+        // RUS: Машины, соединённые с этим предметом через пин share_containers (читается вживую).
+        public static List<Item> GetSharePartners(Item item)
+        {
+            var result = new List<Item>();
+            var conn = item.GetComponent<ConnectionPanel>()?.Connections.FirstOrDefault(c => c.Name == SHARE_PIN);
+            if (conn == null) return result;
+
+            foreach (var wire in conn.Wires)
+            {
+                if (wire == null) continue;
+                var other = wire.OtherConnection(conn);
+                if (other != null && other.Name == SHARE_PIN && other.Item != null && other.Item != item)
+                {
+                    if (!result.Contains(other.Item)) { result.Add(other.Item); }
+                }
+            }
+            return result;
         }
 
         public static bool HasLinkWire(Item itemA, Item itemB)
@@ -264,6 +290,29 @@ namespace NGLinkingPin
         private static bool NameIs(XElement e, string name)
             => e.Name.LocalName.Equals(name, StringComparison.OrdinalIgnoreCase);
 
+        // Mirrors ConnectionPanel.OnItemLoaded: the engine refuses to wire (and logs an error for)
+        // an item that has a Dynamic physics body without an attachable Holdable. That's exactly the
+        // held/worn items (weapons, armor, masks, magazines, ID cards) which merely happen to own an
+        // <ItemContainer>. Installed furniture (Dynamic body + Holdable attachable="true") and
+        // bodyless/static machines (fabricators) pass. Prevents panel spam on non-furniture.
+        // RUS: Повторяет ConnectionPanel.OnItemLoaded: движок не даёт провязывать предмет с Dynamic-
+        // RUS: телом без Holdable attachable — это носимое (оружие/броня/маски/магазины/удостоверения),
+        // RUS: у которого просто есть <ItemContainer>. Мебель (Dynamic + Holdable attachable) и
+        // RUS: бесстелесные/статичные машины (фабрикаторы) проходят.
+        private static bool IsEngineWirable(XElement root)
+        {
+            var body = root.Elements().FirstOrDefault(e => NameIs(e, "Body"));
+            if (body == null) return true;                                // no body — always wirable
+
+            var bt = body.Attributes()
+                .FirstOrDefault(a => a.Name.LocalName.Equals("bodytype", StringComparison.OrdinalIgnoreCase))?.Value;
+            bool dynamicBody = string.IsNullOrEmpty(bt) || bt.Equals("Dynamic", StringComparison.OrdinalIgnoreCase);
+            if (!dynamicBody) return true;                                // static/kinematic — wirable
+
+            var holdable = root.Elements().FirstOrDefault(e => NameIs(e, "Holdable"));
+            return holdable != null && HasAttr(holdable, "attachable", "true");
+        }
+
         private static bool HasAttr(XElement e, string name, string value = null)
             => e.Attributes().Any(a => a.Name.LocalName.Equals(name, StringComparison.OrdinalIgnoreCase)
                 && (value == null || a.Value.Equals(value, StringComparison.OrdinalIgnoreCase)));
@@ -286,6 +335,7 @@ namespace NGLinkingPin
                     var containers = root.Elements().Where(e => NameIs(e, "ItemContainer")).ToList();
                     if (containers.Count == 0) continue;                  // not a storage container
                     if (prefab.Tags.Contains(MobileTag)) continue;        // carried crate/backpack
+                    if (!IsEngineWirable(root)) continue;                 // held/worn item — engine can't wire it
 
                     // #2: access-gated containers (idcard <RequiredItem> inside the container).
                     bool accessRequired = containers.Any(c => c.Elements().Any(ch => NameIs(ch, "RequiredItem")));
@@ -299,6 +349,13 @@ namespace NGLinkingPin
                     PreparePanel(root);
                     SetLinkable(prefab, true);
                     AddFabricatorLinks(prefab);   // #3: let fabricators show this container side-by-side
+
+                    // Fabricators/deconstructors get the extra share_containers pin.
+                    // RUS: Фабрикаторы/деструкторы получают дополнительный пин share_containers.
+                    if (root.Elements().Any(e => NameIs(e, "Fabricator") || NameIs(e, "Deconstructor")))
+                    {
+                        AddPanelInput(root, SHARE_PIN);
+                    }
                     wirable++;
                     if (LastMarked.Count < 400) { LastMarked.Add(prefab.Identifier.Value); }
                 }
@@ -352,9 +409,19 @@ namespace NGLinkingPin
                     new XAttribute("type", "Equipped")));
             }
 
+            AddPanelInput(root, PIN);
+        }
+
+        // Adds a named input to the item's ConnectionPanel if it isn't already present.
+        // RUS: Добавляет именованный input в ConnectionPanel предмета, если его ещё нет.
+        private static void AddPanelInput(XElement root, string pin)
+        {
+            var panel = root.Elements().FirstOrDefault(e => NameIs(e, "ConnectionPanel"));
+            if (panel == null) return;
+            if (panel.Elements().Any(e => NameIs(e, "input") && HasAttr(e, "name", pin))) return;
             panel.Add(new XElement("input",
-                new XAttribute("name", PIN),
-                new XAttribute("displayname", "connection." + PIN),
+                new XAttribute("name", pin),
+                new XAttribute("displayname", "connection." + pin),
                 new XAttribute("maxwires", MAX_WIRES)));
         }
     }
