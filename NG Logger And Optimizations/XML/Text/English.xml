@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- NG Logger And Optimizations — static menu UI strings. Dynamic diagnostics/reports stay in code (Loc.T ru/en). -->
+  <ng.fix1.name>Container optimization</ng.fix1.name>
+  <ng.fix1.short>Container opt.</ng.fix1.short>
+  <ng.fix1.tip>Skip per-frame processing of already-spent insert-effects on items inside containers (per-round-reload guns etc.). Turn it off to compare the load.</ng.fix1.tip>
+
+  <ng.fix2.name>Nearby-item search optimization</ng.fix2.name>
+  <ng.fix2.short>Nearby search opt.</ng.fix2.short>
+  <ng.fix2.tip>Skip scanning the whole world for nearby items when no matching item exists (PDA, various guns). Turn it off to compare the load.</ng.fix2.tip>
+
+  <ng.fix3.name>Auto-tool throttling</ng.fix3.name>
+  <ng.fix3.short>Auto-tool throttle</ng.fix3.short>
+  <ng.fix3.tip>EXPERIMENTAL. Run auto-triggered RepairTool tools (sprinklers etc.) less often (≈half the tickrate), accumulating time — extinguish/water power is preserved, but raycasts/particles run less = lower load. Turn off if anything looks off.</ng.fix3.tip>
+
+  <ng.experimental>exp.</ng.experimental>
+  <ng.col.client>Client</ng.col.client>
+  <ng.col.server>Server</ng.col.server>
+
+  <ng.tip.client>Enable/disable the fix on YOUR client (your FPS). Affects only you.</ng.tip.client>
+  <ng.tip.serverhost>Enable/disable the fix on the SERVER (server CPU). Only the host/admin can change it — others see the state only.</ng.tip.serverhost>
+  <ng.tip.servermponly>The server toggle is available in multiplayer only.</ng.tip.servermponly>
+  <ng.tip.serverbench>Run a benchmark ON THE SERVER (host/admin only): measures the server update rate and the top items/mods loading the server CPU. The report appears in this window.</ng.tip.serverbench>
+
+  <ng.btn.serversnap>Load snapshot</ng.btn.serversnap>
+  <ng.tip.serversnap>Request an INSTANT server-load snapshot (update rate, ms/tick, item/body/character counts) — no 60s run. Host/admin only.</ng.tip.serversnap>
+  <ng.tip.duration>Benchmark duration (client and server). Click to cycle: 15s / 30s / 1min / 5min.</ng.tip.duration>
+  <ng.tip.info>Hover for a detailed description of this fix.</ng.tip.info>
+</infotexts>

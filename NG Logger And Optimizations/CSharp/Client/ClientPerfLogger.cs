@@ -718,13 +718,49 @@ namespace NetEventLogger
         public enum Phase { Idle, Measuring, Done }
         public static Phase State { get; private set; } = Phase.Idle;
         public static string StatusText { get; private set; }
-        public static string ResultText { get; private set; } = "";                  // plain text for copying   // RUS: plain-text для копирования
-        public static List<(string Text, Color Color)> ResultLines { get; private set; } = new List<(string Text, Color Color)>(); // colored lines for the window   // RUS: цветные строки для окна
-        public static bool ResultIsNew;   // GUI flag: a fresh result appeared — time to redraw   // RUS: флаг для GUI: появился свежий результат — пора перерисовать
+        // History of this CLIENT's benchmark results (the menu navigates it with prev/next).
+        // RUS: История результатов бенчмарка ЭТОГО клиента (меню листает её кнопками назад/вперёд).
+        public static readonly BenchHistory History = new BenchHistory();
 
-        static Benchmark() { StatusText = Loc.T("Готов. Нажми «Бенчмарк 60с».", "Ready. Click «Benchmark 60s»."); }
+        // Update ONLY the status line (does not touch the result history). Used for live progress updates.
+        // RUS: Обновить ТОЛЬКО строку статуса (не трогая историю результатов). Для живых апдейтов прогресса.
+        public static void SetStatus(string statusText)
+        {
+            if (statusText != null) { StatusText = statusText; }
+        }
 
-        private const double DurationSec = 60.0;
+        // Local-time stamp for a benchmark run (used for the CLIENT benchmark; the server sends its own).
+        // RUS: Метка локального времени прогона (для КЛИЕНТСКОГО бенчмарка; сервер шлёт свою).
+        public static string NowStamp() { return System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"); }
+
+        // Add a finished result (prefixed with a "Date:" line) to the given history.
+        // RUS: Добавить готовый результат (с добавленной строкой «Дата:») в указанную историю.
+        public static void AddToHistory(BenchHistory history, string stamp, List<(string Text, Color Color)> lines)
+        {
+            try
+            {
+                if (history == null) { return; }
+                var withDate = new List<(string Text, Color Color)>();
+                withDate.Add((Loc.Ru ? $"Дата: {stamp}" : $"Date: {stamp}", Color.Gray));
+                if (lines != null) { withDate.AddRange(lines); }
+                history.Add(stamp, withDate);
+            }
+            catch { }
+        }
+
+        static Benchmark() { StatusText = Loc.T("Готов. Нажми «Бенчмарк».", "Ready. Click «Benchmark»."); }
+
+        // CLIENT benchmark duration (the server benchmark has its OWN duration in ClientOptNet). Presets are shared.
+        // RUS: Длительность КЛИЕНТСКОГО бенчмарка (у серверного СВОЯ в ClientOptNet). Пресеты общие.
+        public static readonly double[] DurationPresets = { 15.0, 30.0, 60.0, 300.0 };
+        public static double DurationSec = 30.0;
+        public static double NextPreset(double current)
+        {
+            int idx = 0;
+            for (int i = 0; i < DurationPresets.Length; i++) { if (System.Math.Abs(DurationPresets[i] - current) < 0.5) { idx = i; break; } }
+            return DurationPresets[(idx + 1) % DurationPresets.Length];
+        }
+        public static void CycleDuration() { DurationSec = NextPreset(DurationSec); }
         private static double _left;
         // times of EVERY frame during the measurement -> exact average FPS and 1% Low (mean of the worst 1% of frames)
         // RUS: времена КАЖДОГО кадра за замер -> точные средний FPS и 1% Low (среднее худшего 1% кадров)
@@ -747,8 +783,8 @@ namespace NetEventLogger
                 _left = DurationSec;
                 _frameTimes.Clear();
                 State = Phase.Measuring;
-                StatusText = Loc.T("Замер… 60с (стой возле нагрузки, не закрывай игру)", "Measuring… 60s (stay near the load, keep the game running)");
-                ClientPerf.Log(Loc.T("Бенчмарк начат: 60с замера Item.Update.", "Benchmark started: 60s of Item.Update profiling."), Color.Cyan);
+                StatusText = Loc.T("Замер… (стой возле нагрузки, не закрывай игру)", "Measuring… (stay near the load, keep the game running)");
+                ClientPerf.Log(Loc.T("Бенчмарк начат: замер Item.Update.", "Benchmark started: Item.Update profiling."), Color.Cyan);
             }
             catch (Exception ex) { ClientPerf.Log("Benchmark start failed: " + ex.Message, Color.Red); State = Phase.Idle; }
         }
@@ -797,13 +833,15 @@ namespace NetEventLogger
                 }
                 bool fix1 = NGContainerOpt.ContainedEffectsOptPlugin.Enabled;
                 bool fix2 = NGNearbyOpt.NearbyTargetsOptPlugin.Enabled;
+                bool fix3 = NGRepairToolOpt.RepairToolThrottleOptPlugin.Enabled;
 
                 var lines = new List<(string Text, Color Color)>
                 {
-                    (Loc.T("============ NG БЕНЧМАРК (60 секунд) ============", "============ NG BENCHMARK (60 seconds) ============"), Color.Cyan),
+                    (Loc.T("============ NG БЕНЧМАРК ============", "============ NG BENCHMARK ============"), Color.Cyan),
                     (Loc.Ru ? $"Средний FPS: {avgFps:F1}    |    1% Low: {lowFps:F0}" : $"Average FPS: {avgFps:F1}    |    1% Low: {lowFps:F0}", FpsColor(avgFps)),
                     ($"{Loc.OptName}: {(fix1 ? Loc.On : Loc.Off)}", fix1 ? Color.LightGreen : Color.Orange),
                     ($"{Loc.Opt2Name}: {(fix2 ? Loc.On : Loc.Off)}", fix2 ? Color.LightGreen : Color.Orange),
+                    ($"{Loc.Opt3Name} [{Loc.Experimental}]: {(fix3 ? Loc.On : Loc.Off)}", fix3 ? Color.LightGreen : Color.Gray),
                     ("", Color.White)
                 };
 
@@ -815,9 +853,7 @@ namespace NetEventLogger
                 }
 
                 ItemProfiler.ResetStats();   // reset
-                ResultLines = lines;
-                ResultText  = string.Join("\n", lines.Select(l => l.Text));
-                ResultIsNew = true;
+                AddToHistory(History, NowStamp(), lines); // store this run in the client history   // RUS: сохранить прогон в клиентскую историю
                 State = Phase.Done;
                 StatusText = Loc.Ru ? $"Готово! Средний FPS {avgFps:F1}. Жми «Копировать»." : $"Done! Average FPS {avgFps:F1}. Click «Copy».";
                 ClientPerf.Log(Loc.T("Бенчмарк завершён — результат в окне.", "Benchmark finished — see the window."), Color.LightGreen);

@@ -140,6 +140,7 @@ namespace NetEventLogger
     {
         private const double INTERVAL    = 10.0;   // how often to print status, seconds   // RUS: как часто писать статус, сек
         private const int    DANGER_ZONE = 30000;  // span where UInt16 overflow is near    // RUS: span, при котором близко переполнение UInt16
+        private const int    SYNC_NOTE_MIN_QUEUE = 1000; // queue size above which we explain round-start accumulation   // RUS: размер очереди, выше которого поясняем накопление на старте раунда
 
         private static DateTime _lastLog = DateTime.MinValue;
         private static int      _prevID  = -1;
@@ -194,6 +195,34 @@ namespace NetEventLogger
             return d;
         }
 
+        // Reads the round-start sync window. Returns false if unavailable (no active round / old API).
+        // While RoundDuration <= RoundStartSyncDuration the engine SKIPS pruning acked events from the queue
+        // (ServerEntityEventManager.CreateEvent gates events.RemoveAll on RoundDuration > RoundStartSyncDuration),
+        // so the queue accumulates every event since round start and only clears once this window ends.
+        // RoundDuration IS the engine-maintained round timer (resets to 0 each round), so reading it mirrors
+        // the engine's own decision exactly — no separate timer needed, no drift.
+        // RUS: Читает окно синхронизации старта раунда. false, если недоступно (нет раунда / старый API).
+        // RUS: Пока RoundDuration <= RoundStartSyncDuration движок НЕ удаляет подтверждённые события из очереди
+        // RUS: (events.RemoveAll в CreateEvent включается только при RoundDuration > RoundStartSyncDuration),
+        // RUS: поэтому очередь копит все события с начала раунда и очищается лишь после окончания этого окна.
+        // RUS: RoundDuration — это таймер раунда самого движка (сбрасывается в 0 каждый раунд), читая его, мы
+        // RUS: повторяем решение движка точь-в-точь — отдельный таймер не нужен, дрейфа нет.
+        private static bool TryGetSyncWindow(out float roundDuration, out float syncDuration)
+        {
+            roundDuration = 0f; syncDuration = 0f;
+            try
+            {
+                var server = GameMain.Server;
+                if (server == null || server.ServerSettings == null) { return false; }
+                syncDuration = server.ServerSettings.RoundStartSyncDuration;
+                var gs = GameMain.GameSession;
+                if (gs == null) { return false; }   // no active round   // RUS: раунд не идёт
+                roundDuration = gs.RoundDuration;
+                return true;
+            }
+            catch { return false; }
+        }
+
         private static string SourceLabel(object entity)
         {
             try
@@ -236,6 +265,12 @@ namespace NetEventLogger
                 double rate = 0;
                 if (_prevID >= 0 && elapsed > 0) { rate = Circular(currentID, (ushort)_prevID) / elapsed; }
                 _prevID = currentID;
+
+                // round-start sync window: while it's active the engine doesn't prune acked events -> queue grows
+                // RUS: окно синхронизации старта раунда: пока оно активно, движок не чистит подтверждённые события -> очередь растёт
+                bool   syncReadable = TryGetSyncWindow(out float roundDuration, out float syncDuration);
+                bool   inSyncWindow = syncReadable && roundDuration <= syncDuration;
+                double syncRemaining = inSyncWindow ? Math.Max(0.0, syncDuration - roundDuration) : 0.0;
 
                 NetEventLoggerPlugin.Log(
                     Loc.Ru
@@ -286,7 +321,18 @@ namespace NetEventLogger
 
                 // --- auto probable-cause line ---
                 // RUS: --- авто-вывод вероятной причины ---
-                if (worstBehind > 10000)
+                if (inSyncWindow && count >= SYNC_NOTE_MIN_QUEUE)
+                {
+                    // During the round-start sync window the queue size is explained by the disabled remover,
+                    // not by a slow client or a spamming mod -> this note takes precedence over those conclusions.
+                    // RUS: Во время окна синхронизации размер очереди объясняется выключенным удалятором,
+                    // RUS: а не медленным клиентом или спамящим модом -> эта приписка важнее тех выводов.
+                    NetEventLoggerPlugin.Log(Loc.Ru
+                        ? $"ВЕРОЯТНО: большая очередь ({count}, span {span}) — это старт раунда: удалятор пройденных событий ещё НЕ запущен (включается, когда время раунда > RoundStartSyncDuration={syncDuration:F0}с; осталось ~{syncRemaining:F0}с). Это ожидаемо — после окна очередь резко очистится."
+                        : $"LIKELY: large queue ({count}, span {span}) — it's round start: the passed-event remover hasn't started yet (it activates once round time > RoundStartSyncDuration={syncDuration:F0}s; ~{syncRemaining:F0}s left). Expected — the queue will drop sharply after the window.",
+                        Color.Cyan);
+                }
+                else if (worstBehind > 10000)
                 {
                     NetEventLoggerPlugin.Log(Loc.Ru
                         ? $"ВЕРОЯТНО: клиент '{worstName}' (отстаёт на {worstBehind}) держит очередь -> откаты у всех. Проверь его пинг/соединение/ПК."
@@ -305,9 +351,22 @@ namespace NetEventLogger
                 if (span > DANGER_ZONE && !_warnedDanger)
                 {
                     _warnedDanger = true;
-                    NetEventLoggerPlugin.Log(Loc.Ru
-                        ? $"!!! ОПАСНО: span={span} близко к 32768 — скоро массовые кики/откаты (переполнение UInt16)."
-                        : $"!!! DANGER: span={span} is near 32768 — mass kicks/rollbacks soon (UInt16 overflow).", Color.Red);
+                    if (inSyncWindow)
+                    {
+                        // In the sync window a high span is expected (remover off) and kicks are disabled too,
+                        // so it's not the real overflow danger — it should drop right after the window.
+                        // RUS: В окне синхронизации высокий span ожидаем (удалятор выключен) и кики тоже отключены,
+                        // RUS: так что это не настоящая опасность переполнения — span упадёт сразу после окна.
+                        NetEventLoggerPlugin.Log(Loc.Ru
+                            ? $"ВНИМАНИЕ: span={span} большой, НО идёт окно синхронизации старта раунда (осталось ~{syncRemaining:F0}с) — кики выключены, span упадёт после окна. Тревога только если span останется высоким ПОСЛЕ окна."
+                            : $"NOTE: span={span} is large, BUT the round-start sync window is active (~{syncRemaining:F0}s left) — kicks are disabled and span will drop after the window. Worry only if span stays high AFTER the window.", Color.Orange);
+                    }
+                    else
+                    {
+                        NetEventLoggerPlugin.Log(Loc.Ru
+                            ? $"!!! ОПАСНО: span={span} близко к 32768 — скоро массовые кики/откаты (переполнение UInt16)."
+                            : $"!!! DANGER: span={span} is near 32768 — mass kicks/rollbacks soon (UInt16 overflow).", Color.Red);
+                    }
                 }
                 if (span <= DANGER_ZONE) { _warnedDanger = false; }
             }
