@@ -12,7 +12,7 @@ namespace NetEventLogger
     // ==========================================================================================
     internal static class OptFixes
     {
-        public const int Count = 3;
+        public const int Count = 4;
 
         // Net message ids (LuaCs networking). Server->client: broadcast of the 3 server-side states.
         // Client->server: a request to set one server state (fix 0..2) OR to just resend the state (RequestState).
@@ -36,6 +36,7 @@ namespace NetEventLogger
                 case 0: try { NGContainerOpt.ContainedEffectsOptPlugin.SetEnabled(on); } catch { } break;
                 case 1: try { NGNearbyOpt.NearbyTargetsOptPlugin.SetEnabled(on); } catch { } break;
                 case 2: try { NGRepairToolOpt.RepairToolThrottleOptPlugin.SetEnabled(on); } catch { } break;
+                case 3: try { NGGearThrottleOpt.GearThrottleOptPlugin.SetEnabled(on); } catch { } break;
             }
         }
 
@@ -46,6 +47,7 @@ namespace NetEventLogger
                 case 0: try { return NGContainerOpt.ContainedEffectsOptPlugin.Enabled; } catch { return false; }
                 case 1: try { return NGNearbyOpt.NearbyTargetsOptPlugin.Enabled; } catch { return false; }
                 case 2: try { return NGRepairToolOpt.RepairToolThrottleOptPlugin.Enabled; } catch { return false; }
+                case 3: try { return NGGearThrottleOpt.GearThrottleOptPlugin.Enabled; } catch { return false; }
                 default: return false;
             }
         }
@@ -59,6 +61,7 @@ namespace NetEventLogger
                 case 0: return Loc.OptShort;
                 case 1: return Loc.Opt2Short;
                 case 2: return Loc.Opt3Short;
+                case 3: return Loc.Opt4Short;
                 default: return "?";
             }
         }
@@ -72,11 +75,12 @@ namespace NetEventLogger
                 case 0: return Loc.OptTip;
                 case 1: return Loc.Opt2Tip;
                 case 2: return Loc.Opt3Tip;
+                case 3: return Loc.Opt4Tip;
                 default: return "";
             }
         }
 
-        public static bool IsExperimental(int i) => i == 2; // fix 3 still flagged experimental   // RUS: фикс 3 пока помечен экспериментальным
+        public static bool IsExperimental(int i) => i == 2 || i == 3; // fixes 3 & 4 flagged experimental   // RUS: фиксы 3 и 4 помечены экспериментальными
 
         // Parse a fix selector from a console argument: accepts 1/2/3 or fix1/fix2/fix3. Returns -1 if invalid.
         // RUS: Разобрать селектор фикса из аргумента команды: принимает 1/2/3 или fix1/fix2/fix3. -1 если неверно.
@@ -88,6 +92,7 @@ namespace NetEventLogger
             if (s == "1") { return 0; }
             if (s == "2") { return 1; }
             if (s == "3") { return 2; }
+            if (s == "4") { return 3; }
             return -1;
         }
 

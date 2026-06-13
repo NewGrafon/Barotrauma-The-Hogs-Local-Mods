@@ -20,6 +20,7 @@ namespace NetEventLogger
         public static bool Fix1 = true;  // container optimization          // RUS: оптимизация контейнеров
         public static bool Fix2 = true;  // nearby-item search optimization // RUS: оптимизация поиска предметов рядом
         public static bool Fix3 = true;  // auto-RepairTool throttling (on by default; UI still labels it "experimental") // RUS: троттлинг авто-RepairTool (по умолчанию вкл; в UI ещё помечен «эксперим.»)
+        public static bool Fix4 = true;  // tactical-gear turret throttle + dead-wearer skip (on by default; UI "experimental") // RUS: троттлинг турелей снаряжения + скип на трупах (по умолч. вкл; в UI «эксперим.»)
 
         // Apply our fixes this long AFTER Performance Enhancement becomes active (it applies mid-round,
         // when its on-screen banner appears — detected via its C# bridge stats, not a fixed delay).
@@ -50,8 +51,8 @@ namespace NetEventLogger
             ApplyToPlugins();
             try { ClientOptNet.Init(); } catch { } // client-side net (server-state sync) + `ngopt` command   // RUS: клиентская сеть (синхр. серверного состояния) + команда `ngopt`
             ClientPerf.Log(Loc.Ru
-                ? $"Конфиг фиксов загружен: контейнеры={(Fix1 ? "ВКЛ" : "ВЫКЛ")}, поиск рядом={(Fix2 ? "ВКЛ" : "ВЫКЛ")}, авто-тулы(эксп.)={(Fix3 ? "ВКЛ" : "ВЫКЛ")}."
-                : $"Fix config loaded: containers={(Fix1 ? "ON" : "OFF")}, nearby-search={(Fix2 ? "ON" : "OFF")}, auto-tools(exp.)={(Fix3 ? "ON" : "OFF")}.", Color.Gray);
+                ? $"Конфиг фиксов загружен: контейнеры={(Fix1 ? "ВКЛ" : "ВЫКЛ")}, поиск рядом={(Fix2 ? "ВКЛ" : "ВЫКЛ")}, авто-тулы(эксп.)={(Fix3 ? "ВКЛ" : "ВЫКЛ")}, снаряжение(эксп.)={(Fix4 ? "ВКЛ" : "ВЫКЛ")}."
+                : $"Fix config loaded: containers={(Fix1 ? "ON" : "OFF")}, nearby-search={(Fix2 ? "ON" : "OFF")}, auto-tools(exp.)={(Fix3 ? "ON" : "OFF")}, gear(exp.)={(Fix4 ? "ON" : "OFF")}.", Color.Gray);
         }
 
         private static string ConfigPath()
@@ -70,7 +71,7 @@ namespace NetEventLogger
         public static void Load()
         {
             _loaded = true;
-            Fix1 = true; Fix2 = true; Fix3 = true; // defaults if anything fails   // RUS: значения по умолчанию, если что-то не так
+            Fix1 = true; Fix2 = true; Fix3 = true; Fix4 = true; // defaults if anything fails   // RUS: значения по умолчанию, если что-то не так
             try
             {
                 string path = ConfigPath();
@@ -82,9 +83,10 @@ namespace NetEventLogger
                     if (s.StartsWith("fix1=", StringComparison.OrdinalIgnoreCase)) { Fix1 = ParseBool(s.Substring(5), true); }
                     else if (s.StartsWith("fix2=", StringComparison.OrdinalIgnoreCase)) { Fix2 = ParseBool(s.Substring(5), true); }
                     else if (s.StartsWith("fix3=", StringComparison.OrdinalIgnoreCase)) { Fix3 = ParseBool(s.Substring(5), true); }
+                    else if (s.StartsWith("fix4=", StringComparison.OrdinalIgnoreCase)) { Fix4 = ParseBool(s.Substring(5), true); }
                 }
             }
-            catch { Fix1 = true; Fix2 = true; Fix3 = true; }
+            catch { Fix1 = true; Fix2 = true; Fix3 = true; Fix4 = true; }
         }
 
         private static bool ParseBool(string s, bool def)
@@ -102,7 +104,7 @@ namespace NetEventLogger
                 string path = ConfigPath();
                 if (path == null) { return; }
                 Barotrauma.IO.File.WriteAllText(path,
-                    "fix1=" + (Fix1 ? "true" : "false") + "\r\nfix2=" + (Fix2 ? "true" : "false") + "\r\nfix3=" + (Fix3 ? "true" : "false") + "\r\n");
+                    "fix1=" + (Fix1 ? "true" : "false") + "\r\nfix2=" + (Fix2 ? "true" : "false") + "\r\nfix3=" + (Fix3 ? "true" : "false") + "\r\nfix4=" + (Fix4 ? "true" : "false") + "\r\n");
             }
             catch { }
         }
@@ -114,6 +116,7 @@ namespace NetEventLogger
             try { NGContainerOpt.ContainedEffectsOptPlugin.SetEnabled(Fix1); } catch { }
             try { NGNearbyOpt.NearbyTargetsOptPlugin.SetEnabled(Fix2); } catch { }
             try { NGRepairToolOpt.RepairToolThrottleOptPlugin.SetEnabled(Fix3); } catch { }
+            try { NGGearThrottleOpt.GearThrottleOptPlugin.SetEnabled(Fix4); } catch { }
         }
 
         // Round-start variant: ensure the enabled-state matches config AND re-process the loaded world
@@ -132,12 +135,13 @@ namespace NetEventLogger
         public static void SetFix1(bool on) { if (!_loaded) { Load(); } Fix1 = on; try { NGContainerOpt.ContainedEffectsOptPlugin.SetEnabled(on); } catch { } Save(); }
         public static void SetFix2(bool on) { if (!_loaded) { Load(); } Fix2 = on; try { NGNearbyOpt.NearbyTargetsOptPlugin.SetEnabled(on); } catch { } Save(); }
         public static void SetFix3(bool on) { if (!_loaded) { Load(); } Fix3 = on; try { NGRepairToolOpt.RepairToolThrottleOptPlugin.SetEnabled(on); } catch { } Save(); }
+        public static void SetFix4(bool on) { if (!_loaded) { Load(); } Fix4 = on; try { NGGearThrottleOpt.GearThrottleOptPlugin.SetEnabled(on); } catch { } Save(); }
 
         // Set a CLIENT fix by index (0..2) — applies + persists. Used by the menu and the `ngopt client` command.
         // RUS: Установить КЛИЕНТСКИЙ фикс по индексу (0..2) — применяет + сохраняет. Для меню и команды `ngopt client`.
         public static void SetFixByIndex(int i, bool on)
         {
-            switch (i) { case 0: SetFix1(on); break; case 1: SetFix2(on); break; case 2: SetFix3(on); break; }
+            switch (i) { case 0: SetFix1(on); break; case 1: SetFix2(on); break; case 2: SetFix3(on); break; case 3: SetFix4(on); break; }
         }
         public static bool GetFixByIndex(int i) => OptFixes.GetEnabled(i);
 

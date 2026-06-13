@@ -100,7 +100,7 @@ namespace NetEventLogger
 
                 // active section's content (a benchmark row + the fix-toggle rows), rebuilt on section switch
                 // RUS: содержимое активного раздела (ряд бенчмарка + ряды тумблеров фиксов), пересобирается при смене раздела
-                var contentFrame = new GUIFrame(new RectTransform(new Vector2(1f, 0.3f), col.RectTransform), style: null, color: new Color(0, 0, 0, 70));
+                var contentFrame = new GUIFrame(new RectTransform(new Vector2(1f, 0.36f), col.RectTransform), style: null, color: new Color(0, 0, 0, 70));
                 _content = new GUILayoutGroup(new RectTransform(new Vector2(0.97f, 0.94f), contentFrame.RectTransform, Anchor.Center)) { Stretch = true, RelativeSpacing = 0.03f };
                 SelectSection(_section);
 
@@ -122,7 +122,7 @@ namespace NetEventLogger
 
                 // result area (scrollable, monospaced font for aligned columns)
                 // RUS: область результата (скролл, моноширинный шрифт для ровных столбцов)
-                _resultList = new GUIListBox(new RectTransform(new Vector2(1f, 0.45f), col.RectTransform));
+                _resultList = new GUIListBox(new RectTransform(new Vector2(1f, 0.39f), col.RectTransform));
 
                 RefreshResult();
                 try { ClientOptNet.RequestServerState(); } catch { } // pull current server states for the indicators   // RUS: подтянуть текущие серверные состояния для индикаторов

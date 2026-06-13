@@ -75,6 +75,13 @@ namespace NetEventLogger
         public static string Opt3Name  => G("ng.fix3.name");
         public static string Opt3Short => G("ng.fix3.short");
         public static string Opt3Tip   => G("ng.fix3.tip");
+
+        // FIX 4 (EXPERIMENTAL) — throttle wearable tactical-gear turrets + skip dead-wearer gear updates.
+        // RUS: ФИКС 4 (ЭКСПЕРИМ.) — троттлинг турелей носимого тактического снаряжения + скип апдейта на трупах.
+        public static string Opt4Name  => G("ng.fix4.name");
+        public static string Opt4Short => G("ng.fix4.short");
+        public static string Opt4Tip   => G("ng.fix4.tip");
+
         public static string Experimental => G("ng.experimental");
 
         // Short ON/OFF tokens stay in code: they are interpolated into dynamic report/status lines, not just the menu.

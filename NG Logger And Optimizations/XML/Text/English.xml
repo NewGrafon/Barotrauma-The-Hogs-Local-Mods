@@ -13,6 +13,10 @@
   <ng.fix3.short>Auto-tool throttle</ng.fix3.short>
   <ng.fix3.tip>EXPERIMENTAL. Run auto-triggered RepairTool tools (sprinklers etc.) less often (≈half the tickrate), accumulating time — extinguish/water power is preserved, but raycasts/particles run less = lower load. Turn off if anything looks off.</ng.fix3.tip>
 
+  <ng.fix4.name>Tactical-gear update throttling</ng.fix4.name>
+  <ng.fix4.short>Gear throttle</ng.fix4.short>
+  <ng.fix4.tip>EXPERIMENTAL. Cuts the heavy per-frame cost of wearable tactical gear that has a turret HUD (AAAC ballistic helmets / NVG): throttles its cosmetic turret/HUD update to ~1/3 while worn (oxygen/armor untouched), and fully skips the turret for such gear that isn't worn by a living character — dropped loot, stored, or on corpses — which is what piles up and slows long rounds. Turn off if HUD/vision overlays look off.</ng.fix4.tip>
+
   <ng.experimental>exp.</ng.experimental>
   <ng.col.client>Client</ng.col.client>
   <ng.col.server>Server</ng.col.server>

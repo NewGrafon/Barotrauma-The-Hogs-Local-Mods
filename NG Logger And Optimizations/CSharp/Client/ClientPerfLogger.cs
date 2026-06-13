@@ -834,6 +834,7 @@ namespace NetEventLogger
                 bool fix1 = NGContainerOpt.ContainedEffectsOptPlugin.Enabled;
                 bool fix2 = NGNearbyOpt.NearbyTargetsOptPlugin.Enabled;
                 bool fix3 = NGRepairToolOpt.RepairToolThrottleOptPlugin.Enabled;
+                bool fix4 = NGGearThrottleOpt.GearThrottleOptPlugin.Enabled;
 
                 var lines = new List<(string Text, Color Color)>
                 {
@@ -842,6 +843,7 @@ namespace NetEventLogger
                     ($"{Loc.OptName}: {(fix1 ? Loc.On : Loc.Off)}", fix1 ? Color.LightGreen : Color.Orange),
                     ($"{Loc.Opt2Name}: {(fix2 ? Loc.On : Loc.Off)}", fix2 ? Color.LightGreen : Color.Orange),
                     ($"{Loc.Opt3Name} [{Loc.Experimental}]: {(fix3 ? Loc.On : Loc.Off)}", fix3 ? Color.LightGreen : Color.Gray),
+                    ($"{Loc.Opt4Name} [{Loc.Experimental}]: {(fix4 ? Loc.On : Loc.Off)}", fix4 ? Color.LightGreen : Color.Gray),
                     ("", Color.White)
                 };
 
