@@ -6,7 +6,18 @@
 -- RUS: перетащи один предмет на другой того же типа в инвентаре -> их прочности сложатся
 -- RUS: (две половинки -> одна целая). Аналог Combinable Ammo, но для материалов.
 
-print("[NG] [Combine Materials] loaded")
+-- Console tag + best-effort RU/EN by game language (English fallback if undetectable from Lua).
+-- RUS: Тег консоли + best-effort RU/EN по языку игры (фоллбэк на английский, если из Lua не определить).
+local TAG = "[NG] [Combine Materials] "
+local IS_RU = false
+pcall(function()
+    local gs = LuaUserData.CreateStatic("Barotrauma.GameSettings")
+    local lang = tostring(gs.CurrentConfig.Language)
+    if lang and string.find(string.lower(lang), "russ") then IS_RU = true end
+end)
+local function T(ru, en) if IS_RU then return ru else return en end end
+
+print(TAG .. T("загружен", "loaded"))
 
 -- В Lua категория приходит ЧИСЛОМ (флаги MapEntityCategory). Material = 1024.
 local MATERIAL_BIT = 1024
@@ -48,10 +59,10 @@ local function applyToAllExisting()
             makeCombinable(value)
             n = n + 1
         end
-        print("[NG] [Combine Materials] processed existing items: " .. tostring(n))
+        print(TAG .. T("обработано существующих предметов: ", "processed existing items: ") .. tostring(n))
     end)
     if not ok then
-        print("[NG] [Combine Materials] error processing existing items: " .. tostring(err))
+        print(TAG .. T("ошибка при обработке существующих предметов: ", "error processing existing items: ") .. tostring(err))
     end
 end
 
