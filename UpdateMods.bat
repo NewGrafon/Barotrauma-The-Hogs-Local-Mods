@@ -32,15 +32,23 @@ exit /b
 
 :work
 
-rem === [2/4] Install / update LuaCsForBarotrauma (Luatrauma AutoUpdater) ===
-rem Runs from the game root so the patch is applied to the game files.
-rem No game command is passed: the updater only patches here; the game
-rem is launched later by %%command%% in the Steam launch options.
-echo [2/4] Updating LuaCsForBarotrauma...
-pushd "%ROOT_DIR%"
-"%SystemRoot%\System32\curl.exe" -L -o Luatrauma.AutoUpdater.win-x64.exe https://github.com/Luatrauma/Luatrauma.AutoUpdater/releases/download/latest/Luatrauma.AutoUpdater.win-x64.exe
-if exist Luatrauma.AutoUpdater.win-x64.exe Luatrauma.AutoUpdater.win-x64.exe
-popd
+rem === [2/4] Apply LuaCsForBarotrauma from the local patch.zip (no AutoUpdater, no download) ===
+rem Extracts LocalMods\patch.zip straight into the game folder (same file-replacement logic the
+rem Luatrauma AutoUpdater used), so the LuaCs install is deterministic and does not depend on the
+rem AutoUpdater exe succeeding. patch.zip is kept in the repo and updated manually per LuaCs release.
+rem If the patch is NOT applied we PAUSE loudly so the failure is visible (C# mods won't work).
+echo [2/4] Applying LuaCs patch from patch.zip...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%MODS_DIR%ApplyLuaCsPatch.ps1"
+if errorlevel 1 (
+    echo.
+    echo  ************************************************************************
+    echo   LuaCs patch was NOT applied - C# mods will NOT work until this is fixed.
+    echo   Read the red message above. Common causes: game not fully closed,
+    echo   antivirus, or patch.zip missing / wrong game version.
+    echo  ************************************************************************
+    echo.
+    pause
+)
 
 rem === [3/4] Copy the mod list ===
 echo [3/4] Copying mod list...
