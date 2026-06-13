@@ -172,6 +172,120 @@ namespace NGLinkingPin
             return result;
         }
 
+        // Last exception from the share-containers patch (surfaced by the nglinkpin_share command).
+        public static string LastShareError = "";
+
+        // Per-machine record of the container IDs WE added to its linkedTo via the share pin, so we
+        // can remove exactly those when sharing changes. Keyed by machine ID.
+        // RUS: По каждой машине — ID контейнеров, которые МЫ добавили в её linkedTo через share-пин,
+        // RUS: чтобы потом убрать ровно их. Ключ — ID машины.
+        private static readonly Dictionary<ushort, HashSet<ushort>> _shareCache = new Dictionary<ushort, HashSet<ushort>>();
+
+        public static void ClearShareCache() => _shareCache.Clear();
+
+        // Makes containers shared via the share_containers pin actually appear in a fabricator's
+        // linkedTo (one-directional: only the machine's list, never the container's — so the base
+        // wire poll never sees a phantom link and there is no add/remove thrashing). Vanilla then
+        // DISPLAYS those containers side-by-side and uses them as ingredients. 1-hop only: a machine
+        // gets its share-partners' DIRECTLY-wired containers, not their transitively-shared ones.
+        // Runs on ALL peers (server + clients) — derived purely from already-synced wires + linkedTo,
+        // so every peer converges without extra networking. Idempotent.
+        // RUS: Делает так, чтобы контейнеры, расшаренные пином share_containers, реально попадали в
+        // RUS: linkedTo фабрикатора (одно-направленно — только в список машины, не контейнера, иначе
+        // RUS: базовый поллинг увидит «фантомную» связь и начнётся дёрганье). Дальше ваниль их
+        // RUS: ОТОБРАЖАЕТ и использует как ингредиенты. Только 1 уровень: машина получает ПРЯМО
+        // RUS: подключённые контейнеры своих партнёров, не их транзитивные. Работает на всех пирах.
+        public static void ReconcileShareLinks()
+        {
+            if (!IsInGame()) return;
+
+            foreach (var item in Item.ItemList)
+            {
+                if (item == null) continue;
+                var panel = item.GetComponent<ConnectionPanel>();
+                if (panel == null || !panel.Connections.Any(c => c.Name == SHARE_PIN)) continue;
+
+                var directPartners = new HashSet<ushort>(GetWiredPartnerIds(item));
+                var desired = new HashSet<ushort>();
+
+                foreach (var partner in GetSharePartners(item))
+                {
+                    var partnerDirect = new HashSet<ushort>(GetWiredPartnerIds(partner));
+                    foreach (var e in partner.linkedTo)
+                    {
+                        if (!(e is Item c) || c == item) continue;
+                        if (!partnerDirect.Contains(c.ID)) continue;        // only the partner's DIRECT links
+                        if (directPartners.Contains(c.ID)) continue;        // already wired to us directly
+                        if (c.GetComponent<ItemContainer>() == null) continue;
+                        if (c.GetComponent<Fabricator>() != null || c.GetComponent<Deconstructor>() != null) continue;
+                        desired.Add(c.ID);
+                    }
+                }
+
+                _shareCache.TryGetValue(item.ID, out var current);
+
+                foreach (var cid in desired)
+                {
+                    if (current != null && current.Contains(cid)) continue;
+                    if (Entity.FindEntityByID(cid) is Item c && !IsAlreadyLinked(item, c))
+                    {
+                        item.AddLinked(c);
+                        c.DisplaySideBySideWhenLinked = true; // ensure it shows in the machine's UI
+                    }
+                }
+                if (current != null)
+                {
+                    foreach (var cid in current)
+                    {
+                        if (desired.Contains(cid)) continue;
+                        if (Entity.FindEntityByID(cid) is Item c) { item.RemoveLinked(c); }
+                    }
+                }
+                _shareCache[item.ID] = desired;
+            }
+        }
+
+        // Diagnostic report: per fabricator/deconstructor — pins present, own linked containers, and
+        // share partners with their container counts. Printed by the nglinkpin_share console command.
+        // RUS: Диагностика: по каждому фабрикатору/деструктору — пины, свои связанные контейнеры и
+        // RUS: партнёры по «общим контейнерам» с числом контейнеров. Печатает команда nglinkpin_share.
+        public static string ShareDiag()
+        {
+            var sb = new System.Text.StringBuilder();
+            int machines = 0;
+            foreach (var item in Item.ItemList)
+            {
+                if (item == null) continue;
+                if (item.GetComponent<Fabricator>() == null && item.GetComponent<Deconstructor>() == null) continue;
+                machines++;
+                var panel = item.GetComponent<ConnectionPanel>();
+                bool invPin = panel?.Connections.Any(c => c.Name == PIN) ?? false;
+                bool sharePin = panel?.Connections.Any(c => c.Name == SHARE_PIN) ?? false;
+                int own = CountLinkedContainers(item);
+                var partners = GetSharePartners(item);
+                sb.Append($"[{item.ID}] {item.Prefab.Identifier} | invPin={invPin} sharePin={sharePin} | ownContainers={own} | sharePartners={partners.Count}");
+                foreach (var p in partners)
+                {
+                    sb.Append($" -> [{p.ID}]{p.Prefab.Identifier}(containers={CountLinkedContainers(p)})");
+                }
+                sb.Append("\n");
+            }
+            if (machines == 0) sb.Append("(no fabricators/deconstructors in the world)\n");
+            if (!string.IsNullOrEmpty(LastShareError)) sb.Append("LAST PATCH ERROR: " + LastShareError + "\n");
+            return sb.ToString();
+        }
+
+        private static int CountLinkedContainers(Item machine)
+        {
+            int n = 0;
+            foreach (var e in machine.linkedTo)
+            {
+                if (e is Item li && li.GetComponent<ItemContainer>() != null
+                    && li.GetComponent<Fabricator>() == null && li.GetComponent<Deconstructor>() == null) { n++; }
+            }
+            return n;
+        }
+
         public static bool HasLinkWire(Item itemA, Item itemB)
         {
             var panel = itemA.GetComponent<ConnectionPanel>();
@@ -267,8 +381,11 @@ namespace NGLinkingPin
             try { _linkableSetter?.Invoke(prefab, new object[] { value }); } catch { }
         }
 
+        // Special allowedLinks token: makes IsLinkAllowed accept ANY item (ConnectionPanel.cs:296).
+        private static readonly Identifier ItemLink = new Identifier("item");
+
         private static FieldInfo _allowedLinksField;
-        private static void AddFabricatorLinks(ItemPrefab prefab)
+        private static void AddAllowedLinks(ItemPrefab prefab, params Identifier[] ids)
         {
             if (_allowedLinksField == null)
             {
@@ -281,7 +398,7 @@ namespace NGLinkingPin
                 var current = _allowedLinksField.GetValue(prefab) as ImmutableHashSet<Identifier>
                               ?? ImmutableHashSet<Identifier>.Empty;
                 var updated = current;
-                foreach (var id in FabricatorLinks) { updated = updated.Add(id); }
+                foreach (var id in ids) { updated = updated.Add(id); }
                 if (updated != current) { _allowedLinksField.SetValue(prefab, updated); }
             }
             catch { }
@@ -348,13 +465,16 @@ namespace NGLinkingPin
 
                     PreparePanel(root);
                     SetLinkable(prefab, true);
-                    AddFabricatorLinks(prefab);   // #3: let fabricators show this container side-by-side
+                    AddAllowedLinks(prefab, FabricatorLinks);   // #3: container shows side-by-side at fabricators
 
-                    // Fabricators/deconstructors get the extra share_containers pin.
-                    // RUS: Фабрикаторы/деструкторы получают дополнительный пин share_containers.
+                    // Fabricators/deconstructors get the extra share_containers pin + "item" link
+                    // (so a fabricator will display ANY linked container, whatever its identifier).
+                    // RUS: Фабрикаторы/деструкторы получают пин share_containers + линк "item"
+                    // RUS: (чтобы фабрикатор показывал ЛЮБОЙ связанный контейнер, независимо от id).
                     if (root.Elements().Any(e => NameIs(e, "Fabricator") || NameIs(e, "Deconstructor")))
                     {
                         AddPanelInput(root, SHARE_PIN);
+                        AddAllowedLinks(prefab, ItemLink);
                     }
                     wirable++;
                     if (LastMarked.Count < 400) { LastMarked.Add(prefab.Identifier.Value); }

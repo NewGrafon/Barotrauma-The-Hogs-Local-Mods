@@ -84,7 +84,12 @@ namespace NGLinkingPin
             var available = _availableIngredientsField.GetValue(__instance) as Dictionary<Identifier, List<Item>>;
             if (available == null) return;
 
-            // (1) inventory_link fabricator<->fabricator: share OUTPUT container contents.
+            // inventory_link fabricator<->fabricator: share OUTPUT container contents.
+            // (The share_containers pin is handled separately by LinkingPinHelper.ReconcileShareLinks,
+            //  which puts the shared containers into this machine's linkedTo so vanilla displays and
+            //  uses them — no extra work needed here.)
+            // RUS: Пин share_containers обрабатывается в ReconcileShareLinks (кладёт контейнеры в
+            // RUS: linkedTo машины), здесь ничего делать не нужно.
             if (removed != null)
             {
                 foreach (var linkedItem in removed)
@@ -93,24 +98,6 @@ namespace NGLinkingPin
                     if (linkedFab?.OutputContainer == null) continue;
                     foreach (var containedItem in linkedFab.OutputContainer.Inventory.AllItems)
                         AddItemAndNested(available, containedItem);
-                }
-            }
-
-            // (2) share_containers pin: pull the INPUT container pools that wired machines own, so
-            //     several fabricators craft from one set of containers via a single wire each.
-            // RUS: Пин share_containers: тянем пулы контейнеров, подключённых к соединённым машинам —
-            // RUS: несколько фабрикаторов крафтят из одного набора контейнеров одним проводом.
-            foreach (var partner in LinkingPinHelper.GetSharePartners(__instance.Item))
-            {
-                foreach (var entity in partner.linkedTo)
-                {
-                    if (!(entity is Item linked)) continue;
-                    // Only plain storage containers (not the partner machines themselves).
-                    if (linked.GetComponent<Fabricator>() != null || linked.GetComponent<Deconstructor>() != null) continue;
-                    var container = linked.GetComponent<ItemContainer>();
-                    if (container == null) continue;
-                    foreach (var it in container.Inventory.AllItems)
-                        AddItemAndNested(available, it);
                 }
             }
         }

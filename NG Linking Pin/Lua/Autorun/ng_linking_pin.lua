@@ -124,8 +124,13 @@ local LINK_MS, INJECT_MS = 1000, 5000
 
 local function scheduleLinkPoll()
     Timer.Wait(function()
-        local ok = pcall(runLinkPoll)
+        local ok = pcall(runLinkPoll)                 -- base inventory_link links: server/SP only (guarded inside)
         if not ok then linkPollErrors = linkPollErrors + 1 end
+        -- share_containers transitive links: run on ALL peers so clients display the shared
+        -- containers too (derived from synced wires + linkedTo, so no networking needed).
+        -- RUS: транзитивные связи share_containers — на всех пирах, чтобы клиенты тоже отображали
+        -- RUS: расшаренные контейнеры (выводится из синхронизированных проводов и linkedTo).
+        pcall(function() Helper.ReconcileShareLinks() end)
         scheduleLinkPoll()
     end, LINK_MS)
 end
@@ -162,6 +167,7 @@ scheduleInjectPoll()
 Hook.Add("roundStart", "nglinkpin.reset", function()
     wireState = {}
     pcall(function()
+        Helper.ClearShareCache()
         prepare()
         buildTargetTable()
     end)
@@ -227,6 +233,16 @@ _G.nglinkpin_status = function()
         end
     end
     if not found then print("    (none)") end
+end
+
+_G.nglinkpin_share = function()
+    local ok, s = pcall(function() return Helper.ShareDiag() end)
+    if ok then
+        print("[NG] [Linking Pin] === SHARE DIAG ===")
+        for line in string.gmatch(tostring(s), "([^\n]+)") do print("  " .. line) end
+    else
+        print("[NG] [Linking Pin] share diag error: " .. tostring(s))
+    end
 end
 
 _G.nglinkpin_reapply = function()
