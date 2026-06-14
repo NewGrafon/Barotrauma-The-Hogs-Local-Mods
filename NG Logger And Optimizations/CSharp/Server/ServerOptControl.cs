@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
+using System.Reflection;
 using Barotrauma;
 using Barotrauma.Networking;
+using HarmonyLib;
 using Microsoft.Xna.Framework;
 
 namespace NetEventLogger
@@ -22,6 +24,8 @@ namespace NetEventLogger
     // ==========================================================================================
     public sealed class ServerOptControlPlugin : IAssemblyPlugin
     {
+        private static Harmony _h;
+
         public void PreInitPatching() { }
 
         public void Initialize()
@@ -34,6 +38,31 @@ namespace NetEventLogger
                 OptNet.Receive(LogChecks.MsgSetLog, ServerOptControl.OnSetLogMsg);   // client -> server: toggle a server log-check   // RUS: клиент -> сервер: переключить серверную проверку логов
                 OptNet.Receive(LogChecks.MsgLogState, OptNet.NoOp);        // assign the id so the server can SEND log states   // RUS: назначить id, чтобы сервер мог ОТПРАВЛЯТЬ состояния проверок
                 ServerOptControl.RegisterCommand();
+
+                // Re-apply enabled fixes to the world at EVERY round start. The server sets the fix flags at
+                // init (empty world) and ContainedEffectsOptPlugin.SetEnabled early-returns when already
+                // enabled, so pre-loaded containers/items would never be processed — mirrors the client's
+                // round-start ForceReapplyToWorld. Patch every GameSession.StartRound overload (idempotent).
+                // RUS: Переприменять включённые фиксы к миру на КАЖДОМ старте раунда. Сервер ставит флаги при
+                // RUS: init (мир пуст), а SetEnabled рано выходит при уже включённом флаге — иначе загруженные
+                // RUS: контейнеры/предметы не обрабатываются. Зеркалит клиентский ForceReapplyToWorld. Патчим
+                // RUS: все перегрузки GameSession.StartRound (идемпотентно).
+                try
+                {
+                    if (_h == null)
+                    {
+                        _h = new Harmony("ng.serveroptcontrol");
+                        var post = new HarmonyMethod(typeof(ServerRoundStartPatch).GetMethod(
+                            nameof(ServerRoundStartPatch.Postfix), BindingFlags.Static | BindingFlags.Public));
+                        foreach (var m in typeof(GameSession).GetMethods(BindingFlags.Instance | BindingFlags.Public)
+                                                             .Where(mi => mi.Name == "StartRound"))
+                        {
+                            try { _h.Patch(m, postfix: post); } catch { }
+                        }
+                    }
+                }
+                catch (Exception ex) { ServerOptControl.Log("round-start patch error: " + ex.Message, Color.Orange); }
+
                 ServerOptControl.Log(Loc.T("Серверное управление фиксами готово (команда: ngopt).",
                                            "Server-side fix control ready (command: ngopt)."), Color.LightGreen);
             }
@@ -45,7 +74,21 @@ namespace NetEventLogger
 
         public void OnLoadCompleted() { }
 
-        public void Dispose() { try { ServerOptControl.UnregisterCommand(); } catch { } }
+        public void Dispose()
+        {
+            try { ServerOptControl.UnregisterCommand(); } catch { }
+            try { _h?.UnpatchSelf(); } catch { }
+            _h = null;
+        }
+    }
+
+    // Postfix on GameSession.StartRound (all overloads): once the round's submarine + items are loaded,
+    // re-apply the enabled server-side fixes to the world. Server assembly only -> server-side only.
+    // RUS: Постфикс на GameSession.StartRound (все перегрузки): когда сабмарина + предметы раунда загружены —
+    // RUS: переприменить включённые серверные фиксы к миру. Только серверная сборка -> только на сервере.
+    public static class ServerRoundStartPatch
+    {
+        public static void Postfix() { try { ServerOptControl.ReapplyToWorld(); } catch { } }
     }
 
     internal static class ServerOptControl
@@ -145,6 +188,35 @@ namespace NetEventLogger
                 if (msg == null) { return; }
                 for (int i = 0; i < OptFixes.Count; i++) { msg.WriteByte((byte)OptFixes.GetLevel(i)); }
                 if (conn != null) { OptNet.SendTo(msg, conn); } else { OptNet.Send(msg); }
+            }
+            catch { }
+        }
+
+        // Re-apply the enabled fixes to the CURRENTLY-loaded world. Needed because the server sets the fix
+        // flags at init when the world is empty, and ContainedEffectsOptPlugin.SetEnabled early-returns when
+        // the flag is already its default (ON) — so pre-loaded containers (e.g. AAAC reload guns holding
+        // shells) are never trimmed until something forces it. Calls the world-processing DIRECTLY (not via
+        // SetEnabled), so it runs regardless of the current flag state. Idempotent. Mirrors the client's
+        // OptConfig.ForceReapplyToWorld. Invoked at round start and after a mid-round reloadcs.
+        // RUS: Переприменить включённые фиксы к ТЕКУЩЕ загруженному миру. Нужно потому, что сервер ставит флаги
+        // RUS: при init на пустом мире, а SetEnabled рано выходит, если флаг уже в дефолте (ВКЛ) — поэтому
+        // RUS: загруженные контейнеры (напр. перезарядные стволы AAAC с патронами) не подрезаются, пока что-то
+        // RUS: это не форсирует. Зовём обработку мира НАПРЯМУЮ (не через SetEnabled), поэтому работает при любом
+        // RUS: состоянии флага. Идемпотентно. Зеркалит клиентский ForceReapplyToWorld. На старте раунда / reloadcs.
+        public static void ReapplyToWorld()
+        {
+            try { if (OptFixes.GetEnabled(0)) { NGContainerOpt.TrimSpentEffectsPatch.TrimAllContainers(); } } catch { }
+            try { if (OptFixes.GetEnabled(1)) { NGNearbyOpt.NearbyTargetsIndex.PopulateExisting(); } } catch { }
+            // confirmation log only while a round is actually running (so the empty-world Load() call stays quiet)
+            // RUS: лог-подтверждение только когда раунд реально идёт (чтобы вызов из Load() на пустом мире молчал)
+            try
+            {
+                if (GameMain.GameSession?.IsRunning ?? false)
+                {
+                    Log(Loc.Ru
+                        ? $"Серверные фиксы переприменены к миру: контейнеры={(OptFixes.GetEnabled(0) ? "ВКЛ" : "ВЫКЛ")}, поиск рядом={(OptFixes.GetEnabled(1) ? "ВКЛ" : "ВЫКЛ")}."
+                        : $"Server fixes re-applied to the world: containers={(OptFixes.GetEnabled(0) ? "ON" : "OFF")}, nearby={(OptFixes.GetEnabled(1) ? "ON" : "OFF")}.", Color.Cyan);
+                }
             }
             catch { }
         }
@@ -286,6 +358,11 @@ namespace NetEventLogger
                 Save(); // rewrite the file so keys missing from an older-version config get added (with their defaults)   // RUS: переписать файл, чтобы ключи, которых не было в конфиге старой версии, дописались (со своими дефолтами)
             }
             catch { }
+            // covers a mid-round reloadcs (world already loaded); on a normal startup the world is empty -> no-op,
+            // and the round itself is handled by the GameSession.StartRound postfix above.
+            // RUS: покрывает reloadcs посреди раунда (мир уже загружен); на обычном старте мир пуст -> no-op,
+            // RUS: а сам раунд обрабатывается постфиксом GameSession.StartRound выше.
+            try { ReapplyToWorld(); } catch { }
         }
 
         public static void Save()
