@@ -54,7 +54,12 @@ namespace NGRepairToolOpt
         // RUS: Проверено (без аудио/визуальных регрессий) -> по умолчанию ВКЛ, как фикс1/фикс2. СЕРВЕР тоже
         // RUS: использует этот дефолт (меню там нет) -> троттлинг теперь работает и на сервере, экономя CPU на
         // RUS: покадровых рейкастах (важно для сетевого лага). В UI пока помечен «эксперим.» до проверки в реальном ко-опе.
-        public static bool Enabled = true;
+        // Throttle level: 0=off, 1=50% (run Use every 2 ticks), 2=33% (every 3), 3=25% (every 4).
+        // Default 1 (50%) = the original behaviour. Enabled mirrors level>0 for the registry/UI.
+        // RUS: Уровень троттлинга: 0=выкл, 1=50% (Use раз в 2 тика), 2=33% (раз в 3), 3=25% (раз в 4).
+        // RUS: По умолчанию 1 (50%) = прежнее поведение. Enabled = level>0 для реестра/UI.
+        public static int Level = 1;
+        public static bool Enabled => Level > 0;
 
         private static Harmony _h;
 
@@ -97,7 +102,8 @@ namespace NGRepairToolOpt
 
         // Live toggle (called from the client menu). Instant — the prefix respects the flag immediately.
         // RUS: Переключение на лету (зовётся из клиентского меню). Мгновенно — префикс сразу уважает флаг.
-        public static void SetEnabled(bool on) { Enabled = on; }
+        public static void SetEnabled(bool on) { Level = on ? 1 : 0; }
+        public static void SetLevel(int lvl) { Level = lvl < 0 ? 0 : (lvl > 3 ? 3 : lvl); }
     }
 
     public static class RepairToolThrottlePatch
@@ -124,7 +130,7 @@ namespace NGRepairToolOpt
         // RUS: тушение/вода + партиклы).
         public static bool Prefix(RepairTool __instance, ref float deltaTime, Character character, ref bool __result)
         {
-            if (!RepairToolThrottleOptPlugin.Enabled) { return true; }
+            if (RepairToolThrottleOptPlugin.Level <= 0) { return true; }
             try
             {
                 if (character != null) { return true; }   // manual use by a player -> never throttle   // RUS: ручное использование игроком -> не троттлим
@@ -159,7 +165,9 @@ namespace NGRepairToolOpt
                 if (ss != null && ss.TickRate > 0) { tr = ss.TickRate; }
             }
             catch { }
-            float interval = 2.0f / tr;
+            // period = (level+1) ticks: level1 -> 2 ticks (50%), level2 -> 3 (33%), level3 -> 4 (25%).
+            // RUS: период = (уровень+1) тиков: 1->2 тика (50%), 2->3 (33%), 3->4 (25%).
+            float interval = (RepairToolThrottleOptPlugin.Level + 1) / (float)tr;
             if (interval > MaxInterval) { interval = MaxInterval; }
             if (interval < 0f) { interval = 0f; }
             return interval;

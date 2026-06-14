@@ -36,6 +36,12 @@ namespace NetEventLogger
             typeof(ServerEntityEventManager).GetField("lastSentToAll",
                 BindingFlags.NonPublic | BindingFlags.Instance);
 
+        // Toggle for the periodic net-event-queue diagnostics printed to the SERVER console. OFF by
+        // default (enable via the "Console logs" menu section or `ngopt log`). Lives in the server process.
+        // RUS: Тумблер периодической диагностики очереди сетевых событий в консоль СЕРВЕРА. По умолчанию
+        // RUS: ВЫКЛ (вкл через раздел меню «Консольные логи» или `ngopt log`). В серверном процессе.
+        public static bool LogEnabled = false;
+
         public void PreInitPatching() { }
 
         public void Initialize()
@@ -244,6 +250,7 @@ namespace NetEventLogger
         {
             try
             {
+                if (!NetEventLoggerPlugin.LogEnabled) { return; } // periodic queue diagnostics disabled   // RUS: периодическая диагностика очереди выключена
                 var now = DateTime.UtcNow;
                 if (_lastLog != DateTime.MinValue && (now - _lastLog).TotalSeconds < INTERVAL) { return; }
                 double elapsed = _lastLog == DateTime.MinValue ? INTERVAL : (now - _lastLog).TotalSeconds;

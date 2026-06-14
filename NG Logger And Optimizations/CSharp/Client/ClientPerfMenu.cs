@@ -35,14 +35,16 @@ namespace NetEventLogger
         // RUS: Два глобальных раздела под title: Клиент и Сервер. Раздел Сервер и его селектор доступны только
         // RUS: привилегированным (хост/админ); остальные видят только раздел Клиент (без селектора). У каждого
         // RUS: раздела свой бенчмарк + свои тумблеры фиксов (клиентские или серверные).
-        private enum Section { Client, Server }
+        private enum Section { Client, Server, Logs }
         private static Section        _section = Section.Client;
         private static GUILayoutGroup _selectorRow;
-        private static GUIButton      _secClientBtn, _secServerBtn;
+        private static GUIButton      _secClientBtn, _secServerBtn, _secLogsBtn;
         private static GUILayoutGroup _content;   // active section's content (rebuilt on switch)   // RUS: содержимое активного раздела (пересобирается при переключении)
         private static GUIButton      _benchBtn;   // active section's benchmark button   // RUS: кнопка бенчмарка активного раздела
         private static GUIButton      _durBtn;     // benchmark duration cycle button (shared 15/30/60/300s)   // RUS: кнопка переключения длительности (общая 15/30/60/300с)
         private static readonly GUIButton[] _fixBtns = new GUIButton[OptFixes.Count]; // active section's fix toggles   // RUS: тумблеры фиксов активного раздела
+        private static readonly GUIButton[] _logBtns = new GUIButton[LogChecks.Count]; // "Console logs" section toggles   // RUS: тумблеры раздела «Конс. логи»
+        private static GUILayoutGroup _histRow;   // benchmark history nav row (hidden in the Logs section)   // RUS: ряд навигации по истории бенча (скрыт в разделе «Конс. логи»)
 
         public static bool IsOpen => _frame != null;
 
@@ -52,9 +54,10 @@ namespace NetEventLogger
         {
             try { if (_frame != null) { _frame.RectTransform.Parent = null; } } catch { }
             _frame = null; _status = null; _resultList = null;
-            _selectorRow = null; _secClientBtn = null; _secServerBtn = null; _content = null; _benchBtn = null; _durBtn = null;
-            _histLabel = null; _histPrevBtn = null; _histNextBtn = null;
+            _selectorRow = null; _secClientBtn = null; _secServerBtn = null; _secLogsBtn = null; _content = null; _benchBtn = null; _durBtn = null;
+            _histLabel = null; _histPrevBtn = null; _histNextBtn = null; _histRow = null;
             for (int i = 0; i < OptFixes.Count; i++) { _fixBtns[i] = null; }
+            for (int i = 0; i < LogChecks.Count; i++) { _logBtns[i] = null; }
         }
 
         public static void Open()
@@ -82,25 +85,28 @@ namespace NetEventLogger
                     "NG Logger And Optimizations", font: GUIStyle.SubHeadingFont, textAlignment: Alignment.Center);
 
                 bool privileged = ClientOptNet.InMP && ClientOptNet.CanControlServer();
-                if (!privileged) { _section = Section.Client; }
+                if (!privileged && _section == Section.Server) { _section = Section.Client; } // Server needs privilege; Client/Logs are open to all   // RUS: Сервер требует прав; Клиент/Логи доступны всем
 
-                // section selector (Client / Server) right under the title — only for privileged clients
-                // RUS: селектор разделов (Клиент / Сервер) сразу под title — только привилегированным
+                // section selector under the title: [Client] [Server (privileged only)] [Console logs (everyone)]
+                // RUS: селектор разделов под title: [Клиент] [Сервер (только привилегир.)] [Конс. логи (всем)]
+                _selectorRow = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.06f), col.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.02f };
+                float bw = privileged ? 0.333f : 0.5f;
+                _secClientBtn = new GUIButton(new RectTransform(new Vector2(bw, 1f), _selectorRow.RectTransform), Loc.ClientCol, style: "GUIButtonSmall");
+                _secClientBtn.OnClicked = (b, o) => { SelectSection(Section.Client); return true; };
                 if (privileged)
                 {
-                    _selectorRow = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.06f), col.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.02f };
-                    _secClientBtn = new GUIButton(new RectTransform(new Vector2(0.5f, 1f), _selectorRow.RectTransform), Loc.ClientCol, style: "GUIButtonSmall");
-                    _secClientBtn.OnClicked = (b, o) => { SelectSection(Section.Client); return true; };
-                    _secServerBtn = new GUIButton(new RectTransform(new Vector2(0.5f, 1f), _selectorRow.RectTransform), Loc.ServerCol, style: "GUIButtonSmall");
+                    _secServerBtn = new GUIButton(new RectTransform(new Vector2(bw, 1f), _selectorRow.RectTransform), Loc.ServerCol, style: "GUIButtonSmall");
                     _secServerBtn.OnClicked = (b, o) => { SelectSection(Section.Server); return true; };
                 }
+                _secLogsBtn = new GUIButton(new RectTransform(new Vector2(bw, 1f), _selectorRow.RectTransform), Loc.LogsCol, style: "GUIButtonSmall") { ToolTip = Loc.LogsTip };
+                _secLogsBtn.OnClicked = (b, o) => { SelectSection(Section.Logs); return true; };
 
                 _status = new GUITextBlock(new RectTransform(new Vector2(1f, 0.06f), col.RectTransform),
                     Benchmark.StatusText, font: GUIStyle.SmallFont, textAlignment: Alignment.Center, wrap: true);
 
                 // active section's content (a benchmark row + the fix-toggle rows), rebuilt on section switch
                 // RUS: содержимое активного раздела (ряд бенчмарка + ряды тумблеров фиксов), пересобирается при смене раздела
-                var contentFrame = new GUIFrame(new RectTransform(new Vector2(1f, 0.36f), col.RectTransform), style: null, color: new Color(0, 0, 0, 70));
+                var contentFrame = new GUIFrame(new RectTransform(new Vector2(1f, 0.46f), col.RectTransform), style: null, color: new Color(0, 0, 0, 70));
                 _content = new GUILayoutGroup(new RectTransform(new Vector2(0.97f, 0.94f), contentFrame.RectTransform, Anchor.Center)) { Stretch = true, RelativeSpacing = 0.03f };
                 SelectSection(_section);
 
@@ -113,19 +119,29 @@ namespace NetEventLogger
 
                 // history navigation row: [◀] [ i/n • date ] [▶] — steps through past benchmark results
                 // RUS: ряд навигации по истории: [◀] [ i/n • дата ] [▶] — листает прошлые результаты бенчмарков
-                var histRow = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.05f), col.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.01f };
-                _histPrevBtn = new GUIButton(new RectTransform(new Vector2(0.14f, 1f), histRow.RectTransform), "<---", style: "GUIButtonSmall");
+                _histRow = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.05f), col.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.01f };
+                var histRow = _histRow;
+                _histPrevBtn = new GUIButton(new RectTransform(new Vector2(0.12f, 1f), histRow.RectTransform), "<---", style: "GUIButtonSmall");
                 _histPrevBtn.OnClicked = (b, o) => { HistPrev(); return true; };
-                _histLabel = new GUITextBlock(new RectTransform(new Vector2(0.72f, 1f), histRow.RectTransform), "", font: GUIStyle.SmallFont, textAlignment: Alignment.Center) { CanBeFocused = false };
-                _histNextBtn = new GUIButton(new RectTransform(new Vector2(0.14f, 1f), histRow.RectTransform), "--->", style: "GUIButtonSmall");
+                _histLabel = new GUITextBlock(new RectTransform(new Vector2(0.50f, 1f), histRow.RectTransform), "", font: GUIStyle.SmallFont, textAlignment: Alignment.Center) { CanBeFocused = false };
+                _histNextBtn = new GUIButton(new RectTransform(new Vector2(0.12f, 1f), histRow.RectTransform), "--->", style: "GUIButtonSmall");
                 _histNextBtn.OnClicked = (b, o) => { HistNext(); return true; };
+                // Copy the currently-shown benchmark result to the clipboard. Lives in the (shared)
+                // history row so BOTH the client AND server sections have it (CopyResults reads the
+                // active section's history via ActiveHistory()).
+                // RUS: Копирование показанного результата в буфер. В ОБЩЕМ ряду истории -> есть И в
+                // RUS: клиентском, И в серверном разделе (CopyResults берёт историю активного раздела).
+                var copyHistBtn = new GUIButton(new RectTransform(new Vector2(0.24f, 1f), histRow.RectTransform), Loc.T("Копир.", "Copy"), style: "GUIButtonSmall")
+                { ToolTip = Loc.T("Скопировать показанный результат бенчмарка в буфер обмена.", "Copy the shown benchmark result to the clipboard.") };
+                copyHistBtn.OnClicked = (b, o) => { CopyResults(); return true; };
 
                 // result area (scrollable, monospaced font for aligned columns)
                 // RUS: область результата (скролл, моноширинный шрифт для ровных столбцов)
-                _resultList = new GUIListBox(new RectTransform(new Vector2(1f, 0.39f), col.RectTransform));
+                _resultList = new GUIListBox(new RectTransform(new Vector2(1f, 0.29f), col.RectTransform));
 
                 RefreshResult();
                 try { ClientOptNet.RequestServerState(); } catch { } // pull current server states for the indicators   // RUS: подтянуть текущие серверные состояния для индикаторов
+                try { ClientOptNet.RequestLogState(); } catch { }   // pull current server log-check states for the Logs section   // RUS: подтянуть состояния серверных проверок для раздела «Конс. логи»
                 ClientPerf.Log(Loc.T("Меню открыто.", "Menu opened."), Color.LightGreen);
             }
             catch (Exception ex) { ClientPerf.Log(Loc.T("Не удалось открыть меню: ", "Failed to open the menu: ") + ex, Color.Red); _frame = null; }
@@ -145,23 +161,29 @@ namespace NetEventLogger
                 _frame.AddToGUIUpdateList();
                 ClientOptNet.ServerBenchTick(); // un-stick the server-bench button on timeout   // RUS: снять «зависшую» кнопку сервер-бенча по таймауту
 
-                // privilege can change: hide the selector + drop to the Client section if it was lost
-                // RUS: права могут измениться: прячем селектор + падаем в раздел Клиент, если их отобрали
+                // privilege can change: drop out of the Server section if it was lost (Client/Logs stay open to all)
+                // RUS: права могут измениться: уходим из раздела Сервер, если их отобрали (Клиент/Логи доступны всем)
                 bool privileged = ClientOptNet.InMP && ClientOptNet.CanControlServer();
-                if (_selectorRow != null) { _selectorRow.Visible = privileged; }
                 if (!privileged && _section == Section.Server) { SelectSection(Section.Client); }
 
-                if (_status != null)   { _status.Text = _section == Section.Client ? Benchmark.StatusText : ClientOptNet.ServerBenchStatus; }
+                if (_status != null && _section != Section.Logs) { _status.Text = _section == Section.Client ? Benchmark.StatusText : ClientOptNet.ServerBenchStatus; }
                 if (_benchBtn != null) { _benchBtn.Text = _section == Section.Client ? BenchLabel() : ServerBenchLabel(); }
                 if (_durBtn != null)   { _durBtn.Text = DurationLabel(); }
                 for (int i = 0; i < OptFixes.Count; i++)
                 {
                     if (_fixBtns[i] != null) { _fixBtns[i].Text = _section == Section.Client ? ClientBtnLabel(i) : ServerBtnLabel(i); }
                 }
+                for (int i = 0; i < LogChecks.Count; i++)
+                {
+                    if (_logBtns[i] != null) { _logBtns[i].Text = LogBtnLabel(i); }
+                }
                 // refresh the result window when the active section's history changed (new entry / navigation)
                 // RUS: обновляем окно результата, когда история активного раздела изменилась (новая запись / навигация)
-                var hist = ActiveHistory();
-                if (hist != null && hist.Dirty) { hist.Dirty = false; RefreshResult(); }
+                if (_section != Section.Logs)
+                {
+                    var hist = ActiveHistory();
+                    if (hist != null && hist.Dirty) { hist.Dirty = false; RefreshResult(); }
+                }
             }
             catch { }
         }
@@ -173,10 +195,10 @@ namespace NetEventLogger
             double d = _section == Section.Client ? Benchmark.DurationSec : ClientOptNet.ServerBenchDuration;
             return d >= 60 ? (d / 60).ToString("0.#") + (Loc.Ru ? "мин" : "min") : d.ToString("0") + (Loc.Ru ? "с" : "s");
         }
-        private static string ClientBtnLabel(int fix) => Loc.ClientCol + ": " + (OptFixes.GetEnabled(fix) ? Loc.On : Loc.Off);
+        private static string ClientBtnLabel(int fix) => Loc.ClientCol + ": " + OptFixes.LevelLabel(fix, OptFixes.GetLevel(fix));
         private static string ServerBtnLabel(int fix)
         {
-            string st = (!ClientOptNet.InMP || !ClientOptNet.ServerKnown(fix)) ? Loc.Unknown : (ClientOptNet.ServerState(fix) ? Loc.On : Loc.Off);
+            string st = (!ClientOptNet.InMP || !ClientOptNet.ServerKnown(fix)) ? Loc.Unknown : OptFixes.LevelLabel(fix, ClientOptNet.ServerLevel(fix));
             return Loc.ServerCol + ": " + st;
         }
 
@@ -189,8 +211,22 @@ namespace NetEventLogger
             _section = section;
             if (_content == null) { return; }
             _content.ClearChildren();
-            _benchBtn = null;
+            _benchBtn = null; _durBtn = null;
             for (int i = 0; i < OptFixes.Count; i++) { _fixBtns[i] = null; }
+            for (int i = 0; i < LogChecks.Count; i++) { _logBtns[i] = null; }
+
+            // the Logs section has no benchmark: hide the history nav + result area while it's active
+            // RUS: в разделе «Конс. логи» нет бенчмарка: пока он активен — прячем навигацию по истории + область результата
+            bool bench = section != Section.Logs;
+            if (_resultList != null) { _resultList.Visible = bench; }
+            if (_histRow != null)    { _histRow.Visible = bench; }
+
+            if (section == Section.Logs)
+            {
+                AddLogChecks();
+                if (_status != null) { _status.Text = Loc.LogsTip; }
+                return;
+            }
 
             // benchmark row: [run benchmark] [duration cycle] [secondary: copy (client) / load snapshot (server)]
             // RUS: ряд бенчмарка: [запуск] [переключение длительности] [вторичная: копир. (клиент) / снимок нагрузки (сервер)]
@@ -199,27 +235,48 @@ namespace NetEventLogger
             {
                 _benchBtn = new GUIButton(new RectTransform(new Vector2(0.44f, 1f), benchRow.RectTransform), BenchLabel(), style: "GUIButtonSmall") { ToolTip = Loc.ClientTip };
                 _benchBtn.OnClicked = (b, o) => { Benchmark.StartOrCancel(); SyncDynamic(); return true; };
-                _durBtn = new GUIButton(new RectTransform(new Vector2(0.18f, 1f), benchRow.RectTransform), DurationLabel(), style: "GUIButtonSmall") { ToolTip = Loc.DurationTip };
+                _durBtn = new GUIButton(new RectTransform(new Vector2(0.24f, 1f), benchRow.RectTransform), DurationLabel(), style: "GUIButtonSmall") { ToolTip = Loc.DurationTip };
                 _durBtn.OnClicked = (b, o) => { if (_section == Section.Client) { Benchmark.CycleDuration(); } else { ClientOptNet.CycleServerBenchDuration(); } if (_durBtn != null) { _durBtn.Text = DurationLabel(); } return true; };
-                var copyBtn = new GUIButton(new RectTransform(new Vector2(0.38f, 1f), benchRow.RectTransform), Loc.T("Копировать", "Copy"), style: "GUIButtonSmall");
-                copyBtn.OnClicked = (b, o) => { CopyResults(); return true; };
+                // (Copy moved to the shared history row so it's available in the server section too.)
+                // RUS: (Кнопка копирования перенесена в общий ряд истории — теперь она и в серверном разделе.)
             }
             else
             {
-                _benchBtn = new GUIButton(new RectTransform(new Vector2(0.5f, 1f), benchRow.RectTransform), ServerBenchLabel(), style: "GUIButtonSmall") { ToolTip = Loc.ServerBenchTip };
+                _benchBtn = new GUIButton(new RectTransform(new Vector2(0.6f, 1f), benchRow.RectTransform), ServerBenchLabel(), style: "GUIButtonSmall") { ToolTip = Loc.ServerBenchTip };
                 _benchBtn.OnClicked = (b, o) => { ClientOptNet.StartOrCancelServerBench(); return true; };
-                _durBtn = new GUIButton(new RectTransform(new Vector2(0.18f, 1f), benchRow.RectTransform), DurationLabel(), style: "GUIButtonSmall") { ToolTip = Loc.DurationTip };
+                _durBtn = new GUIButton(new RectTransform(new Vector2(0.38f, 1f), benchRow.RectTransform), DurationLabel(), style: "GUIButtonSmall") { ToolTip = Loc.DurationTip };
                 _durBtn.OnClicked = (b, o) => { if (_section == Section.Client) { Benchmark.CycleDuration(); } else { ClientOptNet.CycleServerBenchDuration(); } if (_durBtn != null) { _durBtn.Text = DurationLabel(); } return true; };
-                var loadBtn = new GUIButton(new RectTransform(new Vector2(0.32f, 1f), benchRow.RectTransform), Loc.ServerSnap, style: "GUIButtonSmall") { ToolTip = Loc.ServerSnapTip };
-                loadBtn.OnClicked = (b, o) => { ClientOptNet.RequestServerPerf(); return true; };
+                // (the "Load snapshot" button moved to the "Console logs" section — it prints a console log line.)
+                // RUS: (кнопка «Снимок нагрузки» переехала в раздел «Конс. логи» — она печатает строку лога в консоль.)
             }
 
-            // one toggle row per fix
-            // RUS: по ряду-тумблеру на фикс
-            for (int i = 0; i < OptFixes.Count; i++)
+            // Fixes grouped into named subsections (small centered header + its fix rows). The display
+            // order is GROUP-driven (not 0..Count), so fix 5 sits next to fix 3 under "weak optimization".
+            // RUS: Фиксы по именованным подразделам (мелкий заголовок по центру + ряды фиксов). Порядок —
+            // RUS: по ГРУППАМ (а не 0..Count), чтобы фикс 5 шёл рядом с фиксом 3 в «слабой оптимизации».
+            AddFixGroup(section, Loc.T("— Сильная оптимизация —", "— Strong optimization —"), 0, 1);
+            AddFixGroup(section, Loc.T("— Слабая оптимизация —",  "— Weak optimization —"),   2, 4);
+            AddFixGroup(section, Loc.T("— Фиксы —",               "— Fixes —"),               3);
+            SyncDynamic();
+            // show the new section's benchmark history
+            // RUS: показать историю бенчмарков нового раздела
+            var h = ActiveHistory();
+            if (h != null) { h.Dirty = false; }
+            RefreshResult();
+        }
+
+        // Adds a subsection: a small centered header label, then a toggle row for each given fix index.
+        // RUS: Добавляет подраздел: мелкий заголовок по центру, затем ряд-тумблер на каждый из фиксов.
+        private static void AddFixGroup(Section section, string header, params int[] fixes)
+        {
+            if (_content == null) { return; }
+            new GUITextBlock(new RectTransform(new Vector2(1f, 0.10f), _content.RectTransform), header,
+                font: GUIStyle.SmallFont, textAlignment: Alignment.Center) { CanBeFocused = false };
+
+            foreach (int idx in fixes)
             {
-                int fix = i; // capture for the lambdas   // RUS: захват для лямбд
-                var row = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.25f), _content.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.012f };
+                int fix = idx; // capture for the lambdas   // RUS: захват для лямбд
+                var row = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.22f), _content.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.012f };
                 string nm = OptFixes.ShortName(fix) + (OptFixes.IsExperimental(fix) ? " [" + Loc.Experimental + "]" : "");
                 new GUITextBlock(new RectTransform(new Vector2(0.49f, 1f), row.RectTransform), nm,
                     font: GUIStyle.SmallFont, textAlignment: Alignment.CenterLeft, wrap: true) { ToolTip = OptFixes.Tip(fix), CanBeFocused = false };
@@ -240,12 +297,6 @@ namespace NetEventLogger
                 new GUIButton(new RectTransform(new Vector2(0.12f, 1f), row.RectTransform), "?", style: "GUIButtonSmall")
                 { ToolTip = OptFixes.Tip(fix) };
             }
-            SyncDynamic();
-            // show the new section's benchmark history
-            // RUS: показать историю бенчмарков нового раздела
-            var h = ActiveHistory();
-            if (h != null) { h.Dirty = false; }
-            RefreshResult();
         }
 
         private static void SyncDynamic()
@@ -254,20 +305,110 @@ namespace NetEventLogger
             if (_status != null)   { _status.Text = _section == Section.Client ? Benchmark.StatusText : ClientOptNet.ServerBenchStatus; }
         }
 
+        // Builds the "Console logs" section: one toggle row per periodic logger check. The client check (0)
+        // toggles a LOCAL flag; the server checks (1,2) are net-synced and changeable by the host/admin only.
+        // RUS: Строит раздел «Конс. логи»: ряд-тумблер на каждую периодическую проверку логгера. Клиентская
+        // RUS: проверка (0) — ЛОКАЛЬНЫЙ флаг; серверные (1,2) — синхронизируются по сети, меняет только хост/админ.
+        private static void AddLogChecks()
+        {
+            if (_content == null) { return; }
+            new GUITextBlock(new RectTransform(new Vector2(1f, 0.16f), _content.RectTransform),
+                Loc.T("— Периодические проверки —", "— Periodic checks —"),
+                font: GUIStyle.SmallFont, textAlignment: Alignment.Center) { CanBeFocused = false };
+
+            for (int idx = 0; idx < LogChecks.Count; idx++)
+            {
+                int chk = idx; // capture for the lambda   // RUS: захват для лямбды
+                var row = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.22f), _content.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.012f };
+                string side = LogChecks.IsServerSide(chk) ? " [" + Loc.ServerCol + "]" : " [" + Loc.ClientCol + "]";
+                new GUITextBlock(new RectTransform(new Vector2(0.55f, 1f), row.RectTransform), LogChecks.Name(chk) + side,
+                    font: GUIStyle.SmallFont, textAlignment: Alignment.CenterLeft, wrap: true) { ToolTip = LogChecks.Tip(chk), CanBeFocused = false };
+
+                _logBtns[chk] = new GUIButton(new RectTransform(new Vector2(0.33f, 1f), row.RectTransform), LogBtnLabel(chk), style: "GUIButtonSmall")
+                { ToolTip = LogChecks.IsServerSide(chk) ? Loc.ServerHostTip : Loc.ClientTip };
+                _logBtns[chk].OnClicked = (b, o) => { ToggleLog(chk); return true; };
+
+                new GUIButton(new RectTransform(new Vector2(0.12f, 1f), row.RectTransform), "?", style: "GUIButtonSmall")
+                { ToolTip = LogChecks.Tip(chk) };
+            }
+
+            // manual one-shot: request an immediate server-load snapshot (privileged only). Moved here from the
+            // Server section — it prints a console log line, so it belongs with the periodic console checks.
+            // RUS: ручное действие: запросить мгновенный снимок нагрузки сервера (только привилегир.). Переехало из
+            // RUS: раздела Сервер — печатает строку лога в консоль, поэтому ему место среди консольных проверок.
+            if (ClientOptNet.InMP && ClientOptNet.CanControlServer())
+            {
+                var srow = new GUILayoutGroup(new RectTransform(new Vector2(1f, 0.22f), _content.RectTransform), isHorizontal: true) { Stretch = true, RelativeSpacing = 0.012f };
+                new GUITextBlock(new RectTransform(new Vector2(0.55f, 1f), srow.RectTransform),
+                    Loc.T("Снимок нагрузки сейчас (сервер)", "Load snapshot now (server)"),
+                    font: GUIStyle.SmallFont, textAlignment: Alignment.CenterLeft, wrap: true) { ToolTip = Loc.ServerSnapTip, CanBeFocused = false };
+                var snapBtn = new GUIButton(new RectTransform(new Vector2(0.33f, 1f), srow.RectTransform), Loc.ServerSnap, style: "GUIButtonSmall") { ToolTip = Loc.ServerSnapTip };
+                snapBtn.OnClicked = (b, o) => { ClientOptNet.RequestServerPerf(); if (_status != null) { _status.Text = Loc.T("Запрос снимка нагрузки отправлен…", "Load-snapshot request sent…"); } return true; };
+                new GUIFrame(new RectTransform(new Vector2(0.12f, 1f), srow.RectTransform), style: null) { CanBeFocused = false }; // keep the button column aligned   // RUS: держим колонку кнопок выровненной
+            }
+
+            // trailing spacer: keeps the rows at a compact height (the content group stretches its children
+            // to fill, so without this filler the few rows would blow up tall and the buttons sit above the text).
+            // RUS: спейсер снизу: держит строки компактной высоты (контейнер растягивает детей на всю высоту,
+            // RUS: без этой заглушки немногочисленные строки раздувались бы, и кнопки оказывались выше текста).
+            new GUIFrame(new RectTransform(new Vector2(1f, 0.9f), _content.RectTransform), style: null) { CanBeFocused = false };
+        }
+
+        // Toggle label for a "Console logs" check: ON/OFF locally for the client check; ON/OFF/— for server
+        // checks (— = the server state isn't known yet, e.g. single-player or before the first broadcast).
+        // RUS: Метка тумблера проверки «Конс. логи»: ВКЛ/ВЫКЛ локально для клиентской; ВКЛ/ВЫКЛ/— для серверных
+        // RUS: (— = серверное состояние ещё неизвестно, напр. одиночка или до первой рассылки).
+        private static string LogBtnLabel(int chk)
+        {
+            if (LogChecks.IsServerSide(chk))
+            {
+                if (!ClientOptNet.InMP || !ClientOptNet.ServerLogKnown(chk)) { return Loc.Unknown; }
+                return ClientOptNet.ServerLogState(chk) ? Loc.On : Loc.Off;
+            }
+            return ClientOptNet.LogCheckEnabled(chk) ? Loc.On : Loc.Off;
+        }
+
+        // Toggle a "Console logs" check: the client check flips locally; server checks are requested over the
+        // net (host/admin only — the server re-validates and broadcasts the new state back).
+        // RUS: Переключить проверку «Конс. логи»: клиентская — локально; серверные — запросом по сети (только
+        // RUS: хост/админ — сервер перепроверяет и рассылает новое состояние обратно).
+        private static void ToggleLog(int chk)
+        {
+            if (LogChecks.IsServerSide(chk))
+            {
+                if (!ClientOptNet.InMP) { if (_status != null) { _status.Text = Loc.ServerMPOnly; } return; }
+                if (!ClientOptNet.CanControlServer())
+                {
+                    if (_status != null) { _status.Text = Loc.T("Серверную проверку логов может менять только хост/админ.", "Only the host/admin can change a server log-check."); }
+                    return;
+                }
+                ClientOptNet.ToggleLogCheck(chk); // sends a net request; the broadcast updates the label   // RUS: шлёт сетевой запрос; метку обновит рассылка
+                if (_status != null) { _status.Text = Loc.T("Запрос на сервер отправлен… (обновится по подтверждению).", "Request sent to the server… (updates on confirmation)."); }
+                return;
+            }
+            // client-side check: flip the LOCAL flag and reflect it immediately
+            // RUS: клиентская проверка: переключаем ЛОКАЛЬНЫЙ флаг и сразу отражаем
+            ClientOptNet.ToggleLogCheck(chk);
+            bool on = ClientOptNet.LogCheckEnabled(chk);
+            if (_logBtns[chk] != null) { _logBtns[chk].Text = LogBtnLabel(chk); }
+            if (_status != null) { _status.Text = LogChecks.Name(chk) + ": " + (on ? Loc.On : Loc.Off); }
+            ClientPerf.Log(LogChecks.Name(chk) + ": " + (on ? Loc.On : Loc.Off), on ? Color.LightGreen : Color.Orange);
+        }
+
         // Toggle a fix on THIS client (local, applies + persists).
         // RUS: Переключить фикс на ЭТОМ клиенте (локально, применяет + сохраняет).
         private static void ToggleClient(int fix)
         {
-            bool now = !OptFixes.GetEnabled(fix);
-            OptConfig.SetFixByIndex(fix, now);
+            int lvl = OptConfig.CycleClient(fix);   // cycle this client's level (off -> ... -> off), apply + persist
+            string label = OptFixes.LevelLabel(fix, lvl);
             if (_section == Section.Client && _fixBtns[fix] != null) { _fixBtns[fix].Text = ClientBtnLabel(fix); }
             if (_status != null)
             {
                 _status.Text = Loc.Ru
-                    ? $"{OptFixes.ShortName(fix)} (клиент): {(now ? "ВКЛ" : "ВЫКЛ")}." + (now ? "" : " Прогони бенчмарк для сравнения.")
-                    : $"{OptFixes.ShortName(fix)} (client): {(now ? "ON" : "OFF")}." + (now ? "" : " Run the benchmark to compare.");
+                    ? $"{OptFixes.ShortName(fix)} (клиент): {label}." + (lvl > 0 ? "" : " Прогони бенчмарк для сравнения.")
+                    : $"{OptFixes.ShortName(fix)} (client): {label}." + (lvl > 0 ? "" : " Run the benchmark to compare.");
             }
-            ClientPerf.Log(OptFixes.ShortName(fix) + " [" + Loc.ClientCol + "]: " + (now ? Loc.On : Loc.Off), now ? Color.LightGreen : Color.Orange);
+            ClientPerf.Log(OptFixes.ShortName(fix) + " [" + Loc.ClientCol + "]: " + label, lvl > 0 ? Color.LightGreen : Color.Orange);
         }
 
         // Request toggling a fix on the SERVER (host/admin only; the server re-validates and broadcasts back).
@@ -280,10 +421,12 @@ namespace NetEventLogger
                 if (_status != null) { _status.Text = Loc.T("Серверный фикс может менять только хост/админ.", "Only the host/admin can change a server fix."); }
                 return;
             }
-            // flip the known server state (if unknown, assume it's currently ON -> turn it off)
-            // RUS: переключаем известное серверное состояние (если неизвестно — считаем что сейчас ВКЛ -> выключаем)
-            bool current = !ClientOptNet.ServerKnown(fix) || ClientOptNet.ServerState(fix);
-            ClientOptNet.RequestSetServer(fix, !current);
+            // cycle the known server level (off -> ... -> max -> off); if unknown, start from 0
+            // RUS: циклим известный серверный уровень (выкл -> ... -> макс -> выкл); если неизвестно — с 0
+            int cur = ClientOptNet.ServerKnown(fix) ? ClientOptNet.ServerLevel(fix) : 0;
+            int next = cur + 1;
+            if (next > OptFixes.MaxLevel(fix)) { next = 0; }
+            ClientOptNet.RequestSetServer(fix, next);
             if (_status != null) { _status.Text = Loc.T("Запрос на сервер отправлен… (обновится по подтверждению).", "Request sent to the server… (updates on confirmation)."); }
         }
 

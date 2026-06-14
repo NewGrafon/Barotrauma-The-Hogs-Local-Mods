@@ -12,7 +12,7 @@ namespace NetEventLogger
     // ==========================================================================================
     internal static class OptFixes
     {
-        public const int Count = 4;
+        public const int Count = 5;
 
         // Net message ids (LuaCs networking). Server->client: broadcast of the 3 server-side states.
         // Client->server: a request to set one server state (fix 0..2) OR to just resend the state (RequestState).
@@ -27,30 +27,64 @@ namespace NetEventLogger
         public const byte   BenchStart     = 249; // fix index meaning "start the 60s server benchmark"   // RUS: индекс «запустить 60с серверный бенчмарк»
         public const byte   BenchCancel    = 248; // fix index meaning "cancel the running server benchmark"   // RUS: индекс «отменить идущий серверный бенчмарк»
 
-        // Apply an enabled-state to fix #i in THIS process (client or server, depending on the assembly).
-        // RUS: Применить состояние «включён» к фиксу #i в ЭТОМ процессе (клиент/сервер — смотря какая сборка).
-        public static void SetEnabled(int i, bool on)
+        // Per-fix max level: 1 = simple on/off; 3 = off / 50% / 33% / 25% (throttle aggressiveness).
+        // Fixes 2 (auto-tools) and 4 (trigger lights) are multi-level throttles; the rest are on/off.
+        // RUS: Макс. уровень фикса: 1 = вкл/выкл; 3 = выкл / 50% / 33% / 25% (агрессивность троттлинга).
+        // RUS: Фиксы 2 (авто-тулы) и 4 (лампы-тикалки) — многоуровневые; остальные — вкл/выкл.
+        public static int MaxLevel(int i) => (i == 2 || i == 4) ? 3 : 1;
+
+        // Current level of fix #i in THIS process (client or server, depending on the assembly).
+        // RUS: Текущий уровень фикса #i в ЭТОМ процессе (клиент/сервер — смотря какая сборка).
+        public static int GetLevel(int i)
         {
             switch (i)
             {
-                case 0: try { NGContainerOpt.ContainedEffectsOptPlugin.SetEnabled(on); } catch { } break;
-                case 1: try { NGNearbyOpt.NearbyTargetsOptPlugin.SetEnabled(on); } catch { } break;
-                case 2: try { NGRepairToolOpt.RepairToolThrottleOptPlugin.SetEnabled(on); } catch { } break;
-                case 3: try { NGGearThrottleOpt.GearThrottleOptPlugin.SetEnabled(on); } catch { } break;
+                case 0: try { return NGContainerOpt.ContainedEffectsOptPlugin.Enabled ? 1 : 0; } catch { return 0; }
+                case 1: try { return NGNearbyOpt.NearbyTargetsOptPlugin.Enabled ? 1 : 0; } catch { return 0; }
+                case 2: try { return NGRepairToolOpt.RepairToolThrottleOptPlugin.Level; } catch { return 0; }
+                case 3: try { return NGGearThrottleOpt.GearThrottleOptPlugin.Enabled ? 1 : 0; } catch { return 0; }
+                case 4: try { return NGLightThrottleOpt.LightTriggerThrottleOptPlugin.Level; } catch { return 0; }
+                default: return 0;
             }
         }
 
-        public static bool GetEnabled(int i)
+        public static void SetLevel(int i, int lvl)
         {
+            int mx = MaxLevel(i);
+            if (lvl < 0) { lvl = 0; } else if (lvl > mx) { lvl = mx; }
             switch (i)
             {
-                case 0: try { return NGContainerOpt.ContainedEffectsOptPlugin.Enabled; } catch { return false; }
-                case 1: try { return NGNearbyOpt.NearbyTargetsOptPlugin.Enabled; } catch { return false; }
-                case 2: try { return NGRepairToolOpt.RepairToolThrottleOptPlugin.Enabled; } catch { return false; }
-                case 3: try { return NGGearThrottleOpt.GearThrottleOptPlugin.Enabled; } catch { return false; }
-                default: return false;
+                case 0: try { NGContainerOpt.ContainedEffectsOptPlugin.SetEnabled(lvl > 0); } catch { } break;
+                case 1: try { NGNearbyOpt.NearbyTargetsOptPlugin.SetEnabled(lvl > 0); } catch { } break;
+                case 2: try { NGRepairToolOpt.RepairToolThrottleOptPlugin.SetLevel(lvl); } catch { } break;
+                case 3: try { NGGearThrottleOpt.GearThrottleOptPlugin.SetEnabled(lvl > 0); } catch { } break;
+                case 4: try { NGLightThrottleOpt.LightTriggerThrottleOptPlugin.SetLevel(lvl); } catch { } break;
             }
         }
+
+        // Advance to the next level (wraps to 0 after the max). Returns the new level.
+        // RUS: Перейти к следующему уровню (после макс. -> 0). Возвращает новый уровень.
+        public static int CycleLevel(int i)
+        {
+            int n = GetLevel(i) + 1;
+            if (n > MaxLevel(i)) { n = 0; }
+            SetLevel(i, n);
+            return n;
+        }
+
+        // Localized label for a level: OFF/ON for on/off fixes; OFF/50%/33%/25% for throttle fixes.
+        // RUS: Локализованная метка уровня: ВЫКЛ/ВКЛ для on/off; ВЫКЛ/50%/33%/25% для троттлинга.
+        public static string LevelLabel(int i, int lvl)
+        {
+            if (lvl <= 0) { return Loc.Off; }
+            if (MaxLevel(i) <= 1) { return Loc.On; }
+            switch (lvl) { case 1: return "50%"; case 2: return "33%"; case 3: return "25%"; default: return Loc.On; }
+        }
+
+        // Enabled = level > 0. Set on/off (level 1 = on). Used by the server net sync + console commands.
+        // RUS: Enabled = уровень > 0. Установка вкл/выкл (уровень 1 = вкл). Для сетевого синка и команд.
+        public static bool GetEnabled(int i) => GetLevel(i) > 0;
+        public static void SetEnabled(int i, bool on) => SetLevel(i, on ? 1 : 0);
 
         // Short display name of fix #i (localized).
         // RUS: Короткое отображаемое имя фикса #i (локализованное).
@@ -62,6 +96,7 @@ namespace NetEventLogger
                 case 1: return Loc.Opt2Short;
                 case 2: return Loc.Opt3Short;
                 case 3: return Loc.Opt4Short;
+                case 4: return Loc.Opt5Short;
                 default: return "?";
             }
         }
@@ -76,11 +111,12 @@ namespace NetEventLogger
                 case 1: return Loc.Opt2Tip;
                 case 2: return Loc.Opt3Tip;
                 case 3: return Loc.Opt4Tip;
+                case 4: return Loc.Opt5Tip;
                 default: return "";
             }
         }
 
-        public static bool IsExperimental(int i) => i == 2 || i == 3; // fixes 3 & 4 flagged experimental   // RUS: фиксы 3 и 4 помечены экспериментальными
+        public static bool IsExperimental(int i) => i == 2 || i == 3 || i == 4; // fixes 3,4,5 experimental   // RUS: фиксы 3,4,5 экспериментальные
 
         // Parse a fix selector from a console argument: accepts 1/2/3 or fix1/fix2/fix3. Returns -1 if invalid.
         // RUS: Разобрать селектор фикса из аргумента команды: принимает 1/2/3 или fix1/fix2/fix3. -1 если неверно.
@@ -93,7 +129,19 @@ namespace NetEventLogger
             if (s == "2") { return 1; }
             if (s == "3") { return 2; }
             if (s == "4") { return 3; }
+            if (s == "5") { return 4; }
             return -1;
+        }
+
+        // Parse a throttle level (0..3) from a string. Accepts true/on -> 1, false/off -> 0, or an int.
+        // RUS: Разобрать уровень троттлинга (0..3) из строки. true/on -> 1, false/off -> 0, либо целое.
+        public static int ParseLevel(string s)
+        {
+            if (string.IsNullOrEmpty(s)) { return 0; }
+            s = s.Trim().ToLowerInvariant();
+            if (s == "true" || s == "on") { return 1; }
+            if (s == "false" || s == "off") { return 0; }
+            return int.TryParse(s, out int v) ? (v < 0 ? 0 : (v > 3 ? 3 : v)) : 0;
         }
 
         // Parse on/off from a console argument. Returns null if invalid.

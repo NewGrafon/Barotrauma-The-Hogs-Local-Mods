@@ -101,7 +101,7 @@ namespace NetEventLogger
         private const int    TopSession        = 20;    // top ops in the session report   // RUS: топ операций в отчёте сессии
         private const int    MaxWindows        = 20000; // guard against unbounded memory growth   // RUS: страховка от безграничного роста памяти
 
-        public static bool AutoLog = true;              // print a summary every 60s   // RUS: печатать сводку каждые 60с
+        public static bool AutoLog = false;             // print a summary every 60s — OFF by default ("Console logs" / clientperf auto)   // RUS: сводка каждые 60с — по умолч. ВЫКЛ («Консольные логи» / clientperf auto)
 
         // --- clock and current-window accumulators ---   // RUS: часы и накопители текущего окна
         private static readonly Stopwatch _clock = Stopwatch.StartNew();
@@ -385,7 +385,7 @@ namespace NetEventLogger
                         case "now":   PrintCurrentWindow(); break;
                         case "reset": ResetSession(); break;
                         case "auto":
-                            AutoLog = !AutoLog;
+                            OptConfig.SetAutoLog(!AutoLog); // toggle + persist (ngopt_config.txt)   // RUS: переключить + сохранить (ngopt_config.txt)
                             Log(Loc.T("Авто-вывод каждые 60с: ", "Auto-print every 60s: ") + (AutoLog ? Loc.On : Loc.Off), AutoLog ? Color.LightGreen : Color.Gray);
                             break;
                         case "items":
@@ -833,8 +833,9 @@ namespace NetEventLogger
                 }
                 bool fix1 = NGContainerOpt.ContainedEffectsOptPlugin.Enabled;
                 bool fix2 = NGNearbyOpt.NearbyTargetsOptPlugin.Enabled;
-                bool fix3 = NGRepairToolOpt.RepairToolThrottleOptPlugin.Enabled;
+                int  lvl3 = OptFixes.GetLevel(2);
                 bool fix4 = NGGearThrottleOpt.GearThrottleOptPlugin.Enabled;
+                int  lvl5 = OptFixes.GetLevel(4);
 
                 var lines = new List<(string Text, Color Color)>
                 {
@@ -842,8 +843,9 @@ namespace NetEventLogger
                     (Loc.Ru ? $"Средний FPS: {avgFps:F1}    |    1% Low: {lowFps:F0}" : $"Average FPS: {avgFps:F1}    |    1% Low: {lowFps:F0}", FpsColor(avgFps)),
                     ($"{Loc.OptName}: {(fix1 ? Loc.On : Loc.Off)}", fix1 ? Color.LightGreen : Color.Orange),
                     ($"{Loc.Opt2Name}: {(fix2 ? Loc.On : Loc.Off)}", fix2 ? Color.LightGreen : Color.Orange),
-                    ($"{Loc.Opt3Name} [{Loc.Experimental}]: {(fix3 ? Loc.On : Loc.Off)}", fix3 ? Color.LightGreen : Color.Gray),
+                    ($"{Loc.Opt3Name} [{Loc.Experimental}]: {OptFixes.LevelLabel(2, lvl3)}", lvl3 > 0 ? Color.LightGreen : Color.Gray),
                     ($"{Loc.Opt4Name} [{Loc.Experimental}]: {(fix4 ? Loc.On : Loc.Off)}", fix4 ? Color.LightGreen : Color.Gray),
+                    ($"{Loc.Opt5Name} [{Loc.Experimental}]: {OptFixes.LevelLabel(4, lvl5)}", lvl5 > 0 ? Color.LightGreen : Color.Gray),
                     ("", Color.White)
                 };
 

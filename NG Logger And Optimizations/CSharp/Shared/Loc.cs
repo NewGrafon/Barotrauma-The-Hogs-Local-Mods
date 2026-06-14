@@ -82,7 +82,31 @@ namespace NetEventLogger
         public static string Opt4Short => G("ng.fix4.short");
         public static string Opt4Tip   => G("ng.fix4.tip");
 
+        // FIX 5 (EXPERIMENTAL) — throttle invisible auto-tool trigger-lights (e.g. EK sprinkler).
+        // RUS: ФИКС 5 (ЭКСПЕРИМ.) — троттлинг невидимых ламп-тикалок авто-инструментов (спринклер EK и т.п.).
+        public static string Opt5Name  => G("ng.fix5.name");
+        public static string Opt5Short => G("ng.fix5.short");
+        public static string Opt5Tip   => G("ng.fix5.tip");
+
         public static string Experimental => G("ng.experimental");
+
+        // "Console logs" menu section — periodic diagnostic checks of the logger, all OFF by default.
+        // Few and service-only, so they stay inline as T(ru, en) rather than in the XML text packs.
+        // RUS: Раздел меню «Консольные логи» — периодические диагностические проверки логгера, по умолч. все ВЫКЛ.
+        // RUS: Их мало и они служебные, поэтому остаются в коде как T(ru, en), а не в XML-текстах.
+        public static string LogsCol => T("Конс. логи", "Console logs");
+        public static string LogsTip => T("Периодические проверки логгера, печатающие в консоль. По умолчанию все выключены.",
+                                          "Periodic logger checks that print to the console. All off by default.");
+
+        public static string LogClientPerf    => T("Авто-сводка FPS (клиент, 60с)", "FPS auto-summary (client, 60s)");
+        public static string LogClientPerfTip => T("Печатать сводку производительности клиента в консоль каждые 60 секунд (локально, только у вас).",
+                                                   "Print a client performance summary to the console every 60s (local, your machine only).");
+        public static string LogNetEvents     => T("Диагностика очереди событий (сервер)", "Net-event queue diagnostics (server)");
+        public static string LogNetEventsTip  => T("Периодический анализ отставания клиентов и переполнения очереди сетевых событий в консоль сервера.",
+                                                   "Periodic analysis of client lag and net-event queue backlog, printed to the server console.");
+        public static string LogServerPerf    => T("Авто-снимки нагрузки (сервер, 15с)", "Server-load auto-snapshots (server, 15s)");
+        public static string LogServerPerfTip => T("Каждые 15с слать снимок нагрузки сервера привилегированным клиентам. Кнопка снимка по запросу работает всегда.",
+                                                   "Push a server-load snapshot to privileged clients every 15s. The on-demand snapshot button works regardless.");
 
         // Short ON/OFF tokens stay in code: they are interpolated into dynamic report/status lines, not just the menu.
         // RUS: Короткие токены ВКЛ/ВЫКЛ остаются в коде: они интерполируются в динамические строки отчётов/статуса, не только в меню.

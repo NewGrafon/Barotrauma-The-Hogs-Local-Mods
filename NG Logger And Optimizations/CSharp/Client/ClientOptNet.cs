@@ -27,6 +27,9 @@ namespace NetEventLogger
         private static bool _inited;
         private static readonly bool[] _serverState = new bool[OptFixes.Count];
         private static readonly bool[] _serverKnown = new bool[OptFixes.Count];
+        private static readonly int[]  _serverLevel = new int[OptFixes.Count]; // 0..3 throttle level per server fix   // RUS: уровень троттлинга 0..3 по каждому серверному фиксу
+        private static readonly bool[] _serverLogState = new bool[LogChecks.Count]; // server-side "Console logs" check states (net)   // RUS: состояния серверных проверок «Консольные логи» (по сети)
+        private static readonly bool[] _serverLogKnown = new bool[LogChecks.Count];
 
         public static void Init()
         {
@@ -37,6 +40,8 @@ namespace NetEventLogger
             try { OptNet.Receive(OptFixes.MsgServerPerf, OnServerPerfMsg); } catch { }    // server load snapshots (privileged only)   // RUS: снимки серверной нагрузки (только привилегированным)
             try { OptNet.Receive(OptFixes.MsgServerBench, OnServerBenchMsg); } catch { }  // server benchmark report   // RUS: отчёт серверного бенчмарка
             try { OptNet.Receive(OptFixes.MsgSetServer, OptNet.NoOp); } catch { }         // request the id so the client can SEND set/request   // RUS: запросить id, чтобы клиент мог ОТПРАВЛЯТЬ set/запрос
+            try { OptNet.Receive(LogChecks.MsgLogState, OnLogStateMsg); } catch { }       // server -> client: server log-check states   // RUS: сервер -> клиент: состояния серверных проверок логов
+            try { OptNet.Receive(LogChecks.MsgSetLog, OptNet.NoOp); } catch { }           // request the id so the client can SEND set/request   // RUS: запросить id, чтобы клиент мог ОТПРАВЛЯТЬ set/запрос
             try { RegisterCommand(); } catch { }
         }
 
@@ -46,6 +51,19 @@ namespace NetEventLogger
 
         public static bool ServerKnown(int i) => i >= 0 && i < OptFixes.Count && _serverKnown[i];
         public static bool ServerState(int i) => i >= 0 && i < OptFixes.Count && _serverState[i];
+        public static int  ServerLevel(int i) => (i >= 0 && i < OptFixes.Count) ? _serverLevel[i] : 0;
+
+        // "Console logs" checks. Client-side check 0 reads the LOCAL flag; server-side checks (1,2) read the
+        // net-synced state (ServerLogKnown tells whether the server has reported it yet).
+        // RUS: Проверки «Консольные логи». Клиентская 0 — ЛОКАЛЬНЫЙ флаг; серверные (1,2) — синхронизированное
+        // RUS: по сети состояние (ServerLogKnown — сообщил ли уже сервер).
+        public static bool ServerLogKnown(int i) => i >= 0 && i < LogChecks.Count && _serverLogKnown[i];
+        public static bool ServerLogState(int i) => i >= 0 && i < LogChecks.Count && _serverLogState[i];
+        public static bool LogCheckEnabled(int i)
+        {
+            if (i == 0) { try { return ClientPerf.AutoLog; } catch { return false; } }
+            return ServerLogState(i);
+        }
 
         // Can the local client change SERVER fixes? (server owner / has console-command permission)
         // RUS: Может ли локальный клиент менять СЕРВЕРНЫЕ фиксы? (владелец сервера / есть право консольных команд)
@@ -71,8 +89,28 @@ namespace NetEventLogger
                 if (msg == null) { return; }
                 for (int i = 0; i < OptFixes.Count; i++)
                 {
-                    _serverState[i] = msg.ReadByte() != 0;
+                    int lvl = msg.ReadByte();
+                    _serverLevel[i] = lvl;
+                    _serverState[i] = lvl > 0;
                     _serverKnown[i] = true;
+                }
+            }
+            catch { }
+        }
+
+        // --- receive: server broadcast of its log-check states (args[0] = IReadMessage) ---
+        // RUS: --- приём: рассылка сервером состояний его проверок логов (args[0] = IReadMessage) ---
+        private static void OnLogStateMsg(object[] args)
+        {
+            try
+            {
+                var msg = args != null && args.Length > 0 ? args[0] as IReadMessage : null;
+                if (msg == null) { return; }
+                for (int i = 0; i < LogChecks.Count; i++)
+                {
+                    bool on = msg.ReadByte() != 0;
+                    _serverLogState[i] = on;
+                    _serverLogKnown[i] = true;
                 }
             }
             catch { }
@@ -311,18 +349,61 @@ namespace NetEventLogger
 
         // Ask the server to set a server fix (host/admin only; the server re-validates permission).
         // RUS: Попросить сервер установить серверный фикс (только хост/админ; сервер перепроверяет права).
-        public static void RequestSetServer(int fix, bool on)
+        public static void RequestSetServer(int fix, int level)
         {
             try
             {
                 if (GameMain.Client == null || fix < 0 || fix >= OptFixes.Count) { return; }
+                int mx = OptFixes.MaxLevel(fix);
+                if (level < 0) { level = 0; } else if (level > mx) { level = mx; }
                 IWriteMessage msg = OptNet.Start(OptFixes.MsgSetServer);
                 if (msg == null) { return; }
                 msg.WriteByte((byte)fix);
+                msg.WriteByte((byte)level);
+                OptNet.Send(msg);
+            }
+            catch { }
+        }
+
+        // Ask the server to (re)send the current server-side log-check states (sent on menu open / round start).
+        // RUS: Попросить сервер (пере)слать текущие состояния серверных проверок логов (при открытии меню / старте раунда).
+        public static void RequestLogState()
+        {
+            try
+            {
+                if (GameMain.Client == null) { return; }
+                IWriteMessage msg = OptNet.Start(LogChecks.MsgSetLog);
+                if (msg == null) { return; }
+                msg.WriteByte(LogChecks.RequestLogState);
+                OptNet.Send(msg);
+            }
+            catch { }
+        }
+
+        // Ask the server to set a server-side log-check (host/admin only; the server re-validates permission).
+        // RUS: Попросить сервер установить серверную проверку логов (только хост/админ; сервер перепроверяет права).
+        public static void RequestSetLog(int check, bool on)
+        {
+            try
+            {
+                if (GameMain.Client == null || check < 0 || check >= LogChecks.Count || !LogChecks.IsServerSide(check)) { return; }
+                IWriteMessage msg = OptNet.Start(LogChecks.MsgSetLog);
+                if (msg == null) { return; }
+                msg.WriteByte((byte)check);
                 msg.WriteByte((byte)(on ? 1 : 0));
                 OptNet.Send(msg);
             }
             catch { }
+        }
+
+        // Toggle a "Console logs" check from the menu: client-side check 0 flips the LOCAL flag immediately;
+        // server-side checks go through the server (host/admin only, re-validated server-side).
+        // RUS: Переключить проверку «Консольные логи» из меню: клиентская 0 — сразу ЛОКАЛЬНЫЙ флаг; серверные —
+        // RUS: через сервер (только хост/админ, перепроверка на сервере).
+        public static void ToggleLogCheck(int i)
+        {
+            if (i == 0) { try { OptConfig.SetAutoLog(!ClientPerf.AutoLog); } catch { } return; } // local flag, persisted   // RUS: локальный флаг, сохраняется
+            if (LogChecks.IsServerSide(i)) { RequestSetLog(i, !ServerLogState(i)); }
         }
 
         // --- client console command ---
@@ -375,7 +456,7 @@ namespace NetEventLogger
                             if (fix < 0 || !on.HasValue) { ClientPerf.Log(Loc.T("Использование: ngopt server <1|2|3> <on|off>", "Usage: ngopt server <1|2|3> <on|off>"), Color.Orange); return; }
                             if (!InMP) { ClientPerf.Log(Loc.ServerMPOnly, Color.Orange); return; }
                             if (!CanControlServer()) { ClientPerf.Log(Loc.T("Нет прав менять серверные фиксы (нужен хост/админ).", "No permission to change server fixes (host/admin required)."), Color.Orange); return; }
-                            RequestSetServer(fix, on.Value);
+                            RequestSetServer(fix, on.Value ? 1 : 0);
                             ClientPerf.Log(Loc.T("Запрос отправлен серверу…", "Request sent to the server…"), Color.LightBlue);
                             return;
                         }

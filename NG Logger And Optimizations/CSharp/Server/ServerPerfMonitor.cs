@@ -63,6 +63,12 @@ namespace NetEventLogger
 
     internal static class ServerPerfMonitor
     {
+        // Toggle for the periodic (15s) auto-push of the server-load snapshot to privileged clients. OFF
+        // by default. The on-demand "Load snapshot" button still works regardless of this flag.
+        // RUS: Тумблер периодического (15с) авто-пуша снимка нагрузки сервера привилегированным. По умолч.
+        // RUS: ВЫКЛ. Кнопка «Снимок нагрузки» по запросу работает независимо от этого флага.
+        public static bool AutoPush = false;
+
         private const double ReportIntervalSec = 15.0; // how often to push a snapshot to privileged clients   // RUS: как часто слать снимок привилегированным клиентам
 
         private static long     _tickStart;
@@ -88,7 +94,7 @@ namespace NetEventLogger
                 double winElapsed = (DateTime.UtcNow - _winStart).TotalSeconds;
                 if (winElapsed >= ReportIntervalSec)
                 {
-                    PushToPrivileged(winElapsed);
+                    if (AutoPush) { PushToPrivileged(winElapsed); } // periodic auto-push gated; manual snapshot still works   // RUS: периодический авто-пуш под тумблером; ручной снимок работает
                     _winTicks = 0; _winTotalTicks = 0; _winMaxTicks = 0; _winStart = DateTime.UtcNow;
                 }
             }
