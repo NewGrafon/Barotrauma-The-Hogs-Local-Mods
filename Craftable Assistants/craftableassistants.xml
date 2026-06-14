@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Assistant" description="Assistants don't have any specific responsibilities or areas of expertise. This job is a good choice for newcomers who want to get a hang of working on board the submarine without taking up tasks that they aren't qualified for." identifier="ch_assistantspawner" hideinmenus="true" category="Machine" hiddeningame="true">
+    <Fabricate suitablefabricators="fabricator, medicalfabricator" requiredtime="60">
+      <RequiredSkill identifier="weapons" level="10" />
+      <RequiredSkill identifier="medical" level="10" />
+      <RequiredSkill identifier="helm" level="10" />
+      <RequiredSkill identifier="mechanical" level="10" />
+      <RequiredSkill identifier="electrical" level="10" />
+      <RequiredItem identifier="wheelchair" />
+      <RequiredItem identifier="headset" />
+      <RequiredItem identifier="fuelrod" mincondition="0.9" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/ca.png" depth="0.55" sourcerect="0,0,192,192" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" targettype="This" EventEntityTag="spawnassistemt">
+        <TriggerEvent identifier="spawnassistantitem" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" EventEntityTag="spawnassistemt" delay="0.5">
+        <RemoveItem />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+</Items>

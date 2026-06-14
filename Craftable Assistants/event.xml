@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <EventPrefabs>
+    <ScriptedEvent identifier="spawnassistantitem">
+      <SpawnAction TargetTag="gay" npcsetidentifier="craftthedamnassistant" npcidentifier="craftedassistant" spawnpointtag="spawnassistemt" team="Team1" LootingIsStealing="false" />
+      <NPCChangeTeamAction npctag="gay" teamid="Team1" addtocrew="true" />
+    </ScriptedEvent>
+  </EventPrefabs>
+</Randomevents>

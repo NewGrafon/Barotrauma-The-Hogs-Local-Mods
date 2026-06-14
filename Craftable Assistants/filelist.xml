@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Craftable Assistants" steamworkshopid="3330343473" corepackage="false" modversion="1" gameversion="1.8.7.0" installtime="1745158252">
+  <Item file="%ModDir%/craftableassistants.xml" />
+  <RandomEvents file="%ModDir%/event.xml" />
+  <NPCSets file="%ModDir%/npc.xml" />
+</contentpackage>

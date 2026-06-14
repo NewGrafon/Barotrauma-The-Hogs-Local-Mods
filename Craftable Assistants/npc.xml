@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<npcsets>
+  <npcset identifier="craftthedamnassistant">
+    <assistant identifier="craftedassistant" job="assistant">
+      <ItemSet>
+        <Item identifier="idcard" equip="true" />
+        <Item identifier="wheelchair" equip="true" />
+        <Item identifier="headset" equip="true" />
+      </ItemSet>
+    </assistant>
+  </npcset>
+</npcsets>
