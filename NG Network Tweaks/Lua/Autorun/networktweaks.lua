@@ -4,12 +4,18 @@ end
 
 -- ============================================================================================
 --  NG Network Tweaks (server-only).
---  All intervals/limits are computed FROM the server TICKRATE (1 tick = 1/tickrate seconds), so
---  that on a tickrate change the behavior stays the same "per tick" rather than per absolute second.
+--  The four main hull/position/health intervals scale LINEARLY with the server tickrate: at tickrate 20
+--  they equal the VANILLA values (in seconds), and at tickrate 60 they are HALVED (twice as frequent),
+--  interpolated linearly in between and clamped outside [20, 60]. This is gentler than constant-ticks
+--  scaling, which would shorten absolute intervals too aggressively at high tickrates.
+--  ItemConditionUpdateInterval stays at a constant 2 ticks; everything else is left as-is.
 --  Recomputed on mod load AND on round start (in case the tickrate changed between rounds).
 --  RUS: NG Network Tweaks (только сервер).
---  RUS: Все интервалы/лимиты считаются ОТ ТИКРЕЙТА сервера (1 тик = 1/tickrate секунды), чтобы при
---  RUS: смене тикрейта поведение оставалось одинаковым по «тикам», а не по абсолютным секундам.
+--  RUS: Четыре основных интервала (трюмы/позиции/здоровье) масштабируются ЛИНЕЙНО по тикрейту: при
+--  RUS: тикрейте 20 равны ВАНИЛЬНЫМ значениям (в секундах), при 60 — вдвое короче (вдвое чаще), линейно
+--  RUS: между ними и зажаты вне диапазона [20, 60]. Это мягче, чем константа по тикам, которая на высоком
+--  RUS: тикрейте укорачивала бы абсолютные интервалы слишком резко.
+--  RUS: ItemConditionUpdateInterval остаётся константой 2 тика; всё остальное — без изменений.
 --  RUS: Пересчёт делается при загрузке мода И на старте раунда (вдруг тикрейт сменили между раундами).
 -- ============================================================================================
 
@@ -66,16 +72,29 @@ end
 local function round(x) return math.floor(x + 0.5) end
 local function clamp(v, lo, hi) return math.max(lo, math.min(v, hi)) end
 
+-- Linear interval scale by tickrate: 1.0 at tickrate 20 (vanilla seconds), 0.5 at tickrate 60 (half the
+-- duration), linearly interpolated in between, clamped to [0.5, 1.0] outside the [20, 60] range.
+-- RUS: Линейный масштаб интервалов по тикрейту: 1.0 при тикрейте 20 (ванильные секунды), 0.5 при 60 (вдвое
+-- RUS: короче), линейно между ними, зажат в [0.5, 1.0] вне диапазона [20, 60].
+local function scaleFactor(tickrate)
+    return clamp(1.0 - (tickrate - 20) / 80.0, 0.5, 1.0)
+end
+
 local function applyTweaks()
     local tickrate = getTickRate()
-    pcall(function() print(TAG .. T("Тикрейт сервера: ", "Server tickrate: ") .. tostring(tickrate) .. T(" — пересчитываю поля под него.", " — recomputing fields for it.")) end)
+    local f = scaleFactor(tickrate)
+    pcall(function() print(TAG .. T("Тикрейт сервера: ", "Server tickrate: ") .. tostring(tickrate)
+        .. T(" — множитель интервалов ", " — interval factor ") .. string.format("%.3f", f) .. ".") end)
 
-    -- Intervals in seconds = (number of ticks) / tickrate:
-    -- RUS: Интервалы в секундах = (сколько тиков) / тикрейт:
-    forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 40 / tickrate)                 -- once per 40 ticks   -- RUS: раз в 40 тиков
-    forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 20 / tickrate)  -- once per 20 ticks   -- RUS: раз в 20 тиков
-    forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 80 / tickrate)                -- once per 80 ticks   -- RUS: раз в 80 тиков
-    forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 10 / tickrate)                      -- once per 10 ticks   -- RUS: раз в 10 тиков
+    -- Tickrate-scaled intervals (seconds): vanilla at tickrate 20, half at 60, linear in between.
+    -- RUS: Интервалы по тикрейту (в секундах): ваниль при 20, вдвое короче при 60, линейно между.
+    forceSet(netConfigDesc, NetConfig, "MaxHealthUpdateInterval", 2.0 * f)                 -- vanilla 2s    -- RUS: ваниль 2с
+    forceSet(netConfigDesc, NetConfig, "LowPrioCharacterPositionUpdateInterval", 1.0 * f)  -- vanilla 1s    -- RUS: ваниль 1с
+    forceSet(netConfigDesc, NetConfig, "SparseHullUpdateInterval", 5.0 * f)                -- vanilla 5s    -- RUS: ваниль 5с
+    forceSet(netConfigDesc, NetConfig, "HullUpdateInterval", 0.5 * f)                      -- vanilla 0.5s  -- RUS: ваниль 0.5с
+
+    -- Always a constant 2 ticks, regardless of tickrate (unchanged).
+    -- RUS: Всегда константа 2 тика, независимо от тикрейта (без изменений).
     forceSet(netConfigDesc, NetConfig, "ItemConditionUpdateInterval", 2 / tickrate)              -- once per 2 ticks    -- RUS: раз в 2 тика
 
     -- Event packet limit: up to 800/sec -> 800/tickrate, rounded, clamped to [5, 60]:
