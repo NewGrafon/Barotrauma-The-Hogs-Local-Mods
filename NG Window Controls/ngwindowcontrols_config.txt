@@ -1,0 +1,3 @@
+﻿fabricatororder=10
+linkedscale=0.8
+moverestriction=false
