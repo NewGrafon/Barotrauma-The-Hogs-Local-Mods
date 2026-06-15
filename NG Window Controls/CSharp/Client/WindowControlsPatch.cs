@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Barotrauma;
 using Barotrauma.Items.Components;
 using HarmonyLib;
@@ -29,7 +30,15 @@ namespace NGWindowControls
         private static bool _reflectionReady;
         private static FieldInfo _dragHandleField;     // private GUIDragHandle guiFrameDragHandle
         private static FieldInfo _updatePendingField;  // private bool guiFrameUpdatePending
-        private static MethodInfo _hudLayerSetter;     // HudLayer { ... private set; }
+
+        // Per-component z-order (our own value). Injected into ItemComponent.AddToGUIUpdateList(order) so it
+        // drives the REAL GUI draw order. >0 = drawn on top, <0 = drawn behind. ConditionalWeakTable so the
+        // entry vanishes with the component (no leak). 0 / absent = vanilla behavior (untouched windows).
+        // RUS: Наш per-компонентный z-order. Подставляется в ItemComponent.AddToGUIUpdateList(order), задавая
+        // RUS: РЕАЛЬНЫЙ порядок отрисовки GUI. >0 = поверх, <0 = под низ. ConditionalWeakTable — без утечек.
+        // RUS: 0 / нет записи = ванильное поведение (нетронутые окна).
+        private static readonly ConditionalWeakTable<ItemComponent, StrongBox<int>> _z =
+            new ConditionalWeakTable<ItemComponent, StrongBox<int>>();
 
         public void PreInitPatching() { }
         public void OnLoadCompleted() { }
@@ -47,6 +56,42 @@ namespace NGWindowControls
             {
                 DebugConsole.Log("[NG] [Window Controls] TryCreateDragHandle not found — controls disabled.");
             }
+
+            // Inject our per-window z-order into the single chokepoint the engine uses for BOTH selected-item
+            // and equipped HUD windows. This is what actually changes the draw order (HudLayer alone doesn't).
+            // RUS: Подставляем наш z-order в единую точку, через которую движок добавляет окна И выбранного
+            // RUS: предмета, И надетого снаряжения. Именно это реально меняет порядок отрисовки (один HudLayer — нет).
+            var addMethod = typeof(ItemComponent).GetMethod("AddToGUIUpdateList",
+                BindingFlags.Public | BindingFlags.Instance, null, new[] { typeof(int) }, null);
+            if (addMethod != null)
+            {
+                harmony.Patch(addMethod, prefix: new HarmonyMethod(typeof(WindowControlsPatch), nameof(AddToGUIUpdateList_Prefix)));
+            }
+            else
+            {
+                DebugConsole.Log("[NG] [Window Controls] AddToGUIUpdateList(int) not found — z-order disabled.");
+            }
+
+            // Mouse INPUT for inventory slots ignores window overlap (the engine's mouse-on-GUI check is
+            // commented out in Inventory.UpdateSlot), so behind windows are clickable through a front window's
+            // empty areas. Gate it: while the cursor is over a HIGHER of our windows, lock the lower container
+            // inventory for this frame so its slots don't react. Per-inventory (cheap) + state restored after.
+            // RUS: Ввод мышью по ячейкам игнорирует перекрытие окон (проверка в Inventory.UpdateSlot закомментирована
+            // RUS: в движке) — через пустые места переднего окна кликается заднее. Гейтим: пока курсор над БОЛЕЕ
+            // RUS: высоким нашим окном, на кадр блокируем (Locked) задний инвентарь-контейнер. Раз на инвентарь + возврат.
+            var invUpdate = typeof(Inventory).GetMethod("Update",
+                BindingFlags.Public | BindingFlags.Instance, null,
+                new[] { typeof(float), typeof(Camera), typeof(bool) }, null);
+            if (invUpdate != null)
+            {
+                harmony.Patch(invUpdate,
+                    prefix:  new HarmonyMethod(typeof(WindowControlsPatch), nameof(InventoryUpdate_Prefix)),
+                    postfix: new HarmonyMethod(typeof(WindowControlsPatch), nameof(InventoryUpdate_Postfix)));
+            }
+            else
+            {
+                DebugConsole.Log("[NG] [Window Controls] Inventory.Update not found — overlap input-blocking disabled.");
+            }
         }
 
         public void Dispose()
@@ -62,7 +107,6 @@ namespace NGWindowControls
             var t = typeof(ItemComponent);
             _dragHandleField    = t.GetField("guiFrameDragHandle",   BindingFlags.NonPublic | BindingFlags.Instance);
             _updatePendingField = t.GetField("guiFrameUpdatePending", BindingFlags.NonPublic | BindingFlags.Instance);
-            _hudLayerSetter     = t.GetProperty("HudLayer", BindingFlags.Public | BindingFlags.Instance)?.GetSetMethod(nonPublic: true);
         }
 
         // -- localization (inline RU/EN by game language) --------------------------------------
@@ -86,12 +130,14 @@ namespace NGWindowControls
                 if (!(_dragHandleField?.GetValue(__instance) is GUIDragHandle handle)) { return; }
 
                 var ic = __instance;
+                _z.GetValue(ic, _ => new StrongBox<int>(0)); // register the window (z=0) so overlap-blocking can see it   // RUS: регистрируем окно (z=0), чтобы блокировка перекрытия его видела
+
                 int bh = Math.Max(8, (int)(GUIStyle.ItemFrameMargin.Y * 0.4f)); // match the gear size
                 int gap = Math.Max(2, bh / 6);
                 int x = bh / 4 + bh + gap * 2;                                  // start just right of the gear
 
-                AddButton(handle, ref x, bh, gap, "+", T("Окно вперёд (поверх остальных)", "Bring window forward"), () => ChangeLayer(ic, -1));
-                AddButton(handle, ref x, bh, gap, "-", T("Окно назад (под остальные)",      "Send window back"),    () => ChangeLayer(ic, +1));
+                AddButton(handle, ref x, bh, gap, "+", T("Окно вперёд (поверх остальных)", "Bring window forward"), () => ChangeLayer(ic, +1));
+                AddButton(handle, ref x, bh, gap, "-", T("Окно назад (под остальные)",      "Send window back"),    () => ChangeLayer(ic, -1));
                 AddButton(handle, ref x, bh, gap, "<", T("Сдвинуть влево на 5%",  "Move left 5%"),  () => Move(ic, -1, 0));
                 AddButton(handle, ref x, bh, gap, "^", T("Сдвинуть вверх на 5%",  "Move up 5%"),    () => Move(ic, 0, -1));
                 AddButton(handle, ref x, bh, gap, "v", T("Сдвинуть вниз на 5%",   "Move down 5%"),  () => Move(ic, 0, 1));
@@ -144,13 +190,87 @@ namespace NGWindowControls
             _updatePendingField?.SetValue(ic, true); // triggers the vanilla position sync next UpdateHUD
         }
 
-        // Raise/lower the window's draw layer. Lower HudLayer draws on top (Item.UpdateHUD sorts
-        // descending and later-added frames render above), so "forward" = decrease HudLayer.
-        // RUS: Меняет слой отрисовки. Меньший HudLayer рисуется поверх, поэтому «вперёд» = уменьшить.
+        // Raise/lower the window's draw layer by adjusting OUR per-component z value. The prefix below feeds
+        // it into AddToGUIUpdateList as the GUI 'order' (>0 = on top, <0 = behind), which is the value the
+        // engine actually draws by. delta +1 = forward/up, -1 = back/down. Clamped to a sane band.
+        // RUS: Меняем слой окна через НАШ per-компонентный z. Префикс ниже отдаёт его как GUI-'order'
+        // RUS: (>0 = поверх, <0 = под низ) — именно по нему движок рисует. +1 = вперёд, -1 = назад. С зажимом.
         private static void ChangeLayer(ItemComponent ic, int delta)
         {
-            if (_hudLayerSetter == null) return;
-            _hudLayerSetter.Invoke(ic, new object[] { ic.HudLayer + delta });
+            var box = _z.GetValue(ic, _ => new StrongBox<int>(0));
+            box.Value = Math.Clamp(box.Value + delta, -20, 20);
+        }
+
+        // Prefix on ItemComponent.AddToGUIUpdateList(int order): override the 'order' with our stored z so the
+        // window draws at the chosen depth. Only when set (non-zero) — untouched windows keep vanilla order 0.
+        // Runs for BOTH paths: selected-item HUDs (Item.AddToGUIUpdateList) and equipped HUDs (CharacterHUD).
+        // RUS: Префикс на ItemComponent.AddToGUIUpdateList(int order): подменяем 'order' нашим z, чтобы окно
+        // RUS: рисовалось на нужной глубине. Только если задан (не 0) — нетронутые окна остаются на order 0.
+        // RUS: Срабатывает для ОБОИХ путей: окна выбранного предмета и надетого снаряжения.
+        private static void AddToGUIUpdateList_Prefix(ItemComponent __instance, ref int order)
+        {
+            try
+            {
+                if (_z.TryGetValue(__instance, out var box) && box.Value != 0) { order = box.Value; }
+            }
+            catch { }
+        }
+
+        // -- overlap input-blocking (Inventory.Update prefix/postfix) -----------------------------
+        // While the cursor is over a HIGHER of our windows, lock this lower container inventory so its
+        // slots don't react this frame (prevents click-through). __state restores the original Locked.
+        // RUS: Пока курсор над БОЛЕЕ высоким нашим окном — блокируем этот нижний инвентарь-контейнер на
+        // RUS: кадр, чтобы его ячейки не реагировали (нет клика «насквозь»). __state возвращает Locked.
+        private static void InventoryUpdate_Prefix(Inventory __instance, out bool __state)
+        {
+            __state = false;
+            try
+            {
+                if (__instance == null || __instance.Locked) { return; }
+                if (IsCoveredByHigherWindow(__instance)) { __instance.Locked = true; __state = true; }
+            }
+            catch { }
+        }
+
+        private static void InventoryUpdate_Postfix(Inventory __instance, bool __state)
+        {
+            try { if (__state && __instance != null) { __instance.Locked = false; } }
+            catch { }
+        }
+
+        // True if the cursor is over one of OUR windows that sits ABOVE this inventory's own window.
+        // RUS: True, если курсор над одним из НАШИХ окон, что выше окна этого инвентаря.
+        private static bool IsCoveredByHigherWindow(Inventory inv)
+        {
+            if (!TryGetInventoryWindowZ(inv, out int zThis, out GUIComponent ownFrame)) { return false; }
+            Microsoft.Xna.Framework.Vector2 mouse = PlayerInput.MousePosition;
+            foreach (var kv in _z)
+            {
+                GUIFrame frame = kv.Key?.GuiFrame;
+                if (frame == null || !frame.Visible || frame == ownFrame) { continue; }
+                if (kv.Value.Value > zThis && frame.Rect.Contains(mouse)) { return true; }
+            }
+            return false;
+        }
+
+        // Map a container inventory to its managed window's z + frame. Only ItemContainer windows are mapped
+        // (the case the user hits); anything else (e.g. the hotbar) returns false and is never blocked.
+        // RUS: Сопоставить инвентарь-контейнер его окну (z + фрейм). Маппим только окна ItemContainer; всё
+        // RUS: прочее (напр. хотбар) -> false и никогда не блокируется.
+        private static bool TryGetInventoryWindowZ(Inventory inv, out int z, out GUIComponent frame)
+        {
+            z = 0; frame = null;
+            if (inv == null) { return false; }
+            foreach (var kv in _z)
+            {
+                if (kv.Key is ItemContainer container && ReferenceEquals(container.Inventory, inv))
+                {
+                    GUIFrame f = kv.Key.GuiFrame;
+                    if (f == null) { return false; }
+                    z = kv.Value.Value; frame = f; return true;
+                }
+            }
+            return false;
         }
     }
 }
