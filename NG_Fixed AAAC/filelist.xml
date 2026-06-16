@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="NG_Fixed AAAC" corepackage="False" modversion="1.0.0" gameversion="1.12.7.0">
+  <!-- ПУСТОЙ плейсхолдер. Стаки материалов/руд (32->64, в инвентаре 8->16) перенесены
+       в БАЗОВЫЙ "Animated Arms Adaptive Combat" (теперь публично).
+       Оставлен на будущее под приватные балансные правки AAAC.
+       Если будешь добавлять оверрайды — грузить ПОСЛЕ базового AAAC. -->
+</contentpackage>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Items>
+<!-- NG EK Mods (приватный баланс): переопределяет дайв-снаряжение EK. Грузить ПОСЛЕ "EK Mods for 1.x.x.x". -->
+<Override>
   <!-- Note to self: StatValue modifiers do not appear to function. Nor do speedmultipliers on StatusEffects. -->
   <Item name="" identifier="ekutility_reinforcedtank_oxygen" aliases="ekutility_heavytank_oxygen,heavy oxygen tank" category="Equipment,Misc" Tags="smallitem,oxygensource,oxygentank,refillableoxygensource" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_light" maxstacksize="8">
     <PreferredContainer primary="divingcab" minamount="1" maxamount="5" spawnprobability="0.5" />
@@ -266,7 +267,7 @@
   </Item>
   <Item name="" identifier="ekutility_advancedsonarbeacon" category="Equipment" Tags="smallitem,sonar" cargocontaineridentifier="metalcrate" Scale="0.35" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="crewcab,supplycab" />
-    <Price baseprice="150" sold="false" minleveldifficulty="25">
+    <Price baseprice="250" sold="false" minleveldifficulty="25">
       <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="false" />
       <Price storeidentifier="merchantcity" multiplier="1" />
       <Price storeidentifier="merchantresearch" multiplier="1" sold="true" minavailable="2" />
@@ -326,43 +327,51 @@
   </Item>
   <Item name="" identifier="ekutility_Utility_hardsuit" aliases="utility_hardsuit,industrial hardsuit,industrial_hardsuit" category="Equipment" tags="divinggear_wearableindoors,diving,provocative,deepdiving,divingsuit,light,ekutility_utility_hardsuit" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="510" sold="false" minleveldifficulty="20">
+    <Price baseprice="11100" sold="false" minleveldifficulty="50">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
       <Price storeidentifier="merchantmilitary" multiplier="1" />
-      <Price storeidentifier="merchantmine" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
-    <Deconstruct time="45">
+    <Deconstruct time="30">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="fpgacircuit" />
       <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="45">
-      <RequiredSkill identifier="mechanical" level="60" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+      <RequiredSkill identifier="mechanical" level="80" />
       <RequiredSkill identifier="electrical" level="40" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
-      <RequiredItem identifier="fpgacircuit" amount="2" />
-      <RequiredItem identifier="rubber" amount="4" />
-      <RequiredItem identifier="steel" amount="2" />
-    </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredSkill identifier="mechanical" level="60" />
-      <RequiredSkill identifier="electrical" level="40" />
-      <RequiredItem identifier="titaniumaluminiumalloy" />
-      <RequiredItem identifier="fpgacircuit" amount="2" />
-      <RequiredItem identifier="rubber" amount="2" />
-      <RequiredItem identifier="toolbox" />
-      <RequiredItem identifier="divingsuit" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="24" />
+      <RequiredItem identifier="fpgacircuit" amount="4" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="physicorium" amount="8" />
+      <RequiredItem identifier="abyssdivingsuit" />
     </Fabricate>
     <!-- Paint Variants -->
-    <Fabricate suitablefabricators="fabricator" requiredtime="1">
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
       <RequiredItem tag="ekutility_utility_hardsuit" />
       <!-- There is no custom paint color support, so use raw materials instead -->
       <RequiredItem identifier="ethanol" />
@@ -418,16 +427,16 @@
         <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
         <RequiredItem items="oxygentank" type="Contained" excludebroken="false" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="false" PressureProtection="6000.0" SpeedMultiplier="0.75" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.75" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
         <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="500" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="oxygentank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="oxygentank" type="Contained" />
@@ -440,47 +449,47 @@
         <RequiredItem identifier="incendiumfueltank" type="Contained" />
         <Affliction identifier="burn" amount="0.1" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="oxygeniteshard" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="oxygeniteshard" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="oxygenitetank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="oxygenitetank" type="Contained" />
       </StatusEffect>
       <!-- We get to define item-side effects for once so might aswell make use of it -->
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell1" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="tag_oxygencell1" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.05" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell2" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.05" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="tag_oxygencell2" type="Contained" />
@@ -520,25 +529,41 @@
   </Item>
   <Item name="" identifier="ekutility_utility_hardsuit_paintmechanic" aliases="utility_hardsuit,industrial hardsuit,industrial_hardsuit" category="Equipment" tags="divinggear_wearableindoors,diving,provocative,deepdiving,divingsuit,light,ekutility_utility_hardsuit" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="540" sold="false" minleveldifficulty="20">
+    <Price baseprice="11400" sold="false" minleveldifficulty="50">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
       <Price storeidentifier="merchantmilitary" multiplier="1" />
-      <Price storeidentifier="merchantmine" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
     <Deconstruct time="30">
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="fpgacircuit" />
       <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="1">
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
       <RequiredItem tag="ekutility_utility_hardsuit" />
       <RequiredItem identifier="bluepaint" />
       <Item identifier="aluminium" />
@@ -588,20 +613,20 @@
       <sprite texture="%ModDir%/Items/Diving/utility_diving_suit_paintmechanic.png" limb="LeftLeg" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="176,416,80,112" scale="0.4" />
       <sprite texture="%ModDir%/Items/Diving/utility_diving_suit_paintmechanic.png" limb="RightFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
       <sprite texture="%ModDir%/Items/Diving/utility_diving_suit_paintmechanic.png" limb="LeftFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
-      <StatusEffect type="OnContained" target="Contained" Condition="1.0">
+      <StatusEffect type="OnContained" target="Contained" Condition="1.0" targetslot="0">
         <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
         <RequiredItem items="oxygentank" type="Contained" excludebroken="false" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="false" PressureProtection="6000.0" SpeedMultiplier="0.75" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.75" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
         <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="500" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="oxygentank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="oxygentank" type="Contained" />
@@ -614,47 +639,47 @@
         <RequiredItem identifier="incendiumfueltank" type="Contained" />
         <Affliction identifier="burn" amount="0.1" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="oxygeniteshard" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="oxygeniteshard" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="oxygenitetank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="oxygenitetank" type="Contained" />
       </StatusEffect>
       <!-- We get to define item-side effects for once so might aswell make use of it -->
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell1" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.07" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="tag_oxygencell1" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.05" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional HullOxygenPercentage="lt 50" />
         <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell2" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.05" comparison="And" targetslot="0">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
         <Conditional InWater="true" />
         <RequiredItem identifier="tag_oxygencell2" type="Contained" />
@@ -694,15 +719,24 @@
   </Item>
   <Item name="" identifier="ek_armored_hardsuit" aliases="military_hardsuit,armored hardsuit,armored_hardsuit" category="Equipment" tags="diving,provocative,deepdiving,divingsuit,light,ek_armored_hardsuit" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="640" sold="false" minleveldifficulty="25">
+    <Price baseprice="11400" sold="false" minleveldifficulty="50">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
-    <Deconstruct time="45">
+    <Deconstruct time="30">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
@@ -712,24 +746,19 @@
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
-      <Item identifier="bluepaint" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredSkill identifier="mechanical" level="40" />
-      <RequiredSkill identifier="weapons" level="30" />
-      <RequiredItem identifier="divingsuit" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
-      <RequiredItem identifier="ballisticfiber" amount="2" />
-      <RequiredItem identifier="rubber" amount="2" />
-      <RequiredItem identifier="bluepaint" />
-    </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
-      <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
-      <RequiredItem identifier="ballisticfiber" amount="2" />
-      <RequiredItem identifier="rubber" amount="4" />
-      <RequiredItem identifier="bluepaint" />
+      <RequiredSkill identifier="mechanical" level="70" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="24" />
+      <RequiredItem identifier="ballisticfiber" amount="4" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="physicorium" amount="8" />
+      <RequiredItem identifier="abyssdivingsuit" />
     </Fabricate>
     <!-- Paint Variants -->
     <Fabricate suitablefabricators="fabricator" requiredtime="5">
@@ -780,43 +809,77 @@
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit.png" limb="LeftLeg" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="176,416,80,112" scale="0.4" />
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit.png" limb="RightFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit.png" limb="LeftFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
-      <StatusEffect type="OnContained" target="Contained" Condition="1.0">
+      <StatusEffect type="OnContained" target="Contained" Condition="1.0" targetslot="0">
         <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
         <RequiredItem items="oxygentank" type="Contained" excludebroken="false" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.6" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.75" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
         <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="500" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="oxygentank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygentank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37" targetslot="0">
         <Conditional IsDead="false" />
         <RequiredItem identifier="weldingfueltank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37" targetslot="0">
         <RequiredItem identifier="incendiumfueltank" type="Contained" />
         <Affliction identifier="burn" amount="0.1" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" SpeedMultiplier="1.1" Condition="-0.3" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="oxygeniteshard" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" SpeedMultiplier="1.2" Condition="-0.1" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygeniteshard" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem identifier="oxygenitetank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
         <RequiredItem identifier="oxygenitetank" type="Contained" />
       </StatusEffect>
       <!-- We get to define item-side effects for once so might aswell make use of it -->
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell1" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.075" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell1" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell2" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-75.0" />
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell2" type="Contained" />
+      </StatusEffect>
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,organdamage,explosiondamage" damagemultiplier="0.45" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,blunttrauma" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.7" damagesound="LimbArmor" deflectprojectiles="true" />
@@ -861,42 +924,46 @@
   </Item>
   <Item name="" identifier="ek_armored_hardsuit_paintbandit" aliases="military_hardsuit,armored hardsuit,armored_hardsuit" category="Equipment" tags="diving,provocative,deepdiving,divingsuit,light,ek_armored_hardsuit" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="640" sold="false" minleveldifficulty="25">
+    <Price baseprice="11400" sold="false" minleveldifficulty="50">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
-    <Deconstruct time="45">
+    <Deconstruct time="30">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="ballisticfiber" />
+      <Item identifier="ballisticfiber" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
-      <Item identifier="rubber" />
-      <Item identifier="redpaint" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="divingsuit" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
-      <RequiredItem identifier="ballisticfiber" amount="1" />
-      <RequiredItem identifier="rubber" amount="3" />
-      <RequiredItem identifier="ethanol" />
-    </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
-      <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
-      <RequiredItem identifier="ballisticfiber" amount="1" />
-      <RequiredItem identifier="rubber" amount="5" />
-      <RequiredItem identifier="redpaint" />
+      <RequiredSkill identifier="mechanical" level="80" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="24" />
+      <RequiredItem identifier="ballisticfiber" amount="4" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="physicorium" amount="8" />
+      <RequiredItem identifier="abyssdivingsuit" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="5">
       <RequiredItem tag="ek_armored_hardsuit" />
@@ -948,43 +1015,77 @@
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit_paintbandit.png" limb="LeftLeg" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="176,416,80,112" scale="0.4" />
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit_paintbandit.png" limb="RightFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit_paintbandit.png" limb="LeftFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
-      <StatusEffect type="OnContained" target="Contained" Condition="1.0">
+      <StatusEffect type="OnContained" target="Contained" Condition="1.0" targetslot="0">
         <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
         <RequiredItem items="oxygentank" type="Contained" excludebroken="false" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.65" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.75" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
         <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="500" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="oxygentank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygentank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37" targetslot="0">
         <Conditional IsDead="false" />
         <RequiredItem identifier="weldingfueltank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37" targetslot="0">
         <RequiredItem identifier="incendiumfueltank" type="Contained" />
         <Affliction identifier="burn" amount="0.1" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" SpeedMultiplier="1.1" Condition="-0.3" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="oxygeniteshard" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" SpeedMultiplier="1.2" Condition="-0.1" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygeniteshard" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem identifier="oxygenitetank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
         <RequiredItem identifier="oxygenitetank" type="Contained" />
       </StatusEffect>
       <!-- We get to define item-side effects for once so might aswell make use of it -->
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell1" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.075" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell1" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell2" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-75.0" />
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell2" type="Contained" />
+      </StatusEffect>
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,organdamage,explosiondamage" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,blunttrauma" damagemultiplier="0.65" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
@@ -1029,11 +1130,11 @@
   </Item>
   <Item name="" identifier="ek_armored_hardsuit_paintmercenary" aliases="military_hardsuit,armored hardsuit,armored_hardsuit" category="Equipment" tags="diving,provocative,deepdiving,divingsuit,light,ek_armored_hardsuit" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="640" sold="false" minleveldifficulty="25">
+    <Price baseprice="11400" sold="false" minleveldifficulty="50">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
@@ -1042,34 +1143,40 @@
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="ballisticfiber" />
       <Item identifier="ballisticfiber" />
-      <Item identifier="ballisticfiber" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
-      <Item identifier="greenpaint" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="divingsuit" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
-      <RequiredItem identifier="ballisticfiber" amount="3" />
-    </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
-      <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
-      <RequiredItem identifier="ballisticfiber" amount="3" />
-      <RequiredItem identifier="rubber" amount="2" />
-      <RequiredItem identifier="greenpaint" />
+      <RequiredSkill identifier="mechanical" level="80" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="24" />
+      <RequiredItem identifier="ballisticfiber" amount="4" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="physicorium" amount="8" />
+      <RequiredItem identifier="abyssdivingsuit" />
     </Fabricate>
     <!-- Paint Variants -->
     <Fabricate suitablefabricators="fabricator" requiredtime="5">
       <RequiredItem tag="ek_armored_hardsuit" />
       <RequiredItem identifier="greenpaint" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
-      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="ballisticfiber" amount="1" />
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Items/Diving/armored_diving_suit_paintmercenary.png" sourcerect="384,448,64,64" />
     <Sprite name="Diving Suit Item" texture="%ModDir%/Items/Diving/armored_diving_suit_paintmercenary_item.png" sourcerect="2,0,124,128" depth="0.55" origin="0.5,0.5" />
@@ -1115,43 +1222,77 @@
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit_paintmercenary.png" limb="LeftLeg" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="176,416,80,112" scale="0.4" />
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit_paintmercenary.png" limb="RightFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
       <sprite texture="%ModDir%/Items/Diving/armored_diving_suit_paintmercenary.png" limb="LeftFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
-      <StatusEffect type="OnContained" target="Contained" Condition="1.0">
+      <StatusEffect type="OnContained" target="Contained" Condition="1.0" targetslot="0">
         <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
         <RequiredItem items="oxygentank" type="Contained" excludebroken="false" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.55" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="6000.0" SpeedMultiplier="0.75" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
         <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="500" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="oxygentank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygentank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37" targetslot="0">
         <Conditional IsDead="false" />
         <RequiredItem identifier="weldingfueltank" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="-100.0" Oxygen="-20.0" Condition="-0.37" targetslot="0">
         <RequiredItem identifier="incendiumfueltank" type="Contained" />
         <Affliction identifier="burn" amount="0.1" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" SpeedMultiplier="1.1" Condition="-0.3" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="oxygeniteshard" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" SpeedMultiplier="1.2" Condition="-0.1" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="oxygeniteshard" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
+        <RequiredItem identifier="oxygenitetank" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.1" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
         <RequiredItem identifier="oxygenitetank" type="Contained" />
       </StatusEffect>
       <!-- We get to define item-side effects for once so might aswell make use of it -->
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell1" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.075" comparison="Or">
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.1" comparison="And" targetslot="0">
         <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell1" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional HullOxygenPercentage="lt 50" />
+        <Conditional InWater="false" />
         <RequiredItem identifier="tag_oxygencell2" type="Contained" />
       </StatusEffect>
-      <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-75.0" />
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1500.0" Condition="-0.07" comparison="And" targetslot="0">
+        <Conditional IsDead="false" />
+        <Conditional InWater="true" />
+        <RequiredItem identifier="tag_oxygencell2" type="Contained" />
+      </StatusEffect>
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,organdamage,explosiondamage" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,blunttrauma" damagemultiplier="0.55" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.8" damagesound="LimbArmor" deflectprojectiles="true" />
@@ -1198,11 +1339,11 @@
   </Item>
   <Item name="" identifier="ek_armored_hardsuit2" aliases="military hardsuit mk-ii,military hardsuit mk-2" category="Equipment" tags="divinggear_wearableindoors,diving,provocative,deepdiving,divingsuit,ek_armored_hardsuit2" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="1200" sold="false" minleveldifficulty="40">
+    <Price baseprice="21000" sold="false" minleveldifficulty="70">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
@@ -1210,19 +1351,24 @@
       <Item identifier="ek_armored_hardsuit" />
       <Item identifier="physicorium" />
       <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="fpgacircuit" />
       <Item identifier="fpgacircuit" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="45">
-      <RequiredSkill identifier="mechanical" level="70" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="90">
+      <RequiredSkill identifier="mechanical" level="100" />
       <RequiredSkill identifier="weapons" level="60" />
+      <RequiredItem identifier="physicorium" amount="12" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="fpgacircuit" amount="4" />
       <RequiredItem tag="ek_armored_hardsuit" />
-      <RequiredItem identifier="physicorium" amount="2" />
-      <RequiredItem identifier="rubber" amount="2" />
-      <RequiredItem identifier="fpgacircuit" amount="2" />
-      <RequiredItem identifier="bluepaint" />
     </Fabricate>
     <!-- Paint Variants -->
     <Fabricate suitablefabricators="fabricator" requiredtime="1">
@@ -1391,16 +1537,21 @@
   </Item>
   <Item name="" identifier="ek_armored_hardsuit2_paintbandit" category="Equipment" tags="divinggear_wearableindoors,diving,provocative,deepdiving,divingsuit,ek_armored_hardsuit2" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="1100" sold="false" minleveldifficulty="40">
+    <Price baseprice="21000" sold="false" minleveldifficulty="75">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
     <Deconstruct time="45">
       <Item identifier="ek_armored_hardsuit" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
       <Item identifier="physicorium" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
@@ -1409,14 +1560,13 @@
       <Item identifier="fpgacircuit" />
       <Item identifier="fpgacircuit" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="45">
-      <RequiredSkill identifier="mechanical" level="70" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="90">
+      <RequiredSkill identifier="mechanical" level="100" />
       <RequiredSkill identifier="weapons" level="60" />
+      <RequiredItem identifier="physicorium" amount="12" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="fpgacircuit" amount="4" />
       <RequiredItem tag="ek_armored_hardsuit" />
-      <RequiredItem identifier="physicorium" amount="1" />
-      <RequiredItem identifier="rubber" amount="4" />
-      <RequiredItem identifier="fpgacircuit" amount="2" />
-      <RequiredItem identifier="redpaint" />
     </Fabricate>
     <!-- Paint Variants -->
     <Fabricate suitablefabricators="fabricator" requiredtime="1">
@@ -1586,11 +1736,11 @@
   </Item>
   <Item name="" identifier="ek_armored_hardsuit2_paintmercenary" category="Equipment" tags="divinggear_wearableindoors,diving,provocative,deepdiving,divingsuit,ek_armored_hardsuit2" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="divingsuitcontainer" />
-    <Price baseprice="800" sold="false" minleveldifficulty="40">
+    <Price baseprice="20600" sold="false" minleveldifficulty="75">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" sold="true" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" sold="true" minavailable="1" />
     </Price>
@@ -1600,24 +1750,28 @@
       <Item identifier="physicorium" />
       <Item identifier="physicorium" />
       <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="fpgacircuit" />
       <Item identifier="fpgacircuit" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+    <Fabricate suitablefabricators="fabricator" requiredtime="90">
       <RequiredSkill identifier="mechanical" level="70" />
       <RequiredSkill identifier="weapons" level="60" />
       <RequiredItem tag="ek_armored_hardsuit" />
-      <RequiredItem identifier="physicorium" amount="4" />
-      <RequiredItem identifier="rubber" amount="1" />
-      <RequiredItem identifier="fpgacircuit" amount="2" />
+      <RequiredItem identifier="physicorium" amount="12" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="fpgacircuit" amount="4" />
       <RequiredItem identifier="greenpaint" />
     </Fabricate>
     <!-- Paint Variants -->
     <Fabricate suitablefabricators="fabricator" requiredtime="1">
       <RequiredItem tag="ek_armored_hardsuit2" />
       <RequiredItem identifier="greenpaint" />
-      <RequiredItem identifier="physicorium" />
       <RequiredItem identifier="physicorium" />
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Items/Diving/armored_diving_suit_mk2_paintmercenary.png" sourcerect="352,480,64,64" />
@@ -1781,16 +1935,20 @@
     </ItemContainer>
   </Item>
   <Item name="" identifier="ek_shearclaw_outfit" category="Equipment" tags="smallitem,provocative,diving,deepdiving,divinggear_wearableindoors" fireproof="true" cargocontaineridentifier="metalcrate" hideinmenus="false" HideConditionBar="true" scale="0.5" impactsoundtag="impact_soft">
-    <Price baseprice="1080" sold="false" minleveldifficulty="33">
+    <Price baseprice="13800" sold="false" minleveldifficulty="60">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" />
-      <Price storeidentifier="merchantresearch" multiplier="1" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmilitary" multiplier="0.9" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" />
     </Price>
-    <Deconstruct time="120">
+    <Deconstruct time="45">
       <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="physicorium" />
+      <Item identifier="dementonite" />
       <Item identifier="dementonite" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
@@ -1801,13 +1959,13 @@
       <Item identifier="elastin" />
       <Item identifier="elastin" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="120">
+    <Fabricate suitablefabricators="fabricator" requiredtime="90">
       <RequiredSkill identifier="medical" level="80" />
-      <RequiredItem identifier="physicorium" />
-      <RequiredItem identifier="dementonite" />
-      <RequiredItem identifier="rubber" amount="4" />
-      <RequiredItem identifier="pressurestabilizer" amount="2" />
-      <RequiredItem identifier="elastin" amount="4" />
+      <RequiredItem identifier="physicorium" amount="8" />
+      <RequiredItem identifier="dementonite" amount="4" />
+      <RequiredItem identifier="rubber" amount="8" />
+      <RequiredItem identifier="pressurestabilizer" amount="4" />
+      <RequiredItem identifier="elastin" amount="8" />
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,448,64,64" />
     <Sprite texture="%ModDir%/Items/JobGear/ek_armor_clothes.png" sourcerect="0,288,224,96" depth="0.6" origin="0.5,0.5" />
@@ -1834,7 +1992,7 @@
       <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictiontypes="poison,paralysis" damagemultiplier="0.5" probabilitymultiplier="0.5" damagesound="LimbArmor" />
       <StatValue stattype="FlowResistance" value="1" />
-      <StatusEffect type="OnWearing" target="Character" PressureProtection="10000.0" SpeedMultiplier="1.5" setvalue="true" disabledeltatime="true" />
+      <StatusEffect type="OnWearing" target="Character" PressureProtection="10000.0" SpeedMultiplier="1.2" setvalue="true" disabledeltatime="true" />
       <StatusEffect type="OnWearing" target="Character">
         <Affliction identifier="ek_pressure_threshold_10000" strength="100" />
         <Affliction identifier="psychosis" strength="0.1" />
@@ -1845,32 +2003,30 @@
     </ItemContainer>
   </Item>
   <Item name="" identifier="ek_shearclaw_helmet" scale="0.5" category="Equipment" Tags="smallitem,provocative,diving,deepdiving,divinggear_wearableindoors" cargocontaineridentifier="metalcrate" hideinmenus="false" impactsoundtag="impact_metal_light">
-    <Price baseprice="880" sold="false" minleveldifficulty="33">
+    <Price baseprice="6100" sold="false" minleveldifficulty="60">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.15" />
-      <Price storeidentifier="merchantresearch" multiplier="1" sold="true" minavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="true" minavailable="1" />
       <Price storeidentifier="merchantmilitary" multiplier="0.9" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantengineering" multiplier="1.2" />
     </Price>
-    <Deconstruct time="120">
+    <Deconstruct time="30">
+      <Item identifier="physicorium" />
       <Item identifier="physicorium" />
       <Item identifier="dementonite" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
       <Item identifier="rubber" />
-      <Item identifier="rubber" />
-      <Item identifier="elastin" />
-      <Item identifier="elastin" />
       <Item identifier="elastin" />
       <Item identifier="elastin" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="120">
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="medical" level="80" />
-      <RequiredItem identifier="physicorium" />
-      <RequiredItem identifier="dementonite" />
-      <RequiredItem identifier="rubber" amount="4" />
-      <RequiredItem identifier="pressurestabilizer" amount="1" />
+      <RequiredItem identifier="physicorium" amount="4" />
+      <RequiredItem identifier="dementonite" amount="2" />
+      <RequiredItem identifier="rubber" amount="6" />
+      <RequiredItem identifier="pressurestabilizer" amount="2" />
       <RequiredItem identifier="elastin" amount="4" />
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
@@ -1993,4 +2149,4 @@
       </StatusEffect>
     </ItemContainer>
   </Item>
-</Items>
+</Override>

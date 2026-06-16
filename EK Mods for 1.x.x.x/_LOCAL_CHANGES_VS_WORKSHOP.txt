@@ -1,0 +1,111 @@
+==========================================================================
+  ЛОКАЛЬНЫЕ ИЗМЕНЕНИЯ vs WORKSHOP — "EK Mods for 1.x.x.x"
+  (составлено 2026-06-16, ПЕРЕПРОВЕРЕНО против полной workshop-копии;
+   только тип и местоположение изменений, без самих данных)
+==========================================================================
+
+Workshop ID : 2954237072
+Workshop путь: G:/SteamLibrary/steamapps/workshop/content/602960/2954237072
+Локальный путь: G:/SteamLibrary/steamapps/common/Barotrauma/LocalMods/EK Mods for 1.x.x.x
+Версия: modversion 1.2.4 (одинаковая в обеих копиях)
+Метод сравнения: diff -r (workshop-копия теперь ПОЛНАЯ — сравнение корректное).
+Позиции строк указаны по ЛОКАЛЬНОМУ файлу (если не сказано иное).
+
+Git-история (смысл правок):
+  c743e82  off-delay переключателя (наша сессия)
+  e25c678  ТЕСТ ФИКС "This error" в EK Mods
+  3db8ffc / cd6903f  Фиксы лагов в длинных раундах
+  ff52047  ребаланс кувалды
+  436b04d  initial commit
+
+==========================================================================
+1) ФИКС "This error" — добавлен target="This" к StatusEffect'ам (коммит e25c678)
+   САМАЯ МАССОВАЯ правка. Тип: к тегам <StatusEffect type="OnUse"/"OnActive">
+   дописан атрибут target="This".
+--------------------------------------------------------------------------
+   Items/Command/custom_commandterminal.xml      — строка 19
+   Items/Command/ekgunnery_command.xml           — строка 28
+   Items/Command/lazy_navterminal.xml            — строки 29, 130
+   Items/Electricity/poweritem_variants.xml      — строки 558, 607 (OnActive)
+   Items/Tools/ekutility_placeablemachines.xml   — строка 1223 (OnUse)
+   Items/Weapons/ek_attachments.xml              — ~40 шт (338,394,452,502,562,
+        618,671,724,769,824,877,933,989,1037,1095,1151,1200,1249,1299,1392,1446,
+        1500,1554,1608,1677,1745,1798,1854,1907,1955,2013,2070,2125,2180,2235,
+        2289,2365,2441,2509,2587)
+   Items/Weapons/ek_drones.xml                   — строка 261
+   Items/Weapons/ek_weapons.xml                  — ~27 шт (216,620,942,1066,1140,
+        1330,1382,1697,1749,2200,2650,3385,3658,3727,3806,3885,3895,3974,4030,
+        4166,4303,4560,4569,4763,5592,5726,6052)
+   Items/overwrite_tools.xml                     — строка 372
+
+==========================================================================
+2) НАША СЕССИЯ — задержка отключения переключателя + локализация (коммит c743e82)
+   (подробности см. память: ek-switch-offdelay)
+--------------------------------------------------------------------------
+   Items/Tools/ekutility_placeablemachines.xml — строки 561-563: ДОБАВЛЕН вход
+        <input name="set_offdelay"> (+коммент) В КОНЕЦ ConnectionPanel тяжёлого
+        переключателя (порядок важен: индексы проводов в сейвах!).
+   Lua/  — ВСЯ ПАПКА локальная (в workshop её нет). Содержит:
+        Lua/Autorun/ek_switch_offdelay.lua (off-delay логика, ekswitchhold_status).
+   Texts/EnglishEKUtilities.xml — строки 2-3: токен <connection.ekoffdelay>.
+   Texts/RussianEKUtilities.xml — НОВЫЙ файл (русский токен).
+   filelist.xml — добавлена строка подключения RussianEKUtilities.xml
+        (+ авто-метаданные локальной установки: corepackage/expectedhash и т.п.).
+
+==========================================================================
+3) ПЕРФ / АНТИСПАМ в длинных раундах (коммиты 3db8ffc, cd6903f)
+--------------------------------------------------------------------------
+   Items/Containers/ek_containers.xml — ~10 блоков: тип «Always»-StatusEffect
+        (срабатывал каждый кадр, delay 0.5) ЗАМЕНЁН на событийные
+        OnContaining/OnRemoved (спрайт «полный/пустой» без сетевого спама).
+        Строки ~319-322, 363-366, 407-410, 451-454, 495-498, 525-528,
+        785-788, 824-827, 1395, 1549-1552, 1640-1643.
+   Characters/Gun Drone/Ragdolls/  (5 файлов) — строка 9: в <damagemodifier>
+        урезан список afflictiontypes у лимбов (убрана "medical" и т.п.):
+        GundroneDefaultRagdoll, GundroneOldRagdoll, GundroneRangedAttackRagdoll,
+        Gundrone_noiffDefaultRagdoll, GundronenoiffDefaultRagdoll.
+   Characters/Walker Drone/Ragdolls/  (7 файлов) — строка 7: то же:
+        WalkerdroneDefaultRagdoll, WalkerdroneDefaultRagdoll_BrokenGun,
+        WalkerdroneOldRagdoll, WalkerdroneOldweaponDefaultRagdoll,
+        WalkerdroneRangedAttackRagdoll, Walkerdrone_noiffDefaultRagdoll,
+        WalkerdronenoiffDefaultRagdoll.
+
+==========================================================================
+4) КОРРЕКТНОСТЬ damagemodifier — affliction перенесён в afflictionidentifiers
+--------------------------------------------------------------------------
+   Items/Jobgear/ek_divinggearbackup.xml — строки 992, 1048 (huskinfection
+        вынесен из afflictiontypes в afflictionidentifiers).
+   Items/Jobgear/ek_jobgear.xml          — строка 578 (radiationsickness — то же).
+
+==========================================================================
+5) РЕБАЛАНС КУВАЛДЫ (коммит ff52047)
+--------------------------------------------------------------------------
+   Items/Tools/ekutility_tools.xml — строка 1042 (цена), строки 1068-1079
+        (параметры MeleeWeapon/Attack + добавлен блок).
+
+==========================================================================
+6) ОПЕЧАТКА АТРИБУТА + мелкие добавления (рецепты боеприпасов)
+--------------------------------------------------------------------------
+   Items/Weapons/ekgunnery_ammunition.xml — исправлено outcondution -> outcondition
+        (строки 291, 463, 577, 582, 640) + добавления/сдвиги на 2237-2238,
+        2321-2322, 2405-2406, 2500-2501 и далее до ~5214.
+
+==========================================================================
+7) КРУПНАЯ ПРАВКА ВНЕ git-истории — снаряжение для дайвинга
+--------------------------------------------------------------------------
+   Items/Diving/ek_divinggear.xml — ОЧЕНЬ крупный diff по всему файлу:
+        изменены цены (baseprice 150->250, 510->11100 и др.) + структурные
+        правки. В git-истории НЕ числится (правка «вшита» до initial commit
+        либо рассинхрон с авторской версией). Для деталей — ручной diff:
+        diff "<workshop>/Items/Diving/ek_divinggear.xml" "<local>/...".
+
+==========================================================================
+ТОЛЬКО ЛОКАЛЬНО (нет в workshop):
+   Lua/  (наш off-delay), Texts/RussianEKUtilities.xml, этот txt.
+ТОЛЬКО В WORKSHOP (игнор):
+   Items/Diving/.idea  — артефакт разработки автора мода.
+
+ПОДСКАЗКА: точное содержимое любой правки:
+   diff "<workshop>/<файл>" "<local>/<файл>"
+   git -C "<...>/LocalMods" show <hash>
+==========================================================================
