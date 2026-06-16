@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Animated arms + Dynamic Europe PATCH" steamworkshopid="3559847023" corepackage="false" modversion="2.0.199" gameversion="1.11.5.0" installtime="1774287432">
+<contentpackage name="NG_Fixed Animated arms + Dynamic Europe PATCH" modversion="2.0.200" corepackage="False" steamworkshopid="3745937817" gameversion="1.12.7.0">
   <Jobs file="%ModDir%/NPCPrefabs/Jobs.xml" />
   <NPCSets file="%ModDir%/NPCPrefabs/CombatMissionNpcs.xml" />
   <NPCSets file="%ModDir%/NPCPrefabs/OutpostNpcs.xml" />

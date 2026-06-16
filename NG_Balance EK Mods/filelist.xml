@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="NG_Fixed EK Mods" corepackage="False" modversion="1.0.0" gameversion="1.12.7.0">
-  <!-- Приватный балансный микро-мод поверх "EK Mods for 1.x.x.x".
+<contentpackage name="NG_Balance EK Mods" corepackage="False" modversion="1.0.0" gameversion="1.12.7.0">
+  <!-- Приватный балансный микро-мод поверх "NG_Fixed EK Mods for 1.x.x.x".
        ВАЖНО: грузить ПОСЛЕ базового мода EK (иначе оверрайды не применятся).
        Содержит: переработку дайв-снаряжения (ek_divinggear) и ребаланс кувалды.
        Текстуры скопированы сюда же, т.к. оверрайд предмета использует %ModDir%. -->

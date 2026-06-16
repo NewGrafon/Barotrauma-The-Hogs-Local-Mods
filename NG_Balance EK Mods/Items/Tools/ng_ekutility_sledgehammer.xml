@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- NG EK Mods (приватный баланс): ребаланс кувалды. Грузить ПОСЛЕ "EK Mods for 1.x.x.x". -->
+<!-- NG EK Mods (приватный баланс): ребаланс кувалды. Грузить ПОСЛЕ "NG_Fixed EK Mods for 1.x.x.x". -->
 <Override>
   <Item name="" identifier="ekutility_sledgehammer" aliases="ek_sledgehammer,sledgehammer_ek,ek sledgehammer,sledgehammer ek" scale="0.32" category="Equipment" tags="mediumitem,weapon,tool" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_heavy">
     <Price baseprice="220" sold="false" minleveldifficulty="25">

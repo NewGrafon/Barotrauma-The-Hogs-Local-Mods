@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Animated Arms Adaptive Combat" steamworkshopid="3527132073" corepackage="false" modversion="1.0.362" gameversion="1.11.5.0" installtime="1775125002">
+<contentpackage name="NG_Fixed Animated Arms Adaptive Combat" modversion="1.0.363" corepackage="False" steamworkshopid="3745932631" gameversion="1.12.7.0">
   <Item file="%ModDir%/XML/weapons.xml" />
   <Item file="%ModDir%/XML/melee.xml" />
   <StartItems file="%ModDir%/XML/startitems.xml" />

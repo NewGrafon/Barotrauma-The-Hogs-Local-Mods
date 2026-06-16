@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="NG_Fixed AAAC+DE patch" corepackage="False" modversion="1.0.0" gameversion="1.12.7.0">
+<contentpackage name="NG_Balance AAAC+DE patch" corepackage="False" modversion="1.0.0" gameversion="1.12.7.0">
   <!-- ПУСТОЙ плейсхолдер. Крэш-фиксы для патча совместимости
-       "Animated arms + Dynamic Europe PATCH" перенесены в САМ базовый мод
+       "NG_Fixed Animated arms + Dynamic Europe PATCH" перенесены в САМ базовый мод
        (это фиксы, а не баланс). Оставлен на будущее под приватные правки.
        Если будешь добавлять оверрайды — грузить ПОСЛЕ базового AA+DE. -->
 </contentpackage>
