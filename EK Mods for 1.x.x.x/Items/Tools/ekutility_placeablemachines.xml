@@ -558,6 +558,9 @@
       <input name="set_state" displayname="connection.setstate" />
       <output name="power_out" displayname="connection.powerout" maxwires="1" />
       <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+      <!-- NG: added LAST on purpose. Barotrauma loads saved wires by connection INDEX, so any new
+           connection MUST go at the end or existing saves get their wires shifted onto wrong slots. -->
+      <input name="set_offdelay" displayname="connection.ekoffdelay" />
     </ConnectionPanel>
   </Item>
   <Item name="" identifier="ekutility_placeablebattery" tags="battery,batterycellrecharger" category="Electrical" scale="0.5" linkable="false" damagedbyexplosions="true" explosiondamagemultiplier="0.2">

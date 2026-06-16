@@ -69,4 +69,5 @@
   <Text file="%ModDir%/Texts/EnglishEkDockyard.xml" />
   <Text file="%ModDir%/Texts/EnglishEkGunnery.xml" />
   <Text file="%ModDir%/Texts/EnglishEKUtilities.xml" />
+  <Text file="%ModDir%/Texts/RussianEKUtilities.xml" />
 </contentpackage>

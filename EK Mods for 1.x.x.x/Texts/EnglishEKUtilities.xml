@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- NG: EK heavy power switch turn-off delay input (ek_switch_offdelay.lua) -->
+  <connection.ekoffdelay>Off-delay (s)</connection.ekoffdelay>
   <!-- ekutility_containers.xml -->
   <entityname.ekutility_smallshelf>Small Shelf</entityname.ekutility_smallshelf>
   <entitydescription.ekutility_smallshelf>Basic wall-mounted storage solution. ( Place by pressing aim + use )</entitydescription.ekutility_smallshelf>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- NG: EK heavy power switch turn-off delay input (ek_switch_offdelay.lua) -->
+  <connection.ekoffdelay>Задержка откл. (сек)</connection.ekoffdelay>
+</infotexts>
