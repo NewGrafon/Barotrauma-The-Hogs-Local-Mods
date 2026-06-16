@@ -766,6 +766,18 @@ namespace NetEventLogger
         // RUS: времена КАЖДОГО кадра за замер -> точные средний FPS и 1% Low (среднее худшего 1% кадров)
         private static readonly List<double> _frameTimes = new List<double>(16384);
 
+        // Per-subsystem cost sampled from the engine PerformanceCounter every frame (Update/Draw/Physics/
+        // Lighting/Particles/…), so the report can explain FPS drops that are NOT caused by Item.Update.
+        // _subAll = summed over every frame; _subSlow = summed only over slow frames (< 50 FPS) where the
+        // drops actually happen. Reported as averages (sum / frame count).
+        // RUS: Стоимость по подсистемам из движкового PerformanceCounter каждый кадр (Update/Draw/Physics/
+        // RUS: Lighting/Particles/…), чтобы отчёт объяснял просадки FPS, которых НЕТ в Item.Update.
+        // RUS: _subAll = сумма по всем кадрам; _subSlow = сумма только по медленным кадрам (<50 FPS), где
+        // RUS: и случаются просадки. В отчёте — средние (сумма / число кадров).
+        private static readonly Dictionary<string, double> _subAll  = new Dictionary<string, double>();
+        private static readonly Dictionary<string, double> _subSlow = new Dictionary<string, double>();
+        private static int _subFrames, _subSlowFrames;
+
         public static bool Running => State == Phase.Measuring;
 
         public static void StartOrCancel()
@@ -782,6 +794,7 @@ namespace NetEventLogger
                 ItemProfiler.Enable();       // on
                 _left = DurationSec;
                 _frameTimes.Clear();
+                _subAll.Clear(); _subSlow.Clear(); _subFrames = 0; _subSlowFrames = 0;
                 State = Phase.Measuring;
                 StatusText = Loc.T("Замер… (стой возле нагрузки, не закрывай игру)", "Measuring… (stay near the load, keep the game running)");
                 ClientPerf.Log(Loc.T("Бенчмарк начат: замер Item.Update.", "Benchmark started: Item.Update profiling."), Color.Cyan);
@@ -803,6 +816,7 @@ namespace NetEventLogger
             if (delta <= 0) { return; }
 
             _frameTimes.Add(delta); // this frame's time (for average FPS and 1% Low)   // RUS: время этого кадра (для среднего FPS и 1% Low)
+            SampleSubsystems(delta); // engine per-subsystem cost (for the "what caused the drop" breakdown)   // RUS: стоимость подсистем движка (для разбивки «что вызвало просадку»)
 
             _left -= delta;
             if (_left <= 0) { Finish(); return; }
@@ -856,6 +870,36 @@ namespace NetEventLogger
                     lines.AddRange(ItemProfiler.PrefabReportLines(p));
                 }
 
+                // --- frame subsystems (engine PerformanceCounter): explains drops NOT caused by Item.Update ---
+                // RUS: --- подсистемы кадра (движковый PerformanceCounter): объясняет просадки НЕ от Item.Update ---
+                lines.Add(("", Color.White));
+                lines.Add((Loc.T("===== Подсистемы кадра (средн. мс/кадр; рендер/физика/частицы и пр., не только Item.Update) =====",
+                                 "===== Frame subsystems (avg ms/frame; render/physics/particles etc., not just Item.Update) ====="), Color.Cyan));
+                var subAll = TopLeaf(_subAll, _subFrames, 8);
+                if (subAll.Count == 0)
+                {
+                    lines.Add((Loc.T("   (нет данных PerformanceCounter)", "   (no PerformanceCounter data)"), Color.Gray));
+                }
+                else
+                {
+                    foreach (var kvp in subAll) { lines.Add(($"   {Pad(kvp.Key, 34)} {kvp.Value,7:F3} {Loc.Ms}", MsColor(kvp.Value))); }
+                }
+
+                lines.Add(("", Color.White));
+                if (_subSlowFrames > 0)
+                {
+                    lines.Add((Loc.Ru ? $"===== Во время ПРОСАДОК (<50 FPS): {_subSlowFrames} кадр(ов) — что было тяжёлым ====="
+                                       : $"===== During DROPS (<50 FPS): {_subSlowFrames} frame(s) — what was heavy =====", Color.Yellow));
+                    foreach (var kvp in TopLeaf(_subSlow, _subSlowFrames, 8)) { lines.Add(($"   {Pad(kvp.Key, 34)} {kvp.Value,7:F3} {Loc.Ms}", MsColor(kvp.Value))); }
+                    lines.Add((Loc.T("   ^ Draw:* — рендер (свет/частицы); Update:Physics — физика; Update:StatusEffects/Character — скрипты/сущности.",
+                                     "   ^ Draw:* — rendering (lights/particles); Update:Physics — physics; Update:StatusEffects/Character — scripts/entities."), Color.Gray));
+                }
+                else
+                {
+                    lines.Add((Loc.T("Просадок <50 FPS за этот замер не было. Лови момент дропа и прогони бенчмарк тогда.",
+                                     "No <50 FPS drops during this run. Catch a drop and run the benchmark while it happens."), Color.Gray));
+                }
+
                 ItemProfiler.ResetStats();   // reset
                 AddToHistory(History, NowStamp(), lines); // store this run in the client history   // RUS: сохранить прогон в клиентскую историю
                 State = Phase.Done;
@@ -868,6 +912,47 @@ namespace NetEventLogger
                 State = Phase.Idle; StatusText = Loc.T("Ошибка бенчмарка.", "Benchmark error.");
             }
         }
+
+        // Sample the engine's per-subsystem cost this frame (Update/Draw/Physics/Lighting/Particles/…).
+        // RUS: Снять покадровую стоимость подсистем движка (Update/Draw/Physics/Lighting/Particles/…).
+        private static void SampleSubsystems(double delta)
+        {
+            try
+            {
+                var pc = GameMain.PerformanceCounter;
+                if (pc == null) { return; }
+                bool slow = delta > 0.02; // < 50 FPS this frame = a noticeable drop   // RUS: <50 FPS в этом кадре = заметная просадка
+                _subFrames++;
+                if (slow) { _subSlowFrames++; }
+                foreach (string id in pc.GetSavedIdentifiers)
+                {
+                    double ms = pc.GetAverageElapsedMillisecs(id);
+                    _subAll[id] = (_subAll.TryGetValue(id, out double a) ? a : 0) + ms;
+                    if (slow) { _subSlow[id] = (_subSlow.TryGetValue(id, out double s) ? s : 0) + ms; }
+                }
+            }
+            catch { }
+        }
+
+        // Top-N LEAF subsystems by avg ms/frame (excludes aggregate parents like "Update"/"Draw" to avoid
+        // double-counting). Returned values are already averaged (sum / frames).
+        // RUS: Топ-N ЛИСТОВЫХ подсистем по средн. мс/кадр (без агрегатов «Update»/«Draw», чтобы не дублировать).
+        // RUS: Возвращаемые значения уже усреднены (сумма / кадры).
+        private static List<KeyValuePair<string, double>> TopLeaf(Dictionary<string, double> acc, int frames, int n)
+        {
+            var result = new List<KeyValuePair<string, double>>();
+            if (frames <= 0 || acc.Count == 0) { return result; }
+            var keys = acc.Keys.ToList();
+            bool IsLeaf(string k) => !keys.Any(o => o.Length > k.Length && o.StartsWith(k + ":", StringComparison.Ordinal));
+            return acc.Where(kvp => IsLeaf(kvp.Key) && (kvp.Value / frames) > 0.001)
+                      .OrderByDescending(kvp => kvp.Value)
+                      .Take(n)
+                      .Select(kvp => new KeyValuePair<string, double>(kvp.Key, kvp.Value / frames))
+                      .ToList();
+        }
+
+        private static string Pad(string s, int w) => s == null ? new string(' ', w) : (s.Length >= w ? s.Substring(0, w) : s.PadRight(w));
+        private static Color MsColor(double ms) => ms >= 4 ? Color.OrangeRed : (ms >= 1.5 ? Color.Yellow : Color.LightGray);
     }
 
     public static class ItemUpdatePatch
