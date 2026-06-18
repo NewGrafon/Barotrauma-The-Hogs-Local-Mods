@@ -640,6 +640,28 @@ namespace NetEventLogger
             RecordPart(ic.Item, "Comp:" + ic.GetType().Name, ticks);
         }
 
+        // ---- Exclusive (self) time accounting ----
+        // [StatusEffects] is timed on Item.ApplyStatusEffects, which is often called INSIDE a
+        // component's Update (e.g. Wearable) — so without this, that time was counted both in
+        // Comp:<Type> and in [StatusEffects], making the per-item breakdown sum to >100%.
+        // We subtract nested status-effect time from the enclosing component's Comp:* bucket, so
+        // the parts no longer overlap (Comp:* = self time; [StatusEffects] = its own time).
+        // RUS: Учёт СОБСТВЕННОГО времени. [StatusEffects] меряется на Item.ApplyStatusEffects, который
+        // RUS: часто вызывается ВНУТРИ Update компонента (напр. Wearable) — поэтому раньше это время
+        // RUS: считалось и в Comp:<Тип>, и в [StatusEffects], и сумма частей превышала 100%. Вычитаем
+        // RUS: вложенные статус-эффекты из времени компонента-родителя → части больше не пересекаются.
+        [ThreadStatic] private static long _childTicks;
+        internal static void ResetChildScope() { _childTicks = 0; }
+        internal static long BeginChildScope() { long outer = _childTicks; _childTicks = 0; return outer; }
+        internal static long EndChildScope(long outer, long elapsed)
+        {
+            long self = elapsed - _childTicks;        // component self-time = total minus nested measured children
+            if (self < 0) { self = 0; }
+            _childTicks = outer + elapsed;            // this scope's full time becomes a child of the outer scope
+            return self;
+        }
+        internal static void AddChildTicks(long ticks) { _childTicks += ticks; }
+
         // Breakdown of a SPECIFIC item by parts (components / status effects / sounds / other).
         // RUS: Разбивка КОНКРЕТНОГО предмета по частям (компоненты / статус-эффекты / звуки / прочее).
         public static List<(string Text, Color Color)> PrefabReportLines(string filter)
@@ -959,7 +981,9 @@ namespace NetEventLogger
     {
         // out __state — measurement start. <=0 in the postfix => skip (if another mod prefix skipped the original, __state stays 0).
         // RUS: out __state — старт замера. <=0 в постфиксе => пропускаем (если другой мод-префикс пропустил оригинал, __state останется 0).
-        public static void Prefix(out long __state) { __state = Stopwatch.GetTimestamp(); }
+        // Reset the self-time child accumulator at the start of each item's Update.
+        // RUS: Сбрасываем аккумулятор «детских» тиков в начале Update каждого предмета.
+        public static void Prefix(out long __state) { ItemProfiler.ResetChildScope(); __state = Stopwatch.GetTimestamp(); }
 
         public static void Postfix(Item __instance, long __state)
         {
@@ -970,11 +994,23 @@ namespace NetEventLogger
 
     public static class CompUpdatePatch
     {
-        public static void Prefix(out long __state) { __state = Stopwatch.GetTimestamp(); }
-        public static void Postfix(ItemComponent __instance, long __state)
+        // __state.Start — measurement start (<=0 in postfix => our prefix didn't run; skip).
+        // __state.Outer — parent child-scope, restored in the postfix; lets us subtract status-effect
+        // time nested inside this component so the per-item breakdown parts don't overlap.
+        // RUS: __state.Outer — родительская область; вычитаем вложенные в компонент статус-эффекты.
+        public struct State { public long Start; public long Outer; }
+
+        public static void Prefix(out State __state)
         {
-            if (__state <= 0) { return; }
-            ItemProfiler.RecordComp(__instance, Stopwatch.GetTimestamp() - __state);
+            __state.Outer = ItemProfiler.BeginChildScope();
+            __state.Start = Stopwatch.GetTimestamp();
+        }
+        public static void Postfix(ItemComponent __instance, State __state)
+        {
+            if (__state.Start <= 0) { return; }
+            long elapsed = Stopwatch.GetTimestamp() - __state.Start;
+            long self = ItemProfiler.EndChildScope(__state.Outer, elapsed);
+            ItemProfiler.RecordComp(__instance, self);
         }
     }
 
@@ -984,7 +1020,9 @@ namespace NetEventLogger
         public static void Postfix(Item __instance, long __state)
         {
             if (__state <= 0) { return; }
-            ItemProfiler.RecordPart(__instance, "[StatusEffects]", Stopwatch.GetTimestamp() - __state);
+            long elapsed = Stopwatch.GetTimestamp() - __state;
+            ItemProfiler.RecordPart(__instance, "[StatusEffects]", elapsed);
+            ItemProfiler.AddChildTicks(elapsed);   // subtract this from the enclosing component's self-time
         }
     }
 

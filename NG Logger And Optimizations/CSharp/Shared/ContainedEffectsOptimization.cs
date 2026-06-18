@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 using Barotrauma;
 using Barotrauma.Items.Components;
 using HarmonyLib;
@@ -87,7 +88,18 @@ namespace NGContainerOpt
                         nameof(TrimSpentEffectsPatch.OnRemovedPostfix), sp)));
                 }
 
-                DebugConsole.NewMessage(NetEventLogger.Loc.Tag + NetEventLogger.Loc.T("Оптимизация контейнеров активна: отработавшие OnInserted-эффекты не крутятся в Update.", "Container optimization active: spent OnInserted effects no longer churn in Update."), Color.LightGreen);
+                // FIX 1b: throttle Item.Update of "water ammo" lying in WORLD containers (floor/shelf/cabinet,
+                // i.e. NOT in a player's inventory). See the ContainedAmmoThrottle header for the why & safety.
+                // RUS: ФИКС 1б: троттлим Item.Update «водных патронов», лежащих в МИРОВЫХ контейнерах (пол/полка/
+                // RUS: шкаф, т.е. НЕ в инвентаре игрока). Почему и почему безопасно — см. шапку ContainedAmmoThrottle.
+                MethodInfo itemUpdate = AccessTools.Method(typeof(Item), "Update", new[] { typeof(float), typeof(Camera) });
+                if (itemUpdate != null)
+                {
+                    _h.Patch(itemUpdate, prefix: new HarmonyMethod(typeof(ContainedAmmoThrottle).GetMethod(
+                        nameof(ContainedAmmoThrottle.UpdatePrefix), sp)));
+                }
+
+                DebugConsole.NewMessage(NetEventLogger.Loc.Tag + NetEventLogger.Loc.T("Оптимизация контейнеров активна: отработавшие OnInserted-эффекты не крутятся в Update; патроны в напольных/настенных контейнерах троттлятся (у игрока — без изменений).", "Container optimization active: spent OnInserted effects no longer churn in Update; ammo in world containers is throttled (unchanged while a player holds it)."), Color.LightGreen);
             }
             catch (Exception ex)
             {
@@ -292,6 +304,136 @@ namespace NGContainerOpt
                 catch { }
                 stash.Clear();
             }
+        }
+    }
+
+    // ==========================================================================================
+    //  FIX 1b: "water ammo" lying in a WORLD container ticks Item.Update every frame for nothing.
+    //
+    //  AAAC rounds (akround/Berettarounds/...) carry InWater + NotInWater status effects (the
+    //  hitscan-in-air / slow-physical-in-water ballistics). NotInWater keeps the item permanently
+    //  active (Item.cs:2574/2580 — needsWaterCheck never clears), so EVERY round in EVERY locker/
+    //  magazine runs Item.Update 60x/sec. With big ammo stockpiles that's a big chunk of the tick.
+    //
+    //  Safe fix: those water effects only matter when the round is FIRED, and a round can only be
+    //  fired while the weapon is in a player's hands/inventory. So we throttle Item.Update ONLY for
+    //  eligible rounds whose root owner is NOT a Character (floor / shelf / wall cabinet). The prefix
+    //  runs every frame, so the instant the round enters a player's inventory it returns to full rate
+    //  (<=1 frame) — underwater ballistics for anything a player can actually shoot is 100% unchanged.
+    //
+    //  Eligibility (cached per prefab): has a <Projectile>, has InWater/NotInWater effects, and ALL of
+    //  those are INERT (only set flight props like hitscan/launchimpulse — no `condition`, no action
+    //  child like Explosion/Remove/SpawnItem/Affliction). This EXCLUDES water-reactive items such as
+    //  the AAAC sodium-type material (InWater -> condition=0 dissolves), which keep reacting normally.
+    //
+    //  Shared (client FPS + server CPU). Gated on the same "container optimization" toggle. No state
+    //  to restore on disable — the prefix just stops skipping.
+    //  RUS: ФИКС 1б: «водные патроны» в МИРОВОМ контейнере зря крутят Item.Update каждый кадр.
+    //  RUS: Водные эффекты важны только при ВЫСТРЕЛЕ, а стрелять можно лишь когда оружие у игрока.
+    //  RUS: Поэтому троттлим Update только у патронов, чей корневой владелец НЕ Character (пол/полка/
+    //  RUS: шкаф). Проверка каждый кадр → при попадании к игроку полный режим включается мгновенно.
+    //  RUS: Право на троттл (кэш по префабу): есть <Projectile>, есть InWater/NotInWater, и ВСЕ они
+    //  RUS: ИНЕРТНЫ (только свойства полёта; без `condition`/Explosion/Remove/SpawnItem/Affliction) —
+    //  RUS: это ИСКЛЮЧАЕТ водо-реактивные предметы вроде натрия (InWater -> condition=0), они реагируют как прежде.
+    // ==========================================================================================
+    public static class ContainedAmmoThrottle
+    {
+        // Run an eligible WORLD-contained round's full Update once per this many frames. The water
+        // effects fire at most 1/sec and the round can't be fired from a world container, so a few
+        // updates/sec are plenty. (Going to a player's inventory snaps it back to full rate anyway.)
+        // RUS: Полный Update подходящего патрона в мировом контейнере — раз в N кадров.
+        private const int RunEveryNFrames = 10;
+
+        private static readonly Dictionary<string, bool> _eligibleCache = new Dictionary<string, bool>();
+        private static readonly ConditionalWeakTable<Item, int[]> _counters = new ConditionalWeakTable<Item, int[]>();
+
+        // PREFIX on Item.Update(float, Camera): return false to SKIP the original this frame.
+        // RUS: ПРЕФИКС на Item.Update: вернуть false = пропустить оригинал в этом кадре.
+        public static bool UpdatePrefix(Item __instance)
+        {
+            try
+            {
+                if (!ContainedEffectsOptPlugin.Enabled) { return true; }
+                if (__instance == null || __instance.Container == null) { return true; } // not contained — cheap reject
+                if (!Eligible(__instance.Prefab)) { return true; }
+                // Held by / in a player's inventory -> NEVER throttle (keep water ballistics exact).
+                // RUS: У игрока в руках/инвентаре -> НЕ троттлим (водная баллистика точная).
+                if (__instance.GetRootInventoryOwner() is Character) { return true; }
+
+                int[] c = _counters.GetValue(__instance, _ => new int[1]);
+                c[0]++;
+                if (c[0] >= RunEveryNFrames) { c[0] = 0; return true; } // run this frame
+                return false;                                           // skip this frame
+            }
+            catch { return true; }
+        }
+
+        private static bool Eligible(ItemPrefab prefab)
+        {
+            if (prefab == null) { return false; }
+            string key = prefab.Identifier.Value;
+            if (_eligibleCache.TryGetValue(key, out bool cached)) { return cached; }
+            bool result;
+            try { result = Compute(prefab); } catch { result = false; }
+            _eligibleCache[key] = result;
+            return result;
+        }
+
+        private static bool Compute(ItemPrefab prefab)
+        {
+            XElement root = prefab.ConfigElement?.Element;
+            if (root == null) { return false; }
+
+            bool hasProjectile = false, hasAlways = false, hasWaterFx = false;
+            foreach (XElement el in root.Descendants())
+            {
+                string n = el.Name.LocalName;
+                if (n.Equals("Projectile", StringComparison.OrdinalIgnoreCase)) { hasProjectile = true; continue; }
+                if (!n.Equals("StatusEffect", StringComparison.OrdinalIgnoreCase)) { continue; }
+
+                string type = AttrValue(el, "type");
+                if (type.Equals("Always", StringComparison.OrdinalIgnoreCase))
+                {
+                    hasAlways = true; // a per-frame-meaningful effect -> don't throttle this item
+                }
+                else if (type.Equals("InWater", StringComparison.OrdinalIgnoreCase) ||
+                         type.Equals("NotInWater", StringComparison.OrdinalIgnoreCase))
+                {
+                    hasWaterFx = true;
+                    if (!IsInert(el)) { return false; } // stateful water effect (e.g. sodium condition=0) -> NEVER touch
+                }
+            }
+            return hasProjectile && hasWaterFx && !hasAlways;
+        }
+
+        // Inert = doesn't change condition and has no action child (only conditionals/checks allowed).
+        // RUS: Инертный = не трогает condition и не содержит действий (только условия-проверки).
+        private static bool IsInert(XElement effect)
+        {
+            foreach (XAttribute a in effect.Attributes())
+            {
+                if (a.Name.LocalName.Equals("condition", StringComparison.OrdinalIgnoreCase)) { return false; }
+            }
+            foreach (XElement child in effect.Elements())
+            {
+                if (!IsConditional(child.Name.LocalName)) { return false; }
+            }
+            return true;
+        }
+
+        private static bool IsConditional(string name) =>
+            name.Equals("Conditional", StringComparison.OrdinalIgnoreCase) ||
+            name.Equals("TargetConditional", StringComparison.OrdinalIgnoreCase) ||
+            name.Equals("PropertyConditional", StringComparison.OrdinalIgnoreCase) ||
+            name.Equals("RequiredItem", StringComparison.OrdinalIgnoreCase);
+
+        private static string AttrValue(XElement el, string name)
+        {
+            foreach (XAttribute a in el.Attributes())
+            {
+                if (a.Name.LocalName.Equals(name, StringComparison.OrdinalIgnoreCase)) { return a.Value ?? ""; }
+            }
+            return "";
         }
     }
 }
