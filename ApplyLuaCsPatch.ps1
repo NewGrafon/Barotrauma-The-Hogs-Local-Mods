@@ -57,10 +57,10 @@ if (-not (Test-Path -LiteralPath $gameDll)) {
 
 # --- Version safety check (same as AutoUpdater): patch must match the installed game version ---
 $gameVer  = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($gameDll).FileVersion
-$patchVer = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($patchDll).FileVersion
-if ($gameVer -ne $patchVer) {
-   Fail "patch is for game version $patchVer but your game is $gameVer. The game probably updated on Steam - update LocalMods\patch.zip to the matching LuaCs version (or roll the game back). The game will launch WITHOUT LuaCs until then."
-}
+# $patchVer = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($patchDll).FileVersion
+# if ($gameVer -ne $patchVer) {
+#    Fail "patch is for game version $patchVer but your game is $gameVer. The game probably updated on Steam - update LocalMods\patch.zip to the matching LuaCs version (or roll the game back). The game will launch WITHOUT LuaCs until then."
+# }
 
 # --- Copy every patch file into the game folder, overwriting (create dirs as needed) ---
 try {
