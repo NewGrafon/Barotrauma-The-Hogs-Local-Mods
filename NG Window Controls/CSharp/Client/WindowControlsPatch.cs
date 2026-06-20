@@ -41,6 +41,19 @@ namespace NGWindowControls
         private static readonly ConditionalWeakTable<ItemComponent, StrongBox<int>> _z =
             new ConditionalWeakTable<ItemComponent, StrongBox<int>>();
 
+        // Per-container RANDOM base z-order, rolled fresh each time the window opens (0..99). Containers all
+        // default to z=0, so two overlapping container windows tie and you can click the back one through the
+        // front one's empty background. A random per-window base breaks the tie: the higher one wins and gates
+        // input over the lower (via IsCoveredByHigherWindow). Fabricators are NOT randomized — they use the fixed
+        // high FabricatorOrder so they always sit above containers.
+        // RUS: Случайный per-контейнерный base z, перекатывается заново при каждом открытии окна (0..99). Все
+        // RUS: контейнеры по умолчанию z=0 -> два наложенных окна равны, и через пустой фон переднего кликается
+        // RUS: заднее. Случайный base ломает ничью: верхнее перекрывает нижнее (через IsCoveredByHigherWindow).
+        // RUS: Фабрикаторы НЕ рандомятся — у них фикс. высокий FabricatorOrder, всегда поверх контейнеров.
+        private static readonly ConditionalWeakTable<ItemComponent, StrongBox<int>> _containerBase =
+            new ConditionalWeakTable<ItemComponent, StrongBox<int>>();
+        private static readonly Random _rng = new Random();
+
         public void PreInitPatching() { }
         public void OnLoadCompleted() { }
 
@@ -198,6 +211,17 @@ namespace NGWindowControls
                 // RUS: загрузки компонентов при регистрации. Итоговый order = base(предмет) + delta.
                 _z.GetValue(ic, _ => new StrongBox<int>(0));
 
+                // Roll a fresh random base z (0..99) for CONTAINER windows each time they open, so two overlapping
+                // container windows almost never share a z and the front one correctly blocks click-through to the
+                // back one. Fabricators keep their fixed high order (not randomized).
+                // RUS: Перекатываем случайный base z (0..99) для окон-КОНТЕЙНЕРОВ при каждом открытии — два наложенных
+                // RUS: окна почти никогда не совпадут по z, и переднее корректно блокирует клик «насквозь» к заднему.
+                // RUS: Фабрикаторы сохраняют свой фикс. высокий order (не рандомятся).
+                if (ic is ItemContainer && !IsFabricatorItem(ic.Item))
+                {
+                    _containerBase.GetValue(ic, _ => new StrongBox<int>(0)).Value = _rng.Next(0, 100);
+                }
+
                 // Movement-restriction toggle. Vanilla rejects a drop whose window overlaps another (red flash +
                 // revert via ValidatePosition). When our setting is OFF (default) accept any position but keep the
                 // useful side-effects (persist offset, refresh slots). Read live -> the toggle works at runtime.
@@ -279,9 +303,20 @@ namespace NGWindowControls
             x += w + gap;
         }
 
-        // Base draw order from the item TYPE (computed live): fabricators sit above plain windows.
-        // RUS: Базовый order по ТИПУ предмета (считается live): фабрикаторы выше обычных окон.
-        private static int BaseOrder(ItemComponent ic) => (ic != null && IsFabricatorItem(ic.Item)) ? Settings.FabricatorOrder : 0;
+        // Base draw order from the item TYPE (computed live): fabricators sit high (FabricatorOrder, default 100);
+        // container windows use the random per-open base (0..99) so overlapping containers don't tie; anything
+        // else stays at 0. The container base is assigned in TryCreateDragHandle_Postfix on open; if missing here
+        // (e.g. read before open), fall back to 0.
+        // RUS: Базовый order по ТИПУ (live): фабрикаторы высоко (FabricatorOrder, дефолт 100); окна-контейнеры
+        // RUS: берут случайный base на открытие (0..99), чтобы наложенные контейнеры не были равны; остальное — 0.
+        // RUS: Container base ставится в TryCreateDragHandle_Postfix при открытии; если нет (читаем до открытия) — 0.
+        private static int BaseOrder(ItemComponent ic)
+        {
+            if (ic == null) { return 0; }
+            if (IsFabricatorItem(ic.Item)) { return Settings.FabricatorOrder; }
+            if (ic is ItemContainer && _containerBase.TryGetValue(ic, out var b)) { return b.Value; }
+            return 0;
+        }
 
         // Effective order actually used for drawing/blocking = base(type) + per-window manual delta (_z).
         // RUS: Итоговый order для отрисовки/блокировки = base(тип) + ручная delta окна (_z).
@@ -497,7 +532,7 @@ namespace NGWindowControls
     // ============================================================================================
     internal static class Settings
     {
-        public static int   FabricatorOrder = 10;    // default z for fabricator/deconstructor windows   // RUS: дефолтный z окон фабрикаторов/деструкторов
+        public static int   FabricatorOrder = 100;   // default z for fabricator/deconstructor windows — sits above the random container bases (0..99)   // RUS: дефолтный z окон фабрикаторов/деструкторов — выше случайных base контейнеров (0..99)
         public static float LinkedScale     = 0.75f; // scale of containers shown under a fabricator (0.75 = −25%)   // RUS: масштаб контейнеров под фабрикатором (0.75 = −25%)
         public static bool  MoveRestriction = false; // false = allow overlapping moves (no red-flash reject)   // RUS: false = разрешить перемещение с перекрытием (без красного отката)
         public static bool  ShowMoveArrows  = false; // false = hide the 5%-move arrow buttons on windows   // RUS: false = скрыть кнопки-стрелки сдвига на 5% у окон
@@ -525,7 +560,7 @@ namespace NGWindowControls
 
         public static void Load()
         {
-            FabricatorOrder = 10; LinkedScale = 0.75f; MoveRestriction = false; ShowMoveArrows = false; // defaults
+            FabricatorOrder = 100; LinkedScale = 0.75f; MoveRestriction = false; ShowMoveArrows = false; // defaults
             try
             {
                 string path = ConfigPath();
@@ -538,7 +573,7 @@ namespace NGWindowControls
                     if (eq <= 0) { continue; }
                     string key = s.Substring(0, eq).Trim().ToLowerInvariant();
                     string val = s.Substring(eq + 1).Trim();
-                    if (key == "fabricatororder" && int.TryParse(val, out int o)) { FabricatorOrder = Math.Clamp(o, 0, 20); }
+                    if (key == "fabricatororder" && int.TryParse(val, out int o)) { FabricatorOrder = Math.Clamp(o, 0, 200); }
                     else if (key == "linkedscale" && float.TryParse(val, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float sc)) { LinkedScale = Math.Clamp(sc, 0.2f, 1f); }
                     else if (key == "moverestriction") { MoveRestriction = val == "1" || val.Equals("true", StringComparison.OrdinalIgnoreCase) || val.Equals("on", StringComparison.OrdinalIgnoreCase); }
                     else if (key == "showmovearrows") { ShowMoveArrows = val == "1" || val.Equals("true", StringComparison.OrdinalIgnoreCase) || val.Equals("on", StringComparison.OrdinalIgnoreCase); }
@@ -580,7 +615,7 @@ namespace NGWindowControls
                         if (sub == "" || sub == "status") { Print(); return; }
                         if (sub == "order" && args.Length > 1 && int.TryParse(args[1], out int o))
                         {
-                            FabricatorOrder = Math.Clamp(o, 0, 20); Save(); Print(); return;
+                            FabricatorOrder = Math.Clamp(o, 0, 200); Save(); Print(); return;
                         }
                         if (sub == "scale" && args.Length > 1)
                         {
@@ -669,8 +704,8 @@ namespace NGWindowControls
                     T("Слой отрисовки окна фабрикатора по умолчанию. Чем больше — тем выше окно над связанными контейнерами.",
                       "Default draw layer of fabricator windows. Higher = the window sits above its linked containers."),
                     () => Settings.FabricatorOrder.ToString(),
-                    () => Settings.FabricatorOrder = Math.Clamp(Settings.FabricatorOrder - 1, 0, 20),
-                    () => Settings.FabricatorOrder = Math.Clamp(Settings.FabricatorOrder + 1, 0, 20));
+                    () => Settings.FabricatorOrder = Math.Clamp(Settings.FabricatorOrder - 1, 0, 200),
+                    () => Settings.FabricatorOrder = Math.Clamp(Settings.FabricatorOrder + 1, 0, 200));
 
                 AddStepper(col,
                     () => T("Масштаб контейнеров", "Container scale"),

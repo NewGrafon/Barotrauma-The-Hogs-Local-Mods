@@ -1,3 +1,3 @@
-﻿fabricatororder=10
+﻿fabricatororder=100
 linkedscale=0.8
 moverestriction=false
