@@ -434,6 +434,30 @@ namespace NGLinkingPin
             => e.Attributes().Any(a => a.Name.LocalName.Equals(name, StringComparison.OrdinalIgnoreCase)
                 && (value == null || a.Value.Equals(value, StringComparison.OrdinalIgnoreCase)));
 
+        // A prefab you open/pry via a Door (locker doors, loading units) already uses the Action key for
+        // open/pry, so a selectkey="Action" wiring panel would keep popping up over that interaction.
+        // RUS: Предмет, открываемый/взламываемый через Door (двери локеров, loading units), уже занимает
+        // RUS: клавишу Action под открытие/взлом — панель с selectkey="Action" всплывала бы поверх этого.
+        private static bool HasPryableDoor(XElement root)
+            => root.Elements().Any(e => NameIs(e, "Door"));
+
+        // True if the panel already requires a screwdriver (its "items" list, comma-separated, contains it).
+        // RUS: True, если панель уже требует отвёртку (в её списке "items" через запятую есть screwdriver).
+        private static bool RequiresScrewdriver(XElement panel)
+        {
+            foreach (var ri in panel.Elements().Where(e => NameIs(e, "RequiredItem")))
+            {
+                var items = ri.Attributes()
+                    .FirstOrDefault(a => a.Name.LocalName.Equals("items", StringComparison.OrdinalIgnoreCase))?.Value;
+                if (items == null) continue;
+                foreach (var it in items.Split(','))
+                {
+                    if (it.Trim().Equals("screwdriver", StringComparison.OrdinalIgnoreCase)) return true;
+                }
+            }
+            return false;
+        }
+
         public static int PrepareContainerPrefabs()
         {
             try { _ru = GameSettings.CurrentConfig.Language.ToString().IndexOf("russ", StringComparison.OrdinalIgnoreCase) >= 0; }
@@ -453,6 +477,7 @@ namespace NGLinkingPin
                     if (containers.Count == 0) continue;                  // not a storage container
                     if (prefab.Tags.Contains(MobileTag)) continue;        // carried crate/backpack
                     if (!IsEngineWirable(root)) continue;                 // held/worn item — engine can't wire it
+                    if (HasPryableDoor(root)) continue;                   // pryable locker / loading unit: its Action key is open/pry — don't add an Action-key wiring panel
 
                     // #2: access-gated containers (idcard <RequiredItem> inside the container).
                     bool accessRequired = containers.Any(c => c.Elements().Any(ch => NameIs(ch, "RequiredItem")));
@@ -522,7 +547,12 @@ namespace NGLinkingPin
                     new XAttribute("style", "ConnectionPanel")));
             }
 
-            if (!panel.Elements().Any(e => NameIs(e, "RequiredItem")))
+            // Guarantee the screwdriver gate on EVERY pin-bearing panel. The old guard only added it when the
+            // panel had NO RequiredItem, so a container whose panel already carried a DIFFERENT RequiredItem
+            // ended up selectable with no screwdriver (the reported "open the panel without a screwdriver").
+            // RUS: Гарантируем гейт отвёртки на КАЖДОЙ панели с пином. Старый guard добавлял его лишь когда у
+            // RUS: панели НЕТ RequiredItem — контейнер с ДРУГИМ RequiredItem открывался без отвёртки (баг).
+            if (!RequiresScrewdriver(panel))
             {
                 panel.Add(new XElement("RequiredItem",
                     new XAttribute("items", "screwdriver"),
